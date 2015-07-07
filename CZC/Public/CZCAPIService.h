@@ -1,0 +1,23 @@
+//
+//  APIService.h
+//  CZC
+//
+//  Created by 周德艺 on 15/7/5.
+//  Copyright (c) 2015年 周德艺. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+
+@interface CZCAPIService : NSObject{
+    void(^myresulthandle)(NSDictionary *myresult);
+}
+
++ (CZCAPIService *)getCZCAPIService;
+
+- (void)GETmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
+- (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
+
+- (void)postUploadWithUrl:(NSString *)urlStr fileImage:(UIImage *)image fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail;
+
+@end
