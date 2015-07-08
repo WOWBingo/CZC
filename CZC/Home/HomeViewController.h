@@ -13,6 +13,7 @@
 @property (nonatomic ,strong) UIView *searchView;
 @property (nonatomic ,strong) NSMutableArray *dataList;
 @property (nonatomic ,strong) UIBarButtonItem *leftItem;
+@property (nonatomic) BOOL isHomePage;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
