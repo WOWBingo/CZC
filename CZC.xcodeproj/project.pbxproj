@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77A1B4D56C800202B19 /* AutoScrollView.m */; };
+		187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77D1B4D56EA00202B19 /* SetTitleTableViewCell.m */; };
+		187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB77E1B4D56EA00202B19 /* SetTitleTableViewCell.xib */; };
+		187BB7841B4D56EA00202B19 /* SetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB7801B4D56EA00202B19 /* SetUpTableViewCell.m */; };
+		187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7811B4D56EA00202B19 /* SetUpTableViewCell.xib */; };
+		187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB7881B4D571C00202B19 /* ForgetPWViewController.m */; };
+		187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7891B4D571C00202B19 /* ForgetPWViewController.xib */; };
+		187BB79F1B4D571C00202B19 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB78B1B4D571C00202B19 /* LoginViewController.m */; };
+		187BB7A01B4D571C00202B19 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB78C1B4D571C00202B19 /* LoginViewController.xib */; };
+		187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB78E1B4D571C00202B19 /* ProvisionViewController.m */; };
+		187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB78F1B4D571C00202B19 /* ProvisionViewController.xib */; };
+		187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB7911B4D571C00202B19 /* RegisterViewController.m */; };
+		187BB7A41B4D571C00202B19 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7921B4D571C00202B19 /* RegisterViewController.xib */; };
+		187BB7A51B4D571C00202B19 /* serviceTerm.html in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7931B4D571C00202B19 /* serviceTerm.html */; };
+		187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB79B1B4D571C00202B19 /* SetViewController.m */; };
+		187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB79C1B4D571C00202B19 /* SetViewController.xib */; };
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
@@ -35,6 +51,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187BB7791B4D56C800202B19 /* AutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollView.h; sourceTree = "<group>"; };
+		187BB77A1B4D56C800202B19 /* AutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollView.m; sourceTree = "<group>"; };
+		187BB77C1B4D56EA00202B19 /* SetTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTitleTableViewCell.h; sourceTree = "<group>"; };
+		187BB77D1B4D56EA00202B19 /* SetTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTitleTableViewCell.m; sourceTree = "<group>"; };
+		187BB77E1B4D56EA00202B19 /* SetTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTitleTableViewCell.xib; sourceTree = "<group>"; };
+		187BB77F1B4D56EA00202B19 /* SetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpTableViewCell.h; sourceTree = "<group>"; };
+		187BB7801B4D56EA00202B19 /* SetUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpTableViewCell.m; sourceTree = "<group>"; };
+		187BB7811B4D56EA00202B19 /* SetUpTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetUpTableViewCell.xib; sourceTree = "<group>"; };
+		187BB7871B4D571C00202B19 /* ForgetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPWViewController.h; sourceTree = "<group>"; };
+		187BB7881B4D571C00202B19 /* ForgetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPWViewController.m; sourceTree = "<group>"; };
+		187BB7891B4D571C00202B19 /* ForgetPWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPWViewController.xib; sourceTree = "<group>"; };
+		187BB78A1B4D571C00202B19 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		187BB78B1B4D571C00202B19 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		187BB78C1B4D571C00202B19 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		187BB78D1B4D571C00202B19 /* ProvisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvisionViewController.h; sourceTree = "<group>"; };
+		187BB78E1B4D571C00202B19 /* ProvisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvisionViewController.m; sourceTree = "<group>"; };
+		187BB78F1B4D571C00202B19 /* ProvisionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProvisionViewController.xib; sourceTree = "<group>"; };
+		187BB7901B4D571C00202B19 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		187BB7911B4D571C00202B19 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		187BB7921B4D571C00202B19 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		187BB7931B4D571C00202B19 /* serviceTerm.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = serviceTerm.html; sourceTree = "<group>"; };
+		187BB79A1B4D571C00202B19 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		187BB79B1B4D571C00202B19 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		187BB79C1B4D571C00202B19 /* SetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetViewController.xib; sourceTree = "<group>"; };
 		19054FC41B4A08DC002DDC21 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Home/HomeViewController.h; sourceTree = "<group>"; };
 		19054FC51B4A08DC002DDC21 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Home/HomeViewController.m; sourceTree = "<group>"; };
 		19054FC61B4A08DC002DDC21 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
@@ -86,6 +126,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187BB7781B4D56C800202B19 /* AutoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				187BB7791B4D56C800202B19 /* AutoScrollView.h */,
+				187BB77A1B4D56C800202B19 /* AutoScrollView.m */,
+			);
+			path = AutoScrollView;
+			sourceTree = "<group>";
+		};
+		187BB7861B4D571C00202B19 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				187BB7871B4D571C00202B19 /* ForgetPWViewController.h */,
+				187BB7881B4D571C00202B19 /* ForgetPWViewController.m */,
+				187BB7891B4D571C00202B19 /* ForgetPWViewController.xib */,
+				187BB78A1B4D571C00202B19 /* LoginViewController.h */,
+				187BB78B1B4D571C00202B19 /* LoginViewController.m */,
+				187BB78C1B4D571C00202B19 /* LoginViewController.xib */,
+				187BB78D1B4D571C00202B19 /* ProvisionViewController.h */,
+				187BB78E1B4D571C00202B19 /* ProvisionViewController.m */,
+				187BB78F1B4D571C00202B19 /* ProvisionViewController.xib */,
+				187BB7901B4D571C00202B19 /* RegisterViewController.h */,
+				187BB7911B4D571C00202B19 /* RegisterViewController.m */,
+				187BB7921B4D571C00202B19 /* RegisterViewController.xib */,
+				187BB7931B4D571C00202B19 /* serviceTerm.html */,
+				187BB79A1B4D571C00202B19 /* SetViewController.h */,
+				187BB79B1B4D571C00202B19 /* SetViewController.m */,
+				187BB79C1B4D571C00202B19 /* SetViewController.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		19054FC31B4A08B5002DDC21 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +210,7 @@
 		192768D61B48442F00B86141 /* CZC */ = {
 			isa = PBXGroup;
 			children = (
+				187BB7861B4D571C00202B19 /* User */,
 				19D587B91B48D17300D65B43 /* Public */,
 				1918DE571B498CB400BBEB41 /* Object */,
 				198E60821B4AA8F600FBC7E8 /* Views */,
@@ -182,6 +255,12 @@
 		198E60821B4AA8F600FBC7E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				187BB77C1B4D56EA00202B19 /* SetTitleTableViewCell.h */,
+				187BB77D1B4D56EA00202B19 /* SetTitleTableViewCell.m */,
+				187BB77E1B4D56EA00202B19 /* SetTitleTableViewCell.xib */,
+				187BB77F1B4D56EA00202B19 /* SetUpTableViewCell.h */,
+				187BB7801B4D56EA00202B19 /* SetUpTableViewCell.m */,
+				187BB7811B4D56EA00202B19 /* SetUpTableViewCell.xib */,
 				198E60831B4AA8F600FBC7E8 /* AdScrollView.h */,
 				198E60841B4AA8F600FBC7E8 /* AdScrollView.m */,
 			);
@@ -191,6 +270,7 @@
 		19D587B91B48D17300D65B43 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				187BB7781B4D56C800202B19 /* AutoScrollView */,
 				19D587BA1B48D1A600D65B43 /* Key.h */,
 				19AC52361B497D5900F81759 /* CZCAPIService.h */,
 				19AC52371B497D5900F81759 /* CZCAPIService.m */,
@@ -292,10 +372,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187BB7A01B4D571C00202B19 /* LoginViewController.xib in Resources */,
+				187BB7A51B4D571C00202B19 /* serviceTerm.html in Resources */,
+				187BB7A41B4D571C00202B19 /* RegisterViewController.xib in Resources */,
 				19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */,
+				187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */,
+				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				198E60701B4A6FFA00FBC7E8 /* SearchViewController.xib in Resources */,
+				187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */,
+				187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */,
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
+				187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,14 +434,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */,
 				198E60851B4AA8F600FBC7E8 /* AdScrollView.m in Sources */,
 				1918DE6F1B49967600BBEB41 /* MainViewController.m in Sources */,
 				1918DE561B4989DF00BBEB41 /* WGS84TOGCJ02.m in Sources */,
+				187BB79F1B4D571C00202B19 /* LoginViewController.m in Sources */,
+				187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
+				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
+				187BB7841B4D56EA00202B19 /* SetUpTableViewCell.m in Sources */,
 				19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */,
+				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
+				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
+				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +576,6 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
