@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoViewController">
+            <connections>
+                <outlet property="tableView" destination="Mdk-P5-4cY" id="VCG-Lq-y43"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mdk-P5-4cY">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="XqT-Ds-Eoh"/>
+                        <outlet property="delegate" destination="-1" id="L2Y-qd-VnG"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Mdk-P5-4cY" secondAttribute="trailing" id="2ib-au-JHG"/>
+                <constraint firstItem="Mdk-P5-4cY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q1w-Me-EYR"/>
+                <constraint firstAttribute="bottom" secondItem="Mdk-P5-4cY" secondAttribute="bottom" id="hto-PC-OET"/>
+                <constraint firstItem="Mdk-P5-4cY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uJA-vB-Yac"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="381" y="398"/>
+        </view>
+    </objects>
+</document>

@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "HomeViewController.h"
-
+//
+#import "UserInfoViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     MainViewController *mainVC = [[MainViewController alloc]init];
-    self.window.rootViewController = mainVC;
+    UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
+    self.window.rootViewController = userVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
