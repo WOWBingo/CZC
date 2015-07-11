@@ -9,8 +9,11 @@
 #import "HomeViewController.h"
 #import "SearchViewController.h"
 #import "AdScrollView.h"
+#import "HomeViewCell.h"
+
 
 @interface HomeViewController ()
+
 
 @end
 
@@ -45,7 +48,19 @@
     //表格
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _dataList = [[NSMutableArray alloc]initWithArray: @[@"男鞋",@"自行车",@"男T恤"]];
+    [_tableView setSeparatorColor:[UIColor clearColor]];
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _dataList = [[NSMutableArray alloc]initWithArray: @[@"零食小吃",@"男女服饰",@"户外运动",@"箱包",@"书籍"]];
+    
+    _isHomePage = YES;
+//划线
+//    SvGridView *gridView = [[SvGridView alloc] initWithFrame:self.view.bounds];
+//    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    gridView.alpha = 0.6;
+//    gridView.gridColor = [UIColor greenColor];
+//    [self.view addSubview:gridView];
+    
+
 }
 //选择地点
 - (void)changeCity{
@@ -65,7 +80,10 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataList.count;
+    if (_isHomePage) {
+        return _dataList.count + 2;
+    }
+    return _dataList.count + 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
@@ -75,16 +93,17 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *TableSampleIdentifier = @"TableSampleIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                             TableSampleIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:TableSampleIdentifier];
-    }
     if (indexPath.row == 0) {
+        static NSString *TableSampleIdentifier = @"HomeHeadView";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                                 TableSampleIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:TableSampleIdentifier];
+        }
         AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, 180)];
         scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
         [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
@@ -94,14 +113,47 @@
         scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         scrollView.pageControl.currentPageIndicatorTintColor = [UIColor purpleColor];
         [cell addSubview:scrollView];
+        return cell;
     }else{
-        if (_dataList != nil && _dataList.count >0) {
-            NSUInteger row = [indexPath row];
-            cell.textLabel.text = [_dataList objectAtIndex:row];
+        if (_isHomePage) {
+            if (indexPath.row == 1) {
+                static NSString *cellIdentifier = @"HomeViewCell";
+                HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+                if (cell == nil) {
+                    NSBundle *bundle = [NSBundle mainBundle];
+                    NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+                    cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+                }
+                
+                return cell;
+            }else{
+                static NSString *cellIdentifier = @"HomeViewCell";
+                HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+                if (cell == nil) {
+                    NSBundle *bundle = [NSBundle mainBundle];
+                    NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+                    cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+                }
+                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",indexPath.row-1];
+                cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-2];
+                return cell;
+            }
+        }else{
+            static NSString *cellIdentifier = @"HomeViewCell";
+            HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                NSBundle *bundle = [NSBundle mainBundle];
+                NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+                cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            }
+            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",indexPath.row];
+            cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-1];
+            return cell;
         }
     }
-    return cell;
-    
 }
 
 - (void)didReceiveMemoryWarning {
