@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185CB9591B4E9CBA00D677A8 /* PublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CB9581B4E9CBA00D677A8 /* PublicObject.m */; };
 		187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77A1B4D56C800202B19 /* AutoScrollView.m */; };
 		187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77D1B4D56EA00202B19 /* SetTitleTableViewCell.m */; };
 		187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB77E1B4D56EA00202B19 /* SetTitleTableViewCell.xib */; };
@@ -28,7 +27,7 @@
 		187BB7B01B4D5E3F00202B19 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7AE1B4D5E3F00202B19 /* UserInfoViewController.xib */; };
 		187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB7B21B4D693500202B19 /* ChangeUseInfoViewController.m */; };
 		187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7B31B4D693500202B19 /* ChangeUseInfoViewController.xib */; };
-		18C999161B50AFDF00CDA089 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C999151B50AFDF00CDA089 /* ZHPickView.m */; };
+		18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C999191B50BC2300CDA089 /* ZHPickView.m */; };
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
@@ -61,8 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		185CB9571B4E9CBA00D677A8 /* PublicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicObject.h; sourceTree = "<group>"; };
-		185CB9581B4E9CBA00D677A8 /* PublicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicObject.m; sourceTree = "<group>"; };
 		187BB7791B4D56C800202B19 /* AutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollView.h; sourceTree = "<group>"; };
 		187BB77A1B4D56C800202B19 /* AutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollView.m; sourceTree = "<group>"; };
 		187BB77C1B4D56EA00202B19 /* SetTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTitleTableViewCell.h; sourceTree = "<group>"; };
@@ -93,8 +90,8 @@
 		187BB7B11B4D693500202B19 /* ChangeUseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUseInfoViewController.h; sourceTree = "<group>"; };
 		187BB7B21B4D693500202B19 /* ChangeUseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUseInfoViewController.m; sourceTree = "<group>"; };
 		187BB7B31B4D693500202B19 /* ChangeUseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeUseInfoViewController.xib; sourceTree = "<group>"; };
-		18C999141B50AFDF00CDA089 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
-		18C999151B50AFDF00CDA089 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		18C999181B50BC2300CDA089 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
+		18C999191B50BC2300CDA089 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		19054FC41B4A08DC002DDC21 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Home/HomeViewController.h; sourceTree = "<group>"; };
 		19054FC51B4A08DC002DDC21 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Home/HomeViewController.m; sourceTree = "<group>"; };
 		19054FC61B4A08DC002DDC21 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
@@ -191,14 +188,13 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		18C999131B50AFC500CDA089 /* ZHPickView */ = {
+		18C999171B50BC2300CDA089 /* ZHPickView */ = {
 			isa = PBXGroup;
 			children = (
-				18C999141B50AFDF00CDA089 /* ZHPickView.h */,
-				18C999151B50AFDF00CDA089 /* ZHPickView.m */,
+				18C999181B50BC2300CDA089 /* ZHPickView.h */,
+				18C999191B50BC2300CDA089 /* ZHPickView.m */,
 			);
-			name = ZHPickView;
-			path = Public/ZHPickView;
+			path = ZHPickView;
 			sourceTree = "<group>";
 		};
 		19054FC31B4A08B5002DDC21 /* Home */ = {
@@ -316,7 +312,7 @@
 		19D587B91B48D17300D65B43 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				18C999131B50AFC500CDA089 /* ZHPickView */,
+				18C999171B50BC2300CDA089 /* ZHPickView */,
 				187BB7781B4D56C800202B19 /* AutoScrollView */,
 				19D587BA1B48D1A600D65B43 /* Key.h */,
 				19AC52361B497D5900F81759 /* CZCAPIService.h */,
@@ -325,8 +321,6 @@
 				1918DE521B4989DF00BBEB41 /* RefreshLocation.m */,
 				1918DE531B4989DF00BBEB41 /* WGS84TOGCJ02.h */,
 				1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */,
-				185CB9571B4E9CBA00D677A8 /* PublicObject.h */,
-				185CB9581B4E9CBA00D677A8 /* PublicObject.m */,
 				19BB14B71B4CF693000445D2 /* SvGridView.h */,
 				19BB14B81B4CF693000445D2 /* SvGridView.m */,
 				19C8E55E1B4D1B17007F6C5A /* PublicObject.h */,
@@ -493,6 +487,7 @@
 				19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */,
 				198E60851B4AA8F600FBC7E8 /* AdScrollView.m in Sources */,
 				1918DE6F1B49967600BBEB41 /* MainViewController.m in Sources */,
+				18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */,
 				1918DE561B4989DF00BBEB41 /* WGS84TOGCJ02.m in Sources */,
 				196044371B4B788400989481 /* HomeViewCell.m in Sources */,
 				187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */,
@@ -511,12 +506,10 @@
 				19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */,
 				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
-				185CB9591B4E9CBA00D677A8 /* PublicObject.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
 				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
 				187BB7AF1B4D5E3F00202B19 /* UserInfoViewController.m in Sources */,
-				18C999161B50AFDF00CDA089 /* ZHPickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

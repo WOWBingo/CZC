@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PublicObject : NSObject
 
 + (PublicObject*)sharePublicObject;
 
 + (void)oneLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andHeigt:(CGFloat)height;
++ (UIImage *)fixOrientation:(UIImage *)aImage;//图片旋转
 
 @end
