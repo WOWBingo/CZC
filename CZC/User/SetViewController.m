@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
+    self.tableView.tableFooterView = [[UIView alloc]init];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
