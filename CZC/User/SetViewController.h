@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface SetViewController :PublicViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end

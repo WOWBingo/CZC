@@ -14,4 +14,12 @@
 
 #import "Key.h"
 #import "PublicObject.h"
+#import "PublicViewController.h"
 #endif
+
+#define IOS8 [[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0
+#define IOS7 [[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0
+#define IOSUnder7 [[[UIDevice currentDevice]systemVersion] floatValue] < 7.0
+
+//自定义的宏们
+#define RGB(Red,Green,Blue,Alpha) [UIColor colorWithRed:Red/255.0 green:Green/255.0 blue:Blue/255.0 alpha:Alpha]

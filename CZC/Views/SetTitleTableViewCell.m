@@ -69,6 +69,10 @@
         [backView addSubview:tabView];
         //个人信息
         UIView *userInfoView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3, 44)];
+        //添加点击事件
+        userInfoView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(userInfoShowClick)];
+        [userInfoView addGestureRecognizer:click];
         [tabView addSubview:userInfoView];
         UIImageView *userImg = [[UIImageView alloc]initWithFrame:CGRectMake(userInfoView.frame.size.width/2-10, 5, 15, 15)];
         [userImg setImage:[UIImage imageNamed:@"head_tb5"]];
@@ -119,5 +123,7 @@
     
     // Configure the view for the selected state
 }
-
+-(void)userInfoShowClick{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userInfo"　object:nil];
+}
 @end

@@ -9,6 +9,7 @@
 #import "SetViewController.h"
 #import "SetTitleTableViewCell.h"
 #import "SetUpTableViewCell.h"
+#import "UserInfoViewController.h"
 @interface SetViewController ()
 
 @end
@@ -19,6 +20,13 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goUserInfoVC) name:@"userInfo"object:nil];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+
+    self.navigationController.navigationBarHidden = YES;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -50,7 +58,7 @@
     static NSString *CellIdentifier2 = @"SetUpTableViewCell";
     SetTitleTableViewCell *cell1 = (SetTitleTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier1];
     SetUpTableViewCell *cell2 = (SetUpTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier2];
-
+    
     switch (indexPath.section) {
         case 0:{
             if (cell1 == nil) {
@@ -253,6 +261,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)goUserInfoVC{
+    UserInfoViewController *userInfoVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:userInfoVC animated:YES];
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "HomeViewController.h"
+#import "SetViewController.h"
 
 @interface MainViewController ()
 @end
@@ -42,12 +43,15 @@
     c4.tabBarItem.title=@"购物车";
     c4.tabBarItem.image=[UIImage imageNamed:@"icon-gwc-1"];
     
-    UIViewController *c5=[[UIViewController alloc]init];
-    c5.tabBarItem.title=@"个人中心";
-    c5.tabBarItem.image=[UIImage imageNamed:@"icon-grzx-1"];
-    c5.tabBarItem.badgeValue=@"6";
+    SetViewController *setVC=[[SetViewController alloc]initWithNibName:@"SetViewController" bundle:nil];
+    nearVC.isHomePage = NO;
+    UINavigationController *setNVC = [[UINavigationController alloc]initWithRootViewController:setVC];
+    setNVC.navigationBarHidden = YES;
+    setNVC.tabBarItem.title=@"个人中心";
+    setNVC.tabBarItem.image=[UIImage imageNamed:@"icon-grzx-1"];
+    setNVC.tabBarItem.badgeValue=@"6";
 
-    self.viewControllers = @[homeNVC,c2,nearNVC,c4,c5];
+    self.viewControllers = @[homeNVC,c2,nearNVC,c4,setNVC];
     self.selectedIndex = 0;
     [self.tabBar setTintColor:[UIColor whiteColor]];
     

@@ -27,6 +27,8 @@
 		187BB7B01B4D5E3F00202B19 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7AE1B4D5E3F00202B19 /* UserInfoViewController.xib */; };
 		187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB7B21B4D693500202B19 /* ChangeUseInfoViewController.m */; };
 		187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB7B31B4D693500202B19 /* ChangeUseInfoViewController.xib */; };
+		1884D7311B528B5900994C51 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884D72F1B528B5900994C51 /* PublicViewController.m */; };
+		1884D7321B528B5900994C51 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1884D7301B528B5900994C51 /* PublicViewController.xib */; };
 		18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C999191B50BC2300CDA089 /* ZHPickView.m */; };
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
@@ -98,6 +100,9 @@
 		187BB7B11B4D693500202B19 /* ChangeUseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUseInfoViewController.h; sourceTree = "<group>"; };
 		187BB7B21B4D693500202B19 /* ChangeUseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUseInfoViewController.m; sourceTree = "<group>"; };
 		187BB7B31B4D693500202B19 /* ChangeUseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeUseInfoViewController.xib; sourceTree = "<group>"; };
+		1884D72E1B528B5900994C51 /* PublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
+		1884D72F1B528B5900994C51 /* PublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicViewController.m; sourceTree = "<group>"; };
+		1884D7301B528B5900994C51 /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		18C999181B50BC2300CDA089 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		18C999191B50BC2300CDA089 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		19054FC41B4A08DC002DDC21 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Home/HomeViewController.h; sourceTree = "<group>"; };
@@ -365,6 +370,9 @@
 				19BB14B81B4CF693000445D2 /* SvGridView.m */,
 				19C8E55E1B4D1B17007F6C5A /* PublicObject.h */,
 				19C8E55F1B4D1B17007F6C5A /* PublicObject.m */,
+				1884D72E1B528B5900994C51 /* PublicViewController.h */,
+				1884D72F1B528B5900994C51 /* PublicViewController.m */,
+				1884D7301B528B5900994C51 /* PublicViewController.xib */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -470,6 +478,7 @@
 				187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */,
 				187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */,
 				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
+				1884D7321B528B5900994C51 /* PublicViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +532,7 @@
 				1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */,
 				1982F07A1B4DFB3700DB8661 /* HundredYuanCell.m in Sources */,
 				1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */,
+				1884D7311B528B5900994C51 /* PublicViewController.m in Sources */,
 				1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */,
 				19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */,
 				18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */,

@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"个人信息";
+    self.navigationItem.leftBarButtonItem = self.backMenuItem;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     //tableView背景
@@ -66,7 +70,7 @@
     if (cell == nil) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     switch (indexPath.section) {
         case 0:
