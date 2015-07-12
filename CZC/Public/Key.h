@@ -13,7 +13,7 @@
 
 #pragma mark - 网络
 
-#define APIService [CZCAPIService getCZCAPIService]
+//#define APIService [CZCAPIService getCZCAPIService]
 
 #define kConnectionFailureError @"连接失败，请检查网络连接"
 #define kRequestTimedOutError   @"请求超时，请检查连接网络"
@@ -45,6 +45,8 @@
 
 #define SCREEN_WIDTH  ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define IS_IOS8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IS_IOS7_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 
 #pragma mark - 方法
 

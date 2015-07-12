@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     HomeViewController *homeVC = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
+    homeVC.isHomePage = YES;
     UINavigationController *homeNVC = [[UINavigationController alloc]initWithRootViewController:homeVC];
     homeNVC.view.backgroundColor=[UIColor grayColor];
     homeNVC.tabBarItem.title=@"首页";
@@ -30,9 +31,12 @@
     c2.tabBarItem.title=@"抢单";
     c2.tabBarItem.image=[UIImage imageNamed:@"icon-qd-1"];
     
-    UIViewController *c3=[[UIViewController alloc]init];
-    c3.tabBarItem.title=@"周边商家";
-    c3.tabBarItem.image=[UIImage imageNamed:@"icon-zbsj-1"];
+    HomeViewController *nearVC = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
+    nearVC.isHomePage = NO;
+    UINavigationController *nearNVC = [[UINavigationController alloc]initWithRootViewController:nearVC];
+    nearNVC.tabBarItem.title=@"周边商家";
+    nearNVC.tabBarItem.image=[UIImage imageNamed:@"icon-zbsj-1"];
+
     
     UIViewController *c4=[[UIViewController alloc]init];
     c4.tabBarItem.title=@"购物车";
@@ -43,7 +47,7 @@
     c5.tabBarItem.image=[UIImage imageNamed:@"icon-grzx-1"];
     c5.tabBarItem.badgeValue=@"6";
 
-    self.viewControllers = @[homeNVC,c2,c3,c4,c5];
+    self.viewControllers = @[homeNVC,c2,nearNVC,c4,c5];
     self.selectedIndex = 0;
     [self.tabBar setTintColor:[UIColor whiteColor]];
     

@@ -18,11 +18,11 @@ static PublicObject *publicObject = nil;
 
 - (id)init{
     self = [super init];
-//    if (self) {
-//        NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
-//        [dateForm setDateFormat:@"yyyy-MM-dd"];
-//        self.dateFormate = dateForm;
-//    }
+    //    if (self) {
+    //        NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+    //        [dateForm setDateFormat:@"yyyy-MM-dd"];
+    //        self.dateFormate = dateForm;
+    //    }
     return self;
 }
 
@@ -35,16 +35,19 @@ static PublicObject *publicObject = nil;
     return publicObject;
 }
 
-+(void)oneLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andHeigt:(CGFloat)height{
+//画一条水平线
++ (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color{
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
-    if (width == 0) {
-        [lineView setFrame:CGRectMake(x - SINGLE_LINE_ADJUST_OFFSET, y, SINGLE_LINE_WIDTH, height)];
-    }else if (height == 0){
-        [lineView setFrame:CGRectMake(x, y - SINGLE_LINE_ADJUST_OFFSET, width, SINGLE_LINE_WIDTH)];
-    }
-    [lineView setBackgroundColor:[UIColor redColor]];
+    [lineView setFrame:CGRectMake(x, y - SINGLE_LINE_ADJUST_OFFSET, width, SINGLE_LINE_WIDTH)];
+    [lineView setBackgroundColor:color == nil ? [UIColor blackColor] : color];
     [view addSubview:lineView];
 }
-
+//画一条竖直线
++ (void)drawVerticalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andHeigt:(CGFloat)height andColor:(UIColor*)color{
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
+    [lineView setFrame:CGRectMake(x - SINGLE_LINE_ADJUST_OFFSET, y, SINGLE_LINE_WIDTH, height)];
+    [lineView setBackgroundColor:color == nil ? [UIColor blackColor] : color];
+    [view addSubview:lineView];
+}
 
 @end

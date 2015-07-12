@@ -10,10 +10,12 @@
 #import "SearchViewController.h"
 #import "AdScrollView.h"
 #import "HomeViewCell.h"
+#import "HundredYuanCell.h"
+#import "CityListViewController.h"
 
+#define ScrollViewHight (SCREEN_WIDTH*0.48)
 
 @interface HomeViewController ()
-
 
 @end
 
@@ -52,7 +54,8 @@
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _dataList = [[NSMutableArray alloc]initWithArray: @[@"零食小吃",@"男女服饰",@"户外运动",@"箱包",@"书籍"]];
     
-    _isHomePage = YES;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = SCREEN_WIDTH;
 //划线
 //    SvGridView *gridView = [[SvGridView alloc] initWithFrame:self.view.bounds];
 //    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -64,6 +67,8 @@
 }
 //选择地点
 - (void)changeCity{
+    CityListViewController *cityVC = [[CityListViewController alloc]initWithNibName:@"CityListViewController" bundle:nil];
+    [self presentViewController:cityVC animated:NO completion:^{  }];
     
 }
 //搜索
@@ -87,9 +92,13 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 180;
+        return ScrollViewHight;
     }else{
-        return 180;
+        if (IS_IOS8_OR_ABOVE) {
+            return UITableViewAutomaticDimension;
+        }else{
+            return SCREEN_WIDTH/3*2+28;
+        }
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -104,7 +113,7 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier:TableSampleIdentifier];
         }
-        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, 180)];
+        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
         scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
         [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
         //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
@@ -117,12 +126,12 @@
     }else{
         if (_isHomePage) {
             if (indexPath.row == 1) {
-                static NSString *cellIdentifier = @"HomeViewCell";
-                HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+                static NSString *cellIdentifier = @"HundredYuanCell";
+                HundredYuanCell *cell = (HundredYuanCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
                 if (cell == nil) {
                     NSBundle *bundle = [NSBundle mainBundle];
                     NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-                    cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                    cell = (HundredYuanCell *)[nibArray objectAtIndex:0];
                     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 }
                 
@@ -136,7 +145,9 @@
                     cell = (HomeViewCell *)[nibArray objectAtIndex:0];
                     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 }
-                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",indexPath.row-1];
+                //设置cell上button标识符
+                [cell buttonAddCellNum:indexPath.row];
+                cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row-1];
                 cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-2];
                 return cell;
             }
@@ -149,7 +160,8 @@
                 cell = (HomeViewCell *)[nibArray objectAtIndex:0];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
-            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",indexPath.row];
+            [cell buttonAddCellNum:indexPath.row];
+            cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row];
             cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-1];
             return cell;
         }

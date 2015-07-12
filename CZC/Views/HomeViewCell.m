@@ -7,15 +7,36 @@
 //
 
 #import "HomeViewCell.h"
+#import "HomeViewButton.h"
 
 
 @implementation HomeViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    [PublicObject oneLineOnView:self andX:11 andY:11 andWidth:0 andHeigt:150];
-    [PublicObject oneLineOnView:self andX:21 andY:21 andWidth:320 andHeigt:0];
+    CGFloat lineWidth = SCREEN_WIDTH/3;
+    [PublicObject drawHorizontalLineOnView:self.showView
+                                      andX:0
+                                      andY:lineWidth
+                                  andWidth:SCREEN_WIDTH
+                                  andColor:[UIColor whiteColor]];
+    [PublicObject drawVerticalLineOnView:self.showView
+                                    andX:SCREEN_WIDTH/2
+                                    andY:0
+                                andHeigt:lineWidth
+                                andColor:[UIColor whiteColor]];
+    [PublicObject drawVerticalLineOnView:self.showView
+                                    andX:lineWidth
+                                    andY:lineWidth
+                                andHeigt:lineWidth
+                                andColor:[UIColor whiteColor]];
+    [PublicObject drawVerticalLineOnView:self.showView
+                                    andX:lineWidth*2
+                                    andY:lineWidth
+                                andHeigt:lineWidth
+                                andColor:[UIColor whiteColor]];
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -25,4 +46,20 @@
 
 - (IBAction)getMore:(id)sender {
 }
+
+- (IBAction)shopInfo:(id)sender{
+    HomeViewButton *button = (HomeViewButton*)sender;
+    NSLog(@"%d-----%d",button.cellNum,button.tag);
+
+}
+//设置cell上button标识符
+- (void)buttonAddCellNum:(NSInteger)cellNum{
+    _moreBtn.tag = cellNum;
+    _topLeftBtn.cellNum = cellNum;
+    _topRightBtn.cellNum = cellNum;
+    _bottomLeftBtn.cellNum = cellNum;
+    _bottomMidBtn.cellNum = cellNum;
+    _bottomRightBtn.cellNum = cellNum;
+}
+
 @end

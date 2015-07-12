@@ -26,22 +26,30 @@
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
-		1918DE561B4989DF00BBEB41 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */; };
-		1918DE6F1B49967600BBEB41 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE6D1B49967600BBEB41 /* MainViewController.m */; };
 		192768DA1B48442F00B86141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768D91B48442F00B86141 /* main.m */; };
 		192768DD1B48442F00B86141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768DC1B48442F00B86141 /* AppDelegate.m */; };
 		192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192768E61B48442F00B86141 /* LaunchScreen.xib */; };
 		192768F41B48442F00B86141 /* CZCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768F31B48442F00B86141 /* CZCTests.m */; };
 		196044371B4B788400989481 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196044351B4B788400989481 /* HomeViewCell.m */; };
 		196044381B4B788400989481 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196044361B4B788400989481 /* HomeViewCell.xib */; };
+		1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */; };
+		1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198E60841B4AA8F600FBC7E8 /* AdScrollView.m */; };
+		1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE6D1B49967600BBEB41 /* MainViewController.m */; };
+		1982F07A1B4DFB3700DB8661 /* HundredYuanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982F0781B4DFB3700DB8661 /* HundredYuanCell.m */; };
+		1982F07B1B4DFB3700DB8661 /* HundredYuanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */; };
+		1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982F07D1B4E739000DB8661 /* HomeViewButton.m */; };
+		1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1982F07F1B4EC8AA00DB8661 /* citydict.plist */; };
+		1982F0861B4EC91700DB8661 /* CityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982F0851B4EC91700DB8661 /* CityListViewController.m */; };
+		1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1982F08E1B4EC9D900DB8661 /* CityListViewController.xib */; };
+		1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */; };
+		1982F09C1B4F4DC900DB8661 /* ChooseCityHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */; };
 		198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198E606D1B4A6FFA00FBC7E8 /* SearchViewController.m */; };
 		198E60701B4A6FFA00FBC7E8 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198E606E1B4A6FFA00FBC7E8 /* SearchViewController.xib */; };
-		198E60851B4AA8F600FBC7E8 /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198E60841B4AA8F600FBC7E8 /* AdScrollView.m */; };
 		19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC52371B497D5900F81759 /* CZCAPIService.m */; };
 		19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BB14B81B4CF693000445D2 /* SvGridView.m */; };
 		19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E55F1B4D1B17007F6C5A /* PublicObject.m */; };
 		19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D587BD1B48D63100D65B43 /* Images.xcassets */; };
-		D0AD694BFDFD4C4CAD5E901F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEED569CBB4E4D81BC20EE9C /* libPods.a */; };
+		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +108,18 @@
 		196044341B4B788400989481 /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		196044351B4B788400989481 /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		196044361B4B788400989481 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		1982F0771B4DFB3700DB8661 /* HundredYuanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HundredYuanCell.h; sourceTree = "<group>"; };
+		1982F0781B4DFB3700DB8661 /* HundredYuanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HundredYuanCell.m; sourceTree = "<group>"; };
+		1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HundredYuanCell.xib; sourceTree = "<group>"; };
+		1982F07C1B4E739000DB8661 /* HomeViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewButton.h; sourceTree = "<group>"; };
+		1982F07D1B4E739000DB8661 /* HomeViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewButton.m; sourceTree = "<group>"; };
+		1982F07F1B4EC8AA00DB8661 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		1982F0841B4EC91700DB8661 /* CityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityListViewController.h; path = Home/CityListViewController.h; sourceTree = "<group>"; };
+		1982F0851B4EC91700DB8661 /* CityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityListViewController.m; path = Home/CityListViewController.m; sourceTree = "<group>"; };
+		1982F08E1B4EC9D900DB8661 /* CityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CityListViewController.xib; path = Home/CityListViewController.xib; sourceTree = "<group>"; };
+		1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseCityHeadView.xib; sourceTree = "<group>"; };
+		1982F09A1B4F4DC900DB8661 /* ChooseCityHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCityHeadView.h; sourceTree = "<group>"; };
+		1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCityHeadView.m; sourceTree = "<group>"; };
 		198E606C1B4A6FFA00FBC7E8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Home/SearchViewController.h; sourceTree = "<group>"; };
 		198E606D1B4A6FFA00FBC7E8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Home/SearchViewController.m; sourceTree = "<group>"; };
 		198E606E1B4A6FFA00FBC7E8 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Home/SearchViewController.xib; sourceTree = "<group>"; };
@@ -115,7 +135,7 @@
 		19D587BA1B48D1A600D65B43 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key.h; path = Public/Key.h; sourceTree = "<group>"; };
 		19D587BD1B48D63100D65B43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		DEED569CBB4E4D81BC20EE9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72C08894D95434494E8BD85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0AD694BFDFD4C4CAD5E901F /* libPods.a in Frameworks */,
+				5020FA559EC64E728853C5AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12CDF14690CD4CBC89A289D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A72C08894D95434494E8BD85 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		187BB7781B4D56C800202B19 /* AutoScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +200,9 @@
 		19054FC31B4A08B5002DDC21 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1982F0841B4EC91700DB8661 /* CityListViewController.h */,
+				1982F0851B4EC91700DB8661 /* CityListViewController.m */,
+				1982F08E1B4EC9D900DB8661 /* CityListViewController.xib */,
 				19054FC41B4A08DC002DDC21 /* HomeViewController.h */,
 				19054FC51B4A08DC002DDC21 /* HomeViewController.m */,
 				19054FC61B4A08DC002DDC21 /* HomeViewController.xib */,
@@ -205,7 +236,7 @@
 				192768F01B48442F00B86141 /* CZCTests */,
 				192768D51B48442F00B86141 /* Products */,
 				75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */,
-				25A9B82BE8914075A126CA48 /* Frameworks */,
+				12CDF14690CD4CBC89A289D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +271,7 @@
 		192768D71B48442F00B86141 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1982F07F1B4EC8AA00DB8661 /* citydict.plist */,
 				192768D81B48442F00B86141 /* Info.plist */,
 				192768D91B48442F00B86141 /* main.m */,
 			);
@@ -277,6 +309,14 @@
 				196044341B4B788400989481 /* HomeViewCell.h */,
 				196044351B4B788400989481 /* HomeViewCell.m */,
 				196044361B4B788400989481 /* HomeViewCell.xib */,
+				1982F0771B4DFB3700DB8661 /* HundredYuanCell.h */,
+				1982F0781B4DFB3700DB8661 /* HundredYuanCell.m */,
+				1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */,
+				1982F07C1B4E739000DB8661 /* HomeViewButton.h */,
+				1982F07D1B4E739000DB8661 /* HomeViewButton.m */,
+				1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */,
+				1982F09A1B4F4DC900DB8661 /* ChooseCityHeadView.h */,
+				1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,14 +338,6 @@
 				19C8E55F1B4D1B17007F6C5A /* PublicObject.m */,
 			);
 			name = Public;
-			sourceTree = "<group>";
-		};
-		25A9B82BE8914075A126CA48 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DEED569CBB4E4D81BC20EE9C /* libPods.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,15 +426,19 @@
 				187BB7A51B4D571C00202B19 /* serviceTerm.html in Resources */,
 				187BB7A41B4D571C00202B19 /* RegisterViewController.xib in Resources */,
 				19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */,
+				1982F07B1B4DFB3700DB8661 /* HundredYuanCell.xib in Resources */,
 				187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */,
 				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				198E60701B4A6FFA00FBC7E8 /* SearchViewController.xib in Resources */,
 				196044381B4B788400989481 /* HomeViewCell.xib in Resources */,
+				1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */,
+				1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */,
 				187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */,
 				187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */,
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
 				187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */,
+				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +489,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */,
+				1982F07A1B4DFB3700DB8661 /* HundredYuanCell.m in Sources */,
+				1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */,
+				1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */,
 				19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */,
-				198E60851B4AA8F600FBC7E8 /* AdScrollView.m in Sources */,
-				1918DE6F1B49967600BBEB41 /* MainViewController.m in Sources */,
-				1918DE561B4989DF00BBEB41 /* WGS84TOGCJ02.m in Sources */,
 				196044371B4B788400989481 /* HomeViewCell.m in Sources */,
+				1982F09C1B4F4DC900DB8661 /* ChooseCityHeadView.m in Sources */,
 				187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */,
-				198E60851B4AA8F600FBC7E8 /* AdScrollView.m in Sources */,
-				1918DE6F1B49967600BBEB41 /* MainViewController.m in Sources */,
-				1918DE561B4989DF00BBEB41 /* WGS84TOGCJ02.m in Sources */,
 				187BB79F1B4D571C00202B19 /* LoginViewController.m in Sources */,
 				187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */,
+				1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
+				1982F0861B4EC91700DB8661 /* CityListViewController.m in Sources */,
 				19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */,
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
@@ -602,6 +639,10 @@
 				INFOPLIST_FILE = CZC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -617,6 +658,10 @@
 				INFOPLIST_FILE = CZC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
