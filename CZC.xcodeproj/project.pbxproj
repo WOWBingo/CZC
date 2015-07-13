@@ -30,6 +30,10 @@
 		1884D7311B528B5900994C51 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884D72F1B528B5900994C51 /* PublicViewController.m */; };
 		1884D7321B528B5900994C51 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1884D7301B528B5900994C51 /* PublicViewController.xib */; };
 		18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C999191B50BC2300CDA089 /* ZHPickView.m */; };
+		18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D072301B53E8A7004FCDED /* ProductCollectViewController.m */; };
+		18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */; };
+		18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */; };
+		18D072381B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */; };
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
@@ -105,6 +109,12 @@
 		1884D7301B528B5900994C51 /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		18C999181B50BC2300CDA089 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		18C999191B50BC2300CDA089 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		18D0722F1B53E8A7004FCDED /* ProductCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectViewController.h; sourceTree = "<group>"; };
+		18D072301B53E8A7004FCDED /* ProductCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectViewController.m; sourceTree = "<group>"; };
+		18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectViewController.xib; sourceTree = "<group>"; };
+		18D072341B53EF6B004FCDED /* ProductCollectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectCollectionViewCell.h; sourceTree = "<group>"; };
+		18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectCollectionViewCell.m; sourceTree = "<group>"; };
+		18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectCollectionViewCell.xib; sourceTree = "<group>"; };
 		19054FC41B4A08DC002DDC21 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Home/HomeViewController.h; sourceTree = "<group>"; };
 		19054FC51B4A08DC002DDC21 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Home/HomeViewController.m; sourceTree = "<group>"; };
 		19054FC61B4A08DC002DDC21 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
@@ -217,6 +227,9 @@
 				187BB7B11B4D693500202B19 /* ChangeUseInfoViewController.h */,
 				187BB7B21B4D693500202B19 /* ChangeUseInfoViewController.m */,
 				187BB7B31B4D693500202B19 /* ChangeUseInfoViewController.xib */,
+				18D0722F1B53E8A7004FCDED /* ProductCollectViewController.h */,
+				18D072301B53E8A7004FCDED /* ProductCollectViewController.m */,
+				18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -350,6 +363,9 @@
 				1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */,
 				1982F09A1B4F4DC900DB8661 /* ChooseCityHeadView.h */,
 				1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */,
+				18D072341B53EF6B004FCDED /* ProductCollectCollectionViewCell.h */,
+				18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */,
+				18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,10 +476,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				187BB7A01B4D571C00202B19 /* LoginViewController.xib in Resources */,
+				18D072381B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib in Resources */,
 				187BB7A51B4D571C00202B19 /* serviceTerm.html in Resources */,
 				187BB7A41B4D571C00202B19 /* RegisterViewController.xib in Resources */,
 				19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */,
 				1982F07B1B4DFB3700DB8661 /* HundredYuanCell.xib in Resources */,
+				18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */,
 				187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */,
 				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
@@ -543,6 +561,7 @@
 				187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */,
 				1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */,
 				187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */,
+				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				1982F0861B4EC91700DB8661 /* CityListViewController.m in Sources */,
@@ -555,6 +574,7 @@
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
 				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
+				18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
 				187BB7AF1B4D5E3F00202B19 /* UserInfoViewController.m in Sources */,
 			);

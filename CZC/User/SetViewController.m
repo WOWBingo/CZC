@@ -10,6 +10,7 @@
 #import "SetTitleTableViewCell.h"
 #import "SetUpTableViewCell.h"
 #import "UserInfoViewController.h"
+#import "ProductCollectViewController.h"
 @interface SetViewController ()
 
 @end
@@ -22,7 +23,8 @@
     self.tableView.tableFooterView = [[UIView alloc]init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goUserInfoVC) name:@"userInfo"object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goProductCollectVC) name:@"productCollect"object:nil];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
 
@@ -266,5 +268,9 @@
     self.navigationController.navigationBarHidden = NO;
     [self.navigationController pushViewController:userInfoVC animated:YES];
 }
-
+-(void)goProductCollectVC{
+    ProductCollectViewController *proCollectVC = [[ProductCollectViewController alloc]initWithNibName:@"ProductCollectViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:proCollectVC animated:YES];
+}
 @end
