@@ -34,6 +34,12 @@
 		18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */; };
 		18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */; };
 		18D072381B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */; };
+		18F043851B56875A00E40E69 /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F043831B56875A00E40E69 /* LogisticsViewController.m */; };
+		18F043861B56875A00E40E69 /* LogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F043841B56875A00E40E69 /* LogisticsViewController.xib */; };
+		18F0438B1B56956600E40E69 /* ShoppingCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F043891B56956600E40E69 /* ShoppingCarViewController.m */; };
+		18F0438C1B56956600E40E69 /* ShoppingCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F0438A1B56956600E40E69 /* ShoppingCarViewController.xib */; };
+		18F043901B56981500E40E69 /* ShoppingCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0438E1B56981500E40E69 /* ShoppingCarTableViewCell.m */; };
+		18F043911B56981500E40E69 /* ShoppingCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F0438F1B56981500E40E69 /* ShoppingCarTableViewCell.xib */; };
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
@@ -115,6 +121,15 @@
 		18D072341B53EF6B004FCDED /* ProductCollectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectCollectionViewCell.h; sourceTree = "<group>"; };
 		18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectCollectionViewCell.m; sourceTree = "<group>"; };
 		18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectCollectionViewCell.xib; sourceTree = "<group>"; };
+		18F043821B56875A00E40E69 /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
+		18F043831B56875A00E40E69 /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
+		18F043841B56875A00E40E69 /* LogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsViewController.xib; sourceTree = "<group>"; };
+		18F043881B56956600E40E69 /* ShoppingCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarViewController.h; sourceTree = "<group>"; };
+		18F043891B56956600E40E69 /* ShoppingCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewController.m; sourceTree = "<group>"; };
+		18F0438A1B56956600E40E69 /* ShoppingCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarViewController.xib; sourceTree = "<group>"; };
+		18F0438D1B56981500E40E69 /* ShoppingCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarTableViewCell.h; sourceTree = "<group>"; };
+		18F0438E1B56981500E40E69 /* ShoppingCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarTableViewCell.m; sourceTree = "<group>"; };
+		18F0438F1B56981500E40E69 /* ShoppingCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarTableViewCell.xib; sourceTree = "<group>"; };
 		19054FC41B4A08DC002DDC21 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Home/HomeViewController.h; sourceTree = "<group>"; };
 		19054FC51B4A08DC002DDC21 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Home/HomeViewController.m; sourceTree = "<group>"; };
 		19054FC61B4A08DC002DDC21 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
@@ -243,6 +258,26 @@
 			path = ZHPickView;
 			sourceTree = "<group>";
 		};
+		18F043811B5686D900E40E69 /* Logistics */ = {
+			isa = PBXGroup;
+			children = (
+				18F043821B56875A00E40E69 /* LogisticsViewController.h */,
+				18F043831B56875A00E40E69 /* LogisticsViewController.m */,
+				18F043841B56875A00E40E69 /* LogisticsViewController.xib */,
+			);
+			path = Logistics;
+			sourceTree = "<group>";
+		};
+		18F043871B56954300E40E69 /* ShoppingCar */ = {
+			isa = PBXGroup;
+			children = (
+				18F043881B56956600E40E69 /* ShoppingCarViewController.h */,
+				18F043891B56956600E40E69 /* ShoppingCarViewController.m */,
+				18F0438A1B56956600E40E69 /* ShoppingCarViewController.xib */,
+			);
+			path = ShoppingCar;
+			sourceTree = "<group>";
+		};
 		19054FC31B4A08B5002DDC21 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +333,8 @@
 		192768D61B48442F00B86141 /* CZC */ = {
 			isa = PBXGroup;
 			children = (
+				18F043871B56954300E40E69 /* ShoppingCar */,
+				18F043811B5686D900E40E69 /* Logistics */,
 				187BB7861B4D571C00202B19 /* User */,
 				19D587B91B48D17300D65B43 /* Public */,
 				1918DE571B498CB400BBEB41 /* Object */,
@@ -366,6 +403,9 @@
 				18D072341B53EF6B004FCDED /* ProductCollectCollectionViewCell.h */,
 				18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */,
 				18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */,
+				18F0438D1B56981500E40E69 /* ShoppingCarTableViewCell.h */,
+				18F0438E1B56981500E40E69 /* ShoppingCarTableViewCell.m */,
+				18F0438F1B56981500E40E69 /* ShoppingCarTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,6 +524,7 @@
 				18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */,
 				187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */,
 				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
+				18F043911B56981500E40E69 /* ShoppingCarTableViewCell.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				198E60701B4A6FFA00FBC7E8 /* SearchViewController.xib in Resources */,
 				196044381B4B788400989481 /* HomeViewCell.xib in Resources */,
@@ -494,6 +535,8 @@
 				187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */,
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
 				187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */,
+				18F0438C1B56956600E40E69 /* ShoppingCarViewController.xib in Resources */,
+				18F043861B56875A00E40E69 /* LogisticsViewController.xib in Resources */,
 				187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */,
 				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
 				1884D7321B528B5900994C51 /* PublicViewController.xib in Resources */,
@@ -564,7 +607,9 @@
 				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
+				18F043851B56875A00E40E69 /* LogisticsViewController.m in Sources */,
 				1982F0861B4EC91700DB8661 /* CityListViewController.m in Sources */,
+				18F0438B1B56956600E40E69 /* ShoppingCarViewController.m in Sources */,
 				19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */,
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
@@ -577,6 +622,7 @@
 				18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
 				187BB7AF1B4D5E3F00202B19 /* UserInfoViewController.m in Sources */,
+				18F043901B56981500E40E69 /* ShoppingCarTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
