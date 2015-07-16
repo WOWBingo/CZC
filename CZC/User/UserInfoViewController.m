@@ -8,6 +8,7 @@
 
 #import "UserInfoViewController.h"
 #import "ChangeUseInfoViewController.h"
+#import "AddressViewController.h"
 @interface UserInfoViewController ()
 
 @end
@@ -254,7 +255,9 @@
             if(indexPath.row == 0){
             }
             if(indexPath.row == 0){
-                
+                AddressViewController *addressVC = [[AddressViewController alloc]initWithNibName:@"AddressViewController" bundle:nil];
+                addressVC.title = @"地址管理";
+                [self.navigationController pushViewController:addressVC animated:YES];
             }
             break;
         default:

@@ -8,6 +8,7 @@
 
 #import "ShoppingCarViewController.h"
 #import "ShoppingCarTableViewCell.h"
+#import "PayViewController.h"
 @interface ShoppingCarViewController ()
 
 @end
@@ -68,5 +69,7 @@
 }
 
 - (IBAction)accountClick:(id)sender {
+    PayViewController *payVC = [[PayViewController alloc]initWithNibName:@"PayViewController" bundle:nil];
+    [self.navigationController pushViewController:payVC animated:YES];
 }
 @end

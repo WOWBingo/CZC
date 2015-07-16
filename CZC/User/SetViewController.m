@@ -11,6 +11,8 @@
 #import "SetUpTableViewCell.h"
 #import "UserInfoViewController.h"
 #import "ProductCollectViewController.h"
+#import "AddressViewController.h"
+
 @interface SetViewController ()
 
 @end
@@ -193,11 +195,12 @@
 
 #pragma mark - Table view delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSLog(@"%ld",(long)indexPath.row);
-//    switch (indexPath.section) {
-//        case 0:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld",(long)indexPath.row);
+    NSLog(@"%ld",(long)indexPath.section);
+    switch (indexPath.section) {
+        case 0:
 //            if(indexPath.row == 1){
 //                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
 //                changeInfoVC.title = @"昵称";
@@ -240,22 +243,19 @@
 //                changeInfoVC.isTel = YES;
 //                [self.navigationController pushViewController:changeInfoVC animated:YES];
 //            }
-//            break;
-//        case 3:
-//            if(indexPath.row == 0){
-//                AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//                LoginViewController *loginVC = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
-//                UINavigationController *loginNavi = [[UINavigationController alloc] initWithRootViewController:loginVC];
-//
-//
-//                appDelegate.window.rootViewController = loginNavi;
-//
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-//}
+            break;
+        case 2:
+            if(indexPath.row == 1){
+                AddressViewController *addressVC = [[AddressViewController alloc]initWithNibName:@"AddressViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:addressVC animated:YES];
+
+            }
+            break;
+        default:
+            break;
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {
