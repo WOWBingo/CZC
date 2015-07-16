@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+- (IBAction)goBack:(id)sender;
 
 @end

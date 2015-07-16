@@ -7,6 +7,7 @@
 //
 
 #import "HundredYuanCell.h"
+#import "ProductInfoViewController.h"
 
 
 @implementation HundredYuanCell
@@ -43,24 +44,7 @@
 
 - (IBAction)productInfo:(id)sender{
     
-    UIButton *btn = (UIButton*)sender;
-    switch (btn.tag) {
-        case 0:
-            NSLog(@"0000");
-            break;
-        case 1:
-            NSLog(@"1111");
-            break;
-        case 2:
-            NSLog(@"2222");
-            break;
-        case 3:
-            NSLog(@"3333");
-            break;
-            
-        default:
-            break;
-    }
+    
     
 }
 

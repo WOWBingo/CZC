@@ -37,6 +37,8 @@
 		192768DD1B48442F00B86141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768DC1B48442F00B86141 /* AppDelegate.m */; };
 		192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192768E61B48442F00B86141 /* LaunchScreen.xib */; };
 		192768F41B48442F00B86141 /* CZCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768F31B48442F00B86141 /* CZCTests.m */; };
+		193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CC8601B54BAB900774E49 /* ProductInfoViewController.m */; };
+		193CC8631B54BAB900774E49 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CC8611B54BAB900774E49 /* ProductInfoViewController.xib */; };
 		196044371B4B788400989481 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196044351B4B788400989481 /* HomeViewCell.m */; };
 		196044381B4B788400989481 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196044361B4B788400989481 /* HomeViewCell.xib */; };
 		1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */; };
@@ -56,6 +58,16 @@
 		19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BB14B81B4CF693000445D2 /* SvGridView.m */; };
 		19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E55F1B4D1B17007F6C5A /* PublicObject.m */; };
 		19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D587BD1B48D63100D65B43 /* Images.xcassets */; };
+		19E05EED1B56241A007DB924 /* ProductTableInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EEB1B56241A007DB924 /* ProductTableInfoCell.m */; };
+		19E05EEE1B56241A007DB924 /* ProductTableInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05EEC1B56241A007DB924 /* ProductTableInfoCell.xib */; };
+		19E05EF21B56B245007DB924 /* HundredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EF01B56B245007DB924 /* HundredViewController.m */; };
+		19E05EF31B56B245007DB924 /* HundredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05EF11B56B245007DB924 /* HundredViewController.xib */; };
+		19E05EF71B56B38E007DB924 /* HundredTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EF51B56B38E007DB924 /* HundredTableViewCell.m */; };
+		19E05EF81B56B38E007DB924 /* HundredTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05EF61B56B38E007DB924 /* HundredTableViewCell.xib */; };
+		19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EFA1B57898A007DB924 /* ShopTableViewController.m */; };
+		19E05EFD1B57898A007DB924 /* ShopTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05EFB1B57898A007DB924 /* ShopTableViewController.xib */; };
+		19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */; };
+		19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */; };
 		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +135,9 @@
 		192768ED1B48442F00B86141 /* CZCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CZCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		192768F21B48442F00B86141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192768F31B48442F00B86141 /* CZCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZCTests.m; sourceTree = "<group>"; };
+		193CC85F1B54BAB900774E49 /* ProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductInfoViewController.h; path = Home/ProductInfoViewController.h; sourceTree = "<group>"; };
+		193CC8601B54BAB900774E49 /* ProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductInfoViewController.m; path = Home/ProductInfoViewController.m; sourceTree = "<group>"; };
+		193CC8611B54BAB900774E49 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductInfoViewController.xib; path = Home/ProductInfoViewController.xib; sourceTree = "<group>"; };
 		196044341B4B788400989481 /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		196044351B4B788400989481 /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		196044361B4B788400989481 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +167,21 @@
 		19D587801B48C79000D65B43 /* CZC-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZC-PrefixHeader.pch"; sourceTree = "<group>"; };
 		19D587BA1B48D1A600D65B43 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key.h; path = Public/Key.h; sourceTree = "<group>"; };
 		19D587BD1B48D63100D65B43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		19E05EEA1B56241A007DB924 /* ProductTableInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableInfoCell.h; sourceTree = "<group>"; };
+		19E05EEB1B56241A007DB924 /* ProductTableInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableInfoCell.m; sourceTree = "<group>"; };
+		19E05EEC1B56241A007DB924 /* ProductTableInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableInfoCell.xib; sourceTree = "<group>"; };
+		19E05EEF1B56B245007DB924 /* HundredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HundredViewController.h; path = Home/HundredViewController.h; sourceTree = "<group>"; };
+		19E05EF01B56B245007DB924 /* HundredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HundredViewController.m; path = Home/HundredViewController.m; sourceTree = "<group>"; };
+		19E05EF11B56B245007DB924 /* HundredViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HundredViewController.xib; path = Home/HundredViewController.xib; sourceTree = "<group>"; };
+		19E05EF41B56B38E007DB924 /* HundredTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HundredTableViewCell.h; sourceTree = "<group>"; };
+		19E05EF51B56B38E007DB924 /* HundredTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HundredTableViewCell.m; sourceTree = "<group>"; };
+		19E05EF61B56B38E007DB924 /* HundredTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HundredTableViewCell.xib; sourceTree = "<group>"; };
+		19E05EF91B57898A007DB924 /* ShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopTableViewController.h; path = Home/ShopTableViewController.h; sourceTree = "<group>"; };
+		19E05EFA1B57898A007DB924 /* ShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopTableViewController.m; path = Home/ShopTableViewController.m; sourceTree = "<group>"; };
+		19E05EFB1B57898A007DB924 /* ShopTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopTableViewController.xib; path = Home/ShopTableViewController.xib; sourceTree = "<group>"; };
+		19E05EFE1B578AEE007DB924 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A72C08894D95434494E8BD85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,6 +263,9 @@
 		19054FC31B4A08B5002DDC21 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				19E05EF91B57898A007DB924 /* ShopTableViewController.h */,
+				19E05EFA1B57898A007DB924 /* ShopTableViewController.m */,
+				19E05EFB1B57898A007DB924 /* ShopTableViewController.xib */,
 				1982F0841B4EC91700DB8661 /* CityListViewController.h */,
 				1982F0851B4EC91700DB8661 /* CityListViewController.m */,
 				1982F08E1B4EC9D900DB8661 /* CityListViewController.xib */,
@@ -242,6 +275,12 @@
 				198E606C1B4A6FFA00FBC7E8 /* SearchViewController.h */,
 				198E606D1B4A6FFA00FBC7E8 /* SearchViewController.m */,
 				198E606E1B4A6FFA00FBC7E8 /* SearchViewController.xib */,
+				193CC85F1B54BAB900774E49 /* ProductInfoViewController.h */,
+				193CC8601B54BAB900774E49 /* ProductInfoViewController.m */,
+				193CC8611B54BAB900774E49 /* ProductInfoViewController.xib */,
+				19E05EEF1B56B245007DB924 /* HundredViewController.h */,
+				19E05EF01B56B245007DB924 /* HundredViewController.m */,
+				19E05EF11B56B245007DB924 /* HundredViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -350,6 +389,15 @@
 				1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */,
 				1982F09A1B4F4DC900DB8661 /* ChooseCityHeadView.h */,
 				1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */,
+				19E05EEA1B56241A007DB924 /* ProductTableInfoCell.h */,
+				19E05EEB1B56241A007DB924 /* ProductTableInfoCell.m */,
+				19E05EEC1B56241A007DB924 /* ProductTableInfoCell.xib */,
+				19E05EF41B56B38E007DB924 /* HundredTableViewCell.h */,
+				19E05EF51B56B38E007DB924 /* HundredTableViewCell.m */,
+				19E05EF61B56B38E007DB924 /* HundredTableViewCell.xib */,
+				19E05EFE1B578AEE007DB924 /* ShopTableViewCell.h */,
+				19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */,
+				19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -472,13 +520,19 @@
 				1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */,
 				1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */,
 				187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */,
+				19E05EF31B56B245007DB924 /* HundredViewController.xib in Resources */,
+				19E05EF81B56B38E007DB924 /* HundredTableViewCell.xib in Resources */,
 				187BB7B01B4D5E3F00202B19 /* UserInfoViewController.xib in Resources */,
+				19E05EEE1B56241A007DB924 /* ProductTableInfoCell.xib in Resources */,
 				187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */,
+				193CC8631B54BAB900774E49 /* ProductInfoViewController.xib in Resources */,
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
 				187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */,
 				187BB7A21B4D571C00202B19 /* ProvisionViewController.xib in Resources */,
+				19E05EFD1B57898A007DB924 /* ShopTableViewController.xib in Resources */,
 				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
 				1884D7321B528B5900994C51 /* PublicViewController.xib in Resources */,
+				19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +585,7 @@
 			files = (
 				1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */,
 				1982F07A1B4DFB3700DB8661 /* HundredYuanCell.m in Sources */,
+				19E05EED1B56241A007DB924 /* ProductTableInfoCell.m in Sources */,
 				1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */,
 				1884D7311B528B5900994C51 /* PublicViewController.m in Sources */,
 				1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */,
@@ -541,21 +596,26 @@
 				187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */,
 				187BB79F1B4D571C00202B19 /* LoginViewController.m in Sources */,
 				187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */,
+				19E05EF21B56B245007DB924 /* HundredViewController.m in Sources */,
 				1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */,
 				187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
+				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,
 				1982F0861B4EC91700DB8661 /* CityListViewController.m in Sources */,
 				19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */,
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
+				193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
 				187BB7841B4D56EA00202B19 /* SetUpTableViewCell.m in Sources */,
 				19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */,
 				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
+				19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */,
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
 				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
+				19E05EF71B56B38E007DB924 /* HundredTableViewCell.m in Sources */,
 				187BB7AF1B4D5E3F00202B19 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Masonry (0.6.1)
   - MBProgressHUD (0.9.1)
   - MJExtension (2.0.4)
   - MJRefresh (2.2.0)
@@ -30,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.3)
+  - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
   - MJExtension (~> 2.0.1)
   - MJRefresh (~> 2.2.0)
@@ -38,6 +40,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: 90503779f5c2608b76b5b0f41efdb05c080d1976
   MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08

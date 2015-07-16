@@ -19,6 +19,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /**
+     *	设置tabbar选中背景、navigationbar背景、navigationbar下边框
+     */
+    [[UITabBar appearance]setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar"]];
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setShadowImage:nil];
+    
     
     HomeViewController *homeVC = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
     homeVC.isHomePage = YES;
@@ -54,9 +62,6 @@
     self.viewControllers = @[homeNVC,c2,nearNVC,c4,setNVC];
     self.selectedIndex = 0;
     [self.tabBar setTintColor:[UIColor whiteColor]];
-    
-    [[UITabBar appearance]setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar"]];
-    
     
 }
 

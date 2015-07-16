@@ -5,7 +5,14 @@
 //  Created by 周德艺 on 15/7/8.
 //  Copyright (c) 2015年 周德艺. All rights reserved.
 //
-
+/**
+ *	//划线
+ //    SvGridView *gridView = [[SvGridView alloc] initWithFrame:self.view.bounds];
+ //    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+ //    gridView.alpha = 0.6;
+ //    gridView.gridColor = [UIColor greenColor];
+ //    [self.view addSubview:gridView];
+ */
 #import <UIKit/UIKit.h>
 
 @interface SvGridView : UIView

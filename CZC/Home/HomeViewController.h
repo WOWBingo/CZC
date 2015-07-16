@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PublicViewController.h"
 
-@interface HomeViewController:UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HomeViewController:PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) UIView *searchView;
 @property (nonatomic ,strong) NSMutableArray *dataList;

@@ -12,6 +12,8 @@
 #import "HomeViewCell.h"
 #import "HundredYuanCell.h"
 #import "CityListViewController.h"
+#import "ProductInfoViewController.h"
+#import "HundredViewController.h"
 
 #define ScrollViewHight (SCREEN_WIDTH*0.48)
 
@@ -23,15 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
     
     //添加左侧的item
-    _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"全国"
-                                                 style:UIBarButtonItemStyleBordered target:self
-                                                action:@selector(changeCity)];
+    if (_isHomePage) {
+        _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"全国"
+                                                     style:UIBarButtonItemStyleBordered target:self
+                                                    action:@selector(changeCity)];
+    }else{
+        _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"济南"
+                                                     style:UIBarButtonItemStyleBordered target:self
+                                                    action:@selector(changeCity)];
+    }
     self.navigationItem.leftBarButtonItem = _leftItem;
+    
     
     //导航条的搜索条
     UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0.0f,0.0f,SCREEN_WIDTH-120,44.0f)];
@@ -55,27 +61,28 @@
     _dataList = [[NSMutableArray alloc]initWithArray: @[@"零食小吃",@"男女服饰",@"户外运动",@"箱包",@"书籍"]];
     
     _tableView.rowHeight = UITableViewAutomaticDimension;
-    _tableView.estimatedRowHeight = SCREEN_WIDTH;
-//划线
-//    SvGridView *gridView = [[SvGridView alloc] initWithFrame:self.view.bounds];
-//    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    gridView.alpha = 0.6;
-//    gridView.gridColor = [UIColor greenColor];
-//    [self.view addSubview:gridView];
-    
+    _tableView.estimatedRowHeight = SCREEN_WIDTH;    
 
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
+
+
 //选择地点
 - (void)changeCity{
     CityListViewController *cityVC = [[CityListViewController alloc]initWithNibName:@"CityListViewController" bundle:nil];
-    [self presentViewController:cityVC animated:NO completion:^{  }];
+    [self presentViewController:cityVC animated:YES completion:^{  }];
     
 }
 //搜索
 - (void)pushSearchVC{
     SearchViewController *searchVC = [[SearchViewController alloc]initWithNibName:@"SearchViewController" bundle:nil];
     UINavigationController *searchNVC = [[UINavigationController alloc]initWithRootViewController:searchVC];
-    [self presentViewController:searchNVC animated:NO completion:^{  }];
+    [self presentViewController:searchNVC animated:YES completion:^{  }];
 }
 
 
@@ -118,9 +125,9 @@
         [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
         //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
         //scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        scrollView.PageControlShowStyle = UIPageControlShowStyleRight;
+        scrollView.PageControlShowStyle = UIPageControlShowStyleCenter;
         scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor purpleColor];
+        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
         [cell addSubview:scrollView];
         return cell;
     }else{
@@ -134,6 +141,11 @@
                     cell = (HundredYuanCell *)[nibArray objectAtIndex:0];
                     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 }
+                [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.leftBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.topRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomMidBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
                 
                 return cell;
             }else{
@@ -171,6 +183,50 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+/**
+ *	更多按钮
+ */
+- (IBAction)getMore:(id)sender{
+    HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
+    [self.navigationController pushViewController:hundredVC animated:YES];
+}
+
+/**
+ *	产品详情跳转
+ */
+- (IBAction)productInfo:(id)sender{
+    
+    UIButton *btn = (UIButton*)sender;
+    ProductInfoViewController *productInfoVC = [[ProductInfoViewController alloc]initWithNibName:@"ProductInfoViewController" bundle:nil];
+    switch (btn.tag) {
+        case 0:
+            NSLog(@"0000");
+            break;
+        case 1:
+            NSLog(@"1111");
+            break;
+        case 2:
+            NSLog(@"2222");
+            break;
+        case 3:
+            NSLog(@"3333");
+            break;
+            
+        default:
+            break;
+    }
+    [self.navigationController pushViewController:productInfoVC animated:YES];
+    
+}
+
+/**
+ *	店铺详情跳转
+ */
+- (IBAction)shopInfo:(id)sender{
+    HomeViewButton *button = (HomeViewButton*)sender;
+    NSLog(@"%d-----%d",button.cellNum,button.tag);
+    
 }
 
 @end

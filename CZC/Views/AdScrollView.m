@@ -39,9 +39,9 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     UILabel * _rightAdLabel;
 }
 
-@property (retain,nonatomic,readonly) UIButton *_leftBtn;;
-@property (retain,nonatomic,readonly) UIButton *_centerBtn;;
-@property (retain,nonatomic,readonly) UIButton *_rightBtn;
+@property (retain,nonatomic,readonly) UIButton *leftBtn;;
+@property (retain,nonatomic,readonly) UIButton *centerBtn;;
+@property (retain,nonatomic,readonly) UIButton *rightBtn;
 
 @end
 
@@ -64,6 +64,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         _leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, UISCREENWIDTH, UISCREENHEIGHT)];
         [self addSubview:_leftBtn];
         _centerBtn = [[UIButton alloc]initWithFrame:CGRectMake(UISCREENWIDTH, 0, UISCREENWIDTH, UISCREENHEIGHT)];
+        [_centerBtn addTarget:self action:@selector(clickCenter:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_centerBtn];
         _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(UISCREENWIDTH*2, 0, UISCREENWIDTH, UISCREENHEIGHT)];
         [self addSubview:_rightBtn];
@@ -202,6 +203,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     
     [_centerBtn setBackgroundImage:[UIImage imageNamed:_imageNameArray[currentImage%_imageNameArray.count]] forState:UIControlStateNormal];
     _centerAdLabel.text = _adTitleArray[currentImage%_imageNameArray.count];
+    _centerBtn.tag = currentImage%_imageNameArray.count;
         
     [_rightBtn setBackgroundImage:[UIImage imageNamed:_imageNameArray[(currentImage+1)%_imageNameArray.count]] forState:UIControlStateNormal];
     _rightAdLabel.text = _adTitleArray[(currentImage+1)%_imageNameArray.count];
@@ -213,6 +215,12 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         [_moveTime setFireDate:[NSDate dateWithTimeIntervalSinceNow:chageImageTime]];
     }
     _isTimeUp = NO;
+}
+
+- (IBAction)clickCenter:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    NSLog(@"点击的数据为%ld",(long)btn.tag);
+    
 }
 
 @end

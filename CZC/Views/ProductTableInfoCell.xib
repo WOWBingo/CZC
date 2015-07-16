@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="ProductTableInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z82-pC-h4C">
+                        <rect key="frame" x="8" y="8" width="398" height="29"/>
+                        <segments>
+                            <segment title="商品信息"/>
+                            <segment title="产品参数"/>
+                        </segments>
+                        <color key="tintColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="changeSegmented:" destination="KGk-i7-Jjw" eventType="valueChanged" id="dMX-GL-RE9"/>
+                        </connections>
+                    </segmentedControl>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdr-iX-R9G">
+                        <rect key="frame" x="8" y="44" width="398" height="84.5"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.43104781749999999" blue="0.43971448120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbX-6v-3Jh">
+                        <rect key="frame" x="8" y="44" width="398" height="84.5"/>
+                        <color key="backgroundColor" red="0.50368217209999999" green="0.66666666669999997" blue="0.30581528819999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="zdr-iX-R9G" secondAttribute="bottom" constant="8" id="3e7-j3-17V"/>
+                    <constraint firstItem="hbX-6v-3Jh" firstAttribute="top" secondItem="Z82-pC-h4C" secondAttribute="bottom" constant="8" id="7rW-oZ-gce"/>
+                    <constraint firstItem="zdr-iX-R9G" firstAttribute="top" secondItem="Z82-pC-h4C" secondAttribute="bottom" constant="8" id="Cwh-4c-31h"/>
+                    <constraint firstItem="zdr-iX-R9G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="DLH-ce-Y21"/>
+                    <constraint firstItem="hbX-6v-3Jh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HmO-AQ-okG"/>
+                    <constraint firstItem="Z82-pC-h4C" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="LZa-NW-WhA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hbX-6v-3Jh" secondAttribute="bottom" id="XoD-EM-lUK"/>
+                    <constraint firstAttribute="trailing" secondItem="zdr-iX-R9G" secondAttribute="trailing" constant="8" id="hnr-4X-3T3"/>
+                    <constraint firstItem="Z82-pC-h4C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qxM-Z0-Pej"/>
+                    <constraint firstItem="Z82-pC-h4C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vBy-vm-D2D"/>
+                    <constraint firstItem="hbX-6v-3Jh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vsG-Ps-xEn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="parametersView" destination="hbX-6v-3Jh" id="UeV-sC-Cug"/>
+                <outlet property="segmented" destination="Z82-pC-h4C" id="Jp9-4F-KBn"/>
+                <outlet property="showView" destination="zdr-iX-R9G" id="obz-vF-M7o"/>
+            </connections>
+            <point key="canvasLocation" x="327" y="349.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -37,7 +37,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="楼层分类" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V05-re-zdQ">
                                 <rect key="frame" x="31" y="4" width="52" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxx-KT-Tgp">
@@ -51,9 +51,6 @@
                                 <state key="normal" title="更多" image="arrow">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="getMore:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2An-v7-hse"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,42 +82,30 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc5-hN-8Os" customClass="HomeViewButton">
                                 <rect key="frame" x="106" y="107" width="106.5" height="106.5"/>
                                 <color key="backgroundColor" red="0.42994284907719976" green="0.42451023435945712" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2ta-5V-pC0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-kd-qJ7" customClass="HomeViewButton">
                                 <rect key="frame" x="213" y="107" width="106.5" height="106.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lrP-ia-94e"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj5-fH-f8s" customClass="HomeViewButton">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="106.5"/>
                                 <color key="backgroundColor" red="0.50368217211421851" green="0.66666666666666663" blue="0.30581528818553516" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Yd7-4I-7OX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-cV-36Y" customClass="HomeViewButton">
                                 <rect key="frame" x="160" y="0.0" width="160" height="106.5"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.43104781751217086" blue="0.43971448120040135" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3rF-Zn-SJO"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjZ-Jv-TMB" customClass="HomeViewButton">
                                 <rect key="frame" x="0.0" y="107" width="106.5" height="106.5"/>
@@ -128,12 +113,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NjZ-Jv-TMB" secondAttribute="height" multiplier="1:1" id="aLi-nC-HFe"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="19h-DD-Mp6"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,7 +154,7 @@
                         </variation>
                     </view>
                 </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="FWd-k0-Tfg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="6NH-iy-ab4"/>
                     <constraint firstItem="FWd-k0-Tfg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C0s-HX-ZV1"/>

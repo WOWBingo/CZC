@@ -22,7 +22,11 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <items>
                         <navigationItem title="选择城市" id="mh7-yJ-6TN">
-                            <barButtonItem key="leftBarButtonItem" title="取消" id="1us-87-1Zq"/>
+                            <barButtonItem key="leftBarButtonItem" title="取消" id="1us-87-1Zq">
+                                <connections>
+                                    <action selector="goBack:" destination="-1" id="g4G-b5-d1G"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
@@ -32,10 +36,10 @@
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="urK-c8-fc8">
                     <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="aJx-MC-sVc" secondAttribute="trailing" id="3X7-Bm-NWj"/>
                 <constraint firstItem="BRr-bq-uQi" firstAttribute="top" secondItem="aJx-MC-sVc" secondAttribute="bottom" id="3bq-V5-JPt"/>
