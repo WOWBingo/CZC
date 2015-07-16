@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "HomeViewController.h"
+#import "LogisticsViewController.h"
+#import "ShoppingCarViewController.h"
 #import "SetViewController.h"
 
 @interface MainViewController ()
@@ -35,10 +37,12 @@
     homeNVC.tabBarItem.title=@"首页";
     homeNVC.tabBarItem.image=[UIImage imageNamed:@"icon-sy-1"];
     
-    UIViewController *c2=[[UIViewController alloc]init];
-    c2.view.backgroundColor=[UIColor brownColor];
-    c2.tabBarItem.title=@"抢单";
-    c2.tabBarItem.image=[UIImage imageNamed:@"icon-qd-1"];
+    LogisticsViewController *LogisticsVC=[[LogisticsViewController alloc]initWithNibName:@"LogisticsViewController" bundle:nil];
+    LogisticsVC.isHomePage = NO;
+    UINavigationController *LogisticsNVC = [[UINavigationController alloc]initWithRootViewController:LogisticsVC];
+    LogisticsNVC.tabBarItem.title=@"抢单";
+    LogisticsNVC.tabBarItem.image=[UIImage imageNamed:@"icon-qd-1"];
+//    LogisticsNVC.tabBarItem.badgeValue=@"6";
     
     HomeViewController *nearVC = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
     nearVC.isHomePage = NO;
@@ -47,19 +51,23 @@
     nearNVC.tabBarItem.image=[UIImage imageNamed:@"icon-zbsj-1"];
 
     
-    UIViewController *c4=[[UIViewController alloc]init];
-    c4.tabBarItem.title=@"购物车";
-    c4.tabBarItem.image=[UIImage imageNamed:@"icon-gwc-1"];
+    ShoppingCarViewController *shoppingCarVC=[[ShoppingCarViewController alloc]initWithNibName:@"ShoppingCarViewController" bundle:nil];
+    shoppingCarVC.isHomePage = NO;
+    UINavigationController *shoppingCarNVC = [[UINavigationController alloc]initWithRootViewController:shoppingCarVC];
+    shoppingCarNVC.tabBarItem.title=@"购物车";
+    shoppingCarNVC.tabBarItem.image=[UIImage imageNamed:@"icon-gwc-1"];
+//  shoppingCarNVC.tabBarItem.badgeValue=@"6";
+
     
     SetViewController *setVC=[[SetViewController alloc]initWithNibName:@"SetViewController" bundle:nil];
-    nearVC.isHomePage = NO;
+    setVC.isHomePage = NO;
     UINavigationController *setNVC = [[UINavigationController alloc]initWithRootViewController:setVC];
     setNVC.navigationBarHidden = YES;
     setNVC.tabBarItem.title=@"个人中心";
     setNVC.tabBarItem.image=[UIImage imageNamed:@"icon-grzx-1"];
     setNVC.tabBarItem.badgeValue=@"6";
 
-    self.viewControllers = @[homeNVC,c2,nearNVC,c4,setNVC];
+    self.viewControllers = @[homeNVC,LogisticsNVC,nearNVC,shoppingCarNVC,setNVC];
     self.selectedIndex = 0;
     [self.tabBar setTintColor:[UIColor whiteColor]];
     

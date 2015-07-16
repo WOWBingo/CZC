@@ -85,6 +85,10 @@
         [userInfoView addSubview:userInfoLab];
         //产品收藏
         UIView *proCollectView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/3, 0, SCREEN_WIDTH/3, 44)];
+        //添加点击事件
+        proCollectView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *click1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(productCollectShowClick)];
+        [proCollectView addGestureRecognizer:click1];
         [tabView addSubview:proCollectView];
         self.proCollectNumLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 5, proCollectView.frame.size.width, 15)];
         self.proCollectNumLab.font = [UIFont systemFontOfSize:12];
@@ -124,6 +128,9 @@
     // Configure the view for the selected state
 }
 -(void)userInfoShowClick{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"userInfo"　object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userInfo" object:nil];
+}
+-(void)productCollectShowClick{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"productCollect" object:nil];
 }
 @end

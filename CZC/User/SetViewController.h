@@ -11,4 +11,5 @@
 @interface SetViewController :PublicViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) BOOL isHomePage;
 @end
