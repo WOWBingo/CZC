@@ -30,10 +30,17 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"";
     self.navigationItem.backBarButtonItem = backItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
     // 修改navigation下边框
     [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
+    
+    //修改UINavigationController title 的颜色和大小
+    UIColor * titleColor = [UIColor whiteColor];
+    UIFont * font = [UIFont boldSystemFontOfSize:20];
+    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:titleColor,NSForegroundColorAttributeName,font,NSFontAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
 
     
     

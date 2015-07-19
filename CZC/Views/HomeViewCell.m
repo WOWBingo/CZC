@@ -13,6 +13,12 @@
 @implementation HomeViewCell
 
 - (void)awakeFromNib {
+    
+    _topLeftBtn.indexOfCell = 0;
+    _topRightBtn.indexOfCell = 1;
+    _bottomLeftBtn.indexOfCell = 2;
+    _bottomMidBtn.indexOfCell = 3;
+    _bottomRightBtn.indexOfCell = 4;
     // Initialization code
     CGFloat lineWidth = SCREEN_WIDTH/3;
     [PublicObject drawHorizontalLineOnView:self.showView
@@ -49,17 +55,17 @@
 
 - (IBAction)shopInfo:(id)sender{
     HomeViewButton *button = (HomeViewButton*)sender;
-    NSLog(@"%d-----%d",button.cellNum,button.tag);
+    NSLog(@"%d-----%d",button.tag,button.indexOfCell);
 
 }
 //设置cell上button标识符
 - (void)buttonAddCellNum:(NSInteger)cellNum{
     _moreBtn.tag = cellNum;
-    _topLeftBtn.cellNum = cellNum;
-    _topRightBtn.cellNum = cellNum;
-    _bottomLeftBtn.cellNum = cellNum;
-    _bottomMidBtn.cellNum = cellNum;
-    _bottomRightBtn.cellNum = cellNum;
+    _topLeftBtn.tag = cellNum;
+    _topRightBtn.tag = cellNum;
+    _bottomLeftBtn.tag = cellNum;
+    _bottomMidBtn.tag = cellNum;
+    _bottomRightBtn.tag = cellNum;
 }
 
 @end

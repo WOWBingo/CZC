@@ -19,14 +19,19 @@
     [super viewDidLoad];
     self.title = @"购物车";
     self.navigationItem.leftBarButtonItem = self.backMenuItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"head_pic"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     //数组初始化
     self.productsArr = [[NSMutableArray alloc]init];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;

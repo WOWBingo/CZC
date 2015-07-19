@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"百元专区";
 //    [_integrateBtn.layer setMasksToBounds:YES];
 //    [_integrateBtn.layer setCornerRadius:8.0]; //设置矩形四个圆角半径
 //    [_integrateBtn.layer setBorderWidth:0.5]; //边框宽度

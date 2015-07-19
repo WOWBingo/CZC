@@ -10,6 +10,6 @@
 
 @interface HomeViewButton : UIButton
 
-@property(nonatomic)NSInteger cellNum;
+@property(nonatomic)NSInteger indexOfCell;
 
 @end

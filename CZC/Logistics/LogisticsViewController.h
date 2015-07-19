@@ -12,8 +12,6 @@
 
 @property (nonatomic) BOOL isHomePage;
 
-@property (weak, nonatomic) IBOutlet UIButton *checkImgBtn;
-@property (weak, nonatomic) IBOutlet UIButton *historyImgBtn;
 @property (weak, nonatomic) IBOutlet UIButton *checkLabBtn;
 @property (weak, nonatomic) IBOutlet UIButton *historyLabBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *checkTriangleImg;
@@ -23,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *placeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *checkView;
 
 @property (nonatomic,strong)NSMutableArray *historyArr;
 

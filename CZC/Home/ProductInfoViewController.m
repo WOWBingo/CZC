@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"产品详情";
     
     _tableView.dataSource = self;
     _tableView.delegate = self;

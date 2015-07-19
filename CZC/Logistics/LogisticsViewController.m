@@ -18,12 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"人人物流";
-    self.navigationItem.leftBarButtonItem = self.backMenuItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"head_pic"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
+
     //数组初始化
     self.historyArr = [[NSMutableArray alloc]init];
+    
+    [PublicObject drawHorizontalLineOnView:_checkView andX:0 andY:62 andWidth:SCREEN_WIDTH andColor:[UIColor lightGrayColor]];
+    [PublicObject drawHorizontalLineOnView:_checkView andX:0 andY:124 andWidth:SCREEN_WIDTH andColor:[UIColor lightGrayColor]];
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setShadowImage:nil];
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {

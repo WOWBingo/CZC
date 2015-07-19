@@ -14,6 +14,7 @@
 #import "CityListViewController.h"
 #import "ProductInfoViewController.h"
 #import "HundredViewController.h"
+#import "ShopTableViewController.h"
 
 #define ScrollViewHight (SCREEN_WIDTH*0.48)
 
@@ -139,14 +140,14 @@
                     NSBundle *bundle = [NSBundle mainBundle];
                     NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
                     cell = (HundredYuanCell *)[nibArray objectAtIndex:0];
+                    cell.moreBtn.tag = indexPath.row;
+                    [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.leftBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.topRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.bottomMidBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.bottomRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
                     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 }
-                [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
-                [cell.leftBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                [cell.topRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                [cell.bottomMidBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                [cell.bottomRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                
                 return cell;
             }else{
                 static NSString *cellIdentifier = @"HomeViewCell";
@@ -155,6 +156,12 @@
                     NSBundle *bundle = [NSBundle mainBundle];
                     NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
                     cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                    [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
                     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 }
                 //设置cell上button标识符
@@ -170,6 +177,12 @@
                 NSBundle *bundle = [NSBundle mainBundle];
                 NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
                 cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+                [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
             [cell buttonAddCellNum:indexPath.row];
@@ -188,8 +201,17 @@
  *	更多按钮
  */
 - (IBAction)getMore:(id)sender{
-    HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
-    [self.navigationController pushViewController:hundredVC animated:YES];
+    
+    UIButton *btn = (UIButton*)sender;
+    if (_isHomePage && btn.tag == 1) {
+        HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
+        [self.navigationController pushViewController:hundredVC animated:YES];
+    }else{
+        ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];
+        [self.navigationController pushViewController:shopVC animated:YES];
+
+    }
+    
 }
 
 /**
@@ -225,7 +247,7 @@
  */
 - (IBAction)shopInfo:(id)sender{
     HomeViewButton *button = (HomeViewButton*)sender;
-    NSLog(@"%d-----%d",button.cellNum,button.tag);
+    NSLog(@"%d-----%d",button.tag,button.indexOfCell);
     
 }
 

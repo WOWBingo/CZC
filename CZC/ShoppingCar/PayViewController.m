@@ -20,12 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付";
-    self.navigationItem.leftBarButtonItem = self.backMenuItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"head_pic"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setShadowImage:nil];
 }
 
 - (void)didReceiveMemoryWarning {

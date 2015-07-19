@@ -7,7 +7,7 @@
 //
 
 #import "ShopTableViewController.h"
-#import "HundredTableViewCell.h"
+#import "ShopTableViewCell.h"
 
 @interface ShopTableViewController ()
 
@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"展示分站";
 
     CGFloat w = (SCREEN_WIDTH-16)/4;
     [PublicObject drawVerticalLineOnView:_tableHeadView andX:w andY:0 andHeigt:_tableHeadView.frame.size.height andColor:[UIColor lightGrayColor]];
@@ -57,12 +59,20 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifier = @"HundredTableViewCell";
-    HundredTableViewCell *cell = (HundredTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"ShopTableViewCell";
+    ShopTableViewCell *cell = (ShopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         NSBundle *bundle = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-        cell = (HundredTableViewCell *)[nibArray objectAtIndex:0];
+        cell = (ShopTableViewCell *)[nibArray objectAtIndex:0];
+        
+        [[cell.shopImageView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
+        [[cell.shopImageView layer] setShadowRadius:1];//宽度
+        [[cell.shopImageView layer] setShadowOpacity:1];//透明
+        [[cell.shopImageView layer] setShadowColor:[UIColor grayColor].CGColor];
+        [cell.shopImageView.layer setMasksToBounds:YES];
+        [cell.shopImageView.layer setCornerRadius:cell.shopImageView.frame.size.width/2+2];
+        
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;

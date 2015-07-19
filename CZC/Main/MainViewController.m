@@ -47,17 +47,16 @@
     HomeViewController *nearVC = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
     nearVC.isHomePage = NO;
     UINavigationController *nearNVC = [[UINavigationController alloc]initWithRootViewController:nearVC];
-    nearNVC.tabBarItem.title=@"周边商家";
-    nearNVC.tabBarItem.image=[UIImage imageNamed:@"icon-zbsj-1"];
+    nearNVC.tabBarItem.title = @"周边商家";
+    nearNVC.tabBarItem.image = [UIImage imageNamed:@"icon-zbsj-1"];
 
     
     ShoppingCarViewController *shoppingCarVC=[[ShoppingCarViewController alloc]initWithNibName:@"ShoppingCarViewController" bundle:nil];
     shoppingCarVC.isHomePage = NO;
     UINavigationController *shoppingCarNVC = [[UINavigationController alloc]initWithRootViewController:shoppingCarVC];
-    shoppingCarNVC.tabBarItem.title=@"购物车";
-    shoppingCarNVC.tabBarItem.image=[UIImage imageNamed:@"icon-gwc-1"];
-//  shoppingCarNVC.tabBarItem.badgeValue=@"6";
-
+    shoppingCarNVC.tabBarItem.title = @"购物车";
+    shoppingCarNVC.tabBarItem.image = [UIImage imageNamed:@"icon-gwc-1"];
+    //    LogisticsNVC.tabBarItem.badgeValue=@"6";
     
     SetViewController *setVC=[[SetViewController alloc]initWithNibName:@"SetViewController" bundle:nil];
     setVC.isHomePage = NO;
