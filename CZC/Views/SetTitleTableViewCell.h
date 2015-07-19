@@ -9,12 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface SetTitleTableViewCell : UITableViewCell
-@property (nonatomic,strong) UIButton *popBtn;
-@property (nonatomic,strong) UIButton *nameBtn;
-@property (nonatomic,strong) UIButton *iconBtn;
-@property (nonatomic,strong) UILabel *vipTypeLab;
-@property (nonatomic,strong) UILabel *vipNumLab;
-@property (nonatomic,strong) UILabel *proCollectNumLab;
-@property (nonatomic,strong) UILabel *shopCollectNumLab;
+@property (weak, nonatomic) IBOutlet UIButton *popBtn;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *vipTypeLab;
+@property (weak, nonatomic) IBOutlet UILabel *vipNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *proCollectNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *shopCollectNumLab;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+- (IBAction)proCollect:(id)sender;
+- (IBAction)shopCollect:(id)sender;
+- (IBAction)goPopVC:(id)sender;
+- (IBAction)userInfoVC:(id)sender;
+- (IBAction)setUpVC:(id)sender;
 
 @end

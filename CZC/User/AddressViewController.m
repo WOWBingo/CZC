@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"地址管理";
-    self.navigationItem.leftBarButtonItem = self.backMenuItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //数组初始化
     self.addressArr = [[NSMutableArray alloc]init];
 }

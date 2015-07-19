@@ -33,4 +33,18 @@
     }
     return self;
 }
+
+-(void)editFrame:(BOOL)isEdited andIndexPath:(NSIndexPath *)indexPath{
+    if (isEdited) {
+        if (indexPath.row%2) {
+            _boxView.frame = CGRectMake(_boxView.frame.origin.x + 24, 0, _boxView.frame.size.width, _boxView.frame.size.height);
+        }else{
+            _boxView.frame = CGRectMake(_boxView.frame.origin.x - 24, 0, _boxView.frame.size.width, _boxView.frame.size.height);
+        }
+        
+    }else{
+        _boxView.frame = CGRectMake(0, 0, _boxView.frame.size.width, _boxView.frame.size.height);
+    }
+}
+
 @end

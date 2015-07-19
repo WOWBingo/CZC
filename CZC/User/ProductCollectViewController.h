@@ -12,8 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
-@property (weak, nonatomic) IBOutlet UIButton *titleBtn;
-@property (weak, nonatomic) IBOutlet UIButton *arrowBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreTypeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *typeLab;
 
 @property (nonatomic,strong) NSMutableArray *productsArr;
 //假数据
@@ -21,4 +21,7 @@
 @property (nonatomic,strong) NSMutableArray *proInfoArr;
 @property (nonatomic,strong) NSMutableArray *proPriceArr;
 
+@property(nonatomic) BOOL isEdited;
+
+- (IBAction)moreType:(id)sender;
 @end

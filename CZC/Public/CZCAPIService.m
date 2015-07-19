@@ -20,7 +20,7 @@ static CZCAPIService *CAS;
 }
 
 - (void)GETmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
-    NSString *requrl = [NSString stringWithFormat:@"%@%@%@",kPublic_URL,methodName,parameters];
+    NSString *requrl = [NSString stringWithFormat:@"%@%@%@",K_Public_URL,methodName,parameters];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@" 请求地址：%@",requrl);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -36,7 +36,7 @@ static CZCAPIService *CAS;
 }
 
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
-    NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
+    NSString *requrl = [NSString stringWithFormat:@"%@%@",K_Public_URL,methodName];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];

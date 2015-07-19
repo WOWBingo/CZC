@@ -23,15 +23,22 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
+    // 修改navigation下边框
+    [self.navigationController.navigationBar setShadowImage:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goUserInfoVC) name:@"userInfo"object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goProductCollectVC) name:@"productCollect"object:nil];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-
-    self.navigationController.navigationBarHidden = YES;
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setShadowImage:nil];
+    [self.navigationController.navigationBar setHidden:YES];
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = YES;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -66,7 +73,9 @@
     switch (indexPath.section) {
         case 0:{
             if (cell1 == nil) {
-                cell1 = [[SetTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier1];
+                NSBundle *bundle = [NSBundle mainBundle];
+                NSArray *nibArray = [bundle loadNibNamed:CellIdentifier1 owner:self options:nil];
+                cell1 = (SetTitleTableViewCell *)[nibArray objectAtIndex:0];
                 [cell1 setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
         }
@@ -157,35 +166,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
-        return 0.0001;
-    }
-    if (section == 1) {
-        return 13;
-    }
-    else{
-        return 23;
+        return 0.001;
+    }else{
+        return 20;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case 0:
-            if (indexPath.row == 0) {
-                return 160;
-            }
-            else{
-                return  44;
-            }
-            break;
-        case 1:
-            return 44;
-            break;
-        case 2:
-            return 44;
-            break;
-        default:
-            return 44;
-            break;
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        return 160;
+    }else{
+        return 44;
     }
 }
 

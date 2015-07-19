@@ -18,9 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人信息";
-    self.navigationItem.leftBarButtonItem = self.backMenuItem;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     //tableView背景
@@ -31,10 +28,19 @@
     self.age = [[UILabel alloc]init];
     self.tel = [[UILabel alloc]init];
     
+    // 修改navigation下边框
+    [self.navigationController.navigationBar setShadowImage:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeDate:) name:@"date"object:nil];
     self.dateStr = @"2011-11-08";
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setShadowImage:nil];
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
