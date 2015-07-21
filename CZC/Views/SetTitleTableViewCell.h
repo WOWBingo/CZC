@@ -17,10 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *proCollectNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *shopCollectNumLab;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
-- (IBAction)proCollect:(id)sender;
-- (IBAction)shopCollect:(id)sender;
-- (IBAction)goPopVC:(id)sender;
-- (IBAction)userInfoVC:(id)sender;
-- (IBAction)setUpVC:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *userInfoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *proCollectBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shopCollectBtn;
+@property (weak, nonatomic) IBOutlet UIButton *setBtn;
 
 @end

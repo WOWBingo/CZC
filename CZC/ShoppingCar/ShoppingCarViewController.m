@@ -28,7 +28,16 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
-    [self.navigationController.navigationBar setShadowImage:nil];
+    self.navigationController.navigationBar.hidden = NO;
+}
+-(void)viewDidAppear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

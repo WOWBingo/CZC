@@ -67,8 +67,17 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.parentViewController.tabBarController.tabBar.hidden = NO;
     [self.navigationController.navigationBar setShadowImage:nil];
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setShadowImage:nil];
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
+    self.parentViewController.tabBarController.tabBar.hidden = YES;
 }
 
 

@@ -131,20 +131,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)proCollect:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"productCollect" object:nil];
-}
-
-- (IBAction)shopCollect:(id)sender {
-}
-
-- (IBAction)goPopVC:(id)sender {
-}
-
-- (IBAction)userInfoVC:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"userInfo" object:nil];
-}
-
-- (IBAction)setUpVC:(id)sender {
-}
 @end

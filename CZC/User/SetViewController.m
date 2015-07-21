@@ -12,6 +12,7 @@
 #import "UserInfoViewController.h"
 #import "ProductCollectViewController.h"
 #import "AddressViewController.h"
+#import "ShopCollectViewController.h"
 
 @interface SetViewController ()
 
@@ -23,20 +24,19 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
-    // 修改navigation下边框
-    [self.navigationController.navigationBar setShadowImage:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goUserInfoVC) name:@"userInfo"object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goProductCollectVC) name:@"productCollect"object:nil];
-
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
-    [self.navigationController.navigationBar setShadowImage:nil];
-    [self.navigationController.navigationBar setHidden:YES];
+    self.navigationController.navigationBar.hidden = YES;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -77,6 +77,11 @@
                 NSArray *nibArray = [bundle loadNibNamed:CellIdentifier1 owner:self options:nil];
                 cell1 = (SetTitleTableViewCell *)[nibArray objectAtIndex:0];
                 [cell1 setSelectionStyle:UITableViewCellSelectionStyleNone];
+                [cell1.setBtn addTarget:self action:@selector(setVC:) forControlEvents:UIControlEventTouchUpInside];
+                [cell1.popBtn addTarget:self action:@selector(popVC:) forControlEvents:UIControlEventTouchUpInside];
+                [cell1.userInfoBtn addTarget:self action:@selector(userInfoVC:) forControlEvents:UIControlEventTouchUpInside];
+                [cell1.proCollectBtn addTarget:self action:@selector(productCollectVC:) forControlEvents:UIControlEventTouchUpInside];
+                [cell1.shopCollectBtn addTarget:self action:@selector(shopCollectVC:) forControlEvents:UIControlEventTouchUpInside];
             }
         }
             return cell1;
@@ -146,23 +151,6 @@
     return cell2;
     
 }
-
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    NSString *groupName = [[NSString alloc]init];
-//    switch (section) {
-//        case 1:
-//            groupName = @"其他资料";
-//            return groupName;
-//            break;
-//
-//        default:
-//            return nil;
-//            break;
-//    }
-//
-//}
-
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
@@ -254,14 +242,27 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)goUserInfoVC{
-    UserInfoViewController *userInfoVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
-    self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:userInfoVC animated:YES];
+- (IBAction)popVC:(id)sender{
+    
 }
--(void)goProductCollectVC{
-    ProductCollectViewController *proCollectVC = [[ProductCollectViewController alloc]initWithNibName:@"ProductCollectViewController" bundle:nil];
-    self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:proCollectVC animated:YES];
+- (IBAction)setVC:(id)sender{
+    
 }
+- (IBAction)userInfoVC:(id)sender{
+    UserInfoViewController *newVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:newVC animated:YES];
+}
+- (IBAction)productCollectVC:(id)sender{
+    ProductCollectViewController *newVC = [[ProductCollectViewController alloc]initWithNibName:@"ProductCollectViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:newVC animated:YES];
+    
+}
+- (IBAction)shopCollectVC:(id)sender{
+    ShopCollectViewController *newVC = [[ShopCollectViewController alloc]initWithNibName:@"ShopCollectViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:newVC animated:YES];
+}
+
 @end

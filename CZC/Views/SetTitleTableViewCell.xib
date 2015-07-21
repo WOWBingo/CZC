@@ -52,9 +52,6 @@
                                 <state key="normal" title="个人信息" image="head_tb5">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="userInfoVC:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pxo-40-E7S"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-PD-gFR">
                                 <rect key="frame" x="157.5" y="0.0" width="50" height="36"/>
@@ -64,9 +61,6 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="proCollect:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XlL-Lb-d2E"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-zq-3hw">
                                 <rect key="frame" x="281.5" y="0.0" width="50" height="36"/>
@@ -76,9 +70,6 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shopCollect:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yqt-Hv-ZZL"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店铺收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPJ-F1-pUy">
                                 <rect key="frame" x="282" y="18" width="48" height="14.5"/>
@@ -119,9 +110,6 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <connections>
-                            <action selector="setUpVC:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qg4-IR-45S"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-h6-wxm">
                         <rect key="frame" x="307" y="18" width="40" height="40"/>
@@ -133,9 +121,6 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <connections>
-                            <action selector="goPopVC:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2cC-2I-Vch"/>
-                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_tb4" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-1e-G76">
                         <rect key="frame" x="130.5" y="38" width="52" height="52"/>
@@ -198,8 +183,12 @@
                 <outlet property="iconView" destination="Xap-1e-G76" id="RhV-o7-nru"/>
                 <outlet property="nameLab" destination="8zs-gJ-XoK" id="Svk-GK-IIs"/>
                 <outlet property="popBtn" destination="Ata-h6-wxm" id="EMc-uh-K59"/>
+                <outlet property="proCollectBtn" destination="3Zk-PD-gFR" id="ntE-3K-Cwk"/>
                 <outlet property="proCollectNumLab" destination="kmt-z5-5q9" id="fQo-Mc-b3L"/>
+                <outlet property="setBtn" destination="MLi-1N-Zdl" id="stQ-R3-kBP"/>
+                <outlet property="shopCollectBtn" destination="t4h-zq-3hw" id="USg-Gb-YH3"/>
                 <outlet property="shopCollectNumLab" destination="UV9-b1-PcJ" id="704-6o-09w"/>
+                <outlet property="userInfoBtn" destination="odH-dt-AGY" id="tlN-Eu-h1d"/>
                 <outlet property="vipNumLab" destination="sxI-cE-Cqp" id="ked-Yi-jbT"/>
                 <outlet property="vipTypeLab" destination="tS7-qx-fnH" id="ld2-Hr-yLP"/>
             </connections>

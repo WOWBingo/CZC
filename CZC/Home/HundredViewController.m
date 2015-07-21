@@ -53,6 +53,10 @@
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -83,15 +87,6 @@
     }
     return cell;
 }
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    _tableHeadView.hidden = NO;
-//    
-//    return _tableHeadView;
-//}
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 36.0;
-//}
 
 
 @end

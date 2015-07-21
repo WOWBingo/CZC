@@ -8,6 +8,7 @@
 
 #import "ShopTableViewController.h"
 #import "ShopTableViewCell.h"
+#import "ShopInfoViewController.h"
 
 @interface ShopTableViewController ()
 
@@ -17,14 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"展示分站";
 
     CGFloat w = (SCREEN_WIDTH-16)/4;
-    [PublicObject drawVerticalLineOnView:_tableHeadView andX:w andY:0 andHeigt:_tableHeadView.frame.size.height andColor:[UIColor lightGrayColor]];
-    [PublicObject drawVerticalLineOnView:_tableHeadView andX:2*w andY:0 andHeigt:_tableHeadView.frame.size.height andColor:[UIColor lightGrayColor]];
-    [PublicObject drawVerticalLineOnView:_tableHeadView andX:3*w andY:0 andHeigt:_tableHeadView.frame.size.height andColor:[UIColor lightGrayColor]];
-    
+    [PublicObject drawVerticalLineOnView:_tableHeadView
+                                    andX:w
+                                    andY:0
+                                andHeigt:_tableHeadView.frame.size.height
+                                andColor:[UIColor lightGrayColor]];
+    [PublicObject drawVerticalLineOnView:_tableHeadView
+                                    andX:2*w
+                                    andY:0
+                                andHeigt:_tableHeadView.frame.size.height
+                                andColor:[UIColor lightGrayColor]];
+    [PublicObject drawVerticalLineOnView:_tableHeadView
+                                    andX:3*w
+                                    andY:0
+                                andHeigt:_tableHeadView.frame.size.height
+                                andColor:[UIColor lightGrayColor]];
+
     /**
      *	设置阴影
      */
@@ -32,14 +44,18 @@
     [[_tableHeadView layer] setShadowRadius:0.5];//宽度
     [[_tableHeadView layer] setShadowOpacity:1];//透明
     [[_tableHeadView layer] setShadowColor:[UIColor lightGrayColor].CGColor];
-    
+
     // Do any additional setup after loading the view from its nib.
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
+    _tableView.dataSource         = self;
+    _tableView.delegate           = self;
     [_tableView setTableFooterView:[[UIView alloc]init]];
     [_tableView setSeparatorColor:[UIColor clearColor]];
-    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.rowHeight          = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,26 +74,29 @@
     return SCREEN_WIDTH*0.3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     static NSString *cellIdentifier = @"ShopTableViewCell";
-    ShopTableViewCell *cell = (ShopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ShopTableViewCell *cell         = (ShopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        NSBundle *bundle = [NSBundle mainBundle];
+        NSBundle *bundle  = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-        cell = (ShopTableViewCell *)[nibArray objectAtIndex:0];
-        
+        cell              = (ShopTableViewCell *)[nibArray objectAtIndex:0];
+
         [[cell.shopImageView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
         [[cell.shopImageView layer] setShadowRadius:1];//宽度
         [[cell.shopImageView layer] setShadowOpacity:1];//透明
         [[cell.shopImageView layer] setShadowColor:[UIColor grayColor].CGColor];
         [cell.shopImageView.layer setMasksToBounds:YES];
         [cell.shopImageView.layer setCornerRadius:cell.shopImageView.frame.size.width/2+2];
-        
+
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:newVC animated:YES];
+}
 
 
 @end

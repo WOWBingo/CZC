@@ -12,10 +12,10 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *tableHeadView;
-@property (weak, nonatomic) IBOutlet UIButton *integrateBtn;
-@property (weak, nonatomic) IBOutlet UIButton *salesBtn;
-@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
-@property (weak, nonatomic) IBOutlet UIButton *priceBtn;
+@property (weak, nonatomic) IBOutlet UIView      *tableHeadView;
+@property (weak, nonatomic) IBOutlet UIButton    *integrateBtn;
+@property (weak, nonatomic) IBOutlet UIButton    *salesBtn;
+@property (weak, nonatomic) IBOutlet UIButton    *commentBtn;
+@property (weak, nonatomic) IBOutlet UIButton    *priceBtn;
 
 @end

@@ -37,8 +37,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setShadowImage:nil];
-    [self.navigationController.navigationBar setHidden:NO];
+
 }
 
 - (void)didReceiveMemoryWarning {
