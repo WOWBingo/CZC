@@ -49,7 +49,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="LBV-eO-GKk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueline" translatesAutoresizingMaskIntoConstraints="NO" id="LBV-eO-GKk">
                         <rect key="frame" x="14" y="39" width="293" height="1"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Wvt-Aj-7i7"/>
@@ -112,8 +112,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="blueline" width="414" height="45"/>
         <image name="laba" width="36" height="36"/>
-        <image name="line" width="414" height="45"/>
         <image name="rightArrow" width="9" height="14"/>
         <image name="shizhong" width="16" height="16"/>
     </resources>

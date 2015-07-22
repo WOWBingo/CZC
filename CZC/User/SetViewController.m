@@ -14,6 +14,7 @@
 #import "AddressViewController.h"
 #import "ShopCollectViewController.h"
 #import "NewsViewController.h"
+#import "InstallViewController.h"
 @interface SetViewController ()
 
 @end
@@ -249,7 +250,9 @@
 
 }
 - (IBAction)setVC:(id)sender{
-    
+    InstallViewController *installVC = [[InstallViewController alloc]initWithNibName:@"InstallViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:installVC animated:YES];
 }
 - (IBAction)userInfoVC:(id)sender{
     UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];

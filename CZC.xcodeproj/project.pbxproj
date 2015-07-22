@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C19F1B5FBF10005947D6 /* InstallViewController.m */; };
+		1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A01B5FBF10005947D6 /* InstallViewController.xib */; };
+		1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */; };
+		1808C1A71B5FC908005947D6 /* InstallTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */; };
+		1808C1B01B5FD0AD005947D6 /* InstallTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */; };
+		1808C1B11B5FD0AD005947D6 /* InstallTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */; };
 		1821568E1B57D48500E5D502 /* MyLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */; };
 		1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */; };
 		182156931B57D5F200E5D502 /* MyLogisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182156911B57D5F200E5D502 /* MyLogisticsTableViewCell.m */; };
@@ -136,6 +142,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1808C19E1B5FBF10005947D6 /* InstallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallViewController.h; sourceTree = "<group>"; };
+		1808C19F1B5FBF10005947D6 /* InstallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallViewController.m; sourceTree = "<group>"; };
+		1808C1A01B5FBF10005947D6 /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
+		1808C1A31B5FC908005947D6 /* InstallTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallTimeTableViewCell.h; sourceTree = "<group>"; };
+		1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallTimeTableViewCell.m; sourceTree = "<group>"; };
+		1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallTimeTableViewCell.xib; sourceTree = "<group>"; };
+		1808C1AD1B5FD0AD005947D6 /* InstallTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallTimeViewController.h; sourceTree = "<group>"; };
+		1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallTimeViewController.m; sourceTree = "<group>"; };
+		1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallTimeViewController.xib; sourceTree = "<group>"; };
 		1821568B1B57D48500E5D502 /* MyLogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogisticsViewController.h; sourceTree = "<group>"; };
 		1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogisticsViewController.m; sourceTree = "<group>"; };
 		1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogisticsViewController.xib; sourceTree = "<group>"; };
@@ -403,6 +418,12 @@
 				18A091F61B5E97D7009F3376 /* DiscountPromotionViewController.h */,
 				18A091F71B5E97D7009F3376 /* DiscountPromotionViewController.m */,
 				18A091F81B5E97D7009F3376 /* DiscountPromotionViewController.xib */,
+				1808C19E1B5FBF10005947D6 /* InstallViewController.h */,
+				1808C19F1B5FBF10005947D6 /* InstallViewController.m */,
+				1808C1A01B5FBF10005947D6 /* InstallViewController.xib */,
+				1808C1AD1B5FD0AD005947D6 /* InstallTimeViewController.h */,
+				1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */,
+				1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -575,9 +596,9 @@
 				1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */,
 				1982F07C1B4E739000DB8661 /* HomeViewButton.h */,
 				1982F07D1B4E739000DB8661 /* HomeViewButton.m */,
-				1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */,
 				1982F09A1B4F4DC900DB8661 /* ChooseCityHeadView.h */,
 				1982F09B1B4F4DC900DB8661 /* ChooseCityHeadView.m */,
+				1982F0981B4F4D6900DB8661 /* ChooseCityHeadView.xib */,
 				19E05EEA1B56241A007DB924 /* ProductTableInfoCell.h */,
 				19E05EEB1B56241A007DB924 /* ProductTableInfoCell.m */,
 				19E05EEC1B56241A007DB924 /* ProductTableInfoCell.xib */,
@@ -623,6 +644,9 @@
 				18A091FB1B5E9828009F3376 /* DiscountPromotionTableViewCell.h */,
 				18A091FC1B5E9828009F3376 /* DiscountPromotionTableViewCell.m */,
 				18A091FD1B5E9828009F3376 /* DiscountPromotionTableViewCell.xib */,
+				1808C1A31B5FC908005947D6 /* InstallTimeTableViewCell.h */,
+				1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */,
+				1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -755,6 +779,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1808C1A71B5FC908005947D6 /* InstallTimeTableViewCell.xib in Resources */,
 				187BB7A01B4D571C00202B19 /* LoginViewController.xib in Resources */,
 				18D072381B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib in Resources */,
 				18A091F51B5E9498009F3376 /* LogisticsAssistantTableViewCell.xib in Resources */,
@@ -779,7 +804,9 @@
 				182156A81B57E6EA00E5D502 /* PayDeliverTableViewCell.xib in Resources */,
 				19D18A671B5B9BB1001917F9 /* 城中成接口测试0718.xlsx in Resources */,
 				196044381B4B788400989481 /* HomeViewCell.xib in Resources */,
+				1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */,
 				1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */,
+				1808C1B11B5FD0AD005947D6 /* InstallTimeViewController.xib in Resources */,
 				1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */,
 				1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */,
 				187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */,
@@ -885,6 +912,7 @@
 				18A091EA1B5E8E96009F3376 /* PersonNewsTableViewCell.m in Sources */,
 				182156B11B57EB2100E5D502 /* PayInfoTableViewCell.m in Sources */,
 				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,
+				1808C1B01B5FD0AD005947D6 /* InstallTimeViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,
@@ -899,6 +927,7 @@
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
 				193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */,
 				19AB71D71B5E410700E3FF40 /* LGtitleBarView.m in Sources */,
+				1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
 				197DD7171B5D46E00092AEE8 /* ShopCollectTableViewCell.m in Sources */,
 				19AB71C91B5DF27A00E3FF40 /* ShopInfoViewController.m in Sources */,
@@ -908,6 +937,7 @@
 				18A091F41B5E9498009F3376 /* LogisticsAssistantTableViewCell.m in Sources */,
 				19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */,
 				19D18A5E1B5B3566001917F9 /* PublicViewController.m in Sources */,
+				1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */,
 				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
 				19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */,
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
