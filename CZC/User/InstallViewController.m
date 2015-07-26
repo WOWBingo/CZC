@@ -8,7 +8,7 @@
 
 #import "InstallViewController.h"
 #import "InstallTimeTableViewCell.h"
-#import "InstallTimeViewController.h"
+#import "TimeView.h"
 @interface InstallViewController ()
 
 @end
@@ -19,7 +19,8 @@
     [super viewDidLoad];
     self.title = @"消息设置";
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
-    self.tableView.tableFooterView = [[UIView alloc]init];}
+    self.tableView.tableFooterView = [[UIView alloc]init];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -163,10 +164,34 @@
     NSLog(@"%ld",(long)indexPath.row);
     NSLog(@"%ld",(long)indexPath.section);
     if(indexPath.section == 2 && indexPath.row == 1){
-        InstallTimeViewController *installTimeVC = [[InstallTimeViewController alloc]initWithNibName:@"InstallTimeViewController" bundle:nil];
-        [self presentViewController:installTimeVC animated:YES completion:^{
-        }];
+        TimeView *timeView = [TimeView instanceTimeView];
+        timeView.backgroundColor = [UIColor clearColor];
+        timeView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        timeView.pickView.delegate = self;
+        timeView.pickView.dataSource = self;
+        self.timeArr = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"24", nil];
+        [self.view addSubview:timeView];
     }
 }
+#pragma mark - Pick view delegate
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 2;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return self.timeArr.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if (component == 0) {
+        return [self.timeArr objectAtIndex:row];
+    }else{
+        
+        return [self.timeArr objectAtIndex:row];
+    }
+}
+
 
 @end

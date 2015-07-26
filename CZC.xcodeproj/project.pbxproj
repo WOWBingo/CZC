@@ -11,8 +11,6 @@
 		1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A01B5FBF10005947D6 /* InstallViewController.xib */; };
 		1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */; };
 		1808C1A71B5FC908005947D6 /* InstallTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */; };
-		1808C1B01B5FD0AD005947D6 /* InstallTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */; };
-		1808C1B11B5FD0AD005947D6 /* InstallTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */; };
 		1821568E1B57D48500E5D502 /* MyLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */; };
 		1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */; };
 		182156931B57D5F200E5D502 /* MyLogisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182156911B57D5F200E5D502 /* MyLogisticsTableViewCell.m */; };
@@ -31,6 +29,8 @@
 		182156B71B57EE0F00E5D502 /* AddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182156B51B57EE0F00E5D502 /* AddressViewController.xib */; };
 		182156BB1B57EED500E5D502 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182156B91B57EED500E5D502 /* AddressTableViewCell.m */; };
 		182156BC1B57EED500E5D502 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182156BA1B57EED500E5D502 /* AddressTableViewCell.xib */; };
+		185A154D1B64FAE800B18E81 /* TimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A154C1B64FAE800B18E81 /* TimeView.m */; };
+		185A154F1B64FAFF00B18E81 /* TimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185A154E1B64FAFF00B18E81 /* TimeView.xib */; };
 		187BB77B1B4D56C800202B19 /* AutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77A1B4D56C800202B19 /* AutoScrollView.m */; };
 		187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BB77D1B4D56EA00202B19 /* SetTitleTableViewCell.m */; };
 		187BB7831B4D56EA00202B19 /* SetTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187BB77E1B4D56EA00202B19 /* SetTitleTableViewCell.xib */; };
@@ -149,9 +149,6 @@
 		1808C1A31B5FC908005947D6 /* InstallTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallTimeTableViewCell.h; sourceTree = "<group>"; };
 		1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallTimeTableViewCell.m; sourceTree = "<group>"; };
 		1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallTimeTableViewCell.xib; sourceTree = "<group>"; };
-		1808C1AD1B5FD0AD005947D6 /* InstallTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallTimeViewController.h; sourceTree = "<group>"; };
-		1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallTimeViewController.m; sourceTree = "<group>"; };
-		1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallTimeViewController.xib; sourceTree = "<group>"; };
 		1821568B1B57D48500E5D502 /* MyLogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogisticsViewController.h; sourceTree = "<group>"; };
 		1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogisticsViewController.m; sourceTree = "<group>"; };
 		1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogisticsViewController.xib; sourceTree = "<group>"; };
@@ -179,6 +176,9 @@
 		182156B81B57EED500E5D502 /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
 		182156B91B57EED500E5D502 /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
 		182156BA1B57EED500E5D502 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		185A154B1B64FAE800B18E81 /* TimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeView.h; sourceTree = "<group>"; };
+		185A154C1B64FAE800B18E81 /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeView.m; sourceTree = "<group>"; };
+		185A154E1B64FAFF00B18E81 /* TimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeView.xib; sourceTree = "<group>"; };
 		187BB7791B4D56C800202B19 /* AutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollView.h; sourceTree = "<group>"; };
 		187BB77A1B4D56C800202B19 /* AutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollView.m; sourceTree = "<group>"; };
 		187BB77C1B4D56EA00202B19 /* SetTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTitleTableViewCell.h; sourceTree = "<group>"; };
@@ -424,9 +424,6 @@
 				1808C19E1B5FBF10005947D6 /* InstallViewController.h */,
 				1808C19F1B5FBF10005947D6 /* InstallViewController.m */,
 				1808C1A01B5FBF10005947D6 /* InstallViewController.xib */,
-				1808C1AD1B5FD0AD005947D6 /* InstallTimeViewController.h */,
-				1808C1AE1B5FD0AD005947D6 /* InstallTimeViewController.m */,
-				1808C1AF1B5FD0AD005947D6 /* InstallTimeViewController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -652,6 +649,9 @@
 				1808C1A31B5FC908005947D6 /* InstallTimeTableViewCell.h */,
 				1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */,
 				1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */,
+				185A154B1B64FAE800B18E81 /* TimeView.h */,
+				185A154C1B64FAE800B18E81 /* TimeView.m */,
+				185A154E1B64FAFF00B18E81 /* TimeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -811,13 +811,13 @@
 				196044381B4B788400989481 /* HomeViewCell.xib in Resources */,
 				1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */,
 				1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */,
-				1808C1B11B5FD0AD005947D6 /* InstallTimeViewController.xib in Resources */,
 				1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */,
 				1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */,
 				187BB79E1B4D571C00202B19 /* ForgetPWViewController.xib in Resources */,
 				19E05EF31B56B245007DB924 /* HundredViewController.xib in Resources */,
 				197DD7181B5D46E00092AEE8 /* ShopCollectTableViewCell.xib in Resources */,
 				19E05EF81B56B38E007DB924 /* HundredTableViewCell.xib in Resources */,
+				185A154F1B64FAFF00B18E81 /* TimeView.xib in Resources */,
 				187BB7B01B4D5E3F00202B19 /* UserInfoViewController.xib in Resources */,
 				19E05EEE1B56241A007DB924 /* ProductTableInfoCell.xib in Resources */,
 				18A091EB1B5E8E96009F3376 /* PersonNewsTableViewCell.xib in Resources */,
@@ -897,6 +897,7 @@
 				1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */,
 				18A091F91B5E97D7009F3376 /* DiscountPromotionViewController.m in Sources */,
 				1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */,
+				185A154D1B64FAE800B18E81 /* TimeView.m in Sources */,
 				182156A21B57E30600E5D502 /* PayAddressTableViewCell.m in Sources */,
 				19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */,
 				1821569D1B57E0AB00E5D502 /* PayViewController.m in Sources */,
@@ -917,7 +918,6 @@
 				18A091EA1B5E8E96009F3376 /* PersonNewsTableViewCell.m in Sources */,
 				182156B11B57EB2100E5D502 /* PayInfoTableViewCell.m in Sources */,
 				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,
-				1808C1B01B5FD0AD005947D6 /* InstallTimeViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,

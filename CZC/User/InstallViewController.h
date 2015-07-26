@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface InstallViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
+#import "TimeView.h"
+@interface InstallViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -18,4 +18,5 @@
 @property (nonatomic,strong)UISwitch *systemSwitch;
 @property (nonatomic,strong)UILabel *timeLab;
 
+@property (nonatomic,strong) NSArray *timeArr;
 @end
