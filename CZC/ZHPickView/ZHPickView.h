@@ -30,6 +30,15 @@
  *  @return 带有toolbar的datePicker
  */
 -(instancetype)initDatePickWithDate:(NSDate *)defaulDate datePickerMode:(UIDatePickerMode)datePickerMode isHaveNavControler:(BOOL)isHaveNavControler;
+/**
+ *  通过plistName添加一个pickView
+ *
+ *  @param array              需要显示的数组
+ *  @param isHaveNavControler 是否在NavControler之内
+ *
+ *  @return 带有toolbar的pickview
+ */
+-(instancetype)initPickviewWithArray:(NSArray *)array isHaveNavControler:(BOOL)isHaveNavControler;
 
 /**
  *   移除本控件

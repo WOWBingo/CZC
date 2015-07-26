@@ -13,7 +13,8 @@
 #import "ProductCollectViewController.h"
 #import "AddressViewController.h"
 #import "ShopCollectViewController.h"
-
+#import "NewsViewController.h"
+#import "InstallViewController.h"
 @interface SetViewController ()
 
 @end
@@ -243,26 +244,31 @@
 }
 
 - (IBAction)popVC:(id)sender{
-    
+    NewsViewController *newsVC = [[NewsViewController alloc]initWithNibName:@"NewsViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:newsVC animated:YES];
+
 }
 - (IBAction)setVC:(id)sender{
-    
+    InstallViewController *installVC = [[InstallViewController alloc]initWithNibName:@"InstallViewController" bundle:nil];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:installVC animated:YES];
 }
 - (IBAction)userInfoVC:(id)sender{
-    UserInfoViewController *newVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
+    UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:newVC animated:YES];
+    [self.navigationController pushViewController:userVC animated:YES];
 }
 - (IBAction)productCollectVC:(id)sender{
-    ProductCollectViewController *newVC = [[ProductCollectViewController alloc]initWithNibName:@"ProductCollectViewController" bundle:nil];
+    ProductCollectViewController *proVC = [[ProductCollectViewController alloc]initWithNibName:@"ProductCollectViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:newVC animated:YES];
+    [self.navigationController pushViewController:proVC animated:YES];
     
 }
 - (IBAction)shopCollectVC:(id)sender{
-    ShopCollectViewController *newVC = [[ShopCollectViewController alloc]initWithNibName:@"ShopCollectViewController" bundle:nil];
+    ShopCollectViewController *shopVC = [[ShopCollectViewController alloc]initWithNibName:@"ShopCollectViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:newVC animated:YES];
+    [self.navigationController pushViewController:shopVC animated:YES];
 }
 
 @end
