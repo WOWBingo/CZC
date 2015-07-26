@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopoverView.h"
 
 @interface ShopCollectTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *shopImage;
+@property (weak, nonatomic) IBOutlet UILabel *shopNameLab;
+@property (weak, nonatomic) IBOutlet UIButton *moreBtn;
+
+@property (nonatomic, strong) PopoverView *moreView;
 
 @end

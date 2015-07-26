@@ -18,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 @property (weak, nonatomic) IBOutlet UIButton *telBtn;
+
 - (IBAction)callShop:(id)sender;
 
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) LGtitleBarView *titleBar;
+@property (nonatomic) CGRect oldFrame;
 
 @end

@@ -81,14 +81,6 @@
         NSBundle *bundle  = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
         cell              = (ShopTableViewCell *)[nibArray objectAtIndex:0];
-
-        [[cell.shopImageView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
-        [[cell.shopImageView layer] setShadowRadius:1];//宽度
-        [[cell.shopImageView layer] setShadowOpacity:1];//透明
-        [[cell.shopImageView layer] setShadowColor:[UIColor grayColor].CGColor];
-        [cell.shopImageView.layer setMasksToBounds:YES];
-        [cell.shopImageView.layer setCornerRadius:cell.shopImageView.frame.size.width/2+2];
-
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;

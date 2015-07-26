@@ -9,7 +9,7 @@
 #import "LGtitleBarView.h"
 #import "LGcollectionCell.h"
 
-#define KCollectionCellHeight 30
+#define KCollectionCellHeight 33
 #define LCollectionCellMargin 20
 
 
@@ -41,7 +41,7 @@ static NSString *const cellIdentifier = @"cells";
 
 - (void)setUp
 {
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.backgroundColor = [UIColor whiteColor];//view背景色
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -54,7 +54,7 @@ static NSString *const cellIdentifier = @"cells";
     collection.delegate = self;
     collection.scrollEnabled = YES;
     collection.bounces = NO;
-    collection.backgroundColor = [UIColor clearColor];
+    collection.backgroundColor = [UIColor whiteColor];
     collection.showsHorizontalScrollIndicator = NO;
     collection.showsVerticalScrollIndicator = NO;
     
@@ -73,7 +73,7 @@ static NSString *const cellIdentifier = @"cells";
 {
     _titles = titles;
     self.collection.frame = self.bounds;
-    self.bottomView.frame = CGRectMake(2, KCollectionCellHeight, [self sizeForTitle:self.titles[0]] - 4, 2);
+    self.bottomView.frame = CGRectMake(10, KCollectionCellHeight, [self sizeForTitle:self.titles[0]] - 20, 3);
     [self.collection reloadData];
 }
 
@@ -107,7 +107,7 @@ static NSString *const cellIdentifier = @"cells";
     LGcollectionCell *cell = (LGcollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.bottomView.frame = CGRectMake(cell.frame.origin.x, cell.frame.size.height-2, cell.frame.size.width - 4, 2);
+        self.bottomView.frame = CGRectMake(cell.frame.origin.x+10, cell.frame.size.height, cell.frame.size.width - 20, 3);
     }];
     if(self.delegate && [self.delegate respondsToSelector:@selector(LGtitleBarView:didSelectedItem:)])
     {

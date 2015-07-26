@@ -18,10 +18,10 @@
     /**
      *	设置阴影
      */
-    [[_boxView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
-    [[_boxView layer] setShadowRadius:1];//宽度
-    [[_boxView layer] setShadowOpacity:1];//透明
-    [[_boxView layer] setShadowColor:[UIColor lightGrayColor].CGColor];
+//    [[_boxView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
+//    [[_boxView layer] setShadowRadius:1];//宽度
+//    [[_boxView layer] setShadowOpacity:1];//透明
+//    [[_boxView layer] setShadowColor:[UIColor lightGrayColor].CGColor];
 //    [[_shopImageView layer] setShadowOffset:CGSizeMake(1, 1)];//偏移量
 //    [[_shopImageView layer] setShadowRadius:1];//宽度
 //    [[_shopImageView layer] setShadowOpacity:1];//透明
@@ -34,6 +34,9 @@
 //    [[_discountLable layer] setShadowRadius:1];//宽度
 //    [[_discountLable layer] setShadowOpacity:1];//透明
 //    [[_discountLable layer] setShadowColor:[UIColor lightGrayColor].CGColor];
+
+    [_shopImageView.layer setMasksToBounds:YES];
+    [_shopImageView.layer setCornerRadius:_shopImageView.frame.size.width/2+2];
     
 }
 

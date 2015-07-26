@@ -21,7 +21,7 @@
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     //tableView背景
-    self.tableView.backgroundColor = [UIColor grayColor];
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.trueName = [[UILabel alloc]init];
     self.userName = [[UILabel alloc]init];
     self.sex = [[UILabel alloc]init];

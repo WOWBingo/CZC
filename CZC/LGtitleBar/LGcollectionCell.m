@@ -32,7 +32,7 @@
 
 - (void)setUp
 {
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.backgroundColor = [UIColor whiteColor];//button背景色
     
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -42,7 +42,7 @@
     self.titleLabel = titleLabel;
     
     UIView *selectView = [[UIView alloc] init];
-    selectView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    selectView.backgroundColor = [UIColor whiteColor];
     self.selectedBackgroundView = selectView;
 }
 
@@ -52,7 +52,7 @@
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     
-    self.titleLabel.frame = CGRectMake(0, 0, width, height*0.6);
+    self.titleLabel.frame = CGRectMake(0, 0, width, height*0.9);//字体偏移量0.9
 }
 
 -(void)setTitleName:(NSString *)titleName

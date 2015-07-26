@@ -8,6 +8,8 @@
 
 #import "ShopCollectViewController.h"
 #import "ShopCollectTableViewCell.h"
+#import "ShopInfoViewController.h"
+#import "PopoverView.h"
 
 @interface ShopCollectViewController ()
 
@@ -22,7 +24,7 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView setTableFooterView:[[UIView alloc]init]];
-    [_tableView setSeparatorColor:[UIColor clearColor]];
+//    [_tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 160;
 }
@@ -52,17 +54,36 @@
         NSBundle *bundle = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
         cell = (ShopCollectTableViewCell *)[nibArray objectAtIndex:0];
-        
+        cell.moreBtn.tag = row;
+        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:newVC animated:YES];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)moreView:(id)sender{
+    CGPoint point = CGPointMake(100, 100);
+    UIButton *btn = (UIButton*)sender;
+    ShopCollectTableViewCell *cell = (ShopCollectTableViewCell*) [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
+    cell.moreView = [[PopoverView alloc] initWithPoint:btn.frame.origin ];
+    cell.moreView.parentView = cell;
+    cell.moreView.selectRowAtIndex = ^(NSInteger index){
+        NSLog(@"select index:%d", index);
+        NSLog(@"cell index:%d", btn.tag);
+    };
+    [cell.moreView show];
 }
 
 /*

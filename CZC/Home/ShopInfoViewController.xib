@@ -72,7 +72,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="4As-nk-84K"/>
                                 <constraint firstAttribute="trailing" secondItem="Qms-PE-lPr" secondAttribute="trailing" constant="10" id="FhL-Rw-hYW"/>
@@ -88,7 +88,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.076525680357937609" green="0.74521193781286166" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" secondItem="ZiR-nS-dQO" secondAttribute="width" multiplier="0.45" constant="70" id="34A-Yw-cvd"/>
                         <constraint firstAttribute="bottom" secondItem="6HE-I8-IeP" secondAttribute="bottom" id="CUn-Lw-VKe"/>
@@ -96,6 +96,10 @@
                         <constraint firstAttribute="trailing" secondItem="6HE-I8-IeP" secondAttribute="trailing" id="v8R-m4-DUl"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f4P-Gi-7xU">
+                    <rect key="frame" x="0.0" y="340" width="375" height="327"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lx4-ci-3Qn">
                     <rect key="frame" x="0.0" y="304" width="375" height="36"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,10 +107,6 @@
                         <constraint firstAttribute="height" constant="36" id="UFy-T1-wCj"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f4P-Gi-7xU">
-                    <rect key="frame" x="0.0" y="340" width="375" height="327"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -123,7 +123,7 @@
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="332.5" y="353.5"/>
+            <point key="canvasLocation" x="142.5" y="70.5"/>
         </view>
     </objects>
     <resources>
