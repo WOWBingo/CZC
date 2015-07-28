@@ -27,6 +27,12 @@
     return self;
 }
 - (IBAction)submitClick:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"submitTime"
+                                                        object:nil];
+}
+- (IBAction)cancelClick:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelTime"
+                                                        object:nil];
 }
 
 +(TimeView *)instanceTimeView

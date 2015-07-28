@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TimeView.h"
+#import "InstallTimeTableViewCell.h"
 @interface InstallViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,5 +19,9 @@
 @property (nonatomic,strong)UISwitch *systemSwitch;
 @property (nonatomic,strong)UILabel *timeLab;
 
-@property (nonatomic,strong) NSArray *timeArr;
+@property(nonatomic,strong)TimeView *timeView;
+@property(nonatomic,strong)InstallTimeTableViewCell *installTimeCell;//存储修改时间的那个cell
+@property (nonatomic,strong)NSArray *timeArr;
+@property (nonatomic,strong)NSString *startTimeStr;
+@property (nonatomic,strong)NSString *endTimeStr;
 @end

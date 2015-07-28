@@ -20,6 +20,19 @@
     self.title = @"消息设置";
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
+    
+    self.startTimeStr = @"3";
+    self.endTimeStr = @"9";
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(submitTime:)
+                                                 name:@"submitTime"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cancelTime:)
+                                                 name:@"cancelTime"
+                                               object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,9 +137,10 @@
                         cell2.backgroundColor = [UIColor whiteColor];
                         [cell2 setSelectionStyle:UITableViewCellSelectionStyleNone];
                     }
-                    cell2.startTimeLab.text = @"22:00";
-                    cell2.endTimeLab.text = @"6:00";
+                    cell2.startTimeLab.text = [NSString stringWithFormat:@"%@:00",self.startTimeStr];
+                    cell2.endTimeLab.text = [NSString stringWithFormat:@"%@:00",self.endTimeStr];
                     cell2.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    self.installTimeCell = cell2;
                     return cell2;
                 }
                     break;
@@ -144,8 +158,8 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-
-        return 20;
+    
+    return 20;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -164,20 +178,27 @@
     NSLog(@"%ld",(long)indexPath.row);
     NSLog(@"%ld",(long)indexPath.section);
     if(indexPath.section == 2 && indexPath.row == 1){
-        TimeView *timeView = [TimeView instanceTimeView];
-        timeView.backgroundColor = [UIColor clearColor];
-        timeView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        timeView.pickView.delegate = self;
-        timeView.pickView.dataSource = self;
+        self.timeView = [TimeView instanceTimeView];
+        self.timeView.backgroundColor = [UIColor clearColor];
+        self.timeView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        self.timeView.pickView.delegate = self;
+        self.timeView.pickView.dataSource = self;
         self.timeArr = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"24", nil];
-        [self.view addSubview:timeView];
+        self.timeView.titleLab.text = [NSString stringWithFormat:@"每日%@:00-次日%@:00",self.startTimeStr,self.endTimeStr];
+        int startIndex = [self.startTimeStr intValue]-1;
+        int endIndex = [self.endTimeStr intValue]-1;
+        [self.timeView.pickView selectRow:startIndex inComponent:0 animated:YES];
+        [self.timeView.pickView selectRow:endIndex inComponent:1 animated:YES];
+        [self.view addSubview:self.timeView];
     }
 }
 #pragma mark - Pick view delegate
+//实现datasouce协议必须实现的方法，此方法用于返回选择器格式(起始时间，结束时间共计2个)
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
     return 2;
 }
+//实现datasouce协议必须实现的方法，此方法用于返回某个选择器的选择个数
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     return self.timeArr.count;
@@ -188,10 +209,32 @@
     if (component == 0) {
         return [self.timeArr objectAtIndex:row];
     }else{
-        
         return [self.timeArr objectAtIndex:row];
     }
 }
-
-
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if(component==0)
+    {
+        NSLog(@"%@",[self.timeArr objectAtIndex:row]);
+        self.startTimeStr = [self.timeArr objectAtIndex:row];
+        self.timeView.titleLab.text = [NSString stringWithFormat:@"每日%@:00-次日%@:00",self.startTimeStr,self.endTimeStr];
+    }
+    else if(component==1)
+    {
+        NSLog(@"%@",[self.timeArr objectAtIndex:row]);
+        self.endTimeStr = [self.timeArr objectAtIndex:row];
+        self.timeView.titleLab.text = [NSString stringWithFormat:@"每日%@:00-次日%@:00",self.startTimeStr,self.endTimeStr];
+        
+    }
+}
+- (void)submitTime:(NSNotification *)notification {
+    self.installTimeCell.startTimeLab.text = [NSString stringWithFormat:@"%@:00",self.startTimeStr];
+    self.installTimeCell.endTimeLab.text = [NSString stringWithFormat:@"%@:00",self.endTimeStr];
+    self.timeView.hidden  = YES;
+    [self.tableView reloadData];
+}
+- (void)cancelTime:(NSNotification *)notification {
+    self.timeView.hidden = YES;
+}
 @end
