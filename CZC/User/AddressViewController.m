@@ -19,6 +19,8 @@
     self.title = @"地址管理";
     //数组初始化
     self.addressArr = [[NSMutableArray alloc]init];
+//    _tableView.rowHeight = UITableViewAutomaticDimension;
+//    _tableView.estimatedRowHeight = SCREEN_WIDTH;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +52,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 150;
+//    if (IS_IOS8_OR_ABOVE) {
+//        return UITableViewAutomaticDimension;
+//    }else{
+        return SCREEN_WIDTH/3-10;
+//    }
 }
 
 

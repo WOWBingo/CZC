@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSecurityViewController">
             <connections>
-                <outlet property="tableView" destination="mEc-0K-mBp" id="Hoo-4e-UoR"/>
+                <outlet property="tableView" destination="DaE-xe-d7U" id="i6F-77-49I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,24 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mEc-0K-mBp">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DaE-xe-d7U">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="gbq-tb-zbq"/>
-                        <outlet property="delegate" destination="-1" id="0Le-xK-ySD"/>
+                        <outlet property="dataSource" destination="-1" id="1d5-pK-w1X"/>
+                        <outlet property="delegate" destination="-1" id="Xtu-s6-yIL"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="mEc-0K-mBp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DUc-Ph-LXB"/>
-                <constraint firstItem="mEc-0K-mBp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XpG-J4-bKQ"/>
-                <constraint firstAttribute="bottom" secondItem="mEc-0K-mBp" secondAttribute="bottom" id="bFv-mZ-gdc"/>
-                <constraint firstAttribute="trailing" secondItem="mEc-0K-mBp" secondAttribute="trailing" id="i06-Zm-1KP"/>
+                <constraint firstItem="DaE-xe-d7U" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0pF-PR-c4C"/>
+                <constraint firstItem="DaE-xe-d7U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ASj-kf-wPu"/>
+                <constraint firstAttribute="bottom" secondItem="DaE-xe-d7U" secondAttribute="bottom" id="aat-hk-RJf"/>
+                <constraint firstAttribute="trailing" secondItem="DaE-xe-d7U" secondAttribute="trailing" id="zdm-ol-YND"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-73" y="10"/>
+            <point key="canvasLocation" x="369" y="400"/>
         </view>
     </objects>
 </document>

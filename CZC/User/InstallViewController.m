@@ -100,15 +100,18 @@
                 case 0:{
                     cell1.textLabel.text = @"物流通知";
                     self.logisticsSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-80, 6, 20, 15)];
+                    [cell1.contentView addSubview:self.logisticsSwitch];
                 }
                     break;
                 case 1:{
                     cell1.textLabel.text = @"促销通知";
                     self.promotionSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-80, 6, 20, 15)];
+                    [cell1.contentView addSubview:self.promotionSwitch];
                 }
                 case 2:{
                     cell1.textLabel.text = @"系统通知";
                     self.systemSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-80, 6, 20, 15)];
+                    [cell1.contentView addSubview:self.systemSwitch];
                 }
                 default:
                     break;

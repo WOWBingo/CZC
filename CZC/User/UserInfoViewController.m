@@ -9,6 +9,7 @@
 #import "UserInfoViewController.h"
 #import "ChangeUseInfoViewController.h"
 #import "AddressViewController.h"
+#import "AccountSecurityViewController.h"
 @interface UserInfoViewController ()
 
 @end
@@ -37,7 +38,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +77,7 @@
     if (cell == nil) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+        //        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     switch (indexPath.section) {
         case 0:
@@ -258,11 +259,14 @@
             
         case 1:
             if(indexPath.row == 0){
-            }
-            if(indexPath.row == 0){
                 AddressViewController *addressVC = [[AddressViewController alloc]initWithNibName:@"AddressViewController" bundle:nil];
                 addressVC.title = @"地址管理";
                 [self.navigationController pushViewController:addressVC animated:YES];
+            }
+            if(indexPath.row == 1){
+                AccountSecurityViewController *accountVC = [[AccountSecurityViewController alloc]initWithNibName:@"AccountSecurityViewController" bundle:nil];
+                accountVC.title = @"账户安全";
+                [self.navigationController pushViewController:accountVC animated:YES];
             }
             break;
         default:

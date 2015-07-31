@@ -70,6 +70,10 @@
 		18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */; };
 		18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */; };
 		18D072381B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */; };
+		18E97A921B6BAB3100FF468A /* AccountSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E97A901B6BAB3100FF468A /* AccountSecurityViewController.m */; };
+		18E97A931B6BAB3100FF468A /* AccountSecurityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E97A911B6BAB3100FF468A /* AccountSecurityViewController.xib */; };
+		18E97A971B6BAC8000FF468A /* AccountSecurityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E97A951B6BAC8000FF468A /* AccountSecurityTableViewCell.m */; };
+		18E97A981B6BAC8000FF468A /* AccountSecurityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E97A961B6BAC8000FF468A /* AccountSecurityTableViewCell.xib */; };
 		18F043851B56875A00E40E69 /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F043831B56875A00E40E69 /* LogisticsViewController.m */; };
 		18F043861B56875A00E40E69 /* LogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F043841B56875A00E40E69 /* LogisticsViewController.xib */; };
 		18F0438B1B56956600E40E69 /* ShoppingCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F043891B56956600E40E69 /* ShoppingCarViewController.m */; };
@@ -238,6 +242,12 @@
 		18D072341B53EF6B004FCDED /* ProductCollectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectCollectionViewCell.h; sourceTree = "<group>"; };
 		18D072351B53EF6B004FCDED /* ProductCollectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectCollectionViewCell.m; sourceTree = "<group>"; };
 		18D072361B53EF6B004FCDED /* ProductCollectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectCollectionViewCell.xib; sourceTree = "<group>"; };
+		18E97A8F1B6BAB3100FF468A /* AccountSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSecurityViewController.h; sourceTree = "<group>"; };
+		18E97A901B6BAB3100FF468A /* AccountSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSecurityViewController.m; sourceTree = "<group>"; };
+		18E97A911B6BAB3100FF468A /* AccountSecurityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSecurityViewController.xib; sourceTree = "<group>"; };
+		18E97A941B6BAC8000FF468A /* AccountSecurityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSecurityTableViewCell.h; sourceTree = "<group>"; };
+		18E97A951B6BAC8000FF468A /* AccountSecurityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSecurityTableViewCell.m; sourceTree = "<group>"; };
+		18E97A961B6BAC8000FF468A /* AccountSecurityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSecurityTableViewCell.xib; sourceTree = "<group>"; };
 		18F043821B56875A00E40E69 /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		18F043831B56875A00E40E69 /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		18F043841B56875A00E40E69 /* LogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsViewController.xib; sourceTree = "<group>"; };
@@ -424,6 +434,9 @@
 				1808C19E1B5FBF10005947D6 /* InstallViewController.h */,
 				1808C19F1B5FBF10005947D6 /* InstallViewController.m */,
 				1808C1A01B5FBF10005947D6 /* InstallViewController.xib */,
+				18E97A8F1B6BAB3100FF468A /* AccountSecurityViewController.h */,
+				18E97A901B6BAB3100FF468A /* AccountSecurityViewController.m */,
+				18E97A911B6BAB3100FF468A /* AccountSecurityViewController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -652,6 +665,9 @@
 				185A154B1B64FAE800B18E81 /* TimeView.h */,
 				185A154C1B64FAE800B18E81 /* TimeView.m */,
 				185A154E1B64FAFF00B18E81 /* TimeView.xib */,
+				18E97A941B6BAC8000FF468A /* AccountSecurityTableViewCell.h */,
+				18E97A951B6BAC8000FF468A /* AccountSecurityTableViewCell.m */,
+				18E97A961B6BAC8000FF468A /* AccountSecurityTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -828,6 +844,7 @@
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
 				18A091E11B5E890B009F3376 /* NewsViewController.xib in Resources */,
 				187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */,
+				18E97A981B6BAC8000FF468A /* AccountSecurityTableViewCell.xib in Resources */,
 				19D18A5F1B5B3566001917F9 /* PublicViewController.xib in Resources */,
 				18F0438C1B56956600E40E69 /* ShoppingCarViewController.xib in Resources */,
 				19D64C321B5D1BD700F82AE0 /* HJCAdjustNumButton.bundle in Resources */,
@@ -840,6 +857,7 @@
 				19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */,
 				182156A31B57E30600E5D502 /* PayAddressTableViewCell.xib in Resources */,
 				18A091FA1B5E97D7009F3376 /* DiscountPromotionViewController.xib in Resources */,
+				18E97A931B6BAB3100FF468A /* AccountSecurityViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +937,7 @@
 				182156B11B57EB2100E5D502 /* PayInfoTableViewCell.m in Sources */,
 				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
+				18E97A971B6BAC8000FF468A /* AccountSecurityTableViewCell.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,
 				18A091E01B5E890B009F3376 /* NewsViewController.m in Sources */,
@@ -928,6 +947,7 @@
 				18A091FE1B5E9828009F3376 /* DiscountPromotionTableViewCell.m in Sources */,
 				18F0438B1B56956600E40E69 /* ShoppingCarViewController.m in Sources */,
 				19AC52381B497D5900F81759 /* CZCAPIService.m in Sources */,
+				18E97A921B6BAB3100FF468A /* AccountSecurityViewController.m in Sources */,
 				18A091EF1B5E93DF009F3376 /* LogisticsAssistantViewController.m in Sources */,
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
 				193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */,
