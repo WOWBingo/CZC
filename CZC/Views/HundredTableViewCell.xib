@@ -82,7 +82,7 @@
                 <outlet property="priceLable" destination="PGg-cs-kWn" id="2At-dz-kHB"/>
                 <outlet property="productImageView" destination="P39-yS-3Lq" id="yzq-z8-y8P"/>
             </connections>
-            <point key="canvasLocation" x="299.5" y="375"/>
+            <point key="canvasLocation" x="103.5" y="247"/>
         </tableViewCell>
     </objects>
     <resources>
