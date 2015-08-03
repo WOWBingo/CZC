@@ -16,55 +16,50 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人 ：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-ON-YQm">
-                        <rect key="frame" x="8" y="8" width="70" height="21"/>
+                        <rect key="frame" x="8" y="8" width="61" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="5zK-p1-P9W"/>
-                            <constraint firstAttribute="height" constant="21" id="B0X-sg-8qd"/>
+                            <constraint firstAttribute="height" constant="21" id="qGS-dx-lYY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刘明凡 15866323333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-WS-Fhb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="刘明凡 15866323333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-WS-Fhb">
                         <rect key="frame" x="74" y="8" width="238" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="144-Pg-Nxt"/>
+                            <constraint firstAttribute="height" constant="21" id="ufH-lm-rze"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xap-bp-w4q">
-                        <rect key="frame" x="8" y="34" width="63" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="63" id="4TQ-fn-vg2"/>
-                            <constraint firstAttribute="height" constant="21" id="VzM-cT-Y9Q"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="33" width="60" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="山东省济南市历城区花园路小区三区四号楼一单元101室" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiv-ED-XSg">
-                        <rect key="frame" x="74" y="34" width="238" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="ZUu-Jd-V1F"/>
-                        </constraints>
+                        <rect key="frame" x="74" y="33" width="238" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="66" id="FiG-66-tlD"/>
-                    <constraint firstItem="aiv-ED-XSg" firstAttribute="leading" secondItem="xap-bp-w4q" secondAttribute="trailing" constant="3" id="JCJ-SX-S3H"/>
-                    <constraint firstItem="aiv-ED-XSg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="JJV-a6-mtP"/>
-                    <constraint firstItem="xap-bp-w4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="RXS-u8-vmq"/>
-                    <constraint firstItem="xap-bp-w4q" firstAttribute="top" secondItem="gFl-ON-YQm" secondAttribute="bottom" constant="5" id="SU5-NE-2xv"/>
-                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="c3h-O9-MgQ"/>
-                    <constraint firstItem="aiv-ED-XSg" firstAttribute="top" secondItem="fGD-WS-Fhb" secondAttribute="bottom" constant="5" id="c4T-u3-9iH"/>
-                    <constraint firstItem="gFl-ON-YQm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ffT-p1-A7A"/>
-                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="he9-UV-A1Z"/>
-                    <constraint firstItem="gFl-ON-YQm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wT0-MA-8oA"/>
+                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="leading" secondItem="gFl-ON-YQm" secondAttribute="trailing" constant="5" id="0KP-XL-ZvJ"/>
+                    <constraint firstItem="aiv-ED-XSg" firstAttribute="leading" secondItem="fGD-WS-Fhb" secondAttribute="leading" id="1o6-ea-ell"/>
+                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4eF-jF-RRL"/>
+                    <constraint firstItem="xap-bp-w4q" firstAttribute="top" secondItem="gFl-ON-YQm" secondAttribute="bottom" constant="4" id="6JV-oz-8MN"/>
+                    <constraint firstItem="gFl-ON-YQm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9lo-Bi-Hqf"/>
+                    <constraint firstItem="aiv-ED-XSg" firstAttribute="trailing" secondItem="fGD-WS-Fhb" secondAttribute="trailing" id="EzE-Cr-0Gh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xap-bp-w4q" secondAttribute="bottom" constant="-5" id="GZ4-07-fey"/>
+                    <constraint firstItem="aiv-ED-XSg" firstAttribute="leading" secondItem="xap-bp-w4q" secondAttribute="trailing" constant="6" id="Gaw-sy-5yC"/>
+                    <constraint firstItem="aiv-ED-XSg" firstAttribute="top" secondItem="fGD-WS-Fhb" secondAttribute="bottom" constant="4" id="IfL-h7-k6X"/>
+                    <constraint firstItem="gFl-ON-YQm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="OZf-td-Sus"/>
+                    <constraint firstItem="fGD-WS-Fhb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="XhV-Z2-eBm"/>
+                    <constraint firstItem="xap-bp-w4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cjH-ai-bYm"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aiv-ED-XSg" secondAttribute="bottom" constant="-5" id="lzI-vI-Xdw"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="281" y="407"/>

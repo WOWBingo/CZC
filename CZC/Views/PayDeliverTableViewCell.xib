@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,10 +17,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配送方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O1-lj-Lwe">
-                        <rect key="frame" x="20" y="11" width="67" height="21"/>
+                        <rect key="frame" x="20" y="11" width="48" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Xvm-DO-hlL"/>
-                            <constraint firstAttribute="width" constant="67" id="Yx1-7W-AIe"/>
+                            <constraint firstAttribute="height" constant="21" id="bF8-bj-Hwn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,9 +28,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-VT-ihF">
                         <rect key="frame" x="171" y="14" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="2cs-ts-nad"/>
-                            <constraint firstAttribute="width" constant="15" id="Ikr-F2-InY"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="fbH-Ue-yHJ"/>
+                            <constraint firstAttribute="height" constant="15" id="4J1-Dj-WD9"/>
+                            <constraint firstAttribute="width" secondItem="6Xm-VT-ihF" secondAttribute="height" multiplier="1:1" id="oeJ-bn-vgO"/>
                         </constraints>
                         <state key="normal" backgroundImage="chooseYes">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,10 +39,9 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1J-TQ-lh2">
-                        <rect key="frame" x="183" y="7" width="53" height="30"/>
+                        <rect key="frame" x="188" y="7" width="48" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="53" id="Lr7-yf-Awq"/>
-                            <constraint firstAttribute="height" constant="30" id="NGL-Q3-O44"/>
+                            <constraint firstAttribute="height" constant="30" id="P2C-5w-NcB"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="普通快递">
@@ -55,10 +53,9 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2j-vy-BFf">
-                        <rect key="frame" x="259" y="7" width="53" height="30"/>
+                        <rect key="frame" x="264" y="7" width="48" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="dXV-xB-4Lb"/>
-                            <constraint firstAttribute="width" constant="53" id="lTg-tL-Z5j"/>
+                            <constraint firstAttribute="height" constant="30" id="PlA-yB-dfZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="人人物流">
@@ -72,9 +69,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDK-rR-p49">
                         <rect key="frame" x="247" y="14" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="15" id="Hbx-rV-6M4"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="bQx-A8-Lv1"/>
-                            <constraint firstAttribute="height" constant="15" id="cMq-Xr-hyC"/>
+                            <constraint firstAttribute="width" secondItem="uDK-rR-p49" secondAttribute="height" multiplier="1:1" id="q9q-8Z-7eT"/>
+                            <constraint firstAttribute="height" constant="15" id="wiX-g9-Czf"/>
                         </constraints>
                         <state key="normal" backgroundImage="chooseNO">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,21 +81,16 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="6Xm-VT-ihF" secondAttribute="bottom" constant="6" id="0pT-PN-JTm"/>
-                    <constraint firstItem="uDK-rR-p49" firstAttribute="leading" secondItem="6Xm-VT-ihF" secondAttribute="trailing" constant="61" id="3hy-Jk-Ty6"/>
-                    <constraint firstItem="Y2j-vy-BFf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="3lV-dP-5zs"/>
-                    <constraint firstItem="Y2j-vy-BFf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7mQ-q2-Z2W"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="uDK-rR-p49" secondAttribute="bottom" constant="6" id="9Dk-aU-781"/>
-                    <constraint firstItem="4O1-lj-Lwe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="IMG-wi-uzU"/>
-                    <constraint firstItem="uDK-rR-p49" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="KKE-3S-uxd"/>
-                    <constraint firstItem="4O1-lj-Lwe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="PDa-BH-Ike"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="4O1-lj-Lwe" secondAttribute="bottom" constant="3" id="Raa-Rv-Mnp"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="y1J-TQ-lh2" secondAttribute="bottom" constant="-2" id="RyV-YC-dZF"/>
-                    <constraint firstItem="uDK-rR-p49" firstAttribute="leading" secondItem="y1J-TQ-lh2" secondAttribute="trailing" constant="11" id="WLq-Pn-HhA"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Y2j-vy-BFf" secondAttribute="bottom" constant="-2" id="eSO-bl-462"/>
-                    <constraint firstItem="6Xm-VT-ihF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="g6m-Z3-nxf"/>
-                    <constraint firstItem="y1J-TQ-lh2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="mF6-PF-CrQ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="uDK-rR-p49" secondAttribute="trailing" constant="50" id="pL8-YX-eoz"/>
+                    <constraint firstItem="4O1-lj-Lwe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="3xM-ob-u1G"/>
+                    <constraint firstItem="uDK-rR-p49" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="5cF-pP-dz0"/>
+                    <constraint firstItem="4O1-lj-Lwe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="927-rf-k7l"/>
+                    <constraint firstItem="Y2j-vy-BFf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Pb5-vS-Rf3"/>
+                    <constraint firstItem="Y2j-vy-BFf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UER-83-xGY"/>
+                    <constraint firstItem="uDK-rR-p49" firstAttribute="leading" secondItem="y1J-TQ-lh2" secondAttribute="trailing" constant="11" id="f4c-EK-MlF"/>
+                    <constraint firstItem="Y2j-vy-BFf" firstAttribute="leading" secondItem="uDK-rR-p49" secondAttribute="trailing" constant="2" id="rWf-7l-YJc"/>
+                    <constraint firstItem="6Xm-VT-ihF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="tjK-oE-d7c"/>
+                    <constraint firstItem="y1J-TQ-lh2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="xdV-pD-3KA"/>
+                    <constraint firstItem="y1J-TQ-lh2" firstAttribute="leading" secondItem="6Xm-VT-ihF" secondAttribute="trailing" constant="2" id="xla-9W-SR5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
