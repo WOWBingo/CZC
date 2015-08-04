@@ -8,6 +8,7 @@
 
 #import "AddressViewController.h"
 #import "AddressTableViewCell.h"
+#import "EditAddressViewController.h"
 @interface AddressViewController ()
 
 @end
@@ -44,7 +45,7 @@
         cell = (AddressTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    
+    cell.delegate = self;
     return cell;
     
 }
@@ -68,5 +69,12 @@
     //    switch (indexPath.section) {
     
 }
-
+-(void)setDefaultAddress{
+}
+-(void)pushToEditView{
+    EditAddressViewController *editAddressVC = [[EditAddressViewController alloc]initWithNibName:@"EditAddressViewController" bundle:nil];
+    [self.navigationController pushViewController:editAddressVC animated:YES];
+}
+-(void)deleteAddress{
+}
 @end

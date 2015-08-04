@@ -20,4 +20,15 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)defaultClick:(id)sender {
+    [self.delegate setDefaultAddress];
+}
+
+- (IBAction)editClick:(id)sender {
+    [self.delegate pushToEditView];
+}
+
+- (IBAction)deleteClick:(id)sender {
+    [self.delegate deleteAddress];
+}
 @end

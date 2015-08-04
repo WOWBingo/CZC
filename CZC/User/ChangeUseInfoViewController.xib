@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EI1-1g-j9J">
-                    <rect key="frame" x="0.0" y="8" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-vn-QRC">
                             <rect key="frame" x="8" y="6" width="304" height="30"/>
@@ -38,9 +38,12 @@
                         <constraint firstAttribute="trailing" secondItem="JEa-vn-QRC" secondAttribute="trailing" constant="8" id="j7T-Ng-XVd"/>
                     </constraints>
                 </view>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-so-PMr">
-                    <rect key="frame" x="0.0" y="8" width="320" height="88"/>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-so-PMr">
+                    <rect key="frame" x="0.0" y="64" width="320" height="132"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="132" id="ozT-f4-U6b"/>
+                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0gA-wa-8Pm"/>
                         <outlet property="delegate" destination="-1" id="rmb-O5-V5e"/>
@@ -50,8 +53,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="EI1-1g-j9J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5L5-mF-yDP"/>
+                <constraint firstItem="Oqq-so-PMr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kfh-iS-wbk"/>
+                <constraint firstItem="Oqq-so-PMr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Zrp-V4-JPT"/>
                 <constraint firstAttribute="trailing" secondItem="EI1-1g-j9J" secondAttribute="trailing" id="gxo-VU-m8h"/>
-                <constraint firstItem="EI1-1g-j9J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="pBx-FM-mHH"/>
+                <constraint firstAttribute="trailing" secondItem="Oqq-so-PMr" secondAttribute="trailing" id="nSy-vh-Vtj"/>
+                <constraint firstItem="EI1-1g-j9J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="pBx-FM-mHH"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="127" y="306"/>

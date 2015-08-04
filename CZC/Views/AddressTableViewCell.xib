@@ -54,6 +54,9 @@
                         <state key="normal" backgroundImage="chooseYes">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="defaultClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yqw-Q8-TGP"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dc-6u-FMW">
                         <rect key="frame" x="34" y="77" width="40" height="24"/>
@@ -62,6 +65,9 @@
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="defaultClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wdv-Wg-ZMs"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-T2-a5H">
                         <rect key="frame" x="181" y="78" width="18" height="18"/>
@@ -71,6 +77,9 @@
                         <state key="normal" backgroundImage="addressEdit">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="editClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N1u-iU-fmG"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ7-Ld-dNu">
                         <rect key="frame" x="260" y="78" width="18" height="18"/>
@@ -80,6 +89,9 @@
                         <state key="normal" backgroundImage="addressDel">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="deleteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xSn-dt-SHV"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOb-Tr-Gtg">
                         <rect key="frame" x="212" y="77" width="30" height="24"/>
@@ -88,6 +100,9 @@
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="editClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P6a-zH-nwT"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXP-bw-EF2">
                         <rect key="frame" x="288" y="77" width="30" height="24"/>
@@ -96,6 +111,9 @@
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="deleteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="t1T-Dg-CqG"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -123,7 +141,18 @@
                     <constraint firstAttribute="bottomMargin" secondItem="KOb-Tr-Gtg" secondAttribute="bottom" constant="-10" id="zrJ-3l-7cu"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="301" y="271"/>
+            <connections>
+                <outlet property="addressLab" destination="aeC-Bj-5D3" id="yDK-X0-ieI"/>
+                <outlet property="defaultBtn" destination="0dc-6u-FMW" id="j26-rK-29f"/>
+                <outlet property="defaultImgBtn" destination="MLQ-DK-wR9" id="sYI-eK-mVq"/>
+                <outlet property="deleteBtn" destination="BXP-bw-EF2" id="OLq-5w-eHI"/>
+                <outlet property="deleteImgBtn" destination="yQ7-Ld-dNu" id="KKV-UP-LbX"/>
+                <outlet property="editBtn" destination="KOb-Tr-Gtg" id="rYb-Q8-IIe"/>
+                <outlet property="editImgBtn" destination="RvP-T2-a5H" id="Kbh-zn-dXT"/>
+                <outlet property="nameLab" destination="zCo-Uh-bei" id="XiH-aa-YtH"/>
+                <outlet property="telLab" destination="TU0-xz-kcZ" id="P4V-v1-uID"/>
+            </connections>
+            <point key="canvasLocation" x="324" y="311"/>
         </tableViewCell>
     </objects>
     <resources>

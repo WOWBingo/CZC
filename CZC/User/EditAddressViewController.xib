@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAddressViewController">
+            <connections>
+                <outlet property="saveBtn" destination="liQ-1f-hHb" id="dxf-3L-Twl"/>
+                <outlet property="tableView" destination="hZp-hf-dga" id="aBL-eV-fPz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-hf-dga">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="287" id="eeO-ZV-TKL"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BT3-wy-mkd"/>
+                        <outlet property="delegate" destination="-1" id="TwD-L5-Zjl"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liQ-1f-hHb">
+                    <rect key="frame" x="70" y="329" width="180" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="xQ6-rR-C9c"/>
+                    </constraints>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="mJJ-11-31R"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hZp-hf-dga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7ci-qr-OVf"/>
+                <constraint firstItem="liQ-1f-hHb" firstAttribute="top" secondItem="hZp-hf-dga" secondAttribute="bottom" constant="42" id="AGn-HZ-oM5"/>
+                <constraint firstAttribute="trailing" secondItem="hZp-hf-dga" secondAttribute="trailing" id="N6X-JA-q8J"/>
+                <constraint firstItem="liQ-1f-hHb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="QHb-Bb-nAa"/>
+                <constraint firstAttribute="trailing" secondItem="liQ-1f-hHb" secondAttribute="trailing" constant="70" id="SY8-Nc-rmI"/>
+                <constraint firstItem="hZp-hf-dga" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sjg-CS-bHZ"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="423" y="349"/>
+        </view>
+    </objects>
+</document>

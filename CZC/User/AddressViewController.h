@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AddressViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
+#import "AddressTableViewCell.h"
+@interface AddressViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,AddressTableViewCellDelegate>
 @property (nonatomic,strong)NSMutableArray *addressArr;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

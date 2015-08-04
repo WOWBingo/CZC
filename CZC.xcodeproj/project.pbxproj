@@ -65,6 +65,11 @@
 		18A091FA1B5E97D7009F3376 /* DiscountPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A091F81B5E97D7009F3376 /* DiscountPromotionViewController.xib */; };
 		18A091FE1B5E9828009F3376 /* DiscountPromotionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A091FC1B5E9828009F3376 /* DiscountPromotionTableViewCell.m */; };
 		18A091FF1B5E9828009F3376 /* DiscountPromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A091FD1B5E9828009F3376 /* DiscountPromotionTableViewCell.xib */; };
+		18C76D771B70E3F6002D9870 /* EditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C76D751B70E3F6002D9870 /* EditAddressViewController.m */; };
+		18C76D781B70E3F6002D9870 /* EditAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C76D761B70E3F6002D9870 /* EditAddressViewController.xib */; };
+		18C76D7C1B70E7E5002D9870 /* EditAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C76D7A1B70E7E5002D9870 /* EditAddressTableViewCell.m */; };
+		18C76D7D1B70E7E5002D9870 /* EditAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C76D7B1B70E7E5002D9870 /* EditAddressTableViewCell.xib */; };
+		18C76D811B70F96E002D9870 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C76D801B70F96E002D9870 /* area.plist */; };
 		18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C999191B50BC2300CDA089 /* ZHPickView.m */; };
 		18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D072301B53E8A7004FCDED /* ProductCollectViewController.m */; };
 		18D072331B53E8A7004FCDED /* ProductCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D072311B53E8A7004FCDED /* ProductCollectViewController.xib */; };
@@ -234,6 +239,13 @@
 		18A091FB1B5E9828009F3376 /* DiscountPromotionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountPromotionTableViewCell.h; sourceTree = "<group>"; };
 		18A091FC1B5E9828009F3376 /* DiscountPromotionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountPromotionTableViewCell.m; sourceTree = "<group>"; };
 		18A091FD1B5E9828009F3376 /* DiscountPromotionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscountPromotionTableViewCell.xib; sourceTree = "<group>"; };
+		18C76D741B70E3F6002D9870 /* EditAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressViewController.h; sourceTree = "<group>"; };
+		18C76D751B70E3F6002D9870 /* EditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressViewController.m; sourceTree = "<group>"; };
+		18C76D761B70E3F6002D9870 /* EditAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAddressViewController.xib; sourceTree = "<group>"; };
+		18C76D791B70E7E5002D9870 /* EditAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressTableViewCell.h; sourceTree = "<group>"; };
+		18C76D7A1B70E7E5002D9870 /* EditAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressTableViewCell.m; sourceTree = "<group>"; };
+		18C76D7B1B70E7E5002D9870 /* EditAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAddressTableViewCell.xib; sourceTree = "<group>"; };
+		18C76D801B70F96E002D9870 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		18C999181B50BC2300CDA089 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		18C999191B50BC2300CDA089 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		18D0722F1B53E8A7004FCDED /* ProductCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectViewController.h; sourceTree = "<group>"; };
@@ -416,6 +428,9 @@
 				182156B31B57EE0F00E5D502 /* AddressViewController.h */,
 				182156B41B57EE0F00E5D502 /* AddressViewController.m */,
 				182156B51B57EE0F00E5D502 /* AddressViewController.xib */,
+				18C76D741B70E3F6002D9870 /* EditAddressViewController.h */,
+				18C76D751B70E3F6002D9870 /* EditAddressViewController.m */,
+				18C76D761B70E3F6002D9870 /* EditAddressViewController.xib */,
 				197DD70F1B5D457D0092AEE8 /* ShopCollectViewController.h */,
 				197DD7101B5D457D0092AEE8 /* ShopCollectViewController.m */,
 				197DD7111B5D457D0092AEE8 /* ShopCollectViewController.xib */,
@@ -543,6 +558,7 @@
 		192768D61B48442F00B86141 /* CZC */ = {
 			isa = PBXGroup;
 			children = (
+				18C76D801B70F96E002D9870 /* area.plist */,
 				19D18A661B5B9BB1001917F9 /* 城中成接口测试0718.xlsx */,
 				19D18A601B5B9A77001917F9 /* 城市多用户3.1 Api接口说明.doc */,
 				19D587B91B48D17300D65B43 /* Public */,
@@ -645,6 +661,9 @@
 				182156B81B57EED500E5D502 /* AddressTableViewCell.h */,
 				182156B91B57EED500E5D502 /* AddressTableViewCell.m */,
 				182156BA1B57EED500E5D502 /* AddressTableViewCell.xib */,
+				18C76D791B70E7E5002D9870 /* EditAddressTableViewCell.h */,
+				18C76D7A1B70E7E5002D9870 /* EditAddressTableViewCell.m */,
+				18C76D7B1B70E7E5002D9870 /* EditAddressTableViewCell.xib */,
 				197DD7141B5D46E00092AEE8 /* ShopCollectTableViewCell.h */,
 				197DD7151B5D46E00092AEE8 /* ShopCollectTableViewCell.m */,
 				197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */,
@@ -816,6 +835,7 @@
 				182156B71B57EE0F00E5D502 /* AddressViewController.xib in Resources */,
 				187BB7851B4D56EA00202B19 /* SetUpTableViewCell.xib in Resources */,
 				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
+				18C76D7D1B70E7E5002D9870 /* EditAddressTableViewCell.xib in Resources */,
 				1821569E1B57E0AB00E5D502 /* PayViewController.xib in Resources */,
 				18F043911B56981500E40E69 /* ShoppingCarTableViewCell.xib in Resources */,
 				18A091F01B5E93DF009F3376 /* LogisticsAssistantViewController.xib in Resources */,
@@ -844,6 +864,7 @@
 				19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */,
 				18A091E11B5E890B009F3376 /* NewsViewController.xib in Resources */,
 				187BB7B51B4D693500202B19 /* ChangeUseInfoViewController.xib in Resources */,
+				18C76D811B70F96E002D9870 /* area.plist in Resources */,
 				18E97A981B6BAC8000FF468A /* AccountSecurityTableViewCell.xib in Resources */,
 				19D18A5F1B5B3566001917F9 /* PublicViewController.xib in Resources */,
 				18F0438C1B56956600E40E69 /* ShoppingCarViewController.xib in Resources */,
@@ -854,6 +875,7 @@
 				19E05EFD1B57898A007DB924 /* ShopTableViewController.xib in Resources */,
 				19D18A631B5B9A77001917F9 /* 城市多用户3.1 Api接口说明.doc in Resources */,
 				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
+				18C76D781B70E3F6002D9870 /* EditAddressViewController.xib in Resources */,
 				19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */,
 				182156A31B57E30600E5D502 /* PayAddressTableViewCell.xib in Resources */,
 				18A091FA1B5E97D7009F3376 /* DiscountPromotionViewController.xib in Resources */,
@@ -962,9 +984,11 @@
 				18A091F41B5E9498009F3376 /* LogisticsAssistantTableViewCell.m in Sources */,
 				19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */,
 				19D18A5E1B5B3566001917F9 /* PublicViewController.m in Sources */,
+				18C76D7C1B70E7E5002D9870 /* EditAddressTableViewCell.m in Sources */,
 				1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */,
 				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
 				19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */,
+				18C76D771B70E3F6002D9870 /* EditAddressViewController.m in Sources */,
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
 				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
