@@ -92,18 +92,12 @@
         districtStr = @"";
     }
     
-    NSString *showMsg = [NSString stringWithFormat: @"%@ %@ %@.", provinceStr, cityStr, districtStr];
+    NSString *showMsg = [NSString stringWithFormat: @"%@ %@ %@", provinceStr, cityStr, districtStr];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"alert"
-                                                    message: showMsg
-                                                   delegate: self
-                                          cancelButtonTitle:@"ok"
-                                          otherButtonTitles: nil, nil];
-    
-    [alert show];
-    
+    self.addressStr = showMsg;
     [self.toolbar removeFromSuperview];
     [picker removeFromSuperview];
+    [self.tableView reloadData];
 }
 - (void)cancelSelected {
     [self.toolbar removeFromSuperview];
@@ -169,13 +163,23 @@
             cell.titleLab.text = @"所在地区";
             cell.infoLab.hidden = NO;
             cell.infoText.hidden = YES;
+            cell.infoLab.text = self.addressStr;
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
-        case 3:
-            cell.titleLab.text = @"街道";
-            cell.infoLab.hidden = NO;
-            cell.infoText.hidden = YES;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        case 3:{
+            cell.titleLab.text = @"街道信息";
+            cell.infoLab.hidden = YES;
+            cell.infoText.hidden = NO;
+            cell.infoText.text = @"堤口路";
+            //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
+            UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+            [topView setBarStyle:UIBarStyleDefault];
+            UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+            UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(hidenKeyboard)];
+            NSArray * buttonsArray = [NSArray arrayWithObjects:btnSpace, doneButton, nil];
+            [topView setItems:buttonsArray];
+            [cell.infoText setInputAccessoryView:topView];
+        }
             break;
         case 4:{
             cell.titleLab.text = @"详细地址";

@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @property (nonatomic, strong) UIToolbar *toolbar;
+@property (nonatomic,strong)NSString *addressStr;
 - (IBAction)saveClick:(id)sender;
 @end
