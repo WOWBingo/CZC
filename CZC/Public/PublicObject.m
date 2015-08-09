@@ -7,6 +7,8 @@
 //
 
 #import "PublicObject.h"
+#import "TestObject.h"
+#import "ProductsObject.h"
 
 
 #define SINGLE_LINE_WIDTH           (1 / [UIScreen mainScreen].scale)
@@ -34,6 +36,8 @@ static PublicObject *publicObject = nil;
     }
     return publicObject;
 }
+
+
 
 //画一条水平线
 + (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color{

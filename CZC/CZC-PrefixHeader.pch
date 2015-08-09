@@ -15,6 +15,7 @@
 #import "Key.h"
 #import "PublicObject.h"
 #import "PublicViewController.h"
+#import <MJExtension.h>
 #endif
 
 

@@ -11,6 +11,7 @@
 #import "LogisticsViewController.h"
 #import "ShoppingCarViewController.h"
 #import "SetViewController.h"
+#import "ObjectMapping.h"
 
 @interface MainViewController ()
 @end
@@ -21,6 +22,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /**
+     *	对数据模型重新编码
+     */
+    [ObjectMapping mappingObjects];
+    
     /**
      *	设置tabbar选中背景、navigationbar背景、navigationbar下边框
      */

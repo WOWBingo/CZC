@@ -17,7 +17,6 @@
 + (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color;
 + (void)drawVerticalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andHeigt:(CGFloat)height andColor:(UIColor*)color;
 
-+ (void)oneLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andHeigt:(CGFloat)height;
 + (UIImage *)fixOrientation:(UIImage *)aImage;//图片旋转
 
 @end

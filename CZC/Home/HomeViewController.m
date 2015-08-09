@@ -15,6 +15,7 @@
 #import "ProductInfoViewController.h"
 #import "HundredViewController.h"
 #import "ShopTableViewController.h"
+#import "TestObject.h"
 
 #define ScrollViewHight (SCREEN_WIDTH*0.48)
 
@@ -62,8 +63,8 @@
     _dataList = [[NSMutableArray alloc]initWithArray: @[@"零食小吃",@"男女服饰",@"户外运动",@"箱包",@"书籍"]];
     
     _tableView.rowHeight = UITableViewAutomaticDimension;
-    _tableView.estimatedRowHeight = SCREEN_WIDTH;    
-
+    _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
