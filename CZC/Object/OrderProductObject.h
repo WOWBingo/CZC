@@ -13,35 +13,35 @@
 @interface OrderProductObject : NSObject
 
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *ExtensionAttriutes;
+@property (nonatomic, copy) NSString *extensionAttriutes;
 
-@property (nonatomic, copy) NSString *ShopID;
+@property (nonatomic, copy) NSString *shopID;
 
-@property (nonatomic, copy) NSString *SpecificationValue;
+@property (nonatomic, copy) NSString *specificationValue;
 
-@property (nonatomic, copy) NSString *ProductName;
+@property (nonatomic, copy) NSString *productName;
 
-@property (nonatomic, assign) NSInteger BuyNumber;
+@property (nonatomic, assign) NSInteger buyNumber;
 
-@property (nonatomic, copy) NSString *ProductImg;
+@property (nonatomic, copy) NSString *productImg;
 
-@property (nonatomic, assign) NSInteger ShopPrice;
+@property (nonatomic, assign) NSInteger shopPrice;
 
-@property (nonatomic, assign) NSInteger BuyPrice;
+@property (nonatomic, assign) NSInteger buyPrice;
 
-@property (nonatomic, assign) NSInteger IsShipment;
+@property (nonatomic, assign) NSInteger isShipment;
 
-@property (nonatomic, copy) NSString *SpecificationName;
+@property (nonatomic, copy) NSString *specificationName;
 
-@property (nonatomic, copy) NSString *Attributes;
+@property (nonatomic, copy) NSString *attributes;
 
-@property (nonatomic, copy) NSString *ProductGuid;
+@property (nonatomic, copy) NSString *productGuid;
 
-@property (nonatomic, copy) NSString *OrderInfoGuid;
+@property (nonatomic, copy) NSString *orderInfoGuid;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
 
 @end

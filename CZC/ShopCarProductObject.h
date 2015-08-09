@@ -13,43 +13,43 @@
 @interface ShopCarProductObject : NSObject
 
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *ExtensionAttriutes;
+@property (nonatomic, copy) NSString *extensionAttriutes;
 
-@property (nonatomic, copy) NSString *ShopID;
+@property (nonatomic, copy) NSString *shopID;
 
-@property (nonatomic, assign) NSInteger RepertoryCount;
+@property (nonatomic, assign) NSInteger repertoryCount;
 
-@property (nonatomic, copy) NSString *Name;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *OriginalImge;
+@property (nonatomic, copy) NSString *originalImge;
 
-@property (nonatomic, copy) NSString *SpecificationValue;
+@property (nonatomic, copy) NSString *specificationValue;
 
-@property (nonatomic, assign) NSInteger BuyNumber;
+@property (nonatomic, assign) NSInteger buyNumber;
 
-@property (nonatomic, assign) NSInteger MarketPrice;
+@property (nonatomic, assign) NSInteger marketPrice;
 
-@property (nonatomic, assign) NSInteger IsPresent;
+@property (nonatomic, assign) NSInteger isPresent;
 
-@property (nonatomic, assign) NSInteger BuyPrice;
+@property (nonatomic, assign) NSInteger buyPrice;
 
-@property (nonatomic, copy) NSString *CreateTime;
+@property (nonatomic, copy) NSString *createTime;
 
-@property (nonatomic, copy) NSString *ShopName;
+@property (nonatomic, copy) NSString *shopName;
 
-@property (nonatomic, copy) NSString *RepertoryNumber;
+@property (nonatomic, copy) NSString *repertoryNumber;
 
-@property (nonatomic, copy) NSString *ProductGuid;
+@property (nonatomic, copy) NSString *productGuid;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, copy) NSString *Attributes;
+@property (nonatomic, copy) NSString *attributes;
 
-@property (nonatomic, assign) NSInteger IsJoinActivity;
+@property (nonatomic, assign) NSInteger isJoinActivity;
 
-@property (nonatomic, copy) NSString *SpecificationName;
+@property (nonatomic, copy) NSString *specificationName;
 
 
 @end

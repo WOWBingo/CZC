@@ -11,26 +11,26 @@
 @interface ProductCatagoryObject : NSObject
 
 
-@property (nonatomic, assign) NSInteger OrderID;
+@property (nonatomic, assign) NSInteger orderID;
 
-@property (nonatomic, copy) NSString *Description;
+@property (nonatomic, copy) NSString *description;
 
-@property (nonatomic, copy) NSString *Code;
+@property (nonatomic, copy) NSString *code;
 
-@property (nonatomic, assign) BOOL IsLastLevel;
+@property (nonatomic, assign) BOOL isLastLevel;
 
-@property (nonatomic, assign) NSInteger CategoryLevel;
+@property (nonatomic, assign) NSInteger categoryLevel;
 
-@property (nonatomic, assign) NSInteger FatherID;
+@property (nonatomic, assign) NSInteger fatherID;
 
-@property (nonatomic, copy) NSString *Name;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *Keywords;
+@property (nonatomic, copy) NSString *keywords;
 
 @property (nonatomic, assign) NSInteger ID;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, assign) NSInteger ShopID;
+@property (nonatomic, assign) NSInteger shopID;
 
 @end

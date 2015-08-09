@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 周德艺. All rights reserved.
 //
 
-#import "SpecificationOfPricceObject.h"
+#import "SpecificationOfPriceObject.h"
 
-@implementation SpecificationOfPricceObject
+@implementation SpecificationOfPriceObject
 
 @end

@@ -12,22 +12,22 @@
 
 @interface CollectProductObject : NSObject
 
-@property (nonatomic, copy) NSString *SmallImage;
+@property (nonatomic, copy) NSString *smallImage;
 
-@property (nonatomic, copy) NSString *ShopName;
+@property (nonatomic, copy) NSString *shopName;
 
-@property (nonatomic, copy) NSString *SellLoginID;
+@property (nonatomic, copy) NSString *sellLoginID;
 
-@property (nonatomic, copy) NSString *CollectTime;
+@property (nonatomic, copy) NSString *collectTime;
 
-@property (nonatomic, copy) NSString *ProductGuid;
+@property (nonatomic, copy) NSString *productGuid;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, assign) NSInteger ShopPrice;
+@property (nonatomic, assign) NSInteger shopPrice;
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *Name;
+@property (nonatomic, copy) NSString *name;
 
 @end

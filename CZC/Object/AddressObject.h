@@ -13,33 +13,33 @@
 
 @interface AddressObject : NSObject
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *Mobile;
+@property (nonatomic, copy) NSString *mobile;
 
-@property (nonatomic, copy) NSString *ModifyTime;
+@property (nonatomic, copy) NSString *modifyTime;
 
-@property (nonatomic, copy) NSString *Email;
+@property (nonatomic, copy) NSString *email;
 
-@property (nonatomic, copy) NSString *Postalcode;
+@property (nonatomic, copy) NSString *postalcode;
 
-@property (nonatomic, copy) NSString *Tel;
+@property (nonatomic, copy) NSString *tel;
 
-@property (nonatomic, copy) NSString *NAME;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *CreateUser;
+@property (nonatomic, copy) NSString *createUser;
 
-@property (nonatomic, copy) NSString *AddressCode;
+@property (nonatomic, copy) NSString *addressCode;
 
-@property (nonatomic, copy) NSString *Address;
+@property (nonatomic, copy) NSString *address;
 
-@property (nonatomic, assign) NSInteger IsDefault;
+@property (nonatomic, assign) NSInteger isDefault;
 
-@property (nonatomic, copy) NSString *CreateTime;
+@property (nonatomic, copy) NSString *createTime;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, copy) NSString *ModifyUser;
+@property (nonatomic, copy) NSString *modifyUser;
 
 
 @end

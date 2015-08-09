@@ -12,32 +12,32 @@
 
 @interface AccoutObject : NSObject
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *Url;
+@property (nonatomic, copy) NSString *url;
 
-@property (nonatomic, copy) NSString *QQ;
+@property (nonatomic, copy) NSString *qQ;
 
-@property (nonatomic, copy) NSString *PayPwd;
+@property (nonatomic, copy) NSString *payPwd;
 
-@property (nonatomic, copy) NSString *Email;
+@property (nonatomic, copy) NSString *email;
 
-@property (nonatomic, assign) NSInteger Score;
+@property (nonatomic, assign) NSInteger score;
 
-@property (nonatomic, assign) NSInteger MemberRank;
+@property (nonatomic, assign) NSInteger memberRank;
 
-@property (nonatomic, copy) NSString *Name;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *Mobile;
+@property (nonatomic, copy) NSString *mobile;
 
-@property (nonatomic, copy) NSString *Pwd;
+@property (nonatomic, copy) NSString *pwd;
 
-@property (nonatomic, assign) CGFloat AdvancePayment;
+@property (nonatomic, assign) CGFloat advancePayment;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, assign) BOOL RememberMe;
+@property (nonatomic, assign) BOOL rememberMe;
 
-@property (nonatomic, copy) NSString *RealName;
+@property (nonatomic, copy) NSString *realName;
 
 @end

@@ -10,7 +10,7 @@
  */
 #import <Foundation/Foundation.h>
 
-@interface SpecificationOfPricceObject : NSObject
+@interface SpecificationOfPriceObject : NSObject
 
 
 @property (nonatomic, copy) NSString *specTotalId;

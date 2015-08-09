@@ -12,20 +12,20 @@
 
 @interface MessageObject : NSObject
 
-@property (nonatomic, copy) NSString *SendTime;
+@property (nonatomic, copy) NSString *sendTime;
 
-@property (nonatomic, assign) NSInteger IsRead;
+@property (nonatomic, assign) NSInteger isRead;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, copy) NSString *Type;
+@property (nonatomic, copy) NSString *type;
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, copy) NSString *Title;
+@property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, copy) NSString *Content;
+@property (nonatomic, copy) NSString *content;
 
-@property (nonatomic, assign) NSInteger IsDeleted;
+@property (nonatomic, assign) NSInteger isDeleted;
 
 @end

@@ -103,7 +103,7 @@
 		196044371B4B788400989481 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196044351B4B788400989481 /* HomeViewCell.m */; };
 		196044381B4B788400989481 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196044361B4B788400989481 /* HomeViewCell.xib */; };
 		196C84E01B5FEB54003E6F5E /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196C84DF1B5FEB54003E6F5E /* PopoverView.m */; };
-		1977FD8B1B7748BA000A8D26 /* SpecificationOfPricceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPricceObject.m */; };
+		1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */; };
 		1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8D1B774A00000A8D26 /* ShopObject.m */; };
 		1977FD911B774DF8000A8D26 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD901B774DF8000A8D26 /* CommentObject.m */; };
 		1977FD941B774F1B000A8D26 /* ShopCarProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD931B774F1B000A8D26 /* ShopCarProductObject.m */; };
@@ -326,8 +326,8 @@
 		196044361B4B788400989481 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		196C84DE1B5FEB54003E6F5E /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
 		196C84DF1B5FEB54003E6F5E /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
-		1977FD891B7748BA000A8D26 /* SpecificationOfPricceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationOfPricceObject.h; path = Object/SpecificationOfPricceObject.h; sourceTree = "<group>"; };
-		1977FD8A1B7748BA000A8D26 /* SpecificationOfPricceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationOfPricceObject.m; path = Object/SpecificationOfPricceObject.m; sourceTree = "<group>"; };
+		1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationOfPriceObject.h; path = Object/SpecificationOfPriceObject.h; sourceTree = "<group>"; };
+		1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationOfPriceObject.m; path = Object/SpecificationOfPriceObject.m; sourceTree = "<group>"; };
 		1977FD8C1B774A00000A8D26 /* ShopObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopObject.h; path = Object/ShopObject.h; sourceTree = "<group>"; };
 		1977FD8D1B774A00000A8D26 /* ShopObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopObject.m; path = Object/ShopObject.m; sourceTree = "<group>"; };
 		1977FD8F1B774DF8000A8D26 /* CommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentObject.h; path = Object/CommentObject.h; sourceTree = "<group>"; };
@@ -591,8 +591,8 @@
 				1902C7C51B773648009C7A33 /* SpecificationProudctObject.m */,
 				1952A66E1B77379D0020F760 /* SpecificationObject.h */,
 				1952A66F1B77379D0020F760 /* SpecificationObject.m */,
-				1977FD891B7748BA000A8D26 /* SpecificationOfPricceObject.h */,
-				1977FD8A1B7748BA000A8D26 /* SpecificationOfPricceObject.m */,
+				1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */,
+				1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */,
 				1977FD8C1B774A00000A8D26 /* ShopObject.h */,
 				1977FD8D1B774A00000A8D26 /* ShopObject.m */,
 				1977FD8F1B774DF8000A8D26 /* CommentObject.h */,
@@ -1103,7 +1103,7 @@
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,
 				187BB7821B4D56EA00202B19 /* SetTitleTableViewCell.m in Sources */,
-				1977FD8B1B7748BA000A8D26 /* SpecificationOfPricceObject.m in Sources */,
+				1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */,
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
 				18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,

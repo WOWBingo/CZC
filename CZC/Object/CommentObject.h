@@ -12,57 +12,57 @@
 
 @interface CommentObject : NSObject
 
-@property (nonatomic, assign) NSInteger CommentType;
+@property (nonatomic, assign) NSInteger commentType;
 
-@property (nonatomic, copy) NSString *CommentTime;
+@property (nonatomic, copy) NSString *commentTime;
 
-@property (nonatomic, copy) NSString *Reply;
+@property (nonatomic, copy) NSString *reply;
 
-@property (nonatomic, copy) NSString *ContinueComment;
+@property (nonatomic, copy) NSString *continueComment;
 
-@property (nonatomic, assign) NSInteger ContinueState;
+@property (nonatomic, assign) NSInteger continueState;
 
-@property (nonatomic, copy) NSString *ContinueReply;
+@property (nonatomic, copy) NSString *continueReply;
 
-@property (nonatomic, assign) NSInteger Speed;
+@property (nonatomic, assign) NSInteger speed;
 
-@property (nonatomic, copy) NSString *ShopID;
+@property (nonatomic, copy) NSString *shopID;
 
-@property (nonatomic, copy) NSString *Comment;
+@property (nonatomic, copy) NSString *comment;
 
-@property (nonatomic, copy) NSString *SpecValue;
+@property (nonatomic, copy) NSString *specValue;
 
-@property (nonatomic, copy) NSString *MemLoginID;
+@property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, copy) NSString *ContinueTime;
+@property (nonatomic, copy) NSString *continueTime;
 
-@property (nonatomic, copy) NSString *ContinueReplyTime;
+@property (nonatomic, copy) NSString *continueReplyTime;
 
-@property (nonatomic, assign) NSInteger ProductPrice;
+@property (nonatomic, assign) NSInteger productPrice;
 
-@property (nonatomic, assign) NSInteger BuyerAttitude;
+@property (nonatomic, assign) NSInteger buyerAttitude;
 
-@property (nonatomic, copy) NSString *ProductName;
+@property (nonatomic, copy) NSString *productName;
 
-@property (nonatomic, assign) NSInteger Attitude;
+@property (nonatomic, assign) NSInteger attitude;
 
-@property (nonatomic, assign) NSInteger Character;
+@property (nonatomic, assign) NSInteger character;
 
-@property (nonatomic, copy) NSString *ShopName;
+@property (nonatomic, copy) NSString *shopName;
 
-@property (nonatomic, copy) NSString *OrderGuid;
+@property (nonatomic, copy) NSString *orderGuid;
 
-@property (nonatomic, copy) NSString *ReplyTime;
+@property (nonatomic, copy) NSString *replyTime;
 
-@property (nonatomic, copy) NSString *ShopLoginId;
+@property (nonatomic, copy) NSString *shopLoginId;
 
-@property (nonatomic, copy) NSString *ProductGuid;
+@property (nonatomic, copy) NSString *productGuid;
 
-@property (nonatomic, assign) NSInteger IsAudit;
+@property (nonatomic, assign) NSInteger isAudit;
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, assign) NSInteger IsNick;
+@property (nonatomic, assign) NSInteger isNick;
 
 
 @end

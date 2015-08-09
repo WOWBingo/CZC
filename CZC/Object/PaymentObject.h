@@ -12,32 +12,32 @@
 
 @interface PaymentObject : NSObject
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *guid;
 
-@property (nonatomic, assign) NSInteger IsCOD;
+@property (nonatomic, assign) NSInteger isCOD;
 
-@property (nonatomic, assign) NSInteger Charge;
+@property (nonatomic, assign) NSInteger charge;
 
-@property (nonatomic, copy) NSString *Email;
+@property (nonatomic, copy) NSString *email;
 
-@property (nonatomic, assign) NSInteger IsPercent;
+@property (nonatomic, assign) NSInteger isPercent;
 
-@property (nonatomic, assign) NSInteger OrderID;
+@property (nonatomic, assign) NSInteger orderID;
 
-@property (nonatomic, copy) NSString *paytype;
+@property (nonatomic, copy) NSString *payType;
 
-@property (nonatomic, copy) NSString *PaymentType;
+@property (nonatomic, copy) NSString *paymentType;
 
-@property (nonatomic, copy) NSString *SecondKey;
+@property (nonatomic, copy) NSString *secondKey;
 
-@property (nonatomic, copy) NSString *NAME;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *MerchantCode;
+@property (nonatomic, copy) NSString *merchantCode;
 
-@property (nonatomic, copy) NSString *Public_Key;
+@property (nonatomic, copy) NSString *public_Key;
 
-@property (nonatomic, assign) NSInteger ForAdvancePayment;
+@property (nonatomic, assign) NSInteger forAdvancePayment;
 
-@property (nonatomic, copy) NSString *Private_Key;
+@property (nonatomic, copy) NSString *private_Key;
 
 @end

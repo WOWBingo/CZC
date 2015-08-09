@@ -12,7 +12,7 @@
 #import "ProductCatagoryObject.h"
 #import "SpecificationObject.h"
 #import "SpecificationProudctObject.h"
-#import "SpecificationOfPricceObject.h"
+#import "SpecificationOfPriceObject.h"
 #import "ShopObject.h"
 #import "ShopCarObject.h"
 #import "ShopCarProductObject.h"
@@ -117,7 +117,19 @@ static ObjectMapping *object = nil;
      *	分类对象
      */
     [ProductCatagoryObject setupReplacedKeyFromPropertyName:^NSDictionary *{
-        return @{};
+        return @{
+                 @"orderID" : @"OrderID",
+                 @"description" : @"Description",
+                 @"code" : @"Code",
+                 @"isLastLevel" : @"IsLastLevel",
+                 @"categoryLevel" : @"CategoryLevel",
+                 @"fatherID" : @"FatherID",
+                 @"name" : @"Name",
+                 @"keywords" : @"Keywords",
+                 @"ID" : @"ID",
+                 @"memLoginID" : @"MemLoginID",
+                 @"shopID" : @"ShopID",
+                 };
     }];
     /**
      *	产品规格
@@ -137,13 +149,27 @@ static ObjectMapping *object = nil;
     
     [SpecificationObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @""
+                 @"specValueName" : @"SpecValueName",
+                 @"specName" : @"SpecName",
+                 @"specid" : @"Specid",
+                 @"guid" : @"Guid",
+                 @"specValueid" : @"SpecValueid",
+                 @"detail" : @"Detail",
                  };
     }];
     
-    [SpecificationOfPricceObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+    [SpecificationOfPriceObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
+                 @"specTotalId" : @"SpecTotalId",
+                 @"tbProp" : @"TbProp",
+                 @"specDetail" : @"SpecDetail",
+                 @"shopID" : @"ShopID",
+                 @"productGuid" : @"ProductGuid",
+                 @"goodsStock" : @"GoodsStock",
+                 @"salesCount" : @"SalesCount",
+                 @"goodsNumber" : @"GoodsNumber",
+                 @"goodsPrice" : @"GoodsPrice",
+                 @"goodColor" : @"GoodColor",
                  };
     }];
     /**
@@ -151,7 +177,34 @@ static ObjectMapping *object = nil;
      */
     [ShopObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
+                 @"addressValue" : @"AddressValue",
+                 @"shopUrl" : @"ShopUrl",
+                 @"tel" : @"Tel",
+                 @"attitudeBL" : @"AttitudeBL",
+                 @"name" : @"Name",
+                 @"shopID" : @"ShopID",
+                 @"memLoginID" : @"MemLoginID",
+                 @"address" : @"Address",
+                 @"clickCount" : @"ClickCount",
+                 @"shopReputation" : @"ShopReputation",
+                 @"haoPingLV" : @"HaoPingLV",
+                 @"salesRange" : @"SalesRange",
+                 @"banner" : @"Banner",
+                 @"characterBL" : @"CharacterBL",
+                 @"email" : @"Email",
+                 @"mainGoods" : @"MainGoods",
+                 @"phone" : @"Phone",
+                 @"collectCount" : @"CollectCount",
+                 @"pic" : @"Pic",
+                 @"shopName" : @"ShopName",
+                 @"companyIntroduce" : @"CompanyIntroduce",
+                 @"shopCharacter" : @"ShopCharacter",
+                 @"speedBL" : @"SpeedBL",
+                 @"applyTime" : @"ApplyTime",
+                 @"shopAttitude" : @"ShopAttitude",
+                 @"shopSpeed" : @"ShopSpeed",
+                 @"guid" : @"Guid",
+                 @"addressCode" : @"AddressCode",
                  };
     }];
     /**
@@ -159,11 +212,32 @@ static ObjectMapping *object = nil;
      */
     [CommentObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"commentType" : @"CommentType",
+                 @"commentTime" : @"CommentTime",
+                 @"reply" : @"Reply",
+                 @"continueComment" : @"ContinueComment",
+                 @"continueState" : @"ContinueState",
+                 @"continueReply" : @"ContinueReply",
+                 @"speed" : @"Speed",
+                 @"shopID" : @"ShopID",
+                 @"comment" : @"Comment",
+                 @"specValue" : @"SpecValue",
+                 @"memLoginID" : @"MemLoginID",
+                 @"continueTime" : @"ContinueTime",
+                 @"continueReplyTime" : @"ContinueReplyTime",
+                 @"productPrice" : @"ProductPrice",
+                 @"buyerAttitude" : @"BuyerAttitude",
+                 @"productName" : @"ProductName",
+                 @"attitude" : @"Attitude",
+                 @"character" : @"Character",
+                 @"shopName" : @"ShopName",
+                 @"orderGuid" : @"OrderGuid",
+                 @"replyTime" : @"ReplyTime",
+                 @"shopLoginId" : @"ShopLoginId",
+                 @"productGuid" : @"ProductGuid",
+                 @"isAudit" : @"IsAudit",
+                 @"guid" : @"Guid",
+                 @"isNick" : @"IsNick",
                  };
     }];
     
@@ -172,11 +246,11 @@ static ObjectMapping *object = nil;
      */
     [ShopCarObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"shopID" : @"",
-                 @"shop" : @"",
-                 @"count" : @"",
-                 @"price" : @"",
-                 @"productList" : @"",
+                 @"shopID" : @"ShopID",
+                 @"shop" : @"Shop",
+                 @"count" : @"Count",
+                 @"price" : @"Price",
+                 @"productList" : @"ProductList",
                  };
     }];
     [ShopCarObject setupObjectClassInArray:^NSDictionary *{
@@ -186,11 +260,25 @@ static ObjectMapping *object = nil;
     }];
     [ShopCarProductObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"guid" : @"Guid",
+                 @"extensionAttriutes" : @"ExtensionAttriutes",
+                 @"shopID" : @"ShopID",
+                 @"repertoryCount" : @"RepertoryCount",
+                 @"name" : @"Name",
+                 @"originalImge" : @"OriginalImge",
+                 @"specificationValue" : @"SpecificationValue",
+                 @"buyNumber" : @"BuyNumber",
+                 @"marketPrice" : @"MarketPrice",
+                 @"isPresent" : @"IsPresent",
+                 @"buyPrice" : @"BuyPrice",
+                 @"createTime" : @"CreateTime",
+                 @"shopName" : @"ShopName",
+                 @"repertoryNumber" : @"RepertoryNumber",
+                 @"productGuid" : @"ProductGuid",
+                 @"memLoginID" : @"MemLoginID",
+                 @"attributes" : @"Attributes",
+                 @"isJoinActivity" : @"IsJoinActivity",
+                 @"specificationName" : @"SpecificationName",
                  };
     }];
     
@@ -199,11 +287,21 @@ static ObjectMapping *object = nil;
      */
     [OrderProductObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"guid" : @"Guid",
+                 @"extensionAttriutes" : @"ExtensionAttriutes",
+                 @"shopID" : @"ShopID",
+                 @"specificationValue" : @"SpecificationValue",
+                 @"productName" : @"ProductName",
+                 @"buyNumber" : @"BuyNumber",
+                 @"productImg" : @"ProductImg",
+                 @"shopPrice" : @"ShopPrice",
+                 @"buyPrice" : @"BuyPrice",
+                 @"isShipment" : @"IsShipment",
+                 @"specificationName" : @"SpecificationName",
+                 @"attributes" : @"Attributes",
+                 @"productGuid" : @"ProductGuid",
+                 @"orderInfoGuid" : @"OrderInfoGuid",
+                 @"memLoginID" : @"MemLoginID",
                  };
     }];
     [OrderObject setupObjectClassInArray:^NSDictionary *{
@@ -211,17 +309,89 @@ static ObjectMapping *object = nil;
                   @"ProductList" : @"OrderProductObject",
                   };
      }];
-    
+    [OrderObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+                 @"outOfStockOperate" : @"OutOfStockOperate",
+                 @"oderStatus" : @"OderStatus",
+                 @"shouldPayPrice" : @"ShouldPayPrice",
+                 @"refundStatus" : @"RefundStatus",
+                 @"email" : @"Email",
+                 @"mobile" : @"Mobile",
+                 @"isBuyComment" : @"IsBuyComment",
+                 @"joinActiveType" : @"JoinActiveType",
+                 @"payment" : @"Payment",
+                 @"tradeID" : @"TradeID",
+                 @"confirmTime" : @"ConfirmTime",
+                 @"usedFavourTicket" : @"UsedFavourTicket",
+                 @"shopName" : @"ShopName",
+                 @"alreadPayPrice" : @"AlreadPayPrice",
+                 @"useScore" : @"UseScore",
+                 @"postType" : @"PostType",
+                 @"scorePrice" : @"ScorePrice",
+                 @"regionCode" : @"RegionCode",
+                 @"paymentStatus" : @"PaymentStatus",
+                 @"shopID" : @"ShopID",
+                 @"payMemo" : @"PayMemo",
+                 @"invoiceType" : @"InvoiceType",
+                 @"activityGuid" : @"ActivityGuid",
+                 @"discount" : @"Discount",
+                 @"shopPhone" : @"shopPhone",
+                 @"invoiceTax" : @"InvoiceTax",
+                 @"tel" : @"Tel",
+                 @"shipmentNumber" : @"ShipmentNumber",
+                 @"blessCardPrice" : @"BlessCardPrice",
+                 @"clientToSellerMsg" : @"ClientToSellerMsg",
+                 @"createTime" : @"CreateTime",
+                 @"shipmentStatus" : @"ShipmentStatus",
+                 @"paymentPrice" : @"PaymentPrice",
+                 @"isSellComment" : @"IsSellComment",
+                 @"dispatchType" : @"DispatchType",
+                 @"memLoginID" : @"MemLoginID",
+                 @"substationID" : @"SubstationID",
+                 @"packGuid" : @"PackGuid",
+                 @"blessCardGuid" : @"BlessCardGuid",
+                 @"invoiceTitle" : @"InvoiceTitle",
+                 @"invoiceContent" : @"InvoiceContent",
+                 @"packPrice" : @"PackPrice",
+                 @"payTime" : @"PayTime",
+                 @"dispatchTime" : @"DispatchTime",
+                 @"postalcode" : @"Postalcode",
+                 @"deposit" : @"Deposit",
+                 @"dispatchPrice" : @"DispatchPrice",
+                 @"paymentName" : @"PaymentName",
+                 @"actvieContent" : @"ActvieContent",
+                 @"logisticsCompanyCode" : @"LogisticsCompanyCode",
+                 @"name" : @"Name",
+                 @"paymentGuid" : @"PaymentGuid",
+                 @"productPrice" : @"ProductPrice",
+                 @"shopID2" : @"ShopID2",
+                 @"shopTel" : @"ShopTel",
+                 @"guid" : @"Guid",
+                 @"orderNumber" : @"OrderNumber",
+                 @"address" : @"Address",
+                 @"surplusPrice" : @"SurplusPrice",
+                 @"productList" : @"ProductList",
+                 };
+    }];
     /**
      *	收货地址
      */
     [AddressObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"guid" : @"Guid",
+                 @"mobile" : @"Mobile",
+                 @"modifyTime" : @"ModifyTime",
+                 @"email" : @"Email",
+                 @"postalcode" : @"Postalcode",
+                 @"tel" : @"Tel",
+                 @"name" : @"NAME",
+                 @"createUser" : @"CreateUser",
+                 @"addressCode" : @"AddressCode",
+                 @"address" : @"Address",
+                 @"isDefault" : @"IsDefault",
+                 @"createTime" : @"CreateTime",
+                 @"memLoginID" : @"MemLoginID",
+                 @"modifyUser" : @"ModifyUser",
                  };
     }];
     
@@ -230,11 +400,20 @@ static ObjectMapping *object = nil;
      */
     [PaymentObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"guid" : @"Guid",
+                 @"isCOD" : @"IsCOD",
+                 @"charge" : @"Charge",
+                 @"email" : @"Email",
+                 @"isPercent" : @"IsPercent",
+                 @"orderID" : @"OrderID",
+                 @"payType" : @"payType",
+                 @"paymentType" : @"PaymentType",
+                 @"secondKey" : @"SecondKey",
+                 @"name" : @"NAME",
+                 @"merchantCode" : @"MerchantCode",
+                 @"public_Key" : @"Public_Key",
+                 @"forAdvancePayment" : @"ForAdvancePayment",
+                 @"private_Key" : @"Private_Key",
                  };
     }];
     
@@ -243,11 +422,20 @@ static ObjectMapping *object = nil;
      */
    [AccoutObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"guid" : @"Guid",
+                 @"url" : @"Url",
+                 @"qQ" : @"QQ",
+                 @"payPwd" : @"PayPwd",
+                 @"email" : @"Email",
+                 @"score" : @"Score",
+                 @"memberRank" : @"MemberRank",
+                 @"name" : @"Name",
+                 @"mobile" : @"Mobile",
+                 @"pwd" : @"Pwd",
+                 @"advancePayment" : @"AdvancePayment",
+                 @"memLoginID" : @"MemLoginID",
+                 @"rememberMe" : @"RememberMe",
+                 @"realName" : @"RealName",
                  };
     }];
     
@@ -256,11 +444,15 @@ static ObjectMapping *object = nil;
      */
     [CollectProductObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"smallImage" : @"SmallImage",
+                 @"shopName" : @"ShopName",
+                 @"sellLoginID" : @"SellLoginID",
+                 @"collectTime" : @"CollectTime",
+                 @"productGuid" : @"ProductGuid",
+                 @"memLoginID" : @"MemLoginID",
+                 @"shopPrice" : @"ShopPrice",
+                 @"guid" : @"Guid",
+                 @"name" : @"Name",
                  };
     }];
     
@@ -269,11 +461,14 @@ static ObjectMapping *object = nil;
      */
     [CollectShopObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"shopID" : @"ShopID",
+                 @"shopName" : @"ShopName",
+                 @"banner" : @"Banner",
+                 @"collectTime" : @"CollectTime",
+                 @"memLoginID" : @"MemLoginID",
+                 @"memLoginID2" : @"MemLoginID2",
+                 @"guid" : @"Guid",
+                 @"collectCount" : @"CollectCount",
                  };
     }];
     /**
@@ -281,11 +476,14 @@ static ObjectMapping *object = nil;
      */
     [MessageObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
-                 @"" : @"",
+                 @"sendTime" : @"SendTime",
+                 @"isRead" : @"IsRead",
+                 @"memLoginID" : @"MemLoginID",
+                 @"type" : @"Type",
+                 @"guid" : @"Guid",
+                 @"title" : @"Title",
+                 @"content" : @"Content",
+                 @"isDeleted" : @"IsDeleted",
                  };
     }];
     
