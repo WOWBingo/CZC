@@ -24,7 +24,7 @@
 
 @property (nonatomic, copy) NSString *memLoginID;
 
-@property (nonatomic, assign) NSInteger shopPrice;
+@property (nonatomic, assign) CGFloat shopPrice;
 
 @property (nonatomic, copy) NSString *guid;
 

@@ -29,11 +29,11 @@
 
 @property (nonatomic, assign) NSInteger buyNumber;
 
-@property (nonatomic, assign) NSInteger marketPrice;
+@property (nonatomic, assign) CGFloat marketPrice;
 
 @property (nonatomic, assign) NSInteger isPresent;
 
-@property (nonatomic, assign) NSInteger buyPrice;
+@property (nonatomic, assign) CGFloat buyPrice;
 
 @property (nonatomic, copy) NSString *createTime;
 

@@ -38,7 +38,7 @@
 
 @property (nonatomic, copy) NSString *continueReplyTime;
 
-@property (nonatomic, assign) NSInteger productPrice;
+@property (nonatomic, assign) CGFloat productPrice;
 
 @property (nonatomic, assign) NSInteger buyerAttitude;
 

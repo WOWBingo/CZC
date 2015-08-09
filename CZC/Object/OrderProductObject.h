@@ -27,9 +27,9 @@
 
 @property (nonatomic, copy) NSString *productImg;
 
-@property (nonatomic, assign) NSInteger shopPrice;
+@property (nonatomic, assign) CGFloat shopPrice;
 
-@property (nonatomic, assign) NSInteger buyPrice;
+@property (nonatomic, assign) CGFloat buyPrice;
 
 @property (nonatomic, assign) NSInteger isShipment;
 

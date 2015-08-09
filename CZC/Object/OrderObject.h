@@ -16,7 +16,7 @@
 
 @property (nonatomic, assign) NSInteger oderStatus;
 
-@property (nonatomic, assign) NSInteger shouldPayPrice;
+@property (nonatomic, assign) CGFloat shouldPayPrice;
 
 @property (nonatomic, assign) NSInteger refundStatus;
 
@@ -38,13 +38,13 @@
 
 @property (nonatomic, copy) NSString *shopName;
 
-@property (nonatomic, assign) NSInteger alreadPayPrice;
+@property (nonatomic, assign) CGFloat alreadPayPrice;
 
 @property (nonatomic, assign) NSInteger useScore;
 
 @property (nonatomic, assign) NSInteger postType;
 
-@property (nonatomic, assign) NSInteger scorePrice;
+@property (nonatomic, assign) CGFloat scorePrice;
 
 @property (nonatomic, copy) NSString *regionCode;
 
@@ -68,7 +68,7 @@
 
 @property (nonatomic, copy) NSString *shipmentNumber;
 
-@property (nonatomic, assign) NSInteger blessCardPrice;
+@property (nonatomic, assign) CGFloat blessCardPrice;
 
 @property (nonatomic, copy) NSString *clientToSellerMsg;
 
@@ -76,7 +76,7 @@
 
 @property (nonatomic, assign) NSInteger shipmentStatus;
 
-@property (nonatomic, assign) NSInteger paymentPrice;
+@property (nonatomic, assign) CGFloat paymentPrice;
 
 @property (nonatomic, assign) NSInteger isSellComment;
 
@@ -94,7 +94,7 @@
 
 @property (nonatomic, copy) NSString *invoiceContent;
 
-@property (nonatomic, assign) NSInteger packPrice;
+@property (nonatomic, assign) CGFloat packPrice;
 
 @property (nonatomic, copy) NSString *payTime;
 
@@ -104,7 +104,7 @@
 
 @property (nonatomic, assign) NSInteger deposit;
 
-@property (nonatomic, assign) NSInteger dispatchPrice;
+@property (nonatomic, assign) CGFloat dispatchPrice;
 
 @property (nonatomic, copy) NSString *paymentName;
 
@@ -116,7 +116,7 @@
 
 @property (nonatomic, copy) NSString *paymentGuid;
 
-@property (nonatomic, assign) NSInteger productPrice;
+@property (nonatomic, assign) CGFloat productPrice;
 
 @property (nonatomic, assign) NSInteger shopID2;
 
@@ -128,7 +128,7 @@
 
 @property (nonatomic, copy) NSString *address;
 
-@property (nonatomic, assign) NSInteger surplusPrice;
+@property (nonatomic, assign) CGFloat surplusPrice;
 
 @property (nonatomic, strong) NSMutableArray *productList;
 
