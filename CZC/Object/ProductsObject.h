@@ -116,13 +116,4 @@
 
 @property (nonatomic, strong)NSMutableArray *imgList;/** <图片列表 */
 
-"Guid": "d3c62691-4fb5-4b8b-81bf-854bc74460a2",
-"MemLoginID": "zh010101",
-"ShopName": "天天",
-"SellLoginID": "h4",
-"ProductGuid": "2d2decfa-6e03-4737-b4af-95d30e2c5433",
-"CollectTime": "2015/04/03 22:40:57",
-"SmallImage": "http://www.czctgw.com/ImgUpload/shopImage/2014/shop100000615/201412091255073.jpg_100X100.jpg",
-"ShopPrice": 67.00,
-"Name": "2014秋冬新款男装 男式长袖t恤 加绒加厚t恤衫 潮流数字男上衣"
 @end

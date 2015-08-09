@@ -110,7 +110,6 @@ static ObjectMapping *object = nil;
                  @"isShopNew" : @"IsShopNew",
                  @"productNum" : @"ProductNum",
                  @"imgList" : @"ImagesList",
-                 
                  };
     }];
     /**
