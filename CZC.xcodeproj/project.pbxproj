@@ -11,6 +11,8 @@
 		1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A01B5FBF10005947D6 /* InstallViewController.xib */; };
 		1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */; };
 		1808C1A71B5FC908005947D6 /* InstallTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */; };
+		180A95A41B7791C40020EA59 /* ShopCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180A95A21B7791C40020EA59 /* ShopCollectionCell.m */; };
+		180A95A51B7791C40020EA59 /* ShopCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180A95A31B7791C40020EA59 /* ShopCollectionCell.xib */; };
 		1821568E1B57D48500E5D502 /* MyLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */; };
 		1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */; };
 		182156931B57D5F200E5D502 /* MyLogisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182156911B57D5F200E5D502 /* MyLogisticsTableViewCell.m */; };
@@ -177,6 +179,9 @@
 		1808C1A31B5FC908005947D6 /* InstallTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallTimeTableViewCell.h; sourceTree = "<group>"; };
 		1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallTimeTableViewCell.m; sourceTree = "<group>"; };
 		1808C1A51B5FC908005947D6 /* InstallTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallTimeTableViewCell.xib; sourceTree = "<group>"; };
+		180A95A11B7791C40020EA59 /* ShopCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCollectionCell.h; sourceTree = "<group>"; };
+		180A95A21B7791C40020EA59 /* ShopCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCollectionCell.m; sourceTree = "<group>"; };
+		180A95A31B7791C40020EA59 /* ShopCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCollectionCell.xib; sourceTree = "<group>"; };
 		1821568B1B57D48500E5D502 /* MyLogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogisticsViewController.h; sourceTree = "<group>"; };
 		1821568C1B57D48500E5D502 /* MyLogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogisticsViewController.m; sourceTree = "<group>"; };
 		1821568D1B57D48500E5D502 /* MyLogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogisticsViewController.xib; sourceTree = "<group>"; };
@@ -759,6 +764,9 @@
 				18C76D791B70E7E5002D9870 /* EditAddressTableViewCell.h */,
 				18C76D7A1B70E7E5002D9870 /* EditAddressTableViewCell.m */,
 				18C76D7B1B70E7E5002D9870 /* EditAddressTableViewCell.xib */,
+				180A95A11B7791C40020EA59 /* ShopCollectionCell.h */,
+				180A95A21B7791C40020EA59 /* ShopCollectionCell.m */,
+				180A95A31B7791C40020EA59 /* ShopCollectionCell.xib */,
 				197DD7141B5D46E00092AEE8 /* ShopCollectTableViewCell.h */,
 				197DD7151B5D46E00092AEE8 /* ShopCollectTableViewCell.m */,
 				197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */,
@@ -941,6 +949,7 @@
 				19D18A671B5B9BB1001917F9 /* 城中成接口测试0718.xlsx in Resources */,
 				196044381B4B788400989481 /* HomeViewCell.xib in Resources */,
 				1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */,
+				180A95A51B7791C40020EA59 /* ShopCollectionCell.xib in Resources */,
 				1982F0991B4F4D6900DB8661 /* ChooseCityHeadView.xib in Resources */,
 				1821568F1B57D48500E5D502 /* MyLogisticsViewController.xib in Resources */,
 				1982F0821B4EC8AA00DB8661 /* citydict.plist in Resources */,
@@ -1031,6 +1040,7 @@
 				1902C7C61B773648009C7A33 /* SpecificationProudctObject.m in Sources */,
 				19E05EED1B56241A007DB924 /* ProductTableInfoCell.m in Sources */,
 				1977FD971B774FAE000A8D26 /* ShopCarObject.m in Sources */,
+				180A95A41B7791C40020EA59 /* ShopCollectionCell.m in Sources */,
 				1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */,
 				18A091F91B5E97D7009F3376 /* DiscountPromotionViewController.m in Sources */,
 				1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */,

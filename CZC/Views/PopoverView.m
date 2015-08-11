@@ -9,7 +9,6 @@
 
 #import "PopoverView.h"
 
-
 #define kArrowHeight 0.f
 #define kArrowCurvature 0.f
 #define SPACE 2.f
@@ -113,32 +112,32 @@
 }
 
 
--(void)show
-{
-    self.handerView = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_handerView setFrame:[UIScreen mainScreen].bounds];
-    [_handerView setBackgroundColor:[UIColor clearColor]];
-    [_handerView addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-    [_handerView addSubview:self];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    
-    [_parentView addSubview:_handerView];
-    
-    CGPoint arrowPoint = [self convertPoint:self.showPoint fromView:_handerView];
-    self.layer.anchorPoint = CGPointMake(arrowPoint.x / self.frame.size.width, arrowPoint.y / self.frame.size.height);
-    self.frame = [self getViewFrame];
-    
-    self.alpha = 0.f;
-    self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
-    [UIView animateWithDuration:0.2f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
-        self.alpha = 1.f;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.08f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.transform = CGAffineTransformIdentity;
-        } completion:nil];
-    }];
-}
+//-(void)show
+//{
+//    self.handerView = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_handerView setFrame:[UIScreen mainScreen].bounds];
+//    [_handerView setBackgroundColor:[UIColor clearColor]];
+//    [_handerView addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+//    [_handerView addSubview:self];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    
+//    [_parentView addSubview:_handerView];
+//    
+//    CGPoint arrowPoint = [self convertPoint:self.showPoint fromView:_handerView];
+//    self.layer.anchorPoint = CGPointMake(arrowPoint.x / self.frame.size.width, arrowPoint.y / self.frame.size.height);
+//    self.frame = [self getViewFrame];
+//    
+//    self.alpha = 0.f;
+//    self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
+//    [UIView animateWithDuration:0.2f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        self.transform = CGAffineTransformMakeScale(1.05f, 1.05f);
+//        self.alpha = 1.f;
+//    } completion:^(BOOL finished) {
+//        [UIView animateWithDuration:0.08f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//            self.transform = CGAffineTransformIdentity;
+//        } completion:nil];
+//    }];
+//}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -146,8 +145,8 @@
 {
     [self.borderColor set]; //设置线条颜色
     
-    CGRect frame = CGRectMake(0, 10, self.bounds.size.width, self.bounds.size.height - kArrowHeight);
-    
+    CGRect frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - kArrowHeight);
+
     float xMin = CGRectGetMinX(frame);
     float yMin = CGRectGetMinY(frame);
     
@@ -186,26 +185,26 @@
 }
 
 
--(void)dismiss
-{
-    [self dismiss:YES];
-}
-
--(void)dismiss:(BOOL)animate
-{
-    if (!animate) {
-        [_handerView removeFromSuperview];
-        return;
-    }
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
-        self.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        [_handerView removeFromSuperview];
-    }];
-    
-}
+//-(void)dismiss
+//{
+//    [self dismiss:YES];
+//}
+//
+//-(void)dismiss:(BOOL)animate
+//{
+//    if (!animate) {
+//        [_handerView removeFromSuperview];
+//        return;
+//    }
+//    
+//    [UIView animateWithDuration:0.3f animations:^{
+//        self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
+//        self.alpha = 0.f;
+//    } completion:^(BOOL finished) {
+//        [_handerView removeFromSuperview];
+//    }];
+//    
+//}
 -(void)selectBtn:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
@@ -213,7 +212,7 @@
     if (self.selectRowAtIndex) {
         self.selectRowAtIndex(btn.tag);
     }
-    [self dismiss:YES];
+    [self removeFromSuperview];
 }
 
 //#pragma mark - UITableView

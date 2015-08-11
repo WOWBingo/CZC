@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -36,6 +36,9 @@
                         <state key="normal" image="shopcollect-icon-1">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="showMoreClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8n6-jg-XDp"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -53,7 +56,7 @@
                 <outlet property="shopImage" destination="Jjk-ci-hvb" id="584-c1-jU5"/>
                 <outlet property="shopNameLab" destination="o7o-O5-mIt" id="DAE-5B-vTt"/>
             </connections>
-            <point key="canvasLocation" x="298" y="208"/>
+            <point key="canvasLocation" x="137" y="251"/>
         </tableViewCell>
     </objects>
     <resources>

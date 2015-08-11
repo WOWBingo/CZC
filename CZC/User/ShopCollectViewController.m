@@ -10,7 +10,7 @@
 #import "ShopCollectTableViewCell.h"
 #import "ShopInfoViewController.h"
 #import "PopoverView.h"
-
+#import "AppDelegate.h"
 @interface ShopCollectViewController ()
 
 @end
@@ -48,6 +48,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
+    NSLog(@"%ld",(long)row);
     static NSString *cellIdentifier = @"ShopCollectTableViewCell";
     ShopCollectTableViewCell *cell = (ShopCollectTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -55,15 +56,17 @@
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
         cell = (ShopCollectTableViewCell *)[nibArray objectAtIndex:0];
         cell.moreBtn.tag = row;
-        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
+        cell.delegate = self;
+//        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    cell.cellIndexPath = indexPath;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
-    [self.navigationController pushViewController:newVC animated:YES];
+//    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+//    [self.navigationController pushViewController:newVC animated:YES];
 }
 
 
@@ -72,28 +75,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)moreView:(id)sender{
-    CGPoint point = CGPointMake(100, 100);
-    UIButton *btn = (UIButton*)sender;
-    ShopCollectTableViewCell *cell = (ShopCollectTableViewCell*) [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
-    cell.moreView = [[PopoverView alloc] initWithPoint:btn.frame.origin ];
-    cell.moreView.parentView = cell;
-    cell.moreView.selectRowAtIndex = ^(NSInteger index){
-        NSLog(@"select index:%d", index);
-        NSLog(@"cell index:%d", btn.tag);
-    };
-    [cell.moreView show];
+-(void)moreView:(ShopCollectTableViewCell *)cell andPopoverView:(PopoverView *)view{
+    //获取tableviewCell在当前屏幕中的坐标值
+    CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:cell.cellIndexPath];
+    CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];
+    NSLog(@"%f",rect.origin.y);
+    cell.moreView = [cell.moreView initWithPoint:CGPointMake(cell.moreBtn.frame.origin.x, rect.origin.y)];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"%ld",(long)cell.moreView.tag);
+    //遍历uiview存在就隐藏，不存在就显示
+    if (cell.moreView.tag == 0) {
+        CFShow((__bridge CFTypeRef)(cell.moreView));
+        cell.moreView.tag = 1;
+        [appDelegate.window addSubview:cell.moreView];
+    }else{
+        CFShow((__bridge CFTypeRef)(cell.moreView));
+        cell.moreView.tag = 0;
+        [cell.moreView removeFromSuperview];
+    }
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *view in appDelegate.window.subviews) {
+        if ([view isKindOfClass:[PopoverView class]]) {
+            [view removeFromSuperview];
+            view.tag = 0;
+        }
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

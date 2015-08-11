@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.moreView = [[PopoverView alloc]init];
+    self.moreView.tag = 0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,4 +22,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)showMoreClick:(id)sender {
+    [self.delegate moreView:self andPopoverView:self.moreView];
+}
 @end
