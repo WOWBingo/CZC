@@ -57,8 +57,8 @@ static ObjectMapping *object = nil;
                  @"brandName" : @"BrandName",
                  @"modifyTime" : @"ModifyTime",
                  @"detail" : @"Detail",
-                 @"nowName" : @"Express_fee",
-                 @"nameChangedTime" : @"Wap_desc",
+                 @"express_fee" : @"Express_fee",
+                 @"wap_desc" : @"Wap_desc",
                  @"isShopRecommend" : @"IsShopRecommend",
                  @"productState" : @"ProductState",
                  @"isSystemHot" : @"IsSystemHot",
@@ -112,20 +112,27 @@ static ObjectMapping *object = nil;
                  @"imgList" : @"ImagesList",
                  };
     }];
+    
+    [ProductsObject setupObjectClassInArray:^NSDictionary *{
+        return @{
+                 @"ImagesList" : @"NSString",
+                 };
+    }];
+    
     /**
      *	分类对象
      */
     [ProductCatagoryObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
                  @"orderID" : @"OrderID",
-                 @"description" : @"Description",
+                 @"catagoryDescription" : @"Description",
                  @"code" : @"Code",
                  @"isLastLevel" : @"IsLastLevel",
                  @"categoryLevel" : @"CategoryLevel",
                  @"fatherID" : @"FatherID",
                  @"name" : @"Name",
                  @"keywords" : @"Keywords",
-                 @"ID" : @"ID",
+                 @"catagoryID" : @"ID",
                  @"memLoginID" : @"MemLoginID",
                  @"shopID" : @"ShopID",
                  };
@@ -249,7 +256,7 @@ static ObjectMapping *object = nil;
                  @"shop" : @"Shop",
                  @"count" : @"Count",
                  @"price" : @"Price",
-                 @"productList" : @"ProductList",
+                 @"productList" : @"Data",
                  };
     }];
     [ShopCarObject setupObjectClassInArray:^NSDictionary *{
@@ -423,7 +430,7 @@ static ObjectMapping *object = nil;
         return @{
                  @"guid" : @"Guid",
                  @"url" : @"Url",
-                 @"qQ" : @"QQ",
+                 @"QQ" : @"QQ",
                  @"payPwd" : @"PayPwd",
                  @"email" : @"Email",
                  @"score" : @"Score",

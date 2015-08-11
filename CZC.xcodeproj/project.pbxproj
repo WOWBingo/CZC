@@ -159,6 +159,7 @@
 		19E05EFD1B57898A007DB924 /* ShopTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05EFB1B57898A007DB924 /* ShopTableViewController.xib */; };
 		19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */; };
 		19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */; };
+		19F969FD1B79964100C98637 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FC1B79964100C98637 /* Key.m */; };
 		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -399,7 +400,7 @@
 		19D18A601B5B9A77001917F9 /* 城市多用户3.1 Api接口说明.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城市多用户3.1 Api接口说明.doc"; sourceTree = "<group>"; };
 		19D18A661B5B9BB1001917F9 /* 城中成接口测试0718.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城中成接口测试0718.xlsx"; sourceTree = "<group>"; };
 		19D587801B48C79000D65B43 /* CZC-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZC-PrefixHeader.pch"; sourceTree = "<group>"; };
-		19D587BA1B48D1A600D65B43 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key.h; path = Public/Key.h; sourceTree = "<group>"; };
+		19D587BA1B48D1A600D65B43 /* Key2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key2.h; path = Public/Key2.h; sourceTree = "<group>"; };
 		19D587BD1B48D63100D65B43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19D64C2F1B5D1BD700F82AE0 /* HJCAdjustNumButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HJCAdjustNumButton.bundle; sourceTree = "<group>"; };
 		19D64C301B5D1BD700F82AE0 /* HJCAjustNumButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCAjustNumButton.h; sourceTree = "<group>"; };
@@ -419,6 +420,8 @@
 		19E05EFE1B578AEE007DB924 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
 		19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
 		19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		19F969FB1B79964100C98637 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Key.h; path = Public/Key.h; sourceTree = "<group>"; };
+		19F969FC1B79964100C98637 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Key.m; path = Public/Key.m; sourceTree = "<group>"; };
 		75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A72C08894D95434494E8BD85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -812,7 +815,9 @@
 				19D64C2E1B5D1BD700F82AE0 /* HJCAdjustNumButton */,
 				18C999171B50BC2300CDA089 /* ZHPickView */,
 				187BB7781B4D56C800202B19 /* AutoScrollView */,
-				19D587BA1B48D1A600D65B43 /* Key.h */,
+				19F969FB1B79964100C98637 /* Key.h */,
+				19F969FC1B79964100C98637 /* Key.m */,
+				19D587BA1B48D1A600D65B43 /* Key2.h */,
 				19AC52361B497D5900F81759 /* CZCAPIService.h */,
 				19AC52371B497D5900F81759 /* CZCAPIService.m */,
 				1918DE511B4989DF00BBEB41 /* RefreshLocation.h */,
@@ -1109,6 +1114,7 @@
 				1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */,
 				187BB7AA1B4D571C00202B19 /* SetViewController.m in Sources */,
 				19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */,
+				19F969FD1B79964100C98637 /* Key.m in Sources */,
 				18C76D771B70E3F6002D9870 /* EditAddressViewController.m in Sources */,
 				187BB7A11B4D571C00202B19 /* ProvisionViewController.m in Sources */,
 				198E606F1B4A6FFA00FBC7E8 /* SearchViewController.m in Sources */,

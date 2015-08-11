@@ -13,11 +13,9 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "Key.h"
+//#import "Key2.h"
+#import "CZCAPIService.h"
 #import "PublicObject.h"
 #import "PublicViewController.h"
 #import <MJExtension.h>
 #endif
-
-
-//自定义的宏们
-#define RGB(Red,Green,Blue,Alpha) [UIColor colorWithRed:Red/255.0 green:Green/255.0 blue:Blue/255.0 alpha:Alpha]

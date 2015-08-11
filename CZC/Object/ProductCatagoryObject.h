@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) NSInteger orderID;
 
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *catagoryDescription;
 
 @property (nonatomic, copy) NSString *code;
 
@@ -27,7 +27,7 @@
 
 @property (nonatomic, copy) NSString *keywords;
 
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) NSInteger catagoryID;
 
 @property (nonatomic, copy) NSString *memLoginID;
 

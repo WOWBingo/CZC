@@ -13,10 +13,12 @@
     void(^myresulthandle)(NSDictionary *myresult);
 }
 
-+ (CZCAPIService *)getCZCAPIService;
++ (CZCAPIService *)shareService;
 
 - (void)GETmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
+
+- (void)POSTmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *myresult))handle;
 
 - (void)postUploadWithUrl:(NSString *)urlStr fileImage:(UIImage *)image fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail;
 

@@ -16,5 +16,6 @@
 @property (copy, nonatomic) NSString *oldName;
 @property (copy, nonatomic) NSString *nameChangedTime;
 
+- (void)getData;
 
 @end

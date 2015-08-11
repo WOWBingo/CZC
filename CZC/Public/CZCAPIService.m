@@ -10,8 +10,7 @@
 
 static CZCAPIService *CAS;
 @implementation CZCAPIService
-
-+ (CZCAPIService *)getCZCAPIService{
++ (CZCAPIService *)shareService{
     if (CAS == nil)
     {
         CAS = [[CZCAPIService alloc]init];
@@ -19,8 +18,9 @@ static CZCAPIService *CAS;
     return CAS;
 }
 
+
 - (void)GETmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
-    NSString *requrl = [NSString stringWithFormat:@"%@%@%@",K_Public_URL,methodName,parameters];
+    NSString *requrl = [NSString stringWithFormat:@"%@%@%@",kPublic_URL,methodName,parameters];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@" 请求地址：%@",requrl);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -32,11 +32,12 @@ static CZCAPIService *CAS;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"____失败");
         NSLog(@"error: %@",error);
+        handle(nil);
     }];
 }
 
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
-    NSString *requrl = [NSString stringWithFormat:@"%@%@",K_Public_URL,methodName];
+    NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
@@ -44,6 +45,20 @@ static CZCAPIService *CAS;
         handle((NSDictionary *) responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        handle(nil);
+    }];
+}
+
+- (void)POSTmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *))handle{
+    NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
+    requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
+    [manager POST:requrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        handle((NSDictionary *) responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        handle(nil);
     }];
 }
 

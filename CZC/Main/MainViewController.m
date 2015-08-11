@@ -12,6 +12,7 @@
 #import "ShoppingCarViewController.h"
 #import "SetViewController.h"
 #import "ObjectMapping.h"
+#import "TestObject.h"
 
 @interface MainViewController ()
 @end
@@ -27,6 +28,8 @@
      *	对数据模型重新编码
      */
     [ObjectMapping mappingObjects];
+    TestObject *test = [[TestObject alloc]init];
+    [test getData];
     
     /**
      *	设置tabbar选中背景、navigationbar背景、navigationbar下边框

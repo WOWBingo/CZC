@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *url;
 
-@property (nonatomic, copy) NSString *qQ;
+@property (nonatomic, copy) NSString *QQ;
 
 @property (nonatomic, copy) NSString *payPwd;
 
