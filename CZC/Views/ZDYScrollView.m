@@ -21,7 +21,7 @@ static CGFloat const chageImageTime = 4.0;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
         _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
         _isTimeUp = NO;
     }
@@ -115,6 +115,9 @@ static CGFloat const chageImageTime = 4.0;
 }
 
 - (void)reloadImage {
+    if (_imageCount == 0) {
+        return;
+    }
     CGPoint contentOffset = [_scrV contentOffset];
     if (_isTimeUp) {
         _currentImageIndex = (_currentImageIndex + 1) % _imageCount;

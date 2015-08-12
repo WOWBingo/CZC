@@ -158,7 +158,7 @@
         ZDYScrollView *scrollView = [[ZDYScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
         if (_homeImages) {
             [scrollView loadImageData:_homeImages];
-        }        
+        }
 //        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
 //        if (_homeImages) {
 //            NSMutableArray *imageArr = [[NSMutableArray alloc]init];
