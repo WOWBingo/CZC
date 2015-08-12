@@ -32,6 +32,8 @@ typedef NS_ENUM(NSUInteger, AdTitleShowStyle)
 @property (assign,nonatomic,readwrite) UIPageControlShowStyle  PageControlShowStyle;
 @property (assign,nonatomic,readonly) AdTitleShowStyle  adTitleStyle;
 
+@property (nonatomic,strong) NSArray *objectArray;
+
 - (void)setAdTitleArray:(NSArray *)adTitleArray withShowStyle:(AdTitleShowStyle)adTitleStyle;
 
 - (IBAction)clickCenter:(id)sender;

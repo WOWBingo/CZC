@@ -25,6 +25,7 @@
 #import "CollectProductObject.h"
 #import "CollectShopObject.h"
 #import "MessageObject.h"
+#import "HomeImageObject.h"
 
 @implementation ObjectMapping
 
@@ -493,22 +494,18 @@ static ObjectMapping *object = nil;
                  };
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    /**
+     *	首页图片
+     */
+    [HomeImageObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+                 @"homeImageID" : @"ID",
+                 @"url" : @"Url",
+                 @"value" : @"Value",
+                 @"configType" : @"ConfigType",
+                 @"shopID" : @"ShopID",
+                 };
+    }];
     
     
     

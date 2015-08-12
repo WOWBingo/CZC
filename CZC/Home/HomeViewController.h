@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PublicViewController.h"
+#import "HomeImageObject.h"
 
 @interface HomeViewController:PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) UIView *searchView;
 @property (nonatomic ,strong) NSMutableArray *dataList;
+@property (nonatomic ,strong) NSArray *homeImages;/**< 首页轮播展示图片*/
 @property (nonatomic ,strong) UIBarButtonItem *leftItem;
 @property (nonatomic) BOOL isHomePage;
 

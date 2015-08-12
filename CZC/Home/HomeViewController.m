@@ -16,6 +16,7 @@
 #import "HundredViewController.h"
 #import "ShopTableViewController.h"
 #import "TestObject.h"
+#import "ZDYScrollView.h"
 
 #define ScrollViewHight (SCREEN_WIDTH*0.48)
 
@@ -70,6 +71,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setShadowImage:nil];
     self.parentViewController.tabBarController.tabBar.hidden = NO;
+    
+    [self getHomeImagesData];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [self.navigationController.navigationBar setShadowImage:nil];
@@ -79,6 +82,27 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
     self.parentViewController.tabBarController.tabBar.hidden = YES;
+}
+
+
+#pragma mark - 59.首页图片
+/**  59.首页图片 http://app.czctgw.com/api/ShopGGlistIndex/?CityDomianName=chengdu*/
+- (void)getHomeImagesData{
+    NSString *params = @"CityDomianName=chengdu";
+    [CZCService GETmethod:kShopGGlistIndex_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSArray *dataArr = [myresult objectForKey:@"ImageList"];
+            NSArray *list = [HomeImageObject objectArrayWithKeyValuesArray:dataArr];
+            if (list.count > 0) {
+                _homeImages = list;
+                [_tableView reloadData];
+            }
+            NSLog(@" 59.首页图片 ------%@",list);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 
 
@@ -131,14 +155,29 @@
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier:TableSampleIdentifier];
         }
-        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
-        scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
-        [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
-        //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
-        //scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        scrollView.PageControlShowStyle = UIPageControlShowStyleCenter;
-        scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+        ZDYScrollView *scrollView = [[ZDYScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
+        if (_homeImages) {
+            [scrollView loadImageData:_homeImages];
+        }        
+//        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
+//        if (_homeImages) {
+//            NSMutableArray *imageArr = [[NSMutableArray alloc]init];
+//            for (int i = 0 ; i < _homeImages.count; i++) {
+//                HomeImageObject *object = [_homeImages objectAtIndex:i];
+//                NSString *imageUrl = object.value;
+//                [imageArr addObject:imageUrl];
+//            }
+//            scrollView.imageNameArray = imageArr;
+//            scrollView.objectArray = _homeImages;
+//        }else{
+//            scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
+//        }        
+//        [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
+//        //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
+//        //scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//        scrollView.PageControlShowStyle = UIPageControlShowStyleCenter;
+//        scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+//        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
         [cell addSubview:scrollView];
         return cell;
     }else{

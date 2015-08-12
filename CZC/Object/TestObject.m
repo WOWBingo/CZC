@@ -25,6 +25,7 @@
 #import "CollectProductObject.h"
 #import "CollectShopObject.h"
 #import "MessageObject.h"
+#import "HomeImageObject.h"
 
 @implementation TestObject
 
@@ -173,7 +174,7 @@
 //            NSLog(@"失败");
 //        }
 //    }];
-//
+
 #pragma mark - 9.店铺详细信息
     /**
      *9.店铺详细信息
@@ -315,10 +316,52 @@
 //    }];
     
 #pragma mark - 16.提交订单
-#warning 提交订单错误
-//    /**  16.提交订单(1) http://app.czctgw.com/api/shoppingcart/ */
-//    NSDictionary *dic = @{};
-//    [CZCService POSTmethod:kOrderAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+    /**  16.提交订单(1) http://app.czctgw.com/api/shoppingcart/ */
+//    NSDictionary *dic = @{
+//                          @"MemLoginID": @"a465788",
+//                          @"OrderNumber": @"201505122319090",
+//                          @"TradeID": @"201505122319090",
+//                          @"Name": @"陈胜",
+//                          @"Email": @"",
+//                          @"Address": @"江苏省苏州市常熟市 江苏省苏州市常熟市古里镇小康村庐山苑三区31号",
+//                          @"Postalcode": @"215500",
+//                          @"Tel": @"",
+//                          @"Mobile": @"15952069203",
+//                          @"PaymentGuid": @"31e9ce27-bc27-4e16-8e53-dc171194531a",
+//                          @"ProductPrice": @"100.00",
+//                          @"DispatchPrice": @"0.00",
+//                          @"ShouldPayPrice": @"100.00",
+//                          @"OutOfStockOperate": @"",
+//                          @"ClientToSellerMsg": @"",
+//                          @"RegionCode":@"1",
+//                          @"orderPrice":@"200",
+//                          @"PostType": @"0",
+//                          @"ProductList": @[
+//                                           @{
+//                                               @"Guid": @"252df425-238e-4a00-9b75-e056a3e418a9",
+//                                               @"MemLoginID": @"a465788",
+//                                               @"ProductGuid": @"181dc6c6-6b2f-49ef-9a42-5e2fbc534520",
+//                                               @"OriginalImge": @"http://www.czctgw.com/ImgUpload/shopImage/2014/shop100000615/201412051232517.jpg_100X100.jpg",
+//                                               @"Name": @"2014秋装V领 纯净色黑白纯色打底 百搭时尚长袖男T恤 youtesi",
+//                                               @"RepertoryNumber": @"C028",
+//                                               @"Attributes": @"",
+//                                               @"ExtensionAttriutes": @"M",
+//                                               @"BuyNumber": @"3",
+//                                               @"MarketPrice": @"99.00",
+//                                               @"BuyPrice": @"154.00",
+//                                               @"IsJoinActivity": @"0",
+//                                               @"IsPresent": @"0",
+//                                               @"CreateTime": @"2015/08/07 17:56:23",
+//                                               @"ShopID": @"h4",
+//                                               @"ShopName": @"天天",
+//                                               @"SpecificationName": @"颜色分类:浅灰色|尺码:M",
+//                                               @"SpecificationValue": @"浅灰色|M",
+//                                               @"RepertoryCount": @"160"
+//                                           }
+//                                           ],
+//                          };
+////    NSString *str=@" \"MemLoginID \":   \"a465788 \",\"OrderNumber \":   \"201505122319090 \",\"TradeID \":   \"201505122319090 \",\"Name \":   \"陈胜 \",\"Email \":   \" \",\"Address \":   \"江苏省苏州市常熟市 江苏省苏州市常熟市古里镇小康村庐山苑三区31号 \",\"Postalcode \":   \"215500 \",\"Tel \":   \" \",\"Mobile \":   \"15952069203 \",\"PaymentGuid \":   \"31e9ce27-bc27-4e16-8e53-dc171194531a \",\"ProductPrice \":   \"100.00 \",\"DispatchPrice \":   \"0.00 \",\"ShouldPayPrice \":   \"100.00 \",\"OutOfStockOperate \":   \" \",\"ClientToSellerMsg \":   \" \",\"RegionCode \":  \"1 \",\"orderPrice \":  \"200 \",\"PostType \":   \"0 \",\"ProductList \":  [{\"Guid \":   \"252df425-238e-4a00-9b75-e056a3e418a9 \",\"MemLoginID \":   \"a465788 \",\"ProductGuid \":   \"181dc6c6-6b2f-49ef-9a42-5e2fbc534520 \",\"OriginalImge \":   \"http://www.czctgw.com/ImgUpload/shopImage/2014/shop100000615/201412051232517.jpg_100X100.jpg \",\"Name \":   \"2014秋装V领 纯净色黑白纯色打底 百搭时尚长袖男T恤 youtesi \",\"RepertoryNumber \":   \"C028 \",\"Attributes \":   \" \",\"ExtensionAttriutes \":   \"M \",\"BuyNumber \":   \"3 \",\"MarketPrice \":   \"99.00 \",\"BuyPrice \":   \"154.00 \",\"IsJoinActivity \":   \"0 \",\"IsPresent \":   \"0 \",\"CreateTime \":   \"2015/08/07 17:56:23 \",\"ShopID \":   \"h4 \",\"ShopName \":   \"天天 \",\"SpecificationName \":   \"颜色分类:浅灰色|尺码:M \",\"SpecificationValue \":   \"浅灰色|M \",\"RepertoryCount \":   \"160 \"";
+//    [CZCService POSTmethod:kOrderAdd_URL andParameters:[self DataTOjsonString:dic] andHandle:^(NSDictionary *myresult) {
 //        if (myresult) {
 //            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
 //            NSLog(@"16.提交订单 ------%d",result);
@@ -464,6 +507,26 @@
 //        }
 //    }];
     
+#pragma mark - 38.收货地址
+//    NSDictionary *addressDic = @{
+//                                 @"NAME":@"ewewessss",
+//                                 @"Email":@"wewe@qq.com",
+//                                 @"Address":@"北京市北京辖区东城区",
+//                                 @"Postalcode":@"423654",
+//                                 @"Mobile":@"15236585965",
+//                                 @"Tel":@"",
+//                                 @"AddressCode":@"000",
+//                                 @"MemLoginID":@"111111"
+//                               };
+//    [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"38.收货地址结果 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
     
 #pragma mark - 44.登录
 //    NSDictionary *loginDic = @{
@@ -480,10 +543,28 @@
 //            NSLog(@"失败");
 //        }
 //    }];
-    
+#pragma mark - 59.首页图片
+    /**  59.首页图片 http://app.czctgw.com/api/ShopGGlistIndex/?CityDomianName=chengdu*/
+//    params = @"CityDomianName=chengdu";
+//    [CZCService GETmethod:kShopGGlistIndex_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSArray *dataArr = [myresult objectForKey:@"ImageList"];
+//            NSArray *list = [HomeImageObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@" 59.首页图片 ------%@",list);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
     
 }
-
+/**
+ *	Dci转JSON字符串
+ *
+ *	@param object	dic数据
+ *
+ *	@return JSON字符串
+ */
 -(NSString*)DataTOjsonString:(id)object
 {
     NSString *jsonString = nil;

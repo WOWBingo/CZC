@@ -160,6 +160,8 @@
 		19E05F011B578AEE007DB924 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E05EFF1B578AEE007DB924 /* ShopTableViewCell.m */; };
 		19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */; };
 		19F969FD1B79964100C98637 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FC1B79964100C98637 /* Key.m */; };
+		19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FF1B7AF79600C98637 /* HomeImageObject.m */; };
+		19F96A031B7B320800C98637 /* ZDYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F96A021B7B320800C98637 /* ZDYScrollView.m */; };
 		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -422,6 +424,10 @@
 		19E05F001B578AEE007DB924 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		19F969FB1B79964100C98637 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Key.h; path = Public/Key.h; sourceTree = "<group>"; };
 		19F969FC1B79964100C98637 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Key.m; path = Public/Key.m; sourceTree = "<group>"; };
+		19F969FE1B7AF79600C98637 /* HomeImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeImageObject.h; path = Object/HomeImageObject.h; sourceTree = "<group>"; };
+		19F969FF1B7AF79600C98637 /* HomeImageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeImageObject.m; path = Object/HomeImageObject.m; sourceTree = "<group>"; };
+		19F96A011B7B320800C98637 /* ZDYScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDYScrollView.h; sourceTree = "<group>"; };
+		19F96A021B7B320800C98637 /* ZDYScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDYScrollView.m; sourceTree = "<group>"; };
 		75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A72C08894D95434494E8BD85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -625,6 +631,8 @@
 				1977FDAB1B776B65000A8D26 /* CollectShopObject.m */,
 				1977FDAD1B776D02000A8D26 /* MessageObject.h */,
 				1977FDAE1B776D02000A8D26 /* MessageObject.m */,
+				19F969FE1B7AF79600C98637 /* HomeImageObject.h */,
+				19F969FF1B7AF79600C98637 /* HomeImageObject.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -793,6 +801,8 @@
 				18E97A941B6BAC8000FF468A /* AccountSecurityTableViewCell.h */,
 				18E97A951B6BAC8000FF468A /* AccountSecurityTableViewCell.m */,
 				18E97A961B6BAC8000FF468A /* AccountSecurityTableViewCell.xib */,
+				19F96A011B7B320800C98637 /* ZDYScrollView.h */,
+				19F96A021B7B320800C98637 /* ZDYScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1058,6 +1068,7 @@
 				18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
 				1977FDA31B775EE6000A8D26 /* PaymentObject.m in Sources */,
+				19F96A031B7B320800C98637 /* ZDYScrollView.m in Sources */,
 				182156981B57D9E000E5D502 /* LogisticsTableViewCell.m in Sources */,
 				197DD7121B5D457D0092AEE8 /* ShopCollectViewController.m in Sources */,
 				196044371B4B788400989481 /* HomeViewCell.m in Sources */,
@@ -1073,6 +1084,7 @@
 				1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */,
 				182156A71B57E6EA00E5D502 /* PayDeliverTableViewCell.m in Sources */,
 				187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */,
+				19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */,
 				18A091EA1B5E8E96009F3376 /* PersonNewsTableViewCell.m in Sources */,
 				182156B11B57EB2100E5D502 /* PayInfoTableViewCell.m in Sources */,
 				18D072321B53E8A7004FCDED /* ProductCollectViewController.m in Sources */,

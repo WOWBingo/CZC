@@ -18,4 +18,6 @@
 #import "PublicObject.h"
 #import "PublicViewController.h"
 #import <MJExtension.h>
+#import <SDWebImage/UIButton+WebCache.h>
+
 #endif
