@@ -113,7 +113,9 @@
 @property (nonatomic, assign) NSInteger isShopNew;
 
 @property (nonatomic, copy) NSString *productNum;
-
+/**
+ *图片列表 
+ */
 @property (nonatomic, strong)NSMutableArray *imgList;/** <图片列表 */
 
 @end

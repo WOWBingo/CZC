@@ -18,11 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
-    backItem.title = @"";
-    self.navigationItem.backBarButtonItem = backItem;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
+
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
     // 修改navigation下边框
 //    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
@@ -42,6 +41,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     
 }
-
-
+-(void)back{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

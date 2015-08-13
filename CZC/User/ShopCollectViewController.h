@@ -8,9 +8,7 @@
 
 #import "PublicViewController.h"
 #import "ShopCollectTableViewCell.h"
-@interface ShopCollectViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource,ShopCollectCellDelegate>
+@interface ShopCollectViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource,ShopCollectCellDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-
 @end

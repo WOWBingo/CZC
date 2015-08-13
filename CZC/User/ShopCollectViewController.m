@@ -20,13 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"店铺收藏";
-    
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView setTableFooterView:[[UIView alloc]init]];
-//    [_tableView setSeparatorColor:[UIColor clearColor]];
+    //    [_tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 160;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -57,7 +57,7 @@
         cell = (ShopCollectTableViewCell *)[nibArray objectAtIndex:0];
         cell.moreBtn.tag = row;
         cell.delegate = self;
-//        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
+        //        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -65,8 +65,15 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
-//    [self.navigationController pushViewController:newVC animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *view in appDelegate.window.subviews) {
+        if ([view isKindOfClass:[PopoverView class]]) {
+            [view removeFromSuperview];
+            view.tag = 0;
+        }
+    }
+    ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:newVC animated:YES];
 }
 
 
@@ -76,18 +83,31 @@
 }
 
 -(void)moreView:(ShopCollectTableViewCell *)cell andPopoverView:(PopoverView *)view{
+    //    //先隐藏上一个
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //    for (UIView *view in appDelegate.window.subviews) {
+    //        if ([view isKindOfClass:[PopoverView class]]) {
+    //            [view removeFromSuperview];
+    //            view.tag = 0;
+    //        }
+    //    }
     //获取tableviewCell在当前屏幕中的坐标值
     CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:cell.cellIndexPath];
     CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];
     NSLog(@"%f",rect.origin.y);
-    cell.moreView = [cell.moreView initWithPoint:CGPointMake(cell.moreBtn.frame.origin.x, rect.origin.y)];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    cell.moreView = [cell.moreView initWithPoint:CGPointMake(cell.moreBtn.frame.origin.x, rect.origin.y+30)];
     NSLog(@"%ld",(long)cell.moreView.tag);
     //遍历uiview存在就隐藏，不存在就显示
     if (cell.moreView.tag == 0) {
         CFShow((__bridge CFTypeRef)(cell.moreView));
         cell.moreView.tag = 1;
         [appDelegate.window addSubview:cell.moreView];
+        //显示后在其下方插入手势
+        //         handleSwipeFrom 是偵測到手势，所要呼叫的方法
+        UITapGestureRecognizer *hidenPop = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenPop)];
+        hidenPop.numberOfTapsRequired = 1;
+        hidenPop.delegate = self;
+        [self.tableView addGestureRecognizer:hidenPop];
     }else{
         CFShow((__bridge CFTypeRef)(cell.moreView));
         cell.moreView.tag = 0;
@@ -104,7 +124,36 @@
         }
     }
 }
-
-
-
+- (void)back
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *view in appDelegate.window.subviews) {
+        if ([view isKindOfClass:[PopoverView class]]) {
+            [view removeFromSuperview];
+            view.tag = 0;
+        }
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    CFShow((__bridge CFTypeRef)(self.view.subviews));
+    NSLog(@"%@",NSStringFromClass([touch.view class]));
+    if ([touch.view isKindOfClass:[UIButton class]]){
+        return NO;
+    }else if([touch.view isKindOfClass:[PopoverView class]]){
+        return NO;
+    }else if([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+        return NO;
+    }
+    return YES;
+}
+-(void)hidenPop{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *view in appDelegate.window.subviews) {
+        if ([view isKindOfClass:[PopoverView class]]) {
+            [view removeFromSuperview];
+            view.tag = 0;
+        }
+    }
+}
 @end

@@ -208,7 +208,7 @@
 -(void)selectBtn:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
-    
+    NSLog(@"%ld",(long)btn.tag);
     if (self.selectRowAtIndex) {
         self.selectRowAtIndex(btn.tag);
     }
