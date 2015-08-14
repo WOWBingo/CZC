@@ -57,8 +57,6 @@
         cell = (ShopCollectTableViewCell *)[nibArray objectAtIndex:0];
         cell.moreBtn.tag = row;
         cell.delegate = self;
-        //        [cell.moreBtn addTarget:self action:@selector(moreView:) forControlEvents:UIControlEventTouchUpInside];
-        
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     cell.cellIndexPath = indexPath;
@@ -85,12 +83,11 @@
 -(void)moreView:(ShopCollectTableViewCell *)cell andPopoverView:(PopoverView *)view{
     //    //先隐藏上一个
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //    for (UIView *view in appDelegate.window.subviews) {
-    //        if ([view isKindOfClass:[PopoverView class]]) {
-    //            [view removeFromSuperview];
-    //            view.tag = 0;
-    //        }
-    //    }
+        for (UIView *view in appDelegate.window.subviews) {
+            if ([view isKindOfClass:[PopoverView class]]) {
+                [view removeFromSuperview];
+            }
+        }
     //获取tableviewCell在当前屏幕中的坐标值
     CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:cell.cellIndexPath];
     CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];
