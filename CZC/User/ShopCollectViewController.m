@@ -11,6 +11,7 @@
 #import "ShopInfoViewController.h"
 #import "PopoverView.h"
 #import "AppDelegate.h"
+#import "CollectShopObject.h"
 @interface ShopCollectViewController ()
 
 @end
@@ -26,10 +27,28 @@
     //    [_tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 160;
-    
+    [self getshopCollectInfo];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+}
+-(void)getshopCollectInfo{
+#pragma mark - 25.店铺收藏列表
+    /** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
+    NSString *params = @"MemLoginID=s1886&pageIndex=1&pageCount=5";
+    [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [CollectShopObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"25.店铺收藏列表  ------%@",list);
+            self.shopArray = list;
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 
 #pragma mark - tableView
@@ -37,7 +56,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 12;
+    return self.shopArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (IS_IOS8_OR_ABOVE) {
@@ -60,6 +79,8 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     cell.cellIndexPath = indexPath;
+    CollectShopObject *shopObj = [self.shopArray objectAtIndex:indexPath.row];
+    cell.shopNameLab.text = shopObj.shopName;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,11 +104,11 @@
 -(void)moreView:(ShopCollectTableViewCell *)cell andPopoverView:(PopoverView *)view{
     //    //先隐藏上一个
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        for (UIView *view in appDelegate.window.subviews) {
-            if ([view isKindOfClass:[PopoverView class]]) {
-                [view removeFromSuperview];
-            }
+    for (UIView *view in appDelegate.window.subviews) {
+        if ([view isKindOfClass:[PopoverView class]]) {
+            [view removeFromSuperview];
         }
+    }
     //获取tableviewCell在当前屏幕中的坐标值
     CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:cell.cellIndexPath];
     CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];

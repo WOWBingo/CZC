@@ -11,4 +11,5 @@
 @interface ShopCollectViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource,ShopCollectCellDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong)NSArray *shopArray;
 @end

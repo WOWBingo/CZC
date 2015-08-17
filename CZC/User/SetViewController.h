@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AccoutObject.h"
 @interface SetViewController :PublicViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) BOOL isHomePage;
+@property (nonatomic,strong)AccoutObject *object;
+@property(nonatomic)int proCollectNum;
+@property(nonatomic)int shopCollectNum;
 @end

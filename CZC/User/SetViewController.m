@@ -15,6 +15,9 @@
 #import "ShopCollectViewController.h"
 #import "NewsViewController.h"
 #import "InstallViewController.h"
+#import "OrderViewController.h"
+#import "CollectProductObject.h"
+#import "CollectShopObject.h"
 @interface SetViewController ()
 
 @end
@@ -25,6 +28,9 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
+    [self getUserInfo];
+    [self getProCollectNum];
+    [self getshopCollectNum];
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
@@ -40,6 +46,61 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
+#pragma mark - 20.用户信息
+-(void)getUserInfo{
+    //从缓存登录数据中获取用户 MemLoginID
+    //
+        NSString *params = @"a465788";
+        [CZCService GETmethod:kAccountInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+            if (myresult) {
+                NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
+                self.object = [AccoutObject objectWithKeyValues:dic];
+                NSLog(@"20.用户信息 ------%@",self.object);
+                [self.tableView reloadData];
+            }
+            else{
+                NSLog(@"失败");
+            }
+        }];
+}
+#pragma mark - 23.产品收藏列表
+-(void)getProCollectNum{
+/** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
+    NSString *params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
+    [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+//            NSArray *dataArr = [myresult objectForKey:@"Data"];
+//            NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@"23.产品收藏列表 ------%@",list);
+            self.proCollectNum = (int)count;
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+-(void)getshopCollectNum{
+#pragma mark - 25.店铺收藏列表
+/** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
+    NSString *params = @"MemLoginID=s1886&pageIndex=1&pageCount=5";
+    [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+//            NSArray *dataArr = [myresult objectForKey:@"Data"];
+//            NSArray *list = [CollectShopObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@"25.店铺收藏列表  ------%@",list);
+            self.shopCollectNum = (int)count;
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
+#pragma mark - tableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -63,7 +124,6 @@
             break;
     }
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier1 = @"SetTitleTableViewCell";
@@ -84,6 +144,13 @@
                 [cell1.proCollectBtn addTarget:self action:@selector(productCollectVC:) forControlEvents:UIControlEventTouchUpInside];
                 [cell1.shopCollectBtn addTarget:self action:@selector(shopCollectVC:) forControlEvents:UIControlEventTouchUpInside];
             }
+            //加载数据
+            cell1.vipTypeLab.font = [UIFont systemFontOfSize:12];
+            cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)self.object.memberRank];
+            cell1.vipNumLab.hidden = YES;
+            cell1.nameLab.text = [NSString stringWithFormat:@"%@",self.object.realName];
+            cell1.proCollectNumLab.text = [NSString stringWithFormat:@"%d",self.proCollectNum];
+            cell1.shopCollectNumLab.text = [NSString stringWithFormat:@"%d",self.shopCollectNum];
         }
             return cell1;
             break;
@@ -96,13 +163,17 @@
                 //账户余额
                 [cell2.titleImg setImage:[UIImage imageNamed:@"mid_tb1"]];
                 cell2.titileLab.text = @"账户余额";
-                cell2.balanceLab.text = @"1900.00";
+                NSString *advancePayment = [NSString stringWithFormat:@"%f",self.object.advancePayment];
+                NSRange range = [advancePayment rangeOfString:@"."];
+                NSInteger location = range.location;
+                advancePayment = [advancePayment substringToIndex:location+3];
+                cell2.balanceLab.text = [NSString stringWithFormat:@"%@",advancePayment];
             }
             if (indexPath.row == 1){
                 //积分余额
                 [cell2.titleImg setImage:[UIImage imageNamed:@"mid_tb2"]];
                 cell2.titileLab.text = @"积分余额";
-                cell2.balanceLab.text = @"519";
+                cell2.balanceLab.text = [NSString stringWithFormat:@"%ld",(long)self.object.score];
             }
             if (indexPath.row == 2) {
                 //积分充值
@@ -225,7 +296,12 @@
 //            }
             break;
         case 2:
-            if(indexPath.row == 1){
+            if(indexPath.row == 0){
+                OrderViewController *orderDetailsVC = [[OrderViewController alloc]initWithNibName:@"OrderDetailsViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:orderDetailsVC animated:YES];
+            }
+            else if(indexPath.row == 1){
                 AddressViewController *addressVC = [[AddressViewController alloc]initWithNibName:@"AddressViewController" bundle:nil];
                 self.navigationController.navigationBarHidden = NO;
                 [self.navigationController pushViewController:addressVC animated:YES];
