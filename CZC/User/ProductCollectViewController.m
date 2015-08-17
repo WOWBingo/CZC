@@ -8,6 +8,7 @@
 
 #import "ProductCollectViewController.h"
 #import "ProductCollectCollectionViewCell.h"
+#import "CollectProductObject.h"
 @interface ProductCollectViewController ()
 
 @end
@@ -37,6 +38,8 @@
     self.proImageArr = [[NSMutableArray alloc]initWithObjects:@"cpsc-p1",@"cpsc-p2",@"cpsc-p3",@"cpsc-p4",@"cpsc-p1",@"cpsc-p2",@"cpsc-p3",@"cpsc-p4",@"cpsc-p1",@"cpsc-p2",@"cpsc-p3",@"cpsc-p4", nil];
     self.proInfoArr = [[NSMutableArray alloc]initWithObjects:@"Adidas阿迪达斯女鞋2015清风运动鞋跑鞋B 40737 40736 S 77245",@"台湾张君雅小妹妹系列外套甜甜圈点心面丸子i进口零食大礼包5包",@"ZK旗舰店2015夏装连衣裙夏季连衣裙女装印花连衣裙a字裙印花裙潮",@"Midea/美的吸尘器超静音除螨仪超小型—无耗材C3-L148B",@"Adidas阿迪达斯女鞋2015清风运动鞋跑鞋B 40737 40736 S 77245",@"台湾张君雅小妹妹系列外套甜甜圈点心面丸子i进口零食大礼包5包",@"ZK旗舰店2015夏装连衣裙夏季连衣裙女装印花连衣裙a字裙印花裙潮",@"Midea/美的吸尘器超静音除螨仪超小型—无耗材C3-L148B",@"Adidas阿迪达斯女鞋2015清风运动鞋跑鞋B 40737 40736 S 77245",@"台湾张君雅小妹妹系列外套甜甜圈点心面丸子i进口零食大礼包5包",@"ZK旗舰店2015夏装连衣裙夏季连衣裙女装印花连衣裙a字裙印花裙潮",@"Midea/美的吸尘器超静音除螨仪超小型—无耗材C3-L148B", nil];
     self.proPriceArr = [[NSMutableArray alloc]initWithObjects:@"￥609",@"￥39",@"￥308",@"￥399",@"￥609",@"￥39",@"￥308",@"￥399",@"￥609",@"￥39",@"￥308",@"￥399", nil];
+    
+    [self getProCollectInfo];
 
 }
 
@@ -52,7 +55,32 @@
     _isEdited = !_isEdited;
     [_collectionView reloadData];
 }
-
+-(void)getProCollectInfo{
+#pragma mark - 23.产品收藏列表
+/** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
+    NSString *params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
+    [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"23.产品收藏列表 ------%@",list);
+            self.productsArr = [[NSMutableArray alloc]initWithArray:list];
+            [_collectionView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+//异步加载图片
+- (void)updateImage:(UIImage *)img withCell:(ProductCollectCollectionViewCell *)cell{
+    if (img != nil) {
+        cell.proImageView.image = img;
+    } else {
+        cell.proImageView.image = [UIImage imageNamed:@"cpsc-p1"];
+    }
+}
 #pragma mark -- UICollectionViewDataSource
 
 //-(UIView *)collectionView:(collectionView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -79,7 +107,7 @@
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 12;
+    return self.productsArr.count;
 }
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -90,10 +118,24 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductCollectCollectionViewCell *cell = (ProductCollectCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCollectCollectionViewCell" forIndexPath:indexPath];
-    NSString *imgStr = [self.proImageArr objectAtIndex:indexPath.row];
-    cell.proImageView.image = [UIImage imageNamed:imgStr];
-    cell.proInfoLab.text = [self.proInfoArr objectAtIndex:indexPath.row];
-    cell.proPriceLab.text = [self.proPriceArr objectAtIndex:indexPath.row];
+    CollectProductObject *proObj = [self.productsArr objectAtIndex:indexPath.row];
+    NSString *imgURL = @"";
+    imgURL = [PublicObject convertNullString:proObj.smallImage];
+    if ([imgURL isEqualToString:@""]||imgURL == nil) {
+        cell.proImageView.image = [UIImage imageNamed:@"cpsc-p1"];
+    } else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *urlString = [NSString stringWithFormat:@"%@",imgURL];
+            NSURL *imageUrl = [NSURL URLWithString:urlString];
+            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+            UIImage *img = [UIImage imageWithData:imageData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateImage:img withCell:cell];
+            });
+        });
+    }
+    cell.proInfoLab.text = proObj.name;
+    cell.proPriceLab.text = [NSString stringWithFormat:@"%f",proObj.shopPrice];
     cell.backgroundColor = [UIColor whiteColor];
     [cell editFrame:_isEdited andIndexPath:indexPath];
     return cell;
@@ -122,5 +164,6 @@
     return YES;
 }
 - (IBAction)moreType:(id)sender {
+    
 }
 @end

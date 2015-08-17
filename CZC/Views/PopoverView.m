@@ -63,18 +63,21 @@
         _btn3 = [[UIButton alloc]initWithFrame:CGRectMake(0, _backgroudView.frame.size.height/3*2, _backgroudView.frame.size.width, _backgroudView.frame.size.height/3)];
         
         [_btn1 setTitle:@"取消收藏" forState:UIControlStateNormal];
+        _btn1.titleLabel.font = [UIFont systemFontOfSize:10];
         [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn1 setTag:0];
         [_btn1 addTarget:self action:@selector(selectBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_backgroudView addSubview:_btn1];
         
         [_btn2 setTitle:@"进入店铺" forState:UIControlStateNormal];
+        _btn2.titleLabel.font = [UIFont systemFontOfSize:10];
         [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn2 setTag:1];
         [_btn2 addTarget:self action:@selector(selectBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_backgroudView addSubview:_btn2];
         
         [_btn3 setTitle:@"最新动态" forState:UIControlStateNormal];
+        _btn3.titleLabel.font = [UIFont systemFontOfSize:10];
         [_btn3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn3 setTag:2];
         [_btn3 addTarget:self action:@selector(selectBtn:) forControlEvents:UIControlEventTouchUpInside];

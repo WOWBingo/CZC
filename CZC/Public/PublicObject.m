@@ -37,7 +37,32 @@ static PublicObject *publicObject = nil;
     return publicObject;
 }
 
+/**
+ *  将null转换为空
+ *
+ *  @param oldString 源字符串
+ *
+ *  @return 新字符串
+ */
++ (NSString *)convertNullString:(NSString *)oldString {
+    if (oldString != nil && (NSNull *)oldString != [NSNull null]) {
+        if ([oldString length] != 0) {
+            return  oldString;
+        } else {
+            return @"";
+        }
+    } else {
+        return @"";
+    }
+}
 
++ (NSNumber *)convertNullNumber:(NSNumber *)oldNum {
+    if (oldNum!=nil && (NSNull *)oldNum != [NSNull null]) {
+        return  oldNum;
+    } else {
+        return [NSNumber numberWithInt:0];
+    }
+}
 
 //画一条水平线
 + (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color{

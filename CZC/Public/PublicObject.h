@@ -13,6 +13,8 @@
 @interface PublicObject : NSObject
 
 + (PublicObject*)sharePublicObject;
++(NSString*)convertNullString:(NSString *)oldString;
++(NSNumber*)convertNullNumber:(NSNumber*)oldNum;
 
 + (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color;
 + (void)drawVerticalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andHeigt:(CGFloat)height andColor:(UIColor*)color;

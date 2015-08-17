@@ -50,7 +50,14 @@
         }
     }];
 }
-
+//异步加载图片
+- (void)updateImage:(UIImage *)img withCell:(ShopCollectTableViewCell *)cell{
+    if (img != nil) {
+        cell.shopImage.image = img;
+    } else {
+        cell.shopImage.image = [UIImage imageNamed:@"cpsc-p1"];
+    }
+}
 #pragma mark - tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -81,6 +88,23 @@
     cell.cellIndexPath = indexPath;
     CollectShopObject *shopObj = [self.shopArray objectAtIndex:indexPath.row];
     cell.shopNameLab.text = shopObj.shopName;
+    NSString *imgURL = @"";
+    imgURL = [PublicObject convertNullString:shopObj.banner];
+    if ([imgURL isEqualToString:@""]||imgURL == nil) {
+        cell.shopImage.image = [UIImage imageNamed:@"cpsc-p1"];
+    } else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *urlString = [NSString stringWithFormat:@"%@",imgURL];
+            NSURL *imageUrl = [NSURL URLWithString:urlString];
+            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+            UIImage *img = [UIImage imageWithData:imageData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateImage:img withCell:cell];
+            });
+        });
+    }
+
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

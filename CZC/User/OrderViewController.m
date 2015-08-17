@@ -8,7 +8,8 @@
 
 #import "OrderViewController.h"
 #import "OrderDetailsTableViewCell.h"
-
+#import "OrderObject.h"
+#import "OrderProductObject.h"
 @interface OrderViewController ()
 
 @end
@@ -46,19 +47,48 @@
     //Select the Button
     [ljjuisement selectTheSegument:0];
     
+    self.orderListArray = [[NSMutableArray alloc]init];
+    self.orderArray = [[NSMutableArray alloc]init];
+    [self getOrderList];
     
 }
-
+-(void)getOrderList{
+#pragma mark - 14.订单列表
+/** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
+    NSString *params = @"pageIndex=1&pageCount=5&memLoginID=yemao&t=2";
+    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"14.订单列表 ------%@",list);
+            self.orderListArray = [[NSMutableArray alloc]initWithArray:list];
+            self.orderArray = self.orderListArray;
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+////异步加载图片
+//- (void)updateImage:(UIImage *)img withCell:(ShopCollectTableViewCell *)cell{
+//    if (img != nil) {
+//        cell.shopImage.image = img;
+//    } else {
+//        cell.shopImage.image = [UIImage imageNamed:@"cpsc-p1"];
+//    }
+//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.orderListArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"OrderDetailsTableViewCell";
     OrderDetailsTableViewCell *cell = (OrderDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:indexPath.row];
     if (cell == nil) {
         NSBundle *bundle = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:CellIdentifier owner:self options:nil];
@@ -68,6 +98,24 @@
     //划线
     [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.imgView.frame.origin.y+cell.imgView.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
     [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.proNumLab.frame.origin.y+cell.proNumLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
+//    //获取订单详情
+//    OrderProductObject *orderProObj = [orderObj.productList];
+//    NSString *imgURL = @"";
+//    imgURL = [PublicObject convertNullString:orderObj.banner];
+//    if ([imgURL isEqualToString:@""]||imgURL == nil) {
+//        cell.shopImage.image = [UIImage imageNamed:@"cpsc-p1"];
+//    } else {
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            NSString *urlString = [NSString stringWithFormat:@"%@",imgURL];
+//            NSURL *imageUrl = [NSURL URLWithString:urlString];
+//            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+//            UIImage *img = [UIImage imageWithData:imageData];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self updateImage:img withCell:cell];
+//            });
+//        });
+//    }
+
     return cell;
 }
 
