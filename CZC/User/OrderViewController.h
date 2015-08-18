@@ -13,6 +13,5 @@
 @property (strong, nonatomic)UITableView *tableView;
 
 @property(nonatomic,strong)NSMutableArray *orderListArray;//所有订单的数组
-@property(nonatomic,strong)NSMutableArray *orderArray;//按分类显示的订单数组
 
 @end

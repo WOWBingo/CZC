@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 周德艺. All rights reserved.
 //
 
-#import "OrderDetailsTableViewCell.h"
+#import "OrderTableViewCell.h"
 
-@implementation OrderDetailsTableViewCell
+@implementation OrderTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

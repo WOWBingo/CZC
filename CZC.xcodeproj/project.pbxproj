@@ -10,8 +10,8 @@
 		18000FD71B80606800F9EC15 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FD51B80606800F9EC15 /* OrderViewController.m */; };
 		18000FD81B80606800F9EC15 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18000FD61B80606800F9EC15 /* OrderViewController.xib */; };
 		18000FDC1B80650A00F9EC15 /* LjjUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FDB1B80650A00F9EC15 /* LjjUISegmentedControl.m */; };
-		18000FE01B80682700F9EC15 /* OrderDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FDE1B80682700F9EC15 /* OrderDetailsTableViewCell.m */; };
-		18000FE11B80682700F9EC15 /* OrderDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18000FDF1B80682700F9EC15 /* OrderDetailsTableViewCell.xib */; };
+		18000FE01B80682700F9EC15 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */; };
+		18000FE11B80682700F9EC15 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */; };
 		1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C19F1B5FBF10005947D6 /* InstallViewController.m */; };
 		1808C1A21B5FBF10005947D6 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1808C1A01B5FBF10005947D6 /* InstallViewController.xib */; };
 		1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C1A41B5FC908005947D6 /* InstallTimeTableViewCell.m */; };
@@ -186,9 +186,9 @@
 		18000FD61B80606800F9EC15 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
 		18000FDA1B80650A00F9EC15 /* LjjUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjUISegmentedControl.h; sourceTree = "<group>"; };
 		18000FDB1B80650A00F9EC15 /* LjjUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjUISegmentedControl.m; sourceTree = "<group>"; };
-		18000FDD1B80682700F9EC15 /* OrderDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsTableViewCell.h; sourceTree = "<group>"; };
-		18000FDE1B80682700F9EC15 /* OrderDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsTableViewCell.m; sourceTree = "<group>"; };
-		18000FDF1B80682700F9EC15 /* OrderDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		18000FDD1B80682700F9EC15 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
+		18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
+		18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		1808C19E1B5FBF10005947D6 /* InstallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallViewController.h; sourceTree = "<group>"; };
 		1808C19F1B5FBF10005947D6 /* InstallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallViewController.m; sourceTree = "<group>"; };
 		1808C1A01B5FBF10005947D6 /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
@@ -828,9 +828,9 @@
 				18E97A961B6BAC8000FF468A /* AccountSecurityTableViewCell.xib */,
 				19F96A011B7B320800C98637 /* ZDYScrollView.h */,
 				19F96A021B7B320800C98637 /* ZDYScrollView.m */,
-				18000FDD1B80682700F9EC15 /* OrderDetailsTableViewCell.h */,
-				18000FDE1B80682700F9EC15 /* OrderDetailsTableViewCell.m */,
-				18000FDF1B80682700F9EC15 /* OrderDetailsTableViewCell.xib */,
+				18000FDD1B80682700F9EC15 /* OrderTableViewCell.h */,
+				18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */,
+				18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -985,7 +985,7 @@
 				187BB7AB1B4D571C00202B19 /* SetViewController.xib in Resources */,
 				18C76D7D1B70E7E5002D9870 /* EditAddressTableViewCell.xib in Resources */,
 				1821569E1B57E0AB00E5D502 /* PayViewController.xib in Resources */,
-				18000FE11B80682700F9EC15 /* OrderDetailsTableViewCell.xib in Resources */,
+				18000FE11B80682700F9EC15 /* OrderTableViewCell.xib in Resources */,
 				18F043911B56981500E40E69 /* ShoppingCarTableViewCell.xib in Resources */,
 				18A091F01B5E93DF009F3376 /* LogisticsAssistantViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
@@ -1126,7 +1126,7 @@
 				18E97A971B6BAC8000FF468A /* AccountSecurityTableViewCell.m in Sources */,
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,
-				18000FE01B80682700F9EC15 /* OrderDetailsTableViewCell.m in Sources */,
+				18000FE01B80682700F9EC15 /* OrderTableViewCell.m in Sources */,
 				18A091E01B5E890B009F3376 /* NewsViewController.m in Sources */,
 				18F043851B56875A00E40E69 /* LogisticsViewController.m in Sources */,
 				1821568E1B57D48500E5D502 /* MyLogisticsViewController.m in Sources */,
