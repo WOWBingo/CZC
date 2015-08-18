@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18000FD71B80606800F9EC15 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FD51B80606800F9EC15 /* OrderViewController.m */; };
 		18000FD81B80606800F9EC15 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18000FD61B80606800F9EC15 /* OrderViewController.xib */; };
-		18000FDC1B80650A00F9EC15 /* LjjUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FDB1B80650A00F9EC15 /* LjjUISegmentedControl.m */; };
 		18000FE01B80682700F9EC15 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */; };
 		18000FE11B80682700F9EC15 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */; };
 		1808C1A11B5FBF10005947D6 /* InstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808C19F1B5FBF10005947D6 /* InstallViewController.m */; };
@@ -185,8 +184,6 @@
 		18000FD41B80606800F9EC15 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		18000FD51B80606800F9EC15 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		18000FD61B80606800F9EC15 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
-		18000FDA1B80650A00F9EC15 /* LjjUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjUISegmentedControl.h; sourceTree = "<group>"; };
-		18000FDB1B80650A00F9EC15 /* LjjUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjUISegmentedControl.m; sourceTree = "<group>"; };
 		18000FDD1B80682700F9EC15 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
 		18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
 		18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -478,8 +475,6 @@
 		18000FD91B80650A00F9EC15 /* UISegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				18000FDA1B80650A00F9EC15 /* LjjUISegmentedControl.h */,
-				18000FDB1B80650A00F9EC15 /* LjjUISegmentedControl.m */,
 			);
 			path = UISegmentedControl;
 			sourceTree = "<group>";
@@ -1100,7 +1095,6 @@
 				1977FD9D1B775A6F000A8D26 /* OrderObject.m in Sources */,
 				19BB14B91B4CF693000445D2 /* SvGridView.m in Sources */,
 				1977FDA61B7768C7000A8D26 /* AccoutObject.m in Sources */,
-				18000FDC1B80650A00F9EC15 /* LjjUISegmentedControl.m in Sources */,
 				1821569D1B57E0AB00E5D502 /* PayViewController.m in Sources */,
 				18C9991A1B50BC2300CDA089 /* ZHPickView.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
