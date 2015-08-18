@@ -47,6 +47,39 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 160;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self getShopInfo];
+}
+
+#pragma mark - 9.店铺详细信息
+/**
+ *9.店铺详细信息
+ *http://app.czctgw.com/api/shopsinfo/100001058
+ */
+- (void)getShopInfo{
+    [CZCService GETmethod:kShopsInfo_URL andParameters:_shopId andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        if (result) {
+            NSDictionary *dic = [result objectForKey:@"Shop"];
+            _shop = [ShopObject objectWithKeyValues:dic];
+            NSLog(@"9.店铺详细信息 ------%@",_shop);
+            [self showData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+/**
+ *	显示数据
+ */
+- (void)showData{
+    [_shopNameLab setText:_shop.shopName];
+    [_locationLab setText:_shop.address];
+}
+
+
 /** titlebar代理方法 */
 -(void)LGtitleBarView:(LGtitleBarView *)titleBarView didSelectedItem:(int)index
 {

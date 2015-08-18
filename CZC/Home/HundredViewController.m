@@ -8,6 +8,8 @@
 
 #import "HundredViewController.h"
 #import "HundredTableViewCell.h"
+#import "ProductsObject.h"
+#import "ProductInfoViewController.h"
 
 @interface HundredViewController ()
 
@@ -51,11 +53,58 @@
     [_tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    
+    _productArray = [[NSMutableArray alloc]init];
+    _pageIndex = 1;
+    _pageCount = 10;
+    _isLastPage = NO;
+    _sort = kSortsProModifyTime;
+    _isASC = kSortsisASCTrue;
+    _cityDomainName = @"gy";
+    _btntag = 0;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [self getProductsList];
 }
+
+#pragma mark - 5.平台产品列表
+/**
+ *5.平台产品列表 http://app.czctgw.com/api/product/list/004001001?sorts=SaleNumber&isASC=true&pageIndex=1&pageCount=5&CityDomainName=gy */
+- (void)getProductsList{
+    NSString *params = [NSString stringWithFormat:@"%@?sorts=%@&isASC=%@&pageIndex=%lu&pageCount=%lu&CityDomainName=%@",_productCatagory,_sort,_isASC?kSortsisASCTrue:kSortsisASCFalse,(unsigned long)_pageIndex,(unsigned long)_pageCount,_cityDomainName];
+    [CZCService GETmethod:kProductList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        if (result) {
+            _allCount = [[result objectForKey:@"Count"] integerValue];
+            NSArray *dataArr = [result objectForKey:@"Data"];
+            NSArray *productList = [ProductsObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"5.平台产品列表------%@",productList);
+            if (!_isLastPage) {
+                [_productArray addObjectsFromArray:productList];
+            }
+            if (_allCount%_pageCount == 0) {
+                if (_allCount/_pageCount == _pageIndex) {
+                    _isLastPage = YES;
+                }else{
+                    _pageIndex ++ ;
+                }
+            }else{
+                if (productList.count < _pageCount) {
+                    _isLastPage = YES;
+                }else{
+                    _pageIndex ++ ;
+                }
+            }
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -67,7 +116,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _productArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -77,7 +126,14 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSInteger row = indexPath.row;
+    ProductsObject *product = [_productArray objectAtIndex:row];
     static NSString *cellIdentifier = @"HundredTableViewCell";
+    
+    if ((row == _productArray.count-1) && !_isLastPage) {
+        [self getProductsList];
+    }
+    
     HundredTableViewCell *cell = (HundredTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         NSBundle *bundle = [NSBundle mainBundle];
@@ -85,7 +141,50 @@
         cell = (HundredTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:product.originalImage] placeholderImage:[UIImage imageNamed:@"zfxt-p1"]];
+    [cell.priceLable setText:[NSString stringWithFormat:@"%.2f",product.shopPrice]];
+    [cell.nameLable setText:product.name];
+    [cell.postageLable setText:@"邮费字段不明"];
+    [cell.discountLable setText:@"折扣字段不明"];
+    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProductInfoViewController *newVC = [[ProductInfoViewController alloc]initWithNibName:@"ProductInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:newVC animated:YES];
+}
+
+/**
+ *	修改排序及类型
+ */
+- (IBAction)changeSort:(id)sender {
+    UIButton *btn = (UIButton*)sender;
+    if (btn.tag ==_btntag) {
+        _isASC = !_isASC;
+    }else{
+        _btntag = btn.tag;
+        switch (btn.tag) {
+            case 0:
+                _sort = kSortsProModifyTime;
+                break;
+            case 1:
+                _sort = kSortsProSaleNumber;
+                break;
+            case 2:
+                _sort = kSortsProPrice;
+                break;
+            case 3:
+                _sort = kSortsProPrice;
+                break;
+                
+            default:
+                break;
+        }
+    }
+    _pageIndex = 1;
+    [self getProductsList];
+    
 }
 
 

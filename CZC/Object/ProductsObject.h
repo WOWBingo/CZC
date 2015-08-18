@@ -14,7 +14,6 @@
 
 @interface ProductsObject : NSObject
 
-
 @property (nonatomic, copy) NSString *brandName;
 @property (nonatomic, copy) NSString *modifyTime;
 @property (nonatomic, copy) NSString *detail;
@@ -50,7 +49,7 @@
 
 @property (nonatomic, assign) NSInteger isSystemRecommend;
 
-@property (nonatomic, copy) NSString *originalImage;
+@property (nonatomic, copy) NSString *originalImage;/**< 图片路径 */
 
 @property (nonatomic, assign) NSInteger isSaled;
 
@@ -78,7 +77,7 @@
 
 @property (nonatomic, assign) NSInteger ems_fee;
 
-@property (nonatomic, assign) CGFloat shopPrice;
+@property (nonatomic, assign) CGFloat shopPrice;/**< 店铺价格 */
 
 @property (nonatomic, copy) NSString *substationID;
 
@@ -92,13 +91,13 @@
 
 @property (nonatomic, copy) NSString *shopProRelateList;
 
-@property (nonatomic, assign) CGFloat marketPrice;
+@property (nonatomic, assign) CGFloat marketPrice;/**< 市场价格 */
 
 @property (nonatomic, assign) NSInteger buyCount;
 
 @property (nonatomic, assign) NSInteger orderID;
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *name;/**< 名称 */
 
 @property (nonatomic, assign) NSInteger isShopPromotion;
 

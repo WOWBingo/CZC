@@ -11,10 +11,10 @@
 @interface HundredTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *boxView;
-@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLable;
-@property (weak, nonatomic) IBOutlet UILabel *discountLable;
-@property (weak, nonatomic) IBOutlet UILabel *priceLable;
-@property (weak, nonatomic) IBOutlet UILabel *postageLable;
+@property (weak, nonatomic) IBOutlet UIImageView *productImageView;/**< 产品图片 */
+@property (weak, nonatomic) IBOutlet UILabel *nameLable;/**< 产品名Lable */
+@property (weak, nonatomic) IBOutlet UILabel *discountLable;/**< 折扣Lable */
+@property (weak, nonatomic) IBOutlet UILabel *priceLable;/**< 价格labl */
+@property (weak, nonatomic) IBOutlet UILabel *postageLable;/**< 邮费Lable */
 
 @end

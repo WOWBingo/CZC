@@ -110,7 +110,7 @@
                 <outlet property="deleteBtn" destination="9jQ-P3-UaE" id="eR4-jv-rml"/>
                 <outlet property="discountLable" destination="xmJ-Zs-jrt" id="xvU-cU-4Hf"/>
                 <outlet property="distanceLable" destination="tOE-Cb-Vq9" id="Omb-hH-ucb"/>
-                <outlet property="nameLable" destination="Dga-jl-IT0" id="sb4-UT-kZU"/>
+                <outlet property="nameLable" destination="qqu-JZ-Ek5" id="2rB-aL-lYY"/>
                 <outlet property="shopImageView" destination="UVk-90-VvA" id="Efd-TF-Uwt"/>
             </connections>
             <point key="canvasLocation" x="288" y="388"/>

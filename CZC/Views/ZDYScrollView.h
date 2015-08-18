@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDYScrollView : UIView<UIScrollViewDelegate>
+@interface ZDYScrollView : UIScrollView<UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrV;
 @property (strong, nonatomic) UIPageControl *pageC;
-//@property (strong, nonatomic) UIImageView *imgVLeft;
-//@property (strong, nonatomic) UIImageView *imgVCenter;
-//@property (strong, nonatomic) UIImageView *imgVRight;
-@property (strong, nonatomic) UIButton *buttonLeft;
+@property (strong, nonatomic) UIImageView *imgVLeft;
+@property (strong, nonatomic) UIImageView *imgVCenter;
+@property (strong, nonatomic) UIImageView *imgVRight;
 @property (strong, nonatomic) UIButton *buttonCenter;
-@property (strong, nonatomic) UIButton *buttonRight;
 @property (strong, nonatomic) UILabel *lblImageDesc;
 @property (strong, nonatomic) NSArray *mImageArray;
 @property (assign, nonatomic) NSUInteger currentImageIndex;
@@ -69,5 +67,9 @@
  *  重新加载图片
  */
 - (void)reloadImage;
+/**
+ *	刷新大小
+ */
+- (void)reloadSize;
 
 @end

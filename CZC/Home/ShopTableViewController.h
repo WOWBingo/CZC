@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton    *commentBtn;
 @property (weak, nonatomic) IBOutlet UIButton    *priceBtn;
 
+@property (nonatomic, strong) NSMutableArray *shopList;/**< 店铺数据 */
+
 @end

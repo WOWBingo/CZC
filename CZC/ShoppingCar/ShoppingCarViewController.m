@@ -9,6 +9,8 @@
 #import "ShoppingCarViewController.h"
 #import "ShoppingCarTableViewCell.h"
 #import "PayViewController.h"
+#import "ShopCarObject.h"
+#import "ShopCarProductObject.h"
 @interface ShoppingCarViewController ()
 
 @end
@@ -22,13 +24,14 @@
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     //数组初始化
-    self.productsArr = [[NSMutableArray alloc]init];
+    self.shopCarObjectArr = [[NSMutableArray alloc]init];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = NO;
+    [self getShoppingCarData];
 }
 -(void)viewDidAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
@@ -39,14 +42,36 @@
     self.parentViewController.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.hidden = NO;
 }
+#pragma mark - 11. 购物车列表
+/**11. 购物车列表  http://app.czctgw.com/api/shoppingcart2/a465788 */
+- (void)getShoppingCarData{
 
+    NSString *params = @"a465788";
+    [CZCService GETmethod:kShoppingCartList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        if (result) {
+            NSArray *dataArr = [result objectForKey:@"DATA"];
+            NSArray *list = [ShopCarObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"11. 购物车列表 ------%@",list);
+            _shopCarObjectArr = [NSMutableArray arrayWithArray:list];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
+#pragma mark - table
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 20;//_shopCarObjectArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
+  //  ShopCarObject *carObject = [_shopCarObjectArr objectAtIndex:row];
+//    ShopCarProductObject *proObject = [carObject.productList objectAtIndex:0];
     static NSString *CellIdentifier = @"ShoppingCarTableViewCell";
     ShoppingCarTableViewCell *cell = (ShoppingCarTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     

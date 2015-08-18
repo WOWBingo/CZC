@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *boxView;
-@property (weak, nonatomic) IBOutlet UIImageView *shopImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLable;
-@property (weak, nonatomic) IBOutlet UILabel *discountLable;
-@property (weak, nonatomic) IBOutlet UIButton *collectBtn;
-@property (weak, nonatomic) IBOutlet UILabel *distanceLable;
-@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet UIView *boxView;/**< */
+@property (weak, nonatomic) IBOutlet UIImageView *shopImageView;/**< 店图 */
+@property (weak, nonatomic) IBOutlet UILabel *nameLable;/**< 店名 */
+@property (weak, nonatomic) IBOutlet UILabel *discountLable; /**< 折扣 */
+@property (weak, nonatomic) IBOutlet UIButton *collectBtn; /**< 收藏按钮*/
+@property (weak, nonatomic) IBOutlet UILabel *distanceLable;/**< 距离*/
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;/**< */
 - (IBAction)collect:(id)sender;
 - (IBAction)deleteShop:(id)sender;
 

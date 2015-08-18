@@ -197,6 +197,13 @@ NSString *const kMemberNowMessageList_URL = @"api/membermessage/tomember/list/?"
 NSString *const kShopGGlistIndex_URL = @"api/ShopGGlistIndex/?";
 
 
+NSString *const kSortsProModifyTime = @"ModifyTime";
+NSString *const kSortsProPrice = @"Price";
+NSString *const kSortsProSaleNumber = @"SaleNumber";
+NSString *const kSortsisASCTrue = @"true";
+NSString *const kSortsisASCFalse = @"false";
+
+
 #pragma mark - 常量
 CGFloat const kHUDTime = 1.0f;
 CGFloat const kAnimaTime  = 0.30f;

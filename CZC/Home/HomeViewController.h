@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PublicViewController.h"
 #import "HomeImageObject.h"
+#import "ZDYScrollView.h"
 
 @interface HomeViewController:PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
@@ -17,6 +18,8 @@
 @property (nonatomic ,strong) NSArray *homeImages;/**< 首页轮播展示图片*/
 @property (nonatomic ,strong) UIBarButtonItem *leftItem;
 @property (nonatomic) BOOL isHomePage;
+
+@property (strong, nonatomic) ZDYScrollView *headView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

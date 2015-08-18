@@ -7,6 +7,7 @@
 //
 
 #import "CityListViewController.h"
+#import "CityObject.h"
 
 @interface CityListViewController ()
 
@@ -59,6 +60,18 @@
     self.cities = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     
     [self.keys addObjectsFromArray:[[self.cities allKeys] sortedArrayUsingSelector:@selector(compare:)]];
+
+    [CZCService GETmethod:kCityAllInfo_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSArray *dataArr = [myresult objectForKey:@"data"];
+            NSArray *list = [CityObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"城市列表 ------%@",list);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+    
     
     //添加热门城市
 //    NSString *strHot = @"hot";

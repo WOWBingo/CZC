@@ -18,7 +18,7 @@
 #import "TestObject.h"
 #import "ZDYScrollView.h"
 
-#define ScrollViewHight (SCREEN_WIDTH*0.48)
+#define ScrollViewHight (SCREEN_WIDTH*0.6)
 
 @interface HomeViewController ()
 
@@ -31,9 +31,8 @@
     
     //添加左侧的item
     if (_isHomePage) {
-        _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"全国"
-                                                     style:UIBarButtonItemStyleBordered target:self
-                                                    action:@selector(changeCity)];
+        _leftItem = [[UIBarButtonItem alloc] init];
+        [_leftItem setTitle:@"全国"];
     }else{
         _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"济南"
                                                      style:UIBarButtonItemStyleBordered target:self
@@ -66,11 +65,16 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
     
+    _headView = [[ZDYScrollView alloc]initWithFrame:CGRectZero];
+    self.tableView.contentInset = UIEdgeInsetsMake(ScrollViewHight, 0, 0, 0);
+    [self.tableView addSubview:_headView];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setShadowImage:nil];
     self.parentViewController.tabBarController.tabBar.hidden = NO;
+    _headView.frame = CGRectMake(0, -ScrollViewHight, SCREEN_WIDTH, ScrollViewHight);
     
     [self getHomeImagesData];
 }
@@ -95,7 +99,9 @@
             NSArray *list = [HomeImageObject objectArrayWithKeyValuesArray:dataArr];
             if (list.count > 0) {
                 _homeImages = list;
-                [_tableView reloadData];
+                if (_homeImages) {
+                    [_headView loadImageData:_homeImages];
+                }
             }
             NSLog(@" 59.首页图片 ------%@",list);
         }
@@ -120,8 +126,17 @@
     [self presentViewController:searchNVC animated:YES completion:^{  }];
 }
 
-
-
+#pragma mark ----scrollView滚动代理
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat yOffset  = scrollView.contentOffset.y;
+    if (yOffset < -ScrollViewHight) {
+        CGRect f = _headView.frame;
+        f.origin.y = yOffset;
+        f.size.height =  -yOffset;
+        _headView.frame = f;
+        [_headView reloadSize];
+    }
+}
 #pragma mark - tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -133,56 +148,16 @@
     return _dataList.count + 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        return ScrollViewHight;
-    }else{
+
         if (IS_IOS8_OR_ABOVE) {
             return UITableViewAutomaticDimension;
         }else{
             return SCREEN_WIDTH/3*2+28;
         }
-    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.row == 0) {
-        static NSString *TableSampleIdentifier = @"HomeHeadView";
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                                 TableSampleIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:TableSampleIdentifier];
-        }
-        ZDYScrollView *scrollView = [[ZDYScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
-        if (_homeImages) {
-            [scrollView loadImageData:_homeImages];
-        }
-//        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, ScrollViewHight)];
-//        if (_homeImages) {
-//            NSMutableArray *imageArr = [[NSMutableArray alloc]init];
-//            for (int i = 0 ; i < _homeImages.count; i++) {
-//                HomeImageObject *object = [_homeImages objectAtIndex:i];
-//                NSString *imageUrl = object.value;
-//                [imageArr addObject:imageUrl];
-//            }
-//            scrollView.imageNameArray = imageArr;
-//            scrollView.objectArray = _homeImages;
-//        }else{
-//            scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
-//        }        
-//        [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
-//        //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
-//        //scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//        scrollView.PageControlShowStyle = UIPageControlShowStyleCenter;
-//        scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-//        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
-        [cell addSubview:scrollView];
-        return cell;
-    }else{
         if (_isHomePage) {
-            if (indexPath.row == 1) {
+            if (indexPath.row == 0) {
                 static NSString *cellIdentifier = @"HundredYuanCell";
                 HundredYuanCell *cell = (HundredYuanCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
                 if (cell == nil) {
@@ -215,8 +190,8 @@
                 }
                 //设置cell上button标识符
                 [cell buttonAddCellNum:indexPath.row];
-                cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row-1];
-                cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-2];
+                cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row];
+                cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-1];
                 return cell;
             }
         }else{
@@ -236,10 +211,10 @@
             }
             [cell buttonAddCellNum:indexPath.row];
             cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row];
-            cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-1];
+            cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row];
             return cell;
         }
-    }
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -254,6 +229,7 @@
     UIButton *btn = (UIButton*)sender;
     if (_isHomePage && btn.tag == 1) {
         HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
+        hundredVC.productCatagory = @"004001001";
         [self.navigationController pushViewController:hundredVC animated:YES];
     }else{
         ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];

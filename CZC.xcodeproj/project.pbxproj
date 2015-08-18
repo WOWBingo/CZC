@@ -127,6 +127,7 @@
 		197DD7131B5D457D0092AEE8 /* ShopCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197DD7111B5D457D0092AEE8 /* ShopCollectViewController.xib */; };
 		197DD7171B5D46E00092AEE8 /* ShopCollectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD7151B5D46E00092AEE8 /* ShopCollectTableViewCell.m */; };
 		197DD7181B5D46E00092AEE8 /* ShopCollectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */; };
+		198024281B81D1760071F63E /* CityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 198024271B81D1760071F63E /* CityObject.m */; };
 		1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */; };
 		1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198E60841B4AA8F600FBC7E8 /* AdScrollView.m */; };
 		1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE6D1B49967600BBEB41 /* MainViewController.m */; };
@@ -379,6 +380,8 @@
 		197DD7141B5D46E00092AEE8 /* ShopCollectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCollectTableViewCell.h; sourceTree = "<group>"; };
 		197DD7151B5D46E00092AEE8 /* ShopCollectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCollectTableViewCell.m; sourceTree = "<group>"; };
 		197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCollectTableViewCell.xib; sourceTree = "<group>"; };
+		198024261B81D1760071F63E /* CityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityObject.h; path = Object/CityObject.h; sourceTree = "<group>"; };
+		198024271B81D1760071F63E /* CityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityObject.m; path = Object/CityObject.m; sourceTree = "<group>"; };
 		1982F0771B4DFB3700DB8661 /* HundredYuanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HundredYuanCell.h; sourceTree = "<group>"; };
 		1982F0781B4DFB3700DB8661 /* HundredYuanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HundredYuanCell.m; sourceTree = "<group>"; };
 		1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HundredYuanCell.xib; sourceTree = "<group>"; };
@@ -658,6 +661,8 @@
 				1977FDAE1B776D02000A8D26 /* MessageObject.m */,
 				19F969FE1B7AF79600C98637 /* HomeImageObject.h */,
 				19F969FF1B7AF79600C98637 /* HomeImageObject.m */,
+				198024261B81D1760071F63E /* CityObject.h */,
+				198024271B81D1760071F63E /* CityObject.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -1142,6 +1147,7 @@
 				19C8E5601B4D1B17007F6C5A /* PublicObject.m in Sources */,
 				193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */,
 				19AB71D71B5E410700E3FF40 /* LGtitleBarView.m in Sources */,
+				198024281B81D1760071F63E /* CityObject.m in Sources */,
 				1808C1A61B5FC908005947D6 /* InstallTimeTableViewCell.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
 				197DD7171B5D46E00092AEE8 /* ShopCollectTableViewCell.m in Sources */,

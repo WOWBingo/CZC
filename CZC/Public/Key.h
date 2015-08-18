@@ -211,6 +211,19 @@ UIKIT_EXTERN NSString *const PASSWORD;//密码
 UIKIT_EXTERN NSString *const USERINFO;//用户信息
 UIKIT_EXTERN NSString *const ISAUTOLOGIN;//是否自动登录的key
 
+#pragma mark - 排序
+/** 时间 */
+UIKIT_EXTERN NSString *const kSortsProModifyTime;
+/** 价格 */
+UIKIT_EXTERN NSString *const kSortsProPrice;
+/** 销售量 */
+UIKIT_EXTERN NSString *const kSortsProSaleNumber;
+/** 升序 */
+UIKIT_EXTERN NSString *const kSortsisASCTrue;
+/** 降序 */
+UIKIT_EXTERN NSString *const kSortsisASCFalse;
+
+
 #pragma mark - 定义宏
 
 #define CZCService [CZCAPIService shareService]

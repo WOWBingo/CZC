@@ -7,8 +7,13 @@
 //
 
 #import "PublicViewController.h"
+#import "AdScrollView.h"
+#import "ZDYScrollView.h"
 
 @interface ProductInfoViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
+
+
+@property (strong, nonatomic) ZDYScrollView *headView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *addShoppingCarBtn;

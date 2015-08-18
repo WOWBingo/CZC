@@ -11,7 +11,7 @@
 #import "SDWebImageManager.h"
 
 #define kImageViewCount 3
-static CGFloat const chageImageTime = 4.0;
+static CGFloat const chageImageTime = 3.0;
 
 @implementation ZDYScrollView
 
@@ -51,20 +51,26 @@ static CGFloat const chageImageTime = 4.0;
 
 - (void)addImageViewsToScrollView {
     //图片视图；左边
-    _buttonLeft = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width , self.frame.size.height)];
-    _buttonLeft.contentMode = UIViewContentModeScaleAspectFit;
-    [_scrV addSubview:_buttonLeft];
+    _imgVLeft = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width , self.frame.size.height)];
+    _imgVLeft.contentMode = UIViewContentModeScaleAspectFill;
+    [_scrV addSubview:_imgVLeft];
     
     //图片视图；中间
-    _buttonCenter = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
-    _buttonCenter.contentMode = UIViewContentModeScaleAspectFit;
-    [_buttonCenter addTarget:self action:@selector(clickCenterBtn) forControlEvents:UIControlEventTouchUpInside];
-    [_scrV addSubview:_buttonCenter];
+    _imgVCenter = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
+    _imgVCenter.contentMode = UIViewContentModeScaleAspectFill;
+    [_scrV addSubview:_imgVCenter];
     
     //图片视图；右边
-    _buttonRight = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width  * 2.0, 0.0, self.frame.size.width , self.frame.size.height)];
-    _buttonRight.contentMode = UIViewContentModeScaleAspectFit;
-    [_scrV addSubview:_buttonRight];
+    _imgVRight = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width  * 2.0, 0.0, self.frame.size.width , self.frame.size.height)];
+    _imgVRight.contentMode = UIViewContentModeScaleToFill;
+    [_scrV addSubview:_imgVRight];
+    
+    _buttonCenter = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
+    [_buttonCenter addTarget:self action:@selector(clickCenterBtn) forControlEvents:UIControlEventTouchUpInside];
+    _buttonCenter.contentMode = UIViewContentModeScaleAspectFit;
+    [_scrV addSubview:_buttonCenter];
+
+    
 }
 
 - (void)addPageControl {
@@ -94,16 +100,12 @@ static CGFloat const chageImageTime = 4.0;
     HomeImageObject *leftObject = [_mImageArray objectAtIndex:((_currentImageIndex - 1 + _imageCount) % _imageCount)];
     HomeImageObject *rightObject = [_mImageArray objectAtIndex:((_currentImageIndex + 1) % _imageCount)];
     
-    //NSString *currentImageNamed = [NSString stringWithFormat:@"%lu.png", (unsigned long)currentImageIndex];
     
-    [_buttonCenter sd_setBackgroundImageWithURL:[NSURL URLWithString:object.value] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
-     // sd_setImageWithURL:[NSURL URLWithString:object.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
+    [_imgVCenter sd_setImageWithURL:[NSURL URLWithString:object.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
-    [_buttonLeft sd_setBackgroundImageWithURL:[NSURL URLWithString:leftObject.value] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
-    // = [UIImage imageNamed:[NSString stringWithFormat:@"%lu.png", (unsigned long)((_currentImageIndex - 1 + _imageCount) % _imageCount)]];
+    [_imgVLeft sd_setImageWithURL:[NSURL URLWithString:leftObject.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
-    [_buttonRight sd_setBackgroundImageWithURL:[NSURL URLWithString:rightObject.value] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
-    //.image = [UIImage imageNamed:[NSString stringWithFormat:@"%lu.png", (unsigned long)((_currentImageIndex + 1) % _imageCount)]];
+    [_imgVRight sd_setImageWithURL:[NSURL URLWithString:rightObject.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
     _pageC.currentPage = currentImageIndex;
     _lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
@@ -129,6 +131,18 @@ static CGFloat const chageImageTime = 4.0;
         }
     }
     [self setInfoByCurrentImageIndex:_currentImageIndex];
+}
+/**
+ *	刷新大小
+ */
+- (void)reloadSize{
+    _scrV.contentSize = CGSizeMake(self.frame.size.width * kImageViewCount, self.frame.size.height);
+    _scrV.contentOffset = CGPointMake(self.frame.size.width , 0.0);
+    _lblImageDesc.frame = CGRectMake(0.0, 40.0, self.frame.size.width , 40.0);
+    _pageC.center = CGPointMake(self.frame.size.width  / 2.0, self.frame.size.height - 10.0);
+    _imgVLeft.frame = CGRectMake(0.0, 0.0, self.frame.size.width , self.frame.size.height);
+    _imgVCenter.frame = CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height);
+    _imgVRight.frame = CGRectMake(self.frame.size.width  * 2.0, 0.0, self.frame.size.width , self.frame.size.height);
 }
 
 #pragma mark - UIScrollViewDelegate

@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *sumLab;
 @property (weak, nonatomic) IBOutlet UIButton *accountBtn;
 
-@property (nonatomic,strong) NSMutableArray *productsArr;
+@property (nonatomic,strong) NSMutableArray *shopCarObjectArr;/**< 购物车对象数组 */
 - (IBAction)accountClick:(id)sender;
 @end

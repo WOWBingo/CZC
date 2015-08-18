@@ -9,6 +9,7 @@
 #import "ShopTableViewController.h"
 #import "ShopTableViewCell.h"
 #import "ShopInfoViewController.h"
+#import "ShopObject.h"
 
 @interface ShopTableViewController ()
 
@@ -52,10 +53,34 @@
     [_tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.rowHeight          = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    
+    _shopList = [[NSMutableArray alloc]init];
+    [self getShopListData];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
+    
 
+}
+#pragma mark - 获取数据
+/** 3.店铺搜索列表 http://app.czctgw.com/api/shops?pageIndex=1&pageCount=5&OderStatus=0&keyKeyword=&CityDomainName=gy */
+- (void)getShopListData{
+
+    NSString *params = @"pageIndex=1&pageCount=5&OderStatus=0&keyKeyword=&CityDomainName=gy";
+    [CZCService GETmethod:kShops_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [ShopObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"3.店铺搜索列表 ------%@",list);
+            [_shopList addObjectsFromArray:list];
+            [_tableView reloadData];
+            
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,13 +93,15 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _shopList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return SCREEN_WIDTH*0.3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    NSInteger row = indexPath.row;
+    ShopObject *shop = [_shopList objectAtIndex:row];
     static NSString *cellIdentifier = @"ShopTableViewCell";
     ShopTableViewCell *cell         = (ShopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -82,11 +109,15 @@
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
         cell              = (ShopTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell.nameLable setText:shop.shopName];
+        [cell.discountLable setText:[NSString stringWithFormat:@"%.1f折起",shop.haoPingLV]];
+        [cell.shopImageView sd_setImageWithURL:[NSURL URLWithString:shop.banner] placeholderImage:[UIImage imageNamed:@"dpsc-p4"]];
     }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ShopInfoViewController *newVC = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+    newVC.shopId = @"100001058";
     [self.navigationController pushViewController:newVC animated:YES];
 }
 
