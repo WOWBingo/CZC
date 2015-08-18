@@ -112,7 +112,6 @@
 		1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */; };
 		1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8D1B774A00000A8D26 /* ShopObject.m */; };
 		1977FD911B774DF8000A8D26 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD901B774DF8000A8D26 /* CommentObject.m */; };
-		1977FD941B774F1B000A8D26 /* ShopCarProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD931B774F1B000A8D26 /* ShopCarProductObject.m */; };
 		1977FD971B774FAE000A8D26 /* ShopCarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD961B774FAE000A8D26 /* ShopCarObject.m */; };
 		1977FD9A1B77599B000A8D26 /* OrderProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD991B77599B000A8D26 /* OrderProductObject.m */; };
 		1977FD9D1B775A6F000A8D26 /* OrderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD9C1B775A6F000A8D26 /* OrderObject.m */; };
@@ -127,6 +126,8 @@
 		197DD7171B5D46E00092AEE8 /* ShopCollectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DD7151B5D46E00092AEE8 /* ShopCollectTableViewCell.m */; };
 		197DD7181B5D46E00092AEE8 /* ShopCollectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */; };
 		198024281B81D1760071F63E /* CityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 198024271B81D1760071F63E /* CityObject.m */; };
+		1980242B1B836F240071F63E /* ShopCarProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1980242A1B836F240071F63E /* ShopCarProductObject.m */; };
+		1980242E1B836F3A0071F63E /* LjjUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1980242D1B836F3A0071F63E /* LjjUISegmentedControl.m */; };
 		1982F0741B4D8B8D00DB8661 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */; };
 		1982F0751B4D8B8D00DB8661 /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198E60841B4AA8F600FBC7E8 /* AdScrollView.m */; };
 		1982F0761B4D8B8D00DB8661 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE6D1B49967600BBEB41 /* MainViewController.m */; };
@@ -351,8 +352,6 @@
 		1977FD8D1B774A00000A8D26 /* ShopObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopObject.m; path = Object/ShopObject.m; sourceTree = "<group>"; };
 		1977FD8F1B774DF8000A8D26 /* CommentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentObject.h; path = Object/CommentObject.h; sourceTree = "<group>"; };
 		1977FD901B774DF8000A8D26 /* CommentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentObject.m; path = Object/CommentObject.m; sourceTree = "<group>"; };
-		1977FD921B774F1B000A8D26 /* ShopCarProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarProductObject.h; sourceTree = "<group>"; };
-		1977FD931B774F1B000A8D26 /* ShopCarProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarProductObject.m; sourceTree = "<group>"; };
 		1977FD951B774FAE000A8D26 /* ShopCarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCarObject.h; path = Object/ShopCarObject.h; sourceTree = "<group>"; };
 		1977FD961B774FAE000A8D26 /* ShopCarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCarObject.m; path = Object/ShopCarObject.m; sourceTree = "<group>"; };
 		1977FD981B77599B000A8D26 /* OrderProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderProductObject.h; path = Object/OrderProductObject.h; sourceTree = "<group>"; };
@@ -379,6 +378,10 @@
 		197DD7161B5D46E00092AEE8 /* ShopCollectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCollectTableViewCell.xib; sourceTree = "<group>"; };
 		198024261B81D1760071F63E /* CityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityObject.h; path = Object/CityObject.h; sourceTree = "<group>"; };
 		198024271B81D1760071F63E /* CityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityObject.m; path = Object/CityObject.m; sourceTree = "<group>"; };
+		198024291B836F240071F63E /* ShopCarProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCarProductObject.h; path = Object/ShopCarProductObject.h; sourceTree = "<group>"; };
+		1980242A1B836F240071F63E /* ShopCarProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCarProductObject.m; path = Object/ShopCarProductObject.m; sourceTree = "<group>"; };
+		1980242C1B836F3A0071F63E /* LjjUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjUISegmentedControl.h; sourceTree = "<group>"; };
+		1980242D1B836F3A0071F63E /* LjjUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjUISegmentedControl.m; sourceTree = "<group>"; };
 		1982F0771B4DFB3700DB8661 /* HundredYuanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HundredYuanCell.h; sourceTree = "<group>"; };
 		1982F0781B4DFB3700DB8661 /* HundredYuanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HundredYuanCell.m; sourceTree = "<group>"; };
 		1982F0791B4DFB3700DB8661 /* HundredYuanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HundredYuanCell.xib; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 		18000FD91B80650A00F9EC15 /* UISegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				1980242C1B836F3A0071F63E /* LjjUISegmentedControl.h */,
+				1980242D1B836F3A0071F63E /* LjjUISegmentedControl.m */,
 			);
 			path = UISegmentedControl;
 			sourceTree = "<group>";
@@ -616,6 +621,8 @@
 		1918DE571B498CB400BBEB41 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				198024291B836F240071F63E /* ShopCarProductObject.h */,
+				1980242A1B836F240071F63E /* ShopCarProductObject.m */,
 				1902C7C11B75B4CD009C7A33 /* ObjectMapping.h */,
 				1902C7C21B75B4CD009C7A33 /* ObjectMapping.m */,
 				1902C7BB1B751AB9009C7A33 /* TestObject.h */,
@@ -634,8 +641,6 @@
 				1977FD8D1B774A00000A8D26 /* ShopObject.m */,
 				1977FD8F1B774DF8000A8D26 /* CommentObject.h */,
 				1977FD901B774DF8000A8D26 /* CommentObject.m */,
-				1977FD921B774F1B000A8D26 /* ShopCarProductObject.h */,
-				1977FD931B774F1B000A8D26 /* ShopCarProductObject.m */,
 				1977FD951B774FAE000A8D26 /* ShopCarObject.h */,
 				1977FD961B774FAE000A8D26 /* ShopCarObject.m */,
 				1977FD981B77599B000A8D26 /* OrderProductObject.h */,
@@ -1109,7 +1114,6 @@
 				18A091E51B5E8D14009F3376 /* PersonNewsViewController.m in Sources */,
 				1977FD911B774DF8000A8D26 /* CommentObject.m in Sources */,
 				187BB79F1B4D571C00202B19 /* LoginViewController.m in Sources */,
-				1977FD941B774F1B000A8D26 /* ShopCarProductObject.m in Sources */,
 				187BB79D1B4D571C00202B19 /* ForgetPWViewController.m in Sources */,
 				19E05EF21B56B245007DB924 /* HundredViewController.m in Sources */,
 				1982F07E1B4E739000DB8661 /* HomeViewButton.m in Sources */,
@@ -1126,6 +1130,7 @@
 				187BB7A31B4D571C00202B19 /* RegisterViewController.m in Sources */,
 				19E05EFC1B57898A007DB924 /* ShopTableViewController.m in Sources */,
 				18000FE01B80682700F9EC15 /* OrderTableViewCell.m in Sources */,
+				1980242E1B836F3A0071F63E /* LjjUISegmentedControl.m in Sources */,
 				18A091E01B5E890B009F3376 /* NewsViewController.m in Sources */,
 				18F043851B56875A00E40E69 /* LogisticsViewController.m in Sources */,
 				1821568E1B57D48500E5D502 /* MyLogisticsViewController.m in Sources */,
@@ -1169,6 +1174,7 @@
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
 				18D072371B53EF6B004FCDED /* ProductCollectCollectionViewCell.m in Sources */,
 				1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */,
+				1980242B1B836F240071F63E /* ShopCarProductObject.m in Sources */,
 				19AB71D61B5E410700E3FF40 /* LGcollectionCell.m in Sources */,
 				1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */,
 				196C84E01B5FEB54003E6F5E /* PopoverView.m in Sources */,
