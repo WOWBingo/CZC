@@ -84,9 +84,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"OrderDetailsTableViewCell";
+    static NSString *CellIdentifier = @"OrderTableViewCell";
     OrderTableViewCell *cell = (OrderTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    OrderObject *orderObj = [self.orderListArray objectAtIndex:indexPath.row];
     if (cell == nil) {
         NSBundle *bundle = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:CellIdentifier owner:self options:nil];
@@ -97,6 +96,7 @@
     [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.imgView.frame.origin.y+cell.imgView.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
     [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.proNumLab.frame.origin.y+cell.proNumLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
     //获取订单详情
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:indexPath.row];
     //定义一个临时数组，接收ProductList数组对象
     NSMutableArray *productListArr = [[NSMutableArray alloc]init];
     productListArr = orderObj.productList;
