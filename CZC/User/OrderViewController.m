@@ -10,6 +10,7 @@
 #import "OrderTableViewCell.h"
 #import "OrderObject.h"
 #import "OrderProductObject.h"
+#import "OrderDetailViewController.h"
 @interface OrderViewController ()
 
 @end
@@ -25,10 +26,9 @@
     NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",nil];
     [ljjuisement AddSegumentArray:ljjarray];
     [self.view addSubview:ljjuisement];
-    self.view.backgroundColor = [UIColor redColor];
     
     //创建tableView
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 98, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -54,7 +54,8 @@
 -(void)getOrderListWithType:(NSString *)type{
 #pragma mark - 14.订单列表
 /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
-    NSString *params = @"pageIndex=1&pageCount=5&memLoginID=yemao&t=2";
+    NSString *params = @"pageIndex=1&pageCount=5&memLoginID=yemao&t=";
+    params = [params stringByAppendingString:type];
     [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
@@ -100,7 +101,9 @@
     //定义一个临时数组，接收ProductList数组对象
     NSMutableArray *productListArr = [[NSMutableArray alloc]init];
     productListArr = orderObj.productList;
-    OrderProductObject *orderProObj = [productListArr objectAtIndex:0];
+    OrderProductObject *orderProObj = [OrderProductObject objectWithKeyValues:[productListArr objectAtIndex:0]];
+    NSLog(@"%@",orderProObj);
+    //图片
     NSString *imgURL = @"";
     imgURL = [PublicObject convertNullString:orderProObj.productImg];
     if ([imgURL isEqualToString:@""]||imgURL == nil) {
@@ -116,7 +119,23 @@
             });
         });
     }
-
+    //基本信息
+    
+    cell.infolab.text = orderProObj.productName;
+    //其他信息
+    cell.otherInfoLab.text = @"缺少其他信息字段";
+    //订单状态
+    cell.orderStatusLab.text = orderObj.paymentName;
+    //订单时间
+    cell.timeLab.text = [orderObj.createTime substringToIndex:9];//下单时间
+    //物品数量
+    cell.proNumLab.text = [NSString stringWithFormat:@"%ld",orderProObj.buyNumber];
+    //总价
+    cell.moneyLab.text = [NSString stringWithFormat:@"%f",orderProObj.buyPrice];
+    //运费
+    cell.freightLab.text = [NSString stringWithFormat:@"%f",orderObj.packPrice];
+    //根据orderStatus 判断0 全部订单  1待付款 2 待发货 3 待收货  4 已完成订单  5 买家已经评价  6 卖家已经评价  7退货8 订单完成并且未评价
+    
     return cell;
 }
 
@@ -135,8 +154,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld",(long)indexPath.row);
-    //    switch (indexPath.section) {
+    OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc]initWithNibName:@"OrderDetailViewController" bundle:nil];
+    orderDetailVC.orderObj = [self.orderListArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 
 

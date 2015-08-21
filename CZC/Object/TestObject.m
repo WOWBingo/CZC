@@ -286,7 +286,7 @@
 //        }
 //    }];
     
-#pragma mark - 14.订单列表
+#pragma mark - 14.订单列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
 //    params = @"pageIndex=1&pageCount=5&memLoginID=yemao&t=2";
 //    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
@@ -371,7 +371,7 @@
 //        }
 //    }];
     
-#pragma mark - 18.收货地址列表
+#pragma mark - 18.收货地址列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 18.收货地址列表 http://app.czctgw.com/api/address/a465788 */
 //    params = @"a465788";
 //    [CZCService GETmethod:kAddressList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
@@ -401,7 +401,7 @@
 //    }];
     
     
-#pragma mark - 20.用户信息
+#pragma mark - 20.用户信息！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 20.用户信息 http://app.czctgw.com/api/account/a465788 */
 //    params = @"a465788";
 //    [CZCService GETmethod:kAccountInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
@@ -435,7 +435,7 @@
 //        }
 //    }];
     
-#pragma mark - 23.产品收藏列表
+#pragma mark - 23.产品收藏列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
 //    params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
 //    [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
@@ -452,7 +452,7 @@
     
     /** 24.宝贝收藏删除 /api/mycollect/delete?Guid=dc900185-1203-4dd0-8682-d490acb03b6b&MemLoginID=111111 */
 
-#pragma mark - 25.店铺收藏列表
+#pragma mark - 25.店铺收藏列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
 //    params = @"MemLoginID=s1886&pageIndex=1&pageCount=5";
 //    [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {

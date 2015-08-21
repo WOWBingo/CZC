@@ -297,7 +297,7 @@
             break;
         case 2:
             if(indexPath.row == 0){
-                OrderViewController *orderDetailsVC = [[OrderViewController alloc]initWithNibName:@"OrderDetailsViewController" bundle:nil];
+                OrderViewController *orderDetailsVC = [[OrderViewController alloc]initWithNibName:@"OrderViewController" bundle:nil];
                 self.navigationController.navigationBarHidden = NO;
                 [self.navigationController pushViewController:orderDetailsVC animated:YES];
             }

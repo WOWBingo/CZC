@@ -51,7 +51,7 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="MLQ-DK-wR9" secondAttribute="height" multiplier="1:1" id="War-p5-oXQ"/>
                         </constraints>
-                        <state key="normal" backgroundImage="chooseYes">
+                        <state key="normal" backgroundImage="chooseNO">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
@@ -158,7 +158,7 @@
     <resources>
         <image name="addressDel" width="12" height="12"/>
         <image name="addressEdit" width="12" height="12"/>
-        <image name="chooseYes" width="13" height="13"/>
+        <image name="chooseNO" width="13" height="13"/>
         <image name="greyline" width="413" height="6"/>
     </resources>
 </document>

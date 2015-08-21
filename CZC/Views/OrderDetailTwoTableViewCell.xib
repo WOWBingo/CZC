@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="OrderDetailTwoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orderDetail_address" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-em-XxK">
+                        <rect key="frame" x="8" y="8" width="20" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Vud-x3-byU"/>
+                            <constraint firstAttribute="height" constant="25" id="YbE-VH-6ck"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-r1-a6L">
+                        <rect key="frame" x="36" y="10" width="31" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ZoC-Md-IMB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-NP-XzX">
+                        <rect key="frame" x="76" y="10" width="31" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="QBf-cm-2oY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-8V-uYQ">
+                        <rect key="frame" x="8" y="39" width="304" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hbs-NP-XzX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="0mh-zz-zO4"/>
+                    <constraint firstItem="Bz1-r1-a6L" firstAttribute="leading" secondItem="Xkd-em-XxK" secondAttribute="trailing" constant="8" id="6D6-0N-2Bo"/>
+                    <constraint firstItem="Xkd-em-XxK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="AOt-JF-1NM"/>
+                    <constraint firstItem="Bz1-r1-a6L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Vrl-rd-9Xo"/>
+                    <constraint firstItem="qhP-8V-uYQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="WgL-YC-yCZ"/>
+                    <constraint firstItem="hbs-NP-XzX" firstAttribute="leading" secondItem="Bz1-r1-a6L" secondAttribute="trailing" constant="9" id="bh8-9F-Trk"/>
+                    <constraint firstItem="Xkd-em-XxK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jZd-0X-qu3"/>
+                    <constraint firstItem="qhP-8V-uYQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pdv-ne-avO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qhP-8V-uYQ" secondAttribute="bottom" constant="-8" id="qkM-7j-aQC"/>
+                    <constraint firstItem="qhP-8V-uYQ" firstAttribute="top" secondItem="Xkd-em-XxK" secondAttribute="bottom" constant="6" id="zpW-Bp-aYA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLab" destination="qhP-8V-uYQ" id="VWA-Ry-JyY"/>
+                <outlet property="nameLab" destination="Bz1-r1-a6L" id="wjb-Qa-tPh"/>
+                <outlet property="telLab" destination="hbs-NP-XzX" id="195-IK-yo2"/>
+            </connections>
+            <point key="canvasLocation" x="360" y="340"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="orderDetail_address" width="14" height="20"/>
+    </resources>
+</document>

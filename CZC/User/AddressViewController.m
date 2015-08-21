@@ -9,6 +9,7 @@
 #import "AddressViewController.h"
 #import "AddressTableViewCell.h"
 #import "EditAddressViewController.h"
+#import "AddressObject.h"
 @interface AddressViewController ()
 
 @end
@@ -22,8 +23,26 @@
     self.addressArr = [[NSMutableArray alloc]init];
 //    _tableView.rowHeight = UITableViewAutomaticDimension;
 //    _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    [self getAddress];
 }
+-(void)getAddress{
+#pragma mark - 18.收货地址列表
+    /** 18.收货地址列表 http://app.czctgw.com/api/address/a465788 */
+        NSString *params = @"a465788";
+        [CZCService GETmethod:kAddressList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+            if (myresult) {
+                NSArray *dataArr = [myresult objectForKey:@"AddressList"];
+                NSArray *list = [AddressObject objectArrayWithKeyValuesArray:dataArr];
+                NSLog(@"18.收货地址列表 ------%@",list);
+                self.addressArr = [[NSMutableArray alloc]initWithArray:list];
+                [self.tableView reloadData];
+            }
+            else{
+                NSLog(@"失败");
+            }
+        }];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -31,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.addressArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -46,6 +65,21 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     cell.delegate = self;
+    //加载数据
+    AddressObject *addressObj = [self.addressArr objectAtIndex:indexPath.row];
+    //姓名
+    cell.nameLab.text = addressObj.name;
+    //电话
+    cell.telLab.text = addressObj.mobile;
+    //地址
+    cell.addressLab.text = addressObj.address;
+    //获取是否默认地址
+    NSLog(@"%ld",(long)addressObj.isDefault);
+    if (addressObj.isDefault == 1) {//是默认地址
+        [cell.defaultImgBtn setImage:[UIImage imageNamed:@"chooseYes.png"] forState:UIControlStateNormal];
+    }else{
+        [cell.defaultImgBtn setImage:[UIImage imageNamed:@"chooseNo.png"] forState:UIControlStateNormal];
+    }
     return cell;
     
 }
