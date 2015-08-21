@@ -99,6 +99,7 @@
 		19054FC71B4A08DC002DDC21 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19054FC51B4A08DC002DDC21 /* HomeViewController.m */; };
 		19054FC81B4A08DC002DDC21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19054FC61B4A08DC002DDC21 /* HomeViewController.xib */; };
 		1918DE551B4989DF00BBEB41 /* RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1918DE521B4989DF00BBEB41 /* RefreshLocation.m */; };
+		192141531B85BEE000D728A1 /* ChoseProductInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192141521B85BEE000D728A1 /* ChoseProductInfoView.xib */; };
 		192768DA1B48442F00B86141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768D91B48442F00B86141 /* main.m */; };
 		192768DD1B48442F00B86141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768DC1B48442F00B86141 /* AppDelegate.m */; };
 		192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192768E61B48442F00B86141 /* LaunchScreen.xib */; };
@@ -106,6 +107,7 @@
 		193CC8621B54BAB900774E49 /* ProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CC8601B54BAB900774E49 /* ProductInfoViewController.m */; };
 		193CC8631B54BAB900774E49 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CC8611B54BAB900774E49 /* ProductInfoViewController.xib */; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
+		195E70AE1B859B9B00B011EC /* ChoseProductInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195E70AD1B859B9B00B011EC /* ChoseProductInfoView.m */; };
 		196044371B4B788400989481 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196044351B4B788400989481 /* HomeViewCell.m */; };
 		196044381B4B788400989481 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196044361B4B788400989481 /* HomeViewCell.xib */; };
 		196C84E01B5FEB54003E6F5E /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196C84DF1B5FEB54003E6F5E /* PopoverView.m */; };
@@ -327,6 +329,7 @@
 		1918DE541B4989DF00BBEB41 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WGS84TOGCJ02.m; path = Public/WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		1918DE6C1B49967600BBEB41 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Main/MainViewController.h; sourceTree = "<group>"; };
 		1918DE6D1B49967600BBEB41 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Main/MainViewController.m; sourceTree = "<group>"; };
+		192141521B85BEE000D728A1 /* ChoseProductInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoseProductInfoView.xib; sourceTree = "<group>"; };
 		192768D41B48442F00B86141 /* CZC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CZC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192768D81B48442F00B86141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192768D91B48442F00B86141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 		193CC8611B54BAB900774E49 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductInfoViewController.xib; path = Home/ProductInfoViewController.xib; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
+		195E70AC1B859B9B00B011EC /* ChoseProductInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseProductInfoView.h; sourceTree = "<group>"; };
+		195E70AD1B859B9B00B011EC /* ChoseProductInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseProductInfoView.m; sourceTree = "<group>"; };
 		196044341B4B788400989481 /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		196044351B4B788400989481 /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		196044361B4B788400989481 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -836,6 +841,9 @@
 				18000FDD1B80682700F9EC15 /* OrderTableViewCell.h */,
 				18000FDE1B80682700F9EC15 /* OrderTableViewCell.m */,
 				18000FDF1B80682700F9EC15 /* OrderTableViewCell.xib */,
+				195E70AC1B859B9B00B011EC /* ChoseProductInfoView.h */,
+				195E70AD1B859B9B00B011EC /* ChoseProductInfoView.m */,
+				192141521B85BEE000D728A1 /* ChoseProductInfoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1030,6 +1038,7 @@
 				19E05EFD1B57898A007DB924 /* ShopTableViewController.xib in Resources */,
 				19D18A631B5B9A77001917F9 /* 城市多用户3.1 Api接口说明.doc in Resources */,
 				1982F0901B4EC9D900DB8661 /* CityListViewController.xib in Resources */,
+				192141531B85BEE000D728A1 /* ChoseProductInfoView.xib in Resources */,
 				18C76D781B70E3F6002D9870 /* EditAddressViewController.xib in Resources */,
 				19E05F021B578AEE007DB924 /* ShopTableViewCell.xib in Resources */,
 				182156A31B57E30600E5D502 /* PayAddressTableViewCell.xib in Resources */,
@@ -1120,6 +1129,7 @@
 				18000FD71B80606800F9EC15 /* OrderViewController.m in Sources */,
 				182156A71B57E6EA00E5D502 /* PayDeliverTableViewCell.m in Sources */,
 				187BB7B41B4D693500202B19 /* ChangeUseInfoViewController.m in Sources */,
+				195E70AE1B859B9B00B011EC /* ChoseProductInfoView.m in Sources */,
 				19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */,
 				18A091EA1B5E8E96009F3376 /* PersonNewsTableViewCell.m in Sources */,
 				182156B11B57EB2100E5D502 /* PayInfoTableViewCell.m in Sources */,

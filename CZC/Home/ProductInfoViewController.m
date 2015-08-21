@@ -10,121 +10,276 @@
 #import "ProductTableInfoCell.h"
 #import "AdScrollView.h"
 #import "ZDYScrollView.h"
+#import "ProductsObject.h"
+#import "Masonry.h"
+#import "ChoseProductInfoView.h"
 
 @interface ProductInfoViewController ()
 
 @end
 
-static CGFloat kImageOriginHight = 240.f;
+#define kShowViewHight (SCREEN_WIDTH*0.65)
 
 @implementation ProductInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"产品详情";
+    [self addHeadView];
+    [self addChoseView];
     
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    [_tableView setTableFooterView:[[UIView alloc]init]];
-    _tableView.rowHeight = UITableViewAutomaticDimension;
-    _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    _imgTextView = [UIView new];
+    [_scrollView addSubview:_imgTextView];
+    _imgTextView.tag = 1;
     
-
-    
-    _headView = [[ZDYScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, kImageOriginHight)];
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(kImageOriginHight, 0, 0, 0);
-    [self.tableView addSubview:_headView];
+    [self changeScrollViewInfo];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [self getProductInfo];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - 获取数据
+/**
+ *6.产品详细
+ *	http://app.czctgw.com/api/product/d3777035-8d88-4e87-8d2b-7021e03d4d2a
+ */
+- (void)getProductInfo{
+    NSString *params = @"d3777035-8d88-4e87-8d2b-7021e03d4d2a";
+    [CZCService GETmethod:kProductInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        if (result) {
+            NSDictionary *dic = [result objectForKey:@"ProductInfo"];
+            ProductsObject *object = [ProductsObject objectWithKeyValues:dic];
+            NSLog(@"6.产品详细------%@",object);
+            NSString *imageStr = object.multiImages;
+            NSArray *imageArray = [imageStr componentsSeparatedByString:@","];
+            [_headView loadImageData:imageArray];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
 
+#pragma mark - 添加各种视图
+/**
+ *	添加选择产品界面。弹出选择窗口，背影黑罩
+ */
+- (void)addChoseView{
+    _backView = [[UIView alloc]initWithFrame:self.view.bounds];
+    _backView.hidden = YES;
+    _backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    _choseProductView = [ChoseProductInfoView instanceView];
+    [_choseProductView setTransform:CGAffineTransformMakeTranslation(0, _choseProductView.frame.size.height)];
+    __weak typeof(self) weakSelf = self;
+    _choseProductView.dismissView = ^(){
+        //添加动画，添加到父窗口中，使之从下移动上
+        [UIView animateWithDuration:0.3 animations:^{
+            weakSelf.backView.hidden = YES;
+            [weakSelf.choseProductView setTransform:CGAffineTransformMakeTranslation(0, weakSelf.choseProductView.frame.size.height)];
+        } completion:^(BOOL finished) {
+            
+        }];
+    };
+    [self.view addSubview:_backView];
+    [self.view addSubview:_choseProductView];
+    
+}
+/**
+ *	添加头部显示照片显示视图
+ */
+- (void)addHeadView{
+    
+    [PublicObject drawHorizontalLineOnView:_titleView
+                                      andX:0
+                                      andY:52
+                                  andWidth:SCREEN_WIDTH
+                                  andColor:[UIColor lightGrayColor ]];
+    [PublicObject drawHorizontalLineOnView:_guigeView
+                                      andX:0
+                                      andY:0
+                                  andWidth:SCREEN_WIDTH
+                                  andColor:[UIColor lightGrayColor ]];
+    [PublicObject drawHorizontalLineOnView:_guigeView
+                                      andX:0
+                                      andY:40
+                                  andWidth:SCREEN_WIDTH
+                                  andColor:[UIColor lightGrayColor ]];
+    [PublicObject drawHorizontalLineOnView:_oldPriceLabel
+                                      andX:0
+                                      andY:_oldPriceLabel.frame.size.height/2
+                                  andWidth:_oldPriceLabel.frame.size.width
+                                  andColor:[UIColor lightGrayColor ]];
+    _headView = [[ZDYScrollView alloc]initWithFrame:CGRectZero];
+    _headView.imageViewContentMode = UIViewContentModeScaleAspectFit;
+    _headView.clickBlock = ^(NSInteger index){
+        NSLog(@"跳转的controller为=========%ld",index);
+    };
+    _headView.frame = CGRectMake(0, -kShowViewHight+5, SCREEN_WIDTH, kShowViewHight);
+    _scrollView.delegate = self;
+    _scrollView.contentInset = UIEdgeInsetsMake(kShowViewHight, 0, 0, 0);
+    [_scrollView addSubview:_headView];
+}
+/**
+ *	图文、参数切换
+ */
+- (void)changeScrollViewInfo{
+    if (_imgTextView.tag == 1) {
+        int count = 17;
+        UIImageView *lastImageView = nil;
+        for ( int i = 0 ; i < count ; ++i )
+        {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"zy-p%d",i+1]];
+            CGSize imgSize = image.size;
+            UIImageView *subv = [[UIImageView alloc]initWithImage:image];
+            [subv setContentMode:UIViewContentModeScaleAspectFit];
+            [_imgTextView addSubview:subv];
+            
+            [subv mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.and.right.equalTo(_imgTextView);
+                //计算高度
+                make.height.mas_equalTo((SCREEN_WIDTH-20)*imgSize.height/imgSize.width);
+                if ( lastImageView )
+                {
+                    make.top.equalTo(lastImageView.mas_bottom).offset(8);
+                }else{
+                    make.top.equalTo(_imgTextView.mas_top);
+                }
+            }];
+            lastImageView = subv;
+        }
+        [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.top.equalTo(self.segmented.mas_bottom).offset(10);
+            make.left.equalTo(self.view.mas_left);
+            make.bottom.equalTo(lastImageView.mas_bottom).offset(8);
+        }];
+        [self.nilImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(self.imgTextView.mas_height);
+        }];
+   }else{
+       _paramesTable = [UITableView new];
+       _paramesTable.delegate = self;
+       _paramesTable.dataSource = self;
+       [_paramesTable setTableFooterView:[[UIView alloc]init]];
+       _paramesTable.rowHeight = UITableViewAutomaticDimension;
+       _paramesTable.estimatedRowHeight = 60;
+       [_imgTextView addSubview:_paramesTable];
+       
+       [_paramesTable mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.top.equalTo(self.segmented.mas_bottom).offset(10);
+            make.left.equalTo(self.view.mas_left);
+            make.height.mas_equalTo(_paramesTable.contentSize.height);
+        }];
+       [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.width.mas_equalTo(SCREEN_WIDTH);
+           make.top.equalTo(self.segmented.mas_bottom).offset(10);
+           make.left.equalTo(self.view.mas_left);
+           make.bottom.equalTo(_paramesTable.mas_bottom).offset(8);
+       }];
+       [self.nilImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(self.imgTextView.mas_height);
+        }];
+   }
+}
 
 #pragma mark - tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 3;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.row == 0) {
-//        return SCREEN_WIDTH*0.5;
-//    }
-    return UITableViewAutomaticDimension;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    if (indexPath.row == 0) {
-//        static NSString *TableSampleIdentifier = @"HomeHeadView";
-//        
-//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-//                                 TableSampleIdentifier];
-//        if (cell == nil) {
-//            cell = [[UITableViewCell alloc]
-//                    initWithStyle:UITableViewCellStyleDefault
-//                    reuseIdentifier:TableSampleIdentifier];
-//        }
-//        AdScrollView * scrollView = [[AdScrollView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH, SCREEN_WIDTH*0.5)];
-//        scrollView.imageNameArray = @[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"];
-//        [scrollView setAdTitleArray:@[@"zy-p6",@"zy-p7",@"zy-p12",@"zy-p16",@"zy-p17"] withShowStyle:AdTitleShowStyleLeft];
-//        //如果滚动视图的父视图由导航控制器控制,必须要设置该属性(ps,猜测这是为了正常显示,导航控制器内部设置了UIEdgeInsetsMake(64, 0, 0, 0))
-//        //scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//        scrollView.PageControlShowStyle = UIPageControlShowStyleCenter;
-//        scrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-//        scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
-//        //[cell addSubview:scrollView];
-//        return cell;
-//    }else{
-    
-        static NSString *cellIdentifier = @"ProductTableInfoCell";
-        ProductTableInfoCell *cell = (ProductTableInfoCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (cell == nil) {
-            NSBundle *bundle = [NSBundle mainBundle];
-            NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-            cell = (ProductTableInfoCell *)[nibArray objectAtIndex:0];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        }
-        
-        return cell;
-   // }
-}
-
-#pragma mark ----scrollView滚动代理
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    CGFloat kImageOriginHight = 200.0;
-//    // 向下滚动为负
-//    CGFloat offsetY  = scrollView.contentOffset.y;
-//    
-//    CGRect rect = _headView.frame;
-//    if (offsetY <= 0 || offsetY < kImageOriginHight)
-//        rect.size.height = kImageOriginHight - offsetY;
-//    
-//    _headView.frame = rect;
-//}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat yOffset  = scrollView.contentOffset.y;
-    if (yOffset < -kImageOriginHight) {
-        CGRect f = _headView.frame;
-        f.origin.y = yOffset;
-        f.size.height =  -yOffset;
-        _headView.frame = f;
+    if (IS_IOS8_OR_ABOVE) {
+        _paramesHeight += UITableViewAutomaticDimension;
+        return UITableViewAutomaticDimension;
+    }else{
+        return 60;
     }
 }
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger row = indexPath.row;
+    static NSString *cellIdentifier = @"cell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        //        NSBundle *bundle = [NSBundle mainBundle];
+        //        NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+        //        cell = (<#UITableViewCell#> *)[nibArray objectAtIndex:0];
+        cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld条",(long)row];
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+    return cell;
+}
 
+
+/**
+ *	显示选择规则视图
+ */
+- (void)showChoseView{
+    //添加动画,使之从下移动上
+    [UIView animateWithDuration:0.3 animations:^{
+        _backView.hidden = NO;
+        [_choseProductView setTransform:CGAffineTransformMakeTranslation(0, 0)];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+#pragma mark - scrollView滚动代理
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat yOffset  = scrollView.contentOffset.y;
+    if ( yOffset < -kShowViewHight*0.7) {
+        CGRect f = _headView.frame;
+        f.origin.y = yOffset+5;
+        f.size.height =  -yOffset;
+        _headView.frame = f;
+        [_headView reloadSize];
+    }
+}
+/**
+ *	前往购物车
+ */
 - (IBAction)goShoppingCar:(id)sender {
 }
-
+/**
+ *	添加购物车
+ */
 - (IBAction)addShoppingCar:(id)sender {
 }
+/**
+ * 切换图文、参数
+ */
+- (IBAction)changeSegmented:(id)sender{
+    [_imgTextView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if (_imgTextView.tag == 0) {
+        _imgTextView.tag = 1;
+    }else{
+        _imgTextView.tag = 0;
+    }
+    [self changeScrollViewInfo];
+}
+/**
+ *	弹出选择页面
+ */
+- (IBAction)choseSpecification:(id)sender {
+    [self showChoseView];
+}
+
+/**
+ *	确定选择
+ */
+- (IBAction)defineChose:(id)sender{
+    
+}
+
 @end

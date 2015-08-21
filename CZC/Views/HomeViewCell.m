@@ -55,7 +55,7 @@
 
 - (IBAction)shopInfo:(id)sender{
     HomeViewButton *button = (HomeViewButton*)sender;
-    NSLog(@"%d-----%d",button.tag,button.indexOfCell);
+    NSLog(@"%ld-----%ld",(long)button.tag,(long)button.indexOfCell);
 
 }
 //设置cell上button标识符

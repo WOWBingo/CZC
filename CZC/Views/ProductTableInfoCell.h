@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *shopPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zhekouLabel;
+
 @end

@@ -18,7 +18,7 @@
 #import "TestObject.h"
 #import "ZDYScrollView.h"
 
-#define ScrollViewHight (SCREEN_WIDTH*0.6)
+#define ScrollViewHight (SCREEN_WIDTH*0.5)
 
 @interface HomeViewController ()
 
@@ -65,10 +65,15 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = SCREEN_WIDTH;
     
+    //轮播视图
     _headView = [[ZDYScrollView alloc]initWithFrame:CGRectZero];
     self.tableView.contentInset = UIEdgeInsetsMake(ScrollViewHight, 0, 0, 0);
+    __weak typeof(self) weakSelf = self;
+    _headView.clickBlock = ^(NSInteger index){
+        HomeImageObject *object = [weakSelf.homeImagesArray objectAtIndex:index];
+        NSLog(@"跳转的controller为=========%ld",(long)object.homeImageID);
+    };
     [self.tableView addSubview:_headView];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -89,7 +94,7 @@
 }
 
 
-#pragma mark - 59.首页图片
+#pragma mark - 获取数据.首页图片
 /**  59.首页图片 http://app.czctgw.com/api/ShopGGlistIndex/?CityDomianName=chengdu*/
 - (void)getHomeImagesData{
     NSString *params = @"CityDomianName=chengdu";
@@ -98,9 +103,14 @@
             NSArray *dataArr = [myresult objectForKey:@"ImageList"];
             NSArray *list = [HomeImageObject objectArrayWithKeyValuesArray:dataArr];
             if (list.count > 0) {
-                _homeImages = list;
-                if (_homeImages) {
-                    [_headView loadImageData:_homeImages];
+                _homeImagesArray = list;
+                NSMutableArray *homeImages = [[NSMutableArray alloc]init];
+                for (int i = 0; i<list.count; i++) {
+                    HomeImageObject *object = [list objectAtIndex:i];
+                    [homeImages addObject:object.value];
+                }
+                if (homeImages) {
+                    [_headView loadImageData:homeImages];
                 }
             }
             NSLog(@" 59.首页图片 ------%@",list);
@@ -143,9 +153,9 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (_isHomePage) {
-        return _dataList.count + 2;
+        return _dataList.count + 1;
     }
-    return _dataList.count + 1;
+    return _dataList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -156,6 +166,7 @@
         }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger row = indexPath.row;
         if (_isHomePage) {
             if (indexPath.row == 0) {
                 static NSString *cellIdentifier = @"HundredYuanCell";
@@ -190,8 +201,8 @@
                 }
                 //设置cell上button标识符
                 [cell buttonAddCellNum:indexPath.row];
-                cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row];
-                cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row-1];
+                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",row-1];
+                cell.titleLabel.text = [_dataList objectAtIndex:row-1];
                 return cell;
             }
         }else{
@@ -210,8 +221,8 @@
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
             [cell buttonAddCellNum:indexPath.row];
-            cell.numLabel.text = [NSString stringWithFormat:@"%dF",indexPath.row];
-            cell.titleLabel.text = [_dataList objectAtIndex:indexPath.row];
+            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row];
+            cell.titleLabel.text = [_dataList objectAtIndex:row];
             return cell;
         }
 //    }
@@ -272,7 +283,7 @@
  */
 - (IBAction)shopInfo:(id)sender{
     HomeViewButton *button = (HomeViewButton*)sender;
-    NSLog(@"%d-----%d",button.tag,button.indexOfCell);
+    NSLog(@"%ld-----%ld",(long)button.tag,(long)button.indexOfCell);
     
 }
 

@@ -15,7 +15,7 @@
 
 @property (nonatomic ,strong) UIView *searchView;
 @property (nonatomic ,strong) NSMutableArray *dataList;
-@property (nonatomic ,strong) NSArray *homeImages;/**< 首页轮播展示图片*/
+@property (nonatomic ,strong) NSArray *homeImagesArray;/**< 首页轮播展示图片*/
 @property (nonatomic ,strong) UIBarButtonItem *leftItem;
 @property (nonatomic) BOOL isHomePage;
 

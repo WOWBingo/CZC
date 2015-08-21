@@ -14,7 +14,7 @@
 - (void)awakeFromNib {
     
     // 防止block中的循环引用
-    // __weak typeof(self) weakSelf = self;
+     __weak typeof(self) weakSelf = self;
     
     int count = 17;
     

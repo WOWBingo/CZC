@@ -21,10 +21,15 @@
 @property (assign, nonatomic) NSUInteger currentImageIndex;
 @property (assign, nonatomic) NSUInteger imageCount;
 @property (assign, nonatomic) BOOL isTimeUp;
+
+@property (nonatomic, assign)UIViewContentMode imageViewContentMode;
 //循环滚动的周期时间
 @property (strong, nonatomic) NSTimer *moveTime;
 //用于确定滚动式由人导致的还是计时器到了,系统帮我们滚动的,YES,则为系统滚动,NO则为客户滚动(ps.在客户端中客户滚动一个广告后,这个广告的计时器要归0并重新计时)
-
+/**
+ *	回调
+ */
+@property (nonatomic, copy) void (^clickBlock)(NSInteger index);
 
 /**
  *  加载图片数据

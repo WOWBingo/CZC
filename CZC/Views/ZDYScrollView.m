@@ -24,6 +24,7 @@ static CGFloat const chageImageTime = 3.0;
         self.backgroundColor = [UIColor whiteColor];
         _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
         _isTimeUp = NO;
+        _imageViewContentMode = UIViewContentModeScaleAspectFill;
     }
     return self;
 }
@@ -35,7 +36,7 @@ static CGFloat const chageImageTime = 3.0;
     [self addScrollView];
     [self addImageViewsToScrollView];
     [self addPageControl];
-    [self addLabel];
+    //[self addLabel];
     [self setDefaultInfo];
 }
 
@@ -52,18 +53,18 @@ static CGFloat const chageImageTime = 3.0;
 - (void)addImageViewsToScrollView {
     //图片视图；左边
     _imgVLeft = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width , self.frame.size.height)];
-    _imgVLeft.contentMode = UIViewContentModeScaleAspectFill;
+    _imgVLeft.contentMode = _imageViewContentMode;
     [_scrV addSubview:_imgVLeft];
-    
-    //图片视图；中间
-    _imgVCenter = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
-    _imgVCenter.contentMode = UIViewContentModeScaleAspectFill;
-    [_scrV addSubview:_imgVCenter];
     
     //图片视图；右边
     _imgVRight = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width  * 2.0, 0.0, self.frame.size.width , self.frame.size.height)];
-    _imgVRight.contentMode = UIViewContentModeScaleToFill;
+    _imgVRight.contentMode = _imageViewContentMode;
     [_scrV addSubview:_imgVRight];
+    
+    //图片视图；中间
+    _imgVCenter = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
+    _imgVCenter.contentMode = _imageViewContentMode;
+    [_scrV addSubview:_imgVCenter];
     
     _buttonCenter = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height)];
     [_buttonCenter addTarget:self action:@selector(clickCenterBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -90,25 +91,23 @@ static CGFloat const chageImageTime = 3.0;
     _lblImageDesc.textAlignment = NSTextAlignmentCenter;
     _lblImageDesc.textColor = [UIColor whiteColor];
     _lblImageDesc.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
-    _lblImageDesc.text = @"Fucking now.";
+    _lblImageDesc.text = @"图片描述";
     [self addSubview:_lblImageDesc];
 }
 
 - (void)setInfoByCurrentImageIndex:(NSUInteger)currentImageIndex {
+    NSString *centerStr = [_mImageArray objectAtIndex:currentImageIndex];
+    NSString *leftStr = [_mImageArray objectAtIndex:((_currentImageIndex - 1 + _imageCount) % _imageCount)];
+    NSString *rightStr = [_mImageArray objectAtIndex:((_currentImageIndex + 1) % _imageCount)];
     
-    HomeImageObject *object = [_mImageArray objectAtIndex:currentImageIndex];
-    HomeImageObject *leftObject = [_mImageArray objectAtIndex:((_currentImageIndex - 1 + _imageCount) % _imageCount)];
-    HomeImageObject *rightObject = [_mImageArray objectAtIndex:((_currentImageIndex + 1) % _imageCount)];
+    [_imgVCenter sd_setImageWithURL:[NSURL URLWithString:centerStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
+    [_imgVLeft sd_setImageWithURL:[NSURL URLWithString:leftStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
-    [_imgVCenter sd_setImageWithURL:[NSURL URLWithString:object.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
-    
-    [_imgVLeft sd_setImageWithURL:[NSURL URLWithString:leftObject.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
-    
-    [_imgVRight sd_setImageWithURL:[NSURL URLWithString:rightObject.value] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
+    [_imgVRight sd_setImageWithURL:[NSURL URLWithString:rightStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
     
     _pageC.currentPage = currentImageIndex;
-    _lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
+   // _lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
 }
 
 - (void)setDefaultInfo {
@@ -140,9 +139,8 @@ static CGFloat const chageImageTime = 3.0;
     _scrV.contentOffset = CGPointMake(self.frame.size.width , 0.0);
     _lblImageDesc.frame = CGRectMake(0.0, 40.0, self.frame.size.width , 40.0);
     _pageC.center = CGPointMake(self.frame.size.width  / 2.0, self.frame.size.height - 10.0);
-    _imgVLeft.frame = CGRectMake(0.0, 0.0, self.frame.size.width , self.frame.size.height);
     _imgVCenter.frame = CGRectMake(self.frame.size.width , 0.0, self.frame.size.width , self.frame.size.height);
-    _imgVRight.frame = CGRectMake(self.frame.size.width  * 2.0, 0.0, self.frame.size.width , self.frame.size.height);
+
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -153,8 +151,8 @@ static CGFloat const chageImageTime = 3.0;
     _pageC.currentPage = _currentImageIndex;
     
     //NSString *currentImageNamed = [NSString stringWithFormat:@"%lu.png", (unsigned long)_currentImageIndex];
-    HomeImageObject *object = [_mImageArray objectAtIndex:_currentImageIndex];
-    _lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
+    //HomeImageObject *object = [_mImageArray objectAtIndex:_currentImageIndex];
+    //_lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
     
     //手动控制图片滚动应该取消那个三秒的计时器
     if (!_isTimeUp) {
@@ -172,19 +170,9 @@ static CGFloat const chageImageTime = 3.0;
 }
 
 - (void)clickCenterBtn{
-    HomeImageObject *object = [_mImageArray objectAtIndex:_currentImageIndex];
-    NSLog(@"点击的按钮为------%ld",(long)object.homeImageID);
+   // HomeImageObject *object = [_mImageArray objectAtIndex:_currentImageIndex];
+    NSLog(@"点击的按钮为------%ld",_currentImageIndex);
+    self.clickBlock(_currentImageIndex);
 }
-
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
