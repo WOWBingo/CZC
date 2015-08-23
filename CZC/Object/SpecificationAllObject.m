@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 周德艺. All rights reserved.
 //
 
-#import "SpecificationProudctObject.h"
+#import "SpecificationAllObject.h"
 
-@implementation SpecificationProudctObject
+@implementation SpecificationAllObject
 
 
 

@@ -11,7 +11,7 @@
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
 		1902C7C01B759F4A009C7A33 /* ProductCatagoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */; };
 		1902C7C31B75B4CD009C7A33 /* ObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7C21B75B4CD009C7A33 /* ObjectMapping.m */; };
-		1902C7C61B773648009C7A33 /* SpecificationProudctObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7C51B773648009C7A33 /* SpecificationProudctObject.m */; };
+		1902C7C61B773648009C7A33 /* SpecificationAllObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7C51B773648009C7A33 /* SpecificationAllObject.m */; };
 		192768DA1B48442F00B86141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768D91B48442F00B86141 /* main.m */; };
 		192768DD1B48442F00B86141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192768DC1B48442F00B86141 /* AppDelegate.m */; };
 		192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192768E61B48442F00B86141 /* LaunchScreen.xib */; };
@@ -163,6 +163,12 @@
 		192BC9E51B88BD5A003B8328 /* LogisticsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9DA1B88BD5A003B8328 /* LogisticsTableViewCell.xib */; };
 		192BC9E61B88BD5A003B8328 /* MyLogisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9DC1B88BD5A003B8328 /* MyLogisticsTableViewCell.m */; };
 		192BC9E71B88BD5A003B8328 /* MyLogisticsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9DD1B88BD5A003B8328 /* MyLogisticsTableViewCell.xib */; };
+		192BC9EB1B896FE8003B8328 /* SpecificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9E91B896FE8003B8328 /* SpecificationTableViewCell.m */; };
+		192BC9EC1B896FE8003B8328 /* SpecificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9EA1B896FE8003B8328 /* SpecificationTableViewCell.xib */; };
+		192BC9F31B89CD97003B8328 /* SpecificationChoseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9F11B89CD97003B8328 /* SpecificationChoseCell.m */; };
+		192BC9F41B89CD97003B8328 /* SpecificationChoseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9F21B89CD97003B8328 /* SpecificationChoseCell.xib */; };
+		192BC9F81B8A1396003B8328 /* SpecificationNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9F61B8A1396003B8328 /* SpecificationNumCell.m */; };
+		192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
 		1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */; };
 		1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8D1B774A00000A8D26 /* ShopObject.m */; };
@@ -202,8 +208,8 @@
 		1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCatagoryObject.m; path = Object/ProductCatagoryObject.m; sourceTree = "<group>"; };
 		1902C7C11B75B4CD009C7A33 /* ObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectMapping.h; path = Object/ObjectMapping.h; sourceTree = "<group>"; };
 		1902C7C21B75B4CD009C7A33 /* ObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectMapping.m; path = Object/ObjectMapping.m; sourceTree = "<group>"; };
-		1902C7C41B773647009C7A33 /* SpecificationProudctObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationProudctObject.h; path = Object/SpecificationProudctObject.h; sourceTree = "<group>"; };
-		1902C7C51B773648009C7A33 /* SpecificationProudctObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationProudctObject.m; path = Object/SpecificationProudctObject.m; sourceTree = "<group>"; };
+		1902C7C41B773647009C7A33 /* SpecificationAllObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationAllObject.h; path = Object/SpecificationAllObject.h; sourceTree = "<group>"; };
+		1902C7C51B773648009C7A33 /* SpecificationAllObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationAllObject.m; path = Object/SpecificationAllObject.m; sourceTree = "<group>"; };
 		192768D41B48442F00B86141 /* CZC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CZC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192768D81B48442F00B86141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192768D91B48442F00B86141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -441,6 +447,15 @@
 		192BC9DB1B88BD5A003B8328 /* MyLogisticsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogisticsTableViewCell.h; sourceTree = "<group>"; };
 		192BC9DC1B88BD5A003B8328 /* MyLogisticsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogisticsTableViewCell.m; sourceTree = "<group>"; };
 		192BC9DD1B88BD5A003B8328 /* MyLogisticsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogisticsTableViewCell.xib; sourceTree = "<group>"; };
+		192BC9E81B896FE8003B8328 /* SpecificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationTableViewCell.h; sourceTree = "<group>"; };
+		192BC9E91B896FE8003B8328 /* SpecificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationTableViewCell.m; sourceTree = "<group>"; };
+		192BC9EA1B896FE8003B8328 /* SpecificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificationTableViewCell.xib; sourceTree = "<group>"; };
+		192BC9F01B89CD97003B8328 /* SpecificationChoseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationChoseCell.h; sourceTree = "<group>"; };
+		192BC9F11B89CD97003B8328 /* SpecificationChoseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationChoseCell.m; sourceTree = "<group>"; };
+		192BC9F21B89CD97003B8328 /* SpecificationChoseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificationChoseCell.xib; sourceTree = "<group>"; };
+		192BC9F51B8A1396003B8328 /* SpecificationNumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationNumCell.h; sourceTree = "<group>"; };
+		192BC9F61B8A1396003B8328 /* SpecificationNumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationNumCell.m; sourceTree = "<group>"; };
+		192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificationNumCell.xib; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
 		1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationOfPriceObject.h; path = Object/SpecificationOfPriceObject.h; sourceTree = "<group>"; };
@@ -519,8 +534,8 @@
 				1902C7B31B74F8DA009C7A33 /* ProductsObject.m */,
 				1902C7BE1B759F4A009C7A33 /* ProductCatagoryObject.h */,
 				1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */,
-				1902C7C41B773647009C7A33 /* SpecificationProudctObject.h */,
-				1902C7C51B773648009C7A33 /* SpecificationProudctObject.m */,
+				1902C7C41B773647009C7A33 /* SpecificationAllObject.h */,
+				1902C7C51B773648009C7A33 /* SpecificationAllObject.m */,
 				1952A66E1B77379D0020F760 /* SpecificationObject.h */,
 				1952A66F1B77379D0020F760 /* SpecificationObject.m */,
 				1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */,
@@ -720,6 +735,15 @@
 				192BC8691B88BC48003B8328 /* ShopTableViewCell.xib */,
 				192BC86A1B88BC48003B8328 /* ZDYScrollView.h */,
 				192BC86B1B88BC48003B8328 /* ZDYScrollView.m */,
+				192BC9E81B896FE8003B8328 /* SpecificationTableViewCell.h */,
+				192BC9E91B896FE8003B8328 /* SpecificationTableViewCell.m */,
+				192BC9EA1B896FE8003B8328 /* SpecificationTableViewCell.xib */,
+				192BC9F01B89CD97003B8328 /* SpecificationChoseCell.h */,
+				192BC9F11B89CD97003B8328 /* SpecificationChoseCell.m */,
+				192BC9F21B89CD97003B8328 /* SpecificationChoseCell.xib */,
+				192BC9F51B8A1396003B8328 /* SpecificationNumCell.h */,
+				192BC9F61B8A1396003B8328 /* SpecificationNumCell.m */,
+				192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1178,6 +1202,7 @@
 				192BC9801B88BC48003B8328 /* LoginViewController.xib in Resources */,
 				192BC9741B88BC48003B8328 /* AddressViewController.xib in Resources */,
 				192BC9B01B88BC48003B8328 /* PayAddressTableViewCell.xib in Resources */,
+				192BC9EC1B896FE8003B8328 /* SpecificationTableViewCell.xib in Resources */,
 				192BC9821B88BC48003B8328 /* LogisticsAssistantViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				192BC97A1B88BC48003B8328 /* EditAddressViewController.xib in Resources */,
@@ -1196,6 +1221,7 @@
 				192BC9B41B88BC48003B8328 /* PayInfoTableViewCell.xib in Resources */,
 				192BC9701B88BC48003B8328 /* ShoppingCarTableViewCell.xib in Resources */,
 				192BC9C71B88BC48003B8328 /* citydict.plist in Resources */,
+				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
 				192BC9901B88BC48003B8328 /* RegisterViewController.xib in Resources */,
@@ -1211,6 +1237,7 @@
 				192BC9721B88BC48003B8328 /* AccountSecurityViewController.xib in Resources */,
 				192BC97C1B88BC48003B8328 /* ForgetPWViewController.xib in Resources */,
 				192BC9911B88BC48003B8328 /* serviceTerm.html in Resources */,
+				192BC9F41B89CD97003B8328 /* SpecificationChoseCell.xib in Resources */,
 				192BC99B1B88BC48003B8328 /* AddressTableViewCell.xib in Resources */,
 				192BC9BF1B88BC48003B8328 /* ShopCollectionCell.xib in Resources */,
 				192BC9651B88BC48003B8328 /* PublicViewController.xib in Resources */,
@@ -1286,7 +1313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1902C7C61B773648009C7A33 /* SpecificationProudctObject.m in Sources */,
+				1902C7C61B773648009C7A33 /* SpecificationAllObject.m in Sources */,
 				1977FD971B774FAE000A8D26 /* ShopCarObject.m in Sources */,
 				192BC9891B88BC48003B8328 /* PersonNewsViewController.m in Sources */,
 				192BC9AF1B88BC48003B8328 /* PayAddressTableViewCell.m in Sources */,
@@ -1333,6 +1360,8 @@
 				192BC9A41B88BC48003B8328 /* LGtitleBarView.m in Sources */,
 				192BC93B1B88BC48003B8328 /* HundredViewController.m in Sources */,
 				192BC9E01B88BD5A003B8328 /* MyLogisticsViewController.m in Sources */,
+				192BC9F81B8A1396003B8328 /* SpecificationNumCell.m in Sources */,
+				192BC9F31B89CD97003B8328 /* SpecificationChoseCell.m in Sources */,
 				192BC9941B88BC48003B8328 /* ShopCollectViewController.m in Sources */,
 				1977FD9A1B77599B000A8D26 /* OrderProductObject.m in Sources */,
 				1977FDA91B776A7E000A8D26 /* CollectProductObject.m in Sources */,
@@ -1345,6 +1374,7 @@
 				192BC9681B88BC48003B8328 /* WGS84TOGCJ02.m in Sources */,
 				192BC96F1B88BC48003B8328 /* ShoppingCarTableViewCell.m in Sources */,
 				192BC9451B88BC48003B8328 /* AdScrollView.m in Sources */,
+				192BC9EB1B896FE8003B8328 /* SpecificationTableViewCell.m in Sources */,
 				192BC9B51B88BC48003B8328 /* PersonNewsTableViewCell.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
 				192BC98D1B88BC48003B8328 /* ProvisionViewController.m in Sources */,

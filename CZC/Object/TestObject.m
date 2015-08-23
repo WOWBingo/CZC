@@ -12,7 +12,7 @@
 #import "ProductCatagoryObject.h"
 #import "SpecificationObject.h"
 #import "SpecificationOfPriceObject.h"
-#import "SpecificationProudctObject.h"
+#import "SpecificationAllObject.h"
 #import "ShopObject.h"
 #import "CommentObject.h"
 #import "ShopCarObject.h"
@@ -156,12 +156,12 @@
 //        }
 //    }];
     
-#pragma mark - 8.规格查询价格
-    /**
-     *8.规格查询价格
-     *http://app.czctgw.com/api/Specification/8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=%E7%89%9B%E4%BB%94%E8%93%9D,234%7CM,665
-     *
-     */
+//#pragma mark - 8.规格查询价格
+//    /**
+//     *8.规格查询价格
+//     *http://app.czctgw.com/api/Specification/8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=%E7%89%9B%E4%BB%94%E8%93%9D,234%7CM,665
+//     *
+//     */
 //    params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234%7CM,665";
 //    [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
 //        NSDictionary *result = myresult;

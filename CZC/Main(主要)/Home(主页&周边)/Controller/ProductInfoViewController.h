@@ -10,6 +10,7 @@
 #import "AdScrollView.h"
 #import "ZDYScrollView.h"
 #import "ChoseProductInfoView.h"
+#import "ProductsObject.h"
 
 @interface ProductInfoViewController : PublicViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -43,5 +44,9 @@
 #pragma  mark - 选择视图
 @property (strong, nonatomic) ChoseProductInfoView *choseProductView;
 @property (strong, nonatomic) UIView *backView;
+
+#pragma  mark - 数据
+@property (strong, nonatomic) NSArray *specificationArray;
+@property (strong, nonatomic) ProductsObject *product;
 
 @end

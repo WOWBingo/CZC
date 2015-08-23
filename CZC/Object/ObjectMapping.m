@@ -11,7 +11,7 @@
 #import "ProductsObject.h"
 #import "ProductCatagoryObject.h"
 #import "SpecificationObject.h"
-#import "SpecificationProudctObject.h"
+#import "SpecificationAllObject.h"
 #import "SpecificationOfPriceObject.h"
 #import "ShopObject.h"
 #import "ShopCarObject.h"
@@ -141,14 +141,14 @@ static ObjectMapping *object = nil;
     /**
      *	产品规格
      */
-    [SpecificationProudctObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+    [SpecificationAllObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
                  @"specificationList" : @"Specification",
                  @"specValueName" : @"SpecValueName",
                  };
     }];
     
-    [SpecificationProudctObject setupObjectClassInArray:^NSDictionary *{
+    [SpecificationAllObject setupObjectClassInArray:^NSDictionary *{
         return @{
                  @"Specification" : @"SpecificationObject",
                  };

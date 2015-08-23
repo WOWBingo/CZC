@@ -13,6 +13,9 @@
 #import "ProductsObject.h"
 #import "Masonry.h"
 #import "ChoseProductInfoView.h"
+#import "SpecificationTableViewCell.h"
+#import "SpecificationObject.h"
+#import "SpecificationAllObject.h"
 
 @interface ProductInfoViewController ()
 
@@ -38,6 +41,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self getProductInfo];
+    [self getProSpecification];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,9 +59,10 @@
         NSDictionary *result = myresult;
         if (result) {
             NSDictionary *dic = [result objectForKey:@"ProductInfo"];
-            ProductsObject *object = [ProductsObject objectWithKeyValues:dic];
-            NSLog(@"6.产品详细------%@",object);
-            NSString *imageStr = object.multiImages;
+            _product = [ProductsObject objectWithKeyValues:dic];
+            NSLog(@"6.产品详细------%@",_product);
+            _choseProductView.product = _product;
+            NSString *imageStr = _product.multiImages;
             NSArray *imageArray = [imageStr componentsSeparatedByString:@","];
             [_headView loadImageData:imageArray];
         }
@@ -66,6 +71,27 @@
         }
     }];
 }
+/**
+ *7.产品规格
+ *	http://app.czctgw.com/api/SpecificationList/8BF39849-C3B8-4529-ABE6-6D3E1DA5227D
+ */
+- (void)getProSpecification{
+    NSString *params = @"8BF39849-C3B8-4529-ABE6-6D3E1DA5227D";
+    [CZCService GETmethod:kProSpecificationList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        if (result) {
+            NSArray *dataArr = [result objectForKey:@"SpecificationProudct"];
+            _specificationArray = [SpecificationAllObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"7.产品规格 ------%@",_specificationArray);
+            _choseProductView.specificationArray = _specificationArray;
+            [_choseProductView.tableView reloadData];//刷新选择页面
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
 
 #pragma mark - 添加各种视图
 /**
@@ -207,14 +233,14 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
-    static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"SpecificationTableViewCell";
+    SpecificationTableViewCell *cell = (SpecificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        //        NSBundle *bundle = [NSBundle mainBundle];
-        //        NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-        //        cell = (<#UITableViewCell#> *)[nibArray objectAtIndex:0];
-        cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld条",(long)row];
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = (SpecificationTableViewCell *)[nibArray objectAtIndex:0];
+        cell.SpecificationNameLabel.text = [NSString stringWithFormat:@"这是第%ld条",(long)row];
+        cell.SpecificationInfoLabel.text = [NSString stringWithFormat:@"这是第%ld条规格的信息，这是第条规格的信息，这是第条规格的信息",(long)row];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -229,6 +255,7 @@
     //添加动画,使之从下移动上
     [UIView animateWithDuration:0.3 animations:^{
         _backView.hidden = NO;
+        [_choseProductView.tableView reloadData];
         [_choseProductView setTransform:CGAffineTransformMakeTranslation(0, 0)];
     } completion:^(BOOL finished) {
         

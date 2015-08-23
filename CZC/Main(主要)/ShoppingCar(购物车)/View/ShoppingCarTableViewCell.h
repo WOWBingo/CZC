@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *centerLab;
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLab;
 @property (weak, nonatomic) IBOutlet UILabel *nowPriceLab;
+@property (nonatomic, strong) HJCAjustNumButton *numBtn;
 @property (nonatomic) int *productNumber;
 
 - (IBAction)addClick:(id)sender;

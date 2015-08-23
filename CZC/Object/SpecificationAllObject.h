@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "SpecificationObject.h"
 
-@interface SpecificationProudctObject : NSObject
+@interface SpecificationAllObject : NSObject
 
 @property (strong, nonatomic) NSMutableArray *specificationList;
 @property (copy, nonatomic) NSString *specValueName;

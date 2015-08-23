@@ -13,6 +13,14 @@
 @interface SpecificationOfPriceObject : NSObject
 
 
+@property (nonatomic, assign) CGFloat goodsPrice;
+
+@property (nonatomic, copy) NSString *goodColor;
+
+@property (nonatomic, assign) CGFloat goodsStock;
+
+@property (nonatomic, copy) NSString *goodsNumber;
+
 @property (nonatomic, copy) NSString *specTotalId;
 
 @property (nonatomic, copy) NSString *tbProp;
@@ -23,15 +31,7 @@
 
 @property (nonatomic, copy) NSString *productGuid;
 
-@property (nonatomic, assign) CGFloat goodsStock;
-
 @property (nonatomic, assign) CGFloat salesCount;
-
-@property (nonatomic, copy) NSString *goodsNumber;
-
-@property (nonatomic, assign) CGFloat goodsPrice;
-
-@property (nonatomic, copy) NSString *goodColor;
 
 
 @end
