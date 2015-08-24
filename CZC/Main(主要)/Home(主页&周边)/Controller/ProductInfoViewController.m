@@ -60,8 +60,14 @@
         if (result) {
             NSDictionary *dic = [result objectForKey:@"ProductInfo"];
             _product = [ProductsObject objectWithKeyValues:dic];
+            
+            [_nameLabel setText:_product.name];
+            [_shopPriceLabel setText:[NSString stringWithFormat:@"￥%.2f",_product.shopPrice]];
+            [_oldPriceLabel setText:[NSString stringWithFormat:@"￥%.2f",_product.marketPrice]];
+            [_zhekouLabel setText:[NSString stringWithFormat:@"%.1f折",_product.shopPrice*10/_product.marketPrice]];
+            
             NSLog(@"6.产品详细------%@",_product);
-            _choseProductView.product = _product;
+            [_choseProductView reloadProduct:_product];
             NSString *imageStr = _product.multiImages;
             NSArray *imageArray = [imageStr componentsSeparatedByString:@","];
             [_headView loadImageData:imageArray];
@@ -240,7 +246,7 @@
         NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
         cell = (SpecificationTableViewCell *)[nibArray objectAtIndex:0];
         cell.SpecificationNameLabel.text = [NSString stringWithFormat:@"这是第%ld条",(long)row];
-        cell.SpecificationInfoLabel.text = [NSString stringWithFormat:@"这是第%ld条规格的信息，这是第条规格的信息，这是第条规格的信息",(long)row];
+        cell.SpecificationInfoLabel.text = [NSString stringWithFormat:@"这是第%ld条参数的信息，这是第条参数的信息，这是第条参数的信息",(long)row];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -280,8 +286,34 @@
 }
 /**
  *	添加购物车
+ * http:app.czctgw.com/api/shoppingcart/
  */
 - (IBAction)addShoppingCar:(id)sender {
+    _choseProductView.defineBtn.hidden = NO;
+    _choseProductView.addShoppingCarBtn.hidden = YES;
+    _choseProductView.buyNowBtn.hidden = YES;
+    [self showChoseView];
+    /**  12.添加购物车(1) http:app.czctgw.com/api/shoppingcart/ */
+        NSDictionary *dic = @{
+                              @"MemLoginID":@"111111",
+                              @"ProductGuid":@"af0c9869-d790-482b-af24-6c8e1e5ada1c",
+                              @"BuyNumber":@"1",
+                              @"BuyPrice":@"234",
+                              @"Attributes":@"",
+                              @"ExtensionAttriutes":@"M",
+                              @"SpecificationName":@"颜色:褐色;鞋码:40",
+                              @"SpecificationValue":@"褐色,3|40,139"
+                              };
+        [CZCService POSTmethod:kShoppingCartAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+            if (myresult) {
+                NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+                NSLog(@"添加购物车结果 ------%ld",result);
+            }
+            else{
+                NSLog(@"失败");
+            }
+        }];
+
 }
 /**
  * 切换图文、参数
@@ -299,6 +331,9 @@
  *	弹出选择页面
  */
 - (IBAction)choseSpecification:(id)sender {
+    _choseProductView.defineBtn.hidden = YES;
+    _choseProductView.addShoppingCarBtn.hidden = NO;
+    _choseProductView.buyNowBtn.hidden = NO;
     [self showChoseView];
 }
 

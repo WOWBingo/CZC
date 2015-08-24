@@ -27,10 +27,11 @@ static CGFloat intervalSize = 10.0f;
     // Configure the view for the selected state
 }
 
-- (void)reloadView:(NSArray *)array{
-    _tags = [[NSMutableArray alloc]initWithArray:array];
+- (void)reloadView:(SpecificationAllObject *)object{
+    _object = object;
+    _tags = [[NSMutableArray alloc]initWithArray:_object.specificationList];
     // 防止block中的循环引用
-    __weak typeof(self) weakSelf = self;
+    //__weak typeof(self) weakSelf = self;
     
     UIButton *lastBtn = nil;
     
@@ -52,6 +53,12 @@ static CGFloat intervalSize = 10.0f;
         CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 0, 0, 0, 1 });//R,G,B,alpha
         [subv.layer setBorderColor:colorref];//设置边框颜色
         [subv addTarget:self action:@selector(choseSpecification:) forControlEvents:UIControlEventTouchUpInside];
+        //传入的值self.tag存在，修改按钮的tag为选中类型
+        if (self.tag == speObject.specValueid) {
+            subv.tag = 1;
+            [subv setBackgroundColor:DominantColor];
+            [subv setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        }
         [_specificationView addSubview:subv];
         
         CGSize sizeName = [specName sizeWithFont:[UIFont systemFontOfSize:fontSize]
@@ -70,7 +77,6 @@ static CGFloat intervalSize = 10.0f;
                     make.top.equalTo(lastBtn.mas_top);
                     make.left.equalTo(lastBtn.mas_right).offset(intervalSize);
                 }
-                
             }
             else
             {
@@ -102,7 +108,16 @@ static CGFloat intervalSize = 10.0f;
     [button setBackgroundColor:DominantColor];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     NSString *specStr = [button titleForState:UIControlStateNormal];
-    _specificationBlock(specStr);
+    //回传选中的规格对象
+    for ( int i = 0 ; i < _tags.count ; ++i )
+    {
+        SpecificationObject *speObject = [SpecificationObject objectWithKeyValues:[_tags objectAtIndex:i]];
+        NSString *specName = speObject.specValueName;
+        if ([specStr isEqualToString:specName]) {
+            _specificationBlock(speObject);
+        }
+    }
+    
 }
 
 

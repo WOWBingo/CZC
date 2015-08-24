@@ -15,7 +15,7 @@
     // 创建对象
     _numBtn = [[HJCAjustNumButton alloc] init];
     // 设置Frame，如不设置则默认为(0, 0, 110, 30)
-    _numBtn.frame = CGRectMake(0, 0, 80, 25);
+    _numBtn.frame = CGRectMake(0, 0, 120, 36);
     // 内容更改的block回调
     // 防止block中的循环引用
     __weak typeof(self) weakSelf = self;
@@ -27,9 +27,9 @@
     [self addSubview:_numBtn];
     [_numBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.mas_right).offset(-40.0);
-        make.top.equalTo(weakSelf.mas_top).offset(16.0);
-        make.height.mas_equalTo(25.0);
-        make.width.mas_equalTo(80.0);
+        make.top.equalTo(weakSelf.mas_top).offset(10.0);
+        make.height.mas_equalTo(36.0);
+        make.width.mas_equalTo(120.0);
     }];
 }
 

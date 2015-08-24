@@ -148,7 +148,7 @@
 //        NSDictionary *result = myresult;
 //        if (result) {
 //            NSArray *dataArr = [result objectForKey:@"SpecificationProudct"];
-//            NSArray *list = [SpecificationProudctObject objectArrayWithKeyValuesArray:dataArr];
+//            NSArray *list = [SpecificationAllObject objectArrayWithKeyValuesArray:dataArr];
 //            NSLog(@"7.产品规格 ------%@",list);
 //        }
 //        else{
@@ -156,12 +156,12 @@
 //        }
 //    }];
     
-//#pragma mark - 8.规格查询价格
-//    /**
-//     *8.规格查询价格
-//     *http://app.czctgw.com/api/Specification/8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=%E7%89%9B%E4%BB%94%E8%93%9D,234%7CM,665
-//     *
-//     */
+#pragma mark - 8.规格查询价格
+    /**
+     *8.规格查询价格
+     *http://app.czctgw.com/api/Specification/8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=%E7%89%9B%E4%BB%94%E8%93%9D,234%7CM,665
+     *
+     */
 //    params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234%7CM,665";
 //    [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
 //        NSDictionary *result = myresult;
@@ -418,10 +418,10 @@
     
     /** 21.判断用户是否存在 /api/account/userexist/111111 */
     
-#pragma mark - 23.产品收藏列表
+#pragma mark - 22.用户注册
     /** 22.用户注册 /api/account/Regist */
 //    NSDictionary *accountDic = @{
-//                          @"MemLoginID" : @"zhou03",
+//                          @"MemLoginID" : @"qaz123",
 //                          @"Pwd" : @"qaz123",
 //                          };
 //    

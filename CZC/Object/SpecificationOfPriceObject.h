@@ -13,25 +13,25 @@
 @interface SpecificationOfPriceObject : NSObject
 
 
-@property (nonatomic, assign) CGFloat goodsPrice;
+@property (nonatomic, assign) CGFloat goodsPrice;/**< 价格 */
 
-@property (nonatomic, copy) NSString *goodColor;
+@property (nonatomic, copy) NSString *goodColor;/**<  */
 
-@property (nonatomic, assign) CGFloat goodsStock;
+@property (nonatomic, assign) NSInteger goodsStock;/**< 库存数 */
 
-@property (nonatomic, copy) NSString *goodsNumber;
+@property (nonatomic, copy) NSString *goodsNumber;/**< 编号 */
 
-@property (nonatomic, copy) NSString *specTotalId;
+@property (nonatomic, copy) NSString *specTotalId;/**<  */
 
-@property (nonatomic, copy) NSString *tbProp;
+@property (nonatomic, copy) NSString *tbProp;/**<  */
 
-@property (nonatomic, copy) NSString *specDetail;
+@property (nonatomic, copy) NSString *specDetail;/**< 传入规格值 */
 
-@property (nonatomic, copy) NSString *shopID;
+@property (nonatomic, copy) NSString *shopID;/**< 店铺id */
 
-@property (nonatomic, copy) NSString *productGuid;
+@property (nonatomic, copy) NSString *productGuid;/**< 产品id */
 
-@property (nonatomic, assign) CGFloat salesCount;
+@property (nonatomic, assign) CGFloat salesCount;/**<  */
 
 
 @end

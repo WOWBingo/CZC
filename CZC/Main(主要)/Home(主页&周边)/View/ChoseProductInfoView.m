@@ -37,7 +37,7 @@
     self = [super initWithCoder:aDecoder];
     if(self)
     {
-        
+        _selectedSpecificationArray = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -68,13 +68,17 @@
         NSBundle *bundle = [NSBundle mainBundle];
         NSArray *nibArray = [bundle loadNibNamed:@"SpecificationNumCell" owner:self options:nil];
         SpecificationNumCell *numCell = (SpecificationNumCell *)[nibArray objectAtIndex:0];
+        [numCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        numCell.numBtn.currentNum = [NSString stringWithFormat:@"%ld",_productNum];
         numCell.numBlock = ^(NSInteger num){
             _productNum = num;
             [self showPrice];
         };
         return numCell;
     }else{
-        SpecificationAllObject *speObject = [_specificationArray objectAtIndex:row];
+        SpecificationAllObject *speAllObject = [_specificationArray objectAtIndex:row];
+        
+        
         static NSString *cellIdentifier = @"SpecificationChoseCell";
         SpecificationChoseCell *cell = (SpecificationChoseCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         if (cell == nil) {
@@ -83,25 +87,38 @@
             cell = (SpecificationChoseCell *)[nibArray objectAtIndex:0];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
-        cell.tag = row;
+        for (int i = 0; i<_selectedSpecificationArray.count; i++) {
+            SpecificationObject *selectedSpecObject = [_selectedSpecificationArray objectAtIndex:i];
+            if ([speAllObject.specValueName isEqualToString:selectedSpecObject.specName]) {
+                cell.tag = selectedSpecObject.specValueid;
+                break;
+            }
+        }
         //回调输出规格
-        cell.specificationBlock = ^(NSString *specStr){
+        cell.specificationBlock = ^(SpecificationObject *specObject){
+            NSLog(@"specStr=========%@----%@----%ld",specObject.specName,specObject.specValueName,specObject.specValueid);
+            //判断选中的规格是否存在相同类型，存在替换，不存在添加
+            BOOL isNotHave = YES;
+            for (int i = 0; i<_selectedSpecificationArray.count; i++) {
+                SpecificationObject *selectedSpecObject = [_selectedSpecificationArray objectAtIndex:i];
+                if ([selectedSpecObject.specName isEqualToString:specObject.specName]) {
+                    [_selectedSpecificationArray replaceObjectAtIndex:i withObject:specObject];
+                    isNotHave = NO;
+                    break;
+                }
+            }
+            if (isNotHave) {
+                [_selectedSpecificationArray addObject:specObject];
+            }
             [self getPriceBySpecification];
         };
-        cell.specificationNameLabel.text = speObject.specValueName;
-        [cell reloadView:speObject.specificationList];
+        cell.specificationNameLabel.text = speAllObject.specValueName;
+        [cell reloadView:speAllObject];
         return cell;
     }
 }
 
 
-- (IBAction)disView:(id)sender {
-    self.dismissView();
-}
-
-- (IBAction)define:(id)sender {
-    self.dismissView();
-}
 
 #pragma mark - 8.规格查询价格
 /**
@@ -110,7 +127,20 @@
  *
  */
 - (void)getPriceBySpecification{
-    NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234%7CM,665";
+//    NSString *params = [NSString stringWithFormat:@"%@?Detail=",_product.guid];
+//    for (int i = 0; i<_selectedSpecificationArray.count; i++) {
+//        SpecificationObject *selectedSpecObject = [_selectedSpecificationArray objectAtIndex:i];
+//        if (i == 0) {
+//            params = [NSString stringWithFormat:@"%@%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+//        }else{
+//            params = [NSString stringWithFormat:@"%@|%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+//        }
+//        
+//    }
+//    NSLog(@"Str=========%@",params);
+    
+    NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234|M,665";
+
     [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         if (result) {
@@ -122,7 +152,19 @@
                // _priceArray = [[NSMutableArray alloc]initWithArray:list];
                 _priceObject = [SpecificationOfPriceObject objectWithKeyValues:dic];
                 _onePrice = _priceObject.goodsPrice;
+                _stockNum = _priceObject.goodsStock;
+                _stockLabel.text = [NSString stringWithFormat:@"￥%ld",_stockNum];
                 [self showPrice];
+//                NSDictionary *dic = @{
+//                                      @"MemLoginID":@"111111",
+//                                      @"ProductGuid":@"af0c9869-d790-482b-af24-6c8e1e5ada1c",
+//                                      @"BuyNumber":@"1",
+//                                      @"BuyPrice":@"234",
+//                                      @"Attributes":@"",
+//                                      @"ExtensionAttriutes":@"M",
+//                                      @"SpecificationName":@"颜色:褐色;鞋码:40",
+//                                      @"SpecificationValue":_priceObject.specDetail
+//                                      };
             }
         }
         else{
@@ -139,7 +181,35 @@
         _allPrice = _priceObject.goodsPrice*_productNum;
         NSLog(@"prcie======%.2f",_allPrice);
         _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",_allPrice];
+        _stockLabel.text = [NSString stringWithFormat:@"%ld",_stockNum];
     }
+}
+
+/**
+ *	刷新对象
+ */
+- (void)reloadProduct:(ProductsObject *)object{
+    self.product = object;
+    _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",_product.shopPrice];
+    _stockLabel.text = [NSString stringWithFormat:@"%ld",_product.repertoryCount];
+    [_imgView setImage:[UIImage imageNamed:@"cpsc-p1"]];
+}
+
+
+- (IBAction)disView:(id)sender {
+    self.dismissView();
+}
+
+- (IBAction)define:(id)sender {
+    self.dismissView();
+}
+
+- (IBAction)buyNow:(id)sender{
+    self.dismissView();
+}
+
+- (IBAction)addShoppingCar:(id)sender {
+    self.dismissView();
 }
 
 @end

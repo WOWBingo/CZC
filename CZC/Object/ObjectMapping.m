@@ -141,6 +141,21 @@ static ObjectMapping *object = nil;
     /**
      *	产品规格
      */
+    
+    [SpecificationOfPriceObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+                 @"specTotalId" : @"SpecTotalId",
+                 @"tbProp" : @"TbProp",
+                 @"specDetail" : @"SpecDetail",
+                 @"shopID" : @"ShopID",
+                 @"productGuid" : @"ProductGuid",
+                 @"goodsStock" : @"GoodsStock",
+                 @"salesCount" : @"SalesCount",
+                 @"goodsNumber" : @"GoodsNumber",
+                 @"goodsPrice" : @"GoodsPrice",
+                 @"goodColor" : @"GoodColor",
+                 };
+    }];
     [SpecificationAllObject setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
                  @"specificationList" : @"Specification",
@@ -165,20 +180,6 @@ static ObjectMapping *object = nil;
                  };
     }];
     
-    [SpecificationOfPriceObject setupReplacedKeyFromPropertyName:^NSDictionary *{
-        return @{
-                 @"specTotalId" : @"SpecTotalId",
-                 @"tbProp" : @"TbProp",
-                 @"specDetail" : @"SpecDetail",
-                 @"shopID" : @"ShopID",
-                 @"productGuid" : @"ProductGuid",
-                 @"goodsStock" : @"GoodsStock",
-                 @"salesCount" : @"SalesCount",
-                 @"goodsNumber" : @"GoodsNumber",
-                 @"goodsPrice" : @"GoodsPrice",
-                 @"goodColor" : @"GoodColor",
-                 };
-    }];
     /**
      *	店铺信息
      */

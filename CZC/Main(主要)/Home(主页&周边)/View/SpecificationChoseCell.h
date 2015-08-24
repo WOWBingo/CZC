@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SpecificationOfPriceObject.h"
+#import "SpecificationAllObject.h"
 
 @interface SpecificationChoseCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *specificationNameLabel;
@@ -15,15 +16,16 @@
 
 #pragma mark - 数据
 @property (nonatomic, strong) NSMutableArray *tags;
+@property (nonatomic, strong) SpecificationAllObject *object;
 
 
 /**
  *	回调
  */
-@property (nonatomic, copy) void (^specificationBlock)(NSString *specificationStr);
+@property (nonatomic, copy) void (^specificationBlock)(SpecificationObject *specification);
 
 
-- (void)reloadView:(NSArray *)array;
+- (void)reloadView:(SpecificationAllObject *)object;
 - (IBAction)choseSpecification:(id)sender;
 
 @end
