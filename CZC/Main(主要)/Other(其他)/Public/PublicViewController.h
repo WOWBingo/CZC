@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PublicViewController.h"
+
 
 @interface PublicViewController:UIViewController
 
+@property(nonatomic ,unsafe_unretained)IBOutlet UILabel *noDataLab;
+@property(nonatomic ,strong)UIBarButtonItem *leftMenuItem;
+@property(nonatomic ,strong)UIBarButtonItem *rightMenuItem;
+@property(nonatomic ,strong)UIBarButtonItem *backMenuItem;
+-(IBAction)backFucntion:(id)sender;
 
 @end

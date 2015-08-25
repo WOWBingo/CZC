@@ -297,7 +297,6 @@
 		192BC8961B88BC48003B8328 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
 		192BC8971B88BC48003B8328 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
 		192BC8981B88BC48003B8328 /* PayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayViewController.xib; sourceTree = "<group>"; };
-		192BC8991B88BC48003B8328 /* PublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
 		192BC89A1B88BC48003B8328 /* ShoppingCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarViewController.h; sourceTree = "<group>"; };
 		192BC89B1B88BC48003B8328 /* ShoppingCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewController.m; sourceTree = "<group>"; };
 		192BC89C1B88BC48003B8328 /* ShoppingCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarViewController.xib; sourceTree = "<group>"; };
@@ -820,7 +819,6 @@
 				192BC8961B88BC48003B8328 /* PayViewController.h */,
 				192BC8971B88BC48003B8328 /* PayViewController.m */,
 				192BC8981B88BC48003B8328 /* PayViewController.xib */,
-				192BC8991B88BC48003B8328 /* PublicViewController.h */,
 				192BC89A1B88BC48003B8328 /* ShoppingCarViewController.h */,
 				192BC89B1B88BC48003B8328 /* ShoppingCarViewController.m */,
 				192BC89C1B88BC48003B8328 /* ShoppingCarViewController.xib */,

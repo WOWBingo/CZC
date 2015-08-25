@@ -38,7 +38,7 @@
 #pragma  mark - 数据
 @property (strong, nonatomic) ProductsObject *product;/**< 产品对象 */
 @property (nonatomic, strong) SpecificationOfPriceObject *priceObject;/**< 查询到的价格对象*/
-@property (strong, nonatomic) NSMutableArray *selectedSpecificationArray;/**< 选中的规格对象数组 */
+@property (strong, nonatomic) NSMutableDictionary *selectedSpecificationDic;/**< 选中的规格对象字典 */
 @property (strong, nonatomic) NSArray *specificationArray;/**< 所有规格对象 */
 
 @property (assign, nonatomic) NSInteger productNum;/**< 购买数 */
@@ -50,7 +50,6 @@
  *	刷新对象
  */
 - (void)reloadProduct:(ProductsObject *)object;
-//@property (nonatomic, strong) NSMutableArray *priceArray;
 
 
 @end

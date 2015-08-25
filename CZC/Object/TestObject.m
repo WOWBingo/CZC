@@ -421,7 +421,7 @@
 #pragma mark - 22.用户注册
     /** 22.用户注册 /api/account/Regist */
 //    NSDictionary *accountDic = @{
-//                          @"MemLoginID" : @"qaz123",
+//                          @"MemLoginID" : @"zhou001",
 //                          @"Pwd" : @"qaz123",
 //                          };
 //    
@@ -530,9 +530,9 @@
     
 #pragma mark - 44.登录
 //    NSDictionary *loginDic = @{
-//                               @"MemLoginID":@"zhou",
+//                               @"MemLoginID":@"zhou001",
 //                               @"Pwd":@"qaz123",
-//                               @"RememberMe":@true,
+//                               @"RememberMe":@"true",
 //                               };
 //    [CZCService POSTmethod:kAccountLogin_URL andDicParameters:loginDic andHandle:^(NSDictionary *myresult) {
 //        if (myresult) {

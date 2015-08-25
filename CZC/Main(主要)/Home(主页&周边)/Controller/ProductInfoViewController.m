@@ -35,8 +35,6 @@
     [_scrollView addSubview:_imgTextView];
     _imgTextView.tag = 1;
     
-    [self changeScrollViewInfo];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -71,6 +69,8 @@
             NSString *imageStr = _product.multiImages;
             NSArray *imageArray = [imageStr componentsSeparatedByString:@","];
             [_headView loadImageData:imageArray];
+            
+            [self changeScrollViewInfo];//显示图文详情
         }
         else{
             NSLog(@"失败");
@@ -159,42 +159,73 @@
     [_scrollView addSubview:_headView];
 }
 /**
+ *	加载图文详情的图片
+ *
+ *	@param image	要加载的图片
+ *	@param height	scrollView的高度
+ *
+ *	@return scrollView的新高度
+ */
+- (CGFloat)loadImages:(UIImage *)image andHeight:(CGFloat)height{
+    
+    __block CGFloat newHeight = height;
+    UIImageView *subv = [[UIImageView alloc]initWithImage:image];
+    CGSize imgSize = image.size;
+    [subv setContentMode:UIViewContentModeScaleAspectFit];
+    [_imgTextView addSubview:subv];
+    
+    [subv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(_imgTextView);
+        //计算高度
+        make.height.mas_equalTo((SCREEN_WIDTH-20)*imgSize.height/imgSize.width);
+        if ( newHeight )
+        {
+            make.top.mas_equalTo(newHeight);//equalTo(lastImageView.mas_bottom).offset(8);
+        }else{
+            make.top.equalTo(_imgTextView.mas_top);
+        }
+        newHeight += ((SCREEN_WIDTH-20)*imgSize.height/imgSize.width)+8;
+    }];
+    [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.top.equalTo(self.segmented.mas_bottom).offset(10);
+        make.left.equalTo(self.view.mas_left);
+        make.height.mas_equalTo(newHeight);//.equalTo(subv.mas_bottom).offset(8);
+    }];
+    [self.nilImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(newHeight);
+    }];
+    return newHeight;
+}
+
+/**
  *	图文、参数切换
  */
 - (void)changeScrollViewInfo{
     if (_imgTextView.tag == 1) {
-        int count = 17;
-        UIImageView *lastImageView = nil;
-        for ( int i = 0 ; i < count ; ++i )
+        __block CGFloat height = 0;
+        for ( int i = 0 ; i < _product.imgList.count ; ++i )
         {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"zy-p%d",i+1]];
-            CGSize imgSize = image.size;
-            UIImageView *subv = [[UIImageView alloc]initWithImage:image];
-            [subv setContentMode:UIViewContentModeScaleAspectFit];
-            [_imgTextView addSubview:subv];
-            
-            [subv mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.and.right.equalTo(_imgTextView);
-                //计算高度
-                make.height.mas_equalTo((SCREEN_WIDTH-20)*imgSize.height/imgSize.width);
-                if ( lastImageView )
-                {
-                    make.top.equalTo(lastImageView.mas_bottom).offset(8);
-                }else{
-                    make.top.equalTo(_imgTextView.mas_top);
-                }
-            }];
-            lastImageView = subv;
+            //查找缓存中是否存在图片，不存在请求地址加载，存入缓存
+            NSString *imageCatchKey = [_product.imgList objectAtIndex:i];
+            NSURL *imageURL = [NSURL URLWithString:imageCatchKey];
+            if([[SDImageCache sharedImageCache] diskImageExistsWithKey:imageCatchKey]){
+                UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imageCatchKey];
+                height = [self loadImages:image andHeight:height];
+            }else{
+                SDWebImageManager *manager = [SDWebImageManager sharedManager];
+                [manager downloadImageWithURL:imageURL
+                                          options:0
+                                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                             // progression tracking code
+                                         }
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                            if (image) {
+                                                height = [self loadImages:image andHeight:height];
+                                            }
+                                        }];
+            }
         }
-        [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(SCREEN_WIDTH);
-            make.top.equalTo(self.segmented.mas_bottom).offset(10);
-            make.left.equalTo(self.view.mas_left);
-            make.bottom.equalTo(lastImageView.mas_bottom).offset(8);
-        }];
-        [self.nilImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(self.imgTextView.mas_height);
-        }];
    }else{
        _paramesTable = [UITableView new];
        _paramesTable.delegate = self;
@@ -253,6 +284,55 @@
     return cell;
 }
 
+#pragma mark - scrollView滚动代理
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat yOffset  = scrollView.contentOffset.y;
+    if ( yOffset < -kShowViewHight*0.7) {
+        CGRect f = _headView.frame;
+        f.origin.y = yOffset+5;
+        f.size.height =  -yOffset;
+        _headView.frame = f;
+        [_headView reloadSize];
+    }
+}
+
+/**
+ * 切换图文、参数
+ */
+- (IBAction)changeSegmented:(id)sender{
+    [_imgTextView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if (_imgTextView.tag == 0) {
+        _imgTextView.tag = 1;
+    }else{
+        _imgTextView.tag = 0;
+    }
+    [self changeScrollViewInfo];
+}
+
+/**
+ *	前往购物车
+ */
+- (IBAction)goShoppingCar:(id)sender {
+}
+/**
+ *	添加购物车
+ * http:app.czctgw.com/api/shoppingcart/
+ */
+- (IBAction)addShoppingCar:(id)sender {
+    _choseProductView.defineBtn.hidden = NO;
+    _choseProductView.addShoppingCarBtn.hidden = YES;
+    _choseProductView.buyNowBtn.hidden = YES;
+    [self showChoseView];
+}
+/**
+ *	弹出选择页面
+ */
+- (IBAction)choseSpecification:(id)sender {
+    _choseProductView.defineBtn.hidden = YES;
+    _choseProductView.addShoppingCarBtn.hidden = NO;
+    _choseProductView.buyNowBtn.hidden = NO;
+    [self showChoseView];
+}
 
 /**
  *	显示选择规则视图
@@ -268,80 +348,5 @@
     }];
 }
 
-#pragma mark - scrollView滚动代理
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat yOffset  = scrollView.contentOffset.y;
-    if ( yOffset < -kShowViewHight*0.7) {
-        CGRect f = _headView.frame;
-        f.origin.y = yOffset+5;
-        f.size.height =  -yOffset;
-        _headView.frame = f;
-        [_headView reloadSize];
-    }
-}
-/**
- *	前往购物车
- */
-- (IBAction)goShoppingCar:(id)sender {
-}
-/**
- *	添加购物车
- * http:app.czctgw.com/api/shoppingcart/
- */
-- (IBAction)addShoppingCar:(id)sender {
-    _choseProductView.defineBtn.hidden = NO;
-    _choseProductView.addShoppingCarBtn.hidden = YES;
-    _choseProductView.buyNowBtn.hidden = YES;
-    [self showChoseView];
-    /**  12.添加购物车(1) http:app.czctgw.com/api/shoppingcart/ */
-        NSDictionary *dic = @{
-                              @"MemLoginID":@"111111",
-                              @"ProductGuid":@"af0c9869-d790-482b-af24-6c8e1e5ada1c",
-                              @"BuyNumber":@"1",
-                              @"BuyPrice":@"234",
-                              @"Attributes":@"",
-                              @"ExtensionAttriutes":@"M",
-                              @"SpecificationName":@"颜色:褐色;鞋码:40",
-                              @"SpecificationValue":@"褐色,3|40,139"
-                              };
-        [CZCService POSTmethod:kShoppingCartAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
-            if (myresult) {
-                NSInteger result = [[myresult objectForKey:@"return"] integerValue];
-                NSLog(@"添加购物车结果 ------%ld",result);
-            }
-            else{
-                NSLog(@"失败");
-            }
-        }];
-
-}
-/**
- * 切换图文、参数
- */
-- (IBAction)changeSegmented:(id)sender{
-    [_imgTextView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    if (_imgTextView.tag == 0) {
-        _imgTextView.tag = 1;
-    }else{
-        _imgTextView.tag = 0;
-    }
-    [self changeScrollViewInfo];
-}
-/**
- *	弹出选择页面
- */
-- (IBAction)choseSpecification:(id)sender {
-    _choseProductView.defineBtn.hidden = YES;
-    _choseProductView.addShoppingCarBtn.hidden = NO;
-    _choseProductView.buyNowBtn.hidden = NO;
-    [self showChoseView];
-}
-
-/**
- *	确定选择
- */
-- (IBAction)defineChose:(id)sender{
-    
-}
 
 @end

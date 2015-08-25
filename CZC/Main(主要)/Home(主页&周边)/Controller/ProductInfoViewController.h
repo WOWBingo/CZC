@@ -28,7 +28,7 @@
 - (IBAction)choseSpecification:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *nilImageView;
 
-@property (strong, nonatomic)  UIView *imgTextView;/**< 图片视图 */
+@property (strong, nonatomic) __block UIView *imgTextView;/**< 图片视图 */
 @property (strong, nonatomic)  UITableView *paramesTable;/**< 参数视图 */
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
 

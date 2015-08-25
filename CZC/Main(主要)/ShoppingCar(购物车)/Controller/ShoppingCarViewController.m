@@ -43,10 +43,10 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 #pragma mark - 11. 购物车列表
-/**11. 购物车列表  http://app.czctgw.com/api/shoppingcart2/a465788 */
+/**11. 购物车列表  http://app.czctgw.com/api/shoppingcart2/a */
 - (void)getShoppingCarData{
 
-    NSString *params = @"a465788";
+    NSString *params = @"111111";
     [CZCService GETmethod:kShoppingCartList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         if (result) {
