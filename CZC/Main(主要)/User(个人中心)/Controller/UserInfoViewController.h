@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZHPickView.h"
+#import "AccoutObject.h"
 @interface UserInfoViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,ZHPickViewDelegate>
 //pickView
 @property(nonatomic,strong)ZHPickView *pickview;
@@ -22,5 +23,7 @@
 @property (nonatomic,strong) UILabel *sex;
 @property (nonatomic,strong) UILabel *age;
 @property (nonatomic,strong) UILabel *tel;
+
+@property (nonatomic,strong)AccoutObject *object;
 
 @end

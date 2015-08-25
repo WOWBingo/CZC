@@ -45,7 +45,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//异步加载图片
+- (void)updateImage:(UIImage *)img{
+    if (img != nil) {
+        [self.iconBtn setImage:img forState:UIControlStateNormal];
+    } else {
+        [self.iconBtn setImage:[UIImage imageNamed:@"cpsc-p1"] forState:UIControlStateNormal];
+    }
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,7 +107,22 @@
                 [self.iconBtn addTarget:self action:@selector(changePhoto) forControlEvents:UIControlEventTouchUpInside];
                 //                NSString *imgurl = [NSString stringWithFormat:@"%@%@",KGetImage_URL,self.user.photourl];
                 //                [self.iconBtn sd_setImageWithURL:[NSURL URLWithString:imgurl] forState:UIControlStateNormal placeholderImage:self.photo];
-                [self.iconBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+                //加载图片
+                NSString *imgURL = @"";
+                imgURL = [PublicObject convertNullString:self.object.url];
+                if ([imgURL isEqualToString:@""]||imgURL == nil) {
+                    [self.iconBtn setImage:[UIImage imageNamed:@"cpsc-p1"] forState:UIControlStateNormal];
+                } else {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        NSString *urlString = [NSString stringWithFormat:@"%@",imgURL];
+                        NSURL *imageUrl = [NSURL URLWithString:urlString];
+                        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+                        UIImage *img = [UIImage imageWithData:imageData];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self updateImage:img];
+                        });
+                    });
+                }
                 cell.selectionStyle = UITableViewCellAccessoryDisclosureIndicator;
                 [cell addSubview:self.iconBtn];
             }
@@ -114,7 +136,7 @@
                 
                 [self.trueName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
                 self.trueName.textAlignment = NSTextAlignmentRight;
-                self.trueName.text = @"刘明凡";
+                self.trueName.text = self.object.realName;
                 self.trueName.textColor = [UIColor grayColor];
                 self.trueName.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellSelectionStyleNone;
@@ -130,7 +152,7 @@
                 
                 [self.userName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
                 self.userName.textAlignment = NSTextAlignmentRight;
-                self.userName.text = @"sam";
+                self.userName.text = self.object.name;
                 self.userName.textColor = [UIColor grayColor];
                 self.userName.font = [UIFont systemFontOfSize:15];
                 cell.selectionStyle = UITableViewCellAccessoryDisclosureIndicator;

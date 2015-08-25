@@ -23,6 +23,9 @@
     self.addressArr = [[NSMutableArray alloc]init];
 //    _tableView.rowHeight = UITableViewAutomaticDimension;
 //    _tableView.estimatedRowHeight = SCREEN_WIDTH;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+
     [self getAddress];
 }
 -(void)getAddress{
@@ -65,6 +68,9 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     cell.delegate = self;
+    cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    //划线
+    [PublicObject drawHorizontalLineOnView:cell andX:8 andY:cell.addressLab.frame.origin.y+cell.addressLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor groupTableViewBackgroundColor]];
     //加载数据
     AddressObject *addressObj = [self.addressArr objectAtIndex:indexPath.row];
     //姓名
@@ -90,7 +96,7 @@
 //    if (IS_IOS8_OR_ABOVE) {
 //        return UITableViewAutomaticDimension;
 //    }else{
-        return SCREEN_WIDTH/3-10;
+        return 120;
 //    }
 }
 

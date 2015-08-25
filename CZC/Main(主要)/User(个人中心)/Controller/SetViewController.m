@@ -333,6 +333,7 @@
 - (IBAction)userInfoVC:(id)sender{
     UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
+    userVC.object = self.object;
     [self.navigationController pushViewController:userVC animated:YES];
 }
 - (IBAction)productCollectVC:(id)sender{
