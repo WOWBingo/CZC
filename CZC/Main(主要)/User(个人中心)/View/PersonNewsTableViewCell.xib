@@ -64,6 +64,9 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="goDetailVCClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KEq-Hq-Rsv"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBG-bu-Drq">
                         <rect key="frame" x="292" y="83" width="20" height="20"/>
@@ -74,6 +77,9 @@
                         <state key="normal" image="rightArrow">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="goDetailVCClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DOL-fM-uit"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您有1999积分到账了！赚积分赢大奖，赚积分去吧，快点加入抢积分的队伍中来吧" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3h-rV-Xky">
                         <rect key="frame" x="14" y="45" width="293" height="30"/>
@@ -104,6 +110,10 @@
                     <constraint firstItem="smR-ad-j2R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="pkp-KQ-k5C"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLab" destination="b3h-rV-Xky" id="NHx-hZ-qUp"/>
+                <outlet property="timeLab" destination="fhx-ha-5NR" id="hlE-AM-eGh"/>
+            </connections>
             <point key="canvasLocation" x="84" y="361"/>
         </tableViewCell>
     </objects>

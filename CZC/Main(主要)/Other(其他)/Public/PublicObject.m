@@ -36,7 +36,29 @@ static PublicObject *publicObject = nil;
     }
     return publicObject;
 }
-
+/**
+ *  显示提示，然后消失
+ *
+ *  @param theView
+ *  @param theTitle
+ *  @param theContent
+ *  @param thTime
+ */
++(void)showHUDView:(id)theView title:(NSString*)theTitle content:(NSString*)theContent time:(float)thTime {
+    
+    UIView *aView        = (id)theView;
+    MBProgressHUD*HUD    = [[MBProgressHUD alloc] initWithView:aView];
+    [aView addSubview:HUD];
+    HUD.labelText        = [NSString stringWithFormat:@"%@",theTitle];
+    HUD.detailsLabelText = [NSString stringWithFormat:@"%@",theContent];
+    HUD.mode             = MBProgressHUDModeText;
+    
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(thTime);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+    }];
+}
 /**
  *  将null转换为空
  *

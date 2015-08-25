@@ -26,10 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgE-8X-zCW">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgE-8X-zCW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-VE-ivk">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="head_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-VE-ivk">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="J7t-oR-O8M"/>
@@ -40,7 +40,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDn-rK-Xbj">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDn-rK-Xbj">
                             <rect key="frame" x="195" y="58" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="CWY-6b-nGM"/>
@@ -56,10 +56,10 @@
                                 <action selector="historyClick:" destination="-1" eventType="touchUpInside" id="rpD-Mm-izb"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanjiao" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-8M-dns">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sanjiao" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-8M-dns">
                             <rect key="frame" x="74" y="142" width="12" height="6"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dn-En-MQh">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dn-En-MQh">
                             <rect key="frame" x="35" y="58" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="GO2-Dc-1KL"/>
@@ -89,7 +89,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanjiao" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-dW-BDi">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sanjiao" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-dW-BDi">
                             <rect key="frame" x="234" y="142" width="12" height="6"/>
                         </imageView>
                     </subviews>
@@ -111,7 +111,7 @@
                         <constraint firstItem="cuS-8M-dns" firstAttribute="centerX" secondItem="wgE-8X-zCW" secondAttribute="centerX" multiplier="0.5" id="uzh-uj-Zco"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zX-YD-TPG">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zX-YD-TPG">
                     <rect key="frame" x="0.0" y="148" width="320" height="420"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-ah-Rd3">
@@ -180,7 +180,7 @@
                         <constraint firstItem="zpb-ah-Rd3" firstAttribute="centerX" secondItem="9zX-YD-TPG" secondAttribute="centerX" multiplier="1.5" id="rru-49-TXH"/>
                     </constraints>
                 </view>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-gB-ctR">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-gB-ctR">
                     <rect key="frame" x="0.0" y="148" width="320" height="412"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -204,7 +204,7 @@
                 <constraint firstAttribute="bottom" secondItem="9zX-YD-TPG" secondAttribute="bottom" id="pgm-Gr-GPl"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="540" y="528"/>
+            <point key="canvasLocation" x="327" y="488"/>
         </view>
     </objects>
     <resources>

@@ -301,7 +301,7 @@
 //        }
 //    }];
     
-#pragma mark - 15.订单详情
+#pragma mark - 15.订单详情！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 15.订单详情 http://app.czctgw.com/api/order/201503091548989 */
 //    params = @"201503091548989";
 //    [CZCService GETmethod:kOrderInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {

@@ -20,4 +20,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)goDetailVCClick:(id)sender {
+    [self.delegate goPersonNewsDetailVC:self.cellIndex];
+}
 @end

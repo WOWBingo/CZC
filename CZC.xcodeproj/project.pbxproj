@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */; };
+		1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */; };
 		1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7B31B74F8DA009C7A33 /* ProductsObject.m */; };
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
 		1902C7C01B759F4A009C7A33 /* ProductCatagoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */; };
@@ -200,6 +202,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1864F1CF1B8B504200458C3F /* PersonNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNewsDetailViewController.h; sourceTree = "<group>"; };
+		1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNewsDetailViewController.m; sourceTree = "<group>"; };
+		1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonNewsDetailViewController.xib; sourceTree = "<group>"; };
+		1864F1D51B8B5D6700458C3F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		1864F1D61B8B5D6700458C3F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1864F1D71B8B5D6700458C3F /* MBProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressView.h; sourceTree = "<group>"; };
+		1864F1D81B8B5D6700458C3F /* MBProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressView.m; sourceTree = "<group>"; };
 		1902C7B21B74F8DA009C7A33 /* ProductsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsObject.h; path = Object/ProductsObject.h; sourceTree = "<group>"; };
 		1902C7B31B74F8DA009C7A33 /* ProductsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsObject.m; path = Object/ProductsObject.m; sourceTree = "<group>"; };
 		1902C7BB1B751AB9009C7A33 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestObject.h; path = Object/TestObject.h; sourceTree = "<group>"; };
@@ -521,6 +530,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1864F1D41B8B5D6700458C3F /* MBProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				1864F1D51B8B5D6700458C3F /* MBProgressHUD.h */,
+				1864F1D61B8B5D6700458C3F /* MBProgressHUD.m */,
+				1864F1D71B8B5D6700458C3F /* MBProgressView.h */,
+				1864F1D81B8B5D6700458C3F /* MBProgressView.m */,
+			);
+			name = MBProgressView;
+			path = ../../../../Documents/wanzhong/HYLottery/HYLottery/Controller/Public/MBProgressView;
+			sourceTree = "<group>";
+		};
 		1918DE571B498CB400BBEB41 /* Object */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +657,7 @@
 		192BC8351B88BC48003B8328 /* Expand(拓展) */ = {
 			isa = PBXGroup;
 			children = (
+				1864F1D41B8B5D6700458C3F /* MBProgressView */,
 			);
 			path = "Expand(拓展)";
 			sourceTree = "<group>";
@@ -894,6 +916,9 @@
 				192BC8CD1B88BC48003B8328 /* PersonNewsViewController.h */,
 				192BC8CE1B88BC48003B8328 /* PersonNewsViewController.m */,
 				192BC8CF1B88BC48003B8328 /* PersonNewsViewController.xib */,
+				1864F1CF1B8B504200458C3F /* PersonNewsDetailViewController.h */,
+				1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */,
+				1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */,
 				192BC8D01B88BC48003B8328 /* ProductCollectViewController.h */,
 				192BC8D11B88BC48003B8328 /* ProductCollectViewController.m */,
 				192BC8D21B88BC48003B8328 /* ProductCollectViewController.xib */,
@@ -1221,6 +1246,7 @@
 				192BC9B41B88BC48003B8328 /* PayInfoTableViewCell.xib in Resources */,
 				192BC9701B88BC48003B8328 /* ShoppingCarTableViewCell.xib in Resources */,
 				192BC9C71B88BC48003B8328 /* citydict.plist in Resources */,
+				1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */,
 				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
@@ -1325,6 +1351,7 @@
 				1977FDA61B7768C7000A8D26 /* AccoutObject.m in Sources */,
 				192BC99C1B88BC48003B8328 /* AutoScrollView.m in Sources */,
 				192BC9A51B88BC48003B8328 /* OrderDetailFourTableViewCell.m in Sources */,
+				1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */,
 				192BC9731B88BC48003B8328 /* AddressViewController.m in Sources */,
 				192BC9871B88BC48003B8328 /* OrderViewController.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,

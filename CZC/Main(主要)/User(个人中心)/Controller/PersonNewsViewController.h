@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PersonNewsViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource>
+#import "PersonNewsTableViewCell.h"
+@interface PersonNewsViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource,PersonNewsCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong)NSMutableArray *newsArr;
+@property (nonatomic)int pageIndex;
+@property (nonatomic)int allPageNum;
 @end
