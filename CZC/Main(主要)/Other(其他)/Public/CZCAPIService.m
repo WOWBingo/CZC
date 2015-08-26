@@ -62,13 +62,37 @@ static CZCAPIService *CAS;
     }];
 }
 
+- (void)POSTUploadWithUrlmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *))handle{
+    NSString *requrl = methodName;
+    requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //2.设定类型. (这里要设置request-response的类型)
+    //manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
+    [manager POST:requrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *doubi = responseObject;
+        NSString *shabi =  [[NSString alloc]initWithData:doubi encoding:NSUTF8StringEncoding];
+        NSLog(@"success========%@====%@",responseObject,shabi);
+        //handle((NSDictionary *) responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        handle(nil);
+    }];
+}
 
--(void)postUploadWithUrl:(NSString *)urlStr fileImage:(UIImage *)image fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail
+
+-(void)postUploadWithUrl:(NSString *)urlStr fileImageData:(NSData *)imageData fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail
 {
     // 本地上传给服务器时,没有确定的URL,不好用MD5的方式处理
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
+    NSDictionary *dic = @{@"memloginid":@"111111" ,
+                          @"originalimage":imageData};
+    [manager POST:urlStr parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         //        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"loginBackGround.png" withExtension:nil];
         //
@@ -80,21 +104,19 @@ static CZCAPIService *CAS;
         //        formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         //        NSString *fileName = [formatter stringFromDate:[NSDate date]];
         
-        NSData *data;
-        if (UIImagePNGRepresentation(image) == nil) {
-            data = UIImageJPEGRepresentation(image, 1);
-        } else {
-            data = UIImagePNGRepresentation(image);
-        }
-        [formData appendPartWithFileData:data name:fileName fileName:fileName mimeType:@"image/png"];
+//        NSData *data;
+//        if (UIImagePNGRepresentation(image) == nil) {
+//            data = UIImageJPEGRepresentation(image, 1);
+//        } else {
+//            data = UIImagePNGRepresentation(image);
+//        }
+        [formData appendPartWithFileData:imageData name:fileName fileName:fileName mimeType:@"image/png"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (success) {
-            success(responseObject);
-        }
+        NSData *doubi = responseObject;
+        NSString *shabi =  [[NSString alloc]initWithData:doubi encoding:NSUTF8StringEncoding];
+        NSLog(@"success========%@====%@",responseObject,shabi);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (fail) {
-            fail();
-        }
+        NSLog(@"Error: %@", error);
     }];
 }
 @end

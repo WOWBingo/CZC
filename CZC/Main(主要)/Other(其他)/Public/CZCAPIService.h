@@ -20,6 +20,8 @@
 
 - (void)POSTmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *myresult))handle;
 
-- (void)postUploadWithUrl:(NSString *)urlStr fileImage:(UIImage *)image fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail;
+- (void)POSTUploadWithUrlmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *myresult))handle;
+
+- (void)postUploadWithUrl:(NSString *)urlStr fileImageData:(NSData *)imageData fileName:(NSString *)fileName success:(void (^)(id responseObject))success fail:(void (^)())fail;
 
 @end

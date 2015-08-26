@@ -19,7 +19,7 @@
 #import "PublicViewController.h"
 #import <MJExtension.h>
 #import <SDWebImage/UIButton+WebCache.h>
-#import "MBProgressView.h"
+//#import "MBProgressView.h"
 #import "MBProgressHUD.h"
 
 #endif
