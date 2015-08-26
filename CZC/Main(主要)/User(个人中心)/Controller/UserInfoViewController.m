@@ -399,6 +399,7 @@
     //     } fail:^{
     //         NSLog(@"777777777777");
     //     }];
+
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {

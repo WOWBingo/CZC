@@ -31,7 +31,7 @@
 -(void)getAddress{
 #pragma mark - 18.收货地址列表
     /** 18.收货地址列表 http://app.czctgw.com/api/address/a465788 */
-        NSString *params = @"a465788";
+        NSString *params = @"liuxing";
         [CZCService GETmethod:kAddressList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
             if (myresult) {
                 NSArray *dataArr = [myresult objectForKey:@"AddressList"];
@@ -73,6 +73,7 @@
     [PublicObject drawHorizontalLineOnView:cell andX:8 andY:cell.addressLab.frame.origin.y+cell.addressLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor groupTableViewBackgroundColor]];
     //加载数据
     AddressObject *addressObj = [self.addressArr objectAtIndex:indexPath.row];
+    cell.addressObj = addressObj;
     //姓名
     cell.nameLab.text = addressObj.name;
     //电话
@@ -109,12 +110,55 @@
     //    switch (indexPath.section) {
     
 }
--(void)setDefaultAddress{
+-(void)setDefaultAddress:(AddressObject *)addressObj{
+#pragma mark - 18.设置默认收货地址
+    /** 18.设置默认收货地址    http://app.czctgw.com//api/address/del/33e36e94-a2e2-4900-aa2a-58a65af5df91?t=2&MemLoginID=liuxing */
+    NSString *melogin = @"liuxing";
+    NSString *temp = [NSString stringWithFormat:@"MemLoginID=%@",melogin];
+    NSString *params = [NSString stringWithFormat:@"%@?t=2&%@",addressObj.guid,temp];
+    [CZCService GETmethod:kAddressDefaultDel_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSNumber *temp = [myresult objectForKey:@"return"];
+            NSString *status = [NSString stringWithFormat:@"%@",temp];
+            NSLog(@"%@",status);
+            if ([status isEqualToString:@"201"]) {
+                NSLog(@"修改默认收货地址成功");
+                [self getAddress];
+            }else{
+                NSLog(@"修改默认收货地址失败");
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+
 }
--(void)pushToEditView{
+-(void)pushToEditView:(AddressObject *)addressObj{
     EditAddressViewController *editAddressVC = [[EditAddressViewController alloc]initWithNibName:@"EditAddressViewController" bundle:nil];
     [self.navigationController pushViewController:editAddressVC animated:YES];
 }
--(void)deleteAddress{
+-(void)deleteAddress:(AddressObject *)addressObj{
+#pragma mark - 18.删除收货地址
+    /** 18.删除收货地址     http://app.czctgw.com//api/address/del/33e36e94-a2e2-4900-aa2a-58a65af5df91?t=1&MemLoginID=liuxing */
+    NSString *melogin = @"liuxing";
+    NSString *temp = [NSString stringWithFormat:@"MemLoginID=%@",melogin];
+    NSString *params = [NSString stringWithFormat:@"%@?t=1&%@",addressObj.guid,temp];
+    [CZCService GETmethod:kAddressDefaultDel_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSNumber *temp = [myresult objectForKey:@"return"];
+            NSString *status = [NSString stringWithFormat:@"%@",temp];
+            NSLog(@"%@",status);
+            if ([status isEqualToString:@"201"]) {
+                NSLog(@"删除收货地址成功");
+                [self getAddress];
+            }else{
+                NSLog(@"删除收货地址失败");
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 @end
