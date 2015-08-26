@@ -362,26 +362,28 @@
         NSDateFormatter *tFormat=[[NSDateFormatter alloc] init];
         [tFormat setDateFormat:@"yyyyMMddHHmmss"];
         NSString *fileName = @"image01.jpg";//[NSString stringWithFormat:@"%@%@.png",self.user.username,[tFormat stringFromDate:[NSDate date]]];
-        //[[MBProgressView shareMBProgressView] showProgressHUD:self.view title:@"正在上传"];
-//        [CZCService postUploadWithUrl:[@"http://www.czctgw.com/api/main/member/uploadpic.ashx" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] fileImage:newImg fileName:fileName success:^(id responseObject) {
-//            NSDictionary *dic = (NSDictionary *)responseObject;
-//             NSLog(@"666666666");
-////            [[FootService getFootService]GETmethod:kUpdatePhoto andParameters:[NSString stringWithFormat:@"%@,%@",self.user.username,fileName] andHandle:^(NSDictionary *myresult) {
-////                NSDictionary *result = myresult;
-////                int status = [[result objectForKey:@"status"]intValue];
-////                [[MBProgressView shareMBProgressView] dissMissProgressHUD];
-////                if (status == 1) {
-////                    [self getUserInfoByUserName:self.user.username];
-////                    [PublicObject showHUDView:self.view title:@"提示" content:@"上传成功" time:kHUDTime];
-////                }
-////                else{
-////                    NSLog(@"失败");
-////                    [PublicObject showHUDView:self.view title:@"提示" content:@"修改失败" time:kHUDTime];
-////                }
-////            }];
-//        } fail:^{
-//            NSLog(@"777777777777");
-//        }];
+    [PublicObject showHUDView:self.view title:@"正在上传" content:@"" time:999999];
+//        [[MBProgressView shareMBProgressView] showProgressHUD:self.view title:@"正在上传"];
+        [CZCService postUploadWithUrl:[@"http://www.czctgw.com/api/main/member/uploadpic.ashx" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] fileImage:newImg fileName:fileName success:^(id responseObject) {
+            NSDictionary *dic = (NSDictionary *)responseObject;
+             NSLog(@"666666666");
+            NSLog(@"%@",dic);
+//            [[FootService getFootService]GETmethod:kUpdatePhoto andParameters:[NSString stringWithFormat:@"%@,%@",self.user.username,fileName] andHandle:^(NSDictionary *myresult) {
+//                NSDictionary *result = myresult;
+//                int status = [[result objectForKey:@"status"]intValue];
+//                [[MBProgressView shareMBProgressView] dissMissProgressHUD];
+//                if (status == 1) {
+//                    [self getUserInfoByUserName:self.user.username];
+//                    [PublicObject showHUDView:self.view title:@"提示" content:@"上传成功" time:kHUDTime];
+//                }
+//                else{
+//                    NSLog(@"失败");
+//                    [PublicObject showHUDView:self.view title:@"提示" content:@"修改失败" time:kHUDTime];
+//                }
+//            }];
+        } fail:^{
+            NSLog(@"777777777777");
+        }];
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
