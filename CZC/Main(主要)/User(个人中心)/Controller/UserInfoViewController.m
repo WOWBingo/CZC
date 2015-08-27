@@ -93,7 +93,7 @@
                 UILabel *iconLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, 60, 40)];
                 iconLab.text = @"头像";
                 iconLab.textColor = [UIColor blackColor];
-                iconLab.font = [UIFont systemFontOfSize:17];
+                iconLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:iconLab];
                 
                 self.iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-80, 10, 40, 40)];
@@ -131,7 +131,7 @@
                 UILabel *trueNameLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 60, 40)];
                 trueNameLab.text = @"用户名";
                 trueNameLab.textColor = [UIColor blackColor];
-                trueNameLab.font = [UIFont systemFontOfSize:17];
+                trueNameLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:trueNameLab];
                 
                 [self.trueName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
@@ -147,7 +147,7 @@
                 UILabel *userNameLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 60, 40)];
                 userNameLab.text = @"昵称";
                 userNameLab.textColor = [UIColor blackColor];
-                userNameLab.font = [UIFont systemFontOfSize:17];
+                userNameLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:userNameLab];
                 
                 [self.userName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
@@ -163,7 +163,7 @@
                 UILabel *sexLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 60, 40)];
                 sexLab.text = @"性别";
                 sexLab.textColor = [UIColor blackColor];
-                sexLab.font = [UIFont systemFontOfSize:17];
+                sexLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:sexLab];
                 
                 [self.sex setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
@@ -179,7 +179,7 @@
                 UILabel *ageLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 80, 40)];
                 ageLab.text = @"出生日期";
                 ageLab.textColor = [UIColor blackColor];
-                ageLab.font = [UIFont systemFontOfSize:17];
+                ageLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:ageLab];
                 
                 [self.age setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
@@ -197,7 +197,7 @@
                 UILabel *addressLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 80, 40)];
                 addressLab.text = @"地址管理";
                 addressLab.textColor = [UIColor blackColor];
-                addressLab.font = [UIFont systemFontOfSize:17];
+                addressLab.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 [cell addSubview:addressLab];
             }
@@ -206,7 +206,7 @@
                 UILabel *accountLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 80, 40)];
                 accountLab.text = @"账户安全";
                 accountLab.textColor = [UIColor blackColor];
-                accountLab.font = [UIFont systemFontOfSize:17];
+                accountLab.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 [cell addSubview:accountLab];
             }
@@ -408,10 +408,8 @@
 - (void) changeDate:(NSNotification*) notification
 
 {
-    
     self.dateStr = [notification object];//获取到传递的对象
     [self.tableView reloadData];
-    
 }
 
 

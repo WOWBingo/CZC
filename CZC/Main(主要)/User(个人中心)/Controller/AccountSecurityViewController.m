@@ -8,6 +8,9 @@
 
 #import "AccountSecurityViewController.h"
 #import "AccountSecurityTableViewCell.h"
+#import "ChangePwdViewController.h"
+#import "ChangePhoneValidateOneViewController.h"
+#import "ChangePayPwdOneViewController.h"
 @interface AccountSecurityViewController ()
 
 @end
@@ -16,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"消息设置";
+    self.title = @"账户安全";
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
 }
@@ -105,6 +108,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%ld",(long)indexPath.row);
+    switch (indexPath.row) {
+        case 0:{
+            ChangePwdViewController *changePwdVC = [[ChangePwdViewController alloc]initWithNibName:@"ChangePwdViewController" bundle:nil];
+            [self.navigationController pushViewController:changePwdVC animated:YES];
+        }
+            break;
+        case 1:{
+            ChangePhoneValidateOneViewController *changePhoneVC = [[ChangePhoneValidateOneViewController alloc]initWithNibName:@"ChangePhoneValidateOneViewController" bundle:nil];
+            [self.navigationController pushViewController:changePhoneVC animated:YES];
+        }
+            break;
+        case 2:{
+            ChangePayPwdOneViewController *changePayPwdVC = [[ChangePayPwdOneViewController alloc]initWithNibName:@"ChangePayPwdOneViewController" bundle:nil];
+            [self.navigationController pushViewController:changePayPwdVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
     
 }
 

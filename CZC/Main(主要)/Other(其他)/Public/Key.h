@@ -233,7 +233,7 @@ UIKIT_EXTERN NSString *const kSortsisASCFalse;
 #define BackGroundColor [UIColor colorWithRed:243.0/255.0 green:244.0/255.0 blue:250.0/255.0 alpha:1.0]
 #define PlaceholderColor [UIColor colorWithRed:89.0/255.0 green:190.0/255.0 blue:231.0/255.0 alpha:0.6]
 #define RGB(Red,Green,Blue,Alpha) [UIColor colorWithRed:Red/255.0 green:Green/255.0 blue:Blue/255.0 alpha:Alpha]
-
+#define ButtonBackGround [UIColor colorWithRed:0.0/255.0 green:160.0/255.0 blue:253.0/255.0 alpha:1]
 #define SCREEN_WIDTH  ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define IS_IOS8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)

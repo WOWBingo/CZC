@@ -9,6 +9,26 @@
 /* Begin PBXBuildFile section */
 		1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */; };
 		1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */; };
+		187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A6A1B8F35E8007324E6 /* ChangePayPwdOneViewController.m */; };
+		187D7A6D1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A6B1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib */; };
+		187D7A711B8F3729007324E6 /* ChangePayPwdTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A6F1B8F3729007324E6 /* ChangePayPwdTwoViewController.m */; };
+		187D7A721B8F3729007324E6 /* ChangePayPwdTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A701B8F3729007324E6 /* ChangePayPwdTwoViewController.xib */; };
+		187D7A761B8F3A7A007324E6 /* AccountBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A741B8F3A7A007324E6 /* AccountBalanceViewController.m */; };
+		187D7A771B8F3A7A007324E6 /* AccountBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A751B8F3A7A007324E6 /* AccountBalanceViewController.xib */; };
+		187D7A7B1B8F3B13007324E6 /* AccountBalanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A791B8F3B13007324E6 /* AccountBalanceTableViewCell.m */; };
+		187D7A7C1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A7A1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib */; };
+		187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A7E1B8F3FA6007324E6 /* BillingDetailsViewController.m */; };
+		187D7A811B8F3FA6007324E6 /* BillingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A7F1B8F3FA6007324E6 /* BillingDetailsViewController.xib */; };
+		187D7A851B8F45F3007324E6 /* BillingDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A831B8F45F3007324E6 /* BillingDetailsTableViewCell.m */; };
+		187D7A861B8F45F3007324E6 /* BillingDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D7A841B8F45F3007324E6 /* BillingDetailsTableViewCell.xib */; };
+		187E335D1B8DFB5300E8617A /* ChangePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E335B1B8DFB5300E8617A /* ChangePwdViewController.m */; };
+		187E335E1B8DFB5300E8617A /* ChangePwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187E335C1B8DFB5300E8617A /* ChangePwdViewController.xib */; };
+		187E33621B8E009D00E8617A /* ChangePhoneValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E33601B8E009D00E8617A /* ChangePhoneValidateViewController.m */; };
+		187E33631B8E009D00E8617A /* ChangePhoneValidateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187E33611B8E009D00E8617A /* ChangePhoneValidateViewController.xib */; };
+		18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */; };
+		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
+		18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */; };
+		18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */; };
 		1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7B31B74F8DA009C7A33 /* ProductsObject.m */; };
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
 		1902C7C01B759F4A009C7A33 /* ProductCatagoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */; };
@@ -209,6 +229,36 @@
 		1864F1D61B8B5D6700458C3F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		1864F1D71B8B5D6700458C3F /* MBProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressView.h; sourceTree = "<group>"; };
 		1864F1D81B8B5D6700458C3F /* MBProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressView.m; sourceTree = "<group>"; };
+		187D7A691B8F35E8007324E6 /* ChangePayPwdOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePayPwdOneViewController.h; sourceTree = "<group>"; };
+		187D7A6A1B8F35E8007324E6 /* ChangePayPwdOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePayPwdOneViewController.m; sourceTree = "<group>"; };
+		187D7A6B1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePayPwdOneViewController.xib; sourceTree = "<group>"; };
+		187D7A6E1B8F3729007324E6 /* ChangePayPwdTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePayPwdTwoViewController.h; sourceTree = "<group>"; };
+		187D7A6F1B8F3729007324E6 /* ChangePayPwdTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePayPwdTwoViewController.m; sourceTree = "<group>"; };
+		187D7A701B8F3729007324E6 /* ChangePayPwdTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePayPwdTwoViewController.xib; sourceTree = "<group>"; };
+		187D7A731B8F3A7A007324E6 /* AccountBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountBalanceViewController.h; sourceTree = "<group>"; };
+		187D7A741B8F3A7A007324E6 /* AccountBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountBalanceViewController.m; sourceTree = "<group>"; };
+		187D7A751B8F3A7A007324E6 /* AccountBalanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountBalanceViewController.xib; sourceTree = "<group>"; };
+		187D7A781B8F3B13007324E6 /* AccountBalanceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountBalanceTableViewCell.h; sourceTree = "<group>"; };
+		187D7A791B8F3B13007324E6 /* AccountBalanceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountBalanceTableViewCell.m; sourceTree = "<group>"; };
+		187D7A7A1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountBalanceTableViewCell.xib; sourceTree = "<group>"; };
+		187D7A7D1B8F3FA6007324E6 /* BillingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingDetailsViewController.h; sourceTree = "<group>"; };
+		187D7A7E1B8F3FA6007324E6 /* BillingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingDetailsViewController.m; sourceTree = "<group>"; };
+		187D7A7F1B8F3FA6007324E6 /* BillingDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingDetailsViewController.xib; sourceTree = "<group>"; };
+		187D7A821B8F45F3007324E6 /* BillingDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingDetailsTableViewCell.h; sourceTree = "<group>"; };
+		187D7A831B8F45F3007324E6 /* BillingDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingDetailsTableViewCell.m; sourceTree = "<group>"; };
+		187D7A841B8F45F3007324E6 /* BillingDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		187E335A1B8DFB5300E8617A /* ChangePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdViewController.h; sourceTree = "<group>"; };
+		187E335B1B8DFB5300E8617A /* ChangePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdViewController.m; sourceTree = "<group>"; };
+		187E335C1B8DFB5300E8617A /* ChangePwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePwdViewController.xib; sourceTree = "<group>"; };
+		187E335F1B8E009D00E8617A /* ChangePhoneValidateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateViewController.h; sourceTree = "<group>"; };
+		187E33601B8E009D00E8617A /* ChangePhoneValidateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateViewController.m; sourceTree = "<group>"; };
+		187E33611B8E009D00E8617A /* ChangePhoneValidateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateViewController.xib; sourceTree = "<group>"; };
+		18CD80261B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateOneViewController.h; sourceTree = "<group>"; };
+		18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateOneViewController.m; sourceTree = "<group>"; };
+		18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateOneViewController.xib; sourceTree = "<group>"; };
+		18CD802B1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateThreeViewController.h; sourceTree = "<group>"; };
+		18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateThreeViewController.m; sourceTree = "<group>"; };
+		18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateThreeViewController.xib; sourceTree = "<group>"; };
 		1902C7B21B74F8DA009C7A33 /* ProductsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsObject.h; path = Object/ProductsObject.h; sourceTree = "<group>"; };
 		1902C7B31B74F8DA009C7A33 /* ProductsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsObject.m; path = Object/ProductsObject.m; sourceTree = "<group>"; };
 		1902C7BB1B751AB9009C7A33 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestObject.h; path = Object/TestObject.h; sourceTree = "<group>"; };
@@ -936,6 +986,30 @@
 				192BC8E01B88BC48003B8328 /* UserInfoViewController.h */,
 				192BC8E11B88BC48003B8328 /* UserInfoViewController.m */,
 				192BC8E21B88BC48003B8328 /* UserInfoViewController.xib */,
+				187E335A1B8DFB5300E8617A /* ChangePwdViewController.h */,
+				187E335B1B8DFB5300E8617A /* ChangePwdViewController.m */,
+				187E335C1B8DFB5300E8617A /* ChangePwdViewController.xib */,
+				18CD80261B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.h */,
+				18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */,
+				18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */,
+				187E335F1B8E009D00E8617A /* ChangePhoneValidateViewController.h */,
+				187E33601B8E009D00E8617A /* ChangePhoneValidateViewController.m */,
+				187E33611B8E009D00E8617A /* ChangePhoneValidateViewController.xib */,
+				18CD802B1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.h */,
+				18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */,
+				18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */,
+				187D7A691B8F35E8007324E6 /* ChangePayPwdOneViewController.h */,
+				187D7A6A1B8F35E8007324E6 /* ChangePayPwdOneViewController.m */,
+				187D7A6B1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib */,
+				187D7A6E1B8F3729007324E6 /* ChangePayPwdTwoViewController.h */,
+				187D7A6F1B8F3729007324E6 /* ChangePayPwdTwoViewController.m */,
+				187D7A701B8F3729007324E6 /* ChangePayPwdTwoViewController.xib */,
+				187D7A731B8F3A7A007324E6 /* AccountBalanceViewController.h */,
+				187D7A741B8F3A7A007324E6 /* AccountBalanceViewController.m */,
+				187D7A751B8F3A7A007324E6 /* AccountBalanceViewController.xib */,
+				187D7A7D1B8F3FA6007324E6 /* BillingDetailsViewController.h */,
+				187D7A7E1B8F3FA6007324E6 /* BillingDetailsViewController.m */,
+				187D7A7F1B8F3FA6007324E6 /* BillingDetailsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1023,6 +1097,12 @@
 				192BC92B1B88BC48003B8328 /* TimeView.xib */,
 				192BC92C1B88BC48003B8328 /* UISegmentedControl */,
 				192BC92F1B88BC48003B8328 /* ZHPickView */,
+				187D7A781B8F3B13007324E6 /* AccountBalanceTableViewCell.h */,
+				187D7A791B8F3B13007324E6 /* AccountBalanceTableViewCell.m */,
+				187D7A7A1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib */,
+				187D7A821B8F45F3007324E6 /* BillingDetailsTableViewCell.h */,
+				187D7A831B8F45F3007324E6 /* BillingDetailsTableViewCell.m */,
+				187D7A841B8F45F3007324E6 /* BillingDetailsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1215,25 +1295,31 @@
 			files = (
 				192BC9421B88BC48003B8328 /* ShopInfoViewController.xib in Resources */,
 				192BC93E1B88BC48003B8328 /* ProductInfoViewController.xib in Resources */,
+				187D7A721B8F3729007324E6 /* ChangePayPwdTwoViewController.xib in Resources */,
 				192BC9E31B88BD5A003B8328 /* LogisticsAssistantTableViewCell.xib in Resources */,
 				192BC9A21B88BC48003B8328 /* InstallTimeTableViewCell.xib in Resources */,
 				192BC96D1B88BC48003B8328 /* HJCAdjustNumButton.bundle in Resources */,
 				192BC94E1B88BC48003B8328 /* HundredTableViewCell.xib in Resources */,
 				192BC9541B88BC48003B8328 /* ShopTableViewCell.xib in Resources */,
+				18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */,
 				192BC97E1B88BC48003B8328 /* InstallViewController.xib in Resources */,
 				19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */,
+				187D7A771B8F3A7A007324E6 /* AccountBalanceViewController.xib in Resources */,
 				192BC9801B88BC48003B8328 /* LoginViewController.xib in Resources */,
 				192BC9741B88BC48003B8328 /* AddressViewController.xib in Resources */,
 				192BC9B01B88BC48003B8328 /* PayAddressTableViewCell.xib in Resources */,
 				192BC9EC1B896FE8003B8328 /* SpecificationTableViewCell.xib in Resources */,
+				187D7A6D1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib in Resources */,
 				192BC9821B88BC48003B8328 /* LogisticsAssistantViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				192BC97A1B88BC48003B8328 /* EditAddressViewController.xib in Resources */,
 				192BC9B61B88BC48003B8328 /* PersonNewsTableViewCell.xib in Resources */,
+				187D7A811B8F3FA6007324E6 /* BillingDetailsViewController.xib in Resources */,
 				192BC9951B88BC48003B8328 /* ShopCollectViewController.xib in Resources */,
 				192BC9781B88BC48003B8328 /* DiscountPromotionViewController.xib in Resources */,
 				192BC9B91B88BC48003B8328 /* ProductCollectCollectionViewCell.xib in Resources */,
 				192BC98C1B88BC48003B8328 /* ProductCollectViewController.xib in Resources */,
+				187D7A861B8F45F3007324E6 /* BillingDetailsTableViewCell.xib in Resources */,
 				192BC9A01B88BC48003B8328 /* EditAddressTableViewCell.xib in Resources */,
 				192BC9BB1B88BC48003B8328 /* SetTitleTableViewCell.xib in Resources */,
 				192BC9441B88BC48003B8328 /* ShopTableViewController.xib in Resources */,
@@ -1245,6 +1331,7 @@
 				192BC9701B88BC48003B8328 /* ShoppingCarTableViewCell.xib in Resources */,
 				192BC9C71B88BC48003B8328 /* citydict.plist in Resources */,
 				1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */,
+				187E335E1B8DFB5300E8617A /* ChangePwdViewController.xib in Resources */,
 				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
@@ -1252,6 +1339,7 @@
 				192BC9AC1B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib in Resources */,
 				192BC93C1B88BC48003B8328 /* HundredViewController.xib in Resources */,
 				192BC9E71B88BD5A003B8328 /* MyLogisticsTableViewCell.xib in Resources */,
+				187D7A7C1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib in Resources */,
 				192BC9E11B88BD5A003B8328 /* MyLogisticsViewController.xib in Resources */,
 				192BC98E1B88BC48003B8328 /* ProvisionViewController.xib in Resources */,
 				192BC9B21B88BC48003B8328 /* PayDeliverTableViewCell.xib in Resources */,
@@ -1263,6 +1351,7 @@
 				192BC9911B88BC48003B8328 /* serviceTerm.html in Resources */,
 				192BC9F41B89CD97003B8328 /* SpecificationChoseCell.xib in Resources */,
 				192BC99B1B88BC48003B8328 /* AddressTableViewCell.xib in Resources */,
+				187E33631B8E009D00E8617A /* ChangePhoneValidateViewController.xib in Resources */,
 				192BC9BF1B88BC48003B8328 /* ShopCollectionCell.xib in Resources */,
 				192BC9651B88BC48003B8328 /* PublicViewController.xib in Resources */,
 				192BC9AA1B88BC48003B8328 /* OrderDetailThreeTableViewCell.xib in Resources */,
@@ -1284,6 +1373,7 @@
 				192BC9DF1B88BD5A003B8328 /* LogisticsViewController.xib in Resources */,
 				192BC9A81B88BC48003B8328 /* OrderDetailOneTableViewCell.xib in Resources */,
 				192BC9C61B88BC48003B8328 /* area.plist in Resources */,
+				18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */,
 				192BC9A61B88BC48003B8328 /* OrderDetailFourTableViewCell.xib in Resources */,
 				192BC9AE1B88BC48003B8328 /* OrderTableViewCell.xib in Resources */,
 				192BC9971B88BC48003B8328 /* UserInfoViewController.xib in Resources */,
@@ -1351,9 +1441,11 @@
 				192BC9A51B88BC48003B8328 /* OrderDetailFourTableViewCell.m in Sources */,
 				1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */,
 				192BC9731B88BC48003B8328 /* AddressViewController.m in Sources */,
+				187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */,
 				192BC9871B88BC48003B8328 /* OrderViewController.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
 				192BC97D1B88BC48003B8328 /* InstallViewController.m in Sources */,
+				187E335D1B8DFB5300E8617A /* ChangePwdViewController.m in Sources */,
 				192BC9C51B88BC48003B8328 /* ZHPickView.m in Sources */,
 				192BC93F1B88BC48003B8328 /* SearchViewController.m in Sources */,
 				1977FDA31B775EE6000A8D26 /* PaymentObject.m in Sources */,
@@ -1363,6 +1455,7 @@
 				192BC9751B88BC48003B8328 /* ChangeUseInfoViewController.m in Sources */,
 				192BC9A11B88BC48003B8328 /* InstallTimeTableViewCell.m in Sources */,
 				192BC9621B88BC48003B8328 /* Key.m in Sources */,
+				187E33621B8E009D00E8617A /* ChangePhoneValidateViewController.m in Sources */,
 				1977FD911B774DF8000A8D26 /* CommentObject.m in Sources */,
 				192BC9371B88BC48003B8328 /* CityListViewController.m in Sources */,
 				192BC99F1B88BC48003B8328 /* EditAddressTableViewCell.m in Sources */,
@@ -1418,15 +1511,19 @@
 				192BC9E41B88BD5A003B8328 /* LogisticsTableViewCell.m in Sources */,
 				192BC9411B88BC48003B8328 /* ShopInfoViewController.m in Sources */,
 				192BC9AD1B88BC48003B8328 /* OrderTableViewCell.m in Sources */,
+				18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */,
 				192BC96B1B88BC48003B8328 /* ShoppingCarViewController.m in Sources */,
+				187D7A851B8F45F3007324E6 /* BillingDetailsTableViewCell.m in Sources */,
 				192BC9831B88BC48003B8328 /* NewsViewController.m in Sources */,
 				192BC9551B88BC48003B8328 /* ZDYScrollView.m in Sources */,
 				192BC9641B88BC48003B8328 /* PublicViewController.m in Sources */,
+				18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */,
 				1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */,
 				1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */,
 				192BC97F1B88BC48003B8328 /* LoginViewController.m in Sources */,
 				192BC9481B88BC48003B8328 /* ChoseProductInfoView.m in Sources */,
 				192BC9B81B88BC48003B8328 /* ProductCollectCollectionViewCell.m in Sources */,
+				187D7A711B8F3729007324E6 /* ChangePayPwdTwoViewController.m in Sources */,
 				1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */,
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
 				192BC94F1B88BC48003B8328 /* HundredYuanCell.m in Sources */,
@@ -1434,9 +1531,12 @@
 				192BC9BE1B88BC48003B8328 /* ShopCollectionCell.m in Sources */,
 				192BC9431B88BC48003B8328 /* ShopTableViewController.m in Sources */,
 				1980242B1B836F240071F63E /* ShopCarProductObject.m in Sources */,
+				187D7A7B1B8F3B13007324E6 /* AccountBalanceTableViewCell.m in Sources */,
 				192BC9A31B88BC48003B8328 /* LGcollectionCell.m in Sources */,
 				192BC99D1B88BC48003B8328 /* DiscountPromotionTableViewCell.m in Sources */,
+				187D7A761B8F3A7A007324E6 /* AccountBalanceViewController.m in Sources */,
 				192BC9AB1B88BC48003B8328 /* OrderDetailTwoTableViewCell.m in Sources */,
+				187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */,
 				192BC94D1B88BC48003B8328 /* HundredTableViewCell.m in Sources */,
 				192BC9C41B88BC48003B8328 /* LjjUISegmentedControl.m in Sources */,
 				192BC9531B88BC48003B8328 /* ShopTableViewCell.m in Sources */,

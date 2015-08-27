@@ -18,6 +18,7 @@
 #import "OrderViewController.h"
 #import "CollectProductObject.h"
 #import "CollectShopObject.h"
+#import "AccountBalanceViewController.h"
 @interface SetViewController ()
 
 @end
@@ -251,29 +252,12 @@
     NSLog(@"%ld",(long)indexPath.row);
     NSLog(@"%ld",(long)indexPath.section);
     switch (indexPath.section) {
-        case 0:
-//            if(indexPath.row == 1){
-//                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
-//                changeInfoVC.title = @"昵称";
-//                changeInfoVC.infoStr = self.user.truename;
-//                changeInfoVC.isTrueName = YES;
-//                changeInfoVC.isSex = NO;
-//                changeInfoVC.isAge = NO;
-//                changeInfoVC.isTel = NO;
-//                [self.navigationController pushViewController:changeInfoVC animated:YES];
-//            }
-//            break;
-//        case 1:
-//            if (indexPath.row == 0) {
-//                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
-//                changeInfoVC.title = @"性别";
-//                changeInfoVC.infoStr = self.user.sex;
-//                changeInfoVC.isTrueName = NO;
-//                changeInfoVC.isSex = YES;
-//                changeInfoVC.isAge = NO;
-//                changeInfoVC.isTel = NO;
-//                [self.navigationController pushViewController:changeInfoVC animated:YES];
-//            }
+        case 1:
+            if (indexPath.row == 0) {
+                AccountBalanceViewController *accountBalanceVC = [[AccountBalanceViewController alloc]initWithNibName:@"AccountBalanceViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:accountBalanceVC animated:YES];
+            }
 //            if (indexPath.row == 1) {
 //                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
 //                changeInfoVC.title = @"年龄";

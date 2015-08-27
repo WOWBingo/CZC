@@ -39,7 +39,6 @@
  *  @return 带有toolbar的pickview
  */
 -(instancetype)initPickviewWithArray:(NSArray *)array isHaveNavControler:(BOOL)isHaveNavControler;
-
 /**
  *   移除本控件
  */
