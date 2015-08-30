@@ -19,6 +19,9 @@
 #import "CollectProductObject.h"
 #import "CollectShopObject.h"
 #import "AccountBalanceViewController.h"
+#import "PointsBalanceViewController.h"
+#import "PointsRechargeViewController.h"
+#import "PointsTransferViewController.h"
 @interface SetViewController ()
 
 @end
@@ -258,26 +261,21 @@
                 self.navigationController.navigationBarHidden = NO;
                 [self.navigationController pushViewController:accountBalanceVC animated:YES];
             }
-//            if (indexPath.row == 1) {
-//                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
-//                changeInfoVC.title = @"年龄";
-//                changeInfoVC.infoStr = [NSString stringWithFormat:@"%i",self.user.age];
-//                changeInfoVC.isTrueName = NO;
-//                changeInfoVC.isSex = NO;
-//                changeInfoVC.isAge = YES;
-//                changeInfoVC.isTel = NO;
-//                [self.navigationController pushViewController:changeInfoVC animated:YES];
-//            }
-//            if (indexPath.row == 2) {
-//                ChangeUseInfoViewController *changeInfoVC = [[ChangeUseInfoViewController alloc]initWithNibName:@"ChangeUseInfoViewController" bundle:nil];
-//                changeInfoVC.title = @"电话";
-//                changeInfoVC.infoStr = self.user.tel;
-//                changeInfoVC.isTrueName = NO;
-//                changeInfoVC.isSex = NO;
-//                changeInfoVC.isAge = NO;
-//                changeInfoVC.isTel = YES;
-//                [self.navigationController pushViewController:changeInfoVC animated:YES];
-//            }
+            if (indexPath.row == 1) {
+                PointsBalanceViewController *pointsBalanceVC = [[PointsBalanceViewController alloc]initWithNibName:@"PointsBalanceViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:pointsBalanceVC animated:YES];
+            }
+            if (indexPath.row == 2) {
+                PointsRechargeViewController *pointsRechargeVC = [[PointsRechargeViewController alloc]initWithNibName:@"PointsRechargeViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:pointsRechargeVC animated:YES];
+            }
+            if (indexPath.row == 3) {
+                PointsTransferViewController *pointsTransferVC = [[PointsTransferViewController alloc]initWithNibName:@"PointsTransferViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:pointsTransferVC animated:YES];
+            }
             break;
         case 2:
             if(indexPath.row == 0){

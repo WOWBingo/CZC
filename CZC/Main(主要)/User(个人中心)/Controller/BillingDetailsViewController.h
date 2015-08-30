@@ -26,5 +26,6 @@
 @property(nonatomic,strong)NSIndexPath *indexPath;
 @property (nonatomic,strong)NSString *dateStr;
 
+@property(nonatomic)bool isOrderForms;//明细
 - (IBAction)chooseTimeClick:(id)sender;
 @end

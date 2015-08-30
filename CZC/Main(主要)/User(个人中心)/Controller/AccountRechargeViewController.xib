@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountRechargeViewController">
+            <connections>
+                <outlet property="firstView" destination="Php-D7-tEr" id="sUU-PC-6gZ"/>
+                <outlet property="firstView_backView" destination="lsL-nu-3B7" id="NKf-OG-6ic"/>
+                <outlet property="firstView_textField" destination="HnU-HO-8h1" id="9TE-qr-9Df"/>
+                <outlet property="firstView_titleLab" destination="Hli-AO-czV" id="ZOq-Ph-g4U"/>
+                <outlet property="nextStepBtn" destination="VDq-ag-UjU" id="IMA-SR-l71"/>
+                <outlet property="secondView" destination="383-qy-DNs" id="ixY-D3-o5l"/>
+                <outlet property="secondView_Btn" destination="Fu8-AT-J98" id="RNd-oa-8Uo"/>
+                <outlet property="secondView_arrowImg" destination="6I7-dV-I0a" id="ioB-IC-k8r"/>
+                <outlet property="secondView_backView" destination="aKO-dL-JaW" id="NWm-SV-bjV"/>
+                <outlet property="secondView_titleLab" destination="q5m-Md-np1" id="sEY-k8-YDz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Php-D7-tEr">
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hli-AO-czV">
+                            <rect key="frame" x="8" y="11" width="56" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="uMb-yH-z8r"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="an-tk-1" translatesAutoresizingMaskIntoConstraints="NO" id="lsL-nu-3B7">
+                            <rect key="frame" x="72" y="8" width="240" height="28"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入充值金额" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HnU-HO-8h1">
+                            <rect key="frame" x="80" y="7" width="225" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="OUG-Ry-jhl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lsL-nu-3B7" firstAttribute="top" secondItem="Php-D7-tEr" secondAttribute="top" constant="8" id="CKA-8t-TVo"/>
+                        <constraint firstItem="Hli-AO-czV" firstAttribute="top" secondItem="Php-D7-tEr" secondAttribute="top" constant="11" id="Mb8-rO-tum"/>
+                        <constraint firstItem="Hli-AO-czV" firstAttribute="leading" secondItem="Php-D7-tEr" secondAttribute="leading" constant="8" id="SaC-3q-ss4"/>
+                        <constraint firstItem="HnU-HO-8h1" firstAttribute="top" secondItem="Php-D7-tEr" secondAttribute="top" constant="7" id="Tjs-LG-F3e"/>
+                        <constraint firstItem="lsL-nu-3B7" firstAttribute="leading" secondItem="Hli-AO-czV" secondAttribute="trailing" constant="8" id="W0r-LV-P4w"/>
+                        <constraint firstItem="HnU-HO-8h1" firstAttribute="leading" secondItem="Hli-AO-czV" secondAttribute="trailing" constant="16" id="ZcE-Km-oPy"/>
+                        <constraint firstAttribute="bottom" secondItem="lsL-nu-3B7" secondAttribute="bottom" constant="8" id="cRc-Ss-pNu"/>
+                        <constraint firstAttribute="trailing" secondItem="HnU-HO-8h1" secondAttribute="trailing" constant="15" id="gMD-rW-Mdc"/>
+                        <constraint firstAttribute="trailing" secondItem="lsL-nu-3B7" secondAttribute="trailing" constant="8" id="kky-oS-vhl"/>
+                        <constraint firstAttribute="height" constant="44" id="w50-9N-iGv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="383-qy-DNs">
+                    <rect key="frame" x="0.0" y="109" width="320" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5m-Md-np1">
+                            <rect key="frame" x="8" y="8" width="56" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Dy3-XA-shN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="an-tk-1" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-dL-JaW">
+                            <rect key="frame" x="72" y="4" width="240" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="oLM-M9-4HT"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu8-AT-J98">
+                            <rect key="frame" x="78" y="5" width="120" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="5RY-Eo-tZx"/>
+                                <constraint firstAttribute="width" constant="120" id="sev-DS-ne5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="支付宝">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseRechargeWayClick:" destination="-1" eventType="touchUpInside" id="j15-pa-Zb0"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="6I7-dV-I0a">
+                            <rect key="frame" x="289" y="14" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="X3m-x0-F9f"/>
+                                <constraint firstAttribute="height" constant="10" id="cpi-XR-TLt"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDq-ag-UjU">
+                            <rect key="frame" x="70" y="62" width="180" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.62745098040000002" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="sDn-xW-RcS"/>
+                            </constraints>
+                            <state key="normal" title="下一步">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="nextStepClick:" destination="-1" eventType="touchUpInside" id="V40-KS-wUZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Fu8-AT-J98" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="5" id="0Aq-ZQ-Qs0"/>
+                        <constraint firstAttribute="trailing" secondItem="6I7-dV-I0a" secondAttribute="trailing" constant="21" id="Aia-NL-lSx"/>
+                        <constraint firstItem="q5m-Md-np1" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="8" id="G7T-0o-6Uh"/>
+                        <constraint firstItem="aKO-dL-JaW" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="4" id="Kfo-N0-8Tu"/>
+                        <constraint firstItem="VDq-ag-UjU" firstAttribute="leading" secondItem="383-qy-DNs" secondAttribute="leading" constant="70" id="NBB-i7-4Bn"/>
+                        <constraint firstItem="VDq-ag-UjU" firstAttribute="top" secondItem="Fu8-AT-J98" secondAttribute="bottom" constant="28" id="Q2m-5J-jQS"/>
+                        <constraint firstItem="6I7-dV-I0a" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="14" id="Ty0-Ld-RDH"/>
+                        <constraint firstAttribute="trailing" secondItem="aKO-dL-JaW" secondAttribute="trailing" constant="8" id="VRw-l5-KcE"/>
+                        <constraint firstItem="aKO-dL-JaW" firstAttribute="leading" secondItem="q5m-Md-np1" secondAttribute="trailing" constant="8" id="YND-XY-hNw"/>
+                        <constraint firstItem="Fu8-AT-J98" firstAttribute="leading" secondItem="q5m-Md-np1" secondAttribute="trailing" constant="14" id="Yq0-yf-SHO"/>
+                        <constraint firstAttribute="height" constant="100" id="fLu-zs-RGf"/>
+                        <constraint firstItem="q5m-Md-np1" firstAttribute="leading" secondItem="383-qy-DNs" secondAttribute="leading" constant="8" id="fUO-uY-CE5"/>
+                        <constraint firstAttribute="trailing" secondItem="VDq-ag-UjU" secondAttribute="trailing" constant="70" id="g1g-Yj-WFC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="383-qy-DNs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KcB-OL-Js0"/>
+                <constraint firstAttribute="trailing" secondItem="383-qy-DNs" secondAttribute="trailing" id="Nhc-K5-mnc"/>
+                <constraint firstItem="Php-D7-tEr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="UpJ-ee-aAP"/>
+                <constraint firstAttribute="trailing" secondItem="Php-D7-tEr" secondAttribute="trailing" id="bjX-CE-O5y"/>
+                <constraint firstItem="Php-D7-tEr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAO-N5-Ulc"/>
+                <constraint firstItem="383-qy-DNs" firstAttribute="top" secondItem="Php-D7-tEr" secondAttribute="bottom" constant="1" id="vAW-mP-tW0"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="462" y="380"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="an-tk-1" width="76" height="21"/>
+        <image name="arrow" width="8" height="14"/>
+    </resources>
+</document>

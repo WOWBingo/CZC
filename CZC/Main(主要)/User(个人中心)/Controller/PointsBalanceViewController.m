@@ -1,33 +1,28 @@
 //
-//  AccountBalanceViewController.m
+//  PointsBalanceViewController.m
 //  CZC
 //
-//  Created by 张浩 on 15/8/27.
+//  Created by 张浩 on 15/8/30.
 //  Copyright (c) 2015年 周德艺. All rights reserved.
 //
 
-#import "AccountBalanceViewController.h"
+#import "PointsBalanceViewController.h"
 #import "AccountBalanceTableViewCell.h"
-#import "BillingDetailsViewController.h"
-#import "AccountRechargeViewController.h"
-@interface AccountBalanceViewController ()
+#import "PotintsDetailsViewController.h"
+
+@interface PointsBalanceViewController ()
 
 @end
 
-@implementation AccountBalanceViewController
+@implementation PointsBalanceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"账户余额";
+    self.title = @"积分余额";
     //tableView多余不显示
-    self.tableView.tableFooterView = [[UIView alloc]init];
+    self.tablewView.tableFooterView = [[UIView alloc]init];
     [self getUserInfo];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 #pragma mark - 20.用户信息
 -(void)getUserInfo{
@@ -39,17 +34,21 @@
             NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
             self.object = [AccoutObject objectWithKeyValues:dic];
             NSLog(@"20.用户信息 ------%@",self.object);
-            [self.tableView reloadData];
+            [self.tablewView reloadData];
         }
         else{
             NSLog(@"失败");
         }
     }];
 }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 #pragma tableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    return 3;
+    
+    return 2;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"AccountBalanceTableViewCell";
@@ -65,24 +64,14 @@
     switch (indexPath.row) {
         case 0:
         {
-            cell.titleLab.text = @"账户余额";
+            cell.titleLab.text = @"积分余额";
             cell.infoLab.hidden = NO;
-            NSString *advancePayment = [NSString stringWithFormat:@"%f",self.object.advancePayment];
-            NSRange range = [advancePayment rangeOfString:@"."];
-            NSInteger location = range.location;
-            advancePayment = [advancePayment substringToIndex:location+3];
-            cell.infoLab.text = [NSString stringWithFormat:@"%@",advancePayment];
+            cell.infoLab.text = [NSString stringWithFormat:@"%ld",(long)self.object.score];
         }
             break;
         case 1:
         {
-            cell.titleLab.text = @"账单明细";
-            cell.infoLab.hidden = YES;
-        }
-            break;
-        case 2:
-        {
-            cell.titleLab.text = @"充值";
+            cell.titleLab.text = @"积分明细";
             cell.infoLab.hidden = YES;
         }
             break;
@@ -94,21 +83,18 @@
 #pragma tableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
-//        case 0:
-//            <#statements#>
-//            break;
+            //        case 0:
+            //            <#statements#>
+            //            break;
         case 1:{
-            BillingDetailsViewController *billingDetailsVC = [[BillingDetailsViewController alloc]initWithNibName:@"BillingDetailsViewController" bundle:nil];
-            [self.navigationController pushViewController:billingDetailsVC animated:YES];
-        }
-            break;
-        case 2:{
-            AccountRechargeViewController *accountRechargeVC = [[AccountRechargeViewController alloc]initWithNibName:@"AccountRechargeViewController" bundle:nil];
-            [self.navigationController pushViewController:accountRechargeVC animated:YES];
+            PotintsDetailsViewController *pointsDetailsVC = [[PotintsDetailsViewController alloc]initWithNibName:@"PotintsDetailsViewController" bundle:nil];
+            [self.navigationController pushViewController:pointsDetailsVC animated:YES];
         }
             break;
         default:
             break;
     }
 }
+
+
 @end

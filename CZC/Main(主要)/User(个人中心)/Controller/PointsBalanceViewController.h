@@ -1,0 +1,15 @@
+//
+//  PointsBalanceViewController.h
+//  CZC
+//
+//  Created by 张浩 on 15/8/30.
+//  Copyright (c) 2015年 周德艺. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "AccoutObject.h"
+@interface PointsBalanceViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tablewView;
+@property (nonatomic,strong)AccoutObject *object;
+@end

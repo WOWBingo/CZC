@@ -92,6 +92,16 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-9Q-WWc">
+                            <rect key="frame" x="77" y="5" width="1" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="K2r-QZ-Ag6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.62745098039215685" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -100,7 +110,10 @@
                         <constraint firstItem="qjC-fK-1e3" firstAttribute="top" secondItem="1lM-lR-gTQ" secondAttribute="bottom" constant="8" id="6hQ-gA-kBQ"/>
                         <constraint firstItem="1lM-lR-gTQ" firstAttribute="leading" secondItem="vVw-jB-Hde" secondAttribute="trailing" constant="58" id="Ddw-uN-HXW"/>
                         <constraint firstItem="1lM-lR-gTQ" firstAttribute="top" secondItem="r8O-Ko-gcZ" secondAttribute="top" constant="7" id="KhV-Is-Ok8"/>
+                        <constraint firstItem="wF3-9Q-WWc" firstAttribute="top" secondItem="r8O-Ko-gcZ" secondAttribute="top" constant="5" id="Kt0-Yq-tpW"/>
                         <constraint firstItem="wCd-Ur-Gi5" firstAttribute="leading" secondItem="1lM-lR-gTQ" secondAttribute="trailing" multiplier="1.45" id="LQb-cO-Dth"/>
+                        <constraint firstItem="wF3-9Q-WWc" firstAttribute="leading" secondItem="i4g-ei-AFr" secondAttribute="trailing" constant="28" id="ed4-k3-eGG"/>
+                        <constraint firstAttribute="bottom" secondItem="wF3-9Q-WWc" secondAttribute="bottom" constant="5" id="fmJ-oD-TkD"/>
                         <constraint firstItem="i4g-ei-AFr" firstAttribute="top" secondItem="r8O-Ko-gcZ" secondAttribute="top" constant="32" id="hc5-fR-V7q"/>
                         <constraint firstItem="qjC-fK-1e3" firstAttribute="centerX" secondItem="1lM-lR-gTQ" secondAttribute="centerX" constant="0.5" id="pqd-h0-DQz"/>
                         <constraint firstAttribute="height" constant="70" id="q1L-CB-JcI"/>
@@ -143,7 +156,7 @@
                 <constraint firstAttribute="bottom" secondItem="rlS-9W-Dfb" secondAttribute="bottom" id="qj6-oC-UNQ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="183" y="313"/>
+            <point key="canvasLocation" x="-28" y="316"/>
         </view>
     </objects>
 </document>

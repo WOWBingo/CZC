@@ -23,7 +23,8 @@
     
     [self.payMakeSureLab setBorderStyle:UITextBorderStyleLine];
     self.payMakeSureLab.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
-    self.payMakeSureLab.layer.borderWidth = 0.5;}
+    self.payMakeSureLab.layer.borderWidth = 0.5;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

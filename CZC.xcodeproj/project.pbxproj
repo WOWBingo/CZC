@@ -25,6 +25,28 @@
 		187E335E1B8DFB5300E8617A /* ChangePwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187E335C1B8DFB5300E8617A /* ChangePwdViewController.xib */; };
 		187E33621B8E009D00E8617A /* ChangePhoneValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E33601B8E009D00E8617A /* ChangePhoneValidateViewController.m */; };
 		187E33631B8E009D00E8617A /* ChangePhoneValidateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187E33611B8E009D00E8617A /* ChangePhoneValidateViewController.xib */; };
+		1888B45E1B92DA3A006E3165 /* BillingReportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B45C1B92DA3A006E3165 /* BillingReportsTableViewCell.m */; };
+		1888B45F1B92DA3A006E3165 /* BillingReportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B45D1B92DA3A006E3165 /* BillingReportsTableViewCell.xib */; };
+		1888B4631B92E188006E3165 /* BillingReportsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4611B92E188006E3165 /* BillingReportsDetailsViewController.m */; };
+		1888B4641B92E188006E3165 /* BillingReportsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4621B92E188006E3165 /* BillingReportsDetailsViewController.xib */; };
+		1888B4681B92E312006E3165 /* BillingReportsDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4661B92E312006E3165 /* BillingReportsDetailsTableViewCell.m */; };
+		1888B4691B92E312006E3165 /* BillingReportsDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4671B92E312006E3165 /* BillingReportsDetailsTableViewCell.xib */; };
+		1888B46D1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B46B1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m */; };
+		1888B46E1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B46C1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib */; };
+		1888B4721B92E88A006E3165 /* AccountRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4701B92E88A006E3165 /* AccountRechargeViewController.m */; };
+		1888B4731B92E88A006E3165 /* AccountRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4711B92E88A006E3165 /* AccountRechargeViewController.xib */; };
+		1888B4761B92F7FC006E3165 /* RechargeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4751B92F7FC006E3165 /* RechargeView.m */; };
+		1888B4781B92F809006E3165 /* RechargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4771B92F809006E3165 /* RechargeView.xib */; };
+		1888B47C1B930031006E3165 /* PointsBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B47A1B930031006E3165 /* PointsBalanceViewController.m */; };
+		1888B47D1B930031006E3165 /* PointsBalanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B47B1B930031006E3165 /* PointsBalanceViewController.xib */; };
+		1888B4811B930282006E3165 /* PotintsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B47F1B930282006E3165 /* PotintsDetailsViewController.m */; };
+		1888B4821B930282006E3165 /* PotintsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4801B930282006E3165 /* PotintsDetailsViewController.xib */; };
+		1888B4861B930355006E3165 /* PotintsDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4841B930355006E3165 /* PotintsDetailsTableViewCell.m */; };
+		1888B4871B930355006E3165 /* PotintsDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B4851B930355006E3165 /* PotintsDetailsTableViewCell.xib */; };
+		1888B48B1B93093B006E3165 /* PointsRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B4891B93093B006E3165 /* PointsRechargeViewController.m */; };
+		1888B48C1B93093B006E3165 /* PointsRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48A1B93093B006E3165 /* PointsRechargeViewController.xib */; };
+		1888B4901B930AB0006E3165 /* PointsTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */; };
+		1888B4911B930AB0006E3165 /* PointsTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */; };
 		18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */; };
 		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
 		18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */; };
@@ -253,6 +275,39 @@
 		187E335F1B8E009D00E8617A /* ChangePhoneValidateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateViewController.h; sourceTree = "<group>"; };
 		187E33601B8E009D00E8617A /* ChangePhoneValidateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateViewController.m; sourceTree = "<group>"; };
 		187E33611B8E009D00E8617A /* ChangePhoneValidateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateViewController.xib; sourceTree = "<group>"; };
+		1888B45B1B92DA3A006E3165 /* BillingReportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingReportsTableViewCell.h; sourceTree = "<group>"; };
+		1888B45C1B92DA3A006E3165 /* BillingReportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingReportsTableViewCell.m; sourceTree = "<group>"; };
+		1888B45D1B92DA3A006E3165 /* BillingReportsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingReportsTableViewCell.xib; sourceTree = "<group>"; };
+		1888B4601B92E188006E3165 /* BillingReportsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingReportsDetailsViewController.h; sourceTree = "<group>"; };
+		1888B4611B92E188006E3165 /* BillingReportsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingReportsDetailsViewController.m; sourceTree = "<group>"; };
+		1888B4621B92E188006E3165 /* BillingReportsDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingReportsDetailsViewController.xib; sourceTree = "<group>"; };
+		1888B4651B92E312006E3165 /* BillingReportsDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingReportsDetailsTableViewCell.h; sourceTree = "<group>"; };
+		1888B4661B92E312006E3165 /* BillingReportsDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingReportsDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1888B4671B92E312006E3165 /* BillingReportsDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingReportsDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		1888B46A1B92E5A1006E3165 /* BillingOrdersDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingOrdersDetailsViewController.h; sourceTree = "<group>"; };
+		1888B46B1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingOrdersDetailsViewController.m; sourceTree = "<group>"; };
+		1888B46C1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BillingOrdersDetailsViewController.xib; sourceTree = "<group>"; };
+		1888B46F1B92E88A006E3165 /* AccountRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRechargeViewController.h; sourceTree = "<group>"; };
+		1888B4701B92E88A006E3165 /* AccountRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRechargeViewController.m; sourceTree = "<group>"; };
+		1888B4711B92E88A006E3165 /* AccountRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountRechargeViewController.xib; sourceTree = "<group>"; };
+		1888B4741B92F7FC006E3165 /* RechargeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeView.h; sourceTree = "<group>"; };
+		1888B4751B92F7FC006E3165 /* RechargeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeView.m; sourceTree = "<group>"; };
+		1888B4771B92F809006E3165 /* RechargeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeView.xib; sourceTree = "<group>"; };
+		1888B4791B930031006E3165 /* PointsBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsBalanceViewController.h; sourceTree = "<group>"; };
+		1888B47A1B930031006E3165 /* PointsBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsBalanceViewController.m; sourceTree = "<group>"; };
+		1888B47B1B930031006E3165 /* PointsBalanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsBalanceViewController.xib; sourceTree = "<group>"; };
+		1888B47E1B930282006E3165 /* PotintsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotintsDetailsViewController.h; sourceTree = "<group>"; };
+		1888B47F1B930282006E3165 /* PotintsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotintsDetailsViewController.m; sourceTree = "<group>"; };
+		1888B4801B930282006E3165 /* PotintsDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotintsDetailsViewController.xib; sourceTree = "<group>"; };
+		1888B4831B930355006E3165 /* PotintsDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotintsDetailsTableViewCell.h; sourceTree = "<group>"; };
+		1888B4841B930355006E3165 /* PotintsDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotintsDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1888B4851B930355006E3165 /* PotintsDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotintsDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		1888B4881B93093B006E3165 /* PointsRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsRechargeViewController.h; sourceTree = "<group>"; };
+		1888B4891B93093B006E3165 /* PointsRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsRechargeViewController.m; sourceTree = "<group>"; };
+		1888B48A1B93093B006E3165 /* PointsRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsRechargeViewController.xib; sourceTree = "<group>"; };
+		1888B48D1B930AB0006E3165 /* PointsTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsTransferViewController.h; sourceTree = "<group>"; };
+		1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsTransferViewController.m; sourceTree = "<group>"; };
+		1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsTransferViewController.xib; sourceTree = "<group>"; };
 		18CD80261B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateOneViewController.h; sourceTree = "<group>"; };
 		18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateOneViewController.m; sourceTree = "<group>"; };
 		18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateOneViewController.xib; sourceTree = "<group>"; };
@@ -1010,6 +1065,27 @@
 				187D7A7D1B8F3FA6007324E6 /* BillingDetailsViewController.h */,
 				187D7A7E1B8F3FA6007324E6 /* BillingDetailsViewController.m */,
 				187D7A7F1B8F3FA6007324E6 /* BillingDetailsViewController.xib */,
+				1888B4601B92E188006E3165 /* BillingReportsDetailsViewController.h */,
+				1888B4611B92E188006E3165 /* BillingReportsDetailsViewController.m */,
+				1888B4621B92E188006E3165 /* BillingReportsDetailsViewController.xib */,
+				1888B46A1B92E5A1006E3165 /* BillingOrdersDetailsViewController.h */,
+				1888B46B1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m */,
+				1888B46C1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib */,
+				1888B46F1B92E88A006E3165 /* AccountRechargeViewController.h */,
+				1888B4701B92E88A006E3165 /* AccountRechargeViewController.m */,
+				1888B4711B92E88A006E3165 /* AccountRechargeViewController.xib */,
+				1888B4791B930031006E3165 /* PointsBalanceViewController.h */,
+				1888B47A1B930031006E3165 /* PointsBalanceViewController.m */,
+				1888B47B1B930031006E3165 /* PointsBalanceViewController.xib */,
+				1888B47E1B930282006E3165 /* PotintsDetailsViewController.h */,
+				1888B47F1B930282006E3165 /* PotintsDetailsViewController.m */,
+				1888B4801B930282006E3165 /* PotintsDetailsViewController.xib */,
+				1888B4881B93093B006E3165 /* PointsRechargeViewController.h */,
+				1888B4891B93093B006E3165 /* PointsRechargeViewController.m */,
+				1888B48A1B93093B006E3165 /* PointsRechargeViewController.xib */,
+				1888B48D1B930AB0006E3165 /* PointsTransferViewController.h */,
+				1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */,
+				1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1103,6 +1179,18 @@
 				187D7A821B8F45F3007324E6 /* BillingDetailsTableViewCell.h */,
 				187D7A831B8F45F3007324E6 /* BillingDetailsTableViewCell.m */,
 				187D7A841B8F45F3007324E6 /* BillingDetailsTableViewCell.xib */,
+				1888B45B1B92DA3A006E3165 /* BillingReportsTableViewCell.h */,
+				1888B45C1B92DA3A006E3165 /* BillingReportsTableViewCell.m */,
+				1888B45D1B92DA3A006E3165 /* BillingReportsTableViewCell.xib */,
+				1888B4651B92E312006E3165 /* BillingReportsDetailsTableViewCell.h */,
+				1888B4661B92E312006E3165 /* BillingReportsDetailsTableViewCell.m */,
+				1888B4671B92E312006E3165 /* BillingReportsDetailsTableViewCell.xib */,
+				1888B4741B92F7FC006E3165 /* RechargeView.h */,
+				1888B4751B92F7FC006E3165 /* RechargeView.m */,
+				1888B4771B92F809006E3165 /* RechargeView.xib */,
+				1888B4831B930355006E3165 /* PotintsDetailsTableViewCell.h */,
+				1888B4841B930355006E3165 /* PotintsDetailsTableViewCell.m */,
+				1888B4851B930355006E3165 /* PotintsDetailsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1296,13 +1384,17 @@
 				192BC9421B88BC48003B8328 /* ShopInfoViewController.xib in Resources */,
 				192BC93E1B88BC48003B8328 /* ProductInfoViewController.xib in Resources */,
 				187D7A721B8F3729007324E6 /* ChangePayPwdTwoViewController.xib in Resources */,
+				1888B4641B92E188006E3165 /* BillingReportsDetailsViewController.xib in Resources */,
 				192BC9E31B88BD5A003B8328 /* LogisticsAssistantTableViewCell.xib in Resources */,
 				192BC9A21B88BC48003B8328 /* InstallTimeTableViewCell.xib in Resources */,
 				192BC96D1B88BC48003B8328 /* HJCAdjustNumButton.bundle in Resources */,
 				192BC94E1B88BC48003B8328 /* HundredTableViewCell.xib in Resources */,
 				192BC9541B88BC48003B8328 /* ShopTableViewCell.xib in Resources */,
 				18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */,
+				1888B48C1B93093B006E3165 /* PointsRechargeViewController.xib in Resources */,
+				1888B47D1B930031006E3165 /* PointsBalanceViewController.xib in Resources */,
 				192BC97E1B88BC48003B8328 /* InstallViewController.xib in Resources */,
+				1888B4731B92E88A006E3165 /* AccountRechargeViewController.xib in Resources */,
 				19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */,
 				187D7A771B8F3A7A007324E6 /* AccountBalanceViewController.xib in Resources */,
 				192BC9801B88BC48003B8328 /* LoginViewController.xib in Resources */,
@@ -1315,6 +1407,7 @@
 				192BC97A1B88BC48003B8328 /* EditAddressViewController.xib in Resources */,
 				192BC9B61B88BC48003B8328 /* PersonNewsTableViewCell.xib in Resources */,
 				187D7A811B8F3FA6007324E6 /* BillingDetailsViewController.xib in Resources */,
+				1888B4871B930355006E3165 /* PotintsDetailsTableViewCell.xib in Resources */,
 				192BC9951B88BC48003B8328 /* ShopCollectViewController.xib in Resources */,
 				192BC9781B88BC48003B8328 /* DiscountPromotionViewController.xib in Resources */,
 				192BC9B91B88BC48003B8328 /* ProductCollectCollectionViewCell.xib in Resources */,
@@ -1324,10 +1417,12 @@
 				192BC9BB1B88BC48003B8328 /* SetTitleTableViewCell.xib in Resources */,
 				192BC9441B88BC48003B8328 /* ShopTableViewController.xib in Resources */,
 				192BC9381B88BC48003B8328 /* CityListViewController.xib in Resources */,
+				1888B4821B930282006E3165 /* PotintsDetailsViewController.xib in Resources */,
 				192BC9C91B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc in Resources */,
 				192BC9BD1B88BC48003B8328 /* SetUpTableViewCell.xib in Resources */,
 				192BC9491B88BC48003B8328 /* ChoseProductInfoView.xib in Resources */,
 				192BC9B41B88BC48003B8328 /* PayInfoTableViewCell.xib in Resources */,
+				1888B45F1B92DA3A006E3165 /* BillingReportsTableViewCell.xib in Resources */,
 				192BC9701B88BC48003B8328 /* ShoppingCarTableViewCell.xib in Resources */,
 				192BC9C71B88BC48003B8328 /* citydict.plist in Resources */,
 				1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */,
@@ -1335,6 +1430,7 @@
 				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
+				1888B46E1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib in Resources */,
 				192BC9901B88BC48003B8328 /* RegisterViewController.xib in Resources */,
 				192BC9AC1B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib in Resources */,
 				192BC93C1B88BC48003B8328 /* HundredViewController.xib in Resources */,
@@ -1344,6 +1440,7 @@
 				192BC98E1B88BC48003B8328 /* ProvisionViewController.xib in Resources */,
 				192BC9B21B88BC48003B8328 /* PayDeliverTableViewCell.xib in Resources */,
 				192BC9521B88BC48003B8328 /* ProductTableInfoCell.xib in Resources */,
+				1888B4691B92E312006E3165 /* BillingReportsDetailsTableViewCell.xib in Resources */,
 				192BC96A1B88BC48003B8328 /* PayViewController.xib in Resources */,
 				192BC94C1B88BC48003B8328 /* HomeViewCell.xib in Resources */,
 				192BC9721B88BC48003B8328 /* AccountSecurityViewController.xib in Resources */,
@@ -1367,6 +1464,7 @@
 				192BC9C11B88BC48003B8328 /* ShopCollectTableViewCell.xib in Resources */,
 				192BC9471B88BC48003B8328 /* ChooseCityHeadView.xib in Resources */,
 				192BC9401B88BC48003B8328 /* SearchViewController.xib in Resources */,
+				1888B4911B930AB0006E3165 /* PointsTransferViewController.xib in Resources */,
 				192BC9861B88BC48003B8328 /* OrderDetailViewController.xib in Resources */,
 				192BC98A1B88BC48003B8328 /* PersonNewsViewController.xib in Resources */,
 				192BC9841B88BC48003B8328 /* NewsViewController.xib in Resources */,
@@ -1375,6 +1473,7 @@
 				192BC9C61B88BC48003B8328 /* area.plist in Resources */,
 				18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */,
 				192BC9A61B88BC48003B8328 /* OrderDetailFourTableViewCell.xib in Resources */,
+				1888B4781B92F809006E3165 /* RechargeView.xib in Resources */,
 				192BC9AE1B88BC48003B8328 /* OrderTableViewCell.xib in Resources */,
 				192BC9971B88BC48003B8328 /* UserInfoViewController.xib in Resources */,
 			);
@@ -1428,6 +1527,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1902C7C61B773648009C7A33 /* SpecificationAllObject.m in Sources */,
+				1888B4861B930355006E3165 /* PotintsDetailsTableViewCell.m in Sources */,
+				1888B4721B92E88A006E3165 /* AccountRechargeViewController.m in Sources */,
 				1977FD971B774FAE000A8D26 /* ShopCarObject.m in Sources */,
 				192BC9891B88BC48003B8328 /* PersonNewsViewController.m in Sources */,
 				192BC9AF1B88BC48003B8328 /* PayAddressTableViewCell.m in Sources */,
@@ -1439,6 +1540,7 @@
 				1977FDA61B7768C7000A8D26 /* AccoutObject.m in Sources */,
 				192BC99C1B88BC48003B8328 /* AutoScrollView.m in Sources */,
 				192BC9A51B88BC48003B8328 /* OrderDetailFourTableViewCell.m in Sources */,
+				1888B46D1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m in Sources */,
 				1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */,
 				192BC9731B88BC48003B8328 /* AddressViewController.m in Sources */,
 				187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */,
@@ -1450,9 +1552,12 @@
 				192BC93F1B88BC48003B8328 /* SearchViewController.m in Sources */,
 				1977FDA31B775EE6000A8D26 /* PaymentObject.m in Sources */,
 				192BC9851B88BC48003B8328 /* OrderDetailViewController.m in Sources */,
+				1888B4631B92E188006E3165 /* BillingReportsDetailsViewController.m in Sources */,
 				192BC9921B88BC48003B8328 /* SetViewController.m in Sources */,
+				1888B48B1B93093B006E3165 /* PointsRechargeViewController.m in Sources */,
 				192BC9C01B88BC48003B8328 /* ShopCollectTableViewCell.m in Sources */,
 				192BC9751B88BC48003B8328 /* ChangeUseInfoViewController.m in Sources */,
+				1888B4681B92E312006E3165 /* BillingReportsDetailsTableViewCell.m in Sources */,
 				192BC9A11B88BC48003B8328 /* InstallTimeTableViewCell.m in Sources */,
 				192BC9621B88BC48003B8328 /* Key.m in Sources */,
 				187E33621B8E009D00E8617A /* ChangePhoneValidateViewController.m in Sources */,
@@ -1460,6 +1565,7 @@
 				192BC9371B88BC48003B8328 /* CityListViewController.m in Sources */,
 				192BC99F1B88BC48003B8328 /* EditAddressTableViewCell.m in Sources */,
 				192BC9601B88BC48003B8328 /* MainViewController.m in Sources */,
+				1888B4761B92F7FC006E3165 /* RechargeView.m in Sources */,
 				192BC9981B88BC48003B8328 /* AccountSecurityTableViewCell.m in Sources */,
 				192BC9771B88BC48003B8328 /* DiscountPromotionViewController.m in Sources */,
 				192BC9B11B88BC48003B8328 /* PayDeliverTableViewCell.m in Sources */,
@@ -1469,6 +1575,7 @@
 				192768DD1B48442F00B86141 /* AppDelegate.m in Sources */,
 				192BC94A1B88BC48003B8328 /* HomeViewButton.m in Sources */,
 				192BC9961B88BC48003B8328 /* UserInfoViewController.m in Sources */,
+				1888B4811B930282006E3165 /* PotintsDetailsViewController.m in Sources */,
 				192BC9511B88BC48003B8328 /* ProductTableInfoCell.m in Sources */,
 				192BC9661B88BC48003B8328 /* RefreshLocation.m in Sources */,
 				192BC9611B88BC48003B8328 /* CZCAPIService.m in Sources */,
@@ -1494,6 +1601,7 @@
 				192BC9451B88BC48003B8328 /* AdScrollView.m in Sources */,
 				192BC9EB1B896FE8003B8328 /* SpecificationTableViewCell.m in Sources */,
 				192BC9B51B88BC48003B8328 /* PersonNewsTableViewCell.m in Sources */,
+				1888B4901B930AB0006E3165 /* PointsTransferViewController.m in Sources */,
 				192768DA1B48442F00B86141 /* main.m in Sources */,
 				192BC98D1B88BC48003B8328 /* ProvisionViewController.m in Sources */,
 				192BC98B1B88BC48003B8328 /* ProductCollectViewController.m in Sources */,
@@ -1527,6 +1635,7 @@
 				1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */,
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
 				192BC94F1B88BC48003B8328 /* HundredYuanCell.m in Sources */,
+				1888B45E1B92DA3A006E3165 /* BillingReportsTableViewCell.m in Sources */,
 				192BC93D1B88BC48003B8328 /* ProductInfoViewController.m in Sources */,
 				192BC9BE1B88BC48003B8328 /* ShopCollectionCell.m in Sources */,
 				192BC9431B88BC48003B8328 /* ShopTableViewController.m in Sources */,
@@ -1535,6 +1644,7 @@
 				192BC9A31B88BC48003B8328 /* LGcollectionCell.m in Sources */,
 				192BC99D1B88BC48003B8328 /* DiscountPromotionTableViewCell.m in Sources */,
 				187D7A761B8F3A7A007324E6 /* AccountBalanceViewController.m in Sources */,
+				1888B47C1B930031006E3165 /* PointsBalanceViewController.m in Sources */,
 				192BC9AB1B88BC48003B8328 /* OrderDetailTwoTableViewCell.m in Sources */,
 				187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */,
 				192BC94D1B88BC48003B8328 /* HundredTableViewCell.m in Sources */,
