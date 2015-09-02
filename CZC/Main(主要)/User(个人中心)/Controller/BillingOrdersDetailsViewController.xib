@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BillingOrdersDetailsViewController">
+            <connections>
+                <outlet property="firstView" destination="dzl-Yy-8tG" id="0qA-jk-WoX"/>
+                <outlet property="firstView_lab" destination="zwr-fa-l2u" id="HBL-YX-QRp"/>
+                <outlet property="secondView" destination="oDe-Dn-CNu" id="bdX-vT-1FI"/>
+                <outlet property="secondView_amountLab" destination="u8K-JU-3Vo" id="FtG-nu-Zbq"/>
+                <outlet property="secondView_img" destination="Fsi-uk-3IJ" id="dZd-b3-akQ"/>
+                <outlet property="secondView_titleLab" destination="1QS-jh-BT8" id="zim-nv-mdK"/>
+                <outlet property="thirdView" destination="Moh-q3-K3j" id="WaX-Ni-8aa"/>
+                <outlet property="thirdView_lab" destination="pQq-CR-R8h" id="I4J-Qm-ORi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Dn-CNu">
+                    <rect key="frame" x="0.0" y="109" width="320" height="44"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="billingDetail_in" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-uk-3IJ">
+                            <rect key="frame" x="8" y="6" width="30" height="30"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QS-jh-BT8">
+                            <rect key="frame" x="46" y="11" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-JU-3Vo">
+                            <rect key="frame" x="270" y="11" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9Jf-74-Rsc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-Yy-8tG">
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-fa-l2u">
+                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ENI-s8-PSx"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-q3-K3j">
+                    <rect key="frame" x="0.0" y="154" width="320" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQq-CR-R8h">
+                            <rect key="frame" x="8" y="11" width="304" height="61"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="Duo-id-NXu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oDe-Dn-CNu" secondAttribute="trailing" id="39b-Kv-knZ"/>
+                <constraint firstAttribute="trailing" secondItem="dzl-Yy-8tG" secondAttribute="trailing" id="EeM-Ez-WEA"/>
+                <constraint firstItem="dzl-Yy-8tG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Kv1-a3-k8Y"/>
+                <constraint firstItem="oDe-Dn-CNu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OTw-3a-sgU"/>
+                <constraint firstItem="Moh-q3-K3j" firstAttribute="top" secondItem="oDe-Dn-CNu" secondAttribute="bottom" constant="1" id="SAP-nL-kde"/>
+                <constraint firstAttribute="trailing" secondItem="Moh-q3-K3j" secondAttribute="trailing" id="YOp-9Q-Zgj"/>
+                <constraint firstItem="Moh-q3-K3j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lOh-o6-Q5k"/>
+                <constraint firstItem="oDe-Dn-CNu" firstAttribute="top" secondItem="dzl-Yy-8tG" secondAttribute="bottom" constant="1" id="pGe-jL-yd4"/>
+                <constraint firstItem="dzl-Yy-8tG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rDT-N3-oWa"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="232" y="309"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="billingDetail_in" width="37" height="37"/>
+    </resources>
+</document>

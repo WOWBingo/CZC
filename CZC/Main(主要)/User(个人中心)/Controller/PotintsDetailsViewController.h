@@ -11,4 +11,8 @@
 @interface PotintsDetailsViewController : PublicViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) int typeTag;
+@property(nonatomic,strong)NSMutableArray *typeArray;
+@property (nonatomic,strong) UILabel *titleLab;
+@property (nonatomic,strong) UIImageView *titleImg;
 @end

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductCollectViewController">
             <connections>
                 <outlet property="collectionView" destination="vHB-rC-vmN" id="rgS-Gc-5oG"/>
                 <outlet property="moreTypeBtn" destination="tCj-Z2-YEG" id="jsb-6C-XK2"/>
+                <outlet property="popTableView" destination="plM-oL-vRO" id="aNb-tc-W0t"/>
                 <outlet property="titleView" destination="WsW-Jz-o41" id="LEO-3x-xjb"/>
                 <outlet property="typeLab" destination="Sv7-9N-rFs" id="Yza-f9-27h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,17 +37,30 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部分类（9）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sv7-9N-rFs">
-                            <rect key="frame" x="8" y="12.5" width="98.5" height="18"/>
+                            <rect key="frame" x="8" y="13" width="99" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVq-0L-Z5O">
+                            <rect key="frame" x="115" y="7" width="200" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="moreType:" destination="-1" eventType="touchUpInside" id="zSo-3H-JUo"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="tCj-Z2-YEG" secondAttribute="trailing" constant="8" id="57o-Qo-Y7r"/>
+                        <constraint firstAttribute="bottom" secondItem="aVq-0L-Z5O" secondAttribute="bottom" constant="7" id="Z6F-kQ-dha"/>
+                        <constraint firstItem="aVq-0L-Z5O" firstAttribute="top" secondItem="WsW-Jz-o41" secondAttribute="top" constant="7" id="d5L-PF-fbv"/>
                         <constraint firstAttribute="bottom" secondItem="tCj-Z2-YEG" secondAttribute="bottom" id="fF7-33-AoL"/>
+                        <constraint firstItem="aVq-0L-Z5O" firstAttribute="leading" secondItem="Sv7-9N-rFs" secondAttribute="trailing" constant="8" id="fe9-oY-jdr"/>
                         <constraint firstItem="tCj-Z2-YEG" firstAttribute="top" secondItem="WsW-Jz-o41" secondAttribute="top" id="jgr-cx-hh0"/>
+                        <constraint firstItem="tCj-Z2-YEG" firstAttribute="leading" secondItem="aVq-0L-Z5O" secondAttribute="trailing" constant="8" id="jvv-BJ-gHC"/>
                         <constraint firstItem="Sv7-9N-rFs" firstAttribute="leading" secondItem="WsW-Jz-o41" secondAttribute="leading" constant="8" id="kya-uK-gPC"/>
                         <constraint firstAttribute="height" constant="44" id="nf9-du-SnX"/>
                         <constraint firstAttribute="centerY" secondItem="Sv7-9N-rFs" secondAttribute="centerY" id="zER-2t-Tpk"/>
@@ -65,19 +79,32 @@
                         <outlet property="delegate" destination="-1" id="zw8-Fc-9Ub"/>
                     </connections>
                 </collectionView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="plM-oL-vRO">
+                    <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dQA-qs-H3I"/>
+                        <outlet property="delegate" destination="-1" id="U73-I9-2hT"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="plM-oL-vRO" firstAttribute="top" secondItem="WsW-Jz-o41" secondAttribute="bottom" id="1O1-Fv-2df"/>
                 <constraint firstAttribute="trailing" secondItem="vHB-rC-vmN" secondAttribute="trailing" id="3Tk-K2-6hf"/>
                 <constraint firstItem="WsW-Jz-o41" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7nN-Es-kbV"/>
+                <constraint firstItem="plM-oL-vRO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8mt-xq-vIJ"/>
                 <constraint firstItem="vHB-rC-vmN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JW5-Mb-rTG"/>
+                <constraint firstAttribute="bottom" secondItem="plM-oL-vRO" secondAttribute="bottom" id="L7p-Oj-jr8"/>
                 <constraint firstAttribute="trailing" secondItem="WsW-Jz-o41" secondAttribute="trailing" id="WmX-7D-1Mr"/>
                 <constraint firstItem="vHB-rC-vmN" firstAttribute="top" secondItem="WsW-Jz-o41" secondAttribute="bottom" id="YyA-tP-YdD"/>
+                <constraint firstAttribute="trailing" secondItem="plM-oL-vRO" secondAttribute="trailing" id="ZMw-2U-Fbu"/>
                 <constraint firstItem="WsW-Jz-o41" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="buT-a7-yb0"/>
                 <constraint firstAttribute="bottom" secondItem="vHB-rC-vmN" secondAttribute="bottom" id="uih-7G-cKk"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="96.5" y="334.5"/>
         </view>
     </objects>
     <resources>

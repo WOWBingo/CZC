@@ -51,6 +51,7 @@
 		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
 		18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */; };
 		18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */; };
+		18E04FAE1B948EBA00A2540C /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E04FAD1B948EBA00A2540C /* PopView.m */; };
 		1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7B31B74F8DA009C7A33 /* ProductsObject.m */; };
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
 		1902C7C01B759F4A009C7A33 /* ProductCatagoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */; };
@@ -314,6 +315,8 @@
 		18CD802B1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateThreeViewController.h; sourceTree = "<group>"; };
 		18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateThreeViewController.m; sourceTree = "<group>"; };
 		18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateThreeViewController.xib; sourceTree = "<group>"; };
+		18E04FAC1B948EBA00A2540C /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopView.h; path = "CZC/Resouce(资源)/PopView.h"; sourceTree = SOURCE_ROOT; };
+		18E04FAD1B948EBA00A2540C /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopView.m; path = "CZC/Resouce(资源)/PopView.m"; sourceTree = SOURCE_ROOT; };
 		1902C7B21B74F8DA009C7A33 /* ProductsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsObject.h; path = Object/ProductsObject.h; sourceTree = "<group>"; };
 		1902C7B31B74F8DA009C7A33 /* ProductsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsObject.m; path = Object/ProductsObject.m; sourceTree = "<group>"; };
 		1902C7BB1B751AB9009C7A33 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestObject.h; path = Object/TestObject.h; sourceTree = "<group>"; };
@@ -761,6 +764,8 @@
 		192BC8351B88BC48003B8328 /* Expand(拓展) */ = {
 			isa = PBXGroup;
 			children = (
+				18E04FAC1B948EBA00A2540C /* PopView.h */,
+				18E04FAD1B948EBA00A2540C /* PopView.m */,
 				1864F1D41B8B5D6700458C3F /* MBProgressView */,
 			);
 			path = "Expand(拓展)";
@@ -1636,6 +1641,7 @@
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
 				192BC94F1B88BC48003B8328 /* HundredYuanCell.m in Sources */,
 				1888B45E1B92DA3A006E3165 /* BillingReportsTableViewCell.m in Sources */,
+				18E04FAE1B948EBA00A2540C /* PopView.m in Sources */,
 				192BC93D1B88BC48003B8328 /* ProductInfoViewController.m in Sources */,
 				192BC9BE1B88BC48003B8328 /* ShopCollectionCell.m in Sources */,
 				192BC9431B88BC48003B8328 /* ShopTableViewController.m in Sources */,

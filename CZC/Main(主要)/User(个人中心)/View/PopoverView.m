@@ -87,7 +87,6 @@
     }
     return self;
 }
-
 -(CGRect)getViewFrame
 {
     CGRect frame = CGRectZero;
