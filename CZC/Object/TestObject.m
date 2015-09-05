@@ -269,7 +269,7 @@
 //            NSLog(@"失败");
 //        }
 //    }];
-    
+//    
     
 #pragma mark - 13删除购物车产品
     /** 13删除购物车产品 http://app.czctgw.com/api/shoppingcart/pw7606/274D288D-3EBA-46D6-BC84-027A613922F2 */
@@ -516,7 +516,7 @@
 //                                 @"Mobile":@"15236585965",
 //                                 @"Tel":@"",
 //                                 @"AddressCode":@"000",
-//                                 @"MemLoginID":@"111111"
+//                                 @"MemLoginID":@"a465788"
 //                               };
 //    [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
 //        if (myresult) {
@@ -543,6 +543,91 @@
 //            NSLog(@"失败");
 //        }
 //    }];
+    
+#pragma mark - 买家商品评价
+//    
+//    NSDictionary *dic = @{
+//                               @"CommentType":@10,
+//                               @"Speed":@3,
+//                               @"Attitude":@2,
+//                               @"Character":@1,
+//                               @"Comment":@"hhhhhhhh",
+//                               @"ProductGuid":@"821819f8-0383-40bf-b5c8-822ce6754cf5",
+//                               @"ShopID":@"10001",
+//                               @"MemLoginID":@"111111",
+//                               @"ShopLoginid":@"shop1",
+//                               @"ShopName":@" 精品女装",
+//                               @"OrderGuid":@"821819f8-0383-40bf-b5c8-822ce6754cf5",
+//                               @"ProductName":@"一个好的产品嘻嘻嘻",
+//                               @"ProductPrice":@"100"
+//                               };
+//    [CZCService POSTmethod:kProductCommentAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"评价结果 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+    
+#pragma mark - 商品回评
+    
+//    NSDictionary *dic = @{
+//                          @"Guid":@"700caa5f-2ebf-4383-9335-228e39482534",
+//                          @"ContinueReply":@"gfgfgfgfg"
+//                          };
+//    [CZCService POSTmethod:kProductCommentLastAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"评价结果 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+    
+#pragma mark - 修改密码/用户信息
+    
+//    NSDictionary *dic = @{
+//                          @"Email":@"qwqwq@sina.cn ",
+//                          @"MemLoginID":@"zhou001",
+//                          @"RealName":@"测试名",
+//                          @"QQ":@"121212"
+//                          };
+//    [CZCService POSTmethod:kAccountUpdate_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"修改密码结果 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+
+#pragma mark - 申请退货退款
+    
+//    NSDictionary *dic = @{
+//                          @"OrderID":@"a272603c-caba-43a4-a354-1af15f98d0a6",
+//                          @"RefundType":@1,
+//                          @"RefundMoney":@10,
+//                          @"RefundContent":@"xxxxxxxxxxxx",
+//                          @"RefundImg":@"0110101010",
+//                          @"MemLoginID":@"111111",
+//                          @"ShopID":@"shop1",
+//                          @"LogisticName":@"圆通",
+//                          @"LogisticNumber":@"45254785478544"
+//                          };
+//    [CZCService POSTmethod:kReturnofgoods_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"修改密码结果 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+
 #pragma mark - 59.首页图片
     /**  59.首页图片 http://app.czctgw.com/api/ShopGGlistIndex/?CityDomianName=chengdu*/
 //    params = @"CityDomianName=chengdu";

@@ -214,6 +214,8 @@
 		192BC9F41B89CD97003B8328 /* SpecificationChoseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9F21B89CD97003B8328 /* SpecificationChoseCell.xib */; };
 		192BC9F81B8A1396003B8328 /* SpecificationNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9F61B8A1396003B8328 /* SpecificationNumCell.m */; };
 		192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */; };
+		192C1AE41B9594160040A01F /* ShoppingCarHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */; };
+		192C1AE61B95942C0040A01F /* ShoppingCarHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
 		1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */; };
 		1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8D1B774A00000A8D26 /* ShopObject.m */; };
@@ -572,6 +574,9 @@
 		192BC9F51B8A1396003B8328 /* SpecificationNumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationNumCell.h; sourceTree = "<group>"; };
 		192BC9F61B8A1396003B8328 /* SpecificationNumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationNumCell.m; sourceTree = "<group>"; };
 		192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificationNumCell.xib; sourceTree = "<group>"; };
+		192C1AE21B9594160040A01F /* ShoppingCarHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarHeadView.h; sourceTree = "<group>"; };
+		192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarHeadView.m; sourceTree = "<group>"; };
+		192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarHeadView.xib; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
 		1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationOfPriceObject.h; path = Object/SpecificationOfPriceObject.h; sourceTree = "<group>"; };
@@ -957,6 +962,9 @@
 				192BC8A41B88BC48003B8328 /* ShoppingCarTableViewCell.h */,
 				192BC8A51B88BC48003B8328 /* ShoppingCarTableViewCell.m */,
 				192BC8A61B88BC48003B8328 /* ShoppingCarTableViewCell.xib */,
+				192C1AE21B9594160040A01F /* ShoppingCarHeadView.h */,
+				192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */,
+				192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1355,6 +1363,12 @@
 				TargetAttributes = {
 					192768D31B48442F00B86141 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KQV9P58H48;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					192768EC1B48442F00B86141 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1471,6 +1485,7 @@
 				192BC9401B88BC48003B8328 /* SearchViewController.xib in Resources */,
 				1888B4911B930AB0006E3165 /* PointsTransferViewController.xib in Resources */,
 				192BC9861B88BC48003B8328 /* OrderDetailViewController.xib in Resources */,
+				192C1AE61B95942C0040A01F /* ShoppingCarHeadView.xib in Resources */,
 				192BC98A1B88BC48003B8328 /* PersonNewsViewController.xib in Resources */,
 				192BC9841B88BC48003B8328 /* NewsViewController.xib in Resources */,
 				192BC9DF1B88BD5A003B8328 /* LogisticsViewController.xib in Resources */,
@@ -1623,6 +1638,7 @@
 				192BC9461B88BC48003B8328 /* ChooseCityHeadView.m in Sources */,
 				192BC9E41B88BD5A003B8328 /* LogisticsTableViewCell.m in Sources */,
 				192BC9411B88BC48003B8328 /* ShopInfoViewController.m in Sources */,
+				192C1AE41B9594160040A01F /* ShoppingCarHeadView.m in Sources */,
 				192BC9AD1B88BC48003B8328 /* OrderTableViewCell.m in Sources */,
 				18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */,
 				192BC96B1B88BC48003B8328 /* ShoppingCarViewController.m in Sources */,
@@ -1780,6 +1796,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
@@ -1790,6 +1808,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cb3f2326-3b0c-413d-92fb-37c81ca65b33";
 			};
 			name = Debug;
 		};
@@ -1799,6 +1818,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
@@ -1809,6 +1830,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cb3f2326-3b0c-413d-92fb-37c81ca65b33";
 			};
 			name = Release;
 		};

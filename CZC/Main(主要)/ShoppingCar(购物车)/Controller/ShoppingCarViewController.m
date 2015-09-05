@@ -11,6 +11,8 @@
 #import "PayViewController.h"
 #import "ShopCarObject.h"
 #import "ShopCarProductObject.h"
+#import "ShoppingCarHeadView.h"
+#import "Masonry.h"
 @interface ShoppingCarViewController ()
 
 @end
@@ -20,12 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"购物车";
+    self.navigationItem.leftBarButtonItem = nil;
     
-    //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
-    self.tableView.tableFooterView = [[UIView alloc]init];
     //数组初始化
     self.shopCarObjectArr = [[NSMutableArray alloc]init];
     
+    //表格
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    //[_tableView setSeparatorColor:[UIColor clearColor]];
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];    
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = SCREEN_WIDTH;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -62,9 +71,31 @@
 }
 
 #pragma mark - table
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 4;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 48)];
+    [view setBackgroundColor:[UIColor lightGrayColor]];
+    ShoppingCarHeadView *headView = [ShoppingCarHeadView instanceView];
+    headView.frame = CGRectMake(0, 8, headView.frame.size.width, headView.frame.size.height);
+    [view addSubview:headView];
+//    [headView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(view).offset(8);
+//        make.left.right.and.bottom.equalTo(view);
+//    }];
+    return headView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 48;
+}
+
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;//_shopCarObjectArr.count;
+    return 2;//_shopCarObjectArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
