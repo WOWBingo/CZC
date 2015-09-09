@@ -72,9 +72,9 @@
     setVC.isHomePage = NO;
     UINavigationController *setNVC = [[UINavigationController alloc]initWithRootViewController:setVC];
     setNVC.navigationBarHidden = YES;
-    setNVC.tabBarItem.title=@"个人中心";
-    setNVC.tabBarItem.image=[UIImage imageNamed:@"icon-grzx-1"];
-    setNVC.tabBarItem.badgeValue=@"6";
+    setNVC.tabBarItem.title = @"个人中心";
+    setNVC.tabBarItem.image = [UIImage imageNamed:@"icon-grzx-1"];
+    setNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[UIApplication sharedApplication].applicationIconBadgeNumber];
 
     self.viewControllers = @[homeNVC,LogisticsNVC,nearNVC,shoppingCarNVC,setNVC];
     self.selectedIndex = 0;

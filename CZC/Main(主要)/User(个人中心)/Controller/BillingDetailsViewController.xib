@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8O-Ko-gcZ">
-                    <rect key="frame" x="0.0" y="64" width="320" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVw-jB-Hde">
                             <rect key="frame" x="8" y="3" width="40" height="30"/>
@@ -75,7 +75,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjC-fK-1e3">
-                            <rect key="frame" x="117" y="36" width="29" height="21"/>
+                            <rect key="frame" x="117.5" y="36" width="28.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="yQm-BG-W2i"/>
                             </constraints>
@@ -84,7 +84,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwC-vo-QXr">
-                            <rect key="frame" x="237" y="36" width="29" height="21"/>
+                            <rect key="frame" x="237.5" y="36" width="28.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="zAk-Oh-62f"/>
                             </constraints>
@@ -99,7 +99,7 @@
                                 <constraint firstAttribute="width" constant="1" id="K2r-QZ-Ag6"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -124,7 +124,7 @@
                     </constraints>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-95-mGo">
-                    <rect key="frame" x="8" y="135" width="304" height="29"/>
+                    <rect key="frame" x="8" y="71" width="304" height="29"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="sis-G6-6w0"/>
                     </constraints>
@@ -134,7 +134,7 @@
                     </segments>
                 </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rlS-9W-Dfb">
-                    <rect key="frame" x="0.0" y="166" width="320" height="402"/>
+                    <rect key="frame" x="0.0" y="102" width="320" height="466"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="oF3-eR-kfU"/>
@@ -151,7 +151,7 @@
                 <constraint firstAttribute="trailing" secondItem="rlS-9W-Dfb" secondAttribute="trailing" id="OC5-a6-EHu"/>
                 <constraint firstItem="rlS-9W-Dfb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RaZ-IR-Y3M"/>
                 <constraint firstItem="rlS-9W-Dfb" firstAttribute="top" secondItem="Q9k-95-mGo" secondAttribute="bottom" constant="3" id="Rva-f9-VDE"/>
-                <constraint firstItem="r8O-Ko-gcZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="XLb-Jd-RMg"/>
+                <constraint firstItem="r8O-Ko-gcZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XLb-Jd-RMg"/>
                 <constraint firstItem="Q9k-95-mGo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="hp9-bl-iHJ"/>
                 <constraint firstAttribute="bottom" secondItem="rlS-9W-Dfb" secondAttribute="bottom" id="qj6-oC-UNQ"/>
             </constraints>

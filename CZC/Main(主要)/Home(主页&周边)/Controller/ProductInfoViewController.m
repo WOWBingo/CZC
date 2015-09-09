@@ -52,7 +52,11 @@
  *	http://app.czctgw.com/api/product/d3777035-8d88-4e87-8d2b-7021e03d4d2a
  */
 - (void)getProductInfo{
-    NSString *params = @"d3777035-8d88-4e87-8d2b-7021e03d4d2a";
+    //790e6cfe-c05b-473a-863d-0001d033cb6b
+    //d3777035-8d88-4e87-8d2b-7021e03d4d2a
+    //8BF39849-C3B8-4529-ABE6-6D3E1DA5227D
+    //715b0edf-1a41-4439-ab4e-0738da284946  连衣裙
+    NSString *params = _product.guid;//@"715b0edf-1a41-4439-ab4e-0738da284946";
     [CZCService GETmethod:kProductInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         if (result) {
@@ -82,7 +86,8 @@
  *	http://app.czctgw.com/api/SpecificationList/8BF39849-C3B8-4529-ABE6-6D3E1DA5227D
  */
 - (void)getProSpecification{
-    NSString *params = @"8BF39849-C3B8-4529-ABE6-6D3E1DA5227D";
+    //@"715b0edf-1a41-4439-ab4e-0738da284946"
+    NSString *params = _product.guid;
     [CZCService GETmethod:kProSpecificationList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         if (result) {

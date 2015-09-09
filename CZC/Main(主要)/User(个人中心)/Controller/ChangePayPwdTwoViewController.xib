@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4g-mb-qbV">
-                    <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneValidate_1_no" translatesAutoresizingMaskIntoConstraints="NO" id="4tZ-HE-z5h">
                             <rect key="frame" x="27" y="8" width="50" height="50"/>
@@ -77,7 +77,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8G7-ki-JZp">
-                    <rect key="frame" x="0.0" y="165" width="320" height="110"/>
+                    <rect key="frame" x="0.0" y="101" width="320" height="110"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码:134*****22333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arg-dB-7cZ">
                             <rect key="frame" x="8" y="8" width="129" height="21"/>
@@ -106,7 +106,7 @@
                                 <constraint firstAttribute="height" constant="21" id="25e-p5-c1w"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码确认" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkD-aE-oDN">
@@ -115,7 +115,7 @@
                                 <constraint firstAttribute="height" constant="21" id="kK6-Vg-vQI"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请再次输入支付密码" borderStyle="line" placeholder="验证手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6TD-SZ-EEi">
@@ -149,7 +149,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b4-jB-fc6">
-                    <rect key="frame" x="70" y="299" width="180" height="30"/>
+                    <rect key="frame" x="70" y="235" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="aGQ-5J-RD4"/>
@@ -166,7 +166,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8G7-ki-JZp" firstAttribute="top" secondItem="h4g-mb-qbV" secondAttribute="bottom" constant="1" id="0ox-8W-78w"/>
-                <constraint firstItem="h4g-mb-qbV" firstAttribute="top" secondItem="uzD-Ix-IaQ" secondAttribute="top" constant="64" id="4Yp-C8-Ggy"/>
+                <constraint firstItem="h4g-mb-qbV" firstAttribute="top" secondItem="uzD-Ix-IaQ" secondAttribute="top" id="4Yp-C8-Ggy"/>
                 <constraint firstAttribute="trailing" secondItem="4b4-jB-fc6" secondAttribute="trailing" constant="70" id="I6e-UR-uCe"/>
                 <constraint firstAttribute="trailing" secondItem="8G7-ki-JZp" secondAttribute="trailing" id="JG4-nz-Mfl"/>
                 <constraint firstItem="8G7-ki-JZp" firstAttribute="leading" secondItem="uzD-Ix-IaQ" secondAttribute="leading" id="Qyc-YR-eyu"/>

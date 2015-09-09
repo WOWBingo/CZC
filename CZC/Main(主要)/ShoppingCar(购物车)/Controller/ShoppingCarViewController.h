@@ -17,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *accountBtn;
 
 @property (nonatomic,strong) NSMutableArray *shopCarObjectArr;/**< 购物车对象数组 */
+@property (nonatomic,strong) NSMutableArray *selectedProductList;/**< 选中的产品 */
+@property (nonatomic,strong) NSMutableArray *selectedShopList;/**< 选中的店铺 */
+
 - (IBAction)accountClick:(id)sender;
 @end

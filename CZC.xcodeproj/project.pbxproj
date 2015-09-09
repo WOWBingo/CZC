@@ -217,6 +217,14 @@
 		192C1AE41B9594160040A01F /* ShoppingCarHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */; };
 		192C1AE61B95942C0040A01F /* ShoppingCarHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
+		196285B81B9FBBE400D7AC55 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */; };
+		196285B91B9FBBE400D7AC55 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */; };
+		196285BD1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285BB1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.m */; };
+		196285BE1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285BC1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib */; };
+		196285C21B9FD56500D7AC55 /* ConfirmOrderShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285C01B9FD56500D7AC55 /* ConfirmOrderShopCell.m */; };
+		196285C31B9FD56500D7AC55 /* ConfirmOrderShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285C11B9FD56500D7AC55 /* ConfirmOrderShopCell.xib */; };
+		196285C71B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285C51B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m */; };
+		196285C81B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285C61B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib */; };
 		1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */; };
 		1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD8D1B774A00000A8D26 /* ShopObject.m */; };
 		1977FD911B774DF8000A8D26 /* CommentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FD901B774DF8000A8D26 /* CommentObject.m */; };
@@ -231,6 +239,7 @@
 		1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FDAE1B776D02000A8D26 /* MessageObject.m */; };
 		198024281B81D1760071F63E /* CityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 198024271B81D1760071F63E /* CityObject.m */; };
 		1980242B1B836F240071F63E /* ShopCarProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1980242A1B836F240071F63E /* ShopCarProductObject.m */; };
+		1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */; };
 		19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D587BD1B48D63100D65B43 /* Images.xcassets */; };
 		19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FF1B7AF79600C98637 /* HomeImageObject.m */; };
 		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
@@ -579,6 +588,18 @@
 		192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarHeadView.xib; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
+		196285B51B9FBBE400D7AC55 /* ConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderViewController.h; sourceTree = "<group>"; };
+		196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderViewController.m; sourceTree = "<group>"; };
+		196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderViewController.xib; sourceTree = "<group>"; };
+		196285BA1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderTableViewCell.h; sourceTree = "<group>"; };
+		196285BB1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderTableViewCell.m; sourceTree = "<group>"; };
+		196285BC1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderTableViewCell.xib; sourceTree = "<group>"; };
+		196285BF1B9FD56500D7AC55 /* ConfirmOrderShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderShopCell.h; sourceTree = "<group>"; };
+		196285C01B9FD56500D7AC55 /* ConfirmOrderShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderShopCell.m; sourceTree = "<group>"; };
+		196285C11B9FD56500D7AC55 /* ConfirmOrderShopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderShopCell.xib; sourceTree = "<group>"; };
+		196285C41B9FDEE200D7AC55 /* ConfirmOrderOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderOtherCell.h; sourceTree = "<group>"; };
+		196285C51B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderOtherCell.m; sourceTree = "<group>"; };
+		196285C61B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderOtherCell.xib; sourceTree = "<group>"; };
 		1977FD891B7748BA000A8D26 /* SpecificationOfPriceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationOfPriceObject.h; path = Object/SpecificationOfPriceObject.h; sourceTree = "<group>"; };
 		1977FD8A1B7748BA000A8D26 /* SpecificationOfPriceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationOfPriceObject.m; path = Object/SpecificationOfPriceObject.m; sourceTree = "<group>"; };
 		1977FD8C1B774A00000A8D26 /* ShopObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopObject.h; path = Object/ShopObject.h; sourceTree = "<group>"; };
@@ -607,6 +628,8 @@
 		198024271B81D1760071F63E /* CityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityObject.m; path = Object/CityObject.m; sourceTree = "<group>"; };
 		198024291B836F240071F63E /* ShopCarProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCarProductObject.h; path = Object/ShopCarProductObject.h; sourceTree = "<group>"; };
 		1980242A1B836F240071F63E /* ShopCarProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCarProductObject.m; path = Object/ShopCarProductObject.m; sourceTree = "<group>"; };
+		1991584D1B9BFCEA00AFB1AF /* ZDYCheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDYCheckButton.h; sourceTree = "<group>"; };
+		1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDYCheckButton.m; sourceTree = "<group>"; };
 		19D587801B48C79000D65B43 /* CZC-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZC-PrefixHeader.pch"; sourceTree = "<group>"; };
 		19D587BD1B48D63100D65B43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19F969FE1B7AF79600C98637 /* HomeImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeImageObject.h; path = Object/HomeImageObject.h; sourceTree = "<group>"; };
@@ -937,6 +960,9 @@
 				192BC89A1B88BC48003B8328 /* ShoppingCarViewController.h */,
 				192BC89B1B88BC48003B8328 /* ShoppingCarViewController.m */,
 				192BC89C1B88BC48003B8328 /* ShoppingCarViewController.xib */,
+				196285B51B9FBBE400D7AC55 /* ConfirmOrderViewController.h */,
+				196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */,
+				196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -958,6 +984,8 @@
 		192BC89F1B88BC48003B8328 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1991584D1B9BFCEA00AFB1AF /* ZDYCheckButton.h */,
+				1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */,
 				192BC8A01B88BC48003B8328 /* HJCAdjustNumButton */,
 				192BC8A41B88BC48003B8328 /* ShoppingCarTableViewCell.h */,
 				192BC8A51B88BC48003B8328 /* ShoppingCarTableViewCell.m */,
@@ -965,6 +993,15 @@
 				192C1AE21B9594160040A01F /* ShoppingCarHeadView.h */,
 				192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */,
 				192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */,
+				196285BA1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.h */,
+				196285BB1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.m */,
+				196285BC1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib */,
+				196285BF1B9FD56500D7AC55 /* ConfirmOrderShopCell.h */,
+				196285C01B9FD56500D7AC55 /* ConfirmOrderShopCell.m */,
+				196285C11B9FD56500D7AC55 /* ConfirmOrderShopCell.xib */,
+				196285C41B9FDEE200D7AC55 /* ConfirmOrderOtherCell.h */,
+				196285C51B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m */,
+				196285C61B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1433,6 +1470,7 @@
 				192BC98C1B88BC48003B8328 /* ProductCollectViewController.xib in Resources */,
 				187D7A861B8F45F3007324E6 /* BillingDetailsTableViewCell.xib in Resources */,
 				192BC9A01B88BC48003B8328 /* EditAddressTableViewCell.xib in Resources */,
+				196285BE1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib in Resources */,
 				192BC9BB1B88BC48003B8328 /* SetTitleTableViewCell.xib in Resources */,
 				192BC9441B88BC48003B8328 /* ShopTableViewController.xib in Resources */,
 				192BC9381B88BC48003B8328 /* CityListViewController.xib in Resources */,
@@ -1449,6 +1487,7 @@
 				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
+				196285C31B9FD56500D7AC55 /* ConfirmOrderShopCell.xib in Resources */,
 				1888B46E1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib in Resources */,
 				192BC9901B88BC48003B8328 /* RegisterViewController.xib in Resources */,
 				192BC9AC1B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib in Resources */,
@@ -1456,6 +1495,7 @@
 				192BC9E71B88BD5A003B8328 /* MyLogisticsTableViewCell.xib in Resources */,
 				187D7A7C1B8F3B13007324E6 /* AccountBalanceTableViewCell.xib in Resources */,
 				192BC9E11B88BD5A003B8328 /* MyLogisticsViewController.xib in Resources */,
+				196285C81B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib in Resources */,
 				192BC98E1B88BC48003B8328 /* ProvisionViewController.xib in Resources */,
 				192BC9B21B88BC48003B8328 /* PayDeliverTableViewCell.xib in Resources */,
 				192BC9521B88BC48003B8328 /* ProductTableInfoCell.xib in Resources */,
@@ -1475,6 +1515,7 @@
 				192BC96C1B88BC48003B8328 /* ShoppingCarViewController.xib in Resources */,
 				192BC9E51B88BD5A003B8328 /* LogisticsTableViewCell.xib in Resources */,
 				192BC9501B88BC48003B8328 /* HundredYuanCell.xib in Resources */,
+				196285B91B9FBBE400D7AC55 /* ConfirmOrderViewController.xib in Resources */,
 				192BC99E1B88BC48003B8328 /* DiscountPromotionTableViewCell.xib in Resources */,
 				192BC9991B88BC48003B8328 /* AccountSecurityTableViewCell.xib in Resources */,
 				192BC9931B88BC48003B8328 /* SetViewController.xib in Resources */,
@@ -1557,12 +1598,14 @@
 				192BC9B31B88BC48003B8328 /* PayInfoTableViewCell.m in Sources */,
 				192BC9C21B88BC48003B8328 /* TimeView.m in Sources */,
 				192BC97B1B88BC48003B8328 /* ForgetPWViewController.m in Sources */,
+				196285B81B9FBBE400D7AC55 /* ConfirmOrderViewController.m in Sources */,
 				1977FDA61B7768C7000A8D26 /* AccoutObject.m in Sources */,
 				192BC99C1B88BC48003B8328 /* AutoScrollView.m in Sources */,
 				192BC9A51B88BC48003B8328 /* OrderDetailFourTableViewCell.m in Sources */,
 				1888B46D1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m in Sources */,
 				1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */,
 				192BC9731B88BC48003B8328 /* AddressViewController.m in Sources */,
+				196285C71B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m in Sources */,
 				187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */,
 				192BC9871B88BC48003B8328 /* OrderViewController.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
@@ -1606,6 +1649,7 @@
 				192BC93B1B88BC48003B8328 /* HundredViewController.m in Sources */,
 				192BC9E01B88BD5A003B8328 /* MyLogisticsViewController.m in Sources */,
 				192BC9F81B8A1396003B8328 /* SpecificationNumCell.m in Sources */,
+				1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */,
 				192BC9F31B89CD97003B8328 /* SpecificationChoseCell.m in Sources */,
 				192BC9941B88BC48003B8328 /* ShopCollectViewController.m in Sources */,
 				1977FD9A1B77599B000A8D26 /* OrderProductObject.m in Sources */,
@@ -1619,6 +1663,7 @@
 				192BC9681B88BC48003B8328 /* WGS84TOGCJ02.m in Sources */,
 				192BC96F1B88BC48003B8328 /* ShoppingCarTableViewCell.m in Sources */,
 				192BC9451B88BC48003B8328 /* AdScrollView.m in Sources */,
+				196285BD1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.m in Sources */,
 				192BC9EB1B896FE8003B8328 /* SpecificationTableViewCell.m in Sources */,
 				192BC9B51B88BC48003B8328 /* PersonNewsTableViewCell.m in Sources */,
 				1888B4901B930AB0006E3165 /* PointsTransferViewController.m in Sources */,
@@ -1651,6 +1696,7 @@
 				1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */,
 				192BC97F1B88BC48003B8328 /* LoginViewController.m in Sources */,
 				192BC9481B88BC48003B8328 /* ChoseProductInfoView.m in Sources */,
+				196285C21B9FD56500D7AC55 /* ConfirmOrderShopCell.m in Sources */,
 				192BC9B81B88BC48003B8328 /* ProductCollectCollectionViewCell.m in Sources */,
 				187D7A711B8F3729007324E6 /* ChangePayPwdTwoViewController.m in Sources */,
 				1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */,
@@ -1796,7 +1842,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
@@ -1818,7 +1864,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CU8-7S-Sey">
-                    <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneValidate_1_no" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-JP-dgi">
                             <rect key="frame" x="12" y="8" width="50" height="50"/>
@@ -104,7 +104,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyy-I8-Mxm">
-                    <rect key="frame" x="0.0" y="165" width="320" height="125"/>
+                    <rect key="frame" x="0.0" y="101" width="320" height="125"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入新手机号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKT-5a-kIs">
                             <rect key="frame" x="8" y="8" width="84" height="21"/>
@@ -168,7 +168,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkH-ko-MJ3">
-                    <rect key="frame" x="70" y="317" width="180" height="30"/>
+                    <rect key="frame" x="70" y="253" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="0wi-GC-REB"/>
@@ -191,7 +191,7 @@
                 <constraint firstAttribute="trailing" secondItem="Pyy-I8-Mxm" secondAttribute="trailing" id="QYE-d1-HOv"/>
                 <constraint firstItem="Pyy-I8-Mxm" firstAttribute="top" secondItem="CU8-7S-Sey" secondAttribute="bottom" constant="1" id="Vws-e7-jl2"/>
                 <constraint firstItem="SkH-ko-MJ3" firstAttribute="top" secondItem="Pyy-I8-Mxm" secondAttribute="bottom" constant="27" id="WM4-IU-CiH"/>
-                <constraint firstItem="CU8-7S-Sey" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="gkA-Jw-iwn"/>
+                <constraint firstItem="CU8-7S-Sey" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gkA-Jw-iwn"/>
                 <constraint firstItem="CU8-7S-Sey" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yTA-YE-aOZ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

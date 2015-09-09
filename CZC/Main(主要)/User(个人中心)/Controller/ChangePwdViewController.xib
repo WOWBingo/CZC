@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xM-no-pjn">
-                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWk-Em-ugK">
                             <rect key="frame" x="8" y="11" width="56" height="21"/>
@@ -29,7 +29,7 @@
                                 <constraint firstAttribute="height" constant="21" id="cql-Pz-cvP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-5y-Zji">
@@ -44,7 +44,7 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="4nf-4d-nCz"/>
                         <constraint firstItem="WLV-5y-Zji" firstAttribute="trailing" secondItem="0xM-no-pjn" secondAttribute="trailing" multiplier="0.97" id="853-zc-PL8"/>
@@ -55,7 +55,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-Oc-XkF">
-                    <rect key="frame" x="0.0" y="109" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="45" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C79-h1-b9o">
                             <rect key="frame" x="8" y="11" width="42" height="21"/>
@@ -63,7 +63,7 @@
                                 <constraint firstAttribute="height" constant="21" id="gzc-a8-49Q"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5W-Pe-IFx">
@@ -78,7 +78,7 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="w5W-Pe-IFx" firstAttribute="top" secondItem="fwA-Oc-XkF" secondAttribute="top" constant="7" id="Du5-RA-raW"/>
                         <constraint firstAttribute="height" constant="44" id="Ilp-4x-td2"/>
@@ -87,7 +87,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEa-TP-Am5">
-                    <rect key="frame" x="0.0" y="154" width="320" height="75"/>
+                    <rect key="frame" x="0.0" y="90" width="320" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认新密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJ3-vI-IA6">
                             <rect key="frame" x="8" y="19" width="70" height="21"/>
@@ -95,7 +95,7 @@
                                 <constraint firstAttribute="height" constant="21" id="Fzz-QW-e7K"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-AF-5jw">
@@ -110,7 +110,7 @@
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*密码长度至少6个字符,最多32个字符" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXm-Gv-3X1">
-                            <rect key="frame" x="88" y="54" width="165" height="21"/>
+                            <rect key="frame" x="88" y="54" width="164.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="ztB-F0-B6Z"/>
                             </constraints>
@@ -119,7 +119,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="56y-xJ-jH8"/>
                         <constraint firstItem="H6e-AF-5jw" firstAttribute="top" secondItem="wEa-TP-Am5" secondAttribute="top" constant="15" id="6jz-BB-reT"/>
@@ -131,7 +131,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS2-xY-tWh">
-                    <rect key="frame" x="70" y="260" width="180" height="30"/>
+                    <rect key="frame" x="70" y="196" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="OEC-wV-T4d"/>
@@ -154,7 +154,7 @@
                 <constraint firstItem="fwA-Oc-XkF" firstAttribute="top" secondItem="0xM-no-pjn" secondAttribute="bottom" constant="1" id="Lte-Ek-w09"/>
                 <constraint firstItem="w5W-Pe-IFx" firstAttribute="trailing" secondItem="WLV-5y-Zji" secondAttribute="trailing" constant="2" id="QbI-rk-nc9"/>
                 <constraint firstItem="H6e-AF-5jw" firstAttribute="trailing" secondItem="w5W-Pe-IFx" secondAttribute="trailing" id="SAk-Te-XuO"/>
-                <constraint firstItem="0xM-no-pjn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Svi-Yo-7E9"/>
+                <constraint firstItem="0xM-no-pjn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Svi-Yo-7E9"/>
                 <constraint firstItem="w5W-Pe-IFx" firstAttribute="leading" secondItem="WLV-5y-Zji" secondAttribute="leading" id="TzK-xJ-nL7"/>
                 <constraint firstItem="KS2-xY-tWh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="ZWD-2B-fnO"/>
                 <constraint firstItem="wEa-TP-Am5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aCQ-TZ-8bN"/>

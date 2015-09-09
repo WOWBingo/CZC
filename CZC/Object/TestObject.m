@@ -357,6 +357,7 @@
 //                                               @"SpecificationName": @"颜色分类:浅灰色|尺码:M",
 //                                               @"SpecificationValue": @"浅灰色|M",
 //                                               @"RepertoryCount": @"160"
+    
 //                                           }
 //                                           ],
 //                          };
@@ -421,7 +422,7 @@
 #pragma mark - 22.用户注册
     /** 22.用户注册 /api/account/Regist */
 //    NSDictionary *accountDic = @{
-//                          @"MemLoginID" : @"zhou001",
+//                          @"MemLoginID" : @"zhou101",
 //                          @"Pwd" : @"qaz123",
 //                          };
 //    
@@ -434,7 +435,7 @@
 //            NSLog(@"失败");
 //        }
 //    }];
-    
+//    
 #pragma mark - 23.产品收藏列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
 //    params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";

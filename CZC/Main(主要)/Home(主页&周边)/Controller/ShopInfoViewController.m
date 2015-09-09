@@ -128,15 +128,15 @@
             [UIView beginAnimations:@"upcenter" context:(__bridge void *)(_centerView)];
             [UIView setAnimationDuration:0.5f];
             [UIView setAnimationDelegate:self];
-            [_centerView setFrame:CGRectMake(0,70, _centerView.frame.size.width, _centerView.frame.size.height)];
+            [_centerView setFrame:CGRectMake(0,0, _centerView.frame.size.width, _centerView.frame.size.height)];
             [UIView commitAnimations];
-            [_tableView setFrame:CGRectMake(0, 100, _tableView.frame.size.width, SCREEN_HEIGHT-100)];
+            [_tableView setFrame:CGRectMake(0,30, _tableView.frame.size.width, SCREEN_HEIGHT-100)];
 
         }else if(self.tableView.contentOffset.y < 5){
             [UIView beginAnimations:@"downcenter" context:(__bridge void *)(_centerView)];
             [UIView setAnimationDuration:0.5f];
             [UIView setAnimationDelegate:self];
-            [_centerView setFrame:CGRectMake(0, SCREEN_WIDTH*0.45+134, SCREEN_WIDTH, 36)];
+            [_centerView setFrame:CGRectMake(0, _titleView.frame.size.height, _centerView.frame.size.width, _centerView.frame.size.height)];
             [UIView commitAnimations];
             [_tableView setFrame:CGRectMake(0, _centerView.frame.origin.y + 36, _tableView.frame.size.width, _tableView.frame.size.height)];
         }

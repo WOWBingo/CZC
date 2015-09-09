@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3k-wI-FUB">
-                    <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneValidate_1_yes" translatesAutoresizingMaskIntoConstraints="NO" id="sdM-kj-eJz">
                             <rect key="frame" x="12" y="8" width="50" height="50"/>
@@ -104,10 +104,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMo-eN-vlL">
-                    <rect key="frame" x="0.0" y="165" width="320" height="110"/>
+                    <rect key="frame" x="0.0" y="101" width="320" height="110"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的当前手机号为135*****3344" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-73-gfu">
-                            <rect key="frame" x="8" y="8" width="167" height="21"/>
+                            <rect key="frame" x="8" y="8" width="166.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="dlF-pb-4St"/>
                             </constraints>
@@ -162,7 +162,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-ZK-Ep4">
-                    <rect key="frame" x="70" y="299" width="180" height="30"/>
+                    <rect key="frame" x="70" y="235" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="gd8-Qf-kVm"/>
@@ -180,7 +180,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ecc-ZK-Ep4" secondAttribute="trailing" constant="70" id="2u5-UU-5bT"/>
                 <constraint firstItem="X3k-wI-FUB" firstAttribute="leading" secondItem="Nw7-Zr-ERC" secondAttribute="leading" id="Alq-KV-Q5q"/>
-                <constraint firstItem="X3k-wI-FUB" firstAttribute="top" secondItem="Nw7-Zr-ERC" secondAttribute="top" constant="64" id="Byt-Qd-93s"/>
+                <constraint firstItem="X3k-wI-FUB" firstAttribute="top" secondItem="Nw7-Zr-ERC" secondAttribute="top" id="Byt-Qd-93s"/>
                 <constraint firstItem="ecc-ZK-Ep4" firstAttribute="leading" secondItem="Nw7-Zr-ERC" secondAttribute="leading" constant="70" id="JBE-jn-vyA"/>
                 <constraint firstAttribute="trailing" secondItem="ZMo-eN-vlL" secondAttribute="trailing" id="LPT-ov-hFh"/>
                 <constraint firstItem="ZMo-eN-vlL" firstAttribute="top" secondItem="X3k-wI-FUB" secondAttribute="bottom" constant="1" id="mFU-mI-wXs"/>

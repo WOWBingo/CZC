@@ -14,15 +14,17 @@
 @interface ShopCarObject : NSObject
 
 
-@property (nonatomic, copy) NSString *shopID;
+@property (nonatomic, copy) NSString *shopID;/**< 店id */
 
-@property (nonatomic, copy) NSString *shop;
+@property (nonatomic, copy) NSString *shop;/**< 店名 */
 
-@property (nonatomic, assign) NSInteger count;
+@property (nonatomic, assign) NSInteger count;/**< 数量 */
 
-@property (nonatomic, assign) CGFloat price;
+@property (nonatomic, assign) CGFloat price;/**< 总价 */
 
-@property (nonatomic, strong) NSMutableArray *productList;
+@property (nonatomic, strong) NSMutableArray *productList;/**< 商品列表 */
+
+@property (nonatomic, assign) BOOL isSelected;/**< 是否被选中 */
 
 
 @end

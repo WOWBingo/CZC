@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PointsRechargeViewController">
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68z-UF-BDm">
-                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVf-Xr-4i8">
                             <rect key="frame" x="8" y="11" width="56" height="21"/>
@@ -34,7 +34,7 @@
                                 <constraint firstAttribute="height" constant="21" id="r8C-Wc-Azo"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="an-tk-1" translatesAutoresizingMaskIntoConstraints="NO" id="0nZ-5Z-fZ7">
@@ -64,7 +64,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6Z-sF-h5o">
-                    <rect key="frame" x="0.0" y="109" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="45" width="320" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfI-GR-gx6">
                             <rect key="frame" x="8" y="8" width="56" height="21"/>
@@ -72,7 +72,7 @@
                                 <constraint firstAttribute="height" constant="21" id="2Il-xq-ty3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="an-tk-1" translatesAutoresizingMaskIntoConstraints="NO" id="hZM-ta-AuV">
@@ -135,14 +135,14 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="F6Z-sF-h5o" firstAttribute="top" secondItem="68z-UF-BDm" secondAttribute="bottom" constant="1" id="MXU-6K-VIx"/>
                 <constraint firstAttribute="trailing" secondItem="F6Z-sF-h5o" secondAttribute="trailing" id="cWH-J8-FDa"/>
                 <constraint firstItem="F6Z-sF-h5o" firstAttribute="leading" secondItem="y33-Mm-saW" secondAttribute="leading" id="gaR-8h-Y7U"/>
                 <constraint firstAttribute="trailing" secondItem="68z-UF-BDm" secondAttribute="trailing" id="i6L-9P-xrj"/>
                 <constraint firstItem="68z-UF-BDm" firstAttribute="leading" secondItem="y33-Mm-saW" secondAttribute="leading" id="paU-Nf-5xY"/>
-                <constraint firstItem="68z-UF-BDm" firstAttribute="top" secondItem="y33-Mm-saW" secondAttribute="top" constant="64" id="vDR-Xb-PbN"/>
+                <constraint firstItem="68z-UF-BDm" firstAttribute="top" secondItem="y33-Mm-saW" secondAttribute="top" id="vDR-Xb-PbN"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="429" y="328"/>

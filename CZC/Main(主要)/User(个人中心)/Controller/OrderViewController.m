@@ -21,14 +21,14 @@
     [super viewDidLoad];
     self.title = @"订单明细";
     //创建segmentControl
-    LjjUISegmentedControl* ljjuisement=[[LjjUISegmentedControl alloc]initWithFrame:CGRectMake(0, 64,SCREEN_WIDTH,34)];
+    LjjUISegmentedControl* ljjuisement=[[LjjUISegmentedControl alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH,34)];
     ljjuisement.delegate = self;
     NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",nil];
     [ljjuisement AddSegumentArray:ljjarray];
     [self.view addSubview:ljjuisement];
     
     //创建tableView
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 98, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 34, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];

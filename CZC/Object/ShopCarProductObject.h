@@ -51,5 +51,7 @@
 
 @property (nonatomic, copy) NSString *specificationName;
 
+@property (nonatomic, assign) BOOL isSelected;/**< 是否被选中 */
+
 
 @end

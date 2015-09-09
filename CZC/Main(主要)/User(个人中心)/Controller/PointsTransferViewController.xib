@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PointsTransferViewController">
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXd-KT-WHZ">
-                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转出会员名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUJ-Rd-wfW">
                             <rect key="frame" x="8" y="11" width="70" height="21"/>
@@ -34,7 +34,7 @@
                                 <constraint firstAttribute="height" constant="21" id="4e7-ON-gLi"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDI-Av-Pas">
@@ -57,7 +57,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8u-Vg-i1a">
-                    <rect key="frame" x="0.0" y="109" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="45" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转入会员名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSi-YH-dIB">
                             <rect key="frame" x="8" y="11" width="70" height="21"/>
@@ -65,7 +65,7 @@
                                 <constraint firstAttribute="height" constant="21" id="tid-WW-lm6"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-Io-vzS">
@@ -88,7 +88,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uag-mP-s9o">
-                    <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="90" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SA-4j-H0k">
                             <rect key="frame" x="8" y="11" width="28" height="21"/>
@@ -96,7 +96,7 @@
                                 <constraint firstAttribute="height" constant="21" id="PSr-R7-w48"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBM-D8-Axd">
@@ -117,7 +117,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-EO-q9e">
-                    <rect key="frame" x="70" y="223" width="180" height="30"/>
+                    <rect key="frame" x="70" y="159" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.62745098040000002" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Co8-6w-DQy"/>
@@ -131,11 +131,11 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="uag-mP-s9o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ET5-hp-7EX"/>
                 <constraint firstItem="wUh-EO-q9e" firstAttribute="top" secondItem="uag-mP-s9o" secondAttribute="bottom" constant="25" id="GCM-4v-Eah"/>
-                <constraint firstItem="vXd-KT-WHZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Q5Q-HL-he9"/>
+                <constraint firstItem="vXd-KT-WHZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q5Q-HL-he9"/>
                 <constraint firstAttribute="trailing" secondItem="wUh-EO-q9e" secondAttribute="trailing" constant="70" id="Qng-ie-5PK"/>
                 <constraint firstItem="vXd-KT-WHZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="R9f-Od-gdh"/>
                 <constraint firstItem="aBM-D8-Axd" firstAttribute="trailing" secondItem="aTV-Io-vzS" secondAttribute="trailing" id="SNS-BY-YsT"/>

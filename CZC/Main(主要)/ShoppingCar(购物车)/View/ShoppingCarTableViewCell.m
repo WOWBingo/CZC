@@ -17,19 +17,22 @@
     // 创建对象
     _numBtn = [[HJCAjustNumButton alloc] init];
     // 设置Frame，如不设置则默认为(0, 0, 110, 30)
-    _numBtn.frame = CGRectMake(0, 0, 80, 25);
+    _numBtn.frame = CGRectMake(0, 0, 90, 28);
     // 内容更改的block回调
-    _numBtn.callBack = ^(NSString *currentNum){
-        NSLog(@"%@", currentNum);
-    };    
+//    _numBtn.callBack = ^(NSString *currentNum){
+//        NSLog(@"%@", currentNum);
+//    };    
     // 加到父控件上
     [self addSubview:_numBtn];
     [_numBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_titleImg.mas_right).offset(8.0);
         make.bottom.equalTo(_titleImg.mas_bottom);
-        make.height.mas_equalTo(25.0);
-        make.width.mas_equalTo(80.0);
+        make.height.mas_equalTo(28.0);
+        make.width.mas_equalTo(90.0);
     }];
+    [self setBackgroundColor:BackGroundColor];
+    [_infoView setBackgroundColor:BackGroundColor];
+    [_numBtn setBackgroundColor:BackGroundColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

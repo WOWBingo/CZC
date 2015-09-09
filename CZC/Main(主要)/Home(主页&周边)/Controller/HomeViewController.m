@@ -158,53 +158,32 @@
     return _dataList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-        if (IS_IOS8_OR_ABOVE) {
-            return UITableViewAutomaticDimension;
-        }else{
-            return SCREEN_WIDTH/3*2+28;
-        }
+    
+    if (IS_IOS8_OR_ABOVE) {
+        return UITableViewAutomaticDimension;
+    }else{
+        return SCREEN_WIDTH/3*2+28;
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
-        if (_isHomePage) {
-            if (indexPath.row == 0) {
-                static NSString *cellIdentifier = @"HundredYuanCell";
-                HundredYuanCell *cell = (HundredYuanCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-                if (cell == nil) {
-                    NSBundle *bundle = [NSBundle mainBundle];
-                    NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-                    cell = (HundredYuanCell *)[nibArray objectAtIndex:0];
-                    cell.moreBtn.tag = indexPath.row;
-                    [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.leftBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.topRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.bottomMidBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.bottomRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-                }
-                return cell;
-            }else{
-                static NSString *cellIdentifier = @"HomeViewCell";
-                HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-                if (cell == nil) {
-                    NSBundle *bundle = [NSBundle mainBundle];
-                    NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-                    cell = (HomeViewCell *)[nibArray objectAtIndex:0];
-                    [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-                    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-                }
-                //设置cell上button标识符
-                [cell buttonAddCellNum:indexPath.row];
-                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",row-1];
-                cell.titleLabel.text = [_dataList objectAtIndex:row-1];
-                return cell;
+    if (_isHomePage) {
+        if (indexPath.row == 0) {
+            static NSString *cellIdentifier = @"HundredYuanCell";
+            HundredYuanCell *cell = (HundredYuanCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                NSBundle *bundle = [NSBundle mainBundle];
+                NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+                cell = (HundredYuanCell *)[nibArray objectAtIndex:0];
+                cell.moreBtn.tag = indexPath.row;
+                [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.leftBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.topRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomMidBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell.bottomRightBtn addTarget:self action:@selector(productInfo:) forControlEvents:UIControlEventTouchUpInside];
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
+            return cell;
         }else{
             static NSString *cellIdentifier = @"HomeViewCell";
             HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -220,12 +199,32 @@
                 [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
+            //设置cell上button标识符
             [cell buttonAddCellNum:indexPath.row];
-            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row];
-            cell.titleLabel.text = [_dataList objectAtIndex:row];
+            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",row];
+            cell.titleLabel.text = [_dataList objectAtIndex:row-1];
             return cell;
         }
-//    }
+    }else{
+        static NSString *cellIdentifier = @"HomeViewCell";
+        HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            NSBundle *bundle = [NSBundle mainBundle];
+            NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+            cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+            [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        }
+        [cell buttonAddCellNum:indexPath.row];
+        cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row+1];
+        cell.titleLabel.text = [_dataList objectAtIndex:row];
+        return cell;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -238,14 +237,14 @@
 - (IBAction)getMore:(id)sender{
     
     UIButton *btn = (UIButton*)sender;
-    if (_isHomePage && btn.tag == 1) {
+    if (_isHomePage && btn.tag == 0) {
         HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
         hundredVC.productCatagory = @"004001001";
         [self.navigationController pushViewController:hundredVC animated:YES];
     }else{
         ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];
         [self.navigationController pushViewController:shopVC animated:YES];
-
+        
     }
     
 }
@@ -258,17 +257,34 @@
     UIButton *btn = (UIButton*)sender;
     ProductInfoViewController *productInfoVC = [[ProductInfoViewController alloc]initWithNibName:@"ProductInfoViewController" bundle:nil];
     switch (btn.tag) {
-        case 0:
+        case 0:{
             NSLog(@"0000");
+            //715b0edf-1a41-4439-ab4e-0738da284946  连衣裙
+            ProductsObject *product = [[ProductsObject alloc]init];
+            product.guid = @"715b0edf-1a41-4439-ab4e-0738da284946";
+            productInfoVC.product = product;
+        }
             break;
-        case 1:
+        case 1:{
             NSLog(@"1111");
+            ProductsObject *product = [[ProductsObject alloc]init];
+            product.guid = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d";
+            productInfoVC.product = product;
+        }
             break;
-        case 2:
+        case 2:{
             NSLog(@"2222");
+            ProductsObject *product = [[ProductsObject alloc]init];
+            product.guid = @"86618022-2967-45c2-8879-5175d2fd0b04";
+            productInfoVC.product = product;
+        }
             break;
-        case 3:
+        case 3:{
             NSLog(@"3333");
+            ProductsObject *product = [[ProductsObject alloc]init];
+            product.guid = @"eed39973-32e6-49e9-9623-9cf6e6f23ba6";
+            productInfoVC.product = product;
+        }
             break;
             
         default:

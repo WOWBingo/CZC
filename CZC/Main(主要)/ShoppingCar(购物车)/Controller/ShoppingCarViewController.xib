@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -30,18 +30,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbB-g6-8xI">
                     <rect key="frame" x="0.0" y="433" width="320" height="86"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥130" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXK-Lw-1qS">
-                            <rect key="frame" x="153" y="10" width="45.5" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXK-Lw-1qS">
+                            <rect key="frame" x="153" y="10" width="50.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dst-ut-M5e">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dst-ut-M5e">
                             <rect key="frame" x="64" y="36" width="192" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="NC4-Nk-0f2"/>
                             </constraints>
-                            <state key="normal" title="结算" backgroundImage="cpxx-7">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="结  算" backgroundImage="cpxx-7">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -56,7 +57,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="RXK-Lw-1qS" firstAttribute="leading" secondItem="bSa-D4-hOq" secondAttribute="trailing" constant="5" id="60W-fO-9AU"/>
                         <constraint firstItem="RXK-Lw-1qS" firstAttribute="leading" secondItem="wbB-g6-8xI" secondAttribute="trailing" multiplier="0.48" id="BOj-Ca-07B"/>
@@ -82,7 +83,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="wbB-g6-8xI" secondAttribute="trailing" id="4Tk-Nh-pNY"/>
-                <constraint firstAttribute="trailing" secondItem="0Cc-34-lZg" secondAttribute="trailing" id="G6E-QT-Lr6"/>
+                <constraint firstItem="0Cc-34-lZg" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="G6E-QT-Lr6"/>
                 <constraint firstItem="0Cc-34-lZg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aOZ-69-R38"/>
                 <constraint firstItem="wbB-g6-8xI" firstAttribute="top" secondItem="0Cc-34-lZg" secondAttribute="bottom" id="ds6-Vr-H9z"/>
                 <constraint firstItem="wbB-g6-8xI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iBv-2s-8wk"/>

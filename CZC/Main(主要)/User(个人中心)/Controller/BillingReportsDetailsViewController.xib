@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BillingReportsDetailsViewController">
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-tp-Bmu">
-                    <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="billingDetail_in" translatesAutoresizingMaskIntoConstraints="NO" id="sVK-wo-Ffc">
                             <rect key="frame" x="16" y="30" width="40" height="40"/>
@@ -32,7 +32,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buE-5Q-9We">
-                            <rect key="frame" x="64" y="30" width="36" height="21"/>
+                            <rect key="frame" x="64" y="30" width="35.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="zt4-1e-yJU"/>
                             </constraints>
@@ -48,7 +48,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-bl-WxR">
-                            <rect key="frame" x="291" y="39" width="21" height="21"/>
+                            <rect key="frame" x="291.5" y="39" width="20.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="6Sn-DU-gZ4"/>
                             </constraints>
@@ -72,7 +72,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xbk-5I-HEU">
-                    <rect key="frame" x="0.0" y="172" width="320" height="396"/>
+                    <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Nhx-El-rti"/>
@@ -80,11 +80,11 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="dM4-tp-Bmu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hpm-km-GOv"/>
                 <constraint firstItem="xbk-5I-HEU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KPG-NG-ZU0"/>
-                <constraint firstItem="dM4-tp-Bmu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="MgO-FT-fDF"/>
+                <constraint firstItem="dM4-tp-Bmu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MgO-FT-fDF"/>
                 <constraint firstAttribute="trailing" secondItem="xbk-5I-HEU" secondAttribute="trailing" id="WjM-4m-AMS"/>
                 <constraint firstItem="xbk-5I-HEU" firstAttribute="top" secondItem="dM4-tp-Bmu" secondAttribute="bottom" constant="8" id="YBS-FL-58X"/>
                 <constraint firstAttribute="trailing" secondItem="dM4-tp-Bmu" secondAttribute="trailing" id="YnC-fH-r3c"/>

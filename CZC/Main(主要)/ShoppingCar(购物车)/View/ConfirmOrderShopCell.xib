@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="ConfirmOrderShopCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDa-Ya-IfV">
+                        <rect key="frame" x="0.0" y="8" width="320" height="35.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-sy-1" translatesAutoresizingMaskIntoConstraints="NO" id="GSe-qn-Isn">
+                                <rect key="frame" x="20" y="8" width="19.5" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GSe-qn-Isn" secondAttribute="height" id="sdH-RE-9hf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商店名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isp-cD-cyQ">
+                                <rect key="frame" x="47.5" y="9.5" width="56" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="0Bh-Kl-niy"/>
+                            <constraint firstItem="isp-cD-cyQ" firstAttribute="top" secondItem="uDa-Ya-IfV" secondAttribute="top" constant="6" id="2pH-EV-a40"/>
+                            <constraint firstItem="isp-cD-cyQ" firstAttribute="leading" secondItem="GSe-qn-Isn" secondAttribute="trailing" constant="8" id="56T-we-H3x"/>
+                            <constraint firstAttribute="centerY" secondItem="isp-cD-cyQ" secondAttribute="centerY" id="7Kx-Bz-J21"/>
+                            <constraint firstItem="GSe-qn-Isn" firstAttribute="top" secondItem="uDa-Ya-IfV" secondAttribute="top" constant="8" id="IVw-oV-QTC"/>
+                            <constraint firstAttribute="bottom" secondItem="isp-cD-cyQ" secondAttribute="bottom" constant="6" id="ME1-VC-emp"/>
+                            <constraint firstAttribute="centerY" secondItem="isp-cD-cyQ" secondAttribute="centerY" id="R72-aG-NAY"/>
+                            <constraint firstAttribute="bottom" secondItem="GSe-qn-Isn" secondAttribute="bottom" constant="8" id="f0K-PZ-APW"/>
+                            <constraint firstItem="GSe-qn-Isn" firstAttribute="leading" secondItem="uDa-Ya-IfV" secondAttribute="leading" constant="20" id="vT4-Zu-LFG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2pH-EV-a40"/>
+                                <exclude reference="7Kx-Bz-J21"/>
+                                <exclude reference="ME1-VC-emp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uDa-Ya-IfV" secondAttribute="bottom" id="BN9-rF-7cF"/>
+                    <constraint firstItem="uDa-Ya-IfV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bh6-uU-OTh"/>
+                    <constraint firstItem="uDa-Ya-IfV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="irf-54-vSP"/>
+                    <constraint firstAttribute="trailing" secondItem="uDa-Ya-IfV" secondAttribute="trailing" id="uiD-8Z-1j8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="shopNameLabel" destination="isp-cD-cyQ" id="5uu-r9-zaj"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="193"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-sy-1" width="21" height="19"/>
+    </resources>
+</document>

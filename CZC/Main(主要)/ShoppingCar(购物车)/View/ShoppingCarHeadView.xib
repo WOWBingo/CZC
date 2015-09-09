@@ -8,86 +8,95 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShoppingCarHeadView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUv-Bm-5NX">
-                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-eU-NP2">
+                    <rect key="frame" x="0.0" y="6" width="375" height="38"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUv-Bm-5NX" customClass="ZDYCheckButton">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="x2i-Fx-1w9"/>
+                            </constraints>
+                            <state key="normal" image="chooseNO">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-sy-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Ge-4T-pHN">
+                            <rect key="frame" x="40" y="9" width="21" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="ZzT-XH-reJ"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="ZzT-XH-reJ"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="jcC-f2-fdJ">
+                            <rect key="frame" x="153" y="12" width="8" height="14"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-eG-NU3">
+                            <rect key="frame" x="61" y="3" width="100" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="yjd-K6-8Ma"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="80" minY="0.0" maxX="6" maxY="0.0"/>
+                            <state key="normal" title="妖精的口袋">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥500.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GG-Ud-Hl4">
+                            <rect key="frame" x="309" y="10" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小计" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-6r-Ihg">
+                            <rect key="frame" x="281" y="10.5" width="28" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="3tU-wd-9vQ"/>
-                        <constraint firstAttribute="width" constant="40" id="NAn-tx-Lp6"/>
+                        <constraint firstItem="6Ge-4T-pHN" firstAttribute="leading" secondItem="WUv-Bm-5NX" secondAttribute="trailing" id="9o9-R4-b0n"/>
+                        <constraint firstAttribute="centerY" secondItem="Pdg-eG-NU3" secondAttribute="centerY" id="Bdi-qL-FzK"/>
+                        <constraint firstAttribute="bottom" secondItem="WUv-Bm-5NX" secondAttribute="bottom" id="DM2-i0-NFR"/>
+                        <constraint firstAttribute="centerY" secondItem="7GG-Ud-Hl4" secondAttribute="centerY" id="K69-tC-Ei4"/>
+                        <constraint firstItem="Pdg-eG-NU3" firstAttribute="leading" secondItem="6Ge-4T-pHN" secondAttribute="trailing" id="OFe-AV-ZiP"/>
+                        <constraint firstAttribute="centerY" secondItem="6Ge-4T-pHN" secondAttribute="centerY" constant="0.5" id="OTB-3A-uzR"/>
+                        <constraint firstItem="jcC-f2-fdJ" firstAttribute="trailing" secondItem="Pdg-eG-NU3" secondAttribute="trailing" id="WBk-tQ-fPT"/>
+                        <constraint firstAttribute="trailing" secondItem="7GG-Ud-Hl4" secondAttribute="trailing" constant="8" id="ZXO-wD-Pz2"/>
+                        <constraint firstItem="7GG-Ud-Hl4" firstAttribute="leading" secondItem="gYY-6r-Ihg" secondAttribute="trailing" id="fQP-4Y-wSV"/>
+                        <constraint firstItem="WUv-Bm-5NX" firstAttribute="leading" secondItem="AmN-eU-NP2" secondAttribute="leading" id="mx6-1U-BNK"/>
+                        <constraint firstItem="WUv-Bm-5NX" firstAttribute="top" secondItem="AmN-eU-NP2" secondAttribute="top" id="nUw-xo-P2p"/>
+                        <constraint firstAttribute="centerY" secondItem="gYY-6r-Ihg" secondAttribute="centerY" id="nnl-24-LGV"/>
+                        <constraint firstAttribute="centerY" secondItem="jcC-f2-fdJ" secondAttribute="centerY" id="qZd-3E-OD9"/>
                     </constraints>
-                    <state key="normal" image="chooseNO">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小计" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-6r-Ihg">
-                    <rect key="frame" x="281" y="11" width="28" height="17"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-sy-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Ge-4T-pHN">
-                    <rect key="frame" x="40" y="10" width="21" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="ZzT-XH-reJ"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="ZzT-XH-reJ"/>
-                        </mask>
-                    </variation>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-eG-NU3">
-                    <rect key="frame" x="61" y="0.0" width="104" height="40"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="10" maxY="0.0"/>
-                    <inset key="titleEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="80" minY="0.0" maxX="6" maxY="0.0"/>
-                    <state key="normal" title="妖精的口袋" image="arrow">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥500.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GG-Ud-Hl4">
-                    <rect key="frame" x="309" y="11" width="57.5" height="17"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                    <color key="textColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="6Ge-4T-pHN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BLU-bf-vGc"/>
-                <constraint firstItem="WUv-Bm-5NX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CGz-xC-6Er"/>
-                <constraint firstAttribute="trailing" secondItem="7GG-Ud-Hl4" secondAttribute="trailing" constant="8" id="KY1-3r-at0"/>
-                <constraint firstAttribute="bottom" secondItem="Pdg-eG-NU3" secondAttribute="bottom" id="QQv-dI-Elo"/>
-                <constraint firstItem="7GG-Ud-Hl4" firstAttribute="leading" secondItem="gYY-6r-Ihg" secondAttribute="trailing" id="Qtt-wS-cKX"/>
-                <constraint firstItem="WUv-Bm-5NX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gvf-Hf-zKd"/>
-                <constraint firstAttribute="centerY" secondItem="WUv-Bm-5NX" secondAttribute="centerY" id="hf6-bj-v5s"/>
-                <constraint firstAttribute="centerY" secondItem="7GG-Ud-Hl4" secondAttribute="centerY" id="kDk-A4-RjV"/>
-                <constraint firstItem="6Ge-4T-pHN" firstAttribute="leading" secondItem="WUv-Bm-5NX" secondAttribute="trailing" id="kgK-sG-Lpk"/>
-                <constraint firstItem="Pdg-eG-NU3" firstAttribute="leading" secondItem="6Ge-4T-pHN" secondAttribute="trailing" id="oIG-qL-Hpu"/>
-                <constraint firstAttribute="centerY" secondItem="6Ge-4T-pHN" secondAttribute="centerY" id="rpw-BK-rEK"/>
-                <constraint firstAttribute="bottom" secondItem="6Ge-4T-pHN" secondAttribute="bottom" id="rqE-dd-8XD"/>
-                <constraint firstAttribute="centerY" secondItem="gYY-6r-Ihg" secondAttribute="centerY" id="vRV-kN-eIV"/>
-                <constraint firstAttribute="bottom" secondItem="WUv-Bm-5NX" secondAttribute="bottom" id="wRA-4i-Kw2"/>
-                <constraint firstItem="Pdg-eG-NU3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xde-ou-aKm"/>
+                <constraint firstAttribute="trailing" secondItem="AmN-eU-NP2" secondAttribute="trailing" id="12v-c8-el3"/>
+                <constraint firstItem="AmN-eU-NP2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1zd-WV-7Uo"/>
+                <constraint firstAttribute="bottom" secondItem="AmN-eU-NP2" secondAttribute="bottom" id="CfU-Y3-NEO"/>
+                <constraint firstItem="AmN-eU-NP2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="gjO-BL-LId"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="BLU-bf-vGc"/>
-                    <exclude reference="rqE-dd-8XD"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="priceLabel" destination="7GG-Ud-Hl4" id="Gxs-xa-q6h"/>
                 <outlet property="selectBtn" destination="WUv-Bm-5NX" id="Ege-fl-aW2"/>
                 <outlet property="shopBtn" destination="Pdg-eG-NU3" id="hGT-ja-AHe"/>
             </connections>
-            <point key="canvasLocation" x="395.5" y="530"/>
+            <point key="canvasLocation" x="-29.5" y="408"/>
         </view>
     </objects>
     <resources>

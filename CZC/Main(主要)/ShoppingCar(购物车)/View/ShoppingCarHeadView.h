@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDYCheckButton.h"
 
 @interface ShoppingCarHeadView : UIView
-@property (weak, nonatomic) IBOutlet UIButton *selectBtn;
+@property (weak, nonatomic) IBOutlet ZDYCheckButton *selectBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shopBtn;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 

@@ -128,23 +128,23 @@
  *
  */
 - (void)getPriceBySpecification{
-    //    NSString *params = [NSString stringWithFormat:@"%@?Detail=",_product.guid];
-    //    for(int i = 0; i<_specificationArray.count; i++){
-    //        SpecificationAllObject *speAllObject = [_specificationArray objectAtIndex:i];
-    //        SpecificationObject *selectedSpecObject = [_selectedSpecificationDic objectForKey:speAllObject.specValueName];
-    //        if (selectedSpecObject) {
-    //            if (i == 0) {
-    //                params = [NSString stringWithFormat:@"%@%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
-    //            }else{
-    //                params = [NSString stringWithFormat:@"%@|%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
-    //            }
-    //        }else{
-    //            NSLog(@"Str=========return");
-    //            return;
-    //        }
-    //    }
-    //    NSLog(@"Str=========%@",params);
-    NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234|M,665";
+        NSString *params = [NSString stringWithFormat:@"%@?Detail=",_product.guid];
+        for(int i = 0; i<_specificationArray.count; i++){
+            SpecificationAllObject *speAllObject = [_specificationArray objectAtIndex:i];
+            SpecificationObject *selectedSpecObject = [_selectedSpecificationDic objectForKey:speAllObject.specValueName];
+            if (selectedSpecObject) {
+                if (i == 0) {
+                    params = [NSString stringWithFormat:@"%@%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+                }else{
+                    params = [NSString stringWithFormat:@"%@|%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+                }
+            }else{
+                NSLog(@"Str=========return");
+                return;
+            }
+        }
+        NSLog(@"Str=========%@",params);
+  //  NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234|M,665";
     [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         NSArray *dataArr = [result objectForKey:@"Specification"];

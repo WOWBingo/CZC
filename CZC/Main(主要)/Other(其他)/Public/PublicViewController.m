@@ -18,13 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];//navigation栏的图片
+    //    self.navigationController.navigationBar.barTintColor = [UIColor redColor];//导航栏颜色
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
-
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];
-    // 修改navigation下边框
-//    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
+    //    修改navigation下边框
+    //    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"cpxx-8"]];
+    
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//返回按钮颜色
+    //返回按钮文字
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
     
     //修改UINavigationController title 的颜色和大小
     UIColor * titleColor = [UIColor whiteColor];
@@ -33,6 +37,7 @@
     self.navigationController.navigationBar.titleTextAttributes = dic;
     
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
     
