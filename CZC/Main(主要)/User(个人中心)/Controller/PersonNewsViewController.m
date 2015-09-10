@@ -45,8 +45,8 @@
         }
         [self getWithPage:self.pageIndex];
     }];
-    // 马上进入刷新状态
-    [self.tableView.header beginRefreshing];
+//    // 马上进入刷新状态
+//    [self.tableView.header beginRefreshing];
     
     //上拉刷新
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -59,8 +59,8 @@
         }
         [self getWithPage:self.pageIndex];
     }];
-    // 马上进入刷新状态
-    [self.tableView.footer beginRefreshing];
+//    // 马上进入刷新状态
+//    [self.tableView.footer beginRefreshing];
 }
 -(void)getWithPage:(int)pageIndex{
 #pragma mark - 29.会员消息列表

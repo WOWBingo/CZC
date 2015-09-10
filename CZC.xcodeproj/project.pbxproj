@@ -51,6 +51,10 @@
 		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
 		18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */; };
 		18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */; };
+		18DDE5E01BA1B827006CAF8E /* OrderHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDE5DF1BA1B827006CAF8E /* OrderHeadView.m */; };
+		18DDE5E21BA1B83D006CAF8E /* OrderHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DDE5E11BA1B83D006CAF8E /* OrderHeadView.xib */; };
+		18DDE5E51BA1B85E006CAF8E /* OrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDE5E41BA1B85E006CAF8E /* OrderFootView.m */; };
+		18DDE5E71BA1B869006CAF8E /* OrderFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DDE5E61BA1B869006CAF8E /* OrderFootView.xib */; };
 		18E04FAE1B948EBA00A2540C /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E04FAD1B948EBA00A2540C /* PopView.m */; };
 		1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7B31B74F8DA009C7A33 /* ProductsObject.m */; };
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
@@ -326,6 +330,12 @@
 		18CD802B1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateThreeViewController.h; sourceTree = "<group>"; };
 		18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateThreeViewController.m; sourceTree = "<group>"; };
 		18CD802D1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateThreeViewController.xib; sourceTree = "<group>"; };
+		18DDE5DE1BA1B827006CAF8E /* OrderHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeadView.h; sourceTree = "<group>"; };
+		18DDE5DF1BA1B827006CAF8E /* OrderHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeadView.m; sourceTree = "<group>"; };
+		18DDE5E11BA1B83D006CAF8E /* OrderHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHeadView.xib; sourceTree = "<group>"; };
+		18DDE5E31BA1B85E006CAF8E /* OrderFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFootView.h; sourceTree = "<group>"; };
+		18DDE5E41BA1B85E006CAF8E /* OrderFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderFootView.m; sourceTree = "<group>"; };
+		18DDE5E61BA1B869006CAF8E /* OrderFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderFootView.xib; sourceTree = "<group>"; };
 		18E04FAC1B948EBA00A2540C /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopView.h; path = "CZC/Resouce(资源)/PopView.h"; sourceTree = SOURCE_ROOT; };
 		18E04FAD1B948EBA00A2540C /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopView.m; path = "CZC/Resouce(资源)/PopView.m"; sourceTree = SOURCE_ROOT; };
 		1902C7B21B74F8DA009C7A33 /* ProductsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsObject.h; path = Object/ProductsObject.h; sourceTree = "<group>"; };
@@ -1186,6 +1196,12 @@
 				192BC9061B88BC48003B8328 /* OrderDetailTwoTableViewCell.h */,
 				192BC9071B88BC48003B8328 /* OrderDetailTwoTableViewCell.m */,
 				192BC9081B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib */,
+				18DDE5DE1BA1B827006CAF8E /* OrderHeadView.h */,
+				18DDE5DF1BA1B827006CAF8E /* OrderHeadView.m */,
+				18DDE5E11BA1B83D006CAF8E /* OrderHeadView.xib */,
+				18DDE5E31BA1B85E006CAF8E /* OrderFootView.h */,
+				18DDE5E41BA1B85E006CAF8E /* OrderFootView.m */,
+				18DDE5E61BA1B869006CAF8E /* OrderFootView.xib */,
 				192BC9091B88BC48003B8328 /* OrderTableViewCell.h */,
 				192BC90A1B88BC48003B8328 /* OrderTableViewCell.m */,
 				192BC90B1B88BC48003B8328 /* OrderTableViewCell.xib */,
@@ -1463,6 +1479,7 @@
 				192BC97A1B88BC48003B8328 /* EditAddressViewController.xib in Resources */,
 				192BC9B61B88BC48003B8328 /* PersonNewsTableViewCell.xib in Resources */,
 				187D7A811B8F3FA6007324E6 /* BillingDetailsViewController.xib in Resources */,
+				18DDE5E21BA1B83D006CAF8E /* OrderHeadView.xib in Resources */,
 				1888B4871B930355006E3165 /* PotintsDetailsTableViewCell.xib in Resources */,
 				192BC9951B88BC48003B8328 /* ShopCollectViewController.xib in Resources */,
 				192BC9781B88BC48003B8328 /* DiscountPromotionViewController.xib in Resources */,
@@ -1485,6 +1502,7 @@
 				1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */,
 				187E335E1B8DFB5300E8617A /* ChangePwdViewController.xib in Resources */,
 				192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */,
+				18DDE5E71BA1B869006CAF8E /* OrderFootView.xib in Resources */,
 				192BC93A1B88BC48003B8328 /* HomeViewController.xib in Resources */,
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
 				196285C31B9FD56500D7AC55 /* ConfirmOrderShopCell.xib in Resources */,
@@ -1652,6 +1670,7 @@
 				1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */,
 				192BC9F31B89CD97003B8328 /* SpecificationChoseCell.m in Sources */,
 				192BC9941B88BC48003B8328 /* ShopCollectViewController.m in Sources */,
+				18DDE5E51BA1B85E006CAF8E /* OrderFootView.m in Sources */,
 				1977FD9A1B77599B000A8D26 /* OrderProductObject.m in Sources */,
 				1977FDA91B776A7E000A8D26 /* CollectProductObject.m in Sources */,
 				192BC9791B88BC48003B8328 /* EditAddressViewController.m in Sources */,
@@ -1693,6 +1712,7 @@
 				192BC9641B88BC48003B8328 /* PublicViewController.m in Sources */,
 				18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */,
 				1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */,
+				18DDE5E01BA1B827006CAF8E /* OrderHeadView.m in Sources */,
 				1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */,
 				192BC97F1B88BC48003B8328 /* LoginViewController.m in Sources */,
 				192BC9481B88BC48003B8328 /* ChoseProductInfoView.m in Sources */,

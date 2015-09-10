@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OrderHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-sy-1" translatesAutoresizingMaskIntoConstraints="NO" id="lUL-dy-Zcq">
+                    <rect key="frame" x="8" y="9" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="7aF-ZB-i2R"/>
+                        <constraint firstAttribute="height" constant="25" id="MMY-dN-dbC"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVg-Ys-uXZ">
+                    <rect key="frame" x="41" y="7" width="38" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3Bw-ir-XeY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shopNameClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="SJm-FY-Ul0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-lo-qch">
+                    <rect key="frame" x="91" y="11" width="8" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="OT4-Dm-YRj"/>
+                        <constraint firstAttribute="height" constant="22" id="kdo-Ny-dHD"/>
+                    </constraints>
+                    <state key="normal" image="arrow">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shopNameClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="d7h-Xx-3Hc"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRO-Xh-duG">
+                    <rect key="frame" x="276" y="11" width="36" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="it6-wF-Wtx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LVg-Ys-uXZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="15a-gY-5sG"/>
+                <constraint firstAttribute="trailing" secondItem="yRO-Xh-duG" secondAttribute="trailing" constant="8" id="7td-mG-gZh"/>
+                <constraint firstItem="yRO-Xh-duG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="9g6-jC-GAp"/>
+                <constraint firstItem="lUL-dy-Zcq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="A0w-j9-XwL"/>
+                <constraint firstItem="kzh-lo-qch" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="PCY-Wc-mEh"/>
+                <constraint firstItem="lUL-dy-Zcq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Vos-6a-LxN"/>
+                <constraint firstItem="LVg-Ys-uXZ" firstAttribute="leading" secondItem="lUL-dy-Zcq" secondAttribute="trailing" constant="8" id="ZnP-c8-bnZ"/>
+                <constraint firstItem="kzh-lo-qch" firstAttribute="leading" secondItem="LVg-Ys-uXZ" secondAttribute="trailing" constant="12" id="kAG-Gz-XLC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="orderStatusLab" destination="yRO-Xh-duG" id="Xd7-fE-3Wg"/>
+                <outlet property="shopNameBtn" destination="LVg-Ys-uXZ" id="UH8-9F-2UE"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="331"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow" width="8" height="14"/>
+        <image name="icon-sy-1" width="21" height="19"/>
+    </resources>
+</document>

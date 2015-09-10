@@ -64,7 +64,8 @@
     selectSeugment=0;
     self.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:14.0f];
     self=[super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 34)];
-    self.LJBackGroundColor=[UIColor colorWithRed:253.0f/255 green:239.0f/255 blue:230.0f/255 alpha:1.0f];
+//    self.LJBackGroundColor=[UIColor colorWithRed:253.0f/255 green:239.0f/255 blue:230.0f/255 alpha:1.0f];
+    self.LJBackGroundColor = [UIColor whiteColor];
     self.titleColor=[UIColor colorWithRed:77.0/255 green:77.0/255 blue:77.0/255 alpha:1.0f];
     self.selectColor=[UIColor colorWithRed:233.0/255 green:97.0/255 blue:31.0/255 alpha:1.0f];
     [self setBackgroundColor:self.LJBackGroundColor];

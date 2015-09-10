@@ -8,6 +8,8 @@
 
 #import "OrderViewController.h"
 #import "OrderTableViewCell.h"
+#import "OrderHeadView.h"
+#import "OrderFootView.h"
 #import "OrderObject.h"
 #import "OrderProductObject.h"
 #import "OrderDetailViewController.h"
@@ -28,9 +30,11 @@
     [self.view addSubview:ljjuisement];
     
     //创建tableView
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 34, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 34, SCREEN_WIDTH, SCREEN_HEIGHT-64-34)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:self.tableView];
     //Change the background color
 //    ljjuisement.LJBackGroundColor=[UIColor BlackColor];
@@ -78,11 +82,109 @@
         cell.imgView.image = [UIImage imageNamed:@"cpsc-p1"];
     }
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+#pragma tableViewHead
+//section数，订单数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.orderListArray.count;
 }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:section];
+    OrderHeadView *headView = [OrderHeadView instanceView];
+    [headView.shopNameBtn setTitle:orderObj.shopName forState:UIControlStateNormal];
+    //根据orderStatus 判断0 全部订单  1待付款 2 待发货 3 待收货  4 已完成订单  5 买家已经评价  6 卖家已经评价  7退货8 订单完成并且未评价
+    switch (orderObj.oderStatus) {
+        case 1:
+            [headView.orderStatusLab setText:@"待付款"];
+            break;
+        case 2:
+            [headView.orderStatusLab setText:@"待发货"];
+            break;
+        case 3:
+            [headView.orderStatusLab setText:@"待收货"];
+            break;
+        case 4:
+            [headView.orderStatusLab setText:@"已完成"];
+            break;
+        case 8:
+            [headView.orderStatusLab setText:@"未评价"];
+            break;
+        default:
+            break;
+    }
+    return headView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 44;
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:section];
+    return orderObj.productList.count;//productList.count;
+}
+#pragma tableViewFoot
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:section];
+    OrderFootView *footView = [OrderFootView instanceView];
+    //遍历所有productList
+    int proNum = 0;
+    //定义一个临时数组，接收ProductList数组对象
+    NSMutableArray *productListArr = [[NSMutableArray alloc]init];
+    productListArr = orderObj.productList;
+    for (int i =0; i<orderObj.productList.count; i++) {
+        OrderProductObject *orderProObj = [OrderProductObject objectWithKeyValues:[productListArr objectAtIndex:i]];
+        NSLog(@"%@",orderProObj);
+        int temp = (int)orderProObj.buyNumber;
+        proNum = proNum+temp;
+    }
+    footView.proNumLab.text = [NSString stringWithFormat:@"共%d件商品,合计:￥",proNum];
+    footView.totalLab.text = [NSString stringWithFormat:@"%.02f",orderObj.shouldPayPrice];
+    //运费
+    if (orderObj.packPrice == 0) {
+        footView.freightLab.text = @"(免运费)";
+    }else{
+        footView.freightLab.text = [NSString stringWithFormat:@"(包含运费￥%.02f)",orderObj.packPrice];
+    }
+    //根据订单状态修改btn
+    switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价
+        case 1://待付款
+            footView.leftBtn.tag = 0;
+            [footView.leftBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+            footView.rightBtn.tag = 1;
+            [footView.rightBtn setTitle:@"付款" forState:UIControlStateNormal];
+            break;
+        case 2://待发货
+            footView.leftBtn.tag = 2;
+            [footView.rightBtn setTitle:@"退款" forState:UIControlStateNormal];
+            footView.rightBtn.tag = 3;
+            [footView.rightBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
+            break;
+        case 3://待收货
+            footView.leftBtn.tag = 2;
+            [footView.leftBtn setTitle:@"退款" forState:UIControlStateNormal];
+            footView.rightBtn.tag = 4;
+            [footView.rightBtn setTitle:@"确认收货" forState:UIControlStateNormal];
+            break;
+        case 4://已完成
+            footView.leftBtn.hidden = YES;
+            footView.rightBtn.tag = 5;
+            [footView.rightBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+            break;
+        case 8://待评价
+            footView.leftBtn.hidden = YES;
+            footView.rightBtn.tag = 6;
+            [footView.rightBtn setTitle:@"评价" forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+    //划线
+    [PublicObject drawHorizontalLineOnView:footView andX:footView.frame.origin.x andY:footView.proNumLab.frame.origin.y+footView.proNumLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor groupTableViewBackgroundColor]];
+    return footView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 80;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"OrderTableViewCell";
@@ -93,15 +195,15 @@
         cell = (OrderTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    //划线
-    [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.imgView.frame.origin.y+cell.imgView.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
-    [PublicObject drawHorizontalLineOnView:cell.backView andX:cell.backView.frame.origin.x andY:cell.proNumLab.frame.origin.y+cell.proNumLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor grayColor]];
+    cell.backgroundColor = [UIColor whiteColor];
     //获取订单详情
-    OrderObject *orderObj = [self.orderListArray objectAtIndex:indexPath.row];
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:indexPath.section];
     //定义一个临时数组，接收ProductList数组对象
     NSMutableArray *productListArr = [[NSMutableArray alloc]init];
     productListArr = orderObj.productList;
-    OrderProductObject *orderProObj = [OrderProductObject objectWithKeyValues:[productListArr objectAtIndex:0]];
+    NSLog(@"%lu",(unsigned long)productListArr.count);
+    NSLog(@"%ld",(long)indexPath.row);
+    OrderProductObject *orderProObj = [OrderProductObject objectWithKeyValues:[productListArr objectAtIndex:indexPath.row]];
     NSLog(@"%@",orderProObj);
     //图片
     NSString *imgURL = @"";
@@ -128,12 +230,6 @@
     cell.orderStatusLab.text = orderObj.paymentName;
     //订单时间
     cell.timeLab.text = [orderObj.createTime substringToIndex:9];//下单时间
-    //物品数量
-    cell.proNumLab.text = [NSString stringWithFormat:@"%ld",orderProObj.buyNumber];
-    //总价
-    cell.moneyLab.text = [NSString stringWithFormat:@"%f",orderProObj.buyPrice];
-    //运费
-    cell.freightLab.text = [NSString stringWithFormat:@"%f",orderObj.packPrice];
     //根据orderStatus 判断0 全部订单  1待付款 2 待发货 3 待收货  4 已完成订单  5 买家已经评价  6 卖家已经评价  7退货8 订单完成并且未评价
     
     return cell;
@@ -145,7 +241,7 @@
     //    if (IS_IOS8_OR_ABOVE) {
     //        return UITableViewAutomaticDimension;
     //    }else{
-    return 180;
+    return 90;
     //    }
 }
 
