@@ -25,7 +25,7 @@
     //创建segmentControl
     LjjUISegmentedControl* ljjuisement=[[LjjUISegmentedControl alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH,34)];
     ljjuisement.delegate = self;
-    NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",nil];
+    NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",@"退款/售后",nil];
     [ljjuisement AddSegumentArray:ljjarray];
     [self.view addSubview:ljjuisement];
     
@@ -159,7 +159,7 @@
             footView.rightBtn.tag = 3;
             [footView.rightBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
             break;
-        case 3://待收货
+        case 3://待收货 少一个查看物流！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
             footView.leftBtn.tag = 2;
             [footView.leftBtn setTitle:@"退款" forState:UIControlStateNormal];
             footView.rightBtn.tag = 4;

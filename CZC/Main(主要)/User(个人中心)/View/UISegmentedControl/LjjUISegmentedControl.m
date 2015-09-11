@@ -62,7 +62,7 @@
 {
     self.ButtonArray=[NSMutableArray array];
     selectSeugment=0;
-    self.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:14.0f];
+    self.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:12.0f];
     self=[super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 34)];
 //    self.LJBackGroundColor=[UIColor colorWithRed:253.0f/255 green:239.0f/255 blue:230.0f/255 alpha:1.0f];
     self.LJBackGroundColor = [UIColor whiteColor];

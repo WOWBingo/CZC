@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -17,20 +17,53 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fsU-nc-MMc">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="8ew-aX-Lop"/>
                         <outlet property="delegate" destination="-1" id="Alr-hp-mGS"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-Qp-S0L">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcY-Lo-Q6M">
+                            <rect key="frame" x="262" y="8" width="50" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iks-zA-dlp">
+                            <rect key="frame" x="204" y="8" width="50" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dde-bD-vtb">
+                            <rect key="frame" x="146" y="8" width="50" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="wIO-85-6Ea"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="fsU-nc-MMc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Al-pa-QwX"/>
-                <constraint firstAttribute="bottom" secondItem="fsU-nc-MMc" secondAttribute="bottom" id="E9G-rj-U9q"/>
-                <constraint firstItem="fsU-nc-MMc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M3q-eF-RFB"/>
-                <constraint firstAttribute="trailing" secondItem="fsU-nc-MMc" secondAttribute="trailing" id="cN7-wq-wuP"/>
+                <constraint firstItem="Uxg-Qp-S0L" firstAttribute="top" secondItem="fsU-nc-MMc" secondAttribute="bottom" id="5r0-sJ-EyL"/>
+                <constraint firstItem="fsU-nc-MMc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jv0-q4-zv2"/>
+                <constraint firstAttribute="bottom" secondItem="Uxg-Qp-S0L" secondAttribute="bottom" id="ToJ-Uj-rpM"/>
+                <constraint firstItem="fsU-nc-MMc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yml-oq-skY"/>
+                <constraint firstItem="Uxg-Qp-S0L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fyX-mz-AvQ"/>
+                <constraint firstAttribute="trailing" secondItem="Uxg-Qp-S0L" secondAttribute="trailing" id="s7k-Vw-oHL"/>
+                <constraint firstAttribute="trailing" secondItem="fsU-nc-MMc" secondAttribute="trailing" id="sHP-ah-Dpf"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
