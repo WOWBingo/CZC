@@ -12,10 +12,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-sy-1" translatesAutoresizingMaskIntoConstraints="NO" id="lUL-dy-Zcq">
-                    <rect key="frame" x="8" y="9" width="25" height="25"/>
+                    <rect key="frame" x="8" y="12" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="7aF-ZB-i2R"/>
-                        <constraint firstAttribute="height" constant="25" id="MMY-dN-dbC"/>
+                        <constraint firstAttribute="width" constant="20" id="7aF-ZB-i2R"/>
+                        <constraint firstAttribute="height" constant="20" id="MMY-dN-dbC"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVg-Ys-uXZ">
@@ -60,10 +60,10 @@
                 <constraint firstItem="LVg-Ys-uXZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="15a-gY-5sG"/>
                 <constraint firstAttribute="trailing" secondItem="yRO-Xh-duG" secondAttribute="trailing" constant="8" id="7td-mG-gZh"/>
                 <constraint firstItem="yRO-Xh-duG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="9g6-jC-GAp"/>
-                <constraint firstItem="lUL-dy-Zcq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="A0w-j9-XwL"/>
+                <constraint firstItem="lUL-dy-Zcq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="A0w-j9-XwL"/>
                 <constraint firstItem="kzh-lo-qch" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="PCY-Wc-mEh"/>
                 <constraint firstItem="lUL-dy-Zcq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Vos-6a-LxN"/>
-                <constraint firstItem="LVg-Ys-uXZ" firstAttribute="leading" secondItem="lUL-dy-Zcq" secondAttribute="trailing" constant="8" id="ZnP-c8-bnZ"/>
+                <constraint firstItem="LVg-Ys-uXZ" firstAttribute="leading" secondItem="lUL-dy-Zcq" secondAttribute="trailing" constant="13" id="ZnP-c8-bnZ"/>
                 <constraint firstItem="kzh-lo-qch" firstAttribute="leading" secondItem="LVg-Ys-uXZ" secondAttribute="trailing" constant="12" id="kAG-Gz-XLC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

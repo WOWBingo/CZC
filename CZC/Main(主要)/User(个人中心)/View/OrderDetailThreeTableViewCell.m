@@ -20,12 +20,7 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)freightClick:(id)sender {
-}
 
-- (IBAction)telClick:(id)sender {
-}
-
-- (IBAction)selerClick:(id)sender {
+- (IBAction)btnClick:(id)sender {
 }
 @end

@@ -251,7 +251,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc]initWithNibName:@"OrderDetailViewController" bundle:nil];
-    orderDetailVC.orderObj = [self.orderListArray objectAtIndex:indexPath.row];
+    orderDetailVC.orderObj = [self.orderListArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 

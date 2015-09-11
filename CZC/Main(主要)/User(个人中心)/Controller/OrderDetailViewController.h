@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "OrderObject.h"
 #import "OrderProductObject.h"
+#import "OrderDetailHeadView.h"
+#import "OrderDetailFootView.h"
 @interface OrderDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong)OrderObject *orderObj;
+@property(nonatomic,strong)OrderDetailHeadView *headView;
+@property(nonatomic,strong)OrderDetailFootView *footView;
+
 @end

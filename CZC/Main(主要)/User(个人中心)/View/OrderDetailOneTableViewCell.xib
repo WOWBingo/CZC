@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orderDetail_order" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-0C-rlW">
-                        <rect key="frame" x="8" y="9" width="20" height="25"/>
+                        <rect key="frame" x="8" y="12" width="15" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="Esa-Ru-5fS"/>
-                            <constraint firstAttribute="width" constant="20" id="Ujc-WB-fSS"/>
+                            <constraint firstAttribute="height" constant="20" id="Esa-Ru-5fS"/>
+                            <constraint firstAttribute="width" constant="15" id="Ujc-WB-fSS"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单状态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXI-UD-9Ne">
@@ -28,7 +28,7 @@
                             <constraint firstAttribute="height" constant="21" id="B83-41-ek7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2p-d5-0ya">
@@ -43,10 +43,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="bXI-UD-9Ne" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="HnT-IK-X0T"/>
-                    <constraint firstItem="bXI-UD-9Ne" firstAttribute="leading" secondItem="h6I-0C-rlW" secondAttribute="trailing" constant="8" id="JSh-3I-hW4"/>
+                    <constraint firstItem="bXI-UD-9Ne" firstAttribute="leading" secondItem="h6I-0C-rlW" secondAttribute="trailing" constant="13" id="JSh-3I-hW4"/>
                     <constraint firstItem="h6I-0C-rlW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="n0d-PK-Yw8"/>
                     <constraint firstItem="w2p-d5-0ya" firstAttribute="leading" secondItem="bXI-UD-9Ne" secondAttribute="trailing" constant="8" id="nuP-sY-ztT"/>
-                    <constraint firstItem="h6I-0C-rlW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="vNW-SD-bhh"/>
+                    <constraint firstItem="h6I-0C-rlW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="vNW-SD-bhh"/>
                     <constraint firstItem="w2p-d5-0ya" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="zD2-fH-JEk"/>
                 </constraints>
             </tableViewCellContentView>

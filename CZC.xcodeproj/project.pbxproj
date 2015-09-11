@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1848CACA1BA2F79500C27206 /* OrderDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CAC91BA2F79500C27206 /* OrderDetailHeadView.m */; };
+		1848CACC1BA2F7AA00C27206 /* OrderDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */; };
+		1848CACF1BA2F7E000C27206 /* OrderDetailFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */; };
+		1848CAD11BA2F7E900C27206 /* OrderDetailFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848CAD01BA2F7E900C27206 /* OrderDetailFootView.xib */; };
 		1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */; };
 		1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */; };
 		187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A6A1B8F35E8007324E6 /* ChangePayPwdOneViewController.m */; };
@@ -260,6 +264,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1848CAC81BA2F79500C27206 /* OrderDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailHeadView.h; sourceTree = "<group>"; };
+		1848CAC91BA2F79500C27206 /* OrderDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailHeadView.m; sourceTree = "<group>"; };
+		1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailHeadView.xib; sourceTree = "<group>"; };
+		1848CACD1BA2F7E000C27206 /* OrderDetailFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailFootView.h; sourceTree = "<group>"; };
+		1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailFootView.m; sourceTree = "<group>"; };
+		1848CAD01BA2F7E900C27206 /* OrderDetailFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailFootView.xib; sourceTree = "<group>"; };
 		1864F1CF1B8B504200458C3F /* PersonNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNewsDetailViewController.h; sourceTree = "<group>"; };
 		1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNewsDetailViewController.m; sourceTree = "<group>"; };
 		1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonNewsDetailViewController.xib; sourceTree = "<group>"; };
@@ -1190,12 +1200,18 @@
 				192BC9001B88BC48003B8328 /* OrderDetailOneTableViewCell.h */,
 				192BC9011B88BC48003B8328 /* OrderDetailOneTableViewCell.m */,
 				192BC9021B88BC48003B8328 /* OrderDetailOneTableViewCell.xib */,
-				192BC9031B88BC48003B8328 /* OrderDetailThreeTableViewCell.h */,
-				192BC9041B88BC48003B8328 /* OrderDetailThreeTableViewCell.m */,
-				192BC9051B88BC48003B8328 /* OrderDetailThreeTableViewCell.xib */,
 				192BC9061B88BC48003B8328 /* OrderDetailTwoTableViewCell.h */,
 				192BC9071B88BC48003B8328 /* OrderDetailTwoTableViewCell.m */,
 				192BC9081B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib */,
+				1848CAC81BA2F79500C27206 /* OrderDetailHeadView.h */,
+				1848CAC91BA2F79500C27206 /* OrderDetailHeadView.m */,
+				1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */,
+				1848CACD1BA2F7E000C27206 /* OrderDetailFootView.h */,
+				1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */,
+				1848CAD01BA2F7E900C27206 /* OrderDetailFootView.xib */,
+				192BC9031B88BC48003B8328 /* OrderDetailThreeTableViewCell.h */,
+				192BC9041B88BC48003B8328 /* OrderDetailThreeTableViewCell.m */,
+				192BC9051B88BC48003B8328 /* OrderDetailThreeTableViewCell.xib */,
 				18DDE5DE1BA1B827006CAF8E /* OrderHeadView.h */,
 				18DDE5DF1BA1B827006CAF8E /* OrderHeadView.m */,
 				18DDE5E11BA1B83D006CAF8E /* OrderHeadView.xib */,
@@ -1471,9 +1487,11 @@
 				187D7A771B8F3A7A007324E6 /* AccountBalanceViewController.xib in Resources */,
 				192BC9801B88BC48003B8328 /* LoginViewController.xib in Resources */,
 				192BC9741B88BC48003B8328 /* AddressViewController.xib in Resources */,
+				1848CAD11BA2F7E900C27206 /* OrderDetailFootView.xib in Resources */,
 				192BC9B01B88BC48003B8328 /* PayAddressTableViewCell.xib in Resources */,
 				192BC9EC1B896FE8003B8328 /* SpecificationTableViewCell.xib in Resources */,
 				187D7A6D1B8F35E8007324E6 /* ChangePayPwdOneViewController.xib in Resources */,
+				1848CACC1BA2F7AA00C27206 /* OrderDetailHeadView.xib in Resources */,
 				192BC9821B88BC48003B8328 /* LogisticsAssistantViewController.xib in Resources */,
 				192768E81B48442F00B86141 /* LaunchScreen.xib in Resources */,
 				192BC97A1B88BC48003B8328 /* EditAddressViewController.xib in Resources */,
@@ -1627,6 +1645,7 @@
 				187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */,
 				192BC9871B88BC48003B8328 /* OrderViewController.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
+				1848CACF1BA2F7E000C27206 /* OrderDetailFootView.m in Sources */,
 				192BC97D1B88BC48003B8328 /* InstallViewController.m in Sources */,
 				187E335D1B8DFB5300E8617A /* ChangePwdViewController.m in Sources */,
 				192BC9C51B88BC48003B8328 /* ZHPickView.m in Sources */,
@@ -1691,6 +1710,7 @@
 				192BC98B1B88BC48003B8328 /* ProductCollectViewController.m in Sources */,
 				1977FDA01B775D7A000A8D26 /* AddressObject.m in Sources */,
 				192BC9671B88BC48003B8328 /* SvGridView.m in Sources */,
+				1848CACA1BA2F79500C27206 /* OrderDetailHeadView.m in Sources */,
 				1902C7C31B75B4CD009C7A33 /* ObjectMapping.m in Sources */,
 				192BC9631B88BC48003B8328 /* PublicObject.m in Sources */,
 				192BC9BA1B88BC48003B8328 /* SetTitleTableViewCell.m in Sources */,
