@@ -287,6 +287,7 @@ static ObjectMapping *object = nil;
                  @"attributes" : @"Attributes",
                  @"isJoinActivity" : @"IsJoinActivity",
                  @"specificationName" : @"SpecificationName",
+                 @"isSaled" : @"IsSaled"
                  };
     }];
     
@@ -444,6 +445,10 @@ static ObjectMapping *object = nil;
                  @"memLoginID" : @"MemLoginID",
                  @"rememberMe" : @"RememberMe",
                  @"realName" : @"RealName",
+                 @"addressValue" : @"AddressValue",
+                 @"photo" : @"Photo",
+                 @"sex" : @"Sex",
+                 @"birthday" : @"Birthday",
                  };
     }];
     

@@ -14,17 +14,17 @@
 
 - (void)encode:(NSCoder *)encoder
 {
-    Class class = [self class];
+    Class aClass = [self class];
     
-    NSArray *allowedCodingPropertyNames = [class totalAllowedCodingPropertyNames];
-    NSArray *ignoredCodingPropertyNames = [class totalIgnoredCodingPropertyNames];
+    NSArray *allowedCodingPropertyNames = [aClass totalAllowedCodingPropertyNames];
+    NSArray *ignoredCodingPropertyNames = [aClass totalIgnoredCodingPropertyNames];
     
-    [class enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
+    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
         if (allowedCodingPropertyNames.count && ![allowedCodingPropertyNames containsObject:property.name]) return;
         // 检测是否被忽略
         if ([ignoredCodingPropertyNames containsObject:property.name]) return;
         
-        id value = [property valueFromObject:self];
+        id value = [property valueForObject:self];
         if (value == nil) return;
         [encoder encodeObject:value forKey:property.name];
     }];
@@ -32,12 +32,12 @@
 
 - (void)decode:(NSCoder *)decoder
 {
-    Class class = [self class];
+    Class aClass = [self class];
     
-    NSArray *allowedCodingPropertyNames = [class totalAllowedCodingPropertyNames];
-    NSArray *ignoredCodingPropertyNames = [class totalIgnoredCodingPropertyNames];
+    NSArray *allowedCodingPropertyNames = [aClass totalAllowedCodingPropertyNames];
+    NSArray *ignoredCodingPropertyNames = [aClass totalIgnoredCodingPropertyNames];
     
-    [class enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
+    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
         if (allowedCodingPropertyNames.count && ![allowedCodingPropertyNames containsObject:property.name]) return;
         // 检测是否被忽略
         if ([ignoredCodingPropertyNames containsObject:property.name]) return;

@@ -250,6 +250,7 @@
 		1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */; };
 		19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D587BD1B48D63100D65B43 /* Images.xcassets */; };
 		19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FF1B7AF79600C98637 /* HomeImageObject.m */; };
+		19FCDF341BA2FFEB00B0626E /* ZDYPrintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FCDF331BA2FFEB00B0626E /* ZDYPrintObject.m */; };
 		5020FA559EC64E728853C5AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C08894D95434494E8BD85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -654,6 +655,8 @@
 		19D587BD1B48D63100D65B43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19F969FE1B7AF79600C98637 /* HomeImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeImageObject.h; path = Object/HomeImageObject.h; sourceTree = "<group>"; };
 		19F969FF1B7AF79600C98637 /* HomeImageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeImageObject.m; path = Object/HomeImageObject.m; sourceTree = "<group>"; };
+		19FCDF321BA2FFEB00B0626E /* ZDYPrintObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDYPrintObject.h; path = Object/ZDYPrintObject.h; sourceTree = "<group>"; };
+		19FCDF331BA2FFEB00B0626E /* ZDYPrintObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDYPrintObject.m; path = Object/ZDYPrintObject.m; sourceTree = "<group>"; };
 		75C1A45BE9E6453E94B11C9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A72C08894D95434494E8BD85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -742,6 +745,8 @@
 				19F969FF1B7AF79600C98637 /* HomeImageObject.m */,
 				198024261B81D1760071F63E /* CityObject.h */,
 				198024271B81D1760071F63E /* CityObject.m */,
+				19FCDF321BA2FFEB00B0626E /* ZDYPrintObject.h */,
+				19FCDF331BA2FFEB00B0626E /* ZDYPrintObject.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				192BC99C1B88BC48003B8328 /* AutoScrollView.m in Sources */,
 				192BC9A51B88BC48003B8328 /* OrderDetailFourTableViewCell.m in Sources */,
 				1888B46D1B92E5A1006E3165 /* BillingOrdersDetailsViewController.m in Sources */,
+				19FCDF341BA2FFEB00B0626E /* ZDYPrintObject.m in Sources */,
 				1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */,
 				192BC9731B88BC48003B8328 /* AddressViewController.m in Sources */,
 				196285C71B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m in Sources */,
@@ -1882,7 +1888,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
@@ -1894,7 +1900,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cb3f2326-3b0c-413d-92fb-37c81ca65b33";
+				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
 			};
 			name = Debug;
 		};
@@ -1904,7 +1910,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
@@ -1916,7 +1922,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cb3f2326-3b0c-413d-92fb-37c81ca65b33";
+				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
 			};
 			name = Release;
 		};

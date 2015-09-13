@@ -82,6 +82,19 @@
     
 }
 
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    //获得选中的item
+    NSUInteger tabIndex = [tabBar.items indexOfObject:item];
+    if (tabIndex != self.selectedIndex) {
+        //设置最近一次变更
+        kLastSelectedIndex = self.selectedIndex;
+        NSLog(@"2 OLD:%ld , NEW:%ld",kLastSelectedIndex,tabIndex);
+    }
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

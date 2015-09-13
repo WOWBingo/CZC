@@ -9,7 +9,12 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "ForgetPWViewController.h"
-@interface LoginViewController ()
+#import "ZDYPrintObject.h"
+#import "Key.h"
+
+@interface LoginViewController ()<MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
 
 @end
 
@@ -19,76 +24,28 @@
     [super viewDidLoad];
     self.title = @"用户登录";
     
-    //设置导航按钮
-//    self.navigationItem.leftBarButtonItem = self.backMenuBtn;
-    self.scrollView = [[AutoScrollView alloc]initWithFrame:self.view.frame];
-    self.scrollView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.scrollView];
     //用户名
-    self.userNameTextField = [[UITextField alloc]initWithFrame:CGRectMake(LeftSpace, 200, SCREEN_WIDTH - LeftSpace * 2, ElementHeight)];
-    UIView *userNameLeftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, ElementHeight)];
-    UIImageView *userNameLeftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (ElementHeight - 26) / 2, 26, 26)];
-    userNameLeftImageView.image = [UIImage imageNamed:@"userName.png"];
-    [userNameLeftView addSubview:userNameLeftImageView];
-    self.userNameTextField.leftView = userNameLeftView;
-    self.userNameTextField.leftViewMode = UITextFieldViewModeAlways;
-    self.userNameTextField.placeholder = @"用户名";
-    [self.userNameTextField setValue:PlaceholderColor forKeyPath:@"_placeholderLabel.textColor"];
-    self.userNameTextField.backgroundColor = [UIColor whiteColor];
-    self.userNameTextField.layer.borderColor = BackGroundColor.CGColor;
-    self.userNameTextField.layer.borderWidth = 0.5f;
-    self.userNameTextField.textColor = DominantColor;
     self.userNameTextField.delegate = self;
-    self.userNameTextField.keyboardType = UIKeyboardTypeNumberPad;
-    [self.scrollView addSubview:self.userNameTextField];
     //密码
-    self.passwordTextField = [[UITextField alloc]initWithFrame:CGRectMake(LeftSpace, self.userNameTextField.frame.origin.y + self.userNameTextField.frame.size.height, SCREEN_WIDTH - LeftSpace * 2, ElementHeight)];
-    UIView *passWordLeftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, ElementHeight)];
-    UIImageView *passWordLeftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (ElementHeight - 26) / 2, 26, 26)];
-    passWordLeftImageView.image = [UIImage imageNamed:@"passWord.png"];
-    [passWordLeftView addSubview:passWordLeftImageView];
-    self.passwordTextField.leftView = passWordLeftView;
-    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
-    self.passwordTextField.placeholder = @"密 码";
-    [self.passwordTextField setValue:PlaceholderColor forKeyPath:@"_placeholderLabel.textColor"];
-    self.passwordTextField.backgroundColor = [UIColor whiteColor];
-    self.passwordTextField.layer.borderColor = BackGroundColor.CGColor;
-    self.passwordTextField.layer.borderWidth = 0.5f;
-    self.passwordTextField.textColor = DominantColor;
     [self.passwordTextField setSecureTextEntry:YES];
     self.passwordTextField.delegate = self;
-    [self.scrollView addSubview:self.passwordTextField];
     //登录
-    self.loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.loginBtn.frame = CGRectMake(LeftSpace, self.passwordTextField.frame.origin.y + self.passwordTextField.frame.size.height + 20, SCREEN_WIDTH - LeftSpace * 2, 40);
-    [self.loginBtn setTitle:@"登   录" forState:UIControlStateNormal];
-    self.loginBtn.backgroundColor = DominantColor;
-    [self.loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
-    self.loginBtn.layer.cornerRadius = self.loginBtn.frame.size.height / 2;
-    [self.scrollView addSubview:self.loginBtn];
-    //注册
-    self.registerBtn = [[UIButton alloc]initWithFrame:CGRectMake(LeftSpace, self.loginBtn.frame.origin.y + self.loginBtn.frame.size.height + 10, 100, 30)];
-    [self.registerBtn setTitle:@"免费注册" forState:UIControlStateNormal];
-    self.registerBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-    self.registerBtn.backgroundColor = [UIColor clearColor];
-    [self.registerBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    self.registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    self.loginBtn.layer.cornerRadius = self.loginBtn.frame.size.height / 4;
+    
     [self.registerBtn addTarget:self action:@selector(registerClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollView addSubview:self.registerBtn];
-    //忘记密码
-    self.forgetPwBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - LeftSpace - 100, self.loginBtn.frame.origin.y + self.loginBtn.frame.size.height + 10, 100, 30)];
-    [self.forgetPwBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-    self.forgetPwBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-    self.forgetPwBtn.backgroundColor = [UIColor clearColor];
-    [self.forgetPwBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    self.forgetPwBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    
     [self.forgetPwBtn addTarget:self action:@selector(forgetKeyClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollView addSubview:self.forgetPwBtn];
     
     // handleSwipeFrom 是偵測到手势，所要呼叫的方法
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:gesture];
+    
+    //监听键盘状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    //监听键盘状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,34 +53,41 @@
     // Dispose of any resources that can be recreated.
 }
 //登录
-- (void)login:(id)sender {
+- (void)login {
+    
     [self hidenKeyboard];
     NSString *userName = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSLog(@"%@,%@",userName,password);
-    if ([userName isEqualToString:@""]) {
+    if ([[userName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""]) {
         //请输入用户名
-//        [PublicObject showHUDView:self.view title:@"提示" content:@"请填写手机号" time:kHUDTime];
+        [self shoHUDViewTitle:@"请输入用户名" info:@"" andCodes:^{        }];
         [self performSelector:@selector(shownKeyboard:) withObject:self.userNameTextField afterDelay:kHUDTime];
         return;
     }
-    if ([password isEqualToString:@""]) {
+    if ([[password stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""]) {
         //请输入密码
-//        [PublicObject showHUDView:self.view title:@"提示" content:@"请填写密码" time:kHUDTime];
+        [self shoHUDViewTitle:@"请输入密码" info:@"" andCodes:^{        }];
         [self performSelector:@selector(shownKeyboard:) withObject:self.passwordTextField afterDelay:kHUDTime];
         return;
     }
-//    if (![PublicObject validatePassword:password]) {
-//        //请输入格式正确的密码
-//        [PublicObject showHUDView:self.view title:@"提示" content:@"密码错误，请重新填写" time:kHUDTime];
-//        self.passwordTextField.text = @"";
-//        [self performSelector:@selector(shownKeyboard:) withObject:self.passwordTextField afterDelay:kHUDTime];
-//        return;
-//    }
-//    
-//    //    http://172.19.2.6:8080/ytjw_server_external/client/login.do?user.telphone=18865412563&user.password=123456
-//    NSString *indata = [NSString stringWithFormat:@"user.telphone=%@&user.password=%@",telphone,md5Password];
-//    [PublicObject requestData:klogin data:indata delegateView:self];
+    [self showHUDBeginWithTitle:@"正在登录……"];
+    NSDictionary *parDic = @{
+                             @"MemLoginID":userName,
+                             @"Pwd":password,
+                             @"RememberMe":@"True"
+                             };
+    [CZCService POSTmethod:kAccountLogin_URL andDicParameters:parDic andHandle:^(NSDictionary *myresult) {
+        NSString *resultStr = [myresult objectForKey:@"return"];
+        if ([resultStr intValue] == 200) {
+            [self saveUserInfoDefault:userName];
+        }else{
+            [self dissMissHUDEnd];
+            [self shoHUDViewTitle:@"用户名或密码错误" info:@"" andCodes:^{
+            }];
+        }
+    }];
+   
 }
 
 //注册
@@ -142,6 +106,29 @@
     [super becomeFirstResponder];
     return [textFiled becomeFirstResponder];
 }
+
+#pragma mark Notification
+//keyBoard已经展示出来
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    if([notification.name isEqualToString:UIKeyboardDidShowNotification]){
+        NSValue* aValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
+        CGRect keyboardRect = [aValue CGRectValue];
+        CGRect keyboardFrame = [self.view convertRect:keyboardRect fromView:[[UIApplication sharedApplication] keyWindow]];
+        CGFloat keyboardHeight = keyboardFrame.size.height;
+        if (keyboardHeight > 280) {
+            _scrollView.contentSize = CGSizeMake(_scrollView.contentSize.width, _scrollView.contentSize.height*0.35+160+keyboardHeight);
+            _scrollView.contentOffset = CGPointMake(0, _scrollView.contentSize.height-SCREEN_HEIGHT+64);
+            NSLog(@"##keboardHeight=%.2f",keyboardHeight);
+        }
+        
+    }else if ([notification.name isEqualToString:UIKeyboardDidHideNotification]){
+        _scrollView.contentSize = _contentView.frame.size;//CGSizeMake(_scrollView.contentSize.width,);
+        _scrollView.contentOffset = CGPointMake(0,0);
+    }
+    
+}
+
 //隐藏键盘的方法
 - (void)hidenKeyboard {
     [self.userNameTextField resignFirstResponder];
@@ -154,4 +141,79 @@
     return YES;
 }
 
+
+/**
+ *	获取并持久化用户信息
+ *
+ *	@param account	用户名
+ */
+- (void)saveUserInfoDefault:(NSString *)account{
+    [CZCService GETmethod:kAccountInfo_URL andParameters:account andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
+            [self dissMissHUDEnd];
+            if (dic != nil) {
+                AccoutObject *accoutObj = [AccoutObject objectWithKeyValues:dic];
+                NSLog(@"20.用户信息 ------%@",accoutObj);
+                /** 用户信息存储，防止出现空值  */
+                NSMutableDictionary *mutableDic = [[NSMutableDictionary alloc]initWithDictionary:dic];
+                for (int i = 0;i < dic.allKeys.count; i++) {
+                    NSString *key = [dic.allKeys objectAtIndex:i];
+                    NSString *value = [mutableDic objectForKey:key];
+                    if ([value isKindOfClass:[NSNull class]]) {
+                        [mutableDic removeObjectForKey:key];
+                    }
+                }
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:[[NSDictionary alloc]initWithDictionary:mutableDic] forKey:kAccoutInfo_Default];
+                [defaults synchronize];
+                
+                self.dismissView(YES);
+                [self shoHUDViewTitle:@"登录成功" info:@"" andCodes:^{  }];
+                [self dismissViewControllerAnimated:YES completion:^{  }];
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
+
+- (void)shoHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.mode = MBProgressHUDModeText;
+    HUD.labelText = title;
+    HUD.margin = 20.f;
+    HUD.dimBackground = NO;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        finish();
+    }];
+}
+
+- (void)showHUDBeginWithTitle:(NSString *)title{
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = title;
+    HUD.square = YES;
+    HUD.dimBackground = YES;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD show:YES];
+}
+
+- (void)dissMissHUDEnd{
+    [HUD hide:YES];
+}
+
+
+- (IBAction)goBack:(id)sender {
+    self.dismissView(NO);
+    [self dismissViewControllerAnimated:YES completion:^{  }];
+}
 @end

@@ -288,18 +288,18 @@
     
 #pragma mark - 14.订单列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
-//    params = @"pageIndex=1&pageCount=5&memLoginID=yemao&t=2";
-//    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-//        if (myresult) {
-//            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
-//            NSArray *dataArr = [myresult objectForKey:@"Data"];
-//            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
-//            NSLog(@"14.订单列表 ------%@",list);
-//        }
-//        else{
-//            NSLog(@"失败");
-//        }
-//    }];
+    params = @"pageIndex=1&pageCount=5&memLoginID=111111&t=0";//yemao
+    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"14.订单列表 ------%@",list);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
     
 #pragma mark - 15.订单详情！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 15.订单详情 http://app.czctgw.com/api/order/201503091548989 */
@@ -314,6 +314,7 @@
 //            NSLog(@"失败");
 //        }
 //    }];
+    
     
 #pragma mark - 16.提交订单
     /**  16.提交订单(1) http://app.czctgw.com/api/shoppingcart/ */
@@ -637,6 +638,18 @@
 //            NSArray *dataArr = [myresult objectForKey:@"ImageList"];
 //            NSArray *list = [HomeImageObject objectArrayWithKeyValuesArray:dataArr];
 //            NSLog(@" 59.首页图片 ------%@",list);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+    
+#pragma mark - 49.生成订单号
+    /** 49.生成订单号 http://app.czctgw.com/api/getorderno*/
+//    [CZCService GETmethod:kGetOrder_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSString *OrderNumber = [myresult objectForKey:@"OrderNumber"];
+//            NSLog(@" 生成订单号 ------%@",OrderNumber);
 //        }
 //        else{
 //            NSLog(@"失败");

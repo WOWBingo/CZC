@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "AutoScrollView.h"
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
-@property (nonatomic,strong) AutoScrollView *scrollView;
-@property (nonatomic,strong) UITextField *userNameTextField;
-@property (nonatomic,strong) UITextField *passwordTextField;
-@property (nonatomic,strong) UIButton *loginBtn;
-@property (nonatomic,strong) UIButton *registerBtn;
-@property (nonatomic,strong) UIButton *forgetPwBtn;
+@interface LoginViewController : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetPwBtn;
+
+@property (strong, nonatomic) void (^dismissView)(BOOL isSuccess);
+
+- (IBAction)goBack:(id)sender;
+
 
 @end

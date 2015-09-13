@@ -214,7 +214,9 @@ NSString *const PASSWORD = @"password";//密码
 NSString *const USERINFO = @"userInfo";//用户信息
 NSString *const ISAUTOLOGIN = @"isAutoLogin";//是否自动登录的key
 
-
+/** tabbar最近一次选择的Index */
+NSUInteger kLastSelectedIndex = 0;
+NSString *const kAccoutInfo_Default = @"accoutInfo";
 
 @implementation Key
 

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AccoutObject.h"
 @interface AccountBalanceViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

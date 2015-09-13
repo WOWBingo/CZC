@@ -42,7 +42,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = NO;
-    [self getShoppingCarData];
+    if ([PublicObject getAccoutInfoDefault] == nil) {
+        [self goToLoginVC];
+    }else{
+        [self getShoppingCarData];
+    }
 }
 -(void)viewDidAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;

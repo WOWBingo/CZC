@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AccoutObject.h"
+
 @interface PointsBalanceViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tablewView;

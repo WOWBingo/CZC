@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccoutObject.h"
+#import "MBProgressHUD.h"
 
 
 @interface PublicViewController:UIViewController
@@ -15,6 +17,12 @@
 @property(nonatomic ,strong)UIBarButtonItem *leftMenuItem;
 @property(nonatomic ,strong)UIBarButtonItem *rightMenuItem;
 @property(nonatomic ,strong)UIBarButtonItem *backMenuItem;
+
+@property(nonatomic ,strong)AccoutObject *accoutObject;
+
 -(IBAction)backFucntion:(id)sender;
+
+
+- (void)goToLoginVC;
 
 @end

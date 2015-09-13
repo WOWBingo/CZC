@@ -9,6 +9,7 @@
 //#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AccoutObject.h"
 
 @interface PublicObject : NSObject
 
@@ -22,5 +23,14 @@
 + (void)drawVerticalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andHeigt:(CGFloat)height andColor:(UIColor*)color;
 
 + (UIImage *)fixOrientation:(UIImage *)aImage;//图片旋转
+
++ (NSString*)DataTOjsonString:(id)object;
+
+/**
+ *	获取用户信息
+ *
+ *	@return 用户对象
+ */
++(AccoutObject *)getAccoutInfoDefault;
 
 @end

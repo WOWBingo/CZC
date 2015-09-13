@@ -40,9 +40,16 @@ static CZCAPIService *CAS;
     NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
     [manager POST:requrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        handle((NSDictionary *) responseObject);
+        NSData *doubi = responseObject;
+        NSString *shabi =  [[NSString alloc]initWithData:doubi encoding:NSUTF8StringEncoding];
+        NSLog(@"success========%@====%@",responseObject,shabi);
+        //handle((NSDictionary *) responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         handle(nil);

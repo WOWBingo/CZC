@@ -250,6 +250,13 @@ UIKIT_EXTERN NSString *const kSortsisASCFalse;
 #define VerifyCodeTime 90               //验证码等待时间
 
 
+//tabbar最近一次选择的Index
+UIKIT_EXTERN NSUInteger kLastSelectedIndex;
+
+UIKIT_EXTERN NSString *const kAccoutInfo_Default;
+
+
+
 @interface Key : NSObject
 
 @end

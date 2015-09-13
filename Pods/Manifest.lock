@@ -20,31 +20,31 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Masonry (0.6.1)
+  - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
-  - MJExtension (2.0.4)
-  - MJRefresh (2.2.0)
+  - MJExtension (2.5.2)
+  - MJRefresh (2.3.2)
   - Reachability (3.2)
-  - SDWebImage (3.7.2):
+  - SDWebImage (3.7.3):
     - SDWebImage/Core
-  - SDWebImage/Core (3.7.2)
+  - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.3)
   - Masonry (~> 0.6.1)
   - MBProgressHUD (~> 0.9.1)
-  - MJExtension (~> 2.0.1)
-  - MJRefresh (~> 2.2.0)
+  - MJExtension (~> 2.5.2)
+  - MJRefresh (~> 2.3.2)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJExtension: 90503779f5c2608b76b5b0f41efdb05c080d1976
-  MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
+  MJExtension: 73e812aca0846e4a7b4d7aca34cfacf48d1f3310
+  MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
 COCOAPODS: 0.33.1

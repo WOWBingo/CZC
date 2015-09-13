@@ -121,8 +121,6 @@
     }];
 }
 
-
-
 //选择地点
 - (void)changeCity{
     CityListViewController *cityVC = [[CityListViewController alloc]initWithNibName:@"CityListViewController" bundle:nil];

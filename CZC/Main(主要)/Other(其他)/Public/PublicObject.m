@@ -36,6 +36,28 @@ static PublicObject *publicObject = nil;
     }
     return publicObject;
 }
+
+/**
+ *	获取用户信息
+ *
+ *	@return 用户对象
+ */
++(AccoutObject *)getAccoutInfoDefault{
+    //restore data
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *accoutDic = [defaults objectForKey:kAccoutInfo_Default];
+    AccoutObject *accout = [[AccoutObject alloc]init];
+    if(accoutDic == nil)
+    {
+        return nil;
+    }
+    else{
+        accout = [AccoutObject objectWithKeyValues:accoutDic];
+        return accout;
+    }
+}
+
+
 /**
  *  显示提示，然后消失
  *
@@ -85,15 +107,30 @@ static PublicObject *publicObject = nil;
         return [NSNumber numberWithInt:0];
     }
 }
-
-//画一条水平线
+/**
+ *	画一条水平线
+ *
+ *	@param view		所在View
+ *	@param x			起点x
+ *	@param y			起点y
+ *	@param width	长度
+ *	@param color	颜色
+ */
 + (void)drawHorizontalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andWidth:(CGFloat)width andColor:(UIColor*)color{
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
     [lineView setFrame:CGRectMake(x, y - SINGLE_LINE_ADJUST_OFFSET, width, SINGLE_LINE_WIDTH)];
     [lineView setBackgroundColor:color == nil ? [UIColor blackColor] : color];
     [view addSubview:lineView];
 }
-//画一条竖直线
+/**
+ *	画一条竖直线
+ *
+ *	@param view		所在View
+ *	@param x			起点x
+ *	@param y			起点y
+ *	@param height	高度
+ *	@param color	颜色
+ */
 + (void)drawVerticalLineOnView:(UIView *)view andX:(CGFloat)x andY:(CGFloat)y andHeigt:(CGFloat)height andColor:(UIColor*)color{
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
     [lineView setFrame:CGRectMake(x - SINGLE_LINE_ADJUST_OFFSET, y, SINGLE_LINE_WIDTH, height)];
@@ -101,6 +138,35 @@ static PublicObject *publicObject = nil;
     [view addSubview:lineView];
 }
 
+/**
+ *	Dci转JSON字符串
+ *
+ *	@param object	dic数据
+ *
+ *	@return JSON字符串
+ */
++ (NSString*)DataTOjsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
+
+/**
+ *	图片旋转
+ *
+ *	@param aImage	输入图片
+ *
+ *	@return 输出图片
+ */
 +(UIImage *)fixOrientation:(UIImage *)aImage {
     
     // No-op if the orientation is already correct

@@ -40,4 +40,13 @@
 
 @property (nonatomic, copy) NSString *realName;
 
+@property (nonatomic, copy) NSString *addressValue;
+
+@property (nonatomic, copy) NSString *photo;
+
+@property (nonatomic, copy) NSString *sex;
+
+@property (nonatomic, copy) NSString *birthday;
+
+
 @end

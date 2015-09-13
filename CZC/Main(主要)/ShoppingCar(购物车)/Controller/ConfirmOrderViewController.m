@@ -13,6 +13,7 @@
 #import "ConfirmOrderOtherCell.h"
 #import "ShopCarObject.h"
 #import "AddressViewController.h"
+#import "ZDYPrintObject.h"
 
 @interface ConfirmOrderViewController ()
 
@@ -31,6 +32,12 @@
     _tableView.separatorStyle = NO;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 110;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self getAddress];
+    [self getOrderNumber];
+    [self getPayment];
 }
 
 #pragma mark - tableView
@@ -68,6 +75,8 @@
             cell = (PayAddressTableViewCell *)[nibArray objectAtIndex:0];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
+        [cell.nameLabel setText:[NSString stringWithFormat:@"%@  %@",_addressObj.name,_addressObj.mobile]];
+        [cell.addressLabel setText:_addressObj.address];
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }else{
@@ -138,74 +147,167 @@
     }
 }
 
-#pragma mark - 16.提交订单
-- (IBAction)accountClick:(id)sender{
 
-    /**  16.提交订单(1) http://app.czctgw.com/api/shoppingcart/ */
-    //    NSDictionary *dic = @{
-    //                          @"MemLoginID": @"a465788",
-    //                          @"OrderNumber": @"201505122319090",
-    //                          @"TradeID": @"201505122319090",
-    //                          @"Name": @"陈胜",
-    //                          @"Email": @"",
-    //                          @"Address": @"江苏省苏州市常熟市 江苏省苏州市常熟市古里镇小康村庐山苑三区31号",
-    //                          @"Postalcode": @"215500",
-    //                          @"Tel": @"",
-    //                          @"Mobile": @"15952069203",
-    //                          @"PaymentGuid": @"31e9ce27-bc27-4e16-8e53-dc171194531a",
-    //                          @"ProductPrice": @"100.00",
-    //                          @"DispatchPrice": @"0.00",
-    //                          @"ShouldPayPrice": @"100.00",
-    //                          @"OutOfStockOperate": @"",
-    //                          @"ClientToSellerMsg": @"",
-    //                          @"RegionCode":@"1",
-    //                          @"orderPrice":@"200",
-    //                          @"PostType": @"0",
-    //                          @"ProductList": @[
-    //                                           @{
-    //                                               @"Guid": @"252df425-238e-4a00-9b75-e056a3e418a9",
-    //                                               @"MemLoginID": @"a465788",
-    //                                               @"ProductGuid": @"181dc6c6-6b2f-49ef-9a42-5e2fbc534520",
-    //                                               @"OriginalImge": @"http://www.czctgw.com/ImgUpload/shopImage/2014/shop100000615/201412051232517.jpg_100X100.jpg",
-    //                                               @"Name": @"2014秋装V领 纯净色黑白纯色打底 百搭时尚长袖男T恤 youtesi",
-    //                                               @"RepertoryNumber": @"C028",
-    //                                               @"Attributes": @"",
-    //                                               @"ExtensionAttriutes": @"M",
-    //                                               @"BuyNumber": @"3",
-    //                                               @"MarketPrice": @"99.00",
-    //                                               @"BuyPrice": @"154.00",
-    //                                               @"IsJoinActivity": @"0",
-    //                                               @"IsPresent": @"0",
-    //                                               @"CreateTime": @"2015/08/07 17:56:23",
-    //                                               @"ShopID": @"h4",
-    //                                               @"ShopName": @"天天",
-    //                                               @"SpecificationName": @"颜色分类:浅灰色|尺码:M",
-    //                                               @"SpecificationValue": @"浅灰色|M",
-    //                                               @"RepertoryCount": @"160"
+
+
+#pragma mark - 网络数据操作
+/**
+ *  支付方式列表
+ */
+-(void)getPayment{
+    [CZCService GETmethod:kPayMentList_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSArray *dataArr = [myresult objectForKey:@"AddressList"];
+            _paymentList = [PaymentObject objectArrayWithKeyValuesArray:dataArr];
+            if (_paymentList.count > 1) {
+                _paymentObject = [_paymentList objectAtIndex:0];
+            }
+        }
+        else{
+            NSLog(@"获取支付方式失败");
+        }
+    }];
+}
+
+/**
+ *  收货地址列表
+ */
+-(void)getAddress{
+    /** 18.收货地址列表 http://app.czctgw.com/api/address/a465788 */
+    NSString *params = @"a465788";
+    [CZCService GETmethod:kAddressList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSArray *dataArr = [myresult objectForKey:@"AddressList"];
+            NSArray *list = [AddressObject objectArrayWithKeyValuesArray:dataArr];
+            BOOL isHaveDefault;
+            for (int i = 0; i < list.count; i++) {
+                AddressObject *addressObj = [list objectAtIndex:i];
+                if (addressObj.isDefault) {
+                    _addressObj = addressObj;
+                    isHaveDefault = YES;
+                    break;
+                }
+            }
+            if (!isHaveDefault) {
+                _addressObj = [list objectAtIndex:0];
+            }
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
+/**
+ *	生成订单号
+ */
+- (void)getOrderNumber{
+    [CZCService GETmethod:kGetOrder_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            _tradeID = [myresult objectForKey:@"OrderNumber"];
+            NSLog(@" 生成订单号 ------%@",_tradeID);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+/**
+ *	提交订单
+ *
+ */
+- (IBAction)accountClick:(id)sender{
     
-    //                                           }
-    //                                           ],
+    //对象转换成字典，注意首字大写
+    NSArray *dictArray = [ShopCarObject keyValuesArrayWithObjectArray:_selectedShopList];
+    ShopCarObject *shopObject = [_selectedShopList objectAtIndex:0];
+    NSMutableArray *productDicList = [[NSMutableArray alloc]init];
+    for (int i = 0; i < shopObject.productList.count; i++) {
+        ShopCarProductObject *productObject = [shopObject.productList objectAtIndex:i];
+        NSDictionary *productDic = [ZDYPrintObject getObjectData:productObject];//getObjectData经过修改，首字大写
+        [productDicList addObject:productDic];
+    }
+    
+    NSLog(@"%@",productDicList);
+    for (NSMutableDictionary *productDic in productDicList) {
+        [productDic removeObjectForKey:@"IsSelected"];
+    }
+    //
+    //    NSDictionary *dic = @{
+    //                          @"MemLoginID": @"111111",
+    //                          @"OrderNumber": _tradeID,
+    //                          @"TradeID": _tradeID,
+    //                          @"Name": _addressObj.name,
+    //                          @"Email": _addressObj.email,
+    //                          @"Address": _addressObj.address,
+    //                          @"Postalcode":_addressObj.postalcode,
+    //                          @"Tel": _addressObj.tel,
+    //                          @"Mobile": _addressObj.mobile,
+    //                          @"PaymentGuid": _paymentObject.guid,
+    //                          @"OutOfStockOperate": @"",
+    //                          @"ClientToSellerMsg": @"",//留言
+    //                          @"RegionCode":@"1",//配送区域编码
+    //                          @"PostType": @"0",//快递方式
+    //                          @"orderPrice":@"",//订单价格
+    //                          @"ProductPrice": @"",//产品价格
+    //                          @"DispatchPrice": @"0.00",//邮费
+    //                          @"ShouldPayPrice": @"248.00",//应支付
+    //                          @"ProductList": productDicList
     //                          };
-    ////    NSString *str=@" \"MemLoginID \":   \"a465788 \",\"OrderNumber \":   \"201505122319090 \",\"TradeID \":   \"201505122319090 \",\"Name \":   \"陈胜 \",\"Email \":   \" \",\"Address \":   \"江苏省苏州市常熟市 江苏省苏州市常熟市古里镇小康村庐山苑三区31号 \",\"Postalcode \":   \"215500 \",\"Tel \":   \" \",\"Mobile \":   \"15952069203 \",\"PaymentGuid \":   \"31e9ce27-bc27-4e16-8e53-dc171194531a \",\"ProductPrice \":   \"100.00 \",\"DispatchPrice \":   \"0.00 \",\"ShouldPayPrice \":   \"100.00 \",\"OutOfStockOperate \":   \" \",\"ClientToSellerMsg \":   \" \",\"RegionCode \":  \"1 \",\"orderPrice \":  \"200 \",\"PostType \":   \"0 \",\"ProductList \":  [{\"Guid \":   \"252df425-238e-4a00-9b75-e056a3e418a9 \",\"MemLoginID \":   \"a465788 \",\"ProductGuid \":   \"181dc6c6-6b2f-49ef-9a42-5e2fbc534520 \",\"OriginalImge \":   \"http://www.czctgw.com/ImgUpload/shopImage/2014/shop100000615/201412051232517.jpg_100X100.jpg \",\"Name \":   \"2014秋装V领 纯净色黑白纯色打底 百搭时尚长袖男T恤 youtesi \",\"RepertoryNumber \":   \"C028 \",\"Attributes \":   \" \",\"ExtensionAttriutes \":   \"M \",\"BuyNumber \":   \"3 \",\"MarketPrice \":   \"99.00 \",\"BuyPrice \":   \"154.00 \",\"IsJoinActivity \":   \"0 \",\"IsPresent \":   \"0 \",\"CreateTime \":   \"2015/08/07 17:56:23 \",\"ShopID \":   \"h4 \",\"ShopName \":   \"天天 \",\"SpecificationName \":   \"颜色分类:浅灰色|尺码:M \",\"SpecificationValue \":   \"浅灰色|M \",\"RepertoryCount \":   \"160 \"";
-    //    [CZCService POSTmethod:kOrderAdd_URL andParameters:[self DataTOjsonString:dic] andHandle:^(NSDictionary *myresult) {
-    //        if (myresult) {
-    //            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
-    //            NSLog(@"16.提交订单 ------%d",result);
-    //        }
-    //        else{
-    //            NSLog(@"失败");
-    //        }
-    //    }];
+    //
+    //    NSLog(@"%@",productDicList);
+    
+    /**  16.提交订单(1) http://app.czctgw.com/api/order/*/
+    NSDictionary *dic = @{
+                          @"MemLoginID": @"111111",
+                          @"OrderNumber": _tradeID,
+                          @"TradeID": _tradeID,
+                          @"Name": @"陈胜",// _addressObj.name,
+                          @"Email": @"",
+                          @"Address": @"江苏省苏州市常熟市 江苏省苏州市常熟市古里镇小康村庐山苑三区31号",//_addressObj.address,
+                          @"Postalcode": @"215500",//_addressObj.postalcode,
+                          @"Tel": @"",//_addressObj.tel,
+                          @"Mobile": @"15952069203",//_addressObj.mobile,
+                          @"PaymentGuid": @"c7e5c13c-dd60-4f76-bf50-54297997b7dd",
+                          @"ProductPrice": @"248.00",
+                          @"DispatchPrice": @"0.00",
+                          @"ShouldPayPrice": @"248.00",
+                          @"OutOfStockOperate": @"",
+                          @"ClientToSellerMsg": @"",
+                          @"RegionCode":@"1",
+                          @"orderPrice":@"248.00",
+                          @"PostType": @"0",
+                          @"ProductList":productDicList
+                          };
+    
+//    NSString *paramStr = [PublicObject DataTOjsonString:dic];
+//    
+//    NSData *testData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+//    NSString *testStr = [[NSString alloc] initWithBytes:[testData bytes] length:[testData length] encoding:NSUTF8StringEncoding];
+//    
+//    testStr = [NSString stringWithFormat:@"%@%@",kOrderAdd_URL,testStr];
+//    NSLog(@"%@",testStr);
+    
+    [CZCService POSTmethod:kOrderAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+            NSLog(@"162222.提交订单 ------%d",result);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

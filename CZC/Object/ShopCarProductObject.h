@@ -51,6 +51,8 @@
 
 @property (nonatomic, copy) NSString *specificationName;
 
+@property (nonatomic, assign) NSInteger isSaled;/**< 是否下架 */
+
 @property (nonatomic, assign) BOOL isSelected;/**< 是否被选中 */
 
 

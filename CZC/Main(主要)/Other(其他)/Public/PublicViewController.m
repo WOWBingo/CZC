@@ -9,7 +9,10 @@
 #import "PublicViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-@interface PublicViewController ()
+@interface PublicViewController ()<MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
+
 
 @end
 
@@ -38,6 +41,17 @@
     
 }
 
+-(void)goToLoginVC{
+    LoginViewController *loginController=[[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    loginController.dismissView = ^(BOOL isSuccess){
+        if (!isSuccess) {
+            self.tabBarController.selectedIndex = kLastSelectedIndex;
+        }
+    };
+    //调用此方法显示模态窗口
+    [self presentViewController:loginController animated:YES completion:nil];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -49,4 +63,38 @@
 -(void)back{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+#pragma mark - 进度条方法
+- (void)shoHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.mode = MBProgressHUDModeText;
+    HUD.labelText = title;
+    HUD.margin = 20.f;
+    HUD.dimBackground = NO;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        finish();
+    }];
+}
+
+- (void)showHUDBeginWithTitle:(NSString *)title{
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = title;
+    HUD.square = YES;
+    HUD.dimBackground = YES;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD show:YES];
+}
+
+- (void)dissMissHUDEnd{
+    [HUD hide:YES];
+}
+
+
+
 @end

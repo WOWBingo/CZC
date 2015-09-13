@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZHPickView.h"
-#import "AccoutObject.h"
+
 @interface UserInfoViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,ZHPickViewDelegate>
 //pickView
 @property(nonatomic,strong)ZHPickView *pickview;

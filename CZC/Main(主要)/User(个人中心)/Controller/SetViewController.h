@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AccoutObject.h"
+
 @interface SetViewController :PublicViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
