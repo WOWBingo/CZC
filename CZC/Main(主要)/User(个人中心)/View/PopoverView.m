@@ -12,7 +12,7 @@
 #define kArrowHeight 0.f
 #define kArrowCurvature 0.f
 #define SPACE 2.f
-#define ROW_HEIGHT 30.f
+#define ROW_HEIGHT 44.f
 #define TITLE_FONT [UIFont systemFontOfSize:14]
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
 

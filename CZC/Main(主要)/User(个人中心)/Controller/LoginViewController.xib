@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -29,7 +29,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHK-4B-AHU" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
                                     <rect key="frame" x="63" y="22.5" width="194" height="153"/>
                                 </imageView>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-h6-OUG">
@@ -71,7 +71,7 @@
                                     </state>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="WoQ-AD-a3N" secondAttribute="trailing" constant="30" id="1DK-P5-7Nd"/>
                                 <constraint firstItem="e6t-bV-tvY" firstAttribute="top" secondItem="WoQ-AD-a3N" secondAttribute="bottom" constant="20" id="2dA-70-Hma"/>
@@ -99,7 +99,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tHK-4B-AHU" secondAttribute="width" id="87E-0G-Ao9"/>
                         <constraint firstItem="tHK-4B-AHU" firstAttribute="leading" secondItem="M69-4e-PC4" secondAttribute="leading" id="8kr-M7-xKj"/>

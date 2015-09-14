@@ -137,7 +137,7 @@
     CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:cell.cellIndexPath];
     CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];
     NSLog(@"%f",rect.origin.y);
-    cell.moreView = [cell.moreView initWithPoint:CGPointMake(cell.moreBtn.frame.origin.x, rect.origin.y+30)];
+    cell.moreView = [cell.moreView initWithPoint:CGPointMake(cell.moreBtn.frame.origin.x, rect.origin.y+80)];
     NSLog(@"%ld",(long)cell.moreView.tag);
     //遍历uiview存在就隐藏，不存在就显示
     if (cell.moreView.tag == 0) {

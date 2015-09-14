@@ -95,7 +95,7 @@
                 iconLab.font = [UIFont systemFontOfSize:15];
                 [cell addSubview:iconLab];
                 
-                self.iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-80, 10, 40, 40)];
+                self.iconBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-60, 10, 40, 40)];
                 self.iconBtn.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
                 self.iconBtn.layer.borderWidth = 3.0f;
                 self.iconBtn.layer.rasterizationScale = [UIScreen mainScreen].scale;
