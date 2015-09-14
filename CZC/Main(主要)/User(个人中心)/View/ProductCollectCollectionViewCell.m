@@ -47,4 +47,15 @@
     }
 }
 
+- (IBAction)chooseClick:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if (btn.tag == 0) {
+        self.chooseBtn.tag = 1;
+        [self.chooseBtn setImage:[UIImage imageNamed:@"chooseYes.png"] forState:UIControlStateNormal];
+    }else{
+        self.chooseBtn.tag = 0;
+        [self.chooseBtn setImage:[UIImage imageNamed:@"chooseNO.png"] forState:UIControlStateNormal];
+    }
+}
+
 @end

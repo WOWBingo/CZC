@@ -14,7 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *proPriceLab;
 @property (weak, nonatomic) IBOutlet UIView *boxView;
+@property (weak, nonatomic) IBOutlet UIButton *chooseBtn;
 
 -(void)editFrame:(BOOL)isEdited andIndexPath:(NSIndexPath *)indexPath;
 
+- (IBAction)chooseClick:(id)sender;
 @end
