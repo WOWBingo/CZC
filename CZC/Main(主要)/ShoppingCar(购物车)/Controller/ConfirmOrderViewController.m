@@ -258,6 +258,17 @@
     //
     //    NSLog(@"%@",productDicList);
     
+    NSData *testData = [NSJSONSerialization dataWithJSONObject:productDicList options:0 error:nil];
+    NSString *testStr = [NSString stringWithUTF8String:[testData bytes]];//[[NSString alloc] initWithBytes:[testData bytes] length:[testData length] encoding:NSUTF8StringEncoding];
+    
+    //testStr = [NSString stringWithFormat:@"%@%@",kOrderAdd_URL,testStr];
+    // NSLog(@"%@",dic);
+    NSLog(@"%@",testStr);
+    
+    NSString *str2 = [NSString stringWithFormat:@"%@",productDicList];
+    str2 = [str2 stringByReplacingOccurrencesOfString:@"(" withString:@"["];
+    str2 = [str2 stringByReplacingOccurrencesOfString:@")" withString:@"]"];
+    
     /**  16.提交订单(1) http://app.czctgw.com/api/order/*/
     NSDictionary *dic = @{
                           @"MemLoginID": @"111111",
@@ -281,23 +292,94 @@
                           @"ProductList":productDicList
                           };
     
-//    NSString *paramStr = [PublicObject DataTOjsonString:dic];
 //    
-//    NSData *testData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
-//    NSString *testStr = [[NSString alloc] initWithBytes:[testData bytes] length:[testData length] encoding:NSUTF8StringEncoding];
-//    
-//    testStr = [NSString stringWithFormat:@"%@%@",kOrderAdd_URL,testStr];
-//    NSLog(@"%@",testStr);
+//    NSLog(@"%@",dic);
+    NSData *dicData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+    NSString *dicStr = [[NSString alloc] initWithBytes:[dicData bytes] length:[dicData length] encoding:NSUTF8StringEncoding];
+    NSLog(@"dicStr:%@",dicStr);
+  //  NSLog(@"%@",dic);
+    [self downloadData:dicStr];
     
-    [CZCService POSTmethod:kOrderAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
-        if (myresult) {
-            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
-            NSLog(@"162222.提交订单 ------%d",result);
-        }
-        else{
-            NSLog(@"失败");
-        }
-    }];
+    //IOS自己的JSON转换方式
+//    NSData* data = [NSJSONSerialization dataWithJSONObject:[location toDictionary] options:0 error:NULL];
+//    NSString *jsonString = [NSString stringWithUTF8String:[data bytes]];
+    
+//    NSString* urlStr = @"http://app.czctgw.com/api/order/";
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    [manager  POST:urlStr parameters:dicStr success:^(AFHTTPRequestOperation *operation, id responseObject){
+//        
+//        NSDictionary *dic =  (NSDictionary *) responseObject;
+//        NSLog(@"%@",dic);
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"%@",error);
+//
+//    }    ];
+//    
+    
+//    
+//    [CZCService POSTmethod:kOrderAdd_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+//            NSLog(@"162222.提交订单 ------%d",result);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+}
+
+- (void)downloadData:(NSString*)str
+{
+    // 1. 创建NSURL类型对象
+    NSURL *url = [NSURL URLWithString:@"http://app.czctgw.com/api/order/"];
+    // 2. 创建NSMutableURLRequest类型对象
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    // 转化为二进制数据
+    NSData *paramData = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // 1) 设置请求体
+    [request setHTTPBody:paramData];
+    
+    // 2) 设置请求方式
+    [request setHTTPMethod:@"post"];
+    
+    // 3) 设置请求参数的大小
+    NSString *lengthStr = [NSString stringWithFormat:@"%ld", paramData.length];
+    [request setValue:lengthStr forHTTPHeaderField:@"content-length"];
+    
+    // 4) 设置类型
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    
+    // 3.发送请求
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
+}
+//接收到服务器回应的时候调用此方法
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
+    NSLog(@"%@",[res allHeaderFields]);
+    self.receiveData = [NSMutableData data];
+    
+}
+//接收到服务器传输数据的时候调用，此方法根据数据大小执行若干次
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.receiveData appendData:data];
+}
+//数据传完之后调用此方法
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString *receiveStr = [[NSString alloc]initWithData:self.receiveData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",receiveStr);
+}
+//网络请求过程中，出现任何错误（断网，连接超时等）会进入此方法
+-(void)connection:(NSURLConnection *)connection
+ didFailWithError:(NSError *)error
+{
+    NSLog(@"%@",[error localizedDescription]);
 }
 
 /*

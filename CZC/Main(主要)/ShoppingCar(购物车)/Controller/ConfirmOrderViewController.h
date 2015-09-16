@@ -24,6 +24,9 @@
 @property (nonatomic,copy) NSString *tradeID;/**< 订单号 */
 @property (nonatomic,strong) AddressObject *addressObj;/**< 地址 */
 
+@property (nonatomic,strong) NSURLConnection *connection;
+@property (nonatomic,strong)NSMutableData *receiveData;
+
 - (IBAction)accountClick:(id)sender;
 
 @end

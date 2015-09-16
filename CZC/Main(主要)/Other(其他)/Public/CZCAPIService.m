@@ -37,23 +37,36 @@ static CZCAPIService *CAS;
 }
 
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
+    
     NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
     requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
     [manager POST:requrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *doubi = responseObject;
-        NSString *shabi =  [[NSString alloc]initWithData:doubi encoding:NSUTF8StringEncoding];
-        NSLog(@"success========%@====%@",responseObject,shabi);
-        //handle((NSDictionary *) responseObject);
+        handle((NSDictionary *) responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         handle(nil);
     }];
+//    NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];
+//    requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/x-www-form-urlencoded",@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
+//    [manager POST:requrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSData *doubi = responseObject;
+//        NSString *shabi =  [[NSString alloc]initWithData:doubi encoding:NSUTF8StringEncoding];
+//        NSLog(@"success========%@====%@",responseObject,shabi);
+//        //handle((NSDictionary *) responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//        handle(nil);
+//    }];
 }
 
 - (void)POSTmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *))handle{

@@ -364,39 +364,39 @@
     /**
      *	上传一
      */
-    //    NSDictionary *paramesDic = @{
-    //                                 @"memloginid":@"111111",
-    //                                 @"originalimage":imageData
-    //                                 };
-    //    [CZCService POSTUploadWithUrlmethod:@"http://www.czctgw.com/api/main/member/uploadpic.ashx" andDicParameters:paramesDic andHandle:^(NSDictionary *myresult) {
-    //        if (myresult) {
-    //            NSLog(@"imageresult=======%@",myresult);
-    //        }
-    //    }];
+        NSDictionary *paramesDic = @{
+                                     @"memloginid":@"111111",
+                                     @"originalimage":imageData
+                                     };
+        [CZCService POSTUploadWithUrlmethod:@"http://www.czctgw.com/api/main/member/uploadpic.ashx" andDicParameters:paramesDic andHandle:^(NSDictionary *myresult) {
+            if (myresult) {
+                NSLog(@"imageresult=======%@",myresult);
+            }
+        }];
     
     /**
      *	上传二
      */
-    //    [CZCService postUploadWithUrl:[@"http://www.czctgw.com/api/main/member/uploadpic.ashx" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] fileImageData:
-    //     imageData fileName:@"originalimage" success:^(id responseObject) {
-    //         NSDictionary *dic = (NSDictionary *)responseObject;
-    //         NSLog(@"666666666");
-    //         //            [[FootService getFootService]GETmethod:kUpdatePhoto andParameters:[NSString stringWithFormat:@"%@,%@",self.user.username,fileName] andHandle:^(NSDictionary *myresult) {
-    //         //                NSDictionary *result = myresult;
-    //         //                int status = [[result objectForKey:@"status"]intValue];
-    //         //                [[MBProgressView shareMBProgressView] dissMissProgressHUD];
-    //         //                if (status == 1) {
-    //         //                    [self getUserInfoByUserName:self.user.username];
-    //         //                    [PublicObject showHUDView:self.view title:@"提示" content:@"上传成功" time:kHUDTime];
-    //         //                }
-    //         //                else{
-    //         //                    NSLog(@"失败");
-    //         //                    [PublicObject showHUDView:self.view title:@"提示" content:@"修改失败" time:kHUDTime];
-    //         //                }
-    //         //            }];
-    //     } fail:^{
-    //         NSLog(@"777777777777");
-    //     }];
+//        [CZCService postUploadWithUrl:[@"http://www.czctgw.com/api/main/member/uploadpic.ashx" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] fileImageData:
+//         imageData fileName:@"originalimage" success:^(id responseObject) {
+//             NSDictionary *dic = (NSDictionary *)responseObject;
+//             NSLog(@"666666666");
+//             //            [[FootService getFootService]GETmethod:kUpdatePhoto andParameters:[NSString stringWithFormat:@"%@,%@",self.user.username,fileName] andHandle:^(NSDictionary *myresult) {
+//             //                NSDictionary *result = myresult;
+//             //                int status = [[result objectForKey:@"status"]intValue];
+//             //                [[MBProgressView shareMBProgressView] dissMissProgressHUD];
+//             //                if (status == 1) {
+//             //                    [self getUserInfoByUserName:self.user.username];
+//             //                    [PublicObject showHUDView:self.view title:@"提示" content:@"上传成功" time:kHUDTime];
+//             //                }
+//             //                else{
+//             //                    NSLog(@"失败");
+//             //                    [PublicObject showHUDView:self.view title:@"提示" content:@"修改失败" time:kHUDTime];
+//             //                }
+//             //            }];
+//         } fail:^{
+//             NSLog(@"777777777777");
+//         }];
     
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
