@@ -11,5 +11,5 @@
 @interface PointsBalanceViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tablewView;
-@property (nonatomic,strong)AccoutObject *object;
+//@property (nonatomic,strong)AccoutObject *object;
 @end

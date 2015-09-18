@@ -18,11 +18,17 @@
 @property(nonatomic ,strong)UIBarButtonItem *rightMenuItem;
 @property(nonatomic ,strong)UIBarButtonItem *backMenuItem;
 
-@property(nonatomic ,strong)AccoutObject *accoutObject;
+//@property(nonatomic ,strong)AccoutObject *accoutObject;
 
 -(IBAction)backFucntion:(id)sender;
 
 
 - (void)goToLoginVC;
+
+- (void)showHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish;
+
+- (void)showHUDBeginWithTitle:(NSString *)title;
+
+- (void)dissMissHUDEnd;
 
 @end

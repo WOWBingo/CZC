@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *allPriceLab;
 @property (weak, nonatomic) IBOutlet UIButton *orderBtn;
 
-@property (nonatomic,strong) NSMutableArray *selectedProductList;/**< 选中的产品 */
+
 @property (nonatomic,strong) NSMutableArray *selectedShopList;/**< 选中的店铺 */
+@property (nonatomic,strong) NSMutableArray *selectedProductList;/**< 选中的产品 */
+@property (nonatomic,strong) NSMutableArray *dispatchPriceList;/**< 邮费数组 */
 @property (nonatomic,strong) NSArray *paymentList;/**< 支付方式列表 */
 @property (nonatomic,strong) PaymentObject *paymentObject;/**< 支付方式 */
 

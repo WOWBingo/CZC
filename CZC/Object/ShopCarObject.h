@@ -26,5 +26,10 @@
 
 @property (nonatomic, assign) BOOL isSelected;/**< 是否被选中 */
 
+@property (nonatomic, strong) NSMutableDictionary *dispatchPriceDic;/**< 邮费字典 */
+
+@property (nonatomic, copy) NSString *dispatchPriceName;/**< 店名 */
+
+
 
 @end

@@ -9,6 +9,8 @@
 #import "Key.h"
 
 #pragma mark - 网络
+/** 全局用户对象 */
+AccoutObject *kAccountObject = nil;
 
 NSString *const kConnectionFailureError = @"连接失败，请检查网络连接";
 NSString *const kRequestTimedOutError  = @"请求超时，请检查连接网络";

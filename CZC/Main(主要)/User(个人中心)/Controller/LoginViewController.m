@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"用户登录";
+    //self.title = @"用户登录";
     
     //用户名
     self.userNameTextField.delegate = self;
@@ -61,13 +61,13 @@
     NSLog(@"%@,%@",userName,password);
     if ([[userName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""]) {
         //请输入用户名
-        [self shoHUDViewTitle:@"请输入用户名" info:@"" andCodes:^{        }];
+        [self showHUDViewTitle:@"请输入用户名" info:@"" andCodes:^{        }];
         [self performSelector:@selector(shownKeyboard:) withObject:self.userNameTextField afterDelay:kHUDTime];
         return;
     }
     if ([[password stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""]) {
         //请输入密码
-        [self shoHUDViewTitle:@"请输入密码" info:@"" andCodes:^{        }];
+        [self showHUDViewTitle:@"请输入密码" info:@"" andCodes:^{        }];
         [self performSelector:@selector(shownKeyboard:) withObject:self.passwordTextField afterDelay:kHUDTime];
         return;
     }
@@ -83,7 +83,7 @@
             [self saveUserInfoDefault:userName];
         }else{
             [self dissMissHUDEnd];
-            [self shoHUDViewTitle:@"用户名或密码错误" info:@"" andCodes:^{
+            [self showHUDViewTitle:@"用户名或密码错误" info:@"" andCodes:^{
             }];
         }
     }];
@@ -92,7 +92,7 @@
 
 //注册
 - (void)registerClick {
-    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
 
@@ -168,8 +168,10 @@
                 [defaults setObject:[[NSDictionary alloc]initWithDictionary:mutableDic] forKey:kAccoutInfo_Default];
                 [defaults synchronize];
                 
-                self.dismissView(YES);
-                [self shoHUDViewTitle:@"登录成功" info:@"" andCodes:^{  }];
+                kAccountObject = accoutObj;
+                
+                self.dismissView(YES);//block回调
+                [self showHUDViewTitle:@"登录成功" info:@"" andCodes:^{  }];
                 [self dismissViewControllerAnimated:YES completion:^{  }];
             }
         }
@@ -180,7 +182,7 @@
 }
 
 
-- (void)shoHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
+- (void)showHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:HUD];
     HUD.delegate = self;

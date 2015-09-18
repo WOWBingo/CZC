@@ -22,30 +22,29 @@
     self.title = @"账户余额";
     //tableView多余不显示
     self.tableView.tableFooterView = [[UIView alloc]init];
-    [self getUserInfo];
+//    [self getUserInfo];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - 20.用户信息
--(void)getUserInfo{
-    //从缓存登录数据中获取用户 MemLoginID
-    //
-    NSString *params = @"a465788";
-    [CZCService GETmethod:kAccountInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-        if (myresult) {
-            NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
-            self.object = [AccoutObject objectWithKeyValues:dic];
-            NSLog(@"20.用户信息 ------%@",self.object);
-            [self.tableView reloadData];
-        }
-        else{
-            NSLog(@"失败");
-        }
-    }];
-}
+//#pragma mark - 20.用户信息
+//-(void)getUserInfo{
+//    //从缓存登录数据中获取用户 MemLoginID
+//   // NSString *params = @"a465788";
+//    [CZCService GETmethod:kAccountInfo_URL andParameters:kAccountObject.memLoginID andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
+//            self.object = [AccoutObject objectWithKeyValues:dic];
+//            NSLog(@"20.用户信息 ------%@",self.object);
+//            [self.tableView reloadData];
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+//}
 #pragma tableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -67,7 +66,7 @@
         {
             cell.titleLab.text = @"账户余额";
             cell.infoLab.hidden = NO;
-            NSString *advancePayment = [NSString stringWithFormat:@"%f",self.object.advancePayment];
+            NSString *advancePayment = [NSString stringWithFormat:@"%f",kAccountObject.advancePayment];
             NSRange range = [advancePayment rangeOfString:@"."];
             NSInteger location = range.location;
             advancePayment = [advancePayment substringToIndex:location+3];

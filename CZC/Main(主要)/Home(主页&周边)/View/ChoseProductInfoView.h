@@ -14,6 +14,7 @@
 #import "ProductsObject.h"
 #import "SpecificationAllObject.h"
 #import "SpecificationOfPriceObject.h"
+#import "AccoutObject.h"
 
 @interface ChoseProductInfoView : UIView<UITableViewDelegate,UITableViewDataSource>
 
@@ -36,6 +37,7 @@
 @property (strong, nonatomic) void (^dismissView)();
 
 #pragma  mark - 数据
+//@property (strong, nonatomic) AccoutObject *accoutObject;/**< 用户对象 */
 @property (strong, nonatomic) ProductsObject *product;/**< 产品对象 */
 @property (nonatomic, strong) SpecificationOfPriceObject *priceObject;/**< 查询到的价格对象*/
 @property (strong, nonatomic) NSMutableDictionary *selectedSpecificationDic;/**< 选中的规格对象字典 */

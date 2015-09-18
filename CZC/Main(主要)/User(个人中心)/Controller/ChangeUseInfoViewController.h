@@ -18,5 +18,5 @@
 
 @property (nonatomic,strong) NSString *titleStr;
 @property (nonatomic,strong) NSArray *sexArr;
-@property(nonatomic) int index;
+@property(nonatomic,assign) NSInteger index;
 @end

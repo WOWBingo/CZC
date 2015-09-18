@@ -31,8 +31,8 @@
 -(void)getAddress{
 #pragma mark - 18.收货地址列表
     /** 18.收货地址列表 http://app.czctgw.com/api/address/a465788 */
-        NSString *params = @"a465788";
-        [CZCService GETmethod:kAddressList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        //NSString *params = @"a465788";
+        [CZCService GETmethod:kAddressList_URL andParameters:kAccountObject.memLoginID andHandle:^(NSDictionary *myresult) {
             if (myresult) {
                 NSArray *dataArr = [myresult objectForKey:@"AddressList"];
                 NSArray *list = [AddressObject objectArrayWithKeyValuesArray:dataArr];

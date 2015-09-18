@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,23 +11,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收 货 人：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-ON-YQm">
-                        <rect key="frame" x="16" y="8" width="69" height="18"/>
+                        <rect key="frame" x="16" y="8" width="68" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="刘明凡 15866323333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-WS-Fhb">
-                        <rect key="frame" x="85" y="8" width="143" height="17"/>
+                        <rect key="frame" x="84" y="8" width="147.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="收货地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xap-bp-w4q">
-                        <rect key="frame" x="16" y="34" width="65" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="收货地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xap-bp-w4q">
+                        <rect key="frame" x="16" y="34" width="65" height="30.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -43,6 +43,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="xap-bp-w4q" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-8" id="7E6-eI-0A2"/>
                     <constraint firstAttribute="trailing" secondItem="aiv-ED-XSg" secondAttribute="trailing" id="GtG-Fo-Sn6"/>
                     <constraint firstAttribute="bottom" secondItem="aiv-ED-XSg" secondAttribute="bottom" constant="8" id="O0k-Ek-mcq"/>
                     <constraint firstItem="aiv-ED-XSg" firstAttribute="leading" secondItem="xap-bp-w4q" secondAttribute="trailing" constant="6" id="RhI-7W-Wtm"/>
@@ -65,7 +66,7 @@
                 <outlet property="addressLabel" destination="aiv-ED-XSg" id="zvK-8o-RUq"/>
                 <outlet property="nameLabel" destination="fGD-WS-Fhb" id="cwV-Ks-8m3"/>
             </connections>
-            <point key="canvasLocation" x="281" y="408.5"/>
+            <point key="canvasLocation" x="167" y="387.5"/>
         </tableViewCell>
     </objects>
 </document>

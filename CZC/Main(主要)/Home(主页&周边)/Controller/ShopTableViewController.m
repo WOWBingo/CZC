@@ -60,8 +60,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     
+    
 
 }
+
 #pragma mark - 获取数据
 /** 3.店铺搜索列表 http://app.czctgw.com/api/shops?pageIndex=1&pageCount=5&OderStatus=0&keyKeyword=&CityDomainName=gy */
 - (void)getShopListData{

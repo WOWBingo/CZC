@@ -24,6 +24,11 @@
 @property (nonatomic,strong) UILabel *age;
 @property (nonatomic,strong) UILabel *tel;
 
-@property (nonatomic,strong)AccoutObject *object;
+//@property (nonatomic,strong)AccoutObject *object;
+
+
+
+@property (nonatomic,strong) NSURLConnection *connection;
+@property (nonatomic,strong)NSMutableData *receiveData;
 
 @end

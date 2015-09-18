@@ -219,7 +219,7 @@
                 return;
             }
         }
-        NSString *memLoginID = [NSString stringWithFormat:@"111111"];
+        NSString *memLoginID = kAccountObject.memLoginID;//[NSString stringWithFormat:@"111111"];
         NSString *productGuid = _priceObject.productGuid;
         NSString *buyNumber = [NSString stringWithFormat:@"%ld",_productNum];
         NSString *buyPrice = [NSString stringWithFormat:@"%f",_priceObject.goodsPrice];

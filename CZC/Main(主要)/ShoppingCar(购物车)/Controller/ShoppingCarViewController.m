@@ -42,7 +42,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = NO;
-    if ([PublicObject getAccoutInfoDefault] == nil) {
+    if (kAccountObject == nil) {
         [self goToLoginVC];
     }else{
         [self getShoppingCarData];
@@ -61,8 +61,7 @@
 /**11. 购物车列表  http://app.czctgw.com/api/shoppingcart2/*/
 - (void)getShoppingCarData{
     
-    NSString *params = @"111111";
-    [CZCService GETmethod:kShoppingCartList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+    [CZCService GETmethod:kShoppingCartList_URL andParameters:kAccountObject.memLoginID andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
         if (result) {
             NSArray *dataArr = [result objectForKey:@"DATA"];

@@ -108,7 +108,7 @@
                 //                [self.iconBtn sd_setImageWithURL:[NSURL URLWithString:imgurl] forState:UIControlStateNormal placeholderImage:self.photo];
                 //加载图片
                 NSString *imgURL = @"";
-                imgURL = [PublicObject convertNullString:self.object.url];
+                imgURL = [PublicObject convertNullString:kAccountObject.url];
                 if ([imgURL isEqualToString:@""]||imgURL == nil) {
                     [self.iconBtn setImage:[UIImage imageNamed:@"cpsc-p1"] forState:UIControlStateNormal];
                 } else {
@@ -134,7 +134,7 @@
                 
                 [self.trueName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
                 self.trueName.textAlignment = NSTextAlignmentRight;
-                self.trueName.text = self.object.realName;
+                self.trueName.text = kAccountObject.realName;
                 self.trueName.textColor = [UIColor grayColor];
                 self.trueName.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellSelectionStyleNone;
@@ -150,7 +150,7 @@
                 
                 [self.userName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
                 self.userName.textAlignment = NSTextAlignmentRight;
-                self.userName.text = self.object.name;
+                self.userName.text = kAccountObject.name;
                 self.userName.textColor = [UIColor grayColor];
                 self.userName.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -355,50 +355,68 @@
     
     NSData *imageData = UIImageJPEGRepresentation(newImage,0.5);
     UIImage *newImg = [UIImage imageWithData:imageData];
-    //    self.photo = newImg;
+    
     [self.iconBtn setImage:newImg forState:UIControlStateNormal];
-    NSDateFormatter *tFormat=[[NSDateFormatter alloc] init];
-    [tFormat setDateFormat:@"yyyyMMddHHmmss"];
-    NSString *fileName = @"image01.jpg";//[NSString stringWithFormat:@"%@%@.png",self.user.username,[tFormat stringFromDate:[NSDate date]]];
-    //[[MBProgressView shareMBProgressView] showProgressHUD:self.view title:@"正在上传"];
     /**
      *	上传一
      */
-        NSDictionary *paramesDic = @{
-                                     @"memloginid":@"111111",
-                                     @"originalimage":imageData
-                                     };
-        [CZCService POSTUploadWithUrlmethod:@"http://www.czctgw.com/api/main/member/uploadpic.ashx" andDicParameters:paramesDic andHandle:^(NSDictionary *myresult) {
-            if (myresult) {
-                NSLog(@"imageresult=======%@",myresult);
+    NSDictionary *paramesDic = @{
+                                 @"memloginid":kAccountObject.memLoginID,
+                                 @"originalimage":[self image2DataURL:newImg]
+                                 };
+    [self showHUDBeginWithTitle:@"正在上传……"];
+    [CZCService POSTUploadWithUrlmethod:@"http://www.czctgw.com/api/main/member/uploadpic.ashx" andDicParameters:paramesDic andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSLog(@"imageresult=======%@",myresult);
+            NSString *imageURL;
+            [self dissMissHUDEnd];
+            if ([[myresult objectForKey:@"tip"]intValue ] == 1) {
+                imageURL = [NSString stringWithFormat:@"http://www.czctgw.com%@",[myresult objectForKey:@"success"]];
+                [self showHUDViewTitle:@"上传成功！" info:@"" andCodes:^{
+                    
+                }];
+            }else{
+                [self showHUDViewTitle:@"上传失败！" info:@"" andCodes:^{
+                    
+                }];
             }
-        }];
-    
-    /**
-     *	上传二
-     */
-//        [CZCService postUploadWithUrl:[@"http://www.czctgw.com/api/main/member/uploadpic.ashx" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] fileImageData:
-//         imageData fileName:@"originalimage" success:^(id responseObject) {
-//             NSDictionary *dic = (NSDictionary *)responseObject;
-//             NSLog(@"666666666");
-//             //            [[FootService getFootService]GETmethod:kUpdatePhoto andParameters:[NSString stringWithFormat:@"%@,%@",self.user.username,fileName] andHandle:^(NSDictionary *myresult) {
-//             //                NSDictionary *result = myresult;
-//             //                int status = [[result objectForKey:@"status"]intValue];
-//             //                [[MBProgressView shareMBProgressView] dissMissProgressHUD];
-//             //                if (status == 1) {
-//             //                    [self getUserInfoByUserName:self.user.username];
-//             //                    [PublicObject showHUDView:self.view title:@"提示" content:@"上传成功" time:kHUDTime];
-//             //                }
-//             //                else{
-//             //                    NSLog(@"失败");
-//             //                    [PublicObject showHUDView:self.view title:@"提示" content:@"修改失败" time:kHUDTime];
-//             //                }
-//             //            }];
-//         } fail:^{
-//             NSLog(@"777777777777");
-//         }];
+        }
+    }];
     
 }
+
+#pragma mark -方法1图片转base64
+- (BOOL) imageHasAlpha: (UIImage *) image
+{
+    CGImageAlphaInfo alpha = CGImageGetAlphaInfo(image.CGImage);
+    return (alpha == kCGImageAlphaFirst ||
+            alpha == kCGImageAlphaLast ||
+            alpha == kCGImageAlphaPremultipliedFirst ||
+            alpha == kCGImageAlphaPremultipliedLast);
+}
+- (NSString *) image2DataURL: (UIImage *) image
+{
+    NSData *imageData = nil;
+    NSString *mimeType = nil;
+    
+    if ([self imageHasAlpha: image]) {
+        imageData = UIImagePNGRepresentation(image);
+        mimeType = @"image/png";
+    } else {
+        imageData = UIImageJPEGRepresentation(image, 0.5f);
+        mimeType = @"image/jpeg";
+    }
+    
+    return [NSString stringWithFormat:@"%@",
+            [imageData base64EncodedStringWithOptions: 0]];
+    
+    //[NSString stringWithFormat:@"data:%@;base64,%@", mimeType,
+    //[imageData base64EncodedStringWithOptions: 0]];
+    
+}
+
+
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:^{}];

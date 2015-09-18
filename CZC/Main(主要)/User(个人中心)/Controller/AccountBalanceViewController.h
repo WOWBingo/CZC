@@ -10,6 +10,6 @@
 @interface AccountBalanceViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,strong)AccoutObject *object;
+//@property (nonatomic,strong)AccoutObject *object;
 
 @end

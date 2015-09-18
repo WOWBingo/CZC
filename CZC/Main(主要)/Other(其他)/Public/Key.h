@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AccoutObject.h"
 
 #pragma mark - 网络
+
+/** 全局用户对象 */
+UIKIT_EXTERN AccoutObject *kAccountObject;
 
 /** 连接失败，请检查网络连接 */
 UIKIT_EXTERN NSString *const kConnectionFailureError;

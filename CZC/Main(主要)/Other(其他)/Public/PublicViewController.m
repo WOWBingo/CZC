@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cpxx-7"] forBarMetrics:UIBarMetricsDefault ];//navigation栏的图片
     //    self.navigationController.navigationBar.barTintColor = [UIColor redColor];//导航栏颜色
@@ -39,22 +39,31 @@
     NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:titleColor,NSForegroundColorAttributeName,font,NSFontAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = dic;
     
+    if(kAccountObject == nil){
+        kAccountObject = [PublicObject getAccoutInfoDefault];
+    }
 }
 
 -(void)goToLoginVC{
     LoginViewController *loginController=[[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    UINavigationController *newNVC = [[UINavigationController alloc]initWithRootViewController:loginController];
+    newNVC.navigationBarHidden = YES;
+    newNVC.tabBarItem.title = @"登 录";
+    newNVC.tabBarItem.image = [UIImage imageNamed:@"icon-grzx-1"];
+    newNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[UIApplication sharedApplication].applicationIconBadgeNumber];
+    
     loginController.dismissView = ^(BOOL isSuccess){
         if (!isSuccess) {
-            self.tabBarController.selectedIndex = kLastSelectedIndex;
+            self.tabBarController.selectedIndex = kLastSelectedIndex;//登录失败，调回上一个界面
         }
     };
     //调用此方法显示模态窗口
-    [self presentViewController:loginController animated:YES completion:nil];
+    [self presentViewController:newNVC animated:YES completion:nil];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    kAccountObject = [PublicObject getAccoutInfoDefault];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -64,7 +73,7 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 #pragma mark - 进度条方法
-- (void)shoHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
+- (void)showHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:HUD];
     HUD.delegate = self;

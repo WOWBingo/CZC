@@ -32,7 +32,7 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
-    [self getUserInfo];
+//    [self getUserInfo];
     [self getProCollectNum];
     [self getshopCollectNum];
 }
@@ -50,23 +50,23 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
-#pragma mark - 20.用户信息
--(void)getUserInfo{
-    //从缓存登录数据中获取用户 MemLoginID
-    //
-        NSString *params = @"a465788";
-        [CZCService GETmethod:kAccountInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-            if (myresult) {
-                NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
-                self.object = [AccoutObject objectWithKeyValues:dic];
-                NSLog(@"20.用户信息 ------%@",self.object);
-                [self.tableView reloadData];
-            }
-            else{
-                NSLog(@"失败");
-            }
-        }];
-}
+//#pragma mark - 20.用户信息
+//-(void)getUserInfo{
+//    //从缓存登录数据中获取用户 MemLoginID
+//    //
+//        NSString *params = @"a465788";
+//        [CZCService GETmethod:kAccountInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//            if (myresult) {
+//                NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
+//                self.object = [AccoutObject objectWithKeyValues:dic];
+//                NSLog(@"20.用户信息 ------%@",self.object);
+//                [self.tableView reloadData];
+//            }
+//            else{
+//                NSLog(@"失败");
+//            }
+//        }];
+//}
 #pragma mark - 23.产品收藏列表
 -(void)getProCollectNum{
 /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
@@ -150,9 +150,9 @@
             }
             //加载数据
             cell1.vipTypeLab.font = [UIFont systemFontOfSize:12];
-            cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)self.object.memberRank];
+            cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)kAccountObject.memberRank];
             cell1.vipNumLab.hidden = YES;
-            cell1.nameLab.text = [NSString stringWithFormat:@"%@",self.object.realName];
+            cell1.nameLab.text = [NSString stringWithFormat:@"%@",kAccountObject.realName];
             cell1.proCollectNumLab.text = [NSString stringWithFormat:@"%d",self.proCollectNum];
             cell1.shopCollectNumLab.text = [NSString stringWithFormat:@"%d",self.shopCollectNum];
         }
@@ -167,7 +167,7 @@
                 //账户余额
                 [cell2.titleImg setImage:[UIImage imageNamed:@"mid_tb1"]];
                 cell2.titileLab.text = @"账户余额";
-                NSString *advancePayment = [NSString stringWithFormat:@"%f",self.object.advancePayment];
+                NSString *advancePayment = [NSString stringWithFormat:@"%f",kAccountObject.advancePayment];
                 NSRange range = [advancePayment rangeOfString:@"."];
                 NSInteger location = range.location;
                 advancePayment = [advancePayment substringToIndex:location+3];
@@ -177,7 +177,7 @@
                 //积分余额
                 [cell2.titleImg setImage:[UIImage imageNamed:@"mid_tb2"]];
                 cell2.titileLab.text = @"积分余额";
-                cell2.balanceLab.text = [NSString stringWithFormat:@"%ld",(long)self.object.score];
+                cell2.balanceLab.text = [NSString stringWithFormat:@"%ld",(long)kAccountObject.score];
             }
             if (indexPath.row == 2) {
                 //积分充值
@@ -315,7 +315,7 @@
 - (IBAction)userInfoVC:(id)sender{
     UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-    userVC.object = self.object;
+   // userVC.object = self.object;
     [self.navigationController pushViewController:userVC animated:YES];
 }
 - (IBAction)productCollectVC:(id)sender{

@@ -288,18 +288,18 @@
     
 #pragma mark - 14.订单列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
-    params = @"pageIndex=1&pageCount=5&memLoginID=111111&t=0";//yemao
-    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-        if (myresult) {
-            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
-            NSArray *dataArr = [myresult objectForKey:@"Data"];
-            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
-            NSLog(@"14.订单列表 ------%@",list);
-        }
-        else{
-            NSLog(@"失败");
-        }
-    }];
+//    params = @"pageIndex=1&pageCount=5&memLoginID=111111&t=0";//yemao
+//    [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+//            NSArray *dataArr = [myresult objectForKey:@"Data"];
+//            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@"14.订单列表 ------%@",list);
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
     
 #pragma mark - 15.订单详情！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 15.订单详情 http://app.czctgw.com/api/order/201503091548989 */
@@ -511,14 +511,14 @@
     
 #pragma mark - 38.收货地址
 //    NSDictionary *addressDic = @{
-//                                 @"NAME":@"ewewessss",
+//                                 @"NAME":@"盖伦",
 //                                 @"Email":@"wewe@qq.com",
 //                                 @"Address":@"北京市北京辖区东城区",
 //                                 @"Postalcode":@"423654",
 //                                 @"Mobile":@"15236585965",
 //                                 @"Tel":@"",
-//                                 @"AddressCode":@"000",
-//                                 @"MemLoginID":@"a465788"
+//                                 @"AddressCode":@"001",
+//                                 @"MemLoginID":@"zhou001"
 //                               };
 //    [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
 //        if (myresult) {

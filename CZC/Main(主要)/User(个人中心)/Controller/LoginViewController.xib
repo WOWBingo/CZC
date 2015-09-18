@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -29,21 +29,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHK-4B-AHU" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
-                                    <rect key="frame" x="63" y="22.5" width="194" height="153"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
+                                    <rect key="frame" x="63" y="22" width="194" height="153"/>
                                 </imageView>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-h6-OUG">
-                                    <rect key="frame" x="30" y="175.5" width="260" height="30"/>
+                                    <rect key="frame" x="30" y="175" width="260" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoQ-AD-a3N">
-                                    <rect key="frame" x="30" y="207.5" width="260" height="30"/>
+                                    <rect key="frame" x="30" y="207" width="260" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6t-bV-tvY">
-                                    <rect key="frame" x="30" y="257.5" width="260" height="44"/>
+                                    <rect key="frame" x="30" y="257" width="260" height="44"/>
                                     <color key="backgroundColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="TTD-zQ-HgK"/>
@@ -55,7 +55,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2e-E4-msQ">
-                                    <rect key="frame" x="32" y="309.5" width="60" height="30"/>
+                                    <rect key="frame" x="32" y="309" width="60" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="免费注册">
                                         <color key="titleColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +63,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvM-MH-Y8c">
-                                    <rect key="frame" x="228" y="309.5" width="60" height="30"/>
+                                    <rect key="frame" x="228" y="309" width="60" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="忘记密码">
                                         <color key="titleColor" red="0.1215686275" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -138,7 +138,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登   录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pr7-qw-H2z">
-                    <rect key="frame" x="131" y="29" width="57" height="24"/>
+                    <rect key="frame" x="132.5" y="29" width="54" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
