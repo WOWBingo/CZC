@@ -21,14 +21,14 @@
 }
 
 - (IBAction)defaultClick:(id)sender {
-    [self.delegate setDefaultAddress:self.addressObj];
+    [self.delegate setDefaultAddress:self.addressObj andCellIndex:self.cellIndex];
 }
 
 - (IBAction)editClick:(id)sender {
-    [self.delegate pushToEditView:self.addressObj];
+    [self.delegate pushToEditView:self.addressObj andCellIndex:self.cellIndex];
 }
 
 - (IBAction)deleteClick:(id)sender {
-    [self.delegate deleteAddress:self.addressObj];
+    [self.delegate deleteAddress:self.addressObj andCellIndex:self.cellIndex];
 }
 @end

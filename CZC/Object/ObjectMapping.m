@@ -397,6 +397,7 @@ static ObjectMapping *object = nil;
                  @"createUser" : @"CreateUser",
                  @"addressCode" : @"AddressCode",
                  @"address" : @"Address",
+                 @"addressValue" : @"AddressValue",
                  @"isDefault" : @"IsDefault",
                  @"createTime" : @"CreateTime",
                  @"memLoginID" : @"MemLoginID",

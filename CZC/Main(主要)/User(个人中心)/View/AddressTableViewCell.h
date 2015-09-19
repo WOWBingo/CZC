@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AddressObject.h"
 @protocol AddressTableViewCellDelegate
--(void)setDefaultAddress:(AddressObject *)addressObj;
--(void)pushToEditView:(AddressObject *)addressObj;
--(void)deleteAddress:(AddressObject *)addressObj;
+-(void)setDefaultAddress:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex;
+-(void)pushToEditView:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex;
+-(void)deleteAddress:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex;
 @end
 
 @interface AddressTableViewCell : UITableViewCell
@@ -27,9 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 @property (nonatomic,strong) AddressObject *addressObj;
 @property (nonatomic,assign)id <AddressTableViewCellDelegate>delegate;
+@property (nonatomic) NSInteger cellIndex;
 
 - (IBAction)defaultClick:(id)sender;
-
 - (IBAction)editClick:(id)sender;
 - (IBAction)deleteClick:(id)sender;
 @end

@@ -27,7 +27,7 @@
     [setBtn setImage:[UIImage imageNamed:@"head_tb1"] forState:UIControlStateNormal];
     [setBtn addTarget:self action:@selector(setClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:setBtn];
-
+    
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     self.pageIndex = 1;
@@ -41,12 +41,13 @@
             self.pageIndex--;
         }else{
             self.pageIndex =1;
-            [PublicObject showHUDView:self.view title:@"已经是第一页了" content:@"" time:kHUDTime];
+            [self showHUDViewTitle:@"已经是第一页了" info:@"" andCodes:^{
+            }];
         }
         [self getWithPage:self.pageIndex];
     }];
-//    // 马上进入刷新状态
-//    [self.tableView.header beginRefreshing];
+    //    // 马上进入刷新状态
+    //    [self.tableView.header beginRefreshing];
     
     //上拉刷新
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -55,33 +56,34 @@
             self.pageIndex++;
         }else{
             self.pageIndex = self.allPageNum;
-            [PublicObject showHUDView:self.view title:@"已经是最后一页了" content:@"" time:kHUDTime];
+            [self showHUDViewTitle:@"已经是最后一页了" info:@"" andCodes:^{
+            }];
         }
         [self getWithPage:self.pageIndex];
     }];
-//    // 马上进入刷新状态
-//    [self.tableView.footer beginRefreshing];
+    //    // 马上进入刷新状态
+    //    [self.tableView.footer beginRefreshing];
 }
 -(void)getWithPage:(int)pageIndex{
 #pragma mark - 29.会员消息列表
     /** 29.会员消息列表 http://app.czctgw.com/api/membermessage/list/1/hyx888*/
-       NSString *params = [NSString stringWithFormat:@"%d/hyx888",self.pageIndex];
-        [CZCService GETmethod:kMemberMessage_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-            [self.tableView.header endRefreshing];
-            [self.tableView.footer endRefreshing];
-            if (myresult) {
-                NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
-                NSArray *dataArr = [myresult objectForKey:@"Data"];
-                NSArray *list = [MessageObject objectArrayWithKeyValuesArray:dataArr];
-                self.newsArr = [[NSMutableArray alloc]initWithArray:list];
-                self.allPageNum = (int)count/5+1;
-                NSLog(@"29.会员消息列表 ------%@",list);
-                [self.tableView reloadData];
-            }
-            else{
-                NSLog(@"失败");
-            }
-        }];
+    NSString *params = [NSString stringWithFormat:@"%d/hyx888",self.pageIndex];
+    [CZCService GETmethod:kMemberMessage_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        if (myresult) {
+            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [MessageObject objectArrayWithKeyValuesArray:dataArr];
+            self.newsArr = [[NSMutableArray alloc]initWithArray:list];
+            self.allPageNum = (int)count/5+1;
+            NSLog(@"29.会员消息列表 ------%@",list);
+            [self.tableView reloadData];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -127,7 +129,7 @@
         //删除
 #pragma mark - 29.会员消息列表
         /** 29.会员消息列表 http://app.czctgw.com/api/membermessage/delete/?msgId=75df9d79-8a3b-4685-864d-46f1ded476a7&MemLoginID=111111
-*/
+         */
         //获取memloginID
         //NSString *memLoginId = @"111111";
         //获取messageId
@@ -161,7 +163,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%ld",(long)indexPath.row);
-
+    
     //    switch (indexPath.section) {
     
 }

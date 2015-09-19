@@ -33,6 +33,8 @@
 
 @property (nonatomic, copy) NSString *address;
 
+@property (nonatomic, copy) NSString *addressValue;
+
 @property (nonatomic, assign) NSInteger isDefault;
 
 @property (nonatomic, copy) NSString *createTime;

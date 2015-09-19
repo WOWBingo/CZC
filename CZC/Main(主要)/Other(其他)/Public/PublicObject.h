@@ -14,7 +14,6 @@
 @interface PublicObject : NSObject
 
 + (PublicObject*)sharePublicObject;
-+(void)showHUDView:(id)theView title:(NSString*)theTitle content:(NSString*)theContent time:(float)thTime;//提示
 
 +(NSString*)convertNullString:(NSString *)oldString;
 +(NSNumber*)convertNullNumber:(NSNumber*)oldNum;

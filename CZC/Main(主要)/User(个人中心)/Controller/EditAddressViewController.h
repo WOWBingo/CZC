@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHPickView.h"
+#import "AddressObject.h"
 @interface EditAddressViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
@@ -15,10 +15,11 @@
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic,strong)NSString *consignee;
 @property (nonatomic,strong)NSString *telNum;
-@property (nonatomic,strong)NSString *street;
+@property (nonatomic,strong)NSString *postalCode;
 @property (nonatomic,strong)NSString *detailAddress;
 
-
+@property (nonatomic, strong) AddressObject *addressObj;
+@property (nonatomic) BOOL isAdd; //区分是添加地址还是修改地址
 //pickView
 @property(nonatomic,strong)NSIndexPath *indexPath;
 @property (nonatomic,strong)NSString *addressStr;

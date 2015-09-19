@@ -38,13 +38,21 @@
     self.provinceArr = [[NSMutableArray alloc]init];
     self.cityArr = [[NSMutableArray alloc]init];
     self.districtArr = [[NSMutableArray alloc]init];
-    //如果没有地址信息
+    if (!self.isAdd) {
+        self.consignee = self.addressObj.name;
+        self.telNum = self.addressObj.tel;
+        self.addressStr = self.addressObj.addressValue;
+        self.postalCode = self.addressObj.postalcode;
+        self.detailAddress = self.addressObj.address;
+    }
     //获取省信息
     [self getRegionInfo:@"0" andRegionArr:self.provinceArr];
     //获取市信息
     [self getRegionInfo:@"1" andRegionArr:self.cityArr];//
     //获取区信息
     [self getRegionInfo:@"2" andRegionArr:self.districtArr];//
+
+    
 }
 #pragma mark - 50.获取省、市、区
 /** 49.获取省、市、区 http://app.czctgw.com/api/region/0*/
@@ -133,10 +141,11 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         case 3:{
-            cell.titleLab.text = @"街道信息";
+            cell.titleLab.text = @"邮政编码";
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
-            cell.infoText.text = self.street;
+            cell.infoText.keyboardType = UIKeyboardTypeNumberPad;
+            cell.infoText.text = self.postalCode;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -210,25 +219,36 @@
 - (IBAction)saveClick:(id)sender {
     //判断为空和不合法输入
     if ([self.consignee isEqualToString:@""]) {
-        [PublicObject showHUDView:self.view title:@"请输入收货人姓名" content:@"" time:kHUDTime];
+        [self showHUDViewTitle:@"请输入收货人姓名" info:@"" andCodes:^{
+            
+        }];
         return;
     }else if ([self.telNum isEqualToString:@""]){
-        [PublicObject showHUDView:self.view title:@"请输入收货人联系方式" content:@"" time:kHUDTime];
+        [self showHUDViewTitle:@"请输入收货人联系方式" info:@"" andCodes:^{
+            
+        }];
     }
     else if ([self.addressStr isEqualToString:@""]){
-        [PublicObject showHUDView:self.view title:@"请选择所在地区" content:@"" time:kHUDTime];
+        [self showHUDViewTitle:@"请选择所在地区" info:@"" andCodes:^{
+            
+        }];
     }
-    else if ([self.street isEqualToString:@""]){
-        [PublicObject showHUDView:self.view title:@"请输入街道信息" content:@"" time:kHUDTime];
+    else if ([self.postalCode isEqualToString:@""]){
+        [self showHUDViewTitle:@"请输入邮政编码" info:@"" andCodes:^{
+            
+        }];
     }
     else if ([self.detailAddress isEqualToString:@""]){
-        [PublicObject showHUDView:self.view title:@"请输入详细地址" content:@"" time:kHUDTime];
+        [self showHUDViewTitle:@"请输入详细地址" info:@"" andCodes:^{
+            
+        }];
     }
-    NSString *addressInfo = [NSString stringWithFormat:@"%@%@%@",self.addressStr,self.street,self.detailAddress];
+    NSString *addressInfo = [NSString stringWithFormat:@"%@%@",self.addressStr,self.detailAddress];
     NSDictionary *addressDic = @{
                                  @"NAME":self.consignee,
                                  @"Email":@"",
                                  @"Address":addressInfo,
+                                 @"AddressValue":self.addressStr,
                                  @"Postalcode":@"",
                                  @"Mobile":self.telNum,
                                  @"Tel":@"",
@@ -240,9 +260,13 @@
             NSInteger result = [[myresult objectForKey:@"return"] integerValue];
             NSLog(@"38.收货地址结果 ------%ld",(long)result);
             if (result == 201) {
-                [PublicObject showHUDView:self.view title:@"添加成功" content:@"" time:kHUDTime];
+                [self showHUDViewTitle:@"成功" info:@"" andCodes:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
             }else{
-                [PublicObject showHUDView:self.view title:@"添加失败" content:@"" time:kHUDTime];
+                [self showHUDViewTitle:@"失败" info:@"" andCodes:^{
+                    
+                }];
             }
         }
         else{
@@ -373,7 +397,7 @@ numberOfRowsInComponent:(NSInteger)component
             self.telNum = textField.text;
             break;
         case 3:
-            self.street = textField.text;
+            self.postalCode = textField.text;
             break;
         case 4:
             self.detailAddress = textField.text;

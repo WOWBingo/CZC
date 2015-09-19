@@ -78,6 +78,7 @@
     }
     cell.delegate = self;
     cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    cell.cellIndex = indexPath.row;
     //划线
     [PublicObject drawHorizontalLineOnView:cell andX:8 andY:cell.addressLab.frame.origin.y+cell.addressLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor groupTableViewBackgroundColor]];
     //加载数据
@@ -88,7 +89,7 @@
     //电话
     cell.telLab.text = addressObj.mobile;
     //地址
-    cell.addressLab.text = addressObj.address;
+    cell.addressLab.text = [NSString stringWithFormat:@"%@%@",addressObj.addressValue,addressObj.address];
     //获取是否默认地址
     NSLog(@"%ld",(long)addressObj.isDefault);
     if (addressObj.isDefault == 1) {//是默认地址
@@ -119,7 +120,7 @@
     //    switch (indexPath.section) {
     
 }
--(void)setDefaultAddress:(AddressObject *)addressObj{
+-(void)setDefaultAddress:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex{
 #pragma mark - 18.设置默认收货地址
     /** 18.设置默认收货地址    http://app.czctgw.com//api/address/del/33e36e94-a2e2-4900-aa2a-58a65af5df91?t=2&MemLoginID=liuxing */
     NSString *temp = [NSString stringWithFormat:@"MemLoginID=%@",kAccountObject.memLoginID];
@@ -142,11 +143,13 @@
     }];
 
 }
--(void)pushToEditView:(AddressObject *)addressObj{
+-(void)pushToEditView:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex{
     EditAddressViewController *editAddressVC = [[EditAddressViewController alloc]initWithNibName:@"EditAddressViewController" bundle:nil];
+    editAddressVC.addressObj = [self.addressArr objectAtIndex:cellIndex];
+    editAddressVC.isAdd = NO;
     [self.navigationController pushViewController:editAddressVC animated:YES];
 }
--(void)deleteAddress:(AddressObject *)addressObj{
+-(void)deleteAddress:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex{
 #pragma mark - 18.删除收货地址
     /** 18.删除收货地址     http://app.czctgw.com//api/address/del/33e36e94-a2e2-4900-aa2a-58a65af5df91?t=1&MemLoginID=liuxing */
     NSString *melogin = @"liuxing";
@@ -171,6 +174,7 @@
 }
 -(void)addClick{
     EditAddressViewController *editAddressVC = [[EditAddressViewController alloc]initWithNibName:@"EditAddressViewController" bundle:nil];
+    editAddressVC.isAdd = YES;
     [self.navigationController pushViewController:editAddressVC animated:YES];
 }
 @end
