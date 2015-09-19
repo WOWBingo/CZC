@@ -1443,7 +1443,7 @@
 				TargetAttributes = {
 					192768D31B48442F00B86141 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KQV9P58H48;
+						DevelopmentTeam = 9V3XSAG487;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1825,7 +1825,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1848,6 +1849,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "3f7fe8fc-6f83-458e-8962-55cfe570ff02";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1869,7 +1871,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1885,6 +1888,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "3f7fe8fc-6f83-458e-8962-55cfe570ff02";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1896,8 +1900,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
@@ -1907,8 +1911,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ytjawz.HYLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
+				PROVISIONING_PROFILE = "3f7fe8fc-6f83-458e-8962-55cfe570ff02";
 			};
 			name = Debug;
 		};
@@ -1918,8 +1923,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taian Desheng E-commerce Co., Ltd. (KQV9P58H48)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guosong Wang (VEKF8F6D6R)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
@@ -1929,8 +1934,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ytjawz.HYLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
+				PROVISIONING_PROFILE = "3f7fe8fc-6f83-458e-8962-55cfe570ff02";
 			};
 			name = Release;
 		};

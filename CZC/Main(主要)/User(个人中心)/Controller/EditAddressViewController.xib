@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditAddressViewController">
             <connections>
+                <outlet property="pickView" destination="mei-1j-sBR" id="bXj-e3-0LH"/>
                 <outlet property="saveBtn" destination="liQ-1f-hHb" id="dxf-3L-Twl"/>
                 <outlet property="tableView" destination="hZp-hf-dga" id="aBL-eV-fPz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -18,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-hf-dga">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="243"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="287" id="eeO-ZV-TKL"/>
+                        <constraint firstAttribute="height" constant="243" id="eeO-ZV-TKL"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="BT3-wy-mkd"/>
@@ -29,7 +30,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liQ-1f-hHb">
-                    <rect key="frame" x="70" y="329" width="180" height="30"/>
+                    <rect key="frame" x="70" y="288" width="180" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="xQ6-rR-C9c"/>
@@ -42,12 +43,25 @@
                         <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="mJJ-11-31R"/>
                     </connections>
                 </button>
+                <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mei-1j-sBR">
+                    <rect key="frame" x="0.0" y="352" width="320" height="216"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="UE0-E5-9rC"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hxc-pn-ZBd"/>
+                        <outlet property="delegate" destination="-1" id="Fmq-AW-D0M"/>
+                    </connections>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="hZp-hf-dga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7ci-qr-OVf"/>
-                <constraint firstItem="liQ-1f-hHb" firstAttribute="top" secondItem="hZp-hf-dga" secondAttribute="bottom" constant="42" id="AGn-HZ-oM5"/>
+                <constraint firstItem="liQ-1f-hHb" firstAttribute="top" secondItem="hZp-hf-dga" secondAttribute="bottom" constant="45" id="AGn-HZ-oM5"/>
+                <constraint firstAttribute="bottom" secondItem="mei-1j-sBR" secondAttribute="bottom" id="An4-ae-ztY"/>
+                <constraint firstItem="mei-1j-sBR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KX0-By-yRW"/>
                 <constraint firstAttribute="trailing" secondItem="hZp-hf-dga" secondAttribute="trailing" id="N6X-JA-q8J"/>
+                <constraint firstAttribute="trailing" secondItem="mei-1j-sBR" secondAttribute="trailing" id="NZB-1Q-Dn2"/>
                 <constraint firstItem="liQ-1f-hHb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="QHb-Bb-nAa"/>
                 <constraint firstAttribute="trailing" secondItem="liQ-1f-hHb" secondAttribute="trailing" constant="70" id="SY8-Nc-rmI"/>
                 <constraint firstItem="hZp-hf-dga" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sjg-CS-bHZ"/>
