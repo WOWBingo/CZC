@@ -655,6 +655,18 @@
 //            NSLog(@"失败");
 //        }
 //    }];
+#pragma mark - 50.获取省、市、区！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
+    /** 49.获取省、市、区 http://app.czctgw.com/api/region/0*/
+//        params = @"0";
+//        [CZCService GETmethod:kRegion_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//            if (myresult) {
+//                NSArray *resultArr = [myresult objectForKey:@"RegionList"];
+//                NSLog(@" 获取省市区 ------%@",resultArr);
+//            }
+//            else{
+//                NSLog(@"失败");
+//            }
+//        }];
     
 }
 /**

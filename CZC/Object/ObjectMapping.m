@@ -26,7 +26,7 @@
 #import "CollectShopObject.h"
 #import "MessageObject.h"
 #import "HomeImageObject.h"
-
+#import "RegionObject.h"
 @implementation ObjectMapping
 
 static ObjectMapping *object = nil;
@@ -513,9 +513,19 @@ static ObjectMapping *object = nil;
                  };
     }];
     
-    
-    
-    
+    /**
+     *	省市区
+     */
+    [RegionObject setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+                 @"categoryLevel" : @"CategoryLevel",
+                 @"code" : @"Code",
+                 @"fatherID" : @"FatherID",
+                 @"isDeleted" : @"IsDeleted",
+                 @"name" : @"Name",
+                 @"orderID" : @"OrderID",
+                 };
+    }];
     
 }
 

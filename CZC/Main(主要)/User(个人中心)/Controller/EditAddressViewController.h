@@ -26,5 +26,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic,strong)NSString *addressStr;
+
+@property (nonatomic, strong) NSMutableArray *regionArr;//省市区
+@property (nonatomic, strong) NSMutableArray *provinceArr;//省
+@property (nonatomic, strong) NSMutableArray *cityArr;//市
+@property (nonatomic, strong) NSMutableArray *districtArr;//区
+
 - (IBAction)saveClick:(id)sender;
 @end

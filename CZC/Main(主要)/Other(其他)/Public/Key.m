@@ -135,8 +135,8 @@ NSString *const kOrderReturnofgoods_URL = @"api/order/Returnofgoods/";
 /** 38.添加收货地址 /api/address/ */
 NSString *const kAddressAdd_URL = @"api/address/";
 
-/** 39.省、市、区 /api/region/0 */
-NSString *const kRegion_URL = @"api/region/0";
+/** 39.省、市、区 /api/region/ */
+NSString *const kRegion_URL = @"api/region/";
 
 /** 40.产品收藏 /api/Collect/?productGuid=926c2491-ca2f-47a4-90d9-52bcecdda0d9&sellLoginid=shop1&shopname=女装&MemLoginID=111111 */
 NSString *const kProCollect_URL = @"api/Collect/?";

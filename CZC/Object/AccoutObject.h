@@ -34,7 +34,7 @@
 
 @property (nonatomic, assign) CGFloat advancePayment;
 
-@property (nonatomic, copy) NSString *memLoginID;
+@property (nonatomic, copy) NSString *memLoginID;//用户名
 
 @property (nonatomic, assign) BOOL rememberMe;
 

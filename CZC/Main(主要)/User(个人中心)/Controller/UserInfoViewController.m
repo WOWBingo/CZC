@@ -125,7 +125,7 @@
                 [cell addSubview:self.iconBtn];
             }
             if (indexPath.row == 1) {
-                //真实姓名
+                //用户名
                 UILabel *trueNameLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 60, 40)];
                 trueNameLab.text = @"用户名";
                 trueNameLab.textColor = [UIColor blackColor];
@@ -134,14 +134,14 @@
                 
                 [self.trueName setFrame:CGRectMake(20, 4, SCREEN_WIDTH-50, 40)];
                 self.trueName.textAlignment = NSTextAlignmentRight;
-                self.trueName.text = kAccountObject.realName;
+                self.trueName.text = kAccountObject.memLoginID;
                 self.trueName.textColor = [UIColor grayColor];
                 self.trueName.font = [UIFont systemFontOfSize:15];
                 cell.accessoryType = UITableViewCellSelectionStyleNone;
                 [cell addSubview:self.trueName];
             }
             if (indexPath.row == 2) {
-                //用户名
+                //昵称
                 UILabel *userNameLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 4, 60, 40)];
                 userNameLab.text = @"昵称";
                 userNameLab.textColor = [UIColor blackColor];

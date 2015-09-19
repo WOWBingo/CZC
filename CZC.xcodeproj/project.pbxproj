@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184083C61BAD1D5E00432FFB /* RegionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 184083C51BAD1D5E00432FFB /* RegionObject.m */; settings = {ASSET_TAGS = (); }; };
 		1848CACA1BA2F79500C27206 /* OrderDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CAC91BA2F79500C27206 /* OrderDetailHeadView.m */; };
 		1848CACC1BA2F7AA00C27206 /* OrderDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */; };
 		1848CACF1BA2F7E000C27206 /* OrderDetailFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */; };
@@ -265,6 +266,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184083C41BAD1D5E00432FFB /* RegionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionObject.h; sourceTree = "<group>"; };
+		184083C51BAD1D5E00432FFB /* RegionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionObject.m; sourceTree = "<group>"; };
 		1848CAC81BA2F79500C27206 /* OrderDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailHeadView.h; sourceTree = "<group>"; };
 		1848CAC91BA2F79500C27206 /* OrderDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailHeadView.m; sourceTree = "<group>"; };
 		1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailHeadView.xib; sourceTree = "<group>"; };
@@ -748,6 +751,8 @@
 				198024271B81D1760071F63E /* CityObject.m */,
 				19FCDF321BA2FFEB00B0626E /* ZDYPrintObject.h */,
 				19FCDF331BA2FFEB00B0626E /* ZDYPrintObject.m */,
+				184083C41BAD1D5E00432FFB /* RegionObject.h */,
+				184083C51BAD1D5E00432FFB /* RegionObject.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -1741,6 +1746,7 @@
 				1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */,
 				18DDE5E01BA1B827006CAF8E /* OrderHeadView.m in Sources */,
 				1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */,
+				184083C61BAD1D5E00432FFB /* RegionObject.m in Sources */,
 				192BC97F1B88BC48003B8328 /* LoginViewController.m in Sources */,
 				192BC9481B88BC48003B8328 /* ChoseProductInfoView.m in Sources */,
 				196285C21B9FD56500D7AC55 /* ConfirmOrderShopCell.m in Sources */,
