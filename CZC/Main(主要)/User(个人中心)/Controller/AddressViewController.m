@@ -27,6 +27,15 @@
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
     [self getAddress];
+    
+    UIButton *addBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
+    [addBtn setTitle:@"添加" forState:UIControlStateNormal];
+    [addBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    addBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
+
 }
 -(void)getAddress{
 #pragma mark - 18.收货地址列表
@@ -159,5 +168,9 @@
             NSLog(@"失败");
         }
     }];
+}
+-(void)addClick{
+    EditAddressViewController *editAddressVC = [[EditAddressViewController alloc]initWithNibName:@"EditAddressViewController" bundle:nil];
+    [self.navigationController pushViewController:editAddressVC animated:YES];
 }
 @end

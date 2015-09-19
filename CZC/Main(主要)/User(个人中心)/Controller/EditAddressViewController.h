@@ -7,26 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#define PROVINCE_COMPONENT  0
-#define CITY_COMPONENT      1
-#define DISTRICT_COMPONENT  2
-@interface EditAddressViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource>{
-    UIPickerView *picker;
-    UIButton *button;
-    
-    NSDictionary *areaDic;
-    NSArray *province;
-    NSArray *city;
-    NSArray *district;
-    
-    NSString *selectedProvince;
-}
-
+#import "ZHPickView.h"
+@interface EditAddressViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 @property (nonatomic, strong) UIToolbar *toolbar;
-@property (nonatomic,strong)NSString *addressStr;
+@property (nonatomic,strong)NSString *consignee;
+@property (nonatomic,strong)NSString *telNum;
+@property (nonatomic,strong)NSString *street;
+@property (nonatomic,strong)NSString *detailAddress;
 
+
+//pickView
+@property(nonatomic,strong)NSIndexPath *indexPath;
+@property (nonatomic,strong)NSString *addressStr;
+@property (nonatomic,strong)NSString *addressCode;
 @property (nonatomic, strong) NSMutableArray *regionArr;//省市区
 @property (nonatomic, strong) NSMutableArray *provinceArr;//省
 @property (nonatomic, strong) NSMutableArray *cityArr;//市

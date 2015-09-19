@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "RegionObject.h"
 @interface AppDelegate ()
 
 @end

@@ -8,6 +8,8 @@
 
 #import "EditAddressViewController.h"
 #import "EditAddressTableViewCell.h"
+#import "RegionObject.h"
+#
 @interface EditAddressViewController ()
 
 @end
@@ -27,81 +29,44 @@
     delBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [delBtn addTarget:self action:@selector(delClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:delBtn];
-
-//    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
-//    gesture.numberOfTapsRequired = 1;
-//    [self.view addGestureRecognizer:gesture];
     
+    //    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
+    //    gesture.numberOfTapsRequired = 1;
+    //    [self.view addGestureRecognizer:gesture];
     
-    //获取plist数据
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *plistPath = [bundle pathForResource:@"area" ofType:@"plist"];
-    areaDic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    
-    NSArray *components = [areaDic allKeys];
-    NSArray *sortedArray = [components sortedArrayUsingComparator: ^(id obj1, id obj2) {
-        
-        if ([obj1 integerValue] > [obj2 integerValue]) {
-            return (NSComparisonResult)NSOrderedDescending;
+    self.regionArr = [[NSMutableArray alloc]init];
+    self.provinceArr = [[NSMutableArray alloc]init];
+    self.cityArr = [[NSMutableArray alloc]init];
+    self.districtArr = [[NSMutableArray alloc]init];
+    //如果没有地址信息
+    //获取省信息
+    [self getRegionInfo:@"0" andRegionArr:self.provinceArr];
+    //获取市信息
+    [self getRegionInfo:@"1" andRegionArr:self.cityArr];//
+    //获取区信息
+    [self getRegionInfo:@"2" andRegionArr:self.districtArr];//
+}
+#pragma mark - 50.获取省、市、区
+/** 49.获取省、市、区 http://app.czctgw.com/api/region/0*/
+-(void)getRegionInfo:(NSString *)params andRegionArr:(NSMutableArray *)arr{
+    [CZCService GETmethod:kRegion_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSArray *resultArr = [myresult objectForKey:@"RegionList"];
+            NSLog(@"获取省市区 ------%@",resultArr);
+            NSArray *regionArr = [RegionObject objectArrayWithKeyValuesArray:resultArr];
+            NSLog(@"经过封装的Arr%@",regionArr);
+            //遍历regionArr,判断是否还有下一子类，如果有，继续请求
+            for (RegionObject *regionObj in regionArr) {
+                [arr addObject:regionObj];
+            }
+            NSLog(@"%@",arr);
         }
-        
-        if ([obj1 integerValue] < [obj2 integerValue]) {
-            return (NSComparisonResult)NSOrderedAscending;
+        else{
+            NSLog(@"失败");
         }
-        return (NSComparisonResult)NSOrderedSame;
+        //刷新
+        [self.pickView reloadAllComponents];
     }];
-    
-    NSMutableArray *provinceTmp = [[NSMutableArray alloc] init];
-    for (int i=0; i<[sortedArray count]; i++) {
-        NSString *index = [sortedArray objectAtIndex:i];
-        NSArray *tmp = [[areaDic objectForKey: index] allKeys];
-        [provinceTmp addObject: [tmp objectAtIndex:0]];
-    }
-    
-    province = [[NSArray alloc] initWithArray: provinceTmp];
-    
-    NSString *index = [sortedArray objectAtIndex:0];
-    NSString *selected = [province objectAtIndex:0];
-    NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [[areaDic objectForKey:index]objectForKey:selected]];
-    
-    NSArray *cityArray = [dic allKeys];
-    NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [cityArray objectAtIndex:0]]];
-    city = [[NSArray alloc] initWithArray: [cityDic allKeys]];
-    
-    
-    NSString *selectedCity = [city objectAtIndex: 0];
-    district = [[NSArray alloc] initWithArray: [cityDic objectForKey: selectedCity]];
-
-}
-#pragma mark- button clicked
-
-- (void) buttobClicked:(id)sender {
-    NSInteger provinceIndex = [picker selectedRowInComponent: PROVINCE_COMPONENT];
-    NSInteger cityIndex = [picker selectedRowInComponent: CITY_COMPONENT];
-    NSInteger districtIndex = [picker selectedRowInComponent: DISTRICT_COMPONENT];
-    
-    NSString *provinceStr = [province objectAtIndex: provinceIndex];
-    NSString *cityStr = [city objectAtIndex: cityIndex];
-    NSString *districtStr = [district objectAtIndex:districtIndex];
-    
-    if ([provinceStr isEqualToString: cityStr] && [cityStr isEqualToString: districtStr]) {
-        cityStr = @"";
-        districtStr = @"";
-    }
-    else if ([cityStr isEqualToString: districtStr]) {
-        districtStr = @"";
-    }
-    
-    NSString *showMsg = [NSString stringWithFormat: @"%@ %@ %@", provinceStr, cityStr, districtStr];
-    
-    self.addressStr = showMsg;
-    [self.toolbar removeFromSuperview];
-    [picker removeFromSuperview];
-    [self.tableView reloadData];
-}
-- (void)cancelSelected {
-    [self.toolbar removeFromSuperview];
-    [picker removeFromSuperview];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -127,12 +92,13 @@
     //隐藏textfield边框
     cell.infoText.borderStyle=UITextBorderStyleNone;
     cell.infoText.delegate = self;
+    cell.infoText.tag = indexPath.row;
     switch (indexPath.row) {
         case 0:{
             cell.titleLab.text = @"收货人";
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
-            cell.infoText.text = @"小小";
+            cell.infoText.text = self.consignee;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -148,7 +114,7 @@
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
             cell.infoText.keyboardType = UIKeyboardTypeNumberPad;
-            cell.infoText.text = @"133333333333";
+            cell.infoText.text = self.telNum;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -170,7 +136,7 @@
             cell.titleLab.text = @"街道信息";
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
-            cell.infoText.text = @"堤口路";
+            cell.infoText.text = self.street;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -185,7 +151,7 @@
             cell.titleLab.text = @"详细地址";
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
-            cell.infoText.text = @"山东科技大学";
+            cell.infoText.text = self.detailAddress;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -217,14 +183,11 @@
     NSLog(@"%ld",(long)indexPath.row);
     //    switch (indexPath.section) {
     if (indexPath.row == 2) {
-        picker = [[UIPickerView alloc] initWithFrame: CGRectMake(0, SCREEN_HEIGHT-240, SCREEN_WIDTH, 240)];
-        picker.dataSource = self;
-        picker.delegate = self;
-        picker.showsSelectionIndicator = YES;
-        [picker selectRow: 0 inComponent: 0 animated: YES];
-        [self.view addSubview: picker];
+        _indexPath=indexPath;
+        [self hidenKeyboard];
+        // 为UIPickerView控件设置dataSource和delegate
+        self.pickView.hidden = NO;
         [self setUpToolBar];
-        selectedProvince = [province objectAtIndex: 0];
     }
     
 }
@@ -236,166 +199,187 @@
 
 - (UIToolbar *)setToolbarStyle {
     UIToolbar *toolbar = [[UIToolbar alloc] init];
-    toolbar.frame = CGRectMake(0, SCREEN_HEIGHT-280 ,SCREEN_WIDTH, 40);
+    toolbar.frame = CGRectMake(0, SCREEN_HEIGHT-256 ,SCREEN_WIDTH, 40);
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelSelected)];
     UIBarButtonItem *centerSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(buttobClicked:)];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(buttobClicked)];
     toolbar.items = @[leftItem,centerSpace,rightItem];
     return toolbar;
 }
 
 - (IBAction)saveClick:(id)sender {
-    
+    //判断为空和不合法输入
+    if ([self.consignee isEqualToString:@""]) {
+        [PublicObject showHUDView:self.view title:@"请输入收货人姓名" content:@"" time:kHUDTime];
+        return;
+    }else if ([self.telNum isEqualToString:@""]){
+        [PublicObject showHUDView:self.view title:@"请输入收货人联系方式" content:@"" time:kHUDTime];
+    }
+    else if ([self.addressStr isEqualToString:@""]){
+        [PublicObject showHUDView:self.view title:@"请选择所在地区" content:@"" time:kHUDTime];
+    }
+    else if ([self.street isEqualToString:@""]){
+        [PublicObject showHUDView:self.view title:@"请输入街道信息" content:@"" time:kHUDTime];
+    }
+    else if ([self.detailAddress isEqualToString:@""]){
+        [PublicObject showHUDView:self.view title:@"请输入详细地址" content:@"" time:kHUDTime];
+    }
+    NSString *addressInfo = [NSString stringWithFormat:@"%@%@%@",self.addressStr,self.street,self.detailAddress];
+    NSDictionary *addressDic = @{
+                                 @"NAME":self.consignee,
+                                 @"Email":@"",
+                                 @"Address":addressInfo,
+                                 @"Postalcode":@"",
+                                 @"Mobile":self.telNum,
+                                 @"Tel":@"",
+                                 @"AddressCode":self.addressCode,
+                                 @"MemLoginID":kAccountObject.memLoginID,
+                                 };
+    [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+            NSLog(@"38.收货地址结果 ------%ld",(long)result);
+            if (result == 201) {
+                [PublicObject showHUDView:self.view title:@"添加成功" content:@"" time:kHUDTime];
+            }else{
+                [PublicObject showHUDView:self.view title:@"添加失败" content:@"" time:kHUDTime];
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 -(void)delClick{
     
+}
+-(void)cancelSelected{
+    [self.toolbar removeFromSuperview];
+    self.pickView.hidden = YES;
+}
+-(void)buttobClicked{
+    self.pickView.hidden = YES;
+    [self.toolbar removeFromSuperview];
+    NSInteger selectedProvinceIndex = [self.pickView selectedRowInComponent:0];
+    NSInteger selectedCityIndex = [self.pickView selectedRowInComponent:1];
+    NSInteger selectedDistrictIndex = [self.pickView selectedRowInComponent:2];
+    RegionObject *provinceObj = [self.provinceArr objectAtIndex:selectedProvinceIndex];
+    RegionObject *cityObj = [self.cityArr objectAtIndex:selectedCityIndex];
+    RegionObject *district = [self.districtArr objectAtIndex:selectedDistrictIndex];
+    
+    self.addressStr = [NSString stringWithFormat:@"%@ %@ %@",provinceObj.name,cityObj.name,district.name];
+    self.addressCode = district.code;
+    //刷新tableView
+    [self.tableView reloadData];
 }
 //隐藏键盘的方法
 - (void)hidenKeyboard {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hidenEditAddressTextField"
                                                         object:nil];
 }
-#pragma mark- Picker Data Source Methods
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+#pragma UIPickerViewDataSource
+// UIPickerViewDataSource中定义的方法，该方法的返回值决定该控件包含多少列
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView
 {
     return 3;
 }
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+// UIPickerViewDataSource中定义的方法，该方法的返回值决定该控件指定列包含多少个列表项
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
 {
-    if (component == PROVINCE_COMPONENT) {
-        return [province count];
+    int compoentCount = 0;
+    switch (component) {
+        case 0:
+            compoentCount = (int)self.provinceArr.count;
+            break;
+        case 1:
+            compoentCount = (int)self.cityArr.count;
+            break;
+        case 2:
+            compoentCount = (int)self.districtArr.count;
+            break;
+        default:
+            break;
     }
-    else if (component == CITY_COMPONENT) {
-        return [city count];
-    }
-    else {
-        return [district count];
-    }
+    return compoentCount;
 }
-
-
-#pragma mark- Picker Delegate Methods
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+// UIPickerViewDelegate中定义的方法，该方法返回的NSString将作为UIPickerView
+// 中指定列和列表项的标题文本
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if (component == PROVINCE_COMPONENT) {
-        return [province objectAtIndex: row];
-    }
-    else if (component == CITY_COMPONENT) {
-        return [city objectAtIndex: row];
-    }
-    else {
-        return [district objectAtIndex: row];
-    }
-}
-
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    if (component == PROVINCE_COMPONENT) {
-        selectedProvince = [province objectAtIndex: row];
-        NSDictionary *tmp = [NSDictionary dictionaryWithDictionary: [areaDic objectForKey: [NSString stringWithFormat:@"%d", row]]];
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [tmp objectForKey: selectedProvince]];
-        NSArray *cityArray = [dic allKeys];
-        NSArray *sortedArray = [cityArray sortedArrayUsingComparator: ^(id obj1, id obj2) {
-            
-            if ([obj1 integerValue] > [obj2 integerValue]) {
-                return (NSComparisonResult)NSOrderedDescending;//递减
-            }
-            
-            if ([obj1 integerValue] < [obj2 integerValue]) {
-                return (NSComparisonResult)NSOrderedAscending;//上升
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        }];
-        
-        NSMutableArray *array = [[NSMutableArray alloc] init];
-        for (int i=0; i<[sortedArray count]; i++) {
-            NSString *index = [sortedArray objectAtIndex:i];
-            NSArray *temp = [[dic objectForKey: index] allKeys];
-            [array addObject: [temp objectAtIndex:0]];
+    // 由于该控件只包含一列，因此无须理会列序号参数component
+    // 该方法根据row参数返回books中的元素，row参数代表列表项的编号，
+    // 因此该方法表示第几个列表项，就使用books中的第几个元素
+    NSString *compoentTitle = 0;
+    RegionObject *regionObj = [[RegionObject alloc]init];
+    switch (component) {
+        case 0:{
+            regionObj = [self.provinceArr objectAtIndex:row];
+            compoentTitle = regionObj.name;
         }
-        
-        city = [[NSArray alloc] initWithArray: array];
-        
-        NSDictionary *cityDic = [dic objectForKey: [sortedArray objectAtIndex: 0]];
-        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [city objectAtIndex: 0]]];
-        [picker selectRow: 0 inComponent: CITY_COMPONENT animated: YES];
-        [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
-        [picker reloadComponent: CITY_COMPONENT];
-        [picker reloadComponent: DISTRICT_COMPONENT];
-        
+            break;
+        case 1:{
+            regionObj = [self.cityArr objectAtIndex:row];
+            compoentTitle = regionObj.name;
+        }
+            break;
+        case 2:{
+            regionObj = [self.districtArr objectAtIndex:row];
+            compoentTitle = regionObj.name;
+        }
+            break;
+        default:
+            break;
     }
-    else if (component == CITY_COMPONENT) {
-        NSString *provinceIndex = [NSString stringWithFormat: @"%lu", (unsigned long)[province indexOfObject: selectedProvince]];
-        NSDictionary *tmp = [NSDictionary dictionaryWithDictionary: [areaDic objectForKey: provinceIndex]];
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [tmp objectForKey: selectedProvince]];
-        NSArray *dicKeyArray = [dic allKeys];
-        NSArray *sortedArray = [dicKeyArray sortedArrayUsingComparator: ^(id obj1, id obj2) {
-            
-            if ([obj1 integerValue] > [obj2 integerValue]) {
-                return (NSComparisonResult)NSOrderedDescending;
-            }
-            
-            if ([obj1 integerValue] < [obj2 integerValue]) {
-                return (NSComparisonResult)NSOrderedAscending;
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        }];
-        
-        NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [sortedArray objectAtIndex: row]]];
-        NSArray *cityKeyArray = [cityDic allKeys];
-        
-        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [cityKeyArray objectAtIndex:0]]];
-        [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
-        [picker reloadComponent: DISTRICT_COMPONENT];
-    }
-    
+    return compoentTitle;
 }
-
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+// 当用户选中UIPickerViewDataSource中指定列和列表项时激发该方法
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:
+(NSInteger)row inComponent:(NSInteger)component
 {
-    if (component == PROVINCE_COMPONENT) {
-        return 80;
-    }
-    else if (component == CITY_COMPONENT) {
-        return 100;
-    }
-    else {
-        return 115;
+    //根据选中的省市区 更新pickview
+    RegionObject *regionObj = [[RegionObject alloc]init];
+    switch (component) {
+        case 0:{
+            [self.cityArr removeAllObjects];
+            [self.districtArr removeAllObjects];
+            regionObj = [self.provinceArr objectAtIndex:row];
+            [self getRegionInfo:regionObj.orderID andRegionArr:self.cityArr];
+            [self.pickView reloadComponent:1];
+        }
+            break;
+        case 1:{
+            [self.districtArr removeAllObjects];
+            regionObj = [self.cityArr objectAtIndex:row];
+            [self getRegionInfo:regionObj.orderID andRegionArr:self.districtArr];
+            [self.pickView reloadComponent:2];
+        }
+        default:
+            break;
     }
 }
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    UILabel *myView = nil;
-    
-    if (component == PROVINCE_COMPONENT) {
-        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
-        myView.textAlignment = UITextAlignmentCenter;
-        myView.text = [province objectAtIndex:row];
-        myView.font = [UIFont systemFontOfSize:14];
-        myView.backgroundColor = [UIColor clearColor];
-    }
-    else if (component == CITY_COMPONENT) {
-        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 95, 30)];
-        myView.textAlignment = UITextAlignmentCenter;
-        myView.text = [city objectAtIndex:row];
-        myView.font = [UIFont systemFontOfSize:14];
-        myView.backgroundColor = [UIColor clearColor];
-    }
-    else {
-        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 110, 30)];
-        myView.textAlignment = UITextAlignmentCenter;
-        myView.text = [district objectAtIndex:row];
-        myView.font = [UIFont systemFontOfSize:14];
-        myView.backgroundColor = [UIColor clearColor];
-    }
-    
-    return myView;
+#pragma textfield
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.pickView.hidden = YES;
+    [self.toolbar removeFromSuperview];
 }
-
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    switch (textField.tag) {
+        case 0:
+            self.consignee = textField.text;
+            break;
+        case 1:
+            self.telNum = textField.text;
+            break;
+        case 3:
+            self.street = textField.text;
+            break;
+        case 4:
+            self.detailAddress = textField.text;
+            break;
+        default:
+            break;
+    }
+}
 @end
