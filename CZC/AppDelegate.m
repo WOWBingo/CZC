@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "RegionObject.h"
+
 @interface AppDelegate ()
 
 @end
@@ -157,8 +159,7 @@
 }
 
 -(void)sendDeviceTokenWidthOldDeviceToken:(NSString *)oldToken newDeviceToken:(NSString *)newToken{
-    //注意一定确保真机可以正常访问下面的地址
-    
+    //注意一定确保真机可以正常访问下面的地址    
     NSString *urlStr=@"http://192.168.1.107:8080/PushService/servlet/PushServlet";
     urlStr=[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url=[NSURL URLWithString:urlStr];

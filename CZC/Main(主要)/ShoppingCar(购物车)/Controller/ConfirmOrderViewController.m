@@ -35,9 +35,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self getAddress];
-    [self getOrderNumber];
-    [self getPayment];
+    [self getAddress];//取地址，完成计算邮费
+    [self getOrderNumber];//获取订单号
+    [self getPayment];//获取支付方式列表
 }
 
 #pragma mark - tableView
@@ -284,7 +284,6 @@
  */
 - (void)getOrderNumber{
     [self showHUDBeginWithTitle:nil];
-    
     _orderNumberList = [[NSMutableArray alloc]init];
     for (int i = 0; i <= _selectedShopList.count; i++) {
         [CZCService GETmethod:kGetOrder_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
@@ -313,7 +312,6 @@
     for (int n = 0; n < _selectedShopList.count; n++) {
         ShopCarObject *shopObject = [_selectedShopList objectAtIndex:n];
         NSString *params = @"productguid=";
-        
         for (int i = 0; i < shopObject.productList.count; i++) {
             ShopCarProductObject *productObject = [shopObject.productList objectAtIndex:i];
             if (i == 0) {

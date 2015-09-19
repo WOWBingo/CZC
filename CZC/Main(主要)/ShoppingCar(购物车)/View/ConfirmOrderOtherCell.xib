@@ -20,8 +20,8 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zod-SC-cjh">
-                        <rect key="frame" x="243" y="1.5" width="69" height="32"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zod-SC-cjh">
+                        <rect key="frame" x="231" y="1.5" width="69" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="3Pn-oq-h3c"/>
                         </constraints>
@@ -34,8 +34,8 @@
                             <action selector="chooseLogistics:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jYe-CO-5HL"/>
                         </connections>
                     </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVg-cp-l0y">
-                        <rect key="frame" x="158" y="1.5" width="69" height="32"/>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVg-cp-l0y">
+                        <rect key="frame" x="146" y="1.5" width="69" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="Qr6-MS-rB3"/>
                         </constraints>
@@ -58,13 +58,13 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="共3件商品" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4u-dW-SOB">
-                        <rect key="frame" x="150" y="91.5" width="59.5" height="16"/>
+                        <rect key="frame" x="150" y="91" width="59.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="￥0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9R-K3-fxm">
-                        <rect key="frame" x="265" y="91.5" width="39" height="16"/>
+                        <rect key="frame" x="265" y="91" width="39" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="nap-xu-V1Q"/>
                         </constraints>
@@ -73,7 +73,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="合计：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVZ-6X-f49">
-                        <rect key="frame" x="226" y="91.5" width="39" height="16"/>
+                        <rect key="frame" x="226" y="91" width="39" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                     <constraint firstAttribute="bottom" secondItem="E9R-K3-fxm" secondAttribute="bottom" constant="8" id="lSC-ge-FKC"/>
                     <constraint firstItem="nVZ-6X-f49" firstAttribute="centerY" secondItem="E9R-K3-fxm" secondAttribute="centerY" id="pqH-2X-fWr"/>
                     <constraint firstItem="E9R-K3-fxm" firstAttribute="top" secondItem="ea7-dN-gpd" secondAttribute="bottom" constant="16" id="rJD-HL-QzQ"/>
-                    <constraint firstAttribute="trailing" secondItem="zod-SC-cjh" secondAttribute="trailing" constant="8" id="vJY-GG-jRw"/>
+                    <constraint firstAttribute="trailing" secondItem="zod-SC-cjh" secondAttribute="trailing" constant="20" id="vJY-GG-jRw"/>
                     <constraint firstItem="ea7-dN-gpd" firstAttribute="top" secondItem="qVg-cp-l0y" secondAttribute="bottom" constant="12" id="veC-01-GHN"/>
                 </constraints>
                 <variation key="default">
