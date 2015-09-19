@@ -35,7 +35,7 @@
 -(void)getshopCollectInfo{
 #pragma mark - 25.店铺收藏列表
     /** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
-    NSString *params = @"MemLoginID=s1886&pageIndex=1&pageCount=5";
+    NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];

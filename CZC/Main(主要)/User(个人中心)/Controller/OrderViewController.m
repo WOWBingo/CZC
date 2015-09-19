@@ -58,7 +58,7 @@
 -(void)getOrderListWithType:(NSString *)type{
 #pragma mark - 14.订单列表
 /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
-    NSString *params = @"pageIndex=1&pageCount=5&memLoginID=111111&t=";
+    NSString *params = [NSString stringWithFormat:@"pageIndex=1&pageCount=5&memLoginID=%@&t=",kAccountObject.memLoginID];
     params = [params stringByAppendingString:type];
     [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {

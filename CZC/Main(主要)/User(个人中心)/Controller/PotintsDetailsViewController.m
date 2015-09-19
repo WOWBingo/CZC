@@ -42,7 +42,7 @@
     [titleView addGestureRecognizer:click];
     self.navigationItem.titleView = titleView;
 }
-//http://www.czctgw.com/api/openapi/IntegralPro.ashx?method=GetIntegralDetailsList&memloginid=shop1&pageSize=10&pageIndex=1
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

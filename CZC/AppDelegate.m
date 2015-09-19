@@ -54,8 +54,8 @@
 //    }else{
 //        NSLog(@"不是第一次启动");
 //    }
-    self.regionArr = [[NSMutableArray alloc]init];
-    [self getRegionInfo:@"227" andFatherArr:self.regionArr];
+//    self.regionArr = [[NSMutableArray alloc]init];
+//    [self getRegionInfo:@"227" andFatherArr:self.regionArr];
     return YES;
 }
 #pragma mark - 50.获取省、市、区
@@ -77,7 +77,7 @@
                     [self getRegionInfo:regionObj.orderID andFatherArr:regionObj.subClassArr];
                 }
                 else{//创建plist
-                    NSLog(@"%@",self.regionArr);
+//                    NSLog(@"%@",self.regionArr);
                 }
                 [fatherArr addObject:regionObj];
             }

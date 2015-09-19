@@ -62,7 +62,7 @@
 -(void)getProCollectInfo{
 #pragma mark - 23.产品收藏列表
     /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
-    NSString *params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
+    NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5 ",kAccountObject.memLoginID];
     [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];

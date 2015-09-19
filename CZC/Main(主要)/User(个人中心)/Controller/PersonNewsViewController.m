@@ -129,10 +129,10 @@
         /** 29.会员消息列表 http://app.czctgw.com/api/membermessage/delete/?msgId=75df9d79-8a3b-4685-864d-46f1ded476a7&MemLoginID=111111
 */
         //获取memloginID
-        NSString *memLoginId = @"111111";
+        //NSString *memLoginId = @"111111";
         //获取messageId
         MessageObject *messageObj = [self.newsArr objectAtIndex:indexPath.row];
-        NSString *params = [NSString stringWithFormat:@"%@%@",memLoginId,messageObj.guid];
+        NSString *params = [NSString stringWithFormat:@"%@%@",kAccountObject.memLoginID,messageObj.guid];
         [CZCService GETmethod:kMemberMessageDelete_URL andParameters:params andHandle:^(NSDictionary *myresult) {
             if (myresult) {
                 NSNumber *temp = [myresult objectForKey:@"return"];

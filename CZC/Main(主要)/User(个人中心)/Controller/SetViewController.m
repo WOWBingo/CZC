@@ -70,7 +70,7 @@
 #pragma mark - 23.产品收藏列表
 -(void)getProCollectNum{
 /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
-    NSString *params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
+    NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
@@ -88,7 +88,7 @@
 -(void)getshopCollectNum{
 #pragma mark - 25.店铺收藏列表
 /** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
-    NSString *params = @"MemLoginID=s1886&pageIndex=1&pageCount=5";
+    NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];

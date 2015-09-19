@@ -259,35 +259,50 @@
 /**
  *	是否可以提交订单
  */
-- (void)isCanOrder{
+- (BOOL)isCanOrder{
     if (_addressObj == nil) {
-       [self showHUDViewTitle:@"请选择地址" info:@"" andCodes:^{
+       [self showHUDViewTitle:@"请选择收货地址" info:@"" andCodes:^{
            
        }];
-        return;
+        return NO;
     }
     if (_paymentObject == nil) {
         [self showHUDViewTitle:@"请选择支付方式" info:@"" andCodes:^{
             
         }];
-        return;
+        return NO;
     }
-     [_orderBtn setEnabled:YES];
+    if (_orderNumberList.count != _selectedShopList.count) {
+        [self getOrderNumber];
+        return NO;
+    }
+    return YES;
 }
 
 /**
  *	生成订单号
  */
 - (void)getOrderNumber{
-    [CZCService GETmethod:kGetOrder_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
-        if (myresult) {
-            _tradeID = [myresult objectForKey:@"OrderNumber"];
-            NSLog(@" 生成订单号 ------%@",_tradeID);
-        }
-        else{
-            NSLog(@"失败");
-        }
-    }];
+    [self showHUDBeginWithTitle:nil];
+    
+    _orderNumberList = [[NSMutableArray alloc]init];
+    for (int i = 0; i <= _selectedShopList.count; i++) {
+        [CZCService GETmethod:kGetOrder_URL andParameters:@"" andHandle:^(NSDictionary *myresult) {
+            if (myresult) {
+                if (i == _selectedShopList.count) {
+                    _tradeID = [myresult objectForKey:@"OrderNumber"];
+                    NSLog(@" 生成订交易号 ------%@",_tradeID);
+                    [self dissMissHUDEnd];
+                }else{
+                    NSString *orderNumber = [myresult objectForKey:@"OrderNumber"];
+                    [_orderNumberList insertObject:orderNumber atIndex:i];
+                }
+            }
+            else{
+                NSLog(@"失败");
+            }
+        }];
+    }
 }
 /**
  *	计算邮费
@@ -317,8 +332,6 @@
             }
         }];
     }
-    
-    
 }
 
 
@@ -328,58 +341,62 @@
  */
 - (IBAction)accountClick:(id)sender{
     
-    for (int n = 0; n < _selectedShopList.count; n++) {
-        ShopCarObject *shopObject = [_selectedShopList objectAtIndex:n];
-        
-        //对象转换成字典，注意首字大写
-        NSMutableArray *productDicList = [[NSMutableArray alloc]init];
-        for (int i = 0; i < shopObject.productList.count; i++) {
-            ShopCarProductObject *productObject = [shopObject.productList objectAtIndex:i];
-            NSDictionary *productDic = [ZDYPrintObject getObjectData:productObject];//getObjectData经过修改，首字大写
-            [productDicList addObject:productDic];
-        }
-        
-        NSDictionary *dic = @{
-                              @"MemLoginID":kAccountObject.memLoginID,//@"111111",
-                              @"OrderNumber": _tradeID,
-                              @"TradeID": _tradeID,
-                              @"Name": _addressObj.name,
-                              @"Email": _addressObj.email,
-                              @"Address": _addressObj.address,
-                              @"Postalcode":_addressObj.postalcode,
-                              @"Tel": _addressObj.tel,
-                              @"Mobile": _addressObj.mobile,
-                              @"PaymentGuid": _paymentObject.guid,
-                              @"OutOfStockOperate": @"",
-                              @"ClientToSellerMsg": @"",//留言
-                              @"RegionCode":@"1",//配送区域编码
-                              @"PostType": @"0",//快递方式
-                              @"orderPrice":@"",//订单价格
-                              @"ProductPrice": @"",//产品价格
-                              @"DispatchPrice": @"0.00",//邮费
-                              @"ShouldPayPrice": @"248.00",//应支付
-                              };
-        
-        
-        
-        NSMutableDictionary *parameters = [[NSMutableDictionary alloc]initWithDictionary:dic];
-        [parameters setObject:productDicList forKey:@"ProductList"];
-        
-        [self showHUDBeginWithTitle:@"正在提交订单……"];
-        [CZCService POSTmethod:kOrderAdd_URL andDicParameters:parameters andHandle:^(NSDictionary *myresult) {
-            [self dissMissHUDEnd];
-            if (myresult) {
-                NSInteger result = [[myresult objectForKey:@"return"] integerValue];
-                if (result == 201) {
-                    [self showHUDViewTitle:@"提交订单成功！" info:@"" andCodes:^{  }];
-                    return ;
-                }
-                NSLog(@"162222.提交订单 ------%ld",result);
+    if ([self isCanOrder]) {
+        for (int n = 0; n < _selectedShopList.count; n++) {
+            ShopCarObject *shopObject = [_selectedShopList objectAtIndex:n];
+            NSString *orderNumber = [_orderNumberList objectAtIndex:n];
+            //对象转换成字典，注意首字大写
+            NSMutableArray *productDicList = [[NSMutableArray alloc]init];
+            for (int i = 0; i < shopObject.productList.count; i++) {
+                ShopCarProductObject *productObject = [shopObject.productList objectAtIndex:i];
+                NSDictionary *productDic = [ZDYPrintObject getObjectData:productObject];//getObjectData经过修改，首字大写
+                [productDicList addObject:productDic];
             }
-            [self showHUDViewTitle:@"提交订单失败！" info:@"" andCodes:^{
+            
+            NSDictionary *dic = @{
+                                  @"MemLoginID":kAccountObject.memLoginID,//@"111111",
+                                  @"OrderNumber": orderNumber,
+                                  @"TradeID": _tradeID,
+                                  @"Name": _addressObj.name,
+                                  @"Email": _addressObj.email,
+                                  @"Address": _addressObj.address,
+                                  @"Postalcode":_addressObj.postalcode,
+                                  @"Tel": _addressObj.tel,
+                                  @"Mobile": _addressObj.mobile,
+                                  @"PaymentGuid": _paymentObject.guid,
+                                  @"OutOfStockOperate": @"",
+                                  @"ClientToSellerMsg": @"",//留言
+                                  @"RegionCode":_addressObj.addressCode,//配送区域编码
+                                  @"PostType": @"0",//快递方式
+                                  @"orderPrice":@"",//订单价格
+                                  @"ProductPrice": @"",//产品价格
+                                  @"DispatchPrice": @"0.00",//邮费
+                                  @"ShouldPayPrice": @"248.00",//应支付
+                                  };
+            
+            
+            
+            NSMutableDictionary *parameters = [[NSMutableDictionary alloc]initWithDictionary:dic];
+            [parameters setObject:productDicList forKey:@"ProductList"];
+            
+            [self showHUDBeginWithTitle:@"正在提交订单……"];
+            [CZCService POSTmethod:kOrderAdd_URL andDicParameters:parameters andHandle:^(NSDictionary *myresult) {
+                [self dissMissHUDEnd];
+                if (myresult) {
+                    NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+                    if (result == 201) {
+                        [self showHUDViewTitle:@"提交订单成功！" info:@"" andCodes:^{  }];
+                        return ;
+                    }
+                    NSLog(@"162222.提交订单 ------%ld",result);
+                }
+                [self showHUDViewTitle:@"提交订单失败！" info:@"" andCodes:^{
+                }];
             }];
-        }];
+        }
     }
+    
+    
     
     
 }
