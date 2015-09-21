@@ -84,10 +84,10 @@
     NSDictionary *dic = @{
                           @"Email":@"qwqwq@sina.cn ",
                           @"MemLoginID":kAccountObject.memLoginID,
-                          @"Name":@"测试名",
+                          @"RealName":@"测试名",
                           @"QQ":@"121212",
-                          @"Sex":@"男",
-                          @"Birthday":@"1992-08-25"
+//                          @"Sex":@"男",
+//                          @"Birthday":@"1992-08-25"
                           };
     [CZCService POSTmethod:kAccountUpdate_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
         if (myresult) {

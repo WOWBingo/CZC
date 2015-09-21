@@ -57,9 +57,9 @@
         self.postalCode = self.addressObj.postalcode;
         self.detailAddress = [self.addressObj.address substringFromIndex:indexNum+1];
         //修改pickView默认显示
-//        [self.pickView selectRow:3 inComponent:0 animated:NO];
-//        [self.pickView selectRow:3 inComponent:0 animated:NO];
-//        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
         
     }
     //获取省信息
@@ -260,17 +260,35 @@
             
         }];
     }
-    NSDictionary *addressDic = @{
-                                 @"NAME":self.consignee,
-                                 @"Email":@"",
-                                 @"Address":self.detailAddress,//详细地址
-                                 @"AddressValue":self.addressStr,
-                                 @"Postalcode":self.postalCode,
-                                 @"Mobile":self.mobile,
-                                 @"Tel":@"",
-                                 @"AddressCode":self.addressCode,
-                                 @"MemLoginID":kAccountObject.memLoginID,
-                                 };
+    NSDictionary *addressDic = [[NSDictionary alloc]init];
+    if (!self.isAdd) {
+        NSDate *datenow = [NSDate date];
+        //转时间戳
+        NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+        NSLog(@"%@",timeSp);
+        addressDic = @{
+                       @"NAME":self.consignee,
+                       @"Email":@"",
+                       @"Address":self.detailAddress,//详细地址
+                       @"AddressValue":self.addressStr,
+                       @"Postalcode":self.postalCode,
+                       @"Mobile":self.mobile,
+                       @"Tel":@"",
+                       @"AddressCode":timeSp,
+                       @"MemLoginID":kAccountObject.memLoginID,
+                       };
+    }else{
+        addressDic = @{
+                       @"NAME":self.consignee,
+                       @"Email":@"",
+                       @"Address":self.detailAddress,//详细地址
+                       @"AddressValue":self.addressStr,
+                       @"Postalcode":self.postalCode,
+                       @"Mobile":self.mobile,
+                       @"Tel":@"",
+                       @"MemLoginID":kAccountObject.memLoginID,
+                       };
+    }
     [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger result = [[myresult objectForKey:@"return"] integerValue];
