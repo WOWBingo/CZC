@@ -28,8 +28,12 @@
 
 @property (nonatomic, strong) NSMutableDictionary *dispatchPriceDic;/**< 邮费字典 */
 
-@property (nonatomic, copy) NSString *dispatchPriceName;/**< 店名 */
+@property (nonatomic, copy) NSString *dispatchPriceName;/**< 快递名 */
 
+@property (nonatomic, assign) CGFloat dispatchPrice;/**< 邮费 */
 
+@property (nonatomic, assign) NSInteger dispatchType;/**< 快递方式类型 */
+
+@property (nonatomic, copy) NSString *messageStr;/**< 买家留言 */
 
 @end

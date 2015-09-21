@@ -592,10 +592,10 @@
 #pragma mark - 修改密码/用户信息
     
 //    NSDictionary *dic = @{
-//                          @"Email":@"qwqwq@sina.cn ",
+//                          @"Email":@"111qwqwq@sina.cn ",
 //                          @"MemLoginID":@"zhou001",
-//                          @"RealName":@"测试名",
-//                          @"QQ":@"121212"
+//                          @"RealName":@"啊a啊",
+//                          @"QQ":@"111111"
 //                          };
 //    [CZCService POSTmethod:kAccountUpdate_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
 //        if (myresult) {

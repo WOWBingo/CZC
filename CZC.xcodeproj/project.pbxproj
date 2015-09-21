@@ -225,6 +225,10 @@
 		192BC9F91B8A1396003B8328 /* SpecificationNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9F71B8A1396003B8328 /* SpecificationNumCell.xib */; };
 		192C1AE41B9594160040A01F /* ShoppingCarHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */; };
 		192C1AE61B95942C0040A01F /* ShoppingCarHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */; };
+		192EC4DB1BAE92C600665EBB /* PresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192EC4D81BAE92C600665EBB /* PresentationController.m */; settings = {ASSET_TAGS = (); }; };
+		192EC4DC1BAE92C600665EBB /* CustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 192EC4DA1BAE92C600665EBB /* CustomTransition.m */; settings = {ASSET_TAGS = (); }; };
+		192EC4E01BAE935A00665EBB /* PayMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192EC4DE1BAE935A00665EBB /* PayMethodViewController.m */; settings = {ASSET_TAGS = (); }; };
+		192EC4E11BAE935A00665EBB /* PayMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192EC4DF1BAE935A00665EBB /* PayMethodViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
 		196285B81B9FBBE400D7AC55 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */; };
 		196285B91B9FBBE400D7AC55 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */; };
@@ -248,6 +252,8 @@
 		1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977FDAE1B776D02000A8D26 /* MessageObject.m */; };
 		198024281B81D1760071F63E /* CityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 198024271B81D1760071F63E /* CityObject.m */; };
 		1980242B1B836F240071F63E /* ShopCarProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1980242A1B836F240071F63E /* ShopCarProductObject.m */; };
+		198499C31BAE40AB00B5E33C /* PayMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198499C11BAE40AB00B5E33C /* PayMethodCell.m */; settings = {ASSET_TAGS = (); }; };
+		198499C41BAE40AB00B5E33C /* PayMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198499C21BAE40AB00B5E33C /* PayMethodCell.xib */; settings = {ASSET_TAGS = (); }; };
 		1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */; };
 		19D587BE1B48D63100D65B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D587BD1B48D63100D65B43 /* Images.xcassets */; };
 		19F96A001B7AF79600C98637 /* HomeImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F969FF1B7AF79600C98637 /* HomeImageObject.m */; };
@@ -610,6 +616,13 @@
 		192C1AE21B9594160040A01F /* ShoppingCarHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarHeadView.h; sourceTree = "<group>"; };
 		192C1AE31B9594160040A01F /* ShoppingCarHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarHeadView.m; sourceTree = "<group>"; };
 		192C1AE51B95942C0040A01F /* ShoppingCarHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCarHeadView.xib; sourceTree = "<group>"; };
+		192EC4D71BAE92C600665EBB /* PresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationController.h; sourceTree = "<group>"; };
+		192EC4D81BAE92C600665EBB /* PresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationController.m; sourceTree = "<group>"; };
+		192EC4D91BAE92C600665EBB /* CustomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransition.h; sourceTree = "<group>"; };
+		192EC4DA1BAE92C600665EBB /* CustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransition.m; sourceTree = "<group>"; };
+		192EC4DD1BAE935A00665EBB /* PayMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMethodViewController.h; sourceTree = "<group>"; };
+		192EC4DE1BAE935A00665EBB /* PayMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMethodViewController.m; sourceTree = "<group>"; };
+		192EC4DF1BAE935A00665EBB /* PayMethodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayMethodViewController.xib; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
 		19618C891BAA9155004C71C5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -653,6 +666,9 @@
 		198024271B81D1760071F63E /* CityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityObject.m; path = Object/CityObject.m; sourceTree = "<group>"; };
 		198024291B836F240071F63E /* ShopCarProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCarProductObject.h; path = Object/ShopCarProductObject.h; sourceTree = "<group>"; };
 		1980242A1B836F240071F63E /* ShopCarProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCarProductObject.m; path = Object/ShopCarProductObject.m; sourceTree = "<group>"; };
+		198499C01BAE40AB00B5E33C /* PayMethodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMethodCell.h; sourceTree = "<group>"; };
+		198499C11BAE40AB00B5E33C /* PayMethodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMethodCell.m; sourceTree = "<group>"; };
+		198499C21BAE40AB00B5E33C /* PayMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayMethodCell.xib; sourceTree = "<group>"; };
 		1991584D1B9BFCEA00AFB1AF /* ZDYCheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDYCheckButton.h; sourceTree = "<group>"; };
 		1991584E1B9BFCEA00AFB1AF /* ZDYCheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDYCheckButton.m; sourceTree = "<group>"; };
 		19D587801B48C79000D65B43 /* CZC-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZC-PrefixHeader.pch"; sourceTree = "<group>"; };
@@ -994,6 +1010,9 @@
 				196285B51B9FBBE400D7AC55 /* ConfirmOrderViewController.h */,
 				196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */,
 				196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */,
+				192EC4DD1BAE935A00665EBB /* PayMethodViewController.h */,
+				192EC4DE1BAE935A00665EBB /* PayMethodViewController.m */,
+				192EC4DF1BAE935A00665EBB /* PayMethodViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1008,6 +1027,10 @@
 		192BC89E1B88BC48003B8328 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				192EC4D71BAE92C600665EBB /* PresentationController.h */,
+				192EC4D81BAE92C600665EBB /* PresentationController.m */,
+				192EC4D91BAE92C600665EBB /* CustomTransition.h */,
+				192EC4DA1BAE92C600665EBB /* CustomTransition.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1033,6 +1056,9 @@
 				196285C41B9FDEE200D7AC55 /* ConfirmOrderOtherCell.h */,
 				196285C51B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m */,
 				196285C61B9FDEE200D7AC55 /* ConfirmOrderOtherCell.xib */,
+				198499C01BAE40AB00B5E33C /* PayMethodCell.h */,
+				198499C11BAE40AB00B5E33C /* PayMethodCell.m */,
+				198499C21BAE40AB00B5E33C /* PayMethodCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1482,6 +1508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				192BC9421B88BC48003B8328 /* ShopInfoViewController.xib in Resources */,
+				198499C41BAE40AB00B5E33C /* PayMethodCell.xib in Resources */,
 				192BC93E1B88BC48003B8328 /* ProductInfoViewController.xib in Resources */,
 				187D7A721B8F3729007324E6 /* ChangePayPwdTwoViewController.xib in Resources */,
 				1888B4641B92E188006E3165 /* BillingReportsDetailsViewController.xib in Resources */,
@@ -1517,6 +1544,7 @@
 				192BC98C1B88BC48003B8328 /* ProductCollectViewController.xib in Resources */,
 				187D7A861B8F45F3007324E6 /* BillingDetailsTableViewCell.xib in Resources */,
 				192BC9A01B88BC48003B8328 /* EditAddressTableViewCell.xib in Resources */,
+				192EC4E11BAE935A00665EBB /* PayMethodViewController.xib in Resources */,
 				196285BE1B9FBCC900D7AC55 /* ConfirmOrderTableViewCell.xib in Resources */,
 				192BC9BB1B88BC48003B8328 /* SetTitleTableViewCell.xib in Resources */,
 				192BC9441B88BC48003B8328 /* ShopTableViewController.xib in Resources */,
@@ -1657,6 +1685,7 @@
 				196285C71B9FDEE200D7AC55 /* ConfirmOrderOtherCell.m in Sources */,
 				187D7A801B8F3FA6007324E6 /* BillingDetailsViewController.m in Sources */,
 				192BC9871B88BC48003B8328 /* OrderViewController.m in Sources */,
+				198499C31BAE40AB00B5E33C /* PayMethodCell.m in Sources */,
 				1977FDAF1B776D02000A8D26 /* MessageObject.m in Sources */,
 				1848CACF1BA2F7E000C27206 /* OrderDetailFootView.m in Sources */,
 				192BC97D1B88BC48003B8328 /* InstallViewController.m in Sources */,
@@ -1698,6 +1727,7 @@
 				192BC9A41B88BC48003B8328 /* LGtitleBarView.m in Sources */,
 				192BC93B1B88BC48003B8328 /* HundredViewController.m in Sources */,
 				192BC9E01B88BD5A003B8328 /* MyLogisticsViewController.m in Sources */,
+				192EC4DC1BAE92C600665EBB /* CustomTransition.m in Sources */,
 				192BC9F81B8A1396003B8328 /* SpecificationNumCell.m in Sources */,
 				1991584F1B9BFCEA00AFB1AF /* ZDYCheckButton.m in Sources */,
 				192BC9F31B89CD97003B8328 /* SpecificationChoseCell.m in Sources */,
@@ -1726,6 +1756,7 @@
 				1848CACA1BA2F79500C27206 /* OrderDetailHeadView.m in Sources */,
 				1902C7C31B75B4CD009C7A33 /* ObjectMapping.m in Sources */,
 				192BC9631B88BC48003B8328 /* PublicObject.m in Sources */,
+				192EC4E01BAE935A00665EBB /* PayMethodViewController.m in Sources */,
 				192BC9BA1B88BC48003B8328 /* SetTitleTableViewCell.m in Sources */,
 				192BC9691B88BC48003B8328 /* PayViewController.m in Sources */,
 				192BC9DE1B88BD5A003B8328 /* LogisticsViewController.m in Sources */,
@@ -1766,6 +1797,7 @@
 				192BC9A31B88BC48003B8328 /* LGcollectionCell.m in Sources */,
 				192BC99D1B88BC48003B8328 /* DiscountPromotionTableViewCell.m in Sources */,
 				187D7A761B8F3A7A007324E6 /* AccountBalanceViewController.m in Sources */,
+				192EC4DB1BAE92C600665EBB /* PresentationController.m in Sources */,
 				1888B47C1B930031006E3165 /* PointsBalanceViewController.m in Sources */,
 				192BC9AB1B88BC48003B8328 /* OrderDetailTwoTableViewCell.m in Sources */,
 				187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */,

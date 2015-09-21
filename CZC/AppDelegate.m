@@ -59,36 +59,6 @@
 //    [self getRegionInfo:@"227" andFatherArr:self.regionArr];
     return YES;
 }
-#pragma mark - 50.获取省、市、区
-/** 49.获取省、市、区 http://app.czctgw.com/api/region/0*/
--(void)getRegionInfo:(NSString *)params andFatherArr:(NSMutableArray *)fatherArr{
-    [CZCService GETmethod:kRegion_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-        if (myresult) {
-            NSArray *resultArr = [myresult objectForKey:@"RegionList"];
-            NSLog(@"获取省市区 ------%@",resultArr);
-            
-            NSArray *regionArr = [RegionObject objectArrayWithKeyValuesArray:resultArr];
-            NSLog(@"经过封装的Arr%@",regionArr);
-            //遍历regionArr,判断是否还有下一子类，如果有，继续请求
-            for (RegionObject *regionObj in regionArr) {
-                NSString *categoryLevel = regionObj.categoryLevel;
-                if (![categoryLevel isEqualToString:@"3"]) {
-                    regionObj.subClassArr = [[NSMutableArray alloc]init];
-                    NSLog(@"%@",regionObj.orderID);
-                    [self getRegionInfo:regionObj.orderID andFatherArr:regionObj.subClassArr];
-                }
-                else{//创建plist
-//                    NSLog(@"%@",self.regionArr);
-                }
-                [fatherArr addObject:regionObj];
-            }
-            NSLog(@"%@",fatherArr);
-        }
-        else{
-            NSLog(@"失败");
-        }
-    }];
-}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

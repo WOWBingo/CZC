@@ -89,7 +89,7 @@
     //电话
     cell.telLab.text = addressObj.mobile;
     //地址
-    cell.addressLab.text = [NSString stringWithFormat:@"%@%@",addressObj.addressValue,addressObj.address];
+    cell.addressLab.text = addressObj.address;
     //获取是否默认地址
     NSLog(@"%ld",(long)addressObj.isDefault);
     if (addressObj.isDefault == 1) {//是默认地址

@@ -82,7 +82,7 @@
         if ([resultStr intValue] == 200) {
             [self saveUserInfoDefault:userName];
         }else{
-            [self dissMissHUDEnd];
+            [self dismissHUDEnd];
             [self showHUDViewTitle:@"用户名或密码错误" info:@"" andCodes:^{
             }];
         }
@@ -151,7 +151,7 @@
     [CZCService GETmethod:kAccountInfo_URL andParameters:account andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
-            [self dissMissHUDEnd];
+            [self dismissHUDEnd];
             if (dic != nil) {
                 AccoutObject *accoutObj = [AccoutObject objectWithKeyValues:dic];
                 NSLog(@"20.用户信息 ------%@",accoutObj);
@@ -209,7 +209,7 @@
     [HUD show:YES];
 }
 
-- (void)dissMissHUDEnd{
+- (void)dismissHUDEnd{
     [HUD hide:YES];
 }
 

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付";
-
+    
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
     
@@ -93,7 +93,7 @@
         messageText.backgroundColor = [UIColor grayColor];
         messageText.delegate = self;
         return cell;
-     }
+    }
     else if (indexPath.row == 4){
         static NSString *CellIdentifier = @"PayInfoTableViewCell";
         PayInfoTableViewCell *cell = (PayInfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -105,7 +105,7 @@
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
         return cell;
-
+        
     }
     else{
         static NSString *CellIdentifier = @"Cell";

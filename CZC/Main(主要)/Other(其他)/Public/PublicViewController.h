@@ -29,6 +29,6 @@
 
 - (void)showHUDBeginWithTitle:(NSString *)title;
 
-- (void)dissMissHUDEnd;
+- (void)dismissHUDEnd;
 
 @end

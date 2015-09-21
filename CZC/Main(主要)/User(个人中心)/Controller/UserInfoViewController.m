@@ -369,7 +369,7 @@
         if (myresult) {
             NSLog(@"imageresult=======%@",myresult);
             NSString *imageURL;
-            [self dissMissHUDEnd];
+            [self dismissHUDEnd];
             if ([[myresult objectForKey:@"tip"]intValue ] == 1) {
                 imageURL = [NSString stringWithFormat:@"http://www.czctgw.com%@",[myresult objectForKey:@"success"]];
                 [self showHUDViewTitle:@"上传成功！" info:@"" andCodes:^{

@@ -247,11 +247,11 @@
     NSDictionary *addressDic = @{
                                  @"NAME":self.consignee,
                                  @"Email":@"",
-                                 @"Address":addressInfo,
+                                 @"Address":self.detailAddress,
                                  @"AddressValue":self.addressStr,
-                                 @"Postalcode":@"",
+                                 @"Postalcode":self.postalCode,
                                  @"Mobile":self.telNum,
-                                 @"Tel":@"",
+                                 @"Tel":self.telNum,
                                  @"AddressCode":self.addressCode,
                                  @"MemLoginID":kAccountObject.memLoginID,
                                  };

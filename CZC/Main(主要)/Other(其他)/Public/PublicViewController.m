@@ -100,7 +100,7 @@
     [HUD show:YES];
 }
 
-- (void)dissMissHUDEnd{
+- (void)dismissHUDEnd{
     [HUD hide:YES];
 }
 
