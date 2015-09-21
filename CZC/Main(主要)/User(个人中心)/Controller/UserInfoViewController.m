@@ -422,7 +422,6 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 - (void) changeDate:(NSNotification*) notification
-
 {
     self.dateStr = [notification object];//获取到传递的对象
     [self.tableView reloadData];

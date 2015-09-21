@@ -26,7 +26,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
-    [self getAddress];
     
     UIButton *addBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     [addBtn setTitle:@"添加" forState:UIControlStateNormal];
@@ -36,6 +35,9 @@
     [addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [self getAddress];
 }
 -(void)getAddress{
 #pragma mark - 18.收货地址列表

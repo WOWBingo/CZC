@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic,strong)NSString *consignee;
-@property (nonatomic,strong)NSString *telNum;
+@property (nonatomic,strong)NSString *mobile;
 @property (nonatomic,strong)NSString *postalCode;
 @property (nonatomic,strong)NSString *detailAddress;
 

@@ -81,6 +81,24 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)saveClick:(id)sender {
+    NSDictionary *dic = @{
+                          @"Email":@"qwqwq@sina.cn ",
+                          @"MemLoginID":kAccountObject.memLoginID,
+                          @"Name":@"测试名",
+                          @"QQ":@"121212",
+                          @"Sex":@"男",
+                          @"Birthday":@"1992-08-25"
+                          };
+    [CZCService POSTmethod:kAccountUpdate_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+            NSLog(@"修改密码结果 ------%ld",(long)result);
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //    NSDictionary *userDic = [defaults objectForKey:USERINFO];
 //    self.user = [UserObject objectWithKeyValues:userDic];
