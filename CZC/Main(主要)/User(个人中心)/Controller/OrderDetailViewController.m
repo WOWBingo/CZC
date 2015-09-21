@@ -182,7 +182,7 @@
             //基本信息
             cell3.infoLab.text = orderProObj.productName;
             //其他信息
-            cell3.otherInfoLab.text = @"缺少其他信息字段";
+            cell3.otherInfoLab.text = [NSString stringWithFormat:@"%@%@",orderProObj.specificationName,orderProObj.specificationValue];
             //价格
             cell3.moneyLab.text = [NSString stringWithFormat:@"%.02f",orderProObj.buyPrice];
             //物品数量

@@ -40,10 +40,27 @@
     self.districtArr = [[NSMutableArray alloc]init];
     if (!self.isAdd) {
         self.consignee = self.addressObj.name;
-        self.telNum = self.addressObj.tel;
-        self.addressStr = self.addressObj.addressValue;
+        self.mobile = self.addressObj.mobile;
+        //获取|位置
+        NSString *temp = nil;
+        int indexNum = 0;
+        for(int i =0; i < [self.addressObj.addressValue length]; i++)
+        {
+            temp = [self.addressObj.addressValue substringWithRange:NSMakeRange(i, 1)];
+            if ([temp isEqualToString:@"|"]) {
+                NSLog(@"第%d个字是:%@", i, temp);
+                indexNum = i;
+            }
+        }
+        self.addressStr = [self.addressObj.addressValue substringToIndex:indexNum];
+        self.addressCode = [self.addressObj.addressValue substringFromIndex:indexNum+1];//地区代码;
         self.postalCode = self.addressObj.postalcode;
-        self.detailAddress = self.addressObj.address;
+        self.detailAddress = [self.addressObj.address substringFromIndex:indexNum+1];
+        //修改pickView默认显示
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        //        [self.pickView selectRow:3 inComponent:0 animated:NO];
+        
     }
     //获取省信息
     [self getRegionInfo:@"0" andRegionArr:self.provinceArr];
@@ -51,7 +68,7 @@
     [self getRegionInfo:@"1" andRegionArr:self.cityArr];//
     //获取区信息
     [self getRegionInfo:@"2" andRegionArr:self.districtArr];//
-
+    
     
 }
 #pragma mark - 50.获取省、市、区
@@ -122,7 +139,7 @@
             cell.infoLab.hidden = YES;
             cell.infoText.hidden = NO;
             cell.infoText.keyboardType = UIKeyboardTypeNumberPad;
-            cell.infoText.text = self.telNum;
+            cell.infoText.text = self.mobile;
             //在弹出的键盘上面加一个view来放置退出键盘的Done按钮
             UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [topView setBarStyle:UIBarStyleDefault];
@@ -223,7 +240,7 @@
             
         }];
         return;
-    }else if ([self.telNum isEqualToString:@""]){
+    }else if ([self.mobile isEqualToString:@""]){
         [self showHUDViewTitle:@"请输入收货人联系方式" info:@"" andCodes:^{
             
         }];
@@ -243,18 +260,36 @@
             
         }];
     }
-    NSString *addressInfo = [NSString stringWithFormat:@"%@%@",self.addressStr,self.detailAddress];
-    NSDictionary *addressDic = @{
-                                 @"NAME":self.consignee,
-                                 @"Email":@"",
-                                 @"Address":self.detailAddress,
-                                 @"AddressValue":self.addressStr,
-                                 @"Postalcode":self.postalCode,
-                                 @"Mobile":self.telNum,
-                                 @"Tel":self.telNum,
-                                 @"AddressCode":self.addressCode,
-                                 @"MemLoginID":kAccountObject.memLoginID,
-                                 };
+
+    NSDictionary *addressDic = [[NSDictionary alloc]init];
+    if (!self.isAdd) {
+        NSDate *datenow = [NSDate date];
+        //转时间戳
+        NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+        NSLog(@"%@",timeSp);
+        addressDic = @{
+                       @"NAME":self.consignee,
+                       @"Email":@"",
+                       @"Address":self.detailAddress,//详细地址
+                       @"AddressValue":self.addressStr,
+                       @"Postalcode":self.postalCode,
+                       @"Mobile":self.mobile,
+                       @"Tel":@"",
+                       @"AddressCode":timeSp,
+                       @"MemLoginID":kAccountObject.memLoginID,
+                       };
+    }else{
+        addressDic = @{
+                       @"NAME":self.consignee,
+                       @"Email":@"",
+                       @"Address":self.detailAddress,//详细地址
+                       @"AddressValue":self.addressStr,
+                       @"Postalcode":self.postalCode,
+                       @"Mobile":self.mobile,
+                       @"Tel":@"",
+                       @"MemLoginID":kAccountObject.memLoginID,
+                       };
+    }
     [CZCService POSTmethod:kAddressAdd_URL andDicParameters:addressDic andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger result = [[myresult objectForKey:@"return"] integerValue];
@@ -394,7 +429,7 @@ numberOfRowsInComponent:(NSInteger)component
             self.consignee = textField.text;
             break;
         case 1:
-            self.telNum = textField.text;
+            self.mobile = textField.text;
             break;
         case 3:
             self.postalCode = textField.text;

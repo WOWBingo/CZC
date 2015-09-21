@@ -81,17 +81,63 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)saveClick:(id)sender {
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSDictionary *userDic = [defaults objectForKey:USERINFO];
-//    self.user = [UserObject objectWithKeyValues:userDic];
-//    if (self.isTrueName) {
-//        [self changeTrueName:self.user.username andNewInfo:self.infoField.text];
-//    }
-//    if (self.isSex) {
-//        [self changeSex:self.user.username andNewInfo:[self.sexArr objectAtIndex:_index]];
-//    }
-    
+    NSDictionary *dic = @{
+                          @"Email":@"qwqwq@sina.cn ",
+                          @"MemLoginID":kAccountObject.memLoginID,
+                          @"RealName":@"测试名",
+                          @"QQ":@"121212",
+//                          @"Sex":@"男",
+//                          @"Birthday":@"1992-08-25"
+                          };
+    [CZCService POSTmethod:kAccountUpdate_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSInteger result = [[myresult objectForKey:@"return"] integerValue];
+            NSLog(@"修改结果 ------%ld",(long)result);
+            [self saveUserInfoDefault:kAccountObject.memLoginID];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
+/**
+ *	获取并持久化用户信息
+ *
+ *	@param account	用户名
+ */
+- (void)saveUserInfoDefault:(NSString *)account{
+    [CZCService GETmethod:kAccountInfo_URL andParameters:account andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
+            [self dissMissHUDEnd];
+            if (dic != nil) {
+                AccoutObject *accoutObj = [AccoutObject objectWithKeyValues:dic];
+                NSLog(@"20.用户信息 ------%@",accoutObj);
+                /** 用户信息存储，防止出现空值  */
+                NSMutableDictionary *mutableDic = [[NSMutableDictionary alloc]initWithDictionary:dic];
+                for (int i = 0;i < dic.allKeys.count; i++) {
+                    NSString *key = [dic.allKeys objectAtIndex:i];
+                    NSString *value = [mutableDic objectForKey:key];
+                    if ([value isKindOfClass:[NSNull class]]) {
+                        [mutableDic removeObjectForKey:key];
+                    }
+                }
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:[[NSDictionary alloc]initWithDictionary:mutableDic] forKey:kAccoutInfo_Default];
+                [defaults synchronize];
+                
+                kAccountObject = accoutObj;
+                [self showHUDViewTitle:@"修改成功" info:@"" andCodes:^{
+                }];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
+}
+
 //#pragma mark - tableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.sexArr count];
