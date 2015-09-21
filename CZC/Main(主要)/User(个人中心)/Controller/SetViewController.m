@@ -152,7 +152,7 @@
             cell1.vipTypeLab.font = [UIFont systemFontOfSize:12];
             cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)kAccountObject.memberRank];
             cell1.vipNumLab.hidden = YES;
-            cell1.nameLab.text = [NSString stringWithFormat:@"%@",kAccountObject.realName];
+            cell1.nameLab.text = [NSString stringWithFormat:@"%@",kAccountObject.name];
             cell1.proCollectNumLab.text = [NSString stringWithFormat:@"%d",self.proCollectNum];
             cell1.shopCollectNumLab.text = [NSString stringWithFormat:@"%d",self.shopCollectNum];
         }
