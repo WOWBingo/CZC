@@ -225,7 +225,7 @@
     
     cell.infolab.text = orderProObj.productName;
     //其他信息
-    cell.otherInfoLab.text = @"缺少其他信息字段";
+    cell.otherInfoLab.text = [NSString stringWithFormat:@"%@%@",orderProObj.specificationName,orderProObj.specificationValue];
     //订单状态
     cell.orderStatusLab.text = orderObj.paymentName;
     //订单时间
