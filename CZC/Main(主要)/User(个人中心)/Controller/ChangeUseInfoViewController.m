@@ -109,7 +109,7 @@
     [CZCService GETmethod:kAccountInfo_URL andParameters:account andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSDictionary *dic = [myresult objectForKey:@"AccoutInfo"];
-            [self dissMissHUDEnd];
+            [self dismissHUDEnd];
             if (dic != nil) {
                 AccoutObject *accoutObj = [AccoutObject objectWithKeyValues:dic];
                 NSLog(@"20.用户信息 ------%@",accoutObj);
