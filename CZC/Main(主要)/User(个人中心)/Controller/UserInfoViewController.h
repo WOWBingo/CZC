@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZHPickView.h"
 
-@interface UserInfoViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,ZHPickViewDelegate>
+@interface UserInfoViewController : PublicViewController<UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,ZHPickViewDelegate>
 //pickView
 @property(nonatomic,strong)ZHPickView *pickview;
 @property(nonatomic,strong)NSIndexPath *indexPath;

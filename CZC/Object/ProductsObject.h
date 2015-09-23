@@ -45,7 +45,7 @@
 
 @property (nonatomic, copy) NSString *feeTemplateName;
 
-@property (nonatomic, assign) NSInteger shopID;
+@property (nonatomic, copy) NSString *shopID;
 
 @property (nonatomic, assign) NSInteger isSystemRecommend;
 

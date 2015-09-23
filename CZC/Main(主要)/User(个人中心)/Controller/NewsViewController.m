@@ -23,7 +23,7 @@
     
     UIButton *setBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     [setBtn setImage:[UIImage imageNamed:@"head_tb1"] forState:UIControlStateNormal];
-    [setBtn addTarget:self action:@selector(setClick:) forControlEvents:UIControlEventTouchUpInside];
+    //[setBtn addTarget:self action:@selector(setClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:setBtn];
 
     

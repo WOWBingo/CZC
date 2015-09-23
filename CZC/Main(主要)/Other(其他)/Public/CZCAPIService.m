@@ -36,6 +36,23 @@ static CZCAPIService *CAS;
     }];
 }
 
+- (void)GETMethodWithWWW:(NSString *)urlStr andHandle:(void (^)(NSDictionary *))handle{
+    NSString *requrl = [NSString stringWithFormat:@"%@%@",kImage_URL,urlStr]; ;
+    requrl = [requrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@" 请求地址：%@",requrl);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html", @"text/json", @"text/javascript", nil];
+    [manager GET:requrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"____成功");
+        NSLog(@"JSON: %@", responseObject);
+        handle((NSDictionary *) responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"____失败");
+        NSLog(@"error: %@",error);
+        handle(nil);
+    }];
+}
+
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void (^)(NSDictionary *))handle{
     
     NSString *requrl = [NSString stringWithFormat:@"%@%@",kPublic_URL,methodName];

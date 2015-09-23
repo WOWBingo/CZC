@@ -34,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addShoppingCarBtn;
 @property (weak, nonatomic) IBOutlet UIButton *defineBtn;
 
-@property (strong, nonatomic) void (^dismissView)();
+@property (strong, nonatomic) void (^dismissView)(BOOL isDismiss);
 
 #pragma  mark - 数据
 //@property (strong, nonatomic) AccoutObject *accoutObject;/**< 用户对象 */

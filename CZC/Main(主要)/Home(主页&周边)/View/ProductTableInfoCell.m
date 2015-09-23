@@ -14,7 +14,7 @@
 - (void)awakeFromNib {
     
     // 防止block中的循环引用
-     __weak typeof(self) weakSelf = self;
+    // __weak typeof(self) weakSelf = self;
     
     int count = 17;
     
@@ -23,7 +23,7 @@
     for ( int i = 0 ; i < count ; ++i )
     {
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"zy-p%d",i+1]];
-        CGSize imgSize = image.size;
+        //CGSize imgSize = image.size;
         UIImageView *subv = [[UIImageView alloc]initWithImage:image];
         [subv setContentMode:UIViewContentModeScaleAspectFit];
         [_showView addSubview:subv];

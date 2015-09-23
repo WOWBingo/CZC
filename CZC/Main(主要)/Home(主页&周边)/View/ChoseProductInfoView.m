@@ -9,7 +9,11 @@
 #import "ChoseProductInfoView.h"
 #import "SpecificationChoseCell.h"
 #import "SpecificationNumCell.h"
+@interface ChoseProductInfoView ()<MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
 
+@end
 @implementation ChoseProductInfoView
 
 +(ChoseProductInfoView *)instanceView
@@ -46,9 +50,9 @@
 - (void)reloadProduct:(ProductsObject *)object{
     self.product = object;
     NSURL *imageURL = [NSURL URLWithString:_product.originalImage];
-    [_imgView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"cpsc-p1"]];
+    [_imgView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"imagedefault"]];
     _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",_product.shopPrice];
-    _stockLabel.text = [NSString stringWithFormat:@"%ld",_product.repertoryCount];
+    _stockLabel.text = [NSString stringWithFormat:@"%ld",(long)_product.repertoryCount];
     
     _specificationArray = [[NSMutableArray alloc]init];
     _selectedSpecificationDic = [[NSMutableDictionary alloc]init];
@@ -61,6 +65,14 @@
     _defineBtn.enabled = NO;
     _buyNowBtn.enabled = NO;
     _addShoppingCarBtn.enabled = NO;
+    if (_specificationArray.count == 0) {
+        _priceObject.goodsPrice = _product.shopPrice;
+        _priceObject.productGuid = _product.guid;
+        _priceObject.specDetail = @"";
+        _priceObject.shopID = _product.shopID;
+        _priceObject.goodsStock = _product.repertoryCount;
+    }
+
 }
 
 #pragma mark - tableView
@@ -84,11 +96,12 @@
         NSArray *nibArray = [bundle loadNibNamed:@"SpecificationNumCell" owner:self options:nil];
         SpecificationNumCell *numCell = (SpecificationNumCell *)[nibArray objectAtIndex:0];
         [numCell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        numCell.numBtn.currentNum = [NSString stringWithFormat:@"%ld",_productNum];
+        numCell.numBtn.currentNum = [NSString stringWithFormat:@"%ld",(long)_productNum];
         numCell.numBlock = ^(NSInteger num){
             _productNum = num;
             [self showPrice];
         };
+        
         return numCell;
     }else{
         SpecificationAllObject *speAllObject = [_specificationArray objectAtIndex:row];
@@ -108,7 +121,7 @@
         }
         //回调输出规格
         cell.specificationBlock = ^(SpecificationObject *specObject){
-            NSLog(@"specStr=========%@----%@----%ld",specObject.specName,specObject.specValueName,specObject.specValueid);
+            NSLog(@"specStr=========%@----%@----%ld",specObject.specName,specObject.specValueName,(long)specObject.specValueid);
             //判断选中的规格是否存在相同类型，存在替换，不存在添加
             [_selectedSpecificationDic setValue:specObject forKey:specObject.specName];
             [self getPriceBySpecification];
@@ -134,9 +147,9 @@
             SpecificationObject *selectedSpecObject = [_selectedSpecificationDic objectForKey:speAllObject.specValueName];
             if (selectedSpecObject) {
                 if (i == 0) {
-                    params = [NSString stringWithFormat:@"%@%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+                    params = [NSString stringWithFormat:@"%@%@,%ld",params,selectedSpecObject.specValueName,(long)selectedSpecObject.specValueid];
                 }else{
-                    params = [NSString stringWithFormat:@"%@|%@,%ld",params,selectedSpecObject.specValueName,selectedSpecObject.specValueid];
+                    params = [NSString stringWithFormat:@"%@|%@,%ld",params,selectedSpecObject.specValueName,(long)selectedSpecObject.specValueid];
                 }
             }else{
                 NSLog(@"Str=========return");
@@ -144,37 +157,42 @@
             }
         }
         NSLog(@"Str=========%@",params);
-  //  NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234|M,665";
-    [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
-        NSDictionary *result = myresult;
-        NSArray *dataArr = [result objectForKey:@"Specification"];
-        if (dataArr.count) {
-            NSDictionary *dic = [dataArr objectAtIndex:0];
-            //            NSArray *list = [SpecificationOfPriceObject objectArrayWithKeyValuesArray:dataArr];
-            NSLog(@"8.产品规格获得价格 ------%@",dic);
-            if (dic) {
-                //                _priceArray = [[NSMutableArray alloc]initWithArray:list];
-                _priceObject = [SpecificationOfPriceObject objectWithKeyValues:dic];
+        //  NSString *params = @"8bf39849-c3b8-4529-abe6-6d3e1da5227d?Detail=牛仔蓝,234|M,665";
+        [CZCService GETmethod:kPriceBySpecification_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+            NSDictionary *result = myresult;
+            NSArray *dataArr = [result objectForKey:@"Specification"];
+            if (dataArr.count) {
+                NSDictionary *dic = [dataArr objectAtIndex:0];
+                //            NSArray *list = [SpecificationOfPriceObject objectArrayWithKeyValuesArray:dataArr];
+                NSLog(@"8.产品规格获得价格 ------%@",dic);
+                if (dic) {
+                    //                _priceArray = [[NSMutableArray alloc]initWithArray:list];
+                    _priceObject = [SpecificationOfPriceObject objectWithKeyValues:dic];
+                }
             }
-        }
-        else{
-            NSLog(@"失败");
-        }
-        [self showPrice];
-    }];
+            else{
+                NSLog(@"失败");
+            }
+            [self showPrice];
+        }];
+   // }
 }
 
 /**
  *	显示价格、库存
  */
 - (void)showPrice{
+    if (_productNum > _priceObject.goodsStock ) {
+        _productNum = _priceObject.goodsStock;
+        [self.tableView reloadData];
+    }
     if (_priceObject) {
         _onePrice = _priceObject.goodsPrice;
         _stockNum = _priceObject.goodsStock;
         _allPrice = _priceObject.goodsPrice*_productNum;
         NSLog(@"_allPrice======%.2f",_allPrice);
         _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",_allPrice];
-        _stockLabel.text = [NSString stringWithFormat:@"%ld",_stockNum];
+        _stockLabel.text = [NSString stringWithFormat:@"%ld",(long)_stockNum];
         _defineBtn.enabled = YES;
         _buyNowBtn.enabled = YES;
         _addShoppingCarBtn.enabled = YES;
@@ -188,22 +206,23 @@
 }
 
 - (IBAction)disView:(id)sender {
-    self.dismissView();
+    self.dismissView(NO);
 }
 
 - (IBAction)define:(id)sender {
-    self.dismissView();
+    //self.dismissView();
     [self addShoppingCar:nil];
 }
 
 - (IBAction)buyNow:(id)sender{
-    self.dismissView();
+    self.dismissView(NO);
 }
 
 #pragma mark - 12.添加购物车(1)
 /**  12.添加购物车(1) http://app.czctgw.com/api/shoppingcart/ */
 - (IBAction)addShoppingCar:(id)sender {
     if(_priceObject){
+        [self showHUDBeginWithTitle:@""];
         NSString *specificationName = [NSString stringWithFormat:@""];
         for(int i = 0; i<_specificationArray.count; i++){
             SpecificationAllObject *speAllObject = [_specificationArray objectAtIndex:i];
@@ -221,7 +240,7 @@
         }
         NSString *memLoginID = kAccountObject.memLoginID;//[NSString stringWithFormat:@"111111"];
         NSString *productGuid = _priceObject.productGuid;
-        NSString *buyNumber = [NSString stringWithFormat:@"%ld",_productNum];
+        NSString *buyNumber = [NSString stringWithFormat:@"%ld",(long)_productNum];
         NSString *buyPrice = [NSString stringWithFormat:@"%f",_priceObject.goodsPrice];
         NSString *attributes = [NSString stringWithFormat:@""];
         NSString *extensionAttriutes = [NSString stringWithFormat:@"M"];
@@ -230,12 +249,13 @@
         NSArray *keysArray = [[NSArray alloc]initWithObjects:@"MemLoginID",@"ProductGuid", @"BuyNumber", @"BuyPrice", @"Attributes", @"ExtensionAttriutes", @"SpecificationName", @"SpecificationValue", nil];
         NSArray *valueArray = [[NSArray alloc]initWithObjects:memLoginID,productGuid,buyNumber,buyPrice,attributes,extensionAttriutes,specificationName,specificationValue, nil];
         NSDictionary *paramesDic = [NSDictionary dictionaryWithObjects:valueArray forKeys:keysArray];
-
+        
         [CZCService POSTmethod:kShoppingCartAdd_URL andDicParameters:paramesDic andHandle:^(NSDictionary *myresult) {
+            [self dismissHUDEnd];
             if (myresult) {
                 NSString *result = [myresult objectForKey:@"return"];
                 NSLog(@"添加购物车结果 ------%@",result);
-                self.dismissView();
+                self.dismissView(YES);
             }
             else{
                 NSLog(@"失败");
@@ -243,6 +263,38 @@
         }];
     }
     
+}
+
+#pragma mark - 进度条方法
+- (void)showHUDViewTitle:(NSString *)title info:(NSString*)info andCodes:(void (^)())finish{
+    HUD = [[MBProgressHUD alloc] initWithView:self];
+    [self addSubview:HUD];
+    HUD.delegate = self;
+    HUD.mode = MBProgressHUDModeText;
+    HUD.labelText = title;
+    HUD.margin = 20.f;
+    HUD.dimBackground = NO;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        finish();
+    }];
+}
+
+- (void)showHUDBeginWithTitle:(NSString *)title{
+    HUD = [[MBProgressHUD alloc] initWithView:self];
+    [self addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = title;
+    HUD.square = YES;
+    HUD.dimBackground = YES;
+    HUD.removeFromSuperViewOnHide = YES;
+    [HUD show:YES];
+}
+
+- (void)dismissHUDEnd{
+    [HUD hide:YES];
 }
 
 @end

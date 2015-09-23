@@ -27,6 +27,6 @@
 @property (nonatomic, assign) BOOL isLastPage;/**< 是否为最后页 */
 @property (nonatomic, strong) NSString *sort;/**< 排序 */
 @property (nonatomic, assign) BOOL isASC;/**< 升降序 */
-@property (nonatomic, assign) int btntag;/**< tag */
+@property (nonatomic, assign) NSInteger btntag;/**< tag */
 
 @end

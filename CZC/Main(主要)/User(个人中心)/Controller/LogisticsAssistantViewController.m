@@ -22,7 +22,7 @@
     
     UIButton *setBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     [setBtn setImage:[UIImage imageNamed:@"head_tb1"] forState:UIControlStateNormal];
-    [setBtn addTarget:self action:@selector(setClick:) forControlEvents:UIControlEventTouchUpInside];
+    //[setBtn addTarget:self action:@selector(setClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:setBtn];
     
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线

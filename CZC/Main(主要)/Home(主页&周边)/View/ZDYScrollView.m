@@ -100,11 +100,11 @@ static CGFloat const chageImageTime = 3.0;
     NSString *leftStr = [_mImageArray objectAtIndex:((_currentImageIndex - 1 + _imageCount) % _imageCount)];
     NSString *rightStr = [_mImageArray objectAtIndex:((_currentImageIndex + 1) % _imageCount)];
     
-    [_imgVCenter sd_setImageWithURL:[NSURL URLWithString:centerStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
+    [_imgVCenter sd_setImageWithURL:[NSURL URLWithString:centerStr] placeholderImage:[UIImage imageNamed:@"imagedefault"]];
     
-    [_imgVLeft sd_setImageWithURL:[NSURL URLWithString:leftStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
+    [_imgVLeft sd_setImageWithURL:[NSURL URLWithString:leftStr] placeholderImage:[UIImage imageNamed:@"imagedefault"]];
     
-    [_imgVRight sd_setImageWithURL:[NSURL URLWithString:rightStr] placeholderImage:[UIImage imageNamed:@"cpxx-p1"]];
+    [_imgVRight sd_setImageWithURL:[NSURL URLWithString:rightStr] placeholderImage:[UIImage imageNamed:@"imagedefault"]];
     
     _pageC.currentPage = currentImageIndex;
    // _lblImageDesc.text = [NSString stringWithFormat:@"%ld",(long)object.homeImageID];
@@ -171,7 +171,7 @@ static CGFloat const chageImageTime = 3.0;
 
 - (void)clickCenterBtn{
    // HomeImageObject *object = [_mImageArray objectAtIndex:_currentImageIndex];
-    NSLog(@"点击的按钮为------%ld",_currentImageIndex);
+    NSLog(@"点击的按钮为------%ld",(long)_currentImageIndex);
     self.clickBlock(_currentImageIndex);
 }
 

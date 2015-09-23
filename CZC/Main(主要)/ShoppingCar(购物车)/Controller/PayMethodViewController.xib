@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayMethodViewController">
             <connections>
+                <outlet property="contentView" destination="4hr-Io-w6w" id="zSD-fz-H9h"/>
+                <outlet property="payMethodBtn" destination="8dK-Tq-Z3L" id="Ois-PN-nMR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,10 +38,29 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hr-Io-w6w">
                             <rect key="frame" x="0.0" y="37.5" width="375" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dK-Tq-Z3L">
+                                    <rect key="frame" x="135" y="5" width="105" height="50"/>
+                                    <state key="normal" title="余额支付" image="chooseYes">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectPayMethod:" destination="-1" eventType="touchUpInside" id="Cic-Kk-wTm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="8dK-Tq-Z3L" firstAttribute="leading" secondItem="4hr-Io-w6w" secondAttribute="leading" constant="135" id="WYX-5O-f8B"/>
+                                <constraint firstItem="8dK-Tq-Z3L" firstAttribute="centerY" secondItem="4hr-Io-w6w" secondAttribute="centerY" id="YAH-VL-0YW"/>
+                                <constraint firstItem="8dK-Tq-Z3L" firstAttribute="centerX" secondItem="4hr-Io-w6w" secondAttribute="centerX" id="kwY-jW-F4e"/>
                                 <constraint firstAttribute="height" constant="60" id="pk8-kH-3B0"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="WYX-5O-f8B"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -76,4 +97,7 @@
             <point key="canvasLocation" x="345.5" y="124.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="chooseYes" width="13" height="13"/>
+    </resources>
 </document>

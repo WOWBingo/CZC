@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"百元专区";
+ //   self.title = @"百元专区";
 //    [_integrateBtn.layer setMasksToBounds:YES];
 //    [_integrateBtn.layer setCornerRadius:8.0]; //设置矩形四个圆角半径
 //    [_integrateBtn.layer setBorderWidth:0.5]; //边框宽度
@@ -59,8 +59,8 @@
     _pageCount = 10;
     _isLastPage = NO;
     _sort = kSortsProModifyTime;
-    _isASC = kSortsisASCTrue;
-    _cityDomainName = @"gy";
+    _isASC = YES;
+    _cityDomainName = @"";
     _btntag = 0;
     
 }

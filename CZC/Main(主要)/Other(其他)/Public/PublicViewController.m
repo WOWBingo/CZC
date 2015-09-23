@@ -50,7 +50,7 @@
     newNVC.navigationBarHidden = YES;
     newNVC.tabBarItem.title = @"登 录";
     newNVC.tabBarItem.image = [UIImage imageNamed:@"icon-grzx-1"];
-    newNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[UIApplication sharedApplication].applicationIconBadgeNumber];
+    newNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber];
     
     loginController.dismissView = ^(BOOL isSuccess){
         if (!isSuccess) {

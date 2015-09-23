@@ -186,7 +186,7 @@
             //价格
             cell3.moneyLab.text = [NSString stringWithFormat:@"%.02f",orderProObj.buyPrice];
             //物品数量
-            cell3.numLab.text = [NSString stringWithFormat:@"X%ld",orderProObj.buyNumber];
+            cell3.numLab.text = [NSString stringWithFormat:@"X%ld",(long)orderProObj.buyNumber];
             //根据订单状态修改btn
             //            switch (self.orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价
             //                case 1://待付款

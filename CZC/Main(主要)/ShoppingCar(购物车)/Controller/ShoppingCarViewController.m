@@ -132,7 +132,7 @@
     [cell.oldPriceLab setText:[NSString stringWithFormat:@"￥%.2f",proObject.marketPrice]];
     [cell.nowPriceLab setText:[NSString stringWithFormat:@"￥%.2f",proObject.buyPrice]];
     [cell.titleImg sd_setImageWithURL:[NSURL URLWithString:proObject.originalImge] placeholderImage:DefaultImage];
-    cell.numBtn.currentNum = [NSString stringWithFormat:@"%ld",proObject.buyNumber];
+    cell.numBtn.currentNum = [NSString stringWithFormat:@"%ld",(long)proObject.buyNumber];
     // 内容更改的block回调
     cell.numBtn.callBack = ^(NSString *currentNum){
         proObject.buyNumber = currentNum.integerValue;

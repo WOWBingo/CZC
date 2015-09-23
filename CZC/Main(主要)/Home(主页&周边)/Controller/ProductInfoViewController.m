@@ -16,8 +16,11 @@
 #import "SpecificationTableViewCell.h"
 #import "SpecificationObject.h"
 #import "SpecificationAllObject.h"
+#import "LoginViewController.h"
 
 @interface ProductInfoViewController ()
+
+@property (nonatomic,assign)NSInteger finished;
 
 @end
 
@@ -35,11 +38,24 @@
     [_scrollView addSubview:_imgTextView];
     _imgTextView.tag = 1;
     
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    _finished = 0;
     [self getProductInfo];
     [self getProSpecification];
+    [self showHUDBeginWithTitle:@""];
+}
+/**
+ *	数据加载完成
+ */
+- (void)isFinished{
+    _finished ++;
+    if (_finished == 2) {
+        [self dismissHUDEnd];
+    }
+    [_choseProductView.tableView reloadData];//刷新选择页面
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +91,7 @@
             [_headView loadImageData:imageArray];
             
             [self changeScrollViewInfo];//显示图文详情
+            [self isFinished];
         }
         else{
             NSLog(@"失败");
@@ -95,7 +112,8 @@
             _specificationArray = [SpecificationAllObject objectArrayWithKeyValuesArray:dataArr];
             NSLog(@"7.产品规格 ------%@",_specificationArray);
             _choseProductView.specificationArray = _specificationArray;
-            [_choseProductView.tableView reloadData];//刷新选择页面
+            //            [_choseProductView.tableView reloadData];//刷新选择页面
+            [self isFinished];
         }
         else{
             NSLog(@"失败");
@@ -115,7 +133,13 @@
     _choseProductView = [ChoseProductInfoView instanceView];
     [_choseProductView setTransform:CGAffineTransformMakeTranslation(0, _choseProductView.frame.size.height)];
     __weak typeof(self) weakSelf = self;
-    _choseProductView.dismissView = ^(){
+    _choseProductView.dismissView = ^(BOOL isDismiss){
+        if (isDismiss) {
+            [weakSelf showHUDViewTitle:@"添加成功" info:@"" andCodes:^{
+                [weakSelf dismissViewControllerAnimated:YES completion:^{
+                }];
+            }];
+        }
         //添加动画，添加到父窗口中，使之从下移动上
         [UIView animateWithDuration:0.3 animations:^{
             weakSelf.backView.hidden = YES;
@@ -156,7 +180,7 @@
     _headView = [[ZDYScrollView alloc]initWithFrame:CGRectZero];
     _headView.imageViewContentMode = UIViewContentModeScaleAspectFit;
     _headView.clickBlock = ^(NSInteger index){
-        NSLog(@"跳转的controller为=========%ld",index);
+        NSLog(@"跳转的controller为=========%ld",(long)index);
     };
     _headView.frame = CGRectMake(0, -kShowViewHight+5, SCREEN_WIDTH, kShowViewHight);
     _scrollView.delegate = self;
@@ -220,42 +244,42 @@
             }else{
                 SDWebImageManager *manager = [SDWebImageManager sharedManager];
                 [manager downloadImageWithURL:imageURL
-                                          options:0
-                                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                             // progression tracking code
-                                         }
-                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                                            if (image) {
-                                                height = [self loadImages:image andHeight:height];
-                                            }
-                                        }];
+                                      options:0
+                                     progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                         // progression tracking code
+                                     }
+                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                        if (image) {
+                                            height = [self loadImages:image andHeight:height];
+                                        }
+                                    }];
             }
         }
-   }else{
-       _paramesTable = [UITableView new];
-       _paramesTable.delegate = self;
-       _paramesTable.dataSource = self;
-       [_paramesTable setTableFooterView:[[UIView alloc]init]];
-       _paramesTable.rowHeight = UITableViewAutomaticDimension;
-       _paramesTable.estimatedRowHeight = 60;
-       [_imgTextView addSubview:_paramesTable];
-       
-       [_paramesTable mas_makeConstraints:^(MASConstraintMaker *make) {
+    }else{
+        _paramesTable = [UITableView new];
+        _paramesTable.delegate = self;
+        _paramesTable.dataSource = self;
+        [_paramesTable setTableFooterView:[[UIView alloc]init]];
+        _paramesTable.rowHeight = UITableViewAutomaticDimension;
+        _paramesTable.estimatedRowHeight = 60;
+        [_imgTextView addSubview:_paramesTable];
+        
+        [_paramesTable mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(SCREEN_WIDTH);
             make.top.equalTo(self.segmented.mas_bottom).offset(10);
             make.left.equalTo(self.view.mas_left);
             make.height.mas_equalTo(_paramesTable.contentSize.height);
         }];
-       [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.width.mas_equalTo(SCREEN_WIDTH);
-           make.top.equalTo(self.segmented.mas_bottom).offset(10);
-           make.left.equalTo(self.view.mas_left);
-           make.bottom.equalTo(_paramesTable.mas_bottom).offset(8);
-       }];
-       [self.nilImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_imgTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.top.equalTo(self.segmented.mas_bottom).offset(10);
+            make.left.equalTo(self.view.mas_left);
+            make.bottom.equalTo(_paramesTable.mas_bottom).offset(8);
+        }];
+        [self.nilImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(self.imgTextView.mas_height);
         }];
-   }
+    }
 }
 
 #pragma mark - tableView
@@ -324,19 +348,28 @@
  * http:app.czctgw.com/api/shoppingcart/
  */
 - (IBAction)addShoppingCar:(id)sender {
-    _choseProductView.defineBtn.hidden = NO;
-    _choseProductView.addShoppingCarBtn.hidden = YES;
-    _choseProductView.buyNowBtn.hidden = YES;
-    [self showChoseView];
+    if (kAccountObject == nil) {
+        [self goToLoginVC];
+    }else{
+        _choseProductView.defineBtn.hidden = NO;
+        _choseProductView.addShoppingCarBtn.hidden = YES;
+        _choseProductView.buyNowBtn.hidden = YES;
+        [self showChoseView];
+    }
 }
 /**
  *	弹出选择页面
  */
 - (IBAction)choseSpecification:(id)sender {
-    _choseProductView.defineBtn.hidden = YES;
-    _choseProductView.addShoppingCarBtn.hidden = NO;
-    _choseProductView.buyNowBtn.hidden = NO;
-    [self showChoseView];
+    if (kAccountObject == nil) {
+        [self goToLoginVC];
+    }else{
+        _choseProductView.defineBtn.hidden = YES;
+        _choseProductView.addShoppingCarBtn.hidden = NO;
+        _choseProductView.buyNowBtn.hidden = NO;
+        [self showChoseView];
+    };
+    
 }
 
 /**
@@ -351,6 +384,24 @@
     } completion:^(BOOL finished) {
         
     }];
+}
+
+
+-(void)goToLoginVC{
+    LoginViewController *loginController=[[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    UINavigationController *newNVC = [[UINavigationController alloc]initWithRootViewController:loginController];
+    newNVC.navigationBarHidden = YES;
+    newNVC.tabBarItem.title = @"登 录";
+    newNVC.tabBarItem.image = [UIImage imageNamed:@"icon-grzx-1"];
+    newNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber];
+    
+    loginController.dismissView = ^(BOOL isSuccess){
+        if (!isSuccess) {
+            self.tabBarController.selectedIndex = kLastSelectedIndex;//登录失败，调回上一个界面
+        }
+    };
+    //调用此方法显示模态窗口
+    [self presentViewController:newNVC animated:YES completion:nil];
 }
 
 

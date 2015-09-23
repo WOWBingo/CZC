@@ -20,7 +20,7 @@
 
 //@property(nonatomic ,strong)AccoutObject *accoutObject;
 
--(IBAction)backFucntion:(id)sender;
+//-(IBAction)backFucntion:(id)sender;
 
 
 - (void)goToLoginVC;

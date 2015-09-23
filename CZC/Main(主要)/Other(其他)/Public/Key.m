@@ -17,6 +17,7 @@ NSString *const kRequestTimedOutError  = @"请求超时，请检查连接网络"
 NSString *const kAuthenticationError  = @"认证失败，请检查网络连接";
 
 NSString *const kPublic_URL = @"http://app.czctgw.com/";
+NSString *const kImage_URL = @"http://www.czctgw.com";
 
 /**1.平台首页新品，推荐，热卖，精品 type=2&sorts=ModifyTime&isASC=true&pageIndex=1&pageCount=5&CityDomainName=wuhan */
 NSString *const kHomeNewAdMore_URL = @"api/product2/type/?";

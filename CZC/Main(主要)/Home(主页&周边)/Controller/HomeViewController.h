@@ -14,10 +14,12 @@
 @interface HomeViewController:PublicViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) UIView *searchView;
-@property (nonatomic ,strong) NSMutableArray *dataList;
 @property (nonatomic ,strong) NSArray *homeImagesArray;/**< 首页轮播展示图片*/
 @property (nonatomic ,strong) UIBarButtonItem *leftItem;
 @property (nonatomic) BOOL isHomePage;
+
+@property (nonatomic ,strong) NSMutableArray *hundredProdcutList;/**< 百元推荐*/
+@property (nonatomic ,strong) NSMutableArray *louCengList;/**< 楼层数据*/
 
 @property (strong, nonatomic) ZDYScrollView *headView;
 

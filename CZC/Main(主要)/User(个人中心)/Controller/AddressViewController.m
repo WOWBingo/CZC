@@ -154,7 +154,6 @@
 -(void)deleteAddress:(AddressObject *)addressObj andCellIndex:(NSInteger)cellIndex{
 #pragma mark - 18.删除收货地址
     /** 18.删除收货地址     http://app.czctgw.com//api/address/del/33e36e94-a2e2-4900-aa2a-58a65af5df91?t=1&MemLoginID=liuxing */
-    NSString *melogin = @"liuxing";
     NSString *temp = [NSString stringWithFormat:@"MemLoginID=%@",kAccountObject.memLoginID];
     NSString *params = [NSString stringWithFormat:@"%@?t=1&%@",addressObj.guid,temp];
     [CZCService GETmethod:kAddressDefaultDel_URL andParameters:params andHandle:^(NSDictionary *myresult) {

@@ -38,7 +38,7 @@
     NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
-            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            //NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
             NSArray *dataArr = [myresult objectForKey:@"Data"];
             NSArray *list = [CollectShopObject objectArrayWithKeyValuesArray:dataArr];
             NSLog(@"25.店铺收藏列表  ------%@",list);

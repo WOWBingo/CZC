@@ -24,6 +24,7 @@ UIKIT_EXTERN NSString *const kAuthenticationError;
 
 /** 接口地址 */
 UIKIT_EXTERN NSString *const kPublic_URL;
+UIKIT_EXTERN NSString *const kImage_URL;
 
 /**1.平台首页新品，推荐，热卖，精品 */
 UIKIT_EXTERN NSString *const kHomeNewAdMore_URL;

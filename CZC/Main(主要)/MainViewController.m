@@ -74,7 +74,7 @@
     setNVC.navigationBarHidden = YES;
     setNVC.tabBarItem.title = @"个人中心";
     setNVC.tabBarItem.image = [UIImage imageNamed:@"icon-grzx-1"];
-    setNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",[UIApplication sharedApplication].applicationIconBadgeNumber];
+    setNVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber];
 
     self.viewControllers = @[homeNVC,LogisticsNVC,nearNVC,shoppingCarNVC,setNVC];
     self.selectedIndex = 0;
@@ -89,7 +89,7 @@
     if (tabIndex != self.selectedIndex) {
         //设置最近一次变更
         kLastSelectedIndex = self.selectedIndex;
-        NSLog(@"2 OLD:%ld , NEW:%ld",kLastSelectedIndex,tabIndex);
+        NSLog(@"2 OLD:%ld , NEW:%ld",(long)kLastSelectedIndex,(long)tabIndex);
     }
 }
 

@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self.contentView addSubview:self.payMethodBtn];
     //    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGes:)];
     //    [self.view addGestureRecognizer:pan];
 }
@@ -107,4 +108,9 @@
 
 
 
+- (IBAction)selectPayMethod:(id)sender {
+    _paymentObject = [_paymentList objectAtIndex:0];
+    self.payment(_paymentObject);
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

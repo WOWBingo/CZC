@@ -229,6 +229,9 @@
 		192EC4DC1BAE92C600665EBB /* CustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 192EC4DA1BAE92C600665EBB /* CustomTransition.m */; settings = {ASSET_TAGS = (); }; };
 		192EC4E01BAE935A00665EBB /* PayMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192EC4DE1BAE935A00665EBB /* PayMethodViewController.m */; settings = {ASSET_TAGS = (); }; };
 		192EC4E11BAE935A00665EBB /* PayMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192EC4DF1BAE935A00665EBB /* PayMethodViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		194DCA111BB24EBF00E0C640 /* HundredAreaProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DCA101BB24EBF00E0C640 /* HundredAreaProductObject.m */; settings = {ASSET_TAGS = (); }; };
+		194DCA141BB2587700E0C640 /* LouCengObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DCA131BB2587700E0C640 /* LouCengObject.m */; settings = {ASSET_TAGS = (); }; };
+		194DCA171BB2726200E0C640 /* LouCengProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DCA161BB2726200E0C640 /* LouCengProductObject.m */; settings = {ASSET_TAGS = (); }; };
 		1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952A66F1B77379D0020F760 /* SpecificationObject.m */; };
 		196285B81B9FBBE400D7AC55 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196285B61B9FBBE400D7AC55 /* ConfirmOrderViewController.m */; };
 		196285B91B9FBBE400D7AC55 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196285B71B9FBBE400D7AC55 /* ConfirmOrderViewController.xib */; };
@@ -623,6 +626,12 @@
 		192EC4DD1BAE935A00665EBB /* PayMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMethodViewController.h; sourceTree = "<group>"; };
 		192EC4DE1BAE935A00665EBB /* PayMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMethodViewController.m; sourceTree = "<group>"; };
 		192EC4DF1BAE935A00665EBB /* PayMethodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayMethodViewController.xib; sourceTree = "<group>"; };
+		194DCA0F1BB24EBF00E0C640 /* HundredAreaProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HundredAreaProductObject.h; path = Object/HundredAreaProductObject.h; sourceTree = "<group>"; };
+		194DCA101BB24EBF00E0C640 /* HundredAreaProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HundredAreaProductObject.m; path = Object/HundredAreaProductObject.m; sourceTree = "<group>"; };
+		194DCA121BB2587700E0C640 /* LouCengObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LouCengObject.h; path = Object/LouCengObject.h; sourceTree = "<group>"; };
+		194DCA131BB2587700E0C640 /* LouCengObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LouCengObject.m; path = Object/LouCengObject.m; sourceTree = "<group>"; };
+		194DCA151BB2726200E0C640 /* LouCengProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LouCengProductObject.h; path = Object/LouCengProductObject.h; sourceTree = "<group>"; };
+		194DCA161BB2726200E0C640 /* LouCengProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LouCengProductObject.m; path = Object/LouCengProductObject.m; sourceTree = "<group>"; };
 		1952A66E1B77379D0020F760 /* SpecificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecificationObject.h; path = Object/SpecificationObject.h; sourceTree = "<group>"; };
 		1952A66F1B77379D0020F760 /* SpecificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecificationObject.m; path = Object/SpecificationObject.m; sourceTree = "<group>"; };
 		19618C891BAA9155004C71C5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -769,6 +778,12 @@
 				19FCDF331BA2FFEB00B0626E /* ZDYPrintObject.m */,
 				184083C41BAD1D5E00432FFB /* RegionObject.h */,
 				184083C51BAD1D5E00432FFB /* RegionObject.m */,
+				194DCA0F1BB24EBF00E0C640 /* HundredAreaProductObject.h */,
+				194DCA101BB24EBF00E0C640 /* HundredAreaProductObject.m */,
+				194DCA121BB2587700E0C640 /* LouCengObject.h */,
+				194DCA131BB2587700E0C640 /* LouCengObject.m */,
+				194DCA151BB2726200E0C640 /* LouCengProductObject.h */,
+				194DCA161BB2726200E0C640 /* LouCengProductObject.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -1464,7 +1479,7 @@
 		192768CC1B48442F00B86141 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "周德艺";
 				TargetAttributes = {
 					192768D31B48442F00B86141 = {
@@ -1663,6 +1678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194DCA141BB2587700E0C640 /* LouCengObject.m in Sources */,
 				1902C7C61B773648009C7A33 /* SpecificationAllObject.m in Sources */,
 				1888B4861B930355006E3165 /* PotintsDetailsTableViewCell.m in Sources */,
 				1888B4721B92E88A006E3165 /* AccountRechargeViewController.m in Sources */,
@@ -1719,6 +1735,7 @@
 				192BC9961B88BC48003B8328 /* UserInfoViewController.m in Sources */,
 				1888B4811B930282006E3165 /* PotintsDetailsViewController.m in Sources */,
 				192BC9511B88BC48003B8328 /* ProductTableInfoCell.m in Sources */,
+				194DCA171BB2726200E0C640 /* LouCengProductObject.m in Sources */,
 				192BC9661B88BC48003B8328 /* RefreshLocation.m in Sources */,
 				192BC9611B88BC48003B8328 /* CZCAPIService.m in Sources */,
 				1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */,
@@ -1754,6 +1771,7 @@
 				1977FDA01B775D7A000A8D26 /* AddressObject.m in Sources */,
 				192BC9671B88BC48003B8328 /* SvGridView.m in Sources */,
 				1848CACA1BA2F79500C27206 /* OrderDetailHeadView.m in Sources */,
+				194DCA111BB24EBF00E0C640 /* HundredAreaProductObject.m in Sources */,
 				1902C7C31B75B4CD009C7A33 /* ObjectMapping.m in Sources */,
 				192BC9631B88BC48003B8328 /* PublicObject.m in Sources */,
 				192EC4E01BAE935A00665EBB /* PayMethodViewController.m in Sources */,
@@ -1863,6 +1881,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1935,15 +1954,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bo Zheng (26QDUYT866)";
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.desheng.CZC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
@@ -1958,15 +1975,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Bo Zheng (26QDUYT866)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bo Zheng (26QDUYT866)";
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CZC/CZC-PrefixHeader.pch";
 				INFOPLIST_FILE = CZC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.desheng.CZC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "01eeb369-e98d-47eb-8b3b-edf4e7b231ec";
@@ -1979,16 +1994,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = CZCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.desheng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CZC.app/CZC";
@@ -2001,12 +2014,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CZCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.desheng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CZC.app/CZC";

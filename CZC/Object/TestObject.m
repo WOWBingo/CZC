@@ -37,7 +37,7 @@
      *	http://app.czctgw.com/api/product2/type/?type=0&sorts=ModifyTime&isASC=true&pageIndex=1&pageCount=5&CityDomainName=gy
      
      */
-    NSString *params = [NSString stringWithFormat:@"type=0&sorts=ModifyTime&isASC=true&pageIndex=1&pageCount=5&CityDomainName=gy"];
+    //NSString *params = [NSString stringWithFormat:@"type=0&sorts=ModifyTime&isASC=true&pageIndex=1&pageCount=5&CityDomainName=gy"];
 //    [CZCService GETmethod:kHomeNewAdMore_URL andParameters:params andHandle:^(NSDictionary *myresult) {
 //        NSDictionary *result = myresult;
 //        if (result) {

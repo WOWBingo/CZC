@@ -65,7 +65,7 @@
     NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5 ",kAccountObject.memLoginID];
     [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
-            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            //NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
             NSArray *dataArr = [myresult objectForKey:@"Data"];
             NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
             NSLog(@"23.产品收藏列表 ------%@",list);

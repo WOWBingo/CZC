@@ -50,7 +50,7 @@
 - (void)reloadSelfView {
     //全部完成，取消转转转
     _endNumber++;
-    if (_endNumber == 3+_selectedShopList.count*2) {
+    if (_endNumber == 3 + _selectedShopList.count * 2) {
         [self dismissHUDEnd];
     }
     //如果只有一家店，订单号等于交易号
@@ -61,10 +61,11 @@
     _allShouldPayPrice = 0.0f;
     for (int n = 0; n < _selectedShopList.count; n++) {
         ShopCarObject *shopObject = [_selectedShopList objectAtIndex:n];
-        _allShouldPayPrice += (shopObject.price+shopObject.dispatchPrice);
+        _allShouldPayPrice += (shopObject.price + shopObject.dispatchPrice);
     }
     //刷新界面
-    [self.allPriceLab setText:[NSString stringWithFormat:@"%.2f",_allShouldPayPrice]];
+    [self.allPriceLab
+     setText:[NSString stringWithFormat:@"%.2f", _allShouldPayPrice]];
     [self.tableView reloadData];
 }
 
@@ -243,11 +244,11 @@
             if (i == 0) {
                 params =
                 [NSString stringWithFormat:@"%@%@,%ld", params, productObject.guid,
-                 productObject.buyNumber];
+                 (long)productObject.buyNumber];
             } else {
                 params =
                 [NSString stringWithFormat:@"%@|%@,%ld", params, productObject.guid,
-                 productObject.buyNumber];
+                 (long)productObject.buyNumber];
             }
         }
         params = [NSString
@@ -317,12 +318,12 @@
                           @"Mobile" : _addressObj.mobile,
                           @"PaymentGuid" : _paymentObject.guid,
                           @"OutOfStockOperate" : @"",
-                          @"ClientToSellerMsg" : shopObject.messageStr,             //留言
-                          @"RegionCode" : _addressObj.addressCode, //配送区域编码
-                          @"PostType" :
-                              [NSString stringWithFormat:@"%ld", shopObject.dispatchType], //快递方式
-                          @"orderPrice" : @"",   //订单价格
-                          @"ProductPrice" : @"", //产品价格
+                          @"ClientToSellerMsg" : shopObject.messageStr, //留言
+                          @"RegionCode" : _addressObj.addressCode,      //配送区域编码
+                          @"PostType" : [NSString
+                                         stringWithFormat:@"%ld", (long)shopObject.dispatchType], //快递方式
+                          @"orderPrice" : @"",                                        //订单价格
+                          @"ProductPrice" : @"",                                      //产品价格
                           @"DispatchPrice" :
                               [NSString stringWithFormat:@"%f", shopObject.dispatchPrice], //邮费
                           @"ShouldPayPrice" : shouldPayPrice,                              //应支付
@@ -347,8 +348,10 @@
         for (int n = 0; n < _selectedShopList.count; n++) {
             ShopCarObject *shopObject = [_selectedShopList objectAtIndex:n];
             NSString *orderNumber = [_orderNumberList objectAtIndex:n];
-//            ConfirmOrderOtherCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:shopObject.count inSection:n+1]];
-//            shopObject.messageStr = cell.messageTextField.text;
+            //            ConfirmOrderOtherCell *cell = [self.tableView
+            //            cellForRowAtIndexPath:[NSIndexPath
+            //            indexPathForRow:shopObject.count inSection:n+1]];
+            //            shopObject.messageStr = cell.messageTextField.text;
             
             NSMutableDictionary *parameters =
             [self createOrderDictionary:shopObject orderNumber:orderNumber];
@@ -372,23 +375,34 @@
                                  _selectedShopList.count) {
                                  [self dismissHUDEnd];
                                  if (_failShopList.count == 0) {
-                                     [self showHUDViewTitle:
-                                      [NSString
-                                       stringWithFormat:@"共%"
-                                       @"ld张订单提交成功，是"
-                                       @"否立即支付",
-                                       _successOrderList.count]
-                                                       info:@""
-                                                   andCodes:^{
-                                                       
-                                                   }];
+//                                     [self showHUDViewTitle:
+//                                      [NSString stringWithFormat:
+//                                       @"共%" @"ld张订单提交成功，是"
+//                                       @"否立即支付",
+//                                       (long)_successOrderList.count]
+//                                                       info:@""
+//                                                   andCodes:^{
+//                                                       
+//                                                   }];
+                                     UIAlertController *alertController = [UIAlertController
+                                                                           alertControllerWithTitle:@"是否立即支付"
+                                                                           message:[NSString stringWithFormat:
+                                                                                    @"共%" @"ld张订单提交成功"
+                                                                                    ,
+                                                                                    (long)_successOrderList.count]
+                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
+                                     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                                     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+                                     [alertController addAction:cancelAction];
+                                     [alertController addAction:okAction];
+                                     [self presentViewController:alertController animated:YES completion:nil];
                                  } else {
                                      [self showHUDViewTitle:
                                       [NSString stringWithFormat:
                                        @"共%" @"ld张订单提交成功，%"
                                        @"ld张失败，是否立即支" @"付",
-                                       _successOrderList.count,
-                                       _failShopList.count]
+                                       (long)_successOrderList.count,
+                                       (long)_failShopList.count]
                                                        info:@""
                                                    andCodes:^{
                                                        
@@ -554,7 +568,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                       proObject.specificationValue,
                       proObject.specificationName]];
             [cell.numberLabel
-             setText:[NSString stringWithFormat:@"x %ld", proObject.buyNumber]];
+             setText:[NSString
+                      stringWithFormat:@"x %ld", (long)proObject.buyNumber]];
             [cell.priceLabel
              setText:[NSString stringWithFormat:@"￥%.2f", proObject.buyPrice]];
             [cell.image
@@ -575,7 +590,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField{
+- (void)textFieldDidEndEditing:(UITextField *)textField {
     ShopCarObject *shopObject = [_selectedShopList objectAtIndex:textField.tag];
     shopObject.messageStr = textField.text;
 }
@@ -585,6 +600,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                       initWithNibName:@"PayMethodViewController"
                                       bundle:nil];
     newVC.paymentList = _paymentList;
+    newVC.payment = ^(PaymentObject *payment){
+        _paymentObject = payment;
+    };
     [self presentViewController:newVC
                        animated:YES
                      completion:^{

@@ -102,7 +102,7 @@
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger row = indexPath.row;
+    //NSInteger row = indexPath.row;
     static NSString *cellIdentifier = @"ProductTableInfoCell";
     ProductTableInfoCell *cell = (ProductTableInfoCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {

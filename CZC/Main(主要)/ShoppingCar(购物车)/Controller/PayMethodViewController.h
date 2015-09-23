@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaymentObject.h"
 
-@interface PayMethodViewController : UIViewController<UIViewControllerTransitioningDelegate>
+@interface PayMethodViewController
+    : UIViewController <UIViewControllerTransitioningDelegate>
 
-@property (nonatomic, strong) NSMutableArray *paymentList;
+@property(nonatomic, strong) NSMutableArray *paymentList;
+@property(nonatomic, strong) PaymentObject *paymentObject; /**< 支付方式 */
+@property(nonatomic, assign) void (^payment) (PaymentObject * paymentObject)
+    ; /**< 支付方式 */
+
+@property(weak, nonatomic) IBOutlet UIView *contentView;
+@property(strong, nonatomic) IBOutlet UIButton *payMethodBtn;
+- (IBAction)selectPayMethod:(id)sender;
 
 @end

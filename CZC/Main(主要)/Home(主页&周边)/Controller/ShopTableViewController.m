@@ -71,7 +71,7 @@
     NSString *params = @"pageIndex=1&pageCount=5&OderStatus=0&keyKeyword=&CityDomainName=gy";
     [CZCService GETmethod:kShops_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
-            NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+          //  NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
             NSArray *dataArr = [myresult objectForKey:@"Data"];
             NSArray *list = [ShopObject objectArrayWithKeyValuesArray:dataArr];
             NSLog(@"3.店铺搜索列表 ------%@",list);
