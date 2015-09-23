@@ -206,6 +206,9 @@ UIKIT_EXTERN NSString *const kMemberNowMessageList_URL;
 /** 59. 城市多用户首页轮播图片 */
 UIKIT_EXTERN NSString *const kShopGGlistIndex_URL;
 
+/** 60. 手机验证码 */
+UIKIT_EXTERN NSString *const kMobileVerifyCode_URL;
+
 #pragma mark - 常量
 UIKIT_EXTERN CGFloat const kHUDTime;
 UIKIT_EXTERN CGFloat const kAnimaTime;

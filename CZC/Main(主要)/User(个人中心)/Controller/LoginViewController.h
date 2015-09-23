@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AutoScrollView.h"
 @interface LoginViewController : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;

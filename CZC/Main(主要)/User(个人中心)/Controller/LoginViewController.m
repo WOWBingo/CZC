@@ -40,7 +40,7 @@
     // handleSwipeFrom 是偵測到手势，所要呼叫的方法
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:gesture];
+    [self.contentView addGestureRecognizer:gesture];
     
     //监听键盘状态
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -51,6 +51,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = YES;
 }
 //登录
 - (void)login {

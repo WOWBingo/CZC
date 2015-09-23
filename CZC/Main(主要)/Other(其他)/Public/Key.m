@@ -199,6 +199,8 @@ NSString *const kMemberNowMessageList_URL = @"api/membermessage/tomember/list/?"
 /** 59. 城市多用户首页轮播图片/api/ShopGGlistIndex/?CityDomianName=chengdu */
 NSString *const kShopGGlistIndex_URL = @"api/ShopGGlistIndex/?";
 
+/** 60. 注册获取手机验证码/Api/OpenApi/IntegralPro.ashx?method=SendCodeForCheck&memid=shop5&strMobile=15865656565*/
+NSString *const kMobileVerifyCode_URL = @"Api/OpenApi/IntegralPro.ashx?";
 
 NSString *const kSortsProModifyTime = @"ModifyTime";
 NSString *const kSortsProPrice = @"Price";
