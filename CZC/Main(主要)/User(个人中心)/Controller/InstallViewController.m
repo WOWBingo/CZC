@@ -9,6 +9,7 @@
 #import "InstallViewController.h"
 #import "InstallTimeTableViewCell.h"
 #import "TimeView.h"
+#import "AppDelegate.h"
 @interface InstallViewController ()
 
 @end
@@ -43,7 +44,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -57,6 +58,9 @@
             break;
         case 2:
             return 2;
+            break;
+        case 3:
+            return 1;
             break;
         default:
             return 0;
@@ -152,6 +156,26 @@
             }
         }
             break;
+        case 3:{
+            if (cell1 == nil) {
+                cell1 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier1] ;
+                cell1.backgroundColor = [UIColor whiteColor];
+                cell1.contentView.backgroundColor = [UIColor clearColor];
+                cell1.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                [cell1.textLabel setTextColor:[UIColor blackColor]];
+                cell1.textLabel.font = [UIFont systemFontOfSize:14];
+            }
+            UIButton *quitBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 7, SCREEN_WIDTH-40, 30)];
+            [quitBtn setBackgroundColor:[UIColor redColor]];
+            [quitBtn setTintColor:[UIColor whiteColor]];
+            [quitBtn setTitle:@"退  出" forState:UIControlStateNormal];
+            [quitBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+            quitBtn.layer.cornerRadius = quitBtn.frame.size.height / 2;
+            [quitBtn addTarget:self action:@selector(quitClick:) forControlEvents:UIControlEventTouchUpInside];
+            [cell1.contentView addSubview:quitBtn];
+        }
+            break;
         default:
             break;
     }
@@ -239,5 +263,12 @@
 }
 - (void)cancelTime:(NSNotification *)notification {
     self.timeView.hidden = YES;
+}
+-(void)quitClick{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:kAccoutInfo_Default];
+    [defaults synchronize];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
 }
 @end

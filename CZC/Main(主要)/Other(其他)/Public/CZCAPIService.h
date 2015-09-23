@@ -16,6 +16,9 @@
 + (CZCAPIService *)shareService;
 
 - (void)GETmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
+
+- (void)GETMethodWithWWW:(NSString *)urlStr andHandle:(void(^)(NSDictionary *myresult))handle;
+
 - (void)POSTmethod:(NSString *)methodName andParameters:(NSString *)parameters andHandle:(void(^)(NSDictionary *myresult))handle;
 
 - (void)POSTmethod:(NSString *)methodName andDicParameters:(NSDictionary *)parameters andHandle:(void (^)(NSDictionary *myresult))handle;

@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWP-ES-QVW">
-                        <rect key="frame" x="103" y="12" width="13" height="19"/>
+                        <rect key="frame" x="100" y="12" width="16" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="1oH-EI-36H"/>
-                            <constraint firstAttribute="width" constant="13" id="qyr-Rf-2vH"/>
+                            <constraint firstAttribute="width" constant="16" id="qyr-Rf-2vH"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,7 +57,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iWP-ES-QVW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="95" id="Fxq-yF-g2S"/>
+                    <constraint firstItem="iWP-ES-QVW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="92" id="Fxq-yF-g2S"/>
                     <constraint firstItem="iWP-ES-QVW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="Lm0-jV-gBw"/>
                     <constraint firstItem="Nr7-8T-jJ6" firstAttribute="leading" secondItem="iWP-ES-QVW" secondAttribute="trailing" constant="7" id="R4U-Ox-XFa"/>
                     <constraint firstItem="Vgj-u9-XEq" firstAttribute="leading" secondItem="kNm-p8-jwx" secondAttribute="trailing" constant="10" id="Rjy-vn-Ge0"/>

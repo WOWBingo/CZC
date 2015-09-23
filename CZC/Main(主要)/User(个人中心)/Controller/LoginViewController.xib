@@ -29,7 +29,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHK-4B-AHU" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="501"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="longin" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-br-Fbz">
                                     <rect key="frame" x="63" y="22" width="194" height="153"/>
                                 </imageView>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-h6-OUG">

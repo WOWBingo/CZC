@@ -420,7 +420,7 @@
     
     /** 21.判断用户是否存在 /api/account/userexist/111111 */
     
-#pragma mark - 22.用户注册
+#pragma mark - 22.用户注册！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 22.用户注册 /api/account/Regist */
 //    NSDictionary *accountDic = @{
 //                          @"MemLoginID" : @"zhou101",
@@ -436,7 +436,7 @@
 //            NSLog(@"失败");
 //        }
 //    }];
-//    
+//
 #pragma mark - 23.产品收藏列表！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
     /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
 //    params = @"MemLoginID=zh010101&pageIndex=1&pageCount=5 ";
@@ -667,7 +667,18 @@
 //                NSLog(@"失败");
 //            }
 //        }];
-    
+#pragma mark - 51.获取手机验证码！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！已用
+/** 49.获取省、市、区 http://app.czctgw.com/Api/CheckInfo.ashx?type=2&mobile=13545281377*/
+//        params = @"0";
+//        [CZCService GETmethod:kMobileVerifyCode_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//            if (myresult) {
+//                NSLog(@" 验证码 ------%@",myresult);
+//            }
+//            else{
+//                NSLog(@"失败");
+//            }
+//        }];
+
 }
 /**
  *	Dci转JSON字符串

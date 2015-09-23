@@ -24,7 +24,9 @@
 + (UIImage *)fixOrientation:(UIImage *)aImage;//图片旋转
 
 + (NSString*)DataTOjsonString:(id)object;
-
++ (BOOL)validateMobile:(NSString *)mobile;//手机号验证
++ (BOOL)validateCardNo:(NSString *)cardNo;//身份证号验证
++ (BOOL)validatePassword:(NSString *)password;//密码验证
 /**
  *	获取用户信息
  *

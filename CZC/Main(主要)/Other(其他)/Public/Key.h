@@ -24,7 +24,7 @@ UIKIT_EXTERN NSString *const kAuthenticationError;
 
 /** 接口地址 */
 UIKIT_EXTERN NSString *const kPublic_URL;
-
+UIKIT_EXTERN NSString *const kImage_URL;
 /**1.平台首页新品，推荐，热卖，精品 */
 UIKIT_EXTERN NSString *const kHomeNewAdMore_URL;
 
@@ -204,6 +204,9 @@ UIKIT_EXTERN NSString *const kMemberNowMessageList_URL;
 
 /** 59. 城市多用户首页轮播图片 */
 UIKIT_EXTERN NSString *const kShopGGlistIndex_URL;
+
+/** 60. 手机验证码 */
+UIKIT_EXTERN NSString *const kMobileVerifyCode_URL;
 
 #pragma mark - 常量
 UIKIT_EXTERN CGFloat const kHUDTime;
