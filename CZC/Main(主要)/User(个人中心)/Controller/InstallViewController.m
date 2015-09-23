@@ -172,7 +172,7 @@
             [quitBtn setTitle:@"退  出" forState:UIControlStateNormal];
             [quitBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
             quitBtn.layer.cornerRadius = quitBtn.frame.size.height / 2;
-            [quitBtn addTarget:self action:@selector(quitClick:) forControlEvents:UIControlEventTouchUpInside];
+            [quitBtn addTarget:self action:@selector(quitClick) forControlEvents:UIControlEventTouchUpInside];
             [cell1.contentView addSubview:quitBtn];
         }
             break;
@@ -268,7 +268,12 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:kAccoutInfo_Default];
     [defaults synchronize];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
+    kAccountObject  = [PublicObject getAccoutInfoDefault];
+    [self showHUDViewTitle:@"退出成功" info:@"" andCodes:^{
+        
+    }];
+    [self dismissViewControllerAnimated:YES completion:^{}];
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
 }
 @end

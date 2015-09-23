@@ -39,6 +39,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = YES;
+    [self.tableView reloadData];
 }
 -(void)viewDidAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
@@ -155,6 +156,11 @@
             cell1.nameLab.text = [NSString stringWithFormat:@"%@",kAccountObject.name];
             cell1.proCollectNumLab.text = [NSString stringWithFormat:@"%d",self.proCollectNum];
             cell1.shopCollectNumLab.text = [NSString stringWithFormat:@"%d",self.shopCollectNum];
+            [cell1.iconView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kImage_URL,kAccountObject.photo]] placeholderImage:[UIImage imageNamed:@"imagedefault"]];
+            if (kAccountObject == nil) {
+                cell1.nameLab.text = @"";
+                //cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)kAccountObject.memberRank];
+            }
         }
             return cell1;
             break;
