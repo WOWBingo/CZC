@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePhoneValidateThreeViewController : UIViewController
+@interface ChangePhoneValidateThreeViewController : PublicViewController
 
 @end

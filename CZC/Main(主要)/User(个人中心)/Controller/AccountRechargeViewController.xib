@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountRechargeViewController">
@@ -14,6 +14,7 @@
                 <outlet property="secondView" destination="383-qy-DNs" id="ixY-D3-o5l"/>
                 <outlet property="secondView_Btn" destination="Fu8-AT-J98" id="RNd-oa-8Uo"/>
                 <outlet property="secondView_arrowImg" destination="6I7-dV-I0a" id="ioB-IC-k8r"/>
+                <outlet property="secondView_textField" destination="nWT-Nl-0ay" id="4iK-Vc-NYu"/>
                 <outlet property="secondView_titleLab" destination="q5m-Md-np1" id="sEY-k8-YDz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,6 +43,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="xPe-sq-uFm"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,12 +61,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="383-qy-DNs">
                     <rect key="frame" x="0.0" y="45" width="320" height="100"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWT-Nl-0ay">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择支付方式" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWT-Nl-0ay">
                             <rect key="frame" x="80" y="4" width="225" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="jGF-61-9HD"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzm-9t-SrO">
@@ -82,13 +86,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu8-AT-J98">
-                            <rect key="frame" x="78" y="5" width="120" height="29"/>
+                            <rect key="frame" x="100" y="7" width="120" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="29" id="5RY-Eo-tZx"/>
+                                <constraint firstAttribute="height" constant="25" id="5RY-Eo-tZx"/>
                                 <constraint firstAttribute="width" constant="120" id="sev-DS-ne5"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="支付宝">
+                            <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -119,15 +123,15 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Fu8-AT-J98" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="5" id="0Aq-ZQ-Qs0"/>
+                        <constraint firstItem="Fu8-AT-J98" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="7" id="0Aq-ZQ-Qs0"/>
                         <constraint firstAttribute="trailing" secondItem="6I7-dV-I0a" secondAttribute="trailing" constant="21" id="Aia-NL-lSx"/>
                         <constraint firstItem="q5m-Md-np1" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="8" id="G7T-0o-6Uh"/>
                         <constraint firstItem="Nzm-9t-SrO" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="4" id="Kic-Pp-4pq"/>
                         <constraint firstItem="Nzm-9t-SrO" firstAttribute="leading" secondItem="q5m-Md-np1" secondAttribute="trailing" constant="16" id="M8U-D4-qO6"/>
                         <constraint firstItem="VDq-ag-UjU" firstAttribute="leading" secondItem="383-qy-DNs" secondAttribute="leading" constant="70" id="NBB-i7-4Bn"/>
-                        <constraint firstItem="VDq-ag-UjU" firstAttribute="top" secondItem="Fu8-AT-J98" secondAttribute="bottom" constant="28" id="Q2m-5J-jQS"/>
+                        <constraint firstItem="VDq-ag-UjU" firstAttribute="top" secondItem="Fu8-AT-J98" secondAttribute="bottom" constant="30" id="Q2m-5J-jQS"/>
                         <constraint firstItem="6I7-dV-I0a" firstAttribute="top" secondItem="383-qy-DNs" secondAttribute="top" constant="14" id="Ty0-Ld-RDH"/>
-                        <constraint firstItem="Fu8-AT-J98" firstAttribute="leading" secondItem="q5m-Md-np1" secondAttribute="trailing" constant="14" id="Yq0-yf-SHO"/>
+                        <constraint firstItem="Fu8-AT-J98" firstAttribute="leading" secondItem="q5m-Md-np1" secondAttribute="trailing" constant="36" id="Yq0-yf-SHO"/>
                         <constraint firstAttribute="height" constant="100" id="fLu-zs-RGf"/>
                         <constraint firstItem="q5m-Md-np1" firstAttribute="leading" secondItem="383-qy-DNs" secondAttribute="leading" constant="8" id="fUO-uY-CE5"/>
                         <constraint firstAttribute="trailing" secondItem="VDq-ag-UjU" secondAttribute="trailing" constant="70" id="g1g-Yj-WFC"/>

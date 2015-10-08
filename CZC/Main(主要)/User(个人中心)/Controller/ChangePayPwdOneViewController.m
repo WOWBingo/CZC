@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"修改支付密码";
+        self.navigationItem.leftBarButtonItem = self.backMenuItem;
     // Do any additional setup after loading the view from its nib.
 }
 

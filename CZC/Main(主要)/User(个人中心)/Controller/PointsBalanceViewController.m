@@ -59,7 +59,6 @@
         NSArray *nibArray = [bundle loadNibNamed:CellIdentifier owner:self options:nil];
         cell = (AccountBalanceTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     switch (indexPath.row) {
         case 0:
@@ -73,6 +72,7 @@
         {
             cell.titleLab.text = @"积分明细";
             cell.infoLab.hidden = YES;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
             break;
         default:

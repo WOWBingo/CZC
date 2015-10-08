@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"修改手机验证";
+    self.navigationItem.leftBarButtonItem = self.backMenuItem;
     // Do any additional setup after loading the view from its nib.
 }
 

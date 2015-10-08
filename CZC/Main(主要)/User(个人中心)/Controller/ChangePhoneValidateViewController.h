@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePhoneValidateViewController : UIViewController
+@interface ChangePhoneValidateViewController : PublicViewController
 
 - (IBAction)nextStepClick:(id)sender;
 @end

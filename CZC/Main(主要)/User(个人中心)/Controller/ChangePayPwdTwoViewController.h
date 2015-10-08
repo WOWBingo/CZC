@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePayPwdTwoViewController : UIViewController
+@interface ChangePayPwdTwoViewController : PublicViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *payPwdLab;
 @property (weak, nonatomic) IBOutlet UITextField *payMakeSureLab;

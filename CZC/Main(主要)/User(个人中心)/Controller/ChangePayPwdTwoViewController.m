@@ -16,14 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //修改textfield边框
-    [self.payPwdLab setBorderStyle:UITextBorderStyleLine];
-    self.payPwdLab.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
-    self.payPwdLab.layer.borderWidth = 0.5;
-    
-    [self.payMakeSureLab setBorderStyle:UITextBorderStyleLine];
-    self.payMakeSureLab.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
-    self.payMakeSureLab.layer.borderWidth = 0.5;
+    self.title = @"修改支付密码";
+    self.navigationItem.leftBarButtonItem = self.backMenuItem;
 }
 
 - (void)didReceiveMemoryWarning {

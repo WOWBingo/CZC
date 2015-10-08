@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.title = @"账户充值";
     self.firstView_textField.keyboardType = UIKeyboardTypeNumberPad;
+    self.chooseIndex = 0; //1支付宝  2银联  0什么都没选
 
     // handleSwipeFrom 是偵測到手势，所要呼叫的方法
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
@@ -51,6 +52,8 @@
     self.rechargeView.backgroundColor = [UIColor clearColor];
     
     self.rechargeView.delegate = self;
+    NSLog(@"%d",self.chooseIndex);
+    self.rechargeView.chooseIndex = self.chooseIndex;
     //添加手势
     UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.rechargeView addGestureRecognizer:singleTap];
@@ -76,6 +79,36 @@
     
 }
 -(void)changeRecharge:(NSInteger)btnTag{
+    [self hidenKeyboard];
     NSLog(@"%ld",(long)btnTag);
+    self.secondView_textField.placeholder = @"";
+    switch (btnTag) {
+        case 0:
+            [self.secondView_Btn setBackgroundImage:[UIImage imageNamed:@"zfbSmall.png"] forState:UIControlStateNormal];
+            self.chooseIndex = 1;
+            break;
+        case 1:
+            [self.secondView_Btn setBackgroundImage:[UIImage imageNamed:@"ylSmall.png"] forState:UIControlStateNormal];
+            self.chooseIndex = 2;
+            break;
+        default:
+            break;
+    }
+    //隐藏
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *mbV in appDelegate.window.subviews) {
+        if ([mbV isKindOfClass:[RechargeView class]]) {
+            mbV.hidden = YES;
+        }
+    }
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    //隐藏
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *mbV in appDelegate.window.subviews) {
+        if ([mbV isKindOfClass:[RechargeView class]]) {
+            mbV.hidden = YES;
+        }
+    }
 }
 @end

@@ -275,5 +275,8 @@
     [self dismissViewControllerAnimated:YES completion:^{}];
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
+    NSLog(@"%@",[defaults objectForKey:kAccoutInfo_Default]);
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
 }
 @end

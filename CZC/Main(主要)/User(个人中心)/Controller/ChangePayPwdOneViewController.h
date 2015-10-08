@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePayPwdOneViewController : UIViewController
+@interface ChangePayPwdOneViewController : PublicViewController
 
 - (IBAction)nextStepClick:(id)sender;
 @end

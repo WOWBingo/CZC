@@ -150,6 +150,7 @@
                 [cell1.shopCollectBtn addTarget:self action:@selector(shopCollectVC:) forControlEvents:UIControlEventTouchUpInside];
             }
             //加载数据
+            [cell1.popNewsBtn setTitle:[NSString stringWithFormat:@"%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber] forState:UIControlStateNormal];
             cell1.vipTypeLab.font = [UIFont systemFontOfSize:12];
             cell1.vipTypeLab.text = [NSString stringWithFormat:@"%ld",(long)kAccountObject.memberRank];
             cell1.vipNumLab.hidden = YES;

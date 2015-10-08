@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改手机验证";
+    self.navigationItem.leftBarButtonItem = self.backMenuItem;
 }
 
 - (void)didReceiveMemoryWarning {

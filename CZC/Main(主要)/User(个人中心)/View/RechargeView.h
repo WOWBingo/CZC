@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *ylImgBtn;
 @property (nonatomic,assign)id <RechargeViewDelegate>delegate;
 
+@property (nonatomic) int chooseIndex;//保存选中的哪一个
 - (IBAction)chooseZfbClick:(id)sender;
 - (IBAction)chooseYlClick:(id)sender;
 @end

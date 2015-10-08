@@ -10,6 +10,7 @@
 
 @interface SetTitleTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *popBtn;
+@property (weak, nonatomic) IBOutlet UIButton *popNewsBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *vipTypeLab;

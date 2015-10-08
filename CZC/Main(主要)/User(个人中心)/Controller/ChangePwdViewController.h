@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePwdViewController : UIViewController
+@interface ChangePwdViewController : PublicViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *oldPwdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nowPwdTextField;
