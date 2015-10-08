@@ -40,7 +40,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
-
+-(void)viewDidDisappear:(BOOL)animated{
+    [_pickview remove];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,7 +52,7 @@
     if (img != nil) {
         [self.iconBtn setImage:img forState:UIControlStateNormal];
     } else {
-        [self.iconBtn setImage:[UIImage imageNamed:@"cpsc-p1"] forState:UIControlStateNormal];
+        [self.iconBtn setImage:[UIImage imageNamed:@"imagedefault"] forState:UIControlStateNormal];
     }
 }
 #pragma mark - Table view data source
@@ -108,9 +110,9 @@
                 //                [self.iconBtn sd_setImageWithURL:[NSURL URLWithString:imgurl] forState:UIControlStateNormal placeholderImage:self.photo];
                 //加载图片
                 NSString *imgURL = @"";
-                imgURL = [PublicObject convertNullString:kAccountObject.url];
+                imgURL = [PublicObject convertNullString:kAccountObject.photo];
                 if ([imgURL isEqualToString:@""]||imgURL == nil) {
-                    [self.iconBtn setImage:[UIImage imageNamed:@"cpsc-p1"] forState:UIControlStateNormal];
+                    [self.iconBtn setImage:[UIImage imageNamed:@"imagedefault"] forState:UIControlStateNormal];
                 } else {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                         NSString *urlString = [NSString stringWithFormat:@"%@",imgURL];

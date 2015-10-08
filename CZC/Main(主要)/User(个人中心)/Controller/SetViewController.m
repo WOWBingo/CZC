@@ -32,14 +32,18 @@
     [super viewDidLoad];
     //设置tableView的cel有内容时显示分割线，无内容时，不显示分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
-//    [self getUserInfo];
+    //    [self getUserInfo];
     [self getProCollectNum];
     [self getshopCollectNum];
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = YES;
-    [self.tableView reloadData];
+    if (kAccountObject == nil) {
+        [self goToLoginVC];
+    }else{
+        [self.tableView reloadData];
+    }
 }
 -(void)viewDidAppear:(BOOL)animated{
     self.parentViewController.tabBarController.tabBar.hidden = NO;
@@ -70,14 +74,14 @@
 //}
 #pragma mark - 23.产品收藏列表
 -(void)getProCollectNum{
-/** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
+    /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
     NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
-//            NSArray *dataArr = [myresult objectForKey:@"Data"];
-//            NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
-//            NSLog(@"23.产品收藏列表 ------%@",list);
+            //            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            //            NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
+            //            NSLog(@"23.产品收藏列表 ------%@",list);
             self.proCollectNum = (int)count;
             [self.tableView reloadData];
         }
@@ -88,14 +92,14 @@
 }
 -(void)getshopCollectNum{
 #pragma mark - 25.店铺收藏列表
-/** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
+    /** 25.店铺收藏列表 http://app.czctgw.com/api/ShopCollectList?MemLoginID=s1886&pageIndex=1&pageCount=5 */
     NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=5",kAccountObject.memLoginID];
     [CZCService GETmethod:kShopCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
-//            NSArray *dataArr = [myresult objectForKey:@"Data"];
-//            NSArray *list = [CollectShopObject objectArrayWithKeyValuesArray:dataArr];
-//            NSLog(@"25.店铺收藏列表  ------%@",list);
+            //            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            //            NSArray *list = [CollectShopObject objectArrayWithKeyValuesArray:dataArr];
+            //            NSLog(@"25.店铺收藏列表  ------%@",list);
             self.shopCollectNum = (int)count;
             [self.tableView reloadData];
         }
@@ -294,7 +298,7 @@
                 AddressViewController *addressVC = [[AddressViewController alloc]initWithNibName:@"AddressViewController" bundle:nil];
                 self.navigationController.navigationBarHidden = NO;
                 [self.navigationController pushViewController:addressVC animated:YES];
-
+                
             }
             break;
         default:
@@ -312,7 +316,7 @@
     NewsViewController *newsVC = [[NewsViewController alloc]initWithNibName:@"NewsViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
     [self.navigationController pushViewController:newsVC animated:YES];
-
+    
 }
 - (IBAction)setVC:(id)sender{
     InstallViewController *installVC = [[InstallViewController alloc]initWithNibName:@"InstallViewController" bundle:nil];
@@ -322,7 +326,7 @@
 - (IBAction)userInfoVC:(id)sender{
     UserInfoViewController *userVC = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
     self.navigationController.navigationBarHidden = NO;
-   // userVC.object = self.object;
+    // userVC.object = self.object;
     [self.navigationController pushViewController:userVC animated:YES];
 }
 - (IBAction)productCollectVC:(id)sender{

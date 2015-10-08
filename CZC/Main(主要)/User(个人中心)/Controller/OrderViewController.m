@@ -37,16 +37,16 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:self.tableView];
     //Change the background color
-//    ljjuisement.LJBackGroundColor=[UIColor BlackColor];
+    //    ljjuisement.LJBackGroundColor=[UIColor BlackColor];
     
     //Change Title color
-//    ljjuisement.titleColor=[UIColor BlackColor];
+    //    ljjuisement.titleColor=[UIColor BlackColor];
     
     //Change the Color of selectionButton
-//    ljjuisement.selectColor=[UIColor BlackColor];
+    //    ljjuisement.selectColor=[UIColor BlackColor];
     
     //Change the buttonTitle Font
-//    ljjuisement.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:14.0f];
+    //    ljjuisement.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:14.0f];
     
     //Select the Button
     [ljjuisement selectTheSegument:0];
@@ -57,7 +57,7 @@
 }
 -(void)getOrderListWithType:(NSString *)type{
 #pragma mark - 14.订单列表
-/** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
+    /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
     NSString *params = [NSString stringWithFormat:@"pageIndex=1&pageCount=5&memLoginID=%@&t=",kAccountObject.memLoginID];
     params = [params stringByAppendingString:type];
     [CZCService GETmethod:kOrderNumber_URL andParameters:params andHandle:^(NSDictionary *myresult) {
@@ -91,24 +91,22 @@
     OrderObject *orderObj = [self.orderListArray objectAtIndex:section];
     OrderHeadView *headView = [OrderHeadView instanceView];
     [headView.shopNameBtn setTitle:orderObj.shopName forState:UIControlStateNormal];
-    //根据orderStatus 判断0 全部订单  1待付款 2 待发货 3 待收货  4 已完成订单  5 买家已经评价  6 卖家已经评价  7退货8 订单完成并且未评价
+    //根据orderStatus 判断  0待付款 1待发货 2待收货  3已完成订单
     switch (orderObj.oderStatus) {
-        case 1:
+        case 0:
             [headView.orderStatusLab setText:@"待付款"];
             break;
-        case 2:
+        case 1:
             [headView.orderStatusLab setText:@"待发货"];
             break;
-        case 3:
+        case 2:
             [headView.orderStatusLab setText:@"待收货"];
             break;
-        case 4:
+        case 3:
             [headView.orderStatusLab setText:@"已完成"];
             break;
-        case 8:
-            [headView.orderStatusLab setText:@"未评价"];
-            break;
         default:
+            [headView.orderStatusLab setText:@"已完成"];
             break;
     }
     return headView;
@@ -116,7 +114,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 44;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     OrderObject *orderObj = [self.orderListArray objectAtIndex:section];
@@ -146,36 +143,60 @@
         footView.freightLab.text = [NSString stringWithFormat:@"(包含运费￥%.02f)",orderObj.packPrice];
     }
     //根据订单状态修改btn
-    switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价
-        case 1://待付款
-            footView.leftBtn.tag = 0;
-            [footView.leftBtn setTitle:@"取消订单" forState:UIControlStateNormal];
-            footView.rightBtn.tag = 1;
-            [footView.rightBtn setTitle:@"付款" forState:UIControlStateNormal];
+    switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+        case 0://待付款
+            footView.oneBtn.tag = 0;
+            [footView.oneBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
+            footView.twoBtn.tag = 1;
+            [footView.twoBtn setTitle:@"付款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor orangeColor] andBtn:footView.twoBtn];
+            footView.threeBtn.hidden = YES;
             break;
-        case 2://待发货
-            footView.leftBtn.tag = 2;
-            [footView.rightBtn setTitle:@"退款" forState:UIControlStateNormal];
-            footView.rightBtn.tag = 3;
-            [footView.rightBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
+        case 1://待发货
+            footView.oneBtn.tag = 2;
+            [footView.oneBtn setTitle:@"退款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
+            footView.twoBtn.tag = 3;
+            [footView.twoBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.twoBtn];
+            footView.threeBtn.hidden = YES;
             break;
-        case 3://待收货 少一个查看物流！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-            footView.leftBtn.tag = 2;
-            [footView.leftBtn setTitle:@"退款" forState:UIControlStateNormal];
-            footView.rightBtn.tag = 4;
-            [footView.rightBtn setTitle:@"确认收货" forState:UIControlStateNormal];
+        case 2://待收货
+            footView.oneBtn.tag = 2;
+            [footView.oneBtn setTitle:@"退款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
+            footView.twoBtn.tag = 4;
+            [footView.twoBtn setTitle:@"确认收货" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
+            footView.threeBtn.tag = 7;
+            [footView.threeBtn setTitle:@"查看物流" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.threeBtn];
             break;
-        case 4://已完成
-            footView.leftBtn.hidden = YES;
-            footView.rightBtn.tag = 5;
-            [footView.rightBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+        case 3://已完成
+            footView.oneBtn.tag = 5;
+            [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
+            footView.twoBtn.hidden = YES;
+            footView.threeBtn.hidden = YES;
             break;
-        case 8://待评价
-            footView.leftBtn.hidden = YES;
-            footView.rightBtn.tag = 6;
-            [footView.rightBtn setTitle:@"评价" forState:UIControlStateNormal];
-            break;
+            //        case 7://退货
+            //            footView.oneBtn.tag = 8;
+            //            [footView.oneBtn setTitle:@"退货申请" forState:UIControlStateNormal];
+            //            footView.twoBtn.hidden = YES;
+            //            footView.threeBtn.hidden = YES;
+            //            break;
+            //        case 8://待评价
+            //            footView.oneBtn.tag = 6;
+            //            [footView.oneBtn setTitle:@"评价" forState:UIControlStateNormal];
+            //            footView.twoBtn.hidden = YES;
+            //            footView.threeBtn.hidden = YES;
+            //            break;
         default:
+            footView.oneBtn.tag = 5;
+            [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+            footView.twoBtn.hidden = YES;
+            footView.threeBtn.hidden = YES;
             break;
     }
     //划线
@@ -183,7 +204,7 @@
     return footView;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 80;
+    return 90;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -267,5 +288,14 @@
     NSString *type = [NSString stringWithFormat:@"%ld",(long)selection];
     [self getOrderListWithType:type];
 }
-
+-(void)changeBtnBorderWithColor:(UIColor *)color andBtn:(UIButton *)btn{
+    //修改字体颜色
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    //修改边框颜色
+    CALayer * downButtonLayer = [btn layer];
+    [downButtonLayer setMasksToBounds:YES];
+    [downButtonLayer setCornerRadius:3.0];
+    [downButtonLayer setBorderWidth:1.0];
+    [downButtonLayer setBorderColor:[color CGColor]];
+}
 @end

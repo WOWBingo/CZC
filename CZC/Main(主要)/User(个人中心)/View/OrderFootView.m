@@ -22,9 +22,12 @@
 }
 */
 
-- (IBAction)leftBtnClick:(id)sender {
+- (IBAction)onrBtnClick:(id)sender {
 }
 
-- (IBAction)rightBtnClick:(id)sender {
+- (IBAction)twoBtnClick:(id)sender {
+}
+
+- (IBAction)threeBtnClick:(id)sender {
 }
 @end

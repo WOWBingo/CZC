@@ -13,8 +13,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *proNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *totalLab;
 @property (weak, nonatomic) IBOutlet UILabel *freightLab;
-@property (weak, nonatomic) IBOutlet UIButton *leftBtn;
-@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
-- (IBAction)leftBtnClick:(id)sender;
-- (IBAction)rightBtnClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *oneBtn;
+@property (weak, nonatomic) IBOutlet UIButton *twoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *threeBtn;
+
+- (IBAction)onrBtnClick:(id)sender;
+- (IBAction)twoBtnClick:(id)sender;
+- (IBAction)threeBtnClick:(id)sender;
 @end
