@@ -38,7 +38,6 @@
     [_scrollView addSubview:_imgTextView];
     _imgTextView.tag = 1;
     
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -75,8 +74,9 @@
     NSString *params = _product.guid;//@"715b0edf-1a41-4439-ab4e-0738da284946";
     [CZCService GETmethod:kProductInfo_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
-        if (result) {
-            NSDictionary *dic = [result objectForKey:@"ProductInfo"];
+        NSDictionary *dic = [result objectForKey:@"ProductInfo"];
+        if (![dic isKindOfClass:[NSNull class]]) {
+            
             _product = [ProductsObject objectWithKeyValues:dic];
             
             [_nameLabel setText:_product.name];
@@ -91,11 +91,11 @@
             [_headView loadImageData:imageArray];
             
             [self changeScrollViewInfo];//显示图文详情
-            [self isFinished];
         }
         else{
             NSLog(@"失败");
         }
+        [self isFinished];
     }];
 }
 /**
@@ -107,17 +107,18 @@
     NSString *params = _product.guid;
     [CZCService GETmethod:kProSpecificationList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         NSDictionary *result = myresult;
-        if (result) {
-            NSArray *dataArr = [result objectForKey:@"SpecificationProudct"];
+        NSArray *dataArr = [result objectForKey:@"SpecificationProudct"];
+        if (dataArr.count!=0) {
             _specificationArray = [SpecificationAllObject objectArrayWithKeyValuesArray:dataArr];
             NSLog(@"7.产品规格 ------%@",_specificationArray);
             _choseProductView.specificationArray = _specificationArray;
             //            [_choseProductView.tableView reloadData];//刷新选择页面
-            [self isFinished];
+            
         }
         else{
             NSLog(@"失败");
         }
+        [self isFinished];
     }];
 }
 
@@ -351,10 +352,12 @@
     if (kAccountObject == nil) {
         [self goToLoginVC];
     }else{
-        _choseProductView.defineBtn.hidden = NO;
-        _choseProductView.addShoppingCarBtn.hidden = YES;
-        _choseProductView.buyNowBtn.hidden = YES;
-        [self showChoseView];
+        if (_specificationArray != nil) {
+            _choseProductView.defineBtn.hidden = NO;
+            _choseProductView.addShoppingCarBtn.hidden = YES;
+            _choseProductView.buyNowBtn.hidden = YES;
+            [self showChoseView];
+        }
     }
 }
 /**
@@ -364,10 +367,12 @@
     if (kAccountObject == nil) {
         [self goToLoginVC];
     }else{
-        _choseProductView.defineBtn.hidden = YES;
-        _choseProductView.addShoppingCarBtn.hidden = NO;
-        _choseProductView.buyNowBtn.hidden = NO;
-        [self showChoseView];
+        if (_specificationArray != nil) {
+            _choseProductView.defineBtn.hidden = YES;
+            _choseProductView.addShoppingCarBtn.hidden = NO;
+            _choseProductView.buyNowBtn.hidden = NO;
+            [self showChoseView];
+        }
     };
     
 }
