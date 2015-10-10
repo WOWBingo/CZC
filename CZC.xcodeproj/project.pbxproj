@@ -208,8 +208,6 @@
 		192BC9C51B88BC48003B8328 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9311B88BC48003B8328 /* ZHPickView.m */; };
 		192BC9C61B88BC48003B8328 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9331B88BC48003B8328 /* area.plist */; };
 		192BC9C71B88BC48003B8328 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9341B88BC48003B8328 /* citydict.plist */; };
-		192BC9C81B88BC48003B8328 /* 城中成接口测试0718.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9351B88BC48003B8328 /* 城中成接口测试0718.xlsx */; };
-		192BC9C91B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9361B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc */; };
 		192BC9DE1B88BD5A003B8328 /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9CD1B88BD5A003B8328 /* LogisticsViewController.m */; };
 		192BC9DF1B88BD5A003B8328 /* LogisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192BC9CE1B88BD5A003B8328 /* LogisticsViewController.xib */; };
 		192BC9E01B88BD5A003B8328 /* MyLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192BC9D01B88BD5A003B8328 /* MyLogisticsViewController.m */; };
@@ -598,8 +596,6 @@
 		192BC9311B88BC48003B8328 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		192BC9331B88BC48003B8328 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		192BC9341B88BC48003B8328 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
-		192BC9351B88BC48003B8328 /* 城中成接口测试0718.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城中成接口测试0718.xlsx"; sourceTree = "<group>"; };
-		192BC9361B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城市多用户3.1 Api接口说明.doc"; sourceTree = "<group>"; };
 		192BC9CC1B88BD5A003B8328 /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		192BC9CD1B88BD5A003B8328 /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		192BC9CE1B88BD5A003B8328 /* LogisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsViewController.xib; sourceTree = "<group>"; };
@@ -1385,8 +1381,6 @@
 			children = (
 				192BC9331B88BC48003B8328 /* area.plist */,
 				192BC9341B88BC48003B8328 /* citydict.plist */,
-				192BC9351B88BC48003B8328 /* 城中成接口测试0718.xlsx */,
-				192BC9361B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc */,
 			);
 			path = "Resouce(资源)";
 			sourceTree = "<group>";
@@ -1578,7 +1572,6 @@
 				192BC9441B88BC48003B8328 /* ShopTableViewController.xib in Resources */,
 				192BC9381B88BC48003B8328 /* CityListViewController.xib in Resources */,
 				1888B4821B930282006E3165 /* PotintsDetailsViewController.xib in Resources */,
-				192BC9C91B88BC48003B8328 /* 城市多用户3.1 Api接口说明.doc in Resources */,
 				192BC9BD1B88BC48003B8328 /* SetUpTableViewCell.xib in Resources */,
 				192BC9491B88BC48003B8328 /* ChoseProductInfoView.xib in Resources */,
 				192BC9B41B88BC48003B8328 /* PayInfoTableViewCell.xib in Resources */,
@@ -1615,7 +1608,6 @@
 				192BC9BF1B88BC48003B8328 /* ShopCollectionCell.xib in Resources */,
 				192BC9651B88BC48003B8328 /* PublicViewController.xib in Resources */,
 				192BC9AA1B88BC48003B8328 /* OrderDetailThreeTableViewCell.xib in Resources */,
-				192BC9C81B88BC48003B8328 /* 城中成接口测试0718.xlsx in Resources */,
 				192BC96C1B88BC48003B8328 /* ShoppingCarViewController.xib in Resources */,
 				192BC9E51B88BD5A003B8328 /* LogisticsTableViewCell.xib in Resources */,
 				192BC9501B88BC48003B8328 /* HundredYuanCell.xib in Resources */,

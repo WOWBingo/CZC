@@ -71,6 +71,7 @@
 
 #pragma mark - 5.平台产品列表
 /**
+ http://app.czctgw.com/api/product/listNew/002?sorts=SaleNumber&isASC=true&pageIndex=1&pageCount=5&CityDomainName=fy
  *5.平台产品列表 http://app.czctgw.com/api/product/list/004001001?sorts=SaleNumber&isASC=true&pageIndex=1&pageCount=5&CityDomainName=gy */
 - (void)getProductsList{
     NSString *params = [NSString stringWithFormat:@"%@?sorts=%@&isASC=%@&pageIndex=%lu&pageCount=%lu&CityDomainName=%@",_productCatagory,_sort,_isASC?kSortsisASCTrue:kSortsisASCFalse,(unsigned long)_pageIndex,(unsigned long)_pageCount,_cityDomainName];
@@ -120,7 +121,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-        return SCREEN_WIDTH*0.3;
+        return 100;
 //    }
 //    return UITableViewAutomaticDimension;
 }
@@ -142,10 +143,18 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:product.originalImage] placeholderImage:[UIImage imageNamed:@"zfxt-p1"]];
-    [cell.priceLable setText:[NSString stringWithFormat:@"%.2f",product.shopPrice]];
+    [cell.priceLable setText:[NSString stringWithFormat:@"￥%.2f",product.shopPrice]];
     [cell.nameLable setText:product.name];
+    
     [cell.postageLable setText:@"邮费字段不明"];
-    [cell.discountLable setText:@"折扣字段不明"];
+    cell.postageLable.hidden = YES;
+    
+    if (product.shopPrice != 0 && product.marketPrice != 0) {
+        [cell.discountLable setText:[NSString stringWithFormat:@" %.1f折 ",(product.shopPrice*10/product.marketPrice)]];
+    }else{
+        [cell.discountLable setText:@""];
+        cell.discountLable.hidden = YES;
+    }
     
     return cell;
 }

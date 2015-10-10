@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "cpsc-p4@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "cpsc-p4.png"
+      "filename" : "cpsc-p4@3x.png"
     }
   ],
   "info" : {

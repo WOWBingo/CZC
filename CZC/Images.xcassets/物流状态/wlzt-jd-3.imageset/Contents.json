@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "wlzt-jd-3@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "wlzt-jd-3.png"
+      "filename" : "wlzt-jd-3@3x.png"
     }
   ],
   "info" : {

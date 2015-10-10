@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "zy-p9@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "zy-p9.png"
+      "filename" : "zy-p9@3x.png"
     }
   ],
   "info" : {

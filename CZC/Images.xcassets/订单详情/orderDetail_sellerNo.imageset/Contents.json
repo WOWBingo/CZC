@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "orderDetail_sellerNo@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "an-lxmj-1.png"
+      "filename" : "orderDetail_sellerNo@3x.png"
     }
   ],
   "info" : {
