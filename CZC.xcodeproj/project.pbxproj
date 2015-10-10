@@ -12,6 +12,8 @@
 		1848CACC1BA2F7AA00C27206 /* OrderDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848CACB1BA2F7AA00C27206 /* OrderDetailHeadView.xib */; };
 		1848CACF1BA2F7E000C27206 /* OrderDetailFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */; };
 		1848CAD11BA2F7E900C27206 /* OrderDetailFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848CAD01BA2F7E900C27206 /* OrderDetailFootView.xib */; };
+		185B93741BC74D50005AD61B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B93721BC74D50005AD61B /* EvaluateViewController.m */; settings = {ASSET_TAGS = (); }; };
+		185B93751BC74D50005AD61B /* EvaluateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B93731BC74D50005AD61B /* EvaluateViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1864F1D21B8B504200458C3F /* PersonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */; };
 		1864F1D31B8B504200458C3F /* PersonNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */; };
 		187D7A6C1B8F35E8007324E6 /* ChangePayPwdOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D7A6A1B8F35E8007324E6 /* ChangePayPwdOneViewController.m */; };
@@ -52,6 +54,7 @@
 		1888B48C1B93093B006E3165 /* PointsRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48A1B93093B006E3165 /* PointsRechargeViewController.xib */; };
 		1888B4901B930AB0006E3165 /* PointsTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */; };
 		1888B4911B930AB0006E3165 /* PointsTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */; };
+		18A9B17E1BC95B2D009F4630 /* StartBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9B17D1BC95B2D009F4630 /* StartBtn.m */; settings = {ASSET_TAGS = (); }; };
 		18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */; };
 		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
 		18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD802C1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m */; };
@@ -283,6 +286,9 @@
 		1848CACD1BA2F7E000C27206 /* OrderDetailFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailFootView.h; sourceTree = "<group>"; };
 		1848CACE1BA2F7E000C27206 /* OrderDetailFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailFootView.m; sourceTree = "<group>"; };
 		1848CAD01BA2F7E900C27206 /* OrderDetailFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailFootView.xib; sourceTree = "<group>"; };
+		185B93711BC74D50005AD61B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
+		185B93721BC74D50005AD61B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
+		185B93731BC74D50005AD61B /* EvaluateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateViewController.xib; sourceTree = "<group>"; };
 		1864F1CF1B8B504200458C3F /* PersonNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNewsDetailViewController.h; sourceTree = "<group>"; };
 		1864F1D01B8B504200458C3F /* PersonNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNewsDetailViewController.m; sourceTree = "<group>"; };
 		1864F1D11B8B504200458C3F /* PersonNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonNewsDetailViewController.xib; sourceTree = "<group>"; };
@@ -347,6 +353,8 @@
 		1888B48D1B930AB0006E3165 /* PointsTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsTransferViewController.h; sourceTree = "<group>"; };
 		1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsTransferViewController.m; sourceTree = "<group>"; };
 		1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsTransferViewController.xib; sourceTree = "<group>"; };
+		18A9B17C1BC95B2D009F4630 /* StartBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartBtn.h; path = "CZC/Main(主要)/User(个人中心)/Controller/StartBtn.h"; sourceTree = SOURCE_ROOT; };
+		18A9B17D1BC95B2D009F4630 /* StartBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartBtn.m; path = "CZC/Main(主要)/User(个人中心)/Controller/StartBtn.m"; sourceTree = SOURCE_ROOT; };
 		18CD80261B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateOneViewController.h; sourceTree = "<group>"; };
 		18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePhoneValidateOneViewController.m; sourceTree = "<group>"; };
 		18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePhoneValidateOneViewController.xib; sourceTree = "<group>"; };
@@ -1208,6 +1216,9 @@
 				1888B48D1B930AB0006E3165 /* PointsTransferViewController.h */,
 				1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */,
 				1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */,
+				185B93711BC74D50005AD61B /* EvaluateViewController.h */,
+				185B93721BC74D50005AD61B /* EvaluateViewController.m */,
+				185B93731BC74D50005AD61B /* EvaluateViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1215,6 +1226,8 @@
 		192BC8E31B88BC48003B8328 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18A9B17C1BC95B2D009F4630 /* StartBtn.h */,
+				18A9B17D1BC95B2D009F4630 /* StartBtn.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1623,6 +1636,7 @@
 				192BC9DF1B88BD5A003B8328 /* LogisticsViewController.xib in Resources */,
 				192BC9A81B88BC48003B8328 /* OrderDetailOneTableViewCell.xib in Resources */,
 				192BC9C61B88BC48003B8328 /* area.plist in Resources */,
+				185B93751BC74D50005AD61B /* EvaluateViewController.xib in Resources */,
 				18CD802F1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.xib in Resources */,
 				192BC9A61B88BC48003B8328 /* OrderDetailFourTableViewCell.xib in Resources */,
 				1888B4781B92F809006E3165 /* RechargeView.xib in Resources */,
@@ -1755,6 +1769,7 @@
 				192BC9791B88BC48003B8328 /* EditAddressViewController.m in Sources */,
 				192BC99A1B88BC48003B8328 /* AddressTableViewCell.m in Sources */,
 				192BC9A91B88BC48003B8328 /* OrderDetailThreeTableViewCell.m in Sources */,
+				185B93741BC74D50005AD61B /* EvaluateViewController.m in Sources */,
 				192BC94B1B88BC48003B8328 /* HomeViewCell.m in Sources */,
 				198024281B81D1760071F63E /* CityObject.m in Sources */,
 				192BC96E1B88BC48003B8328 /* HJCAjustNumButton.m in Sources */,
@@ -1804,6 +1819,7 @@
 				187D7A711B8F3729007324E6 /* ChangePayPwdTwoViewController.m in Sources */,
 				1977FD8B1B7748BA000A8D26 /* SpecificationOfPriceObject.m in Sources */,
 				1977FDAC1B776B65000A8D26 /* CollectShopObject.m in Sources */,
+				18A9B17E1BC95B2D009F4630 /* StartBtn.m in Sources */,
 				192BC94F1B88BC48003B8328 /* HundredYuanCell.m in Sources */,
 				1888B45E1B92DA3A006E3165 /* BillingReportsTableViewCell.m in Sources */,
 				18E04FAE1B948EBA00A2540C /* PopView.m in Sources */,

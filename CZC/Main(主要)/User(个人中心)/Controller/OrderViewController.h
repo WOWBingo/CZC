@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LjjUISegmentedControl.h"
-@interface OrderViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LjjUISegmentedControlDelegate>
+#import "OrderFootView.h"
+@interface OrderViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LjjUISegmentedControlDelegate,OrderFootViewDelegate>
 
 @property (strong, nonatomic)UITableView *tableView;
 

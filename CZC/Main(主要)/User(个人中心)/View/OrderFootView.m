@@ -22,12 +22,9 @@
 }
 */
 
-- (IBAction)onrBtnClick:(id)sender {
-}
 
-- (IBAction)twoBtnClick:(id)sender {
-}
-
-- (IBAction)threeBtnClick:(id)sender {
+- (IBAction)btnClick:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    [self.delegate orderFootViewBtnClick:btn];
 }
 @end

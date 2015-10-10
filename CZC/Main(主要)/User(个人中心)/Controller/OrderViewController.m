@@ -13,6 +13,7 @@
 #import "OrderObject.h"
 #import "OrderProductObject.h"
 #import "OrderDetailViewController.h"
+#import "EvaluateViewController.h"
 @interface OrderViewController ()
 
 @end
@@ -142,7 +143,7 @@
     }else{
         footView.freightLab.text = [NSString stringWithFormat:@"(包含运费￥%.02f)",orderObj.packPrice];
     }
-    //根据订单状态修改btn
+    //根据订单状态修改btn    
     switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
         case 0://待付款
             footView.oneBtn.tag = 0;
@@ -201,6 +202,8 @@
     }
     //划线
     [PublicObject drawHorizontalLineOnView:footView andX:footView.frame.origin.x andY:footView.proNumLab.frame.origin.y+footView.proNumLab.frame.size.height+8 andWidth:SCREEN_WIDTH-16 andColor:[UIColor groupTableViewBackgroundColor]];
+    //设置代理
+    footView.delegate = self;
     return footView;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -243,7 +246,6 @@
         });
     }
     //基本信息
-    
     cell.infolab.text = orderProObj.productName;
     //其他信息
     cell.otherInfoLab.text = [NSString stringWithFormat:@"%@%@",orderProObj.specificationName,orderProObj.specificationValue];
@@ -297,5 +299,50 @@
     [downButtonLayer setCornerRadius:3.0];
     [downButtonLayer setBorderWidth:1.0];
     [downButtonLayer setBorderColor:[color CGColor]];
+}
+-(void)orderFootViewBtnClick:(UIButton *)btn{
+    //0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+    switch (btn.tag) {
+        case 0:{
+            NSLog(@"取消订单");
+        }
+            break;
+        case 1:{
+            NSLog(@"付款");
+        }
+            break;
+        case 2:{
+            NSLog(@"退款");
+        }
+            break;
+        case 3:{
+            NSLog(@"提醒卖家");
+        }
+            break;
+        case 4:{
+            NSLog(@"确认收货");
+        }
+            break;
+        case 5:{
+            NSLog(@"删除订单");
+        }
+            break;
+        case 6:{
+            NSLog(@"评价");
+            EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
+            [self.navigationController pushViewController:evaluateVC animated:YES];
+        }
+            break;
+        case 7:{
+            NSLog(@"查看物流");
+        }
+            break;
+        case 8:{
+            NSLog(@"退货申请");
+        }
+            break;
+        default:
+            break;
+    }
 }
 @end

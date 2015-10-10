@@ -57,7 +57,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="onrBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vd7-Ys-SWw"/>
+                                <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="R5H-xf-xA7"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-rO-MdE">
@@ -73,7 +73,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="twoBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cSI-Zp-9UY"/>
+                                <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Av7-5a-zaY"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-Kt-KtM">
@@ -89,7 +89,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="threeBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Iui-S5-dkT"/>
+                                <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="85F-wj-Wzh"/>
                             </connections>
                         </button>
                     </subviews>
