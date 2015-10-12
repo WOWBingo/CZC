@@ -9,6 +9,8 @@
 #import "ProductCollectViewController.h"
 #import "ProductCollectCollectionViewCell.h"
 #import "CollectProductObject.h"
+#import "ProductInfoViewController.h"
+#import "CollectProductObject.h"
 @interface ProductCollectViewController ()
 
 @end
@@ -24,13 +26,14 @@
     self.popTableView.tableFooterView = [[UIView alloc]init];
     self.popTableView.scrollEnabled = NO;
     self.popTableViewIsHiden = YES;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    //[button setBackgroundImage:[UIImage imageNamed:@"button_main.png"] forState:UIControlStateNormal];
-    [button setTitle:@"编辑" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(editCollect)forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0, 0, 44, 44);
-    UIBarButtonItem *editButItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = editButItem;
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    //[button setBackgroundImage:[UIImage imageNamed:@"button_main.png"] forState:UIControlStateNormal];
+//    
+//    [button setTitle:@"编辑" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(editCollect)forControlEvents:UIControlEventTouchUpInside];
+//    button.frame = CGRectMake(0, 0, 44, 44);
+//    UIBarButtonItem *editButItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    self.navigationItem.rightBarButtonItem = editButItem;
     
     static NSString * const CellIdentifier = @"ProductCollectCollectionViewCell";
     [self.collectionView registerClass:[ProductCollectCollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
@@ -159,8 +162,15 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+
+    ProductInfoViewController *productInfoVC = [[ProductInfoViewController alloc]initWithNibName:@"ProductInfoViewController" bundle:nil];
+    CollectProductObject *proObj = [self.productsArr objectAtIndex:indexPath.row];
+    ProductsObject *product = [[ProductsObject alloc]init];
+    product.guid = proObj.productGuid;
+    productInfoVC.product = product;
+    
+    [self.navigationController pushViewController:productInfoVC animated:YES];
+    
 }
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath

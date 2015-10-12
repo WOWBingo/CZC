@@ -12,8 +12,8 @@
 
 - (void)awakeFromNib {
     
-    //[_boxView.layer setMasksToBounds:YES];
-    [_boxView.layer setCornerRadius:2.0]; //设置矩形四个圆角半径
+//    //[_boxView.layer setMasksToBounds:YES];
+//    [_boxView.layer setCornerRadius:2.0]; //设置矩形四个圆角半径
     /**
      *	设置阴影
      */

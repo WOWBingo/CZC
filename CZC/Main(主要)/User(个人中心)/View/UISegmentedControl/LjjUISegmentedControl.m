@@ -50,7 +50,7 @@
         NSLog(@"我点击了");
         [self.ButtonArray[selectSeugment] setSelected:NO];
         [self.ButtonArray[segument] setSelected:YES];
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             [buttonDown setFrame:CGRectMake(segument*witdFloat,self.bounds.size.height-2, witdFloat, 2)];
         }];
         selectSeugment=segument;

@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "dpsc-p6@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "dpsc-p6.png"
+      "filename" : "dpsc-p6@3x.png"
     }
   ],
   "info" : {

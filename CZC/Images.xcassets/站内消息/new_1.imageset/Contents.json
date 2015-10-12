@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "new_1@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "tb_1.png"
+      "filename" : "new_1@3x.png"
     }
   ],
   "info" : {

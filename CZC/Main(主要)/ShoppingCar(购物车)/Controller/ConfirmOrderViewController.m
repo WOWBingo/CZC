@@ -485,6 +485,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                     forControlEvents:UIControlEventTouchUpInside];
         if (_paymentObject) {
             [cell.payNameTextField setText:_paymentObject.name];
+        }else{
+            [cell.payNameTextField setText:@"暂无支付方式"];
+            [cell.selectPayBtn setEnabled:NO];
         }
         return cell;
     } else {

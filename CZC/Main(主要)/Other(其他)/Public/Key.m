@@ -32,7 +32,7 @@ NSString *const kShops_URL = @"api/shops?";
 NSString *const kProductCatagory_URL = @"api/productcatagory/";
 
 /**5.平台产品列表  004001001?sorts=SaleNumber&isASC=true&pageIndex=1&pageCount=5&CtiyDomainName=wuhan*/
-NSString *const kProductList_URL = @"api/product/list/";
+NSString *const kProductList_URL = @"api/product/listNew/";
 
 /**6.产品详细 67c5d699-d41a-4bd7-9b8a-62e94aeee709  */
 NSString *const kProductInfo_URL = @"api/product/";

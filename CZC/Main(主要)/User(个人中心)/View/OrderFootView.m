@@ -24,7 +24,7 @@
 
 
 - (IBAction)btnClick:(id)sender {
-    UIButton *btn = (UIButton *)sender;
+    OrderBtn *btn = (OrderBtn *)sender;
     [self.delegate orderFootViewBtnClick:btn];
 }
 @end

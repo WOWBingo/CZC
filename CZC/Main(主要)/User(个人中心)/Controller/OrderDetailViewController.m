@@ -12,8 +12,12 @@
 #import "OrderDetailThreeTableViewCell.h"
 #import "OrderDetailFourTableViewCell.h"
 #import "OrderProductObject.h"
-@interface OrderDetailViewController ()
-
+#import "EvaluateViewController.h"
+#import "PayForView.h"
+#import "AppDelegate.h"
+@interface OrderDetailViewController (){
+    PayForView *payForView;
+}
 @end
 
 @implementation OrderDetailViewController
@@ -23,6 +27,68 @@
     self.title = @"订单详情";
     // Do any additional setup after loading the view from its nib.
     NSLog(@"%@",self.orderObj);
+    //根据订单状态显示button
+    switch (self.orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+        case 0://待付款
+            self.oneBtn.tag = 0;
+            [self.oneBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
+            self.twoBtn.tag = 1;
+            [self.twoBtn setTitle:@"付款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor orangeColor] andBtn:self.twoBtn];
+            self.threeBtn.hidden = YES;
+            break;
+        case 1://待发货
+            self.oneBtn.tag = 2;
+            [self.oneBtn setTitle:@"退款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
+            self.twoBtn.tag = 3;
+            [self.twoBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.twoBtn];
+            self.threeBtn.hidden = YES;
+            break;
+        case 2://待收货
+            self.oneBtn.tag = 2;
+            [self.oneBtn setTitle:@"退款" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
+            self.twoBtn.tag = 4;
+            [self.twoBtn setTitle:@"确认收货" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
+            self.threeBtn.tag = 7;
+            [self.threeBtn setTitle:@"查看物流" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.threeBtn];
+            break;
+        case 3://已完成
+            self.oneBtn.tag = 5;
+            [self.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
+            self.twoBtn.tag = 6;
+            [self.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
+            self.threeBtn.hidden = YES;
+            break;
+            //        case 7://退货
+            //            self.oneBtn.tag = 8;
+            //            [self.oneBtn setTitle:@"退货申请" forState:UIControlStateNormal];
+            //            self.twoBtn.hidden = YES;
+            //            self.threeBtn.hidden = YES;
+            //            break;
+            //        case 8://待评价
+            //            self.oneBtn.tag = 6;
+            //            [self.oneBtn setTitle:@"评价" forState:UIControlStateNormal];
+            //            self.twoBtn.hidden = YES;
+            //            self.threeBtn.hidden = YES;
+            //            break;
+        default:
+            self.oneBtn.tag = 5;
+            [self.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
+            self.twoBtn.tag = 6;
+            [self.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
+            self.threeBtn.hidden = YES;
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,6 +207,8 @@
                 cell2 = (OrderDetailTwoTableViewCell *)[nibArray objectAtIndex:0];
                 [cell2 setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
+            //添加分割线
+            [PublicObject drawHorizontalLineOnView:cell2.contentView andX:0 andY:cell2.addressLab.frame.origin.y+cell2.addressLab.frame.size.height+3 andWidth:SCREEN_WIDTH andColor:[UIColor groupTableViewBackgroundColor]];
             //加载数据
             cell2.nameLab.text = self.orderObj.name;
             cell2.telLab.text = self.orderObj.mobile;
@@ -270,7 +338,7 @@
             hight = 44;
             break;
         case 1:
-            hight = 70;
+            hight = 75;
             break;
         case 2:
             hight = 100;
@@ -307,7 +375,138 @@
         scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
     }
 }
-
-
-
+-(void)changeBtnBorderWithColor:(UIColor *)color andBtn:(OrderBtn *)btn{
+    //修改字体颜色
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    //修改边框颜色
+    CALayer * downButtonLayer = [btn layer];
+    [downButtonLayer setMasksToBounds:YES];
+    [downButtonLayer setCornerRadius:3.0];
+    [downButtonLayer setBorderWidth:1.0];
+    [downButtonLayer setBorderColor:[color CGColor]];
+}
+-(void)hidenPayForView{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *tempView in appDelegate.window.subviews) {
+        if ([tempView isKindOfClass:[PayForView class]]) {
+            tempView.hidden = YES;
+        }
+    }
+}
+-(void)hidenPayForViewAndBack{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *tempView in appDelegate.window.subviews) {
+        if ([tempView isKindOfClass:[PayForView class]]) {
+            tempView.hidden = YES;
+        }
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
+//-(void)cancelOrder{
+//#pragma mark - 14.取消订单
+//    /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
+//    NSString *params = [NSString stringWithFormat:@"pageIndex=1&pageCount=5&memLoginID=%@&t=",kAccountObject.memLoginID];
+//    params = [params stringByAppendingString:type];
+//    [CZCService GETmethod:kOrderDelete_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            //NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+//            NSArray *dataArr = [myresult objectForKey:@"Data"];
+//            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@"14.订单列表 ------%@",list);
+//            self.orderListArray = [[NSMutableArray alloc]initWithArray:list];
+//            [self.tableView reloadData];
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+//}
+-(void)delateOrder:(int)index{
+#pragma mark - 17.取消订单
+    /** 17.取消订单 http://api/order/OrderUpdate/ */
+    [CZCService GETmethod:kOrderDelete_URL andParameters:self.orderObj.guid andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [NSString stringWithFormat:@"%@",[result objectForKey:@"return"]];
+            if ([statuStr isEqualToString:@"200"]) {
+                NSLog(@"取消订单成功");
+                [self showHUDViewTitle:@"取消订单成功" info:@"" andCodes:^{
+                }];
+            }else{
+                NSLog(@"取消订单失败");
+                [self showHUDViewTitle:@"取消订单失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"取消订单失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
+    //刷新
+    [self.tableView reloadData];
+}
+- (IBAction)orderBtnClick:(id)sender {
+    OrderBtn *btn = (OrderBtn *)sender;
+    //0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+    switch (btn.tag) {
+        case 0:{
+            NSLog(@"取消订单");
+            [self delateOrder:btn.chooseBtnIndex];
+        }
+            break;
+        case 1:{
+            NSLog(@"付款");
+            //获得nib视图数组
+            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"PayForView" owner:self options:nil];
+            //得到第一个UIView
+            payForView = [nib objectAtIndex:0];
+            //获得屏幕的Frame
+            CGRect tmpFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            payForView.frame = tmpFrame;
+            //添加视图
+            payForView.backgroundColor = [UIColor clearColor];
+            //传递数据
+            payForView.orderNumber = self.orderObj.orderNumber;
+            payForView.delegate = self;
+            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [delegate.window addSubview:payForView];
+        }
+            break;
+        case 2:{
+            NSLog(@"退款");
+        }
+            break;
+        case 3:{
+            NSLog(@"提醒卖家");
+        }
+            break;
+        case 4:{
+            NSLog(@"确认收货");
+        }
+            break;
+        case 5:{
+            NSLog(@"删除订单");
+            [self delateOrder:btn.chooseBtnIndex];
+        }
+            break;
+        case 6:{
+            NSLog(@"评价");
+            EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
+            [self.navigationController pushViewController:evaluateVC animated:YES];
+        }
+            break;
+        case 7:{
+            NSLog(@"查看物流");
+        }
+            break;
+        case 8:{
+            NSLog(@"退货申请");
+        }
+            break;
+        default:
+            break;
+    }
+}
 @end

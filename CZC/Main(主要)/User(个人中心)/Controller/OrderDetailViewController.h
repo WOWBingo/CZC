@@ -11,12 +11,18 @@
 #import "OrderProductObject.h"
 #import "OrderDetailHeadView.h"
 #import "OrderDetailFootView.h"
-@interface OrderDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "OrderBtn.h"
+#import "PayForView.h"
+@interface OrderDetailViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,PayForViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet OrderBtn *oneBtn;
+@property (weak, nonatomic) IBOutlet OrderBtn *twoBtn;
+@property (weak, nonatomic) IBOutlet OrderBtn *threeBtn;
 
 @property (nonatomic,strong)OrderObject *orderObj;
 @property(nonatomic,strong)OrderDetailHeadView *headView;
 @property(nonatomic,strong)OrderDetailFootView *footView;
+- (IBAction)orderBtnClick:(id)sender;
 
 @end

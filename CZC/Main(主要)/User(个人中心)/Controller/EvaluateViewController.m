@@ -16,9 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"评价";
+    // handleSwipeFrom 是偵測到手势，所要呼叫的方法
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
+    gesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:gesture];
 }
-
+//隐藏键盘的方法
+- (void)hidenKeyboard {
+    [self.evaluateTextView resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -160,7 +167,7 @@
         default:
             break;
     }
-
+    
 }
 
 - (IBAction)psClick:(id)sender {
@@ -206,5 +213,9 @@
         default:
             break;
     }
+}
+#pragma textView delegate
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    textView.text = @"";
 }
 @end

@@ -6,12 +6,13 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "yhcx-p1@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "yhcx-p1.png"
+      "filename" : "yhcx-p1@3x.png"
     }
   ],
   "info" : {

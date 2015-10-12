@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EvaluateViewController : PublicViewController
+@interface EvaluateViewController : PublicViewController<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *orderImg;
 @property (weak, nonatomic) IBOutlet UILabel *orderInfoLab;

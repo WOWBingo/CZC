@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderDetailViewController">
             <connections>
+                <outlet property="oneBtn" destination="EcY-Lo-Q6M" id="zrN-aZ-Sg4"/>
                 <outlet property="tableView" destination="fsU-nc-MMc" id="nIz-Rb-iJp"/>
+                <outlet property="threeBtn" destination="Dde-bD-vtb" id="nbW-jT-66P"/>
+                <outlet property="twoBtn" destination="iks-zA-dlp" id="1q3-Ey-Erg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,34 +31,61 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-Qp-S0L">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcY-Lo-Q6M">
-                            <rect key="frame" x="262" y="8" width="50" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iks-zA-dlp" customClass="OrderBtn">
+                            <rect key="frame" x="184" y="8" width="60" height="30"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="6yT-eg-o3w"/>
+                                <constraint firstAttribute="width" constant="60" id="AzG-39-ORk"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="Button">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="orderBtnClick:" destination="-1" eventType="touchUpInside" id="jv5-kn-7To"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iks-zA-dlp">
-                            <rect key="frame" x="204" y="8" width="50" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dde-bD-vtb" customClass="OrderBtn">
+                            <rect key="frame" x="116" y="8" width="60" height="30"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="2af-vg-uRf"/>
+                                <constraint firstAttribute="height" constant="30" id="Hcc-Np-3Wu"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="Button">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="orderBtnClick:" destination="-1" eventType="touchUpInside" id="X7f-yO-LVx"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dde-bD-vtb">
-                            <rect key="frame" x="146" y="8" width="50" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcY-Lo-Q6M" customClass="OrderBtn">
+                            <rect key="frame" x="252" y="8" width="60" height="30"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="UXY-de-Qyf"/>
+                                <constraint firstAttribute="height" constant="30" id="Xuk-nY-bYh"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="Button">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="orderBtnClick:" destination="-1" eventType="touchUpInside" id="xVq-bh-D4Y"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="EcY-Lo-Q6M" secondAttribute="bottom" constant="6" id="5Fd-IU-hzU"/>
+                        <constraint firstAttribute="bottom" secondItem="iks-zA-dlp" secondAttribute="bottom" constant="6" id="CfP-pR-WRh"/>
+                        <constraint firstAttribute="bottom" secondItem="Dde-bD-vtb" secondAttribute="bottom" constant="6" id="eF1-W0-9lV"/>
+                        <constraint firstItem="iks-zA-dlp" firstAttribute="leading" secondItem="Dde-bD-vtb" secondAttribute="trailing" constant="8" id="jiy-SI-eaS"/>
+                        <constraint firstItem="EcY-Lo-Q6M" firstAttribute="leading" secondItem="iks-zA-dlp" secondAttribute="trailing" constant="8" id="m0Q-re-DE1"/>
+                        <constraint firstAttribute="trailing" secondItem="EcY-Lo-Q6M" secondAttribute="trailing" constant="8" id="oyj-hZ-5To"/>
                         <constraint firstAttribute="height" constant="44" id="wIO-85-6Ea"/>
                     </constraints>
                 </view>

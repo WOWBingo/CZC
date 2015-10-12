@@ -10,22 +10,22 @@
 
 @interface LouCengProductObject : NSObject
 
-@property (nonatomic, copy) NSString *Guid;
+@property (nonatomic, copy) NSString *Guid;/**<商品Guid*/
 
-@property (nonatomic, copy) NSString *ShopID;
+@property (nonatomic, copy) NSString *ShopID;/**<*/
 
-@property (nonatomic, copy) NSString *ThumbImage;
+@property (nonatomic, copy) NSString *ThumbImage;/**<商品图片*/
 
-@property (nonatomic, copy) NSString *original;
+@property (nonatomic, copy) NSString *original;/**<商品图片*/
 
-@property (nonatomic, copy) NSString *Name;
+@property (nonatomic, copy) NSString *Name;/**<商品名称*/
 
-@property (nonatomic, copy) NSString *ShortName;
+@property (nonatomic, copy) NSString *ShortName;/**<商品名称*/
 
-@property (nonatomic, copy) NSString *MoneySymbol;
+@property (nonatomic, copy) NSString *MoneySymbol;/**<价格符号*/
 
-@property (nonatomic, copy) NSString *ShopPrice;
+@property (nonatomic, copy) NSString *ShopPrice;/**<店铺价*/
 
-@property (nonatomic, copy) NSString *MarketPrice;
+@property (nonatomic, copy) NSString *MarketPrice;/**<市场价*/
 
 @end
