@@ -467,8 +467,8 @@
         NSDictionary *result = myresult;
         NSLog(@"%@",result);
         if (result) {
-            NSString *statuStr = [result objectForKey:@"return"];
-            if ([statuStr isEqualToString:@"202"]) {
+            NSInteger statuStr = [[result objectForKey:@"return"] integerValue];
+            if (statuStr == 202) {
                 NSLog(@"收藏成功");
                 [self showHUDViewTitle:@"收藏成功" info:@"" andCodes:^{
                     self.collectBtn.tag = 1;
