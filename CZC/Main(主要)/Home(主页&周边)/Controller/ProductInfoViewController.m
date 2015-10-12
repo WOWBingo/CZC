@@ -37,6 +37,7 @@
     _imgTextView = [UIView new];
     [_scrollView addSubview:_imgTextView];
     _imgTextView.tag = 1;
+    
     //获取所有收藏商品列表,并判断该商品是否在收藏列表中，以判断收藏按钮的显示状态
     //先初始化button基本属性（tag值和图片除外）
     self.collectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
