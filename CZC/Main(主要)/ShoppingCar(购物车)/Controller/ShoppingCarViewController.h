@@ -21,4 +21,8 @@
 @property (nonatomic,strong) NSMutableArray *selectedShopList;/**< 选中的店铺 */
 
 - (IBAction)accountClick:(id)sender;
+
+@property (nonatomic) BOOL isHiddenTab;
+@property (weak, nonatomic) IBOutlet UIView *ishiddenView;
+
 @end

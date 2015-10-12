@@ -148,7 +148,7 @@
                                         <constraint firstAttribute="width" constant="40" id="skk-yH-Ncv"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aal-0d-48L">
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aal-0d-48L">
                                     <rect key="frame" x="8" y="0.0" width="359" height="40"/>
                                     <animations/>
                                     <state key="normal">

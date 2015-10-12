@@ -17,6 +17,7 @@
 #import "SpecificationObject.h"
 #import "SpecificationAllObject.h"
 #import "LoginViewController.h"
+#import "ShoppingCarViewController.h"
 
 @interface ProductInfoViewController ()
 
@@ -53,6 +54,7 @@
     _finished ++;
     if (_finished == 2) {
         [self dismissHUDEnd];
+        self.choseSpecificationBtn.enabled = YES;
     }
     [_choseProductView.tableView reloadData];//刷新选择页面
 }
@@ -343,6 +345,12 @@
  *	前往购物车
  */
 - (IBAction)goShoppingCar:(id)sender {
+    
+    ShoppingCarViewController *shoppingCarVC=[[ShoppingCarViewController alloc]initWithNibName:@"ShoppingCarViewController" bundle:nil];
+    shoppingCarVC.isHomePage = NO;
+    shoppingCarVC.isHiddenTab = YES;
+    shoppingCarVC.title = @"购物车";
+    [self.navigationController pushViewController:shoppingCarVC animated:YES];
 }
 /**
  *	添加购物车
@@ -367,12 +375,10 @@
     if (kAccountObject == nil) {
         [self goToLoginVC];
     }else{
-        if (_specificationArray != nil) {
-            _choseProductView.defineBtn.hidden = YES;
-            _choseProductView.addShoppingCarBtn.hidden = NO;
-            _choseProductView.buyNowBtn.hidden = NO;
-            [self showChoseView];
-        }
+        _choseProductView.defineBtn.hidden = YES;
+        _choseProductView.addShoppingCarBtn.hidden = NO;
+        _choseProductView.buyNowBtn.hidden = NO;
+        [self showChoseView];
     };
     
 }

@@ -48,5 +48,6 @@
 #pragma  mark - 数据
 @property (strong, nonatomic) NSArray *specificationArray;
 @property (strong, nonatomic) ProductsObject *product;
+@property (nonatomic, assign) BOOL isHaveGuige;
 
 @end

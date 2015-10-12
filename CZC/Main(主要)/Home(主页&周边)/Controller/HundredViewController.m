@@ -142,7 +142,7 @@
         cell = (HundredTableViewCell *)[nibArray objectAtIndex:0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:product.originalImage] placeholderImage:[UIImage imageNamed:@"zfxt-p1"]];
+    [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:product.originalImage] placeholderImage:[UIImage imageNamed:@"imagedefault"]];
     [cell.priceLable setText:[NSString stringWithFormat:@"￥%.2f",product.shopPrice]];
     [cell.nameLable setText:product.name];
     
@@ -161,6 +161,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ProductInfoViewController *newVC = [[ProductInfoViewController alloc]initWithNibName:@"ProductInfoViewController" bundle:nil];
+    ProductsObject *product = [_productArray objectAtIndex:indexPath.row];
+    newVC.product = product;
     [self.navigationController pushViewController:newVC animated:YES];
 }
 

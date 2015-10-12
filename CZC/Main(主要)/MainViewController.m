@@ -13,6 +13,7 @@
 #import "SetViewController.h"
 #import "ObjectMapping.h"
 #import "TestObject.h"
+#import "RefreshLocation.h"
 
 @interface MainViewController ()
 @end
@@ -23,6 +24,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[RefreshLocation shareInstance] RefreshLocationLable:[UILabel new] andBlock:^{
+        NSLog(@"------------------");
+    }];
     
     /**
      *	对数据模型重新编码

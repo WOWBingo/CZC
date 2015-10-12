@@ -87,8 +87,6 @@
     [self.navigationController.navigationBar setShadowImage:nil];
     self.parentViewController.tabBarController.tabBar.hidden = NO;
     _headView.frame = CGRectMake(0, -ScrollViewHight, SCREEN_WIDTH, ScrollViewHight);
-    
-
 }
 -(void)viewDidAppear:(BOOL)animated{
     [self.navigationController.navigationBar setShadowImage:nil];
@@ -371,18 +369,19 @@
     if (_isHomePage) {
         if (btn.tag == 0) {
             HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
-            hundredVC.productCatagory = @"004001001";
+            hundredVC.productCatagory = @"024";
             hundredVC.title = @"百元专区";
             [self.navigationController pushViewController:hundredVC animated:YES];
         }else{
             LouCengObject *loucengObj = [_louCengList objectAtIndex:btn.tag - 1];
-//            ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];
-//            shopVC.title = loucengObj.name;
-//            [self.navigationController pushViewController:shopVC animated:YES];
             HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
             hundredVC.title = loucengObj.name;
             hundredVC.productCatagory = loucengObj.code;
             [self.navigationController pushViewController:hundredVC animated:YES];
+            
+            //            ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];
+            //            shopVC.title = loucengObj.name;
+            //            [self.navigationController pushViewController:shopVC animated:YES];
         }
         
     }else{

@@ -40,7 +40,14 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    if (_isHiddenTab) {
+        self.parentViewController.tabBarController.tabBar.hidden = YES;
+        [self.ishiddenView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+    }else{
+        self.parentViewController.tabBarController.tabBar.hidden = NO;
+    }
     self.navigationController.navigationBar.hidden = NO;
     if (kAccountObject == nil) {
         [self goToLoginVC];
@@ -49,7 +56,14 @@
     }
 }
 -(void)viewDidAppear:(BOOL)animated{
-    self.parentViewController.tabBarController.tabBar.hidden = NO;
+    if (_isHiddenTab) {
+        self.parentViewController.tabBarController.tabBar.hidden = YES;
+        [self.ishiddenView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+    }else{
+        self.parentViewController.tabBarController.tabBar.hidden = NO;
+    }
     self.navigationController.navigationBar.hidden = NO;
 }
 
