@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LogisticsTrackingTitleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logistics_audio" translatesAutoresizingMaskIntoConstraints="NO" id="cw1-b4-DjP">
+                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0CU-G6-KcK"/>
+                            <constraint firstAttribute="width" constant="30" id="WbG-fT-7Tb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物流状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO3-NP-f97">
+                        <rect key="frame" x="46" y="8" width="68" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YeU-Wo-qau"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-Pc-Awm">
+                        <rect key="frame" x="122" y="8" width="42" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="sAo-Pw-vR1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logistics_clock" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-c0-V4g">
+                        <rect key="frame" x="253" y="40" width="20" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="KSs-Rr-kge"/>
+                            <constraint firstAttribute="width" constant="20" id="zbb-LS-Mgs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puA-kn-u2p">
+                        <rect key="frame" x="281" y="40" width="31" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="my1-HY-641"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsV-b2-kNi">
+                        <rect key="frame" x="46" y="49" width="31" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YfV-l1-Msc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWB-nb-UBp">
+                        <rect key="frame" x="46" y="70" width="31" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="v0t-Yt-NFU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="puA-kn-u2p" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="LLd-Xv-pzm"/>
+                    <constraint firstItem="KWB-nb-UBp" firstAttribute="top" secondItem="TsV-b2-kNi" secondAttribute="bottom" id="Ndb-sc-2dd"/>
+                    <constraint firstItem="gUr-Pc-Awm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Xrj-x9-vXr"/>
+                    <constraint firstItem="ZO3-NP-f97" firstAttribute="leading" secondItem="cw1-b4-DjP" secondAttribute="trailing" constant="8" id="bSL-4T-h6A"/>
+                    <constraint firstItem="cw1-b4-DjP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="epo-sN-rJo"/>
+                    <constraint firstItem="TsV-b2-kNi" firstAttribute="leading" secondItem="ZO3-NP-f97" secondAttribute="leading" id="iHX-4s-RSX"/>
+                    <constraint firstItem="BUU-c0-V4g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="kMI-qv-heg"/>
+                    <constraint firstItem="puA-kn-u2p" firstAttribute="leading" secondItem="BUU-c0-V4g" secondAttribute="trailing" constant="8" id="keW-26-1CI"/>
+                    <constraint firstItem="puA-kn-u2p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="lkG-RD-XIb"/>
+                    <constraint firstItem="TsV-b2-kNi" firstAttribute="top" secondItem="gUr-Pc-Awm" secondAttribute="bottom" constant="20" id="m3r-oN-hNJ"/>
+                    <constraint firstItem="cw1-b4-DjP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mQP-Ja-qfb"/>
+                    <constraint firstItem="gUr-Pc-Awm" firstAttribute="leading" secondItem="ZO3-NP-f97" secondAttribute="trailing" constant="8" id="n3R-rD-a0v"/>
+                    <constraint firstItem="ZO3-NP-f97" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pdt-jx-1K2"/>
+                    <constraint firstItem="KWB-nb-UBp" firstAttribute="leading" secondItem="TsV-b2-kNi" secondAttribute="leading" id="znf-DJ-zTH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="logisticsFromLab" destination="KWB-nb-UBp" id="nbN-Oe-DKc"/>
+                <outlet property="logisticsIdLab" destination="TsV-b2-kNi" id="GUf-3O-4pZ"/>
+                <outlet property="logisticsStatusLab" destination="gUr-Pc-Awm" id="LOy-pJ-UbE"/>
+                <outlet property="logisticsTimeLab" destination="puA-kn-u2p" id="wbC-yU-vfB"/>
+            </connections>
+            <point key="canvasLocation" x="318" y="376"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="logistics_audio" width="36" height="36"/>
+        <image name="logistics_clock" width="16" height="16"/>
+    </resources>
+</document>

@@ -44,7 +44,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-ZO-2mV">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-ZO-2mV" customClass="OrderBtn">
                             <rect key="frame" x="252" y="42" width="60" height="30"/>
                             <animations/>
                             <constraints>
@@ -60,7 +60,7 @@
                                 <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="R5H-xf-xA7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-rO-MdE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-rO-MdE" customClass="OrderBtn">
                             <rect key="frame" x="186" y="42" width="60" height="30"/>
                             <animations/>
                             <constraints>
@@ -76,7 +76,7 @@
                                 <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Av7-5a-zaY"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-Kt-KtM">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-Kt-KtM" customClass="OrderBtn">
                             <rect key="frame" x="116" y="42" width="60" height="30"/>
                             <animations/>
                             <constraints>

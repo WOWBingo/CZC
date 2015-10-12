@@ -54,6 +54,9 @@
 		1888B48C1B93093B006E3165 /* PointsRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48A1B93093B006E3165 /* PointsRechargeViewController.xib */; };
 		1888B4901B930AB0006E3165 /* PointsTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */; };
 		1888B4911B930AB0006E3165 /* PointsTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */; };
+		188CB6371BCBE473006A18F6 /* PayForView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CB6361BCBE473006A18F6 /* PayForView.m */; settings = {ASSET_TAGS = (); }; };
+		188CB6391BCBE48C006A18F6 /* PayForView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188CB6381BCBE48C006A18F6 /* PayForView.xib */; settings = {ASSET_TAGS = (); }; };
+		188CB63F1BCBFA58006A18F6 /* OrderBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CB63E1BCBFA58006A18F6 /* OrderBtn.m */; settings = {ASSET_TAGS = (); }; };
 		18A9B17E1BC95B2D009F4630 /* StartBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9B17D1BC95B2D009F4630 /* StartBtn.m */; settings = {ASSET_TAGS = (); }; };
 		18CD80291B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD80271B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.m */; };
 		18CD802A1B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CD80281B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.xib */; };
@@ -64,6 +67,14 @@
 		18DDE5E51BA1B85E006CAF8E /* OrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDE5E41BA1B85E006CAF8E /* OrderFootView.m */; };
 		18DDE5E71BA1B869006CAF8E /* OrderFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DDE5E61BA1B869006CAF8E /* OrderFootView.xib */; };
 		18E04FAE1B948EBA00A2540C /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E04FAD1B948EBA00A2540C /* PopView.m */; };
+		18F631401BCB3D16002F4751 /* LogisticsTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F6313E1BCB3D16002F4751 /* LogisticsTrackingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18F631411BCB3D16002F4751 /* LogisticsTrackingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F6313F1BCB3D16002F4751 /* LogisticsTrackingViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		18F631451BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F631431BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		18F631461BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F631441BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		18F6314A1BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F631481BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		18F6314B1BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F631491BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		18FFAE2E1BCB8E5A006EC719 /* RefundAfterSaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFAE2C1BCB8E5A006EC719 /* RefundAfterSaleViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18FFAE2F1BCB8E5A006EC719 /* RefundAfterSaleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FFAE2D1BCB8E5A006EC719 /* RefundAfterSaleViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7B31B74F8DA009C7A33 /* ProductsObject.m */; };
 		1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BC1B751AB9009C7A33 /* TestObject.m */; };
 		1902C7C01B759F4A009C7A33 /* ProductCatagoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902C7BF1B759F4A009C7A33 /* ProductCatagoryObject.m */; };
@@ -351,6 +362,11 @@
 		1888B48D1B930AB0006E3165 /* PointsTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsTransferViewController.h; sourceTree = "<group>"; };
 		1888B48E1B930AB0006E3165 /* PointsTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsTransferViewController.m; sourceTree = "<group>"; };
 		1888B48F1B930AB0006E3165 /* PointsTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsTransferViewController.xib; sourceTree = "<group>"; };
+		188CB6351BCBE473006A18F6 /* PayForView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayForView.h; sourceTree = "<group>"; };
+		188CB6361BCBE473006A18F6 /* PayForView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayForView.m; sourceTree = "<group>"; };
+		188CB6381BCBE48C006A18F6 /* PayForView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayForView.xib; sourceTree = "<group>"; };
+		188CB63D1BCBFA58006A18F6 /* OrderBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderBtn.h; path = "CZC/Main(主要)/User(个人中心)/View/OrderBtn.h"; sourceTree = SOURCE_ROOT; };
+		188CB63E1BCBFA58006A18F6 /* OrderBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderBtn.m; path = "CZC/Main(主要)/User(个人中心)/View/OrderBtn.m"; sourceTree = SOURCE_ROOT; };
 		18A9B17C1BC95B2D009F4630 /* StartBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartBtn.h; path = "CZC/Main(主要)/User(个人中心)/Controller/StartBtn.h"; sourceTree = SOURCE_ROOT; };
 		18A9B17D1BC95B2D009F4630 /* StartBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartBtn.m; path = "CZC/Main(主要)/User(个人中心)/Controller/StartBtn.m"; sourceTree = SOURCE_ROOT; };
 		18CD80261B8F2EFF008E14A6 /* ChangePhoneValidateOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePhoneValidateOneViewController.h; sourceTree = "<group>"; };
@@ -367,6 +383,18 @@
 		18DDE5E61BA1B869006CAF8E /* OrderFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderFootView.xib; sourceTree = "<group>"; };
 		18E04FAC1B948EBA00A2540C /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopView.h; path = "CZC/Resouce(资源)/PopView.h"; sourceTree = SOURCE_ROOT; };
 		18E04FAD1B948EBA00A2540C /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopView.m; path = "CZC/Resouce(资源)/PopView.m"; sourceTree = SOURCE_ROOT; };
+		18F6313D1BCB3D16002F4751 /* LogisticsTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsTrackingViewController.h; sourceTree = "<group>"; };
+		18F6313E1BCB3D16002F4751 /* LogisticsTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsTrackingViewController.m; sourceTree = "<group>"; };
+		18F6313F1BCB3D16002F4751 /* LogisticsTrackingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsTrackingViewController.xib; sourceTree = "<group>"; };
+		18F631421BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsTrackingTitleTableViewCell.h; sourceTree = "<group>"; };
+		18F631431BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsTrackingTitleTableViewCell.m; sourceTree = "<group>"; };
+		18F631441BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsTrackingTitleTableViewCell.xib; sourceTree = "<group>"; };
+		18F631471BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsTrackingContentTableViewCell.h; sourceTree = "<group>"; };
+		18F631481BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsTrackingContentTableViewCell.m; sourceTree = "<group>"; };
+		18F631491BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogisticsTrackingContentTableViewCell.xib; sourceTree = "<group>"; };
+		18FFAE2B1BCB8E5A006EC719 /* RefundAfterSaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundAfterSaleViewController.h; sourceTree = "<group>"; };
+		18FFAE2C1BCB8E5A006EC719 /* RefundAfterSaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefundAfterSaleViewController.m; sourceTree = "<group>"; };
+		18FFAE2D1BCB8E5A006EC719 /* RefundAfterSaleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefundAfterSaleViewController.xib; sourceTree = "<group>"; };
 		1902C7B21B74F8DA009C7A33 /* ProductsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsObject.h; path = Object/ProductsObject.h; sourceTree = "<group>"; };
 		1902C7B31B74F8DA009C7A33 /* ProductsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsObject.m; path = Object/ProductsObject.m; sourceTree = "<group>"; };
 		1902C7BB1B751AB9009C7A33 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestObject.h; path = Object/TestObject.h; sourceTree = "<group>"; };
@@ -1139,6 +1167,9 @@
 				192BC8CA1B88BC48003B8328 /* OrderViewController.h */,
 				192BC8CB1B88BC48003B8328 /* OrderViewController.m */,
 				192BC8CC1B88BC48003B8328 /* OrderViewController.xib */,
+				18FFAE2B1BCB8E5A006EC719 /* RefundAfterSaleViewController.h */,
+				18FFAE2C1BCB8E5A006EC719 /* RefundAfterSaleViewController.m */,
+				18FFAE2D1BCB8E5A006EC719 /* RefundAfterSaleViewController.xib */,
 				192BC8CD1B88BC48003B8328 /* PersonNewsViewController.h */,
 				192BC8CE1B88BC48003B8328 /* PersonNewsViewController.m */,
 				192BC8CF1B88BC48003B8328 /* PersonNewsViewController.xib */,
@@ -1215,6 +1246,9 @@
 				185B93711BC74D50005AD61B /* EvaluateViewController.h */,
 				185B93721BC74D50005AD61B /* EvaluateViewController.m */,
 				185B93731BC74D50005AD61B /* EvaluateViewController.xib */,
+				18F6313D1BCB3D16002F4751 /* LogisticsTrackingViewController.h */,
+				18F6313E1BCB3D16002F4751 /* LogisticsTrackingViewController.m */,
+				18F6313F1BCB3D16002F4751 /* LogisticsTrackingViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1224,6 +1258,8 @@
 			children = (
 				18A9B17C1BC95B2D009F4630 /* StartBtn.h */,
 				18A9B17D1BC95B2D009F4630 /* StartBtn.m */,
+				188CB63D1BCBFA58006A18F6 /* OrderBtn.h */,
+				188CB63E1BCBFA58006A18F6 /* OrderBtn.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1334,6 +1370,15 @@
 				1888B4831B930355006E3165 /* PotintsDetailsTableViewCell.h */,
 				1888B4841B930355006E3165 /* PotintsDetailsTableViewCell.m */,
 				1888B4851B930355006E3165 /* PotintsDetailsTableViewCell.xib */,
+				18F631421BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.h */,
+				18F631431BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.m */,
+				18F631441BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.xib */,
+				18F631471BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.h */,
+				18F631481BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.m */,
+				18F631491BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.xib */,
+				188CB6351BCBE473006A18F6 /* PayForView.h */,
+				188CB6361BCBE473006A18F6 /* PayForView.m */,
+				188CB6381BCBE48C006A18F6 /* PayForView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1532,6 +1577,7 @@
 				192BC9421B88BC48003B8328 /* ShopInfoViewController.xib in Resources */,
 				198499C41BAE40AB00B5E33C /* PayMethodCell.xib in Resources */,
 				192BC93E1B88BC48003B8328 /* ProductInfoViewController.xib in Resources */,
+				18F631411BCB3D16002F4751 /* LogisticsTrackingViewController.xib in Resources */,
 				187D7A721B8F3729007324E6 /* ChangePayPwdTwoViewController.xib in Resources */,
 				1888B4641B92E188006E3165 /* BillingReportsDetailsViewController.xib in Resources */,
 				192BC9E31B88BD5A003B8328 /* LogisticsAssistantTableViewCell.xib in Resources */,
@@ -1586,6 +1632,7 @@
 				192BC9881B88BC48003B8328 /* OrderViewController.xib in Resources */,
 				196285C31B9FD56500D7AC55 /* ConfirmOrderShopCell.xib in Resources */,
 				1888B46E1B92E5A1006E3165 /* BillingOrdersDetailsViewController.xib in Resources */,
+				188CB6391BCBE48C006A18F6 /* PayForView.xib in Resources */,
 				192BC9901B88BC48003B8328 /* RegisterViewController.xib in Resources */,
 				192BC9AC1B88BC48003B8328 /* OrderDetailTwoTableViewCell.xib in Resources */,
 				192BC93C1B88BC48003B8328 /* HundredViewController.xib in Resources */,
@@ -1603,8 +1650,10 @@
 				192BC97C1B88BC48003B8328 /* ForgetPWViewController.xib in Resources */,
 				192BC9911B88BC48003B8328 /* serviceTerm.html in Resources */,
 				192BC9F41B89CD97003B8328 /* SpecificationChoseCell.xib in Resources */,
+				18FFAE2F1BCB8E5A006EC719 /* RefundAfterSaleViewController.xib in Resources */,
 				192BC99B1B88BC48003B8328 /* AddressTableViewCell.xib in Resources */,
 				187E33631B8E009D00E8617A /* ChangePhoneValidateViewController.xib in Resources */,
+				18F6314B1BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.xib in Resources */,
 				192BC9BF1B88BC48003B8328 /* ShopCollectionCell.xib in Resources */,
 				192BC9651B88BC48003B8328 /* PublicViewController.xib in Resources */,
 				192BC9AA1B88BC48003B8328 /* OrderDetailThreeTableViewCell.xib in Resources */,
@@ -1634,6 +1683,7 @@
 				1888B4781B92F809006E3165 /* RechargeView.xib in Resources */,
 				192BC9AE1B88BC48003B8328 /* OrderTableViewCell.xib in Resources */,
 				192BC9971B88BC48003B8328 /* UserInfoViewController.xib in Resources */,
+				18F631461BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1688,6 +1738,7 @@
 				1902C7C61B773648009C7A33 /* SpecificationAllObject.m in Sources */,
 				1888B4861B930355006E3165 /* PotintsDetailsTableViewCell.m in Sources */,
 				1888B4721B92E88A006E3165 /* AccountRechargeViewController.m in Sources */,
+				18F6314A1BCB4E6D002F4751 /* LogisticsTrackingContentTableViewCell.m in Sources */,
 				1977FD971B774FAE000A8D26 /* ShopCarObject.m in Sources */,
 				192BC9891B88BC48003B8328 /* PersonNewsViewController.m in Sources */,
 				192BC9AF1B88BC48003B8328 /* PayAddressTableViewCell.m in Sources */,
@@ -1730,6 +1781,7 @@
 				192BC99F1B88BC48003B8328 /* EditAddressTableViewCell.m in Sources */,
 				192BC9601B88BC48003B8328 /* MainViewController.m in Sources */,
 				1888B4761B92F7FC006E3165 /* RechargeView.m in Sources */,
+				188CB6371BCBE473006A18F6 /* PayForView.m in Sources */,
 				192BC9981B88BC48003B8328 /* AccountSecurityTableViewCell.m in Sources */,
 				192BC9771B88BC48003B8328 /* DiscountPromotionViewController.m in Sources */,
 				192BC9B11B88BC48003B8328 /* PayDeliverTableViewCell.m in Sources */,
@@ -1743,6 +1795,7 @@
 				192BC9511B88BC48003B8328 /* ProductTableInfoCell.m in Sources */,
 				194DCA171BB2726200E0C640 /* LouCengProductObject.m in Sources */,
 				192BC9661B88BC48003B8328 /* RefreshLocation.m in Sources */,
+				18F631451BCB4E36002F4751 /* LogisticsTrackingTitleTableViewCell.m in Sources */,
 				192BC9611B88BC48003B8328 /* CZCAPIService.m in Sources */,
 				1977FD8E1B774A00000A8D26 /* ShopObject.m in Sources */,
 				192BC9A71B88BC48003B8328 /* OrderDetailOneTableViewCell.m in Sources */,
@@ -1788,6 +1841,7 @@
 				192BC9B71B88BC48003B8328 /* PopoverView.m in Sources */,
 				192BC9711B88BC48003B8328 /* AccountSecurityViewController.m in Sources */,
 				192BC9811B88BC48003B8328 /* LogisticsAssistantViewController.m in Sources */,
+				18FFAE2E1BCB8E5A006EC719 /* RefundAfterSaleViewController.m in Sources */,
 				192BC9461B88BC48003B8328 /* ChooseCityHeadView.m in Sources */,
 				192BC9E41B88BD5A003B8328 /* LogisticsTableViewCell.m in Sources */,
 				192BC9411B88BC48003B8328 /* ShopInfoViewController.m in Sources */,
@@ -1801,6 +1855,7 @@
 				192BC9641B88BC48003B8328 /* PublicViewController.m in Sources */,
 				18CD802E1B8F3107008E14A6 /* ChangePhoneValidateThreeViewController.m in Sources */,
 				1902C7B41B74F8DA009C7A33 /* ProductsObject.m in Sources */,
+				188CB63F1BCBFA58006A18F6 /* OrderBtn.m in Sources */,
 				18DDE5E01BA1B827006CAF8E /* OrderHeadView.m in Sources */,
 				1902C7BD1B751AB9009C7A33 /* TestObject.m in Sources */,
 				184083C61BAD1D5E00432FFB /* RegionObject.m in Sources */,
@@ -1831,6 +1886,7 @@
 				192BC9C41B88BC48003B8328 /* LjjUISegmentedControl.m in Sources */,
 				192BC9531B88BC48003B8328 /* ShopTableViewCell.m in Sources */,
 				192BC9E61B88BD5A003B8328 /* MyLogisticsTableViewCell.m in Sources */,
+				18F631401BCB3D16002F4751 /* LogisticsTrackingViewController.m in Sources */,
 				192BC9E21B88BD5A003B8328 /* LogisticsAssistantTableViewCell.m in Sources */,
 				1952A6701B77379D0020F760 /* SpecificationObject.m in Sources */,
 			);

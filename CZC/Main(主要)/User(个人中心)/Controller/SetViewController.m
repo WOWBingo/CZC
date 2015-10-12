@@ -22,6 +22,7 @@
 #import "PointsBalanceViewController.h"
 #import "PointsRechargeViewController.h"
 #import "PointsTransferViewController.h"
+#import "RefundAfterSaleViewController.h"
 @interface SetViewController ()
 
 @end
@@ -149,6 +150,7 @@
                 [cell1 setSelectionStyle:UITableViewCellSelectionStyleNone];
                 [cell1.setBtn addTarget:self action:@selector(setVC:) forControlEvents:UIControlEventTouchUpInside];
                 [cell1.popBtn addTarget:self action:@selector(popVC:) forControlEvents:UIControlEventTouchUpInside];
+                [cell1.popNewsBtn addTarget:self action:@selector(popVC:) forControlEvents:UIControlEventTouchUpInside];
                 [cell1.userInfoBtn addTarget:self action:@selector(userInfoVC:) forControlEvents:UIControlEventTouchUpInside];
                 [cell1.proCollectBtn addTarget:self action:@selector(productCollectVC:) forControlEvents:UIControlEventTouchUpInside];
                 [cell1.shopCollectBtn addTarget:self action:@selector(shopCollectVC:) forControlEvents:UIControlEventTouchUpInside];
@@ -299,6 +301,10 @@
                 self.navigationController.navigationBarHidden = NO;
                 [self.navigationController pushViewController:addressVC animated:YES];
                 
+            }else if (indexPath.row == 2){
+                RefundAfterSaleViewController *refundAfterSaleVC = [[RefundAfterSaleViewController alloc]initWithNibName:@"RefundAfterSaleViewController" bundle:nil];
+                self.navigationController.navigationBarHidden = NO;
+                [self.navigationController pushViewController:refundAfterSaleVC animated:YES];
             }
             break;
         default:

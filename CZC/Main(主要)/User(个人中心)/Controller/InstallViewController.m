@@ -270,13 +270,11 @@
     [defaults synchronize];
     kAccountObject  = [PublicObject getAccoutInfoDefault];
     [self showHUDViewTitle:@"退出成功" info:@"" andCodes:^{
-        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
     }];
-    [self dismissViewControllerAnimated:YES completion:^{}];
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
     NSLog(@"%@",[defaults objectForKey:kAccoutInfo_Default]);
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window.rootViewController.tabBarController setSelectedIndex:4];
+   
 }
 @end

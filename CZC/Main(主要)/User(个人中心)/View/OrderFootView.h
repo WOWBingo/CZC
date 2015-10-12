@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderBtn.h"
 @protocol OrderFootViewDelegate
--(void)orderFootViewBtnClick:(UIButton *)btn;
+-(void)orderFootViewBtnClick:(OrderBtn *)btn;
 @end
 @interface OrderFootView : UIView
 +(OrderFootView *)instanceView;
 @property (weak, nonatomic) IBOutlet UILabel *proNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *totalLab;
 @property (weak, nonatomic) IBOutlet UILabel *freightLab;
-@property (weak, nonatomic) IBOutlet UIButton *oneBtn;
-@property (weak, nonatomic) IBOutlet UIButton *twoBtn;
-@property (weak, nonatomic) IBOutlet UIButton *threeBtn;
+@property (weak, nonatomic) IBOutlet OrderBtn *oneBtn;
+@property (weak, nonatomic) IBOutlet OrderBtn *twoBtn;
+@property (weak, nonatomic) IBOutlet OrderBtn *threeBtn;
 
 @property (nonatomic,assign)id <OrderFootViewDelegate>delegate;
 

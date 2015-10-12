@@ -14,7 +14,11 @@
 #import "OrderProductObject.h"
 #import "OrderDetailViewController.h"
 #import "EvaluateViewController.h"
-@interface OrderViewController ()
+#import "PayForView.h"
+#import "AppDelegate.h"
+@interface OrderViewController (){
+    PayForView *payForView;
+}
 
 @end
 
@@ -143,7 +147,11 @@
     }else{
         footView.freightLab.text = [NSString stringWithFormat:@"(包含运费￥%.02f)",orderObj.packPrice];
     }
-    //根据订单状态修改btn    
+    //根据订单状态修改btn
+    footView.oneBtn.chooseBtnIndex = (int)section;
+    footView.twoBtn.chooseBtnIndex = (int)section;
+    footView.threeBtn.chooseBtnIndex = (int)section;
+    
     switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
         case 0://待付款
             footView.oneBtn.tag = 0;
@@ -178,7 +186,9 @@
             footView.oneBtn.tag = 5;
             [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
-            footView.twoBtn.hidden = YES;
+            footView.twoBtn.tag = 6;
+            [footView.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
             footView.threeBtn.hidden = YES;
             break;
             //        case 7://退货
@@ -196,7 +206,10 @@
         default:
             footView.oneBtn.tag = 5;
             [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
-            footView.twoBtn.hidden = YES;
+            [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
+            footView.twoBtn.tag = 6;
+            [footView.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
             footView.threeBtn.hidden = YES;
             break;
     }
@@ -288,9 +301,14 @@
 -(void)uisegumentSelectionChange:(NSInteger)selection{
     NSLog(@"%ld",(long)selection);
     NSString *type = [NSString stringWithFormat:@"%ld",(long)selection];
+    if (selection == 4) {
+        type = @"8";
+    }else if (selection == 5){
+        type = @"7";
+    }
     [self getOrderListWithType:type];
 }
--(void)changeBtnBorderWithColor:(UIColor *)color andBtn:(UIButton *)btn{
+-(void)changeBtnBorderWithColor:(UIColor *)color andBtn:(OrderBtn *)btn{
     //修改字体颜色
     [btn setTitleColor:color forState:UIControlStateNormal];
     //修改边框颜色
@@ -300,15 +318,32 @@
     [downButtonLayer setBorderWidth:1.0];
     [downButtonLayer setBorderColor:[color CGColor]];
 }
--(void)orderFootViewBtnClick:(UIButton *)btn{
+-(void)orderFootViewBtnClick:(OrderBtn *)btn{
     //0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
     switch (btn.tag) {
         case 0:{
             NSLog(@"取消订单");
+            [self delateOrder:btn.chooseBtnIndex];
         }
             break;
         case 1:{
             NSLog(@"付款");
+            //获取订单详情
+            OrderObject *orderObj = [self.orderListArray objectAtIndex:btn.chooseBtnIndex];
+            //获得nib视图数组
+            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"PayForView" owner:self options:nil];
+            //得到第一个UIView
+            payForView = [nib objectAtIndex:0];
+            //获得屏幕的Frame
+            CGRect tmpFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            payForView.frame = tmpFrame;
+            //添加视图
+            payForView.backgroundColor = [UIColor clearColor];
+            //传递数据
+            payForView.orderNumber = orderObj.orderNumber;
+            payForView.delegate = self;
+            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [delegate.window addSubview:payForView];
         }
             break;
         case 2:{
@@ -325,6 +360,7 @@
             break;
         case 5:{
             NSLog(@"删除订单");
+            [self delateOrder:btn.chooseBtnIndex];
         }
             break;
         case 6:{
@@ -344,5 +380,69 @@
         default:
             break;
     }
+}
+-(void)hidenPayForView{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *tempView in appDelegate.window.subviews) {
+        if ([tempView isKindOfClass:[PayForView class]]) {
+            tempView.hidden = YES;
+        }
+    }
+}
+-(void)hidenPayForViewAndBack{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for (UIView *tempView in appDelegate.window.subviews) {
+        if ([tempView isKindOfClass:[PayForView class]]) {
+            tempView.hidden = YES;
+        }
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
+//-(void)cancelOrder{
+//#pragma mark - 14.取消订单
+//    /** 14.订单列表 http://app.czctgw.com/api/order/member/OrderList?pageIndex=1&pageCount=5&memLoginID=yemao&t=2 */
+//    NSString *params = [NSString stringWithFormat:@"pageIndex=1&pageCount=5&memLoginID=%@&t=",kAccountObject.memLoginID];
+//    params = [params stringByAppendingString:type];
+//    [CZCService GETmethod:kOrderDelete_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+//        if (myresult) {
+//            //NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+//            NSArray *dataArr = [myresult objectForKey:@"Data"];
+//            NSArray *list = [OrderObject objectArrayWithKeyValuesArray:dataArr];
+//            NSLog(@"14.订单列表 ------%@",list);
+//            self.orderListArray = [[NSMutableArray alloc]initWithArray:list];
+//            [self.tableView reloadData];
+//        }
+//        else{
+//            NSLog(@"失败");
+//        }
+//    }];
+//}
+-(void)delateOrder:(int)index{
+#pragma mark - 17.取消订单
+    /** 17.取消订单 http://api/order/OrderUpdate/ */
+    //获取订单详情
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:index];
+    [CZCService GETmethod:kOrderDelete_URL andParameters:orderObj.guid andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [NSString stringWithFormat:@"%@",[result objectForKey:@"return"]];
+            if ([statuStr isEqualToString:@"200"]) {
+                NSLog(@"取消订单成功");
+                [self showHUDViewTitle:@"取消订单成功" info:@"" andCodes:^{
+                }];
+            }else{
+                NSLog(@"取消订单失败");
+                [self showHUDViewTitle:@"取消订单失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"取消订单失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
+    //刷新
+    [self.tableView reloadData];
 }
 @end

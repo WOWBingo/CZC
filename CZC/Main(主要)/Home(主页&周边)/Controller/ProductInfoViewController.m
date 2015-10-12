@@ -18,6 +18,7 @@
 #import "SpecificationAllObject.h"
 #import "LoginViewController.h"
 #import "ShoppingCarViewController.h"
+#import "CollectProductObject.h"
 
 @interface ProductInfoViewController ()
 
@@ -39,6 +40,13 @@
     [_scrollView addSubview:_imgTextView];
     _imgTextView.tag = 1;
     
+    //获取所有收藏商品列表,并判断该商品是否在收藏列表中，以判断收藏按钮的显示状态
+    //先初始化button基本属性（tag值和图片除外）
+    self.collectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"startNo.png"] forState:UIControlStateNormal];
+    [self.collectBtn addTarget:self action:@selector(collectClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.collectBtn];
+    [self getProCollectInfo];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -46,6 +54,33 @@
     [self getProductInfo];
     [self getProSpecification];
     [self showHUDBeginWithTitle:@""];
+}
+-(void)getProCollectInfo{
+#pragma mark - 23.产品收藏列表
+    /** 23.产品收藏列表 http://app.czctgw.com/api/CollectList?MemLoginID=zh010101&pageIndex=1&pageCount=5 */
+    NSString *params = [NSString stringWithFormat:@"MemLoginID=%@&pageIndex=1&pageCount=50 ",kAccountObject.memLoginID];
+    [CZCService GETmethod:kProCollectList_URL andParameters:params andHandle:^(NSDictionary *myresult) {
+        if (myresult) {
+            //NSInteger count = [[myresult objectForKey:@"Count"]integerValue];
+            NSArray *dataArr = [myresult objectForKey:@"Data"];
+            NSArray *list = [CollectProductObject objectArrayWithKeyValuesArray:dataArr];
+            NSLog(@"23.产品收藏列表 ------%@",list);
+            NSMutableArray *collectProArr = [[NSMutableArray alloc]initWithArray:list];
+            for (CollectProductObject *obj in collectProArr) {
+                if([self.product.guid isEqualToString:obj.productGuid]){
+                    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"startYes.png"] forState:UIControlStateNormal];
+                    self.collectBtn.tag = 1;//收藏状态
+                    return;
+                }else{
+                    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"startNo.png"] forState:UIControlStateNormal];
+                    self.collectBtn.tag = 0;//未收藏状态
+                }
+            }
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
 }
 /**
  *	数据加载完成
@@ -414,6 +449,68 @@
     //调用此方法显示模态窗口
     [self presentViewController:newNVC animated:YES completion:nil];
 }
-
-
+//根据collectBtn 的tag值初始化button的图片
+-(void)collectClick{
+    if (self.collectBtn.tag == 0) {
+        //添加收藏请求
+        [self collectProduct];
+    }else{
+        //取消收藏请求
+        [self collectProductCancel];
+    }
+}
+#pragma mark - 40. 产品收藏
+-(void)collectProduct{
+    /**40. 产品收藏  http://api/Collect/?productGuid=926c2491-ca2f-47a4-90d9-52bcecdda0d9&sellLoginid=shop1&shopname=女装&MemLoginID=111111*/
+    NSString *param = [NSString stringWithFormat:@"productGuid=%@&sellLoginid=%@&shopname=%@&MemLoginID=%@",self.product.guid,self.product.brandName,self.product.shopName,kAccountObject.memLoginID];
+    [CZCService GETmethod:kProCollect_URL andParameters:param andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [result objectForKey:@"return"];
+            if ([statuStr isEqualToString:@"202"]) {
+                NSLog(@"收藏成功");
+                [self showHUDViewTitle:@"收藏成功" info:@"" andCodes:^{
+                    self.collectBtn.tag = 1;
+                    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"startYes.png"] forState:UIControlStateNormal];
+                }];
+            }else{
+                NSLog(@"收藏失败");
+                [self showHUDViewTitle:@"收藏失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"收藏失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
+}
+#pragma mark - 24. 取消产品收藏
+-(void)collectProductCancel{
+    /**24. 取消产品收藏  http://api/mycollect/delete?Guid=dc900185-1203-4dd0-8682-d490acb03b6b&MemLoginID=111111*/
+    NSString *param = [NSString stringWithFormat:@"Guid=%@&MemLoginID=%@",self.product.guid,kAccountObject.memLoginID];
+    [CZCService GETmethod:kProCollectDelete_URL andParameters:param andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [NSString stringWithFormat:@"%@",[result objectForKey:@"return"]];
+            if ([statuStr isEqualToString:@"200"]) {
+                NSLog(@"取消收藏成功");
+                [self showHUDViewTitle:@"取消收藏成功" info:@"" andCodes:^{
+                    self.collectBtn.tag = 0;
+                    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"startNo.png"] forState:UIControlStateNormal];
+                }];
+            }else{
+                NSLog(@"取消收藏失败");
+                [self showHUDViewTitle:@"取消收藏失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"取消收藏失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
+}
 @end
