@@ -15,6 +15,10 @@
 /** 全局用户对象 */
 UIKIT_EXTERN AccoutObject *kAccountObject;
 
+UIKIT_EXTERN double KLongitude;
+UIKIT_EXTERN double KLatitude;
+UIKIT_EXTERN NSString *KLocation;
+
 /** 连接失败，请检查网络连接 */
 UIKIT_EXTERN NSString *const kConnectionFailureError;
 /** 请求超时，请检查连接网络 */

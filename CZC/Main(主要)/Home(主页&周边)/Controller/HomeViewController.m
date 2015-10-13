@@ -79,7 +79,9 @@
     [self.tableView addSubview:_headView];
     //加载数据
     [self getHomeImagesData];
-    [self getHundredAreaProduct];
+    if (_isHomePage) {
+        [self getHundredAreaProduct];
+    }
     [self getLouCengDataList];
 }
 
@@ -103,6 +105,9 @@
 /**  59.首页图片 http://app.czctgw.com/api/ShopGGlistIndex/?CityDomianName=chengdu*/
 - (void)getHomeImagesData{
     NSString *params = @"CityDomianName=chengdu";
+    if (_isHomePage) {
+        params = @"CityDomianName=";
+    }
     [CZCService GETmethod:kShopGGlistIndex_URL andParameters:params andHandle:^(NSDictionary *myresult) {
         if (myresult) {
             NSArray *dataArr = [myresult objectForKey:@"ImageList"];
@@ -156,19 +161,26 @@
             _louCengList = [[NSMutableArray alloc]initWithArray:list];
             NSLog(@" 楼层分类 ------%@",list);
             [self getLouCengProduct];
-           // [self.tableView reloadData];
         }
         else{
             NSLog(@"失败");
         }
     }];
 }
+
+
 /**
  *	楼层推荐
  */
 - (void)getLouCengProduct{
     for (LouCengObject *louObj in _louCengList) {
-        NSString *urlStr = [NSString stringWithFormat:@"/api/main/ashx/home.ashx?CategoryID=%@&showCountProduct=5&handle=ProductListForCategory",louObj.code];
+        NSString *urlStr;
+        if (_isHomePage){
+            urlStr = [NSString stringWithFormat:@"/api/main/ashx/home.ashx?CategoryID=%@&showCountProduct=5&handle=ProductListForCategory",louObj.code];
+        }else {//周边区域商品列表
+//            urlStr = [NSString stringWithFormat:@"/api/main/ashx/home.ashx?CategoryID=%@&showCountProduct=5&handle=SubProductListForCategory&Longitude=%f&Latitude=%f",louObj.code,KLongitude,KLatitude];
+            urlStr = [NSString stringWithFormat:@"/api/main/ashx/home.ashx?CategoryID=%@&showCountProduct=5&handle=SubProductListForCategory&Longitude=123.1&Latitude=30.3",louObj.code];
+        }
         [CZCService GETMethodWithWWW:urlStr andHandle:^(NSDictionary *myresult) {
             if (myresult) {
                 NSArray *dataArr = [myresult objectForKey:@"ProductListForCategory"];
@@ -231,8 +243,8 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
-    if (_isHomePage) {
-        if (indexPath.row == 0) {
+    if (_isHomePage && indexPath.row == 0) {
+        //if () {
             static NSString *cellIdentifier = @"HundredYuanCell";
             HundredYuanCell *cell = (HundredYuanCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             if (cell == nil) {
@@ -278,14 +290,23 @@
             
             return cell;
         }else{
-            LouCengObject *louObjec = [_louCengList objectAtIndex:row-1];
+            LouCengObject *louObjec = [[LouCengObject alloc]init];
+            if (_isHomePage) {
+                louObjec = [_louCengList objectAtIndex:row-1];
+            }else{
+                louObjec = [_louCengList objectAtIndex:row];
+            }
             static NSString *cellIdentifier = @"HomeViewCell";
             HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             if (cell == nil) {
                 NSBundle *bundle = [NSBundle mainBundle];
                 NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
                 cell = (HomeViewCell *)[nibArray objectAtIndex:0];
-                cell.moreBtn.tag = indexPath.row;
+                if (_isHomePage) {
+                    cell.moreBtn.tag = indexPath.row;
+                }else{
+                    cell.moreBtn.tag = indexPath.row - 1;
+                }
                 [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             }
@@ -329,31 +350,35 @@
             }
             //设置cell上button标识符
             [cell buttonAddCellNum:indexPath.row];
-            cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row];
+            if (_isHomePage) {
+                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row];
+            }else{
+                cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row+1];
+            }
             cell.titleLabel.text = louObjec.name;
             return cell;
         }
-    }else{
-        LouCengObject *louObjec = [_louCengList objectAtIndex:row];
-        static NSString *cellIdentifier = @"HomeViewCell";
-        HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (cell == nil) {
-            NSBundle *bundle = [NSBundle mainBundle];
-            NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
-            cell = (HomeViewCell *)[nibArray objectAtIndex:0];
-            [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        }
-        [cell buttonAddCellNum:indexPath.row];
-        cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row+1];
-        cell.titleLabel.text = louObjec.name;
-        return cell;
-    }
+//    }else{
+//        LouCengObject *louObjec = [_louCengList objectAtIndex:row];
+//        static NSString *cellIdentifier = @"HomeViewCell";
+//        HomeViewCell *cell = (HomeViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//        if (cell == nil) {
+//            NSBundle *bundle = [NSBundle mainBundle];
+//            NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:self options:nil];
+//            cell = (HomeViewCell *)[nibArray objectAtIndex:0];
+//            [cell.moreBtn addTarget:self action:@selector(getMore:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.topLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.topRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.bottomLeftBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.bottomMidBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell.bottomRightBtn addTarget:self action:@selector(shopInfo:) forControlEvents:UIControlEventTouchUpInside];
+//            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//        }
+//        [cell buttonAddCellNum:indexPath.row];
+//        cell.numLabel.text = [NSString stringWithFormat:@"%ldF",(long)row+1];
+//        cell.titleLabel.text = louObjec.name;
+//        return cell;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -366,14 +391,19 @@
 - (IBAction)getMore:(id)sender{
     
     UIButton *btn = (UIButton*)sender;
-    if (_isHomePage) {
-        if (btn.tag == 0) {
+    if (_isHomePage && btn.tag == 0) {
             HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
             hundredVC.productCatagory = @"024";
             hundredVC.title = @"百元专区";
             [self.navigationController pushViewController:hundredVC animated:YES];
         }else{
-            LouCengObject *loucengObj = [_louCengList objectAtIndex:btn.tag - 1];
+            LouCengObject *loucengObj = [[LouCengObject alloc]init];
+            if (_isHomePage) {
+                loucengObj = [_louCengList objectAtIndex:btn.tag-1];
+            }else{
+                loucengObj = [_louCengList objectAtIndex:btn.tag];
+            }
+            
             HundredViewController *hundredVC = [[HundredViewController alloc]initWithNibName:@"HundredViewController" bundle:nil];
             hundredVC.title = loucengObj.name;
             hundredVC.productCatagory = loucengObj.code;
@@ -383,14 +413,6 @@
             //            shopVC.title = loucengObj.name;
             //            [self.navigationController pushViewController:shopVC animated:YES];
         }
-        
-    }else{
-        LouCengObject *loucengObj = [_louCengList objectAtIndex:btn.tag];
-        ShopTableViewController *shopVC = [[ShopTableViewController alloc]initWithNibName:@"ShopTableViewController" bundle:nil];
-        [self.navigationController pushViewController:shopVC animated:YES];
-        
-    }
-    
 }
 
 /**
@@ -438,8 +460,6 @@
         
         [self.navigationController pushViewController:productInfoVC animated:YES];
     }
-    
-    
 }
 
 @end
