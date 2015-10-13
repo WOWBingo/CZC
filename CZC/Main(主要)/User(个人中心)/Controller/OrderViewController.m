@@ -30,7 +30,7 @@
     //创建segmentControl
     LjjUISegmentedControl* ljjuisement=[[LjjUISegmentedControl alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH,34)];
     ljjuisement.delegate = self;
-    NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",@"退款/售后",nil];
+    NSArray* ljjarray=[NSArray arrayWithObjects:@"全部",@"待付款",@"待发货",@"待收货",@"待评价",nil];
     [ljjuisement AddSegumentArray:ljjarray];
     [self.view addSubview:ljjuisement];
     
@@ -152,7 +152,7 @@
     footView.twoBtn.chooseBtnIndex = (int)section;
     footView.threeBtn.chooseBtnIndex = (int)section;
     
-    switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+    switch (orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6查看物流 7退货申请
         case 0://待付款
             footView.oneBtn.tag = 0;
             [footView.oneBtn setTitle:@"取消订单" forState:UIControlStateNormal];
@@ -178,7 +178,7 @@
             footView.twoBtn.tag = 4;
             [footView.twoBtn setTitle:@"确认收货" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
-            footView.threeBtn.tag = 7;
+            footView.threeBtn.tag = 6;
             [footView.threeBtn setTitle:@"查看物流" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.threeBtn];
             break;
@@ -186,9 +186,9 @@
             footView.oneBtn.tag = 5;
             [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
-            footView.twoBtn.tag = 6;
-            [footView.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
-            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
+            footView.twoBtn.tag = 7;
+            [footView.twoBtn setTitle:@"申请退货" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor redColor] andBtn:footView.twoBtn];
             footView.threeBtn.hidden = YES;
             break;
             //        case 7://退货
@@ -207,9 +207,7 @@
             footView.oneBtn.tag = 5;
             [footView.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
-            footView.twoBtn.tag = 6;
-            [footView.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
-            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:footView.twoBtn];
+            footView.twoBtn.hidden = YES;
             footView.threeBtn.hidden = YES;
             break;
     }
@@ -258,6 +256,18 @@
             });
         });
     }
+    cell.delegate = self;
+    cell.orderIndex = (int)indexPath.section;//存储订单的index
+    cell.evaluateBtn.tag = indexPath.row;//存储商品的index
+    //修改字体颜色
+    [cell.evaluateBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    //修改边框颜色
+    CALayer * downButtonLayer = [cell.evaluateBtn layer];
+    [downButtonLayer setMasksToBounds:YES];
+    [downButtonLayer setCornerRadius:3.0];
+    [downButtonLayer setBorderWidth:1.0];
+    [downButtonLayer setBorderColor:[[UIColor orangeColor] CGColor]];
+    
     //基本信息
     cell.infolab.text = orderProObj.productName;
     //其他信息
@@ -267,7 +277,11 @@
     //订单时间
     cell.timeLab.text = [orderObj.createTime substringToIndex:9];//下单时间
     //根据orderStatus 判断0 全部订单  1待付款 2 待发货 3 待收货  4 已完成订单  5 买家已经评价  6 卖家已经评价  7退货8 订单完成并且未评价
-    
+    if (orderObj.oderStatus == 3) {
+        cell.evaluateBtn.hidden = NO;
+    }else{
+        cell.evaluateBtn.hidden = YES;
+    }
     return cell;
 }
 
@@ -303,8 +317,6 @@
     NSString *type = [NSString stringWithFormat:@"%ld",(long)selection];
     if (selection == 4) {
         type = @"8";
-    }else if (selection == 5){
-        type = @"7";
     }
     [self getOrderListWithType:type];
 }
@@ -319,7 +331,7 @@
     [downButtonLayer setBorderColor:[color CGColor]];
 }
 -(void)orderFootViewBtnClick:(OrderBtn *)btn{
-    //0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+    //0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6查看物流 7退货申请
     switch (btn.tag) {
         case 0:{
             NSLog(@"取消订单");
@@ -348,6 +360,7 @@
             break;
         case 2:{
             NSLog(@"退款");
+            [self returnOrder:@"1" and:btn.chooseBtnIndex];
         }
             break;
         case 3:{
@@ -364,17 +377,12 @@
         }
             break;
         case 6:{
-            NSLog(@"评价");
-            EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
-            [self.navigationController pushViewController:evaluateVC animated:YES];
-        }
-            break;
-        case 7:{
             NSLog(@"查看物流");
         }
             break;
-        case 8:{
+        case 7:{
             NSLog(@"退货申请");
+            [self returnOrder:@"1" and:btn.chooseBtnIndex];
         }
             break;
         default:
@@ -444,5 +452,54 @@
     }];
     //刷新
     [self.tableView reloadData];
+}
+//跳转评价界面
+-(void)goEvaluateVC:(int)orderIndex andBtn:(UIButton *)btn{
+    NSLog(@"评价");
+    //获取订单详情
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:orderIndex];
+    EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
+    evaluateVC.orderObj = orderObj;
+    evaluateVC.orderProObj = [OrderProductObject objectWithKeyValues:[orderObj.productList objectAtIndex:btn.tag]];
+    [self.navigationController pushViewController:evaluateVC animated:YES];
+}
+//退款/退货
+-(void)returnOrder:(NSString *)type and:(int)index{
+#pragma mark - 53.退款/退货
+    /** 53.退款/退货 http://api/order/Returnofgoods2 */
+    //获取订单详情
+    NSLog(@"%d",index);
+    OrderObject *orderObj = [self.orderListArray objectAtIndex:index];
+    NSDictionary *dic = @{@"OrderID":orderObj.guid,
+                          @"RefundType":type,
+                          @"RefundMoney":@"100",
+                          @"RefundContent":@"退货说明",
+                          @"RefundImg":@"图片",
+                          @"MemLoginID":kAccountObject.memLoginID,
+                          @"ShopID":orderObj.shopID,
+                          @"LogisticName":@"物流公司",
+                          @"LogisticNumber":@"12131234",
+                          };
+    [CZCService POSTmethod:kReturnofgoods_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [NSString stringWithFormat:@"%@",[result objectForKey:@"return"]];
+            if (statuStr) {
+                NSLog(@"申请成功");
+                [self showHUDViewTitle:@"申请成功" info:@"" andCodes:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }else{
+                NSLog(@"申请失败");
+                [self showHUDViewTitle:@"申请失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"申请失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
 }
 @end

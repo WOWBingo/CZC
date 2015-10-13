@@ -63,10 +63,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZP-NQ-c1i">
+                                <rect key="frame" x="266" y="55" width="46" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="bKe-g3-pmJ"/>
+                                    <constraint firstAttribute="height" constant="25" id="gWu-3y-lTl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="评价">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="evaluateClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XXf-bI-Ymc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zZP-NQ-c1i" secondAttribute="bottom" constant="6" id="3E1-Er-C9V"/>
                             <constraint firstItem="f5i-y9-TxW" firstAttribute="top" secondItem="gzb-Fg-SQZ" secondAttribute="bottom" constant="3" id="3N4-EP-GCL"/>
                             <constraint firstItem="h0N-7V-foA" firstAttribute="top" secondItem="urC-4C-DGo" secondAttribute="bottom" constant="3" id="A0n-Lf-Nns"/>
                             <constraint firstAttribute="height" constant="86" id="BzR-WP-98L"/>
@@ -75,6 +91,7 @@
                             <constraint firstItem="urC-4C-DGo" firstAttribute="top" secondItem="kT4-qv-K4x" secondAttribute="top" constant="8" id="TPo-dg-WZr"/>
                             <constraint firstItem="h0N-7V-foA" firstAttribute="leading" secondItem="YRc-fb-hfP" secondAttribute="trailing" constant="8" id="XAa-6e-b2g"/>
                             <constraint firstItem="f5i-y9-TxW" firstAttribute="leading" secondItem="h0N-7V-foA" secondAttribute="trailing" constant="15" id="XeS-hv-k7I"/>
+                            <constraint firstAttribute="trailing" secondItem="zZP-NQ-c1i" secondAttribute="trailing" constant="8" id="dOk-9D-aGJ"/>
                             <constraint firstAttribute="trailing" secondItem="f5i-y9-TxW" secondAttribute="trailing" constant="8" id="dw5-7r-REu"/>
                             <constraint firstItem="YRc-fb-hfP" firstAttribute="leading" secondItem="kT4-qv-K4x" secondAttribute="leading" constant="8" id="fMw-hD-Kv5"/>
                             <constraint firstAttribute="trailing" secondItem="gzb-Fg-SQZ" secondAttribute="trailing" constant="8" id="khu-qd-Sfm"/>
@@ -94,6 +111,7 @@
             <animations/>
             <connections>
                 <outlet property="backView" destination="kT4-qv-K4x" id="ScJ-OX-1Kl"/>
+                <outlet property="evaluateBtn" destination="zZP-NQ-c1i" id="bBa-eo-T0A"/>
                 <outlet property="imgView" destination="YRc-fb-hfP" id="2ol-bQ-4ug"/>
                 <outlet property="infolab" destination="urC-4C-DGo" id="beA-7S-Qlz"/>
                 <outlet property="orderStatusLab" destination="gzb-Fg-SQZ" id="IYg-8K-MZu"/>

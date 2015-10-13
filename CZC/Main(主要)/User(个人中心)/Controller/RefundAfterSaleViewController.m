@@ -110,6 +110,7 @@
         footView.freightLab.text = [NSString stringWithFormat:@"(包含运费￥%.02f)",orderObj.packPrice];
     }
     [footView.oneBtn setTitle:@"查看进度" forState:UIControlStateNormal];
+    [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:footView.oneBtn];
     footView.twoBtn.hidden = YES;
     footView.threeBtn.hidden = YES;
     
@@ -156,6 +157,7 @@
             });
         });
     }
+    cell.evaluateBtn.hidden = YES;
     //基本信息
     cell.infolab.text = orderProObj.productName;
     //其他信息
@@ -188,7 +190,16 @@
     orderDetailVC.orderObj = [self.orderListArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
-
+-(void)changeBtnBorderWithColor:(UIColor *)color andBtn:(OrderBtn *)btn{
+    //修改字体颜色
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    //修改边框颜色
+    CALayer * downButtonLayer = [btn layer];
+    [downButtonLayer setMasksToBounds:YES];
+    [downButtonLayer setCornerRadius:3.0];
+    [downButtonLayer setBorderWidth:1.0];
+    [downButtonLayer setBorderColor:[color CGColor]];
+}
 
 
 @end

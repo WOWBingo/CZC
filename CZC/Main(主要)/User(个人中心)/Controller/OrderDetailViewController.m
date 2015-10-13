@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view from its nib.
     NSLog(@"%@",self.orderObj);
     //根据订单状态显示button
-    switch (self.orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价 7查看物流 8退货申请
+    switch (self.orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6查看物流 7退货申请
         case 0://待付款
             self.oneBtn.tag = 0;
             [self.oneBtn setTitle:@"取消订单" forState:UIControlStateNormal];
@@ -54,7 +54,7 @@
             self.twoBtn.tag = 4;
             [self.twoBtn setTitle:@"确认收货" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
-            self.threeBtn.tag = 7;
+            self.threeBtn.tag = 6;
             [self.threeBtn setTitle:@"查看物流" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.threeBtn];
             break;
@@ -62,9 +62,9 @@
             self.oneBtn.tag = 5;
             [self.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
-            self.twoBtn.tag = 6;
-            [self.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
-            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
+            self.twoBtn.tag = 7;
+            [self.twoBtn setTitle:@"申请退货" forState:UIControlStateNormal];
+            [self changeBtnBorderWithColor:[UIColor redColor] andBtn:self.twoBtn];
             self.threeBtn.hidden = YES;
             break;
             //        case 7://退货
@@ -83,9 +83,7 @@
             self.oneBtn.tag = 5;
             [self.oneBtn setTitle:@"删除订单" forState:UIControlStateNormal];
             [self changeBtnBorderWithColor:[UIColor grayColor] andBtn:self.oneBtn];
-            self.twoBtn.tag = 6;
-            [self.twoBtn setTitle:@"评价" forState:UIControlStateNormal];
-            [self changeBtnBorderWithColor:[UIColor greenColor] andBtn:self.twoBtn];
+            self.twoBtn.hidden = YES;
             self.threeBtn.hidden = YES;
             break;
     }
@@ -247,6 +245,17 @@
                     });
                 });
             }
+            cell3.delegate = self;
+            cell3.orderIndex = (int)indexPath.section;//存储订单的index
+            cell3.btn.tag = indexPath.row;//存储商品的index
+            //修改字体颜色
+            [cell3.btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            //修改边框颜色
+            CALayer * downButtonLayer = [cell3.btn layer];
+            [downButtonLayer setMasksToBounds:YES];
+            [downButtonLayer setCornerRadius:3.0];
+            [downButtonLayer setBorderWidth:1.0];
+            [downButtonLayer setBorderColor:[[UIColor orangeColor] CGColor]];
             //基本信息
             cell3.infoLab.text = orderProObj.productName;
             //其他信息
@@ -256,38 +265,11 @@
             //物品数量
             cell3.numLab.text = [NSString stringWithFormat:@"X%ld",(long)orderProObj.buyNumber];
             //根据订单状态修改btn
-            //            switch (self.orderObj.oderStatus) {//给btn一个TAG值，根据这个值后期点击的时候获取按钮类型 0取消订单 1付款 2退款 3提醒卖家 4确认收货 5删除订单 6评价
-            //                case 1://待付款
-            //                    cell3.btn.tag = 0;
-            //                    [footView.leftBtn setTitle:@"取消订单" forState:UIControlStateNormal];
-            //                    footView.rightBtn.tag = 1;
-            //                    [footView.rightBtn setTitle:@"付款" forState:UIControlStateNormal];
-            //                    break;
-            //                case 2://待发货
-            //                    footView.leftBtn.tag = 2;
-            //                    [footView.rightBtn setTitle:@"退款" forState:UIControlStateNormal];
-            //                    footView.rightBtn.tag = 3;
-            //                    [footView.rightBtn setTitle:@"提醒卖家" forState:UIControlStateNormal];
-            //                    break;
-            //                case 3://待收货
-            //                    footView.leftBtn.tag = 2;
-            //                    [footView.leftBtn setTitle:@"退款" forState:UIControlStateNormal];
-            //                    footView.rightBtn.tag = 4;
-            //                    [footView.rightBtn setTitle:@"确认收货" forState:UIControlStateNormal];
-            //                    break;
-            //                case 4://已完成
-            //                    footView.leftBtn.hidden = YES;
-            //                    footView.rightBtn.tag = 5;
-            //                    [footView.rightBtn setTitle:@"删除订单" forState:UIControlStateNormal];
-            //                    break;
-            //                case 8://待评价
-            //                    footView.leftBtn.hidden = YES;
-            //                    footView.rightBtn.tag = 6;
-            //                    [footView.rightBtn setTitle:@"评价" forState:UIControlStateNormal];
-            //                    break;
-            //                default:
-            //                    break;
-            //            }
+            if (self.orderObj.oderStatus == 3) {
+                cell3.btn.hidden = NO;
+            }else{
+                cell3.btn.hidden = YES;
+            }
         }
             return cell3;
             break;
@@ -476,6 +458,8 @@
             break;
         case 2:{
             NSLog(@"退款");
+            [self returnOrder:@"0" and:btn
+             .chooseBtnIndex];
         }
             break;
         case 3:{
@@ -492,21 +476,64 @@
         }
             break;
         case 6:{
-            NSLog(@"评价");
-            EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
-            [self.navigationController pushViewController:evaluateVC animated:YES];
-        }
-            break;
-        case 7:{
             NSLog(@"查看物流");
         }
             break;
-        case 8:{
+        case 7:{
             NSLog(@"退货申请");
+            [self returnOrder:@"1" and:btn.chooseBtnIndex];
         }
             break;
         default:
             break;
     }
+}
+//跳转评价界面
+-(void)goEvaluateVC:(int)orderIndex andBtn:(UIButton *)btn{
+    NSLog(@"评价");
+    //获取订单详情
+    EvaluateViewController *evaluateVC = [[EvaluateViewController alloc]initWithNibName:@"EvaluateViewController" bundle:nil];
+    evaluateVC.orderObj = self.orderObj;
+    evaluateVC.orderProObj = [OrderProductObject objectWithKeyValues:[self.orderObj.productList objectAtIndex:btn.tag]];
+    [self.navigationController pushViewController:evaluateVC animated:YES];
+}
+//退款/退货
+-(void)returnOrder:(NSString *)type and:(int)index{
+#pragma mark - 53.退款/退货
+    /** 53.退款/退货 http://api/order/Returnofgoods2 */
+    //获取订单详情
+    //获取商品详情
+    NSLog(@"%d",index);
+    NSDictionary *dic = @{@"OrderID":self.orderObj.guid,
+                          @"RefundType":type,
+                          @"RefundMoney":@"退款金额",
+                          @"RefundContent":@"退货说明",
+                          @"RefundImg":@"图片",
+                          @"MemLoginID":kAccountObject.memLoginID,
+                          @"ShopID":self.orderObj.shopID,
+                          @"LogisticName":@"物流公司",
+                          @"LogisticNumber":@"物流单号",
+                          };
+    [CZCService POSTmethod:kReturnofgoods_URL andDicParameters:dic andHandle:^(NSDictionary *myresult) {
+        NSDictionary *result = myresult;
+        NSLog(@"%@",result);
+        if (result) {
+            NSString *statuStr = [NSString stringWithFormat:@"%@",[result objectForKey:@"return"]];
+            if (statuStr) {
+                NSLog(@"申请成功");
+                [self showHUDViewTitle:@"申请成功" info:@"" andCodes:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }else{
+                NSLog(@"申请失败");
+                [self showHUDViewTitle:@"申请失败" info:@"" andCodes:^{
+                }];
+            }
+        }
+        else{
+            [self showHUDViewTitle:@"申请失败" info:@"" andCodes:^{
+            }];
+        }
+    }];
 }
 @end

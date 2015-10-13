@@ -13,7 +13,8 @@
 #import "OrderDetailFootView.h"
 #import "OrderBtn.h"
 #import "PayForView.h"
-@interface OrderDetailViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,PayForViewDelegate>
+#import "OrderDetailThreeTableViewCell.h"
+@interface OrderDetailViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,PayForViewDelegate,OrderDetailThreeTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet OrderBtn *oneBtn;

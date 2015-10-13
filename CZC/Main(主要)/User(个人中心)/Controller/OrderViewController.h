@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LjjUISegmentedControl.h"
 #import "OrderFootView.h"
+#import "OrderTableViewCell.h"
 #import "PayForView.h"
-@interface OrderViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,LjjUISegmentedControlDelegate,OrderFootViewDelegate,PayForViewDelegate>
+@interface OrderViewController : PublicViewController<UITableViewDataSource,UITableViewDelegate,LjjUISegmentedControlDelegate,OrderFootViewDelegate,PayForViewDelegate,OrderTableViewCellDelegate>
 
 @property (strong, nonatomic)UITableView *tableView;
 

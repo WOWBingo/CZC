@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol OrderDetailThreeTableViewCellDelegate
+-(void)goEvaluateVC:(int)orderIndex andBtn:(UIButton *)btn;
+@end
 @interface OrderDetailThreeTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
@@ -16,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (nonatomic,assign)id <OrderDetailThreeTableViewCellDelegate>delegate;
+@property (nonatomic) int orderIndex;
 - (IBAction)btnClick:(id)sender;
 @end

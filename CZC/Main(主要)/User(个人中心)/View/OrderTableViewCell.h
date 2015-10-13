@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol OrderTableViewCellDelegate
+-(void)goEvaluateVC:(int)orderIndex andBtn:(UIButton *)btn;
+@end
 @interface OrderTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *backView;
@@ -16,9 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *otherInfoLab;
 @property (weak, nonatomic) IBOutlet UILabel *orderStatusLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
-@property (weak, nonatomic) IBOutlet UILabel *freightLab;
-@property (weak, nonatomic) IBOutlet UILabel *proNumLab;
-@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
-@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
-@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;
+@property (nonatomic,assign)id <OrderTableViewCellDelegate>delegate;
+@property (nonatomic) int orderIndex;
+- (IBAction)evaluateClick:(id)sender;
 @end
